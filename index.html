@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Squish — pop your way to Chinese</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@300..800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫧</text></svg>">
+<meta name="description" content="Pop soft, jiggly bubbles to learn Chinese.">
+</head>
+<body>
+<h1 class="sr" id="title">Squish: pop bubbles to learn Chinese</h1>
+<canvas id="stage" tabindex="0" role="img" aria-label="A bubble pinned in the middle of the screen. Pull it toward the edge with the right answer until it bursts. Keyboard: arrow keys pull toward that edge, F shows the answer and adds a layer, Space pokes it."></canvas>
+
+<div class="corner tl">
+  <p class="mark">Squish</p>
+  <div class="q">
+    <div class="pips" id="pips" aria-hidden="true"><small id="layerTxt">Layer 1 of 3</small></div>
+    <p class="ask" id="ask" aria-live="polite">What does it mean?</p>
+    <button type="button" class="forgot" id="forgot" title="Shows the answer and adds a layer, so the question comes back before the core (shortcut: F)">I forgot <small>+1 layer</small></button>
+    <p class="tip" id="tip">Pull the bubble to the right answer and stretch it until it pops. Stuck? “I forgot” shows the answer and wraps the bubble in an extra layer to practise it again.</p>
+  </div>
+</div>
+
+<dl class="corner tr stats">
+  <div><dt>Score</dt><dd id="score">0</dd></div>
+  <div><dt>Streak</dt><dd id="streak">0</dd></div>
+  <div><dt>Learned</dt><dd><span id="learned">0</span><small> / <span id="total">0</span></small></dd></div>
+</dl>
+
+<div class="corner bl controls">
+  <button type="button" class="pill" id="sound" aria-pressed="true">Sound on</button>
+  <label class="slider"><span>Wobble</span><input id="wobble" type="range" min="0" max="100" value="55"></label>
+  <label class="slider"><span>Detail</span><input id="detail" type="range" min="0" max="2" step="1" value="1" aria-valuetext="2,562 points"><output id="detailOut">2,562</output></label>
+</div>
+
+<div class="corner br"><button type="button" class="pill solid" id="wordsBtn">Your words</button></div>
+
+<button type="button" class="ans" data-edge="top"></button>
+<button type="button" class="ans" data-edge="right"></button>
+<button type="button" class="ans" data-edge="bottom"></button>
+<button type="button" class="ans" data-edge="left"></button>
+
+<div class="note" id="note" hidden>
+  <div class="note-inner">
+    <div class="slip" id="slip" role="group" aria-labelledby="fortuneText">
+      <p class="result" id="result"></p>
+      <p class="fortune" id="fortuneText"></p>
+      <hr class="perf">
+      <div class="learnrow">
+        <div class="zhbig" id="zhBig" lang="zh-Hans"></div>
+        <div class="zhinfo">
+          <p class="lbl">Learn Chinese</p>
+          <p class="py" id="zhPy"></p>
+          <p class="en" id="zhEn"></p>
+        </div>
+        <div class="hearbtns">
+          <button type="button" class="hear" id="hear">Hear it</button>
+          <button type="button" class="hear" id="hearSlow">Slowly</button>
+        </div>
+      </div>
+      <p class="novoice" id="novoice" hidden>No Chinese voice was found on this device, so playback may be silent or read in another language.</p>
+      <p class="lucky"><b>Lucky numbers</b> <span id="lucky"></span></p>
+    </div>
+    <button type="button" class="next" id="next">Blow the next bubble</button>
+  </div>
+</div>
+
+<aside class="drawer" id="drawer" hidden aria-labelledby="drawerTitle">
+  <div class="drawer-head">
+    <div><h2 id="drawerTitle">Your words</h2><p id="drawerSub"></p></div>
+    <button type="button" class="close" id="slowToggle" aria-pressed="false">Slow voice</button>
+    <button type="button" class="close" id="drawerClose">Close</button>
+  </div>
+  <ul class="words" id="wordsList"></ul>
+</aside>
+
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
