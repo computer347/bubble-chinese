@@ -56,5 +56,17 @@ docs/PLAN.md   the phased roadmap with verification for each phase
 - **Memory** uses FSRS (via ts-fsrs). Each finished bubble is one review: a clean pop is Good, one miss is Hard, two misses or "I forgot" is Again.
 
 - **Sound effects** are synthesised live with the Web Audio API. There are no audio files.
-- **Pronunciation** currently uses the browser's speech synthesis (Web Speech API), so the voice depends on the device and can be missing. Phase 1 replaces it with pre-generated clips.
+- **Pronunciation** comes from voice clips generated with MiniMax text-to-speech (`speech-2.8-hd`), at normal and slow speed, stored in `public/audio/`. Each clip pins the syllabus reading with a pronunciation rule, so words like 不客气 get the tone change the syllabus prints. Words without a clip fall back to the browser's speech synthesis.
+
+## Generating the voice clips
+
+You need a MiniMax pay-as-you-go API key (platform.minimax.io, Account Management, API Keys) with a small balance. All of HSK 1–2 at both speeds is about 3,000 characters, well under a dollar at the `speech-2.8-hd` rate. The key stays on your machine: put it in `.env.local` (ignored by git) or set it in the shell.
+
+```powershell
+$env:MINIMAX_API_KEY = "your key"
+npm run audio:sample      # renders 8 words in 6 voices; open audio-samples/index.html and pick one
+npm run audio -- --voice "Chinese (Mandarin)_News_Anchor"
+```
+
+The script only renders clips that are missing or whose request changed (new word, new reading, other voice or speed), saves progress as it goes, and writes `data/audio-review.md`: a checklist of words containing characters with more than one reading, to listen to once. Commit `public/audio/`, `src/content/generated/audio.json` and the review list. Mainland China accounts: also set `MINIMAX_API_HOST=https://api.minimaxi.com`.
 - **Progress** is stored on the device in IndexedDB. Progress from the original single-file version (localStorage) is migrated automatically.

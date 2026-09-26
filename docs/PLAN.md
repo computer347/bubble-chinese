@@ -25,7 +25,8 @@ Each phase ends with a preview deploy, green CI, and the checks listed under "Ve
 - [x] Home screen: each mode is a bubble you pop to enter; HSK level choice; due and new counts
 - [x] Words panel shows mastery from FSRS stability and when each word is next due
 - [ ] Glosses for HSK 3 (500 words), then the level is switched on
-- [ ] Pre-generated neural voice clips at normal and slow speed (waiting on the choice of text-to-speech provider)
+- [x] Voice clip pipeline: `scripts/generate-audio.mjs` renders every word at normal and slow speed with MiniMax, pinning the syllabus reading; the app plays clips and falls back to browser speech
+- [ ] Run the generator with your MiniMax key, pick a voice, commit the clips
 - [ ] Sentence schema with role tags and all valid word orders (moved to the start of Phase 2, where Plug uses it)
 
 **Verify**
@@ -35,7 +36,9 @@ Each phase ends with a preview deploy, green CI, and the checks listed under "Ve
 - [x] Scheduler: HSK 1 before HSK 2, due reviews before new words, no back-to-back repeats
 - [x] End-to-end: home screen, level switch, back home, and the Words flow with review timing on the slip
 - [ ] Human review of the glosses by a second Chinese speaker
-- [ ] Polyphone review of generated audio clips (了, 长, 行, …)
+- [x] Generator tested against a mock MiniMax server: retries on rate limits, skips unchanged clips, stops on a bad key
+- [x] Unit tests: pronunciation rules (tone changes, ü and erhua), request hashing, manifest integrity (every clip exists, made for the current pinyin)
+- [ ] Listen through `data/audio-review.md` (words with multi-reading characters)
 
 ## Phase 2: Plug (sentence mode)
 

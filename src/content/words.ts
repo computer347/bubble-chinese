@@ -10,6 +10,8 @@ export interface Word {
   readonly h: string;
   /** Pinyin with tone marks, as printed in the syllabus. */
   readonly p: string;
+  /** Numbered pinyin, one syllable per character ("ba4 ba5"; erhua 儿 is "r5"). Drives the voice clips. */
+  readonly pn: string;
   /** Short English gloss, written for this project. */
   readonly e: string;
   /** HSK level (1–9) in the 2025 syllabus. */

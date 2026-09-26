@@ -6,6 +6,7 @@ import { PALETTES, PHYS, type Physics } from '../content/palettes';
 import { SoftBody, DETAILS } from '../engine/softbody';
 import { Sound } from '../audio/sound';
 import { Speech } from '../audio/speech';
+import { Voice } from '../audio/voice';
 import { filmMaterial, coreMaterial, applyCore, type FilmMaterial } from '../render/materials';
 import { Environment } from '../render/environment';
 import { Backdrop, type BallView } from '../render/backdrop';
@@ -60,6 +61,7 @@ export function startGame(opts: GameOptions): GameHandle {
   if (opts.e2e) gsap.ticker.lagSmoothing(0);
   const sound = new Sound();
   const speech = new Speech();
+  const voice = new Voice(speech);
   const scheduler = new WordScheduler();
   const pool = () => QUIZ_WORDS.filter(w => w.level <= progress.data.settings.maxLevel);
   const fortunes = new Bag(FORTUNES);
@@ -408,7 +410,7 @@ export function startGame(opts: GameOptions): GameHandle {
     updateHud();
     chips[correctEdge].el.classList.add('hint', 'reveal');
     askEl.textContent = q.type === 2 ? `It’s ${q.answer}. Pull it there.` : `It’s “${q.answer}”. Pull it there.`;
-    if (q.type !== 0) speech.speak(word.h);
+    if (q.type !== 0) voice.say(word);
     renderPips();
   }
   forgotBtn.addEventListener('click', forgot);
@@ -483,6 +485,7 @@ export function startGame(opts: GameOptions): GameHandle {
   function spawnBubble(): void {
     word = scheduler.next(pool(), progress.data);
     questions = makeQuestions(word, pool());
+    voice.preload(word);
     cleanRun = true; bubblePts = 0; bubbleWrong = 0; forgotUsed = false;
     const pal = PALETTES[palIdx];
     applyCore(coreMat, pal.mat);
@@ -526,14 +529,14 @@ export function startGame(opts: GameOptions): GameHandle {
     $('zhPy').textContent = word.p;
     $('zhEn').textContent = word.e;
     $('lucky').textContent = luckyNumbers();
-    $('novoice').hidden = !speech.available ? false : speech.hasChineseVoice();
+    $('novoice').hidden = voice.hasClip(word) || (speech.available && speech.hasChineseVoice());
     noteEl.hidden = false;
     gsap.killTweensOf([slipEl, nextBtn]);
     gsap.fromTo(slipEl, { scaleX: 0.04, scaleY: 0.5, rotation: -10, y: 40, opacity: 0 }, { scaleX: 1, scaleY: 1, rotation: rand(-2, 2), y: 0, opacity: 1, duration: reduceMotion ? 0.2 : 1.15, ease: 'elastic.out(1,.5)' });
     gsap.fromTo(nextBtn, { opacity: 0, y: 14 }, { opacity: 1, y: 0, delay: reduceMotion ? 0 : 0.5, duration: 0.45, ease: 'power2.out' });
     sound.paper();
     const w = word;
-    setTimeout(() => speech.speak(w.h), 650);
+    setTimeout(() => voice.say(w), 650);
     setTimeout(() => nextBtn.focus({ preventScroll: true }), 80);
   }
   function closeNote(): void {
@@ -546,8 +549,8 @@ export function startGame(opts: GameOptions): GameHandle {
     canvas.focus({ preventScroll: true });
   }
   nextBtn.addEventListener('click', closeNote);
-  $('hear').addEventListener('click', () => { if (word) speech.speak(word.h); });
-  $('hearSlow').addEventListener('click', () => { if (word) speech.speak(word.h, true); });
+  $('hear').addEventListener('click', () => { if (word) voice.say(word); });
+  $('hearSlow').addEventListener('click', () => { if (word) voice.say(word, true); });
 
   /* ---------- your words ---------- */
   const drawer = $('drawer'), wordsList = $('wordsList'), slowToggle = $('slowToggle');
@@ -581,7 +584,7 @@ export function startGame(opts: GameOptions): GameHandle {
       for (let i = 0; i < 3; i++) dots.appendChild(Object.assign(document.createElement('i'), { className: lv > i ? 'on' : '' }));
       const due = Object.assign(document.createElement('span'), { className: 'due', textContent: dueLabel(card, now) });
       b.append(h, pEl, e, dots, due);
-      b.addEventListener('click', () => speech.speak(w.h, slowVoice));
+      b.addEventListener('click', () => voice.say(w, slowVoice));
       li.appendChild(b); wordsList.appendChild(li);
     }
     drawer.hidden = false;
@@ -680,7 +683,8 @@ export function startGame(opts: GameOptions): GameHandle {
     const on = !sound.enabled;
     sound.setEnabled(on);
     speech.enabled = on;
-    if (!on) speech.cancel();
+    voice.enabled = on;
+    if (!on) voice.stop();
     soundBtn.textContent = on ? 'Sound on' : 'Sound off';
     soundBtn.setAttribute('aria-pressed', String(on));
   });

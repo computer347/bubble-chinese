@@ -4,3 +4,8 @@ playwright-report
 test-results
 *.log
 .DS_Store
+
+# local secrets and voice samples
+.env.local
+.env
+audio-samples

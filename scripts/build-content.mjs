@@ -55,10 +55,11 @@ export function build() {
     if (!LEVELS.includes(level)) continue;
     const h = r.word.replace(/\d/g, '');           // sense numbers: 点1, 点2 → 点
     const p = r.pinyin.split('/')[0];              // alternate readings: shéi/shuí → shéi
+    const pn = r.numbered.split('/')[0];           // one numbered syllable per character: "ba4 ba5"
     const key = `${h}|${p}`;
     if (byKey.has(key)) continue;                  // homograph entries at a higher level keep the lower level
     const pos = r.pos ? r.pos.split('、').map(t => POS[t] ?? t) : [];
-    byKey.set(key, { h, p, level, pos, mw: pos.includes('n') ? measureWords(r.cedict) : [] });
+    byKey.set(key, { h, p, pn, level, pos, mw: pos.includes('n') ? measureWords(r.cedict) : [] });
   }
   const sharedHanzi = new Set();
   const counts = new Map();
@@ -69,7 +70,7 @@ export function build() {
     const e = glosses.get(`${w.h}|${w.p}`) ?? (sharedHanzi.has(w.h) ? undefined : glosses.get(w.h));
     if (!e) throw new Error(`No gloss for ${w.h} (${w.p}). Add it to ${GLOSS_FILES.join(' or ')}.`);
     const quiz = !(w.pos.length && w.pos.every(t => NOT_QUIZZED.has(t)));
-    return { id: `${w.h}|${w.p}`, h: w.h, p: w.p, e, level: w.level, pos: w.pos, ...(w.mw.length ? { mw: w.mw } : {}), ...(quiz ? {} : { quiz: false }) };
+    return { id: `${w.h}|${w.p}`, h: w.h, p: w.p, pn: w.pn, e, level: w.level, pos: w.pos, ...(w.mw.length ? { mw: w.mw } : {}), ...(quiz ? {} : { quiz: false }) };
   });
 
   const used = new Set(words.map(w => (sharedHanzi.has(w.h) ? `${w.h}|${w.p}` : w.h)));

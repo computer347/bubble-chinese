@@ -1,1015 +1,1015 @@
 # 2025 HSK examination syllabus (新版HSK考试大纲, in force July 2026), levels 1–3.
-# Word, level, pinyin and part of speech: extracted by github.com/Punpuf/hsk-syllabus-vocabulary-parser (MIT).
+# Word, level, pinyin, numbered pinyin and part of speech: extracted by github.com/Punpuf/hsk-syllabus-vocabulary-parser (MIT).
 # cedict column: CC-CEDICT definition (CC BY-SA 4.0, https://cc-cedict.org), used only for measure words.
-level	word	pinyin	pos	cedict
-1	爱	ài	动	to love; to be fond of; to like/affection/to be inclined (to do sth); to tend to (happen)
-1	八	bā	数	eight
-1	爸爸	bàba	名	(coll.) father; dad/CL:個|个[ge4],位[wei4]
-1	吧	ba	助	(modal particle indicating suggestion or surmise)/...right?/...OK?/...I presume.
-1	白天	báitiān	名	daytime/during the day/day/CL:個|个[ge4]
-1	百	bǎi	数	hundred/numerous/all kinds of/surname Bai
-1	半	bàn	数	half/semi-/incomplete/(after a number) and a half
-1	包子	bāozi	名	baozi; bao (steamed stuffed bun)/CL:個|个[ge4]
-1	杯子	bēizi	名	cup/glass/CL:個|个[ge4],隻|只[zhi1]
-1	本1	běn	量	(bound form) root; stem/(bound form) origin; source/(bound form) one's own; this/(bound form) this; the current (year etc)/(bound form) original/(bound form) inherent/originally; initially/capital; principal/classifier for books, periodicals, files etc
-1	边	biān	名、后缀	side/edge/margin/border/boundary/CL:個|个[ge4]/simultaneously
-1	病	bìng	名、动	illness/CL:場|场[chang2]/disease/to fall ill/defect
-1	不	bù	副	no; not so/(bound form) not; un-
-1	不客气	búkèqi		you're welcome/don't mention it/impolite/rude/blunt
-1	不要	búyào	副	don't!; must not
-1	菜	cài	名	vegetable; greens (CL:棵[ke1])/dish (of food) (CL:樣|样[yang4],道[dao4],盤|盘[pan2])/(of one's skills etc) weak; poor/(coll.) (one's) type
-1	茶	chá	名	tea/tea plant/CL:杯[bei1],壺|壶[hu2]
-1	唱	chàng	动	to sing/to call loudly/to chant
-1	超市	chāoshì	名	supermarket (abbr. for 超級市場|超级市场[chao1 ji2 shi4 chang3])/CL:家[jia1]
-1	车	chē	名	car/vehicle/CL:輛|辆[liang4]/machine/to shape with a lathe/Kangxi radical 159/surname Che
-1	吃	chī	动	to eat; to consume/to eat at (a cafeteria etc)/to eradicate; to destroy/to absorb/to suffer (shock, injury, defeat etc)/variant of 吃[chi1]
-1	出租车	chūzūchē	名	taxi/(Tw) rental car
-1	穿	chuān	动	to wear/to put on/to dress/to bore through/to pierce/to perforate/to penetrate/to pass through/to thread
-1	打电话	dǎdiànhuà		to make a telephone call
-1	大	dà	形	big; large; great/older (than another person)/eldest (as in 大姐[da4 jie3])/greatly; freely; fully/(dialect) father/(dialect) uncle (father's brother)
-1	大家	dàjiā	代	everyone/influential family/great expert
-1	大学	dàxué	名	the Great Learning, one of the Four Books 四書|四书[Si4 shu1] in Confucianism/university/college/CL:所[suo3]
-1	大学生	dàxuéshēng	名	university student; college student
-1	到	dào	动	to reach; to arrive/to leave for; to go to/to (a place); until (a time); up to (a point)/(verb complement indicating arriving at a place or reaching a point)/considerate; thoughtful; thorough
-1	的	de	助	of; ~'s (possessive particle)/(used after an attribute when it modifies a noun)/(used at the end of a declarative sentence for emphasis)/(used after a noun, verb or adjective to form a nominal expression, as in 皮革的[pi2 ge2 de5] "one made of leather" or 跑堂兒的|跑堂儿的[pao3 tang2 r5 de5] "a waiter (literally, one who runs back and forth in a restaurant)" or 新的[xin1 de5] "new one")/also pr. [di4] or [di5] in poetry and songs
-1	第	dì	前缀	(prefix indicating ordinal number, as in 第六[di4 liu4] "sixth")/(literary) grades in which successful candidates in the imperial examinations were placed/(old) residence of a high official/(literary) but; however/(literary) only; just
-1	弟弟	dìdi	名	younger brother/CL:個|个[ge4],位[wei4]
-1	点1	diǎn	量	to touch briefly; to tap/to mark with a dot; to check off (on a list)/to order (food etc); to select/to mention; to bring up (a topic or person)/to hint at; to imply/to administer (eye medicine etc) in drops/to light (a fire, a lamp etc); to ignite/to nod (one's head) in agreement; to beckon by moving (one's hand) up and down/point; dot; spot; speck/dot stroke in Chinese characters/(math.) decimal point/point in time or space/(after a number) o'clock/a small amount; a bit; (after a verb or adjective) a bit more/classifier for small amounts
-3	点1	diǎn	名	to touch briefly; to tap/to mark with a dot; to check off (on a list)/to order (food etc); to select/to mention; to bring up (a topic or person)/to hint at; to imply/to administer (eye medicine etc) in drops/to light (a fire, a lamp etc); to ignite/to nod (one's head) in agreement; to beckon by moving (one's hand) up and down/point; dot; spot; speck/dot stroke in Chinese characters/(math.) decimal point/point in time or space/(after a number) o'clock/a small amount; a bit; (after a verb or adjective) a bit more/classifier for small amounts
-1	店	diàn	名	inn; old-style hotel (CL:家[jia1])/(bound form) shop; store
-1	电话	diànhuà	名	telephone/CL:部[bu4]/phone call/CL:通[tong1]/phone number
-1	电脑	diànnǎo	名	computer/CL:臺|台[tai2]
-1	电视	diànshì	名	television; TV/CL:臺|台[tai2],部[bu4]
-1	电影	diànyǐng	名	movie; film/CL:部[bu4],片[pian4],場|场[chang3]
-1	电影院	diànyǐngyuàn	名	cinema; movie theater/CL:家[jia1],座[zuo4]
-1	东西	dōngxi	名	thing/stuff/person/CL:個|个[ge4],件[jian4]
-1	都	dōu	副	all; both; entirely/(used for emphasis) even/already/(not) at all
-1	读	dú	动	to read out; to read aloud/to read/to attend (school); to study (a subject in school)/to pronounce
-1	读书	dúshū	动	to read a book/to study/to attend school
-1	对	duì	形、介	right; correct/towards; at; for/concerning; regarding/to treat (sb a certain way)/to face/(bound form) opposite; facing; matching/to match together; to adjust/to fit; to suit/to answer; to reply/to add; to pour in (a fluid)/to check; to compare/classifier: couple; pair
-1	对不起	duìbuqǐ	动	I'm sorry; excuse me; I beg your pardon/to let (sb) down; to disappoint
-1	多	duō	形、动、代	many; much; more; a lot of/too many; in excess/(after a numeral) ... odd/how (to what extent) (Taiwan pr. [duo2])/(bound form) multi-; poly-
-2	多	duō	数、副	many; much; more; a lot of/too many; in excess/(after a numeral) ... odd/how (to what extent) (Taiwan pr. [duo2])/(bound form) multi-; poly-
-1	多少	duōshao	代	how much?; how many?/(phone number, student ID etc) what number?
-1	儿子	érzi	名	son
-1	二	èr	数	two/2/(Beijing dialect) stupid
-1	饭	fàn	名	cooked rice/CL:碗[wan3]/meal/CL:頓|顿[dun4]/(loanword) fan/devotee
-1	饭店	fàndiàn	名	restaurant/hotel/CL:家[jia1],個|个[ge4]
-1	房间	fángjiān	名	room/CL:間|间[jian1],個|个[ge4]
-1	非常	fēicháng	副	very; really/unusual; extraordinary
-1	飞机	fēijī	名	airplane/CL:架[jia4]
-1	分	fēn	量	to divide; to separate/to distribute; to allocate/to distinguish (good and bad)/(bound form) branch of (an organization); sub- (as in 分局[fen1 ju2])/fraction/one tenth (of certain units)/unit of length equivalent to 0.33 cm/minute (unit of time)/minute (angular measurement unit)/a point (in sports or games)/0.01 yuan (unit of money)
-3	分	fēn	动、名	to divide; to separate/to distribute; to allocate/to distinguish (good and bad)/(bound form) branch of (an organization); sub- (as in 分局[fen1 ju2])/fraction/one tenth (of certain units)/unit of length equivalent to 0.33 cm/minute (unit of time)/minute (angular measurement unit)/a point (in sports or games)/0.01 yuan (unit of money)
-1	分钟	fēnzhōng	量	minute
-1	高兴	gāoxìng	形	happy/glad/willing (to do sth)/in a cheerful mood
-1	歌	gē	名	song (CL:首[shou3],支[zhi1])/(bound form) to sing/variant of 歌[ge1]
-1	哥哥	gēge	名	older brother/CL:個|个[ge4],位[wei4]
-1	个	gè	量	(classifier used before a noun that has no specific classifier)/(bound form) individual/variant of 個|个[ge4]
-1	给	gěi	动	to/for/for the benefit of/to give/to allow/to do sth (for sb)/(grammatical equivalent of 被)/(grammatical equivalent of 把)/(sentence intensifier)
-2	给	gěi	介	to/for/for the benefit of/to give/to allow/to do sth (for sb)/(grammatical equivalent of 被)/(grammatical equivalent of 把)/(sentence intensifier)
-1	公司	gōngsī	名	company; firm; corporation/CL:家[jia1]
-1	工作	gōngzuò	动、名	to work/(of a machine) to operate/job/work/task/CL:個|个[ge4],份[fen4],項|项[xiang4]
-1	狗	gǒu	名	dog/CL:隻|只[zhi1],條|条[tiao2]
-1	贵	guì	形	Guizhou Province (abbr. for 貴州省|贵州省[Gui4 zhou1 Sheng3])/expensive/(bound form) highly valued; precious/(bound form) noble; of high rank/(prefix) (honorific) your
-1	国	guó	名	country; nation; state/(bound form) national/surname Guo
-1	还	hái	副	still/still in progress/still more/yet/even more/in addition/fairly/passably (good)/as early as/even/also/else
-1	孩子	háizi	名	child
-1	汉语	Hànyǔ	名	Chinese language
-1	汉字	Hànzì	名	Chinese character(s)
-1	好	hǎo	形	good/appropriate; proper/all right!/(before a verb) easy to/(before a verb) good to/(before an adjective for exclamatory effect) so/(verb complement indicating completion)/(of two people) close; on intimate terms/(after a personal pronoun) hello
-2	好	hǎo	副	good/appropriate; proper/all right!/(before a verb) easy to/(before a verb) good to/(before an adjective for exclamatory effect) so/(verb complement indicating completion)/(of two people) close; on intimate terms/(after a personal pronoun) hello
-1	好吃	hǎochī	形	tasty; delicious
-1	好看	hǎokàn	形	good-looking; nice-looking/(of a movie, book, TV show etc) good/in an embarrassing situation
-1	好听	hǎotīng	形	pleasant to hear
-1	好玩儿	hǎowánr	形	erhua variant of 好玩[hao3 wan2]
-1	号	hào	名、量	ordinal number/day of a month/mark/sign/business establishment/size/ship suffix/horn (wind instrument)/bugle call/assumed name/to take a pulse/classifier used to indicate number of people
-1	喝	hē	动	to drink/variant of 嗬[he1]
-1	和1	hé	介、连	(joining two nouns) and; together with; with (Taiwan pr. [han4])/(math.) sum/to make peace/(sports) to draw; to tie/(bound form) harmonious/(bound form) Japan; Japanese/(literary) harmonious (variant of 和[he2])/old variant of 和[he2]/surname He
-1	很	hěn	副	very; quite/(also, often used before an adjective without intensifying its meaning, i.e. as a meaningless syntactic element)
-1	后	hòu	名	back/behind/rear/afterwards/after/later/post-/empress/queen/(archaic) monarch/ruler/surname Hou
-1	回	huí	动	to circle/to go back/to turn around/to answer/to return/to revolve/Hui ethnic group (Chinese Muslims)/time/classifier for acts of a play/section or chapter (of a classic book)/to curve/to return/to revolve/variant of 迴|回[hui2]
-3	回	huí	量	to circle/to go back/to turn around/to answer/to return/to revolve/Hui ethnic group (Chinese Muslims)/time/classifier for acts of a play/section or chapter (of a classic book)/to curve/to return/to revolve/variant of 迴|回[hui2]
-1	会1	huì	动	can; to have the skill; to know how to/to be likely to; to be sure to/to meet; to get together/meeting; gathering/(suffix) union; group; association/(bound form) a moment (Taiwan pr. [hui3])
-1	火车	huǒchē	名	train/CL:列[lie4],節|节[jie2],班[ban1],趟[tang4]
-1	鸡蛋	jīdàn	名	(chicken) egg/hen's egg/CL:個|个[ge4],打[da2]
-1	几	jǐ	代、数	how much/how many/several/a few
-1	家	jiā	名、量	home/family/(polite) my (sister, uncle etc)/classifier for families or businesses/refers to the philosophical schools of pre-Han China/noun suffix for a specialist in some activity, such as a musician or revolutionary, corresponding to English -ist, -er, -ary or -ian/CL:個|个[ge4]/used in 傢伙|家伙[jia1 huo5] and 傢俱|家俱[jia1 ju4]
-3	家	jiā	后缀	home/family/(polite) my (sister, uncle etc)/classifier for families or businesses/refers to the philosophical schools of pre-Han China/noun suffix for a specialist in some activity, such as a musician or revolutionary, corresponding to English -ist, -er, -ary or -ian/CL:個|个[ge4]/used in 傢伙|家伙[jia1 huo5] and 傢俱|家俱[jia1 ju4]
-1	家人	jiārén	名	family member/(old) servant
-1	见	jiàn	动	to see/to meet/to appear (to be sth)/to interview/opinion/view
-1	件	jiàn	量	item/component/classifier for events, things, clothes etc
-1	饺子	jiǎozi	名	dumpling/pot-sticker/CL:個|个[ge4],隻|只[zhi1]
-1	叫	jiào	动	to shout/to call/to order/to ask/to be called/by (indicates agent in the passive mood)/variant of 叫[jiao4]
-1	姐姐	jiějie	名	older sister/CL:個|个[ge4]
-1	今年	jīnnián	名	this year
-1	今天	jīntiān	名	today/the present time; now
-1	九	jiǔ	数	nine/9
-1	觉得	juéde	动	to think that ...; to feel that .../to feel (uncomfortable etc)
-1	开	kāi	动	to open (transitive or intransitive)/(of ships, vehicles, troops etc) to start/to turn on; to put in operation; to operate; to run/to boil/to write out (a prescription, check, invoice etc)/(directional complement) away; off/carat (gold)/abbr. for Kelvin, 開爾文|开尔文[Kai1 er3 wen2]/abbr. for 開本|开本[kai1 ben3], book format
-1	开车	kāichē	动	to drive a car (or train etc)/(slang) to post sexual content online; to make a sexual joke
-1	看	kàn	动	to see; to look at/to read/to watch/to visit; to call on/to consider; to regard as/to look after/to treat (a patient or illness)/to depend on/to feel (that)/(after a verb) to give it a try/to watch out for
-1	看病	kànbìng	动	to visit a doctor/to see a patient
-1	看见	kànjiàn	动	to see; to catch sight of
-1	可以	kěyǐ	动、形	can/may/possible/able to/not bad/pretty good
-1	课	kè	名	subject/course/CL:門|门[men2]/class/lesson/CL:堂[tang2],節|节[jie2]/to levy/tax/form of divination
-1	口	kǒu	名、量	mouth/classifier for things with mouths (people, domestic animals, cannons, wells etc)/classifier for bites or mouthfuls
-1	块	kuài	量	lump; chunk; piece/classifier for pieces of cloth, cake, soap etc/(coll.) classifier for money and currency units
-1	来	lái	动	to come/(used as a substitute for a more specific verb)/hither (directional complement for motion toward the speaker, as in 回來|回来[hui2 lai5])/ever since (as in 自古以來|自古以来[zi4 gu3 yi3 lai2])/for the past (amount of time)/(prefix) the coming ...; the next ... (as in 來世|来世[lai2 shi4])/(between two verbs) in order to/(after a round number) approximately/(used after 得[de2] to indicate possibility, as in 談得來|谈得来[tan2 de5 lai2], or after 不[bu4] to indicate impossibility, as in 吃不來|吃不来[chi1 bu5 lai2])
-1	老师	lǎoshī	名	teacher/CL:個|个[ge4],位[wei4]
-1	了	le	助	(completed action marker)/(modal particle indicating change of state, situation now)/(modal particle intensifying preceding clause)
-1	冷	lěng	形	cold/surname Leng
-1	里	lǐ	名	Li (surname)/li, ancient measure of length, approx. 500 m/neighborhood/ancient administrative unit of 25 families/(Tw) borough, administrative unit between the township 鎮|镇[zhen4] and neighborhood 鄰|邻[lin2] levels/lining/interior/inside/internal/also written 裏|里[li3]/variant of 裡|里[li3]
-1	两1	liǎng	数	two/both/some/a few/tael, unit of weight equal to 50 grams (modern) or 1⁄16 of a catty 斤[jin1] (old)
-1	零	líng	数	zero/nought/zero sign/fractional/fragmentary/odd (of numbers)/(placed between two numbers to indicate a smaller quantity followed by a larger one)/fraction/(in mathematics) remainder (after division)/extra/to wither and fall/to wither
-1	六	liù	数	six/6
-1	妈妈	māma	名	mama/mommy/mother/CL:個|个[ge4],位[wei4]
-1	吗	ma	助	(question particle for "yes-no" questions)
-1	买	mǎi	动	to buy/to purchase
-1	卖	mài	动	to sell/to betray/to spare no effort/to show off or flaunt
-1	忙	máng	形、动	busy/hurriedly/to hurry/to rush
-1	猫	māo	名	cat (CL:隻|只[zhi1])/(dialect) to hide oneself/(loanword) (coll.) modem
-1	没关系	méiguānxi		it doesn't matter
-1	没事	méishì	动	it's not important/it's nothing/never mind/to have nothing to do/to be free/to be all right (out of danger or trouble)
-1	没有	méiyǒu	动、副	haven't/hasn't/doesn't exist/to not have/to not be
-1	妹妹	mèimei	名	younger sister/young woman/CL:個|个[ge4]
-1	们	men	后缀	plural marker for pronouns, and nouns referring to individuals
-1	米饭	mǐfàn	名	(cooked) rice
-1	面包	miànbāo	名	bread/CL:片[pian4],塊|块[kuai4]
-1	面条儿	miàntiáor	名	erhua variant of 麵條|面条[mian4 tiao2]
-1	明年	míngnián	名	next year
-1	明天	míngtiān	名	tomorrow
-1	名字	míngzi	名	name (of a person or thing)/CL:個|个[ge4]
-1	哪	nǎ	代	how/which
-1	哪个	nǎge	代	which/who
-1	哪里	nǎlǐ	代	where?/somewhere/anywhere/wherever/nowhere (negative answer to question)/humble expression denying compliment/where?/somewhere/anywhere/wherever/nowhere (negative answer to question)/humble expression denying compliment/also written 哪裡|哪里
-1	哪儿	nǎr	代	where?/wherever; anywhere; somewhere/(used in rhetorical questions) how can ...?; how could ...?
-1	哪些	nǎxiē	代	which ones?/who?/what?
-1	那	nà	代	(specifier) that; the; those (colloquial pr. [nei4])/(pronoun) that (referring to persons, things or situations)/then (in that case)
-2	那	nà	连	(specifier) that; the; those (colloquial pr. [nei4])/(pronoun) that (referring to persons, things or situations)/then (in that case)
-1	那边	nàbiān	代	over there/yonder
-1	那个	nàge	代	that one/that thing/that (as opposed to this)/(used before a verb or adjective for emphasis)/(used to humorously or indirectly refer to sth embarrassing, funny etc, or when one can't think of the right word)/(used in speech as a filler, similar to "umm", "you know" etc)/(euph.) menstruation/sex/also pr. [nei4 ge5]
-1	那里	nàlǐ	代	there; that place
-1	那儿	nàr	代	there
-1	那些	nàxiē	代	those
-1	男	nán	形	(bound form) male/baron, the lowest of the five ranks of nobility 五等爵位[wu3 deng3 jue2 wei4]
-1	男朋友	nánpéngyou	名	boyfriend
-1	呢	ne	助	(sentence-final particle) used in questions to link back to prior discourse or context ("what about...?", "and...?")/(sentence-final particle) indicating that a state or situation still holds/(discourse particle) used to mark a slight pause or emphasis in speech
-1	能	néng	动	can/to be able to/might possibly/ability/(physics) energy/surname Neng
-1	你	nǐ	代	you (Note: In Taiwan, 妳 is used to address females, but in mainland China, it is not commonly used. Instead, 你 is used to address both males and females.)/you (informal, as opposed to courteous 您[nin2])
-1	你好	nǐhǎo		hello; hi
-1	你们	nǐmen	代	you (plural)
-1	年	nián	名、量	grain/harvest (old)/variant of 年[nian2]/surname Nian/year/CL:個|个[ge4]
-1	您	nín	代	you (courteous, as opposed to informal 你[ni3])
-1	牛奶	niúnǎi	名	cow's milk/CL:瓶[ping2],杯[bei1]
-1	女	nǚ	形	female/woman/daughter
-1	女儿	nǚ’ér	名	daughter
-1	女朋友	nǚpéngyou	名	girlfriend
-1	女士	nǚshì	名	lady/madam/CL:個|个[ge4],位[wei4]/Miss/Ms
-1	朋友	péngyou	名	friend/CL:個|个[ge4],位[wei4]
-1	便宜	piányi	形	cheap; inexpensive/a petty advantage/to let sb off lightly
-1	漂亮	piàoliang	形	pretty; beautiful
-1	苹果	píngguǒ	名	Apple (American tech company)/apple/CL:個|个[ge4],顆|颗[ke1]
-1	七	qī	数	seven/7
-1	起床	qǐchuáng	动	to get out of bed; to get up
-1	千	qiān	数	thousand/used in 鞦韆|秋千[qiu1 qian1]
-1	前	qián	名	front/forward/ahead/first/top (followed by a number)/future/ago/before/BC (e.g. 前293年)/former/formerly
-1	钱	qián	名	coin/money/CL:筆|笔[bi3]/unit of weight, one tenth of a tael 兩|两[liang3]/surname Qian
-1	请	qǐng	动	to ask/to invite/please (do sth)/to treat (to a meal etc)/to request
-1	请问	qǐngwèn	动	Excuse me, may I ask...?
-1	去	qù	动	to go/to go to (a place)/(of a time etc) last/just passed/to send/to remove/to get rid of/to reduce/to be apart from in space or time/to die (euphemism)/to play (a part)/(when used either before or after a verb) to go in order to do sth/(after a verb of motion indicates movement away from the speaker)/(used after certain verbs to indicate detachment or separation)
-1	去年	qùnián	名	last year
-1	热	rè	形	to warm up/to heat up/hot (of weather)/heat/fervent
-1	人	rén	名	person; people/CL:個|个[ge4],位[wei4]
-1	认识	rènshi	动	to know/to recognize/to be familiar with/to get acquainted with sb/knowledge/understanding/awareness/cognition
-1	日	rì	量	abbr. for 日本[Ri4 ben3], Japan/sun/day/date, day of the month
-1	三	sān	数	surname San/three/3
-1	商店	shāngdiàn	名	store; shop/CL:家[jia1],個|个[ge4]
-1	上	shàng	名、动	(bound form) up; upper; above; previous/first (of multiple parts)/to climb; to get onto; to go up/to attend (class or university)/(directional complement) up/(noun suffix) on; above
-1	上班	shàngbān	动	to go to work/to be on duty/to start work/to go to the office
-1	上课	shàngkè	动	to go to class/to attend class/to go to teach a class
-1	上午	shàngwǔ	名	morning/CL:個|个[ge4]
-1	上学	shàngxué	动	to go to school/to attend school
-1	少	shǎo	形、动	few/less/to lack/to be missing/to stop (doing sth)/seldom
-1	谁	shéi/shuí	代	who/also pr. [shui2]
-1	什么	shénme	代	what?/something; anything
-1	生病	shēngbìng	动	to fall ill
-1	十	shí	数	ten/10
-1	时候	shíhou	名	time/length of time/moment/period
-1	时间	shíjiān	名	(concept of) time/(duration of) time/(point in) time
-1	事	shì	名	matter/thing/item/work/affair/CL:件[jian4],樁|桩[zhuang1],回[hui2]
-1	是	shì	动	to be (followed by substantives only)/correct; right; true/(respectful acknowledgement of a command) very well/(adverb for emphatic assertion)/variant of 是[shi4]
-1	手机	shǒujī	名	cell phone; mobile phone/CL:部[bu4],臺|台[tai2]
-1	书	shū	名	abbr. for 書經|书经[Shu1 jing1]/book/letter/document/CL:本[ben3],冊|册[ce4],部[bu4]/to write
-1	书店	shūdiàn	名	bookstore/CL:家[jia1]
-1	水	shuǐ	名	surname Shui/water/(after a name) ... River/to swim (used mostly in 會水|会水[hui4 shui3] and 水性[shui3 xing4])/(coll.) lacking in substance; shoddy/(bound form) additional cost; extra income/classifier for washings of a garment
-1	水果	shuǐguǒ	名	fruit/CL:個|个[ge4]
-1	睡	shuì	动	to sleep/to lie down
-1	睡觉	shuìjiào	动	to go to bed/to sleep
-1	说	shuō	动	to speak; to talk; to say/to explain; to comment/to scold; to tell off/(bound form) theory; doctrine/variant of 說|说[shuo1]
-1	说话	shuōhuà	动	to speak/to say/to talk/to gossip/to tell stories/talk/word
-1	四	sì	数	four/4
-1	岁	suì	量	classifier for years (of age)/year/year (of crop harvests)/variant of 歲|岁[sui4], year/years old
-1	他	tā	代	(third-person singular) (since the early 20th century, usu. male) he; him; his/(bound form) other; another; some other (as in 他日[ta1 ri4] and 他人[ta1 ren2])
-1	它	tā	代	it/it (pronoun for an animal)
-1	她	tā	代	she
-1	他们	tāmen	代	they; them
-1	它们	tāmen	代	they; them
-1	她们	tāmen	代	they; them (females)
-1	太	tài	副	highest/greatest/too (much)/very/extremely
-1	天	tiān	名、量	day/sky/heaven
-1	天气	tiānqì	名	weather
-1	听	tīng	动	to listen to; to hear/to heed; to obey/a can (loanword from English "tin")/classifier for canned beverages/to let be; to allow (Taiwan pr. [ting4])/(literary) to administer; to deal with (Taiwan pr. [ting4])
-1	听见	tīngjiàn	动	to hear
-1	同学	tóngxué	名	to study at the same school/fellow student/classmate/CL:位[wei4],個|个[ge4]
-1	外	wài	名	outside/in addition/foreign/external
-1	外边	wàibian	名	outside/outer surface/abroad/place other than one's home
-1	玩	wán	动	to play/to have fun/to trifle with/toy/sth used for amusement/curio or antique (Taiwan pr. [wan4])/to keep sth for entertainment/variant of 玩[wan2]/Taiwan pr. [wan4]
-1	晚	wǎn	形	evening/night/late
-1	晚饭	wǎnfàn	名	evening meal/dinner/supper/CL:份[fen4],頓|顿[dun4],次[ci4],餐[can1]
-1	晚上	wǎnshang	名	evening/night/CL:個|个[ge4]/in the evening
-1	喂1	wèi	叹	hey/to feed (an animal, baby, invalid etc)/to feed/variant of 餵|喂[wei4]
-1	问	wèn	动	to ask; to inquire
-1	问题	wèntí	名	question/problem/issue/topic/CL:個|个[ge4]
-1	我	wǒ	代	I; me; my
-1	我们	wǒmen	代	we; us; ourselves; our
-1	五	wǔ	数	five/5
-1	午饭	wǔfàn	名	lunch/CL:份[fen4],頓|顿[dun4],次[ci4],餐[can1]
-1	喜欢	xǐhuan	动	to like; to be fond of
-1	下	xià	名、动、量	down/downwards/below/lower/later/next (week etc)/second (of two parts)/to decline/to go down/to arrive at (a decision, conclusion etc)/measure word to show the frequency of an action
-1	下雨	xiàyǔ		to rain
-1	下班	xiàbān	动	to finish work; to get off work/next service (train, bus etc)
-1	下课	xiàkè	动	to finish class/to get out of class/(fig.) (esp. of a sports coach) to be dismissed/to be fired
-1	下午	xiàwǔ	名	afternoon/CL:個|个[ge4]/p.m.
-1	先生	xiānsheng	名	teacher/gentleman; sir; mister (Mr.)/husband/(dialect) doctor/CL:位[wei4]
-1	现在	xiànzài	名	now; at present; currently
-1	想	xiǎng	动	to think (about)/to think of; to devise/to think (that); to believe (that)/to desire; to want (to)/to miss (feel wistful about the absence of)
-1	小	xiǎo	形、前缀	small/tiny/few/young
-1	小朋友	xiǎopéngyǒu	名	child; kid (used to refer to a child, or by an adult to address a child, or, in Taiwan, to refer to sb's own child)/CL:個|个[ge4]
-1	小时	xiǎoshí	名	hour/CL:個|个[ge4]
-1	小学	xiǎoxué	名	elementary school; primary school
-1	小学生	xiǎoxuéshēng	名	primary school student/schoolchild/CL:個|个[ge4],名[ming2]/(fig.) beginner
-1	些	xiē	量	classifier indicating a small amount or small number greater than 1: some, a few, several
-1	写	xiě	动	to write
-1	谢谢	xièxie	动	to thank/thanks/thank you
-1	新	xīn	形	abbr. for Xinjiang 新疆[Xin1 jiang1]/abbr. for Singapore 新加坡[Xin1 jia1 po1]/surname Xin/new/newly/meso- (chemistry)
-1	星期	xīngqī	名	week/CL:個|个[ge4]/day of the week/Sunday
-1	星期日	xīngqīrì	名	Sunday
-1	星期天	xīngqītiān	名	Sunday
-1	休息	xiūxi	动	rest/to rest
-1	学	xué	动	to learn/to study/to imitate/science/-ology
-1	学生	xuéshēng	名	student/schoolchild
-1	学习	xuéxí	动	to learn/to study
-1	学校	xuéxiào	名	school/CL:所[suo3]
-1	雪	xuě	名	snow/CL:場|场[chang2]/(literary) to wipe away (a humiliation etc)/surname Xue
-1	要	yào	动	to want; to need; to ask for/will; shall; about to/need to; should/if (same as 要是[yao4 shi5])/(bound form) important
-1	也	yě	副	also; too; as well; (not ...) either/(used after a verbal or nominal expression X to indicate that X is an extreme or unexpected case) even (X)/(literary) particle having functions similar to 啊[a5]/surname Ye
-1	一	yī	数	one/single/a (article)/as soon as/entire; whole; all; throughout/"one" radical in Chinese characters (Kangxi radical 1)/also pr. [yao1] for greater clarity when spelling out numbers digit by digit
-1	衣服	yīfu	名	clothes/CL:件[jian4],套[tao4]
-1	医生	yīshēng	名	doctor/CL:個|个[ge4],位[wei4],名[ming2]
-1	医院	yīyuàn	名	hospital/CL:所[suo3],家[jia1],座[zuo4]
-1	一半	yíbàn	数	half
-1	一下	yíxià	数量	(after a verb) a bit; a little (indicating brief duration, or softening the tone, or suggesting giving sth a try)/all at once; suddenly
-1	椅子	yǐzi	名	chair/CL:把[ba3],張|张[zhang1]
-1	一点儿	yìdiǎnr	数量	erhua variant of 一點|一点[yi1 dian3]
-1	一些	yìxiē	数量	some; a few; a little; (following an adjective) slightly ...er
-1	有	yǒu	动	to have; there is/(bound form) having; with; -ful; -ed; -al (as in 有意[you3 yi4] intentional)
-1	有的	yǒude	代	(there are) some (who are...)/some (exist)
-1	有点儿	yǒudiǎnr	副	slightly/a little/somewhat
-1	有些	yǒuxiē	代	some/somewhat
-3	有些	yǒuxiē	副	some/somewhat
-1	雨	yǔ	名	rain/CL:陣|阵[zhen4],場|场[chang2]
-1	元	yuán	量	currency unit (esp. Chinese yuan)/(bound form) first; original; primary/(bound form) basic; fundamental/(bound form) constituent; part/(prefix) meta-/(math.) argument; variable/era (of a reign)/(Tw) (geology) eon/surname Yuan/Yuan dynasty (1279–1368)
-1	月	yuè	名	moon/month/monthly/CL:個|个[ge4],輪|轮[lun2]
-1	再	zài	副	again; once more; re-/further; beyond this point of time/(before an adjective) more/then (after sth, and not until then)/no matter how ... (followed by an adjective or verb, and then (usually) 也[ye3] or 都[dou1] for emphasis)/(used to introduce additional information, as in 再則|再则[zai4 ze2], 再就是[zai4 jiu4 shi4] etc)/(literary) to reappear; to reoccur
-1	在	zài	动、介、副	to exist; to be alive/(of sb or sth) to be (located) at/(used before a verb to indicate an action in progress)
-1	再见	zàijiàn	动	goodbye/see you again later
-1	早	zǎo	形	early/morning/Good morning!/long ago/prematurely
-1	早饭	zǎofàn	名	breakfast/CL:份[fen4],頓|顿[dun4],次[ci4],餐[can1]
-1	早上	zǎoshang	名	early morning/CL:個|个[ge4]
-1	怎么	zěnme	代	how?/what?/why?/variant of 怎麼|怎么[zen3 me5]
-1	怎么样	zěnmeyàng	代	how?/how about?/how was it?/how are things?
-1	找	zhǎo	动	to try to find/to look for/to call on sb/to find/to seek/to return/to give change
-1	这	zhè	代	(pronoun) this; these/(bound form) this; the (followed by a noun)/(bound form) this; these (followed by a classifier) (in this sense, commonly pr. [zhei4], esp. in Beijing)
-1	这边	zhèbiān	代	this side/here
-1	这个	zhège	代	(pronoun) this/(adjective) this
-1	这里	zhèlǐ	代	here/variant of 這裡|这里[zhe4 li3]
-1	这儿	zhèr	代	here
-1	这些	zhèxiē	代	these
-1	真	zhēn	副	really/truly/indeed/real/true/genuine
-1	正在	zhèngzài	副	to be in the process of (doing sth); to be currently ...-ing
-1	只	zhī	量	classifier for birds and certain animals, one of a pair, some utensils, vessels etc/grain that has begun to ripen/variant of 隻|只[zhi1]
-1	知道	zhīdào	动	to know; to become aware of/also pr. [zhi1dao5]
-1	中国	Zhōngguó	名	China
-1	中文	Zhōngwén	名	Chinese language
-1	中午	zhōngwǔ	名	noon/midday/CL:個|个[ge4]
-1	中学	zhōngxué	名	middle school
-1	中学生	zhōngxuéshēng	名	middle-school student/high school student
-1	住	zhù	动	to live; to reside; to stay/to stop; to cease/(result complement indicating firmness or a stable achieved state)
-1	桌子	zhuōzi	名	table/desk/CL:張|张[zhang1],套[tao4]
-1	字	zì	名	letter/symbol/character/word/CL:個|个[ge4]/courtesy or style name traditionally given to males aged 20 in dynastic China
-1	昨天	zuótiān	名	yesterday
-1	坐	zuò	动	surname Zuo/to sit/to take a seat/to take (a bus, airplane etc)/to bear fruit/variant of 座[zuo4]
-1	做	zuò	动	to make; to produce/to write; to compose/to do; to engage in; to hold (a party etc)/(of a person) to be (an intermediary, a good student etc); to become (husband and wife, friends etc)/(of a thing) to serve as; to be used for/to assume (an air or manner)
-1	做饭	zuòfàn		to prepare a meal/to cook
-2	啊	a	助	modal particle ending sentence, showing affirmation, approval, or consent
-2	爱好	àihào	动、名	to like; to be fond of; to take pleasure in; to be keen on/interest; hobby/CL:個|个[ge4]
-2	白色	báisè	名	white/fig. reactionary/anti-communist
-2	班	bān	名	surname Ban/team; class; grade/(military) squad/work shift/CL:個|个[ge4]/classifier for groups of people and scheduled transport vehicles
-2	帮	bāng	动	old variant of 幫|帮[bang1]/to help/to assist/to support/for sb (i.e. as a help)/hired (as worker)/side (of pail, boat etc)/outer layer/upper (of a shoe)/group/gang/clique/party/secret society
-2	帮忙	bāngmáng	动	to help/to lend a hand/to do a favor/to do a good turn
-2	包	bāo	动、名、量	surname Bao/to cover/to wrap/to hold/to include/to take charge of/to contract (to or for)/package/wrapper/container/bag/to hold or embrace/bundle/packet/CL:個|个[ge4],隻|只[zhi1]
-2	本子	běnzi	名	book/notebook/Japanese-style self-published comic (esp. an erotic one), aka "dōjinshi"/CL:本[ben3]/edition
-2	比	bǐ	动、介	Belgium/Belgian/abbr. for 比利時|比利时[Bi3 li4 shi2]/to compare/(followed by a noun and adjective) more {adj.} than {noun}/ratio/to gesture/(Taiwan pr. [bi4] in some compounds derived from Classical Chinese)
-2	笔	bǐ	名	writing brush; writing implement (pen, pencil etc) (CL:支[zhi1],枝[zhi1])/brushstroke; stroke (in painting or calligraphy)/(bound form) style of writing; literary manner; technique of brushwork/(classifier) stroke of a Chinese character/(classifier) sum of money; financial transaction; piece of business/(literary) to write (with a brush or pen)
-2	别1	bié	副	surname Bie/to leave; to part (from)/(literary) to differentiate; to distinguish/(dialect) to turn away; to turn aside; to avert (one's face, gaze etc)/(bound form) other; another; different/don't ...!/to fasten with a pin or clip/to stick in; to insert (in order to hinder movement)/(noun suffix) category (as in 性別|性别[xing4 bie2], 派別|派别[pai4 bie2])
-2	不错	búcuò	形	correct/right/not bad/pretty good
-2	不好意思	bùhǎoyìsi		to feel embarrassed/to find it embarrassing/to be sorry (for inconveniencing sb)
-2	长	cháng	形	long/(bound form) length/(bound form) strong point; forte/(bound form) to be good at/(literary) surplus; spare (Taiwan pr. [zhang4])
-2	车站	chēzhàn	名	rail station/bus stop/CL:處|处[chu4],個|个[ge4]
-2	出	chū	动	to go out; to come out/to arise; to occur/to produce; to yield/to go beyond; to exceed/(used after a verb to indicate an outward direction or a positive result)/classifier for dramas, plays, operas etc/variant of 出[chu1] (classifier for plays or chapters of classical novels)
-2	出国	chūguó	动	to go abroad; to leave the country
-2	出来	chūlái	动	to come out/to appear/to arise
-2	出门	chūmén	动	to go out/to leave home/to go on a journey/away from home/(of a woman) to get married
-2	出去	chūqù	动	to go out
-2	床	chuáng	名	bed; couch (furniture that one can lie down on) (CL:張|张[zhang1])/bed; bottom (of rivers, oceans, gardens etc)/frame; chassis/classifier for blankets, quilts etc/variant of 床[chuang2]
-2	词	cí	名	old variant of 詞|词[ci2]/word/statement; speech; lyrics/a form of lyric poetry, flourishing in the Song dynasty 宋朝[Song4 chao2] (CL:首[shou3])
-2	次	cì	量	next in sequence/second/the second (day, time etc)/secondary/vice-/sub-/infra-/inferior quality/substandard/order/sequence/hypo- (chemistry)/classifier for enumerated events: time
-2	从	cóng	介	from; through; via/(bound form) to follow/(bound form) to obey/(bound form) to engage in (an activity)/(used before a negative) ever/(bound form) (Taiwan pr. [zong4]) retainer; attendant/(bound form) (Taiwan pr. [zong4]) assistant; auxiliary; subordinate/(bound form) (Taiwan pr. [zong4]) related by common paternal grandfather or earlier ancestor/surname Cong/variant of 從|从[cong2]
-2	从小	cóngxiǎo	副	from childhood; from a young age
-2	错	cuò	形	mistake/wrong/bad/interlocking/complex/to grind/to polish/to alternate/to stagger/to miss/to let slip/to evade/to inlay with gold or silver/surname Cuo
-2	打1	dǎ	动	a semantically light, transitive verb that is combined with various grammatical objects to form compound verbs and verb-object phrases with a diverse range of meanings (e.g. 打傘|打伞[da3 san3] "to hold an umbrella", 打電話|打电话[da3 dian4 hua4] "to make a phone call", 打針|打针[da3 zhen1] "to get an injection", 打手套[da3 shou3 tao4] "to knit gloves", 打氣|打气[da3 qi4] "to inflate")/to hit; to strike/to fight/(coll.) from; since (as in 打那以後|打那以后[da3 na4 yi3 hou4] "since then")
-2	打车	dǎchē	动	to take a taxi (in town)/to hitch a lift
-2	打开	dǎkāi	动	to open/to show (a ticket)/to turn on/to switch on
-2	但	dàn	连	but; yet; however; still/merely; only; just
-2	但是	dànshì	连	but; however
-2	得	de	助	structural particle: used after a verb (or adjective as main verb), linking it to following phrase indicating effect, degree, possibility etc
-2	地	de	助	-ly/structural particle: used before a verb or adjective, linking it to preceding modifying adverbial adjunct
-2	等1	děng	动	to wait for; to await/by the time; when; till/and so on; etc.; et al./(bound form) class; rank; grade/(bound form) equal to; same as/(used to end an enumeration)/(literary) (plural suffix attached to a personal pronoun or noun)
-2	地铁	dìtiě	名	underground railway; subway/subway train
-2	点2	diǎn	动	to touch briefly; to tap/to mark with a dot; to check off (on a list)/to order (food etc); to select/to mention; to bring up (a topic or person)/to hint at; to imply/to administer (eye medicine etc) in drops/to light (a fire, a lamp etc); to ignite/to nod (one's head) in agreement; to beckon by moving (one's hand) up and down/point; dot; spot; speck/dot stroke in Chinese characters/(math.) decimal point/point in time or space/(after a number) o'clock/a small amount; a bit; (after a verb or adjective) a bit more/classifier for small amounts
-2	懂	dǒng	动	to understand/to comprehend
-2	动	dòng	动	(of sth) to move/to set in movement/to displace/to touch/to make use of/to stir (emotions)/to alter/abbr. for 動詞|动词[dong4 ci2], verb
-2	饭馆	fànguǎn	名	restaurant/CL:家[jia1]
-2	飞	fēi	动	to fly
-2	高	gāo	形、名	high/tall/above average/loud/your (honorific)/surname Gao
-2	高中	gāozhōng	名	senior high school/abbr. for 高級中學|高级中学[gao1 ji2 zhong1 xue2]
-2	告诉	gàosu	动	to tell; to inform; to let know
-2	个子	gèzi	名	stature; height; size (of a person or object)/(agriculture) bundle of cereal stalks tied together
-2	跟	gēn	介、连	heel/to follow closely/to go with/(of a woman) to marry sb/with/compared with/to/towards/and (joining two nouns)
-2	公交车	gōngjiāochē	名	public transport vehicle/town bus/CL:輛|辆[liang4]
-2	过	guò	动	to cross/to go over/to pass (time)/to celebrate (a holiday)/to live/to get along/excessively/too-
-2	过来	guòlái	动	to come over/to manage/to handle/to be able to take care of
-2	过年	guònián	动	to celebrate the Chinese New Year
-2	过去1	guòqù	动	(in the) past; former; previous/to go over; to pass by
-2	过	guo	助	(experienced action marker)
-2	还是	háishi	副、连	still (as before)/had better/unexpectedly/or
-2	黑色	hēisè	名	black
-2	红茶	hóngchá	名	black tea/CL:杯[bei1],壺|壶[hu2]
-2	红色	hóngsè	名	red (color)/revolutionary
-2	后面	hòumiàn	名	the back; the rear; the last bit/behind; near the end; at the back/later; afterwards
-2	花1	huā	动	flower/blossom/CL:朵[duo3],支[zhi1],束[shu4],把[ba3],盆[pen2],簇[cu4]/fancy pattern/florid/to spend (money, time)/(coll.) lecherous/lustful/old variant of 花[hua1]/surname Hua/variant of 花[hua1]/flower/blossom/also pr. [wei3]
-2	花2	huā	名	flower/blossom/CL:朵[duo3],支[zhi1],束[shu4],把[ba3],盆[pen2],簇[cu4]/fancy pattern/florid/to spend (money, time)/(coll.) lecherous/lustful/old variant of 花[hua1]/surname Hua/variant of 花[hua1]/flower/blossom/also pr. [wei3]
-2	画	huà	动、名	to draw; to paint/picture; painting (CL:幅[fu2],張|张[zhang1])/to draw (a line) (variant of 劃|划[hua4])/stroke of a Chinese character (variant of 劃|划[hua4])/(calligraphy) horizontal stroke (variant of 劃|划[hua4])
-2	坏	huài	形	bad/spoiled/broken/to break down/(suffix) to the utmost
-2	回来	huílái	动	to return; to come back
-2	回去	huíqù	动	to return/to go back
-2	机场	jīchǎng	名	airport; airfield/(slang) service provider for Shadowsocks or similar software for circumventing Internet censorship/CL:家[jia1],處|处[chu4]
-2	机票	jīpiào	名	plane ticket; airline ticket/CL:張|张[zhang1]
-2	记得	jìde	动	to remember
-2	间	jiān	量	between/among/within a definite time or space/room/section of a room or lateral space between two pairs of pillars/classifier for rooms
-2	教	jiāo	动	to teach; to instruct
-2	教室	jiàoshì	名	classroom/CL:間|间[jian1]
-2	介绍	jièshào	动	to introduce (sb to sb)/to give a presentation/to present (sb for a job etc)/introduction
-2	进	jìn	动	to go forward/to advance/to go in/to enter/to put in/to submit/to take in/to admit/(math.) base of a number system/classifier for sections in a building or residential compound
-2	近	jìn	形	near/close to/approximately
-2	进来	jìnlái	动	to come in
-2	进去	jìnqù	动	to go in
-2	经常	jīngcháng	副	frequently; constantly; regularly; often/day-to-day; everyday; daily
-2	酒店	jiǔdiàn	名	wine shop/pub (public house)/hotel/restaurant/(Tw) hostess club
-2	就	jiù	副	(after a suppositional clause) in that case; then/(after a clause of action) as soon as; immediately after/(same as 就是[jiu4 shi4]) merely; nothing else but; simply; just; precisely; exactly/only; as little as/as much as; as many as/to approach; to move towards/to undertake; to engage in/(often followed by 著|着[zhe5]) taking advantage of/(of food) to go with/with regard to; concerning/(pattern: 就[jiu4] ... 也[ye3] ...) even if ... still .../(pattern: 不[bu4] ... 就[jiu4] ...) if not ... then must be ...
-2	咖啡	kāfēi	名	(loanword) coffee/CL:杯[bei1]
-2	开始	kāishǐ	动、名	to begin/beginning/to start/initial/CL:個|个[ge4]
-2	开学	kāixué	动	(of a student) to start school/(of a semester) to begin/(old) to found a school/the start of a new term
-2	考	kǎo	动	to beat/to hit/variant of 考[kao3]/to inspect/to test/to take an exam/to check/to verify/to test/to examine/to take an exam/to take an entrance exam for/deceased father
-2	考试	kǎoshì	动、名	to take an exam/exam/CL:次[ci4]
-2	可能	kěnéng	形、名、动	might (happen)/possible/probable/possibility/probability/maybe/perhaps/CL:個|个[ge4]
-2	裤子	kùzi	名	trousers/pants/CL:條|条[tiao2]/variant of 褲子|裤子, trousers/pants
-2	快	kuài	形、副	rapid/quick/speed/rate/soon/almost/to make haste/clever/sharp (of knives or wits)/forthright/plainspoken/gratified/pleased/pleasant
-2	快乐	kuàilè	形	happy; joyful
-2	快要	kuàiyào	副	nearly at the point of (doing sth); about to (do sth)
-2	篮球	lánqiú	名	basketball/CL:個|个[ge4],隻|只[zhi1]
-2	累	lèi	形、动	tired/weary/to strain/to wear out/to work hard
-2	离	lí	动	surname Li/to leave/to part from/to be away from/(in giving distances) from/without (sth)/independent of/one of the Eight Trigrams 八卦[ba1 gua4], symbolizing fire/☲
-2	里面	lǐmiàn	名	inside/interior/also pr. [li3 mian5]/variant of 裡面|里面[li3 mian4]
-2	楼	lóu	名	house with more than 1 story/storied building/floor/CL:層|层[ceng2],座[zuo4],棟|栋[dong4]/surname Lou
-2	路	lù	名	road (CL:條|条[tiao2])/journey/route/line (bus etc)/sort; kind/surname Lu
-2	路上	lùshang	名	on the road/on the way; en route
-2	旅游	lǚyóu	动	trip/journey/tourism/travel/tour/to travel
-2	绿茶	lǜchá	名	green tea/(slang) (of a girl) seemingly innocent and charming but actually calculating and manipulative; a girl who has these qualities
-2	绿色	lǜsè	名	green
-2	慢	màn	形	slow
-2	没意思	méiyìsi		boring/of no interest
-2	每	měi	代	each/every
-2	门	mén	名	gate/door/CL:扇[shan4]/gateway/doorway/CL:個|个[ge4]/opening/valve/switch/way to do something/knack/family/house/(religious) sect/school (of thought)/class/category/phylum or division (taxonomy)/classifier for large guns/classifier for lessons, subjects, branches of technology/(suffix) -gate (i.e. scandal; derived from Watergate)/surname Men
-2	门口	ménkǒu	名	doorway/gate/CL:個|个[ge4]
-2	门票	ménpiào	名	ticket (for theater, cinema etc)
-2	面1	miàn	后缀	face/side/surface/aspect/top/classifier for objects with flat surfaces such as drums, mirrors, flags etc/flour/noodles/(of food) soft (not crunchy)/(slang) (of a person) ineffectual/spineless/variant of 麵|面[mian4]
-2	名	míng	名、量	name/noun (part of speech)/place (e.g. among winners)/famous/classifier for people
-2	拿	ná	动	old variant of 拿[na2]/to hold/to seize/to catch/to apprehend/to take/(used in the same way as 把[ba3]: to mark the following noun as a direct object)/variant of 拿[na2]
-2	那么	nàme	代、连	like that; in that way; to that extent/(before a number) ... or so; about .../then; in that case/variant of 那麼|那么[na4 me5]
-2	那样	nàyàng	代	that kind/that sort
-2	奶茶	nǎichá	名	milk tea
-2	奶奶	nǎinai	名	(informal) grandma (paternal grandmother)/(respectful) mistress of the house/CL:位[wei4]/(coll.) boobies/breasts
-2	男孩儿	nánháir	名	erhua form of 男孩[nan2 hai2]
-2	鸟	niǎo	名	bird/CL:隻|只[zhi1],群[qun2]/"bird" radical in Chinese characters (Kangxi radical 196)/(dialect) to pay attention to/(intensifier) damned/goddamn
-2	女孩儿	nǚháir	名	erhua form of 女孩[nu : 3 hai2]
-2	旁边	pángbiān	名	side; adjacent place
-2	跑	pǎo	动	to run/to run away/to escape/to run around (on errands etc)/(of a gas or liquid) to leak or evaporate/(verb complement) away/off
-2	跑步	pǎobù	动	to run/to jog/(military) to march at the double
-2	票	piào	名	ticket/ballot/banknote/CL:張|张[zhang1]/person held for ransom/amateur performance of Chinese opera/classifier for groups, batches, business transactions
-2	妻子	qīzi	名	wife
-2	起来	qǐlái	动	to stand up; to get up/also pr. [qi3lai2]
-2	前面	qiánmiàn	名	ahead/in front/preceding/above/also pr. [qian2 mian5]
-2	晴	qíng	形	clear/fine (weather)
-2	球	qiú	名	ball used for playing games (variant of 球[qiu2])/ball/sphere/globe/CL:個|个[ge4]/ball game/match/CL:場|场[chang3]
-2	让	ràng	动	to yield/to permit/to let sb do sth/to have sb do sth/to make sb (feel sad etc)/by (indicates the agent in a passive clause, like 被[bei4])
-2	肉	ròu	名	meat/flesh/pulp (of a fruit)/(coll.) (of a fruit) squashy/(of a person) flabby/irresolute/Kangxi radical 130
-2	商场	shāngchǎng	名	shopping mall/shopping center/department store/emporium/CL:家[jia1]/the business world
-2	上来	shànglái	动	to come up/to approach/(verb complement indicating success)
-2	上面	shàngmiàn	名	on top of/above-mentioned/also pr. [shang4 mian5]
-2	上去	shàngqù	动	to go up
-2	上网	shàngwǎng	动	to go online/to connect to the Internet/(of a document etc) to be uploaded to the Internet/(tennis, volleyball etc) to move in close to the net
-2	身体	shēntǐ	名	the body/one's health
-2	生日	shēngrì	名	birthday/CL:個|个[ge4]
-2	时	shí	名	o'clock/time/when/hour/season/period/old variant of 時|时[shi2]/surname Shi
-2	事情	shìqing	名	affair; matter; thing; business/CL:件[jian4],樁|桩[zhuang1]
-2	手	shǒu	名	hand/(formal) to hold/person engaged in certain types of work/person skilled in certain types of work/personal(ly)/convenient/classifier for skill/CL:雙|双[shuang1],隻|只[zhi1]
-2	手表	shǒubiǎo	名	wristwatch/CL:塊|块[kuai4],隻|只[zhi1],個|个[ge4]
-2	书包	shūbāo	名	schoolbag/satchel/bookbag/CL:個|个[ge4],隻|只[zhi1]
-2	舒服	shūfu	形	comfortable/feeling well
-2	送	sòng	动	to send; to deliver; to transmit/to give (as a present)/to see (sb) off/to accompany; to go along with
-2	虽然	suīrán	连	although; even though (often used correlatively with 可是[ke3 shi4] or 但是[dan4 shi4] etc)
-2	所以	suǒyǐ	连	therefore/as a result/so/the reason why
-2	疼	téng	形	(it) hurts; sore/to love dearly
-2	踢	tī	动	to kick/to play (e.g. soccer)/(slang) butch (in a lesbian relationship)
-2	题	tí	名	surname Ti/topic/problem for discussion/exam question/subject/to inscribe/to mention/CL:個|个[ge4],道[dao4]
-2	条	tiáo	量	strip/item/article/clause (of law or treaty)/classifier for long thin things (ribbon, river, road, trousers etc)
-2	跳舞	tiàowǔ	动	to dance
-2	头	tóu	名	head/hair style/the top/end/beginning or end/a stub/remnant/chief/boss/side/aspect/first/leading/classifier for pigs or livestock/CL:個|个[ge4]
-3	头	tóu	量	head/hair style/the top/end/beginning or end/a stub/remnant/chief/boss/side/aspect/first/leading/classifier for pigs or livestock/CL:個|个[ge4]
-2	外国	wàiguó	名	foreign country
-2	外面	wàimiàn	名	outside (also pr. [wai4 mian5] for this sense)/surface/exterior/external appearance
-2	完	wán	动	to finish/to be over/whole/complete/entire
-2	万	wàn	数	surname Wan/ten thousand/a great number
-2	往	wǎng	动、介	old variant of 往[wang3]/to go (in a direction)/to/towards/(of a train) bound for/past/previous
-2	网上	wǎngshang	名	online
-2	忘	wàng	动	to forget/to overlook/to neglect
-2	位	wèi	量	position/location/place/seat/classifier for people (honorific)/classifier for binary bits (e.g. 十六位 16-bit or 2 bytes)/(physics) potential
-2	为什么	wèishénme		why?/for what reason?
-2	希望	xīwàng	动	to hope/a hope; a wish (CL:個|个[ge4])
-2	洗	xǐ	动	to wash; to bathe/to develop (photographs)/to shuffle (cards etc)/to erase (a recording)
-2	洗手间	xǐshǒujiān	名	toilet/lavatory/washroom
-2	下来	xiàlái	动	to come down/(completed action marker)/(after verb of motion, indicates motion down and towards us, also fig.)/(indicates continuation from the past towards us)/to be harvested (of crops)/to be over (of a period of time)/to go among the masses (said of leaders)
-2	下面	xiàmiàn	名	below/under/next/the following/also pr. [xia4 mian5]/to boil noodles
-2	下去	xiàqù	动	to go down/to descend/to go on/to continue/(of a servant) to withdraw
-2	小孩儿	xiǎoháir	名	erhua variant of 小孩[xiao3 hai2]
-2	小时候	xiǎoshíhou	名	in one's childhood
-2	笑	xiào	动	old variant of 笑[xiao4]/to laugh; to smile/to laugh at
-2	姓	xìng	名、动	family name; surname/to be surnamed ...
-2	姓名	xìngmíng	名	surname and given name; full name
-2	颜色	yánsè	名	color/countenance/appearance/facial expression/pigment/dyestuff
-2	眼睛	yǎnjing	名	eye/CL:隻|只[zhi1],雙|双[shuang1]
-2	药	yào	名	leaf of the iris/variant of 藥|药[yao4]/medicine/drug/substance used for a specific purpose (e.g. poisoning, explosion, fermenting)/CL:種|种[zhong3],服[fu4],味[wei4]/to poison
-2	药店	yàodiàn	名	pharmacy; drugstore
-2	爷爷	yéye	名	(coll.) paternal grandfather; grandpa
-2	一会儿	yíhuìr	数量	a moment/a while/in a moment/now...now.../also pr. [yi1 hui3 r5]
-3	一会儿	yíhuìr	副	a moment/a while/in a moment/now...now.../also pr. [yi1 hui3 r5]
-2	已经	yǐjīng	副	already
-2	一起	yìqǐ	副	(in) the same place/together; in company (with)/altogether; in total/an instance of; a case of (murder, accident, dispute etc)
-2	意思	yìsi	名	idea/opinion/meaning/wish/desire/interest/fun/token of appreciation, affection etc/CL:個|个[ge4]/to give as a small token/to do sth as a gesture of goodwill etc
-2	阴	yīn	形	overcast (weather)/cloudy/shady/Yin (the negative principle of Yin and Yang)/negative (electric.)/feminine/moon/implicit/hidden/genitalia/surname Yin/variant of 陰|阴[yin1]
-2	因为	yīnwèi	介、连	because/owing to/on account of
-2	游	yóu	动	surname You/to swim/variant of 遊|游[you2]/to walk/to tour/to roam/to travel
-2	游泳	yóuyǒng	动	swimming/to swim
-2	有意思	yǒuyìsi		interesting/meaningful/enjoyable/fun
-2	有时	yǒushí	副	sometimes/now and then
-2	右	yòu	名	(bound form) right; right-hand side/(bound form) (politics) right of center/(bound form) (old) west/(literary) the right side as the side of precedence
-2	右边	yòubian	名	right side/right, to the right
-2	鱼	yú	名	fish (CL:條|条[tiao2],尾[wei3])/used in the names of various aquatic animals that are not fish (including abalone 鮑魚|鲍鱼[bao4 yu2], alligators and crocodiles 鱷魚|鳄鱼[e4 yu2] and octopi 章魚|章鱼[zhang1 yu2])/surname Yu
-2	远	yuǎn	形	far/distant/remote/(intensifier in a comparison) by far/much (lower etc)
-2	运动	yùndòng	动、名	to move/to exercise/sports/exercise/motion/movement/campaign/CL:場|场[chang3]
-2	站1	zhàn	名	station/to stand/to halt/to stop/branch of a company or organization/website
-2	丈夫	zhàngfu	名	husband
-2	这么	zhème	代	so much/this much/how much?/this way/like this/variant of 這麼|这么[zhe4 me5]
-2	这样	zhèyàng	代	this way; like this; so/(before a noun) this kind of; such
-2	着	zhe	助	aspect particle indicating action in progress or ongoing state/variant of 著|着[zhe5]
-2	正	zhèng	副	straight/upright/proper/main/principal/to correct/to rectify/exactly/just (at that time)/right (in that place)/(math.) positive
-2	周	zhōu	名	surname Zhou/Zhou Dynasty (1046–256 BC)/to make a circuit/to circle/circle/circumference/lap/cycle/complete/all/all over/thorough/to help financially/week/weekly/variant of 周[zhou1]
-2	准备	zhǔnbèi	动	preparation/to prepare/to intend/to be about to/reserve (fund)
-2	自己	zìjǐ	代	oneself; (attributive) one's own
-2	走	zǒu	动	to walk/to go/to run/to move (of vehicle)/to visit/to leave/to go away/to die (euph.)/from/through/away (in compound verbs, such as 撤走[che4 zou3])/to change (shape, form, meaning)
-2	走路	zǒulù	动	to walk; to go on foot/to leave; to depart/(informal) to clear off; to beat it/(of sb who gets fired or resigns) to leave the job; to get out
-2	足球	zúqiú	名	soccer; football/a soccer ball; a football (CL:個|个[ge4])
-2	最	zuì	副	(before an adjective or verb) to the highest degree; (the) most ...; -est/(after 之[zhi1]) best or most extreme example (e.g. 世界之最[shi4 jie4 zhi1 zui4] "the greatest in the world")/old variant of 最[zui4]/variant of 最[zui4]
-2	左	zuǒ	名	left/the Left (politics)/east/unorthodox/queer/wrong/differing/opposite/variant of 佐[zuo3]/surname Zuo
-2	左边	zuǒbian	名	left/the left side/to the left of
-3	阿姨	āyí	名	maternal aunt/step-mother/childcare worker/nursemaid/woman of similar age to one's parents (term of address used by child)/CL:個|个[ge4]
-3	矮	ǎi	形	(of a person) short/(of a wall etc) low/(of rank) inferior (to); lower (than)
-3	爱人	àiren	名	spouse (PRC)/lover (non-PRC)/CL:個|个[ge4]
-3	安静	ānjìng	形	quiet/peaceful/calm
-3	安全	ānquán	形	safe; secure/safety; security
-3	把	bǎ	量、介	to hold; to grasp/to hold a baby in position to help it urinate or defecate/handlebar/classifier: handful, bundle, bunch/classifier for things with handles/(used to put the object before the verb: 把[ba3] + {noun} + {verb})
-3	搬	bān	动	to move (i.e. relocate oneself)/to move (sth relatively heavy or bulky)/to shift/to copy indiscriminately
-3	班级	bānjí	名	class (group of students)/grade (in school)
-3	搬家	bānjiā	动	to move house; to relocate/to remove (sth)
-3	办	bàn	动	to take care of (a matter); to deal with (a task, procedure etc); to organize (an event)/to establish; to set up; to manage; to run (an enterprise)/(law) to handle; to investigate; to prosecute (a case or suspect)/(bound form) office (as in 招辦|招办[zhao1 ban4], admissions office) (abbr. for 辦公室|办公室[ban4 gong1 shi4])
-3	办法	bànfǎ	名	way of handling sth; means; measure; (practical) solution to a problem/CL:條|条[tiao2],個|个[ge4]
-3	办公室	bàngōngshì	名	office; business premises
-3	半天	bàntiān	数量	half of the day/a long time/quite a while/midair/CL:個|个[ge4]
-3	帮助	bāngzhù	动	assistance; aid/to help; to assist
-3	饱	bǎo	形	to eat till full/satisfied
-3	报纸	bàozhǐ	名	newspaper/newsprint/CL:份[fen4],期[qi1],張|张[zhang1]
-3	北	běi	名	north/(classical) to be defeated
-3	北方	běifāng	名	north/the northern part a country/China north of the Yellow River
-3	被	bèi	介	quilt/to cover (with)/(literary) to suffer (a misfortune)/used to indicate passive voice (placed before the doer of the action like "by" in English passive-voice sentences, or, if the doer is not mentioned, before the verb)/(since c. 2009) (sarcastic or jocular) used to indicate that the following word should be regarded as being in air quotes (as in 被旅遊|被旅游[bei4 lu : 3 you2] to "go on a trip")
-3	笔记	bǐjì	名	to take down (in writing)/notes/a type of literature consisting mainly of short sketches/CL:本[ben3]
-3	比较	bǐjiào	动、介、副	to compare/to contrast/comparatively/relatively/quite/comparison
-3	笔记本	bǐjìběn	名	notebook (stationery) (CL:本[ben3])/(computing) laptop; notebook (abbr. for 筆記本電腦|笔记本电脑[bi3 ji4 ben3 dian4 nao3])
-3	比如	bǐrú	动	for example; for instance; such as
-3	比赛	bǐsài	动、名	competition (sports etc)/match/CL:場|场[chang3],次[ci4]/to compete
-3	必须	bìxū	副	to have to/must/compulsory/necessarily
-3	变	biàn	动	to change/to become different/to transform/to vary/rebellion
-3	遍	biàn	量	everywhere/all over/classifier for actions: one time/variant of 遍[bian4]
-3	变成	biànchéng	动	to change into/to turn into/to become
-3	变化	biànhuà	动、名	(intransitive) to change; to vary/change; variation (CL:個|个[ge4])
-3	表演	biǎoyǎn	动	play/show/performance/exhibition/to perform/to act/to demonstrate/CL:場|场[chang3]
-3	别的	biéde	代	else/other
-3	别人	biérén	代	other people; others; other person
-3	宾馆	bīnguǎn	名	guesthouse/lodge/hotel/CL:個|个[ge4],家[jia1]
-3	冰	bīng	名	ice/CL:塊|块[kuai4]/to chill sth/(of an object or substance) to feel cold/(of a person) cold/unfriendly/(slang) methamphetamine/variant of 冰[bing1]
-3	冰激凌	bīngjīlíng	名	ice cream
-3	冰箱	bīngxiāng	名	refrigerator/(old) icebox
-3	病人	bìngrén	名	sick person/patient/invalid/CL:個|个[ge4]
-3	不但	búdàn	连	not only (... but also ...)
-3	不见	bújiàn	动	not to see/not to meet/to have disappeared/to be missing
-3	不用	búyòng	副	need not
-3	不同	bùtóng		different/distinct/not the same/not alike
-3	不久	bùjiǔ	形	not long (after)/before too long/soon/soon after
-3	不行	bùxíng	动、形	won't do/be out of the question/be no good/not work/not be capable
-3	才1	cái	副	(variant of 才[cai2]) just now/(variant of 才[cai2]) (before an expression of quantity) only/ability; talent/sb of a certain type/a capable individual/then and only then/just now/(before an expression of quantity) only
-3	菜单	càidān	名	menu/CL:份[fen4],張|张[zhang1]
-3	参加	cānjiā	动	to participate/to take part/to join
-3	草	cǎo	名	grass/straw/manuscript/draft (of a document)/careless/rough/CL:棵[ke1],撮[zuo3],株[zhu1],根[gen1]/variant of 草[cao3]
-3	草地	cǎodì	名	lawn/meadow/sod/turf/CL:片[pian4]
-3	层	céng	量	to pile on top of one another/layer; stratum/floor (of a building); story/(math.) sheaf/classifier for layers
-3	查	chá	动	to research/to check/to investigate/to examine/to refer to/to look up (e.g. a word in a dictionary)
-3	差	chà	形、动	different/wrong; mistaken/to fall short; to lack/not up to standard; inferior/Taiwan pr. [cha1]
-3	差不多	chàbuduō	形、副	almost/nearly/more or less/about the same/good enough/not bad
-3	尝	cháng	动	old variant of 嘗|尝[chang2]/to taste; to experience (variant of 嘗|尝[chang2])/to taste; to try (food)/to experience/(literary) ever; once
-3	常	cháng	副	always/ever/often/frequently/common/general/constant/surname Chang
-3	常见	chángjiàn		commonly seen/common/to see sth frequently
-3	常用	chángyòng		in common usage
-3	常常	chángcháng	副	frequently; often
-3	衬衫	chènshān	名	shirt/blouse/CL:件[jian4]
-3	成绩	chéngjì	名	achievement/performance records/grades/CL:項|项[xiang4],個|个[ge4]
-3	城市	chéngshì	名	city; town/CL:座[zuo4]
-3	迟到	chídào	动	to arrive late
-3	出发	chūfā	动	to set off/to start (on a journey)
-3	出生	chūshēng	动	to be born
-3	出院	chūyuàn	动	to leave hospital/to be discharged from hospital
-3	初中	chūzhōng	名	junior high school (abbr. for 初級中學|初级中学[chu1 ji2 zhong1 xue2])
-3	除了	chúle	介	apart from; besides; in addition to (used to exclude, as in 除了他，誰也沒來|除了他，谁也没来[chu2 le5 ta1 , shei2 ye3 mei2 lai2] "apart from him, nobody came", or to include, as in 除了英語，他也會法語|除了英语，他也会法语[chu2 le5 Ying1 yu3 , ta1 ye3 hui4 Fa3 yu3] "in addition to English, he also knows French")/(used to introduce one of two habitual alternatives in the pattern 除了[chu2 le5] + A + 就是[jiu4 shi4] + B, "either A or B")
-3	船	chuán	名	boat/vessel/ship/CL:條|条[tiao2],艘[sou1],隻|只[zhi1]/variant of 船[chuan2]
-3	春天	chūntiān	名	spring (season)/CL:個|个[ge4]
-3	词典	cídiǎn	名	dictionary/also written 辭典|辞典[ci2 dian3]/CL:部[bu4],本[ben3]
-3	聪明	cōngmíng	形	intelligent; clever; bright/acute (of sight and hearing)
-3	打扫	dǎsǎo	动	to clean/to sweep
-3	打算	dǎsuàn	动、名	to plan/to intend/to calculate/plan/intention/calculation/CL:個|个[ge4]
-3	大概	dàgài	形、副	roughly/probably/rough/approximate/about/general idea
-3	大人	dàren	名	adult/grownup/title of respect toward superiors
-3	大小	dàxiǎo	名	large and small/size/adults and children/consideration of seniority/at any rate
-3	大熊猫	dàxióngmāo	名	giant panda (Ailuropoda melanoleuca)
-3	大衣	dàyī	名	overcoat/topcoat/cloak/CL:件[jian4]
-3	带	dài	动	band/belt/girdle/ribbon/tire/area/zone/region/CL:條|条[tiao2]/to wear/to carry/to take along/to bear (i.e. to have)/to lead/to bring/to look after/to raise
-3	担心	dānxīn	动	anxious/worried/uneasy/to worry/to be anxious
-3	蛋糕	dàngāo	名	cake/CL:塊|块[kuai4],個|个[ge4]
-3	当然	dāngrán	副	only natural/as it should be/certainly/of course/without doubt
-3	到处	dàochù	副	everywhere
-3	得	dé	动	to obtain/to get/to gain/to catch (a disease)/proper/suitable/proud/contented/to allow/to permit/ready/finished
-3	得到	dédào	动	to get; to obtain; to receive
-3	得分	défēn	动、名	to score a point (in a competition, test etc)/score; rating; grade
-3	的话	dehuà	助	if (coming after a conditional clause)
-3	得	děi	动	to have to/must/ought to/to need to
-3	灯	dēng	名	lamp/light/lantern/CL:盞|盏[zhan3]
-3	地	dì	名	earth/ground/field/place/land/CL:片[pian4]
-3	地点	dìdiǎn	名	place/site/location/venue/CL:個|个[ge4]
-3	地方	dìfang	名	place; location; area; space; territory/aspect; part/CL:個|个[ge4],處|处[chu4]
-3	地图	dìtú	名	map/CL:張|张[zhang1],本[ben3]
-3	电	diàn	名	lightning/electricity/electric (bound form)/to get (or give) an electric shock/phone call or telegram etc/to send via telephone or telegram etc
-3	电梯	diàntī	名	elevator/escalator/CL:臺|台[tai2],部[bu4]
-3	电子书	diànzǐshū	名	electronic book/e-book/e-book reader
-3	丢	diū	动	to lose/to put aside/to throw
-3	东	dōng	名	east/host (i.e. sitting on east side of guest)/landlord/surname Dong
-3	东北	dōngběi	名	Northeast China; Manchuria/northeast
-3	东方	dōngfāng	名	east/the East; the Orient/two-character surname Dongfang
-3	东南	dōngnán	名	southeast
-3	冬天	dōngtiān	名	winter/CL:個|个[ge4]
-3	懂得	dǒngde	动	to understand; to know; to comprehend
-3	动物	dòngwù	名	animal/CL:隻|只[zhi1],群[qun2],個|个[ge4]
-3	动物园	dòngwùyuán	名	zoo/CL:個|个[ge4]
-3	短	duǎn	形	short/brief/to lack/weak point/fault
-3	短裤	duǎnkù	名	short pants/shorts
-3	段	duàn	量	paragraph/section/segment/stage (of a process)/classifier for stories, periods of time, lengths of thread etc/surname Duan
-3	锻炼	duànliàn	动	to toughen/to temper/to engage in physical exercise/to work out/(fig.) to develop one's skills/to train oneself
-3	对话	duìhuà	动	to talk (with sb)/dialogue; conversation
-3	饿	è	形	hungry/to starve (sb)
-3	而且	érqiě	连	(not only ...) but also/moreover/in addition/furthermore
-3	耳朵	ěrduo	名	ear/CL:隻|只[zhi1],個|个[ge4],對|对[dui4]/handle (on a cup)
-3	耳机	ěrjī	名	headphones/earphones/telephone receiver
-3	发	fā	动	to send out/to show (one's feeling)/to issue/to develop/to make a bundle of money/classifier for gunshots (rounds)
-3	发烧	fāshāo	动	to have a high temperature (from illness); to have a fever/(fig.) to be fascinated with; to obsess over/(fig.) flourishing; thriving; popular
-3	发生	fāshēng	动	to happen; to occur; to take place; to break out
-3	发现	fāxiàn	动	to notice; to become aware of/to discover; to find; to detect/a discovery
-3	发展	fāzhǎn	动	development/growth/to develop/to grow/to expand
-3	方便	fāngbiàn	形	convenient; suitable/to facilitate; to make things easy/having money to spare/(euphemism) to relieve oneself
-3	方便面	fāngbiànmiàn	名	instant noodles
-3	方法	fāngfǎ	名	method; way; technique; procedure/CL:個|个[ge4]
-3	方向	fāngxiàng	名	direction; orientation/CL:個|个[ge4]
-3	房子	fángzi	名	house/building (single- or two-story)/apartment/room/CL:棟|栋[dong4],幢[zhuang4],座[zuo4],套[tao4],間|间[jian1]
-3	放	fàng	动	to put/to place/to release/to free/to let go/to let out/to set off (fireworks)
-3	放假	fàngjià	动	to have a holiday or vacation
-3	放心	fàngxīn	动	to feel relieved/to feel reassured/to be at ease
-3	放学	fàngxué	动	to dismiss students at the end of the school day
-3	分开	fēnkāi	动	to separate/to part
-3	风	fēng	名	wind/news/style/custom/manner/CL:陣|阵[zhen4],絲|丝[si1]
-3	封	fēng	量	surname Feng/to confer/to grant/to bestow a title/to seal/classifier for sealed objects, esp. letters
-3	夫妻	fūqī	名	husband and wife; married couple
-3	服务	fúwù	动	to serve/service/CL:項|项[xiang4]
-3	附近	fùjìn	名	nearby; neighboring/(in the) vicinity (of); neighborhood
-3	复习	fùxí	动	to review/revision/CL:次[ci4]/variant of 復習|复习[fu4 xi2]
-3	该1	gāi	动	should/ought to/probably/must be/to deserve/to owe/to be sb's turn to do sth/that/the above-mentioned
-3	干净	gānjìng	形	clean/neat
-3	感兴趣	gǎnxìngqù		to be interested
-3	感到	gǎndào	动	to feel; to sense; to perceive
-3	感冒	gǎnmào	名、动	to catch cold/(common) cold/CL:場|场[chang2],次[ci4]/(coll.) to be interested in (often used in the negative)/(Tw) to detest/can't stand
-3	干	gàn	动	tree trunk/main part of sth/to manage/to work/to do/capable/cadre/to kill (slang)/to fuck (vulgar)/(coll.) pissed off/annoyed
-3	刚	gāng	副	hard/firm/strong/just/barely/exactly
-3	刚才	gāngcái	名	just now (variant of 剛才|刚才[gang1 cai2])/just now/a moment ago
-3	刚刚	gānggāng	副	just recently/just a moment ago
-3	高铁	gāotiě	名	high speed rail
-3	根据	gēnjù	动、介	according to/based on/basis/foundation/CL:個|个[ge4]
-3	更	gèng	副	more/even more/further/still/still more
-3	公斤	gōngjīn	量	kilogram (kg)
-3	公园	gōngyuán	名	park (for public recreation)/CL:座[zuo4]
-3	工作日	gōngzuòrì	名	workday/working day/weekday
-3	故事	gùshi	名	narrative; story; tale
-3	刮	guā	动	to blow (of the wind)/to scrape/to blow/to shave/to plunder/to extort
-3	关	guān	动	mountain pass/to close; to shut; to turn off/to confine; to lock (sb) up; to shut (sb in a room, a bird in a cage etc)/to concern; to involve/surname Guan
-3	关机	guānjī	动	to turn off (a machine or device)/to finish shooting a film
-3	关系	guānxì	名	relation/relationship/to concern/to affect/to have to do with/guanxi/CL:個|个[ge4]/variant of 關係|关系[guan1 xi5]
-3	关心	guānxīn	动	to be concerned about; to care about
-3	关于	guānyú	介	pertaining to/concerning/with regard to/about/a matter of
-3	关注	guānzhù	动	to pay attention to; to follow sth closely; to follow (on social media)/concern; interest; attention
-3	国家	guójiā	名	country; nation; state/CL:個|个[ge4]
-3	过节	guòjié	动	to celebrate a festival/after the celebrations (i.e. once the festival is over)
-3	过去2	guòqù	名	(in the) past; former; previous/to go over; to pass by
-3	海	hǎi	名	ocean/sea/CL:個|个[ge4],片[pian4]/great number of people or things/(dialect) numerous/surname Hai
-3	害怕	hàipà	动	to be afraid; to be scared
-3	好多	hǎoduō	数	many/quite a lot/much better
-3	好久	hǎojiǔ	形	quite a while
-3	好像	hǎoxiàng	动、副	as if/to seem like
-3	号码	hàomǎ	名	number/CL:堆[dui1],個|个[ge4]
-3	河	hé	名	river (CL:條|条[tiao2],道[dao4])/(bound form) the Yellow River/(bound form) the Milky Way/(bound form) (on restaurant menus) rice noodles 河粉[he2 fen3]
-3	合适	héshì	形	suitable; fitting; appropriate
-3	黑板	hēibǎn	名	blackboard/CL:塊|块[kuai4],個|个[ge4]
-3	红绿灯	hóng-lǜdēng	名	traffic light/traffic signal
-3	后来	hòulái	名	afterwards; later/newly arrived
-3	后年	hòunián	名	the year after next
-3	后天	hòutiān	名	the day after tomorrow/life after birth (the period in which one develops through experiences, contrasted with 先天[xian1 tian1])/acquired (not innate or congenital)/a posteriori
-3	护照	hùzhào	名	passport/CL:本[ben3],個|个[ge4]
-3	花园	huāyuán	名	garden (for flowers, ornamental plants etc); (landscaped) park; yard with decorative plants/CL:座[zuo4]
-3	画家	huàjiā	名	painter/CL:個|个[ge4]
-3	欢迎	huānyíng	动	to welcome/welcome
-3	还	huán	动	surname Huan/to pay back/to return
-3	环境	huánjìng	名	environment/circumstances/surroundings/CL:個|个[ge4]/ambient
-3	换	huàn	动	to exchange/to change (clothes etc)/to substitute/to switch/to convert (currency)
-3	黄色	huángsè	名	yellow/vulgar; lewd; pornographic
-3	回答	huídá	动	to reply; to answer/reply; answer
-3	会2	huì	名	can; to have the skill; to know how to/to be likely to; to be sure to/to meet; to get together/meeting; gathering/(suffix) union; group; association/(bound form) a moment (Taiwan pr. [hui3])
-3	会议	huìyì	名	meeting/conference/CL:場|场[chang3],屆|届[jie4]
-3	或	huò	连	maybe/perhaps/might/possibly/or
-3	或者	huòzhě	连	or/possibly; maybe; perhaps
-3	鸡	jī	名	fowl/chicken/CL:隻|只[zhi1]/(slang) prostitute/variant of 雞|鸡[ji1]
-3	几乎	jīhū	副	almost; nearly; practically
-3	机会	jīhuì	名	opportunity/chance/occasion/CL:個|个[ge4]
-3	极	jí	副	extremely/pole (geography, physics)/utmost/top
-3	急	jí	形、动	urgent/pressing/rapid/hurried/worried/to make (sb) anxious
-3	记	jì	动	to record/to note/to memorize/to remember/mark/sign/classifier for blows, kicks, shots
-3	季	jì	名	season/the last month of a season/fourth or youngest amongst brothers/classifier for seasonal crop yields/surname Ji
-3	季节	jìjié	名	time/season/period/CL:個|个[ge4]
-3	加	jiā	动	Canada (abbr. for 加拿大[Jia1 na2 da4])/surname Jia/to add/(math.) plus/to increase; to augment/(used before a disyllabic verb, often after an adverb like 不[bu4], 大[da4], 稍[shao1] etc, to indicate that the action applies to sth previously mentioned, as in 稍加改良[shao1 jia1 gai3 liang2] "make some minor improvements to (it)")
-3	假期	jiàqī	名	vacation
-3	坚持	jiānchí	动	to persevere with/to persist in/to insist on
-3	检查	jiǎnchá	动	inspection/to examine/to inspect/CL:次[ci4]
-3	简单	jiǎndān	形	simple; not complicated
-3	检票	jiǎnpiào	动	to inspect a ticket/to examine a ballot
-3	健康	jiànkāng	形	health/healthy
-3	见面	jiànmiàn	动	to meet; to see each other/CL:次[ci4]
-3	讲	jiǎng	动	to speak/to explain/to negotiate/to emphasize/to be particular about/as far as sth is concerned/speech/lecture
-3	角	jiǎo	量	angle/corner/horn/horn-shaped/unit of money equal to 0.1 yuan, or 10 cents (a dime)/CL:個|个[ge4]
-3	脚	jiǎo	名	foot/leg (of an animal or an object)/base (of an object)/CL:雙|双[shuang1],隻|只[zhi1]/classifier for kicks
-3	接	jiē	动	to receive/to answer (the phone)/to meet or welcome sb/to connect/to catch/to join/to extend/to take one's turn on duty/to take over for sb
-3	街	jiē	名	street/CL:條|条[tiao2]
-3	节	jié	量、名	joint; node/(bound form) section; segment/solar term (one of the 24 divisions of the year in the traditional Chinese calendar)/seasonal festival/(bound form) to economize; to save/(bound form) moral integrity; chastity/classifier for segments: lessons, train wagons, biblical verses etc/knot (nautical miles per hour)
-3	结婚	jiéhūn	动	to marry; to get married
-3	节目	jiémù	名	(TV or radio) program; show/item; act; segment; number (on the program of a concert, variety show or cultural event)/a planned activity (in one's schedule)/CL:個|个[ge4],場|场[chang3],項|项[xiang4],臺|台[tai2],套[tao4],檔|档[dang4]
-3	节日	jiérì	名	holiday/festival/CL:個|个[ge4]
-3	结束	jiéshù	动	termination/to finish/to end/to conclude/to close
-3	解决	jiějué	动	to solve; to resolve; to settle (a problem)/to eliminate; to wipe out (an enemy, bandits etc)
-3	姐妹	jiěmèi	名	sisters/siblings/sister (school, city etc)
-3	借	jiè	动	to borrow/(used in combination with 給|给[gei3] or 出[chu1] etc) to lend/to make use of; to avail oneself of/(sometimes followed by 著|着[zhe5]) by; with/variant of 借[jie4]
-3	斤	jīn	量	catty/(PRC) weight equal to 500 g/(Tw) weight equal to 600 g/(HK, Malaysia, Singapore) slightly over 604 g
-3	经过	jīngguò	动、名	to pass/to go through/process/course/CL:個|个[ge4]
-3	经理	jīnglǐ	名	manager/director/CL:個|个[ge4],位[wei4],名[ming2]
-3	久	jiǔ	形	(of a period of time) long
-3	酒	jiǔ	名	wine (esp. rice wine)/liquor/spirits/alcoholic beverage/CL:杯[bei1],瓶[ping2],罐[guan4],桶[tong3],缸[gang1]
-3	旧	jiù	形	old/opposite: new 新/former/worn (with age)
-3	句	jù	量	sentence/clause/phrase/classifier for phrases or lines of verse
-3	句子	jùzi	名	sentence/CL:個|个[ge4]
-3	决定	juédìng	动、名	to decide (to do something)/to resolve/decision/CL:個|个[ge4],項|项[xiang4]/certainly
-3	卡	kǎ	名	to stop/to block/(computing) (coll.) slow/(loanword) card/CL:張|张[zhang1],片[pian4]/truck (from "car")/calorie (abbr. for 卡路里[ka3 lu4 li3])/cassette
-3	开花	kāihuā	动	to bloom; to blossom; to flower/(fig.) to burst; to split open/(fig.) to burst with joy/(fig.) to spring up everywhere; to flourish
-3	开会	kāihuì	动	to hold a meeting/to attend a meeting
-3	开机	kāijī	动	to start an engine/to boot up (a computer)/to press Ctrl-Alt-Delete/to begin shooting a film or TV show
-3	开心	kāixīn	形	to feel happy/to rejoice/to have a great time/to make fun of sb
-3	看来	kànlái	动	apparently/it seems that
-3	可	kě	连	(prefix) can; may; able to; -able/to approve; to permit/to suit/(particle used for emphasis) certainly; very/but; however
-3	渴	kě	形	thirsty
-3	可爱	kě’ài	形	adorable/cute/lovely
-3	可是	kěshì	连	but; however/(used for emphasis) indeed
-3	刻	kè	量	quarter (hour)/moment/to carve/to engrave/to cut/oppressive/classifier for short time intervals
-3	课本	kèběn	名	textbook/CL:本[ben3]
-3	客人	kèrén	名	visitor/guest/customer/client/CL:位[wei4]
-3	课文	kèwén	名	text/CL:篇[pian1]
-3	空调	kōngtiáo	名	air conditioning/air conditioner (including units that have a heating mode)/CL:臺|台[tai2]
-3	哭	kū	动	to cry; to weep
-3	筷子	kuàizi	名	chopsticks/CL:對|对[dui4],根[gen1],把[ba3],雙|双[shuang1]
-3	矿泉水	kuàngquánshuǐ	名	mineral water/CL:瓶[ping2],杯[bei1]
-3	来自	láizì	动	to come from (a place)/From: (in email header)
-3	蓝	lán	形	blue/indigo plant/surname Lan
-3	老	lǎo	形、前缀	prefix used before the surname of a person or a numeral indicating the order of birth of the children in a family or to indicate affection or familiarity/old (of people)/venerable (person)/experienced/of long standing/always/all the time/of the past/very/outdated/(of meat etc) tough
-3	老人	lǎorén	名	old man or woman/the elderly/one's aged parents or grandparents
-3	离开	líkāi	动	to depart; to leave
-3	礼物	lǐwù	名	gift; present/CL:件[jian4],個|个[ge4],份[fen4]
-3	历史	lìshǐ	名	history/CL:門|门[men2],段[duan4]
-3	脸	liǎn	名	face/CL:張|张[zhang1],個|个[ge4]
-3	练	liàn	动	to practice/to train/to drill/to perfect (one's skill)/exercise/(literary) white silk/to boil and scour raw silk
-3	练习	liànxí	动、名	to practice/exercise/drill/practice/CL:個|个[ge4]
-3	凉快	liángkuai	形	pleasantly cool (weather etc)/to cool oneself; to cool off/(Tw) (slang) (of clothing) scanty; revealing/(coll.) to stay out of it; to butt out
-3	辆	liàng	量	classifier for vehicles
-3	聊	liáo	动	(coll.) to chat/(literary) temporarily; for a while/(literary) somewhat; slightly/(literary) to depend upon
-3	聊天儿	liáotiānr	动	erhua variant of 聊天[liao2 tian1]
-3	了解	liǎojiě	动	to understand/to realize/to find out
-3	邻居	línjū	名	neighbor/CL:個|个[ge4]
-3	留学	liúxué	动	to study abroad
-3	留学生	liúxuéshēng	名	student studying abroad; returned student; foreign student; international student
-3	楼梯	lóutī	名	stair/staircase/CL:個|个[ge4]
-3	路边	lùbiān	名	curb; roadside; wayside
-3	路口	lùkǒu	名	crossing/intersection (of roads)
-3	马	mǎ	名	horse/CL:匹[pi3]/horse or cavalry piece in Chinese chess/knight in Western chess/surname Ma/abbr. for Malaysia 馬來西亞|马来西亚[Ma3 lai2 xi1 ya4]
-3	马路	mǎlù	名	street/road/CL:條|条[tiao2]
-3	马上	mǎshàng	副	at once/right away/immediately/on horseback (i.e. by military force)
-3	满意	mǎnyì	动	satisfied/pleased/to one's satisfaction
-3	毛	máo	量	hair/feather/down/wool/mildew/mold/coarse or semifinished/young/raw/careless/unthinking/nervous/scared/(of currency) to devalue or depreciate/classifier for Chinese fractional monetary unit ( = 角[jiao3] , = one-tenth of a yuan or 10 fen 分[fen1])/surname Mao
-3	米	mǐ	量	surname Mi/uncooked rice/meter (unit of length)/(slang) Chinese yuan
-3	面前	miànqián	名	in front of/facing/(in the) presence (of)
-3	明白	míngbai	形、动	clear; obvious; unequivocal/sensible; reasonable/to understand; to realize
-3	名单	míngdān	名	list of names
-3	名人	míngrén	名	personage/celebrity
-3	南	nán	名	south/surname Nan
-3	难	nán	形	difficult (to...)/problem/difficulty/difficult/not good
-3	南方	nánfāng	名	south; southern direction/(in China) southern regions, often referring to areas south of the Yangtze River
-3	难过	nánguò	形	to feel sad/to feel unwell/(of life) to be difficult
-3	难看	nánkàn	形	ugly/unsightly
-3	男人	nánrén	名	a man/a male/men/CL:個|个[ge4]
-3	男生	nánshēng	名	schoolboy/male student/boy/guy (young adult male)
-3	难题	nántí	名	difficult problem
-3	难听	nántīng	形	unpleasant to hear/coarse/vulgar/offensive/shameful
-3	年级	niánjí	名	grade/year (in school, college etc)/CL:個|个[ge4]
-3	年轻	niánqīng	形	young
-3	牛	niú	名	ox/cow/bull/CL:條|条[tiao2],頭|头[tou2]/newton (abbr. for 牛頓|牛顿[niu2 dun4])/(slang) awesome/surname Niu
-3	努力	nǔlì	动、形	to make an effort; to try hard; to strive/hard-working; conscientious
-3	女人	nǚrén	名	woman
-3	女生	nǚshēng	名	schoolgirl/female student/girl
-3	爬	pá	动	to crawl/to climb/to get up or sit up
-3	怕	pà	动	surname Pa/to be afraid/to fear/to dread/to be unable to endure/perhaps
-3	拍照	pāizhào	动	to take a picture
-3	盘子	pánzi	名	tray/plate/dish/CL:個|个[ge4]
-3	胖	pàng	形	fat/plump
-3	啤酒	píjiǔ	名	beer (loanword)/CL:杯[bei1],瓶[ping2],罐[guan4],桶[tong3],缸[gang1]
-3	平时	píngshí	名	ordinarily/in normal times/in peacetime
-3	瓶子	píngzi	名	bottle/CL:個|个[ge4]
-3	骑	qí	动	to sit astride/to ride (a horse, bike etc)/classifier for saddle horses
-3	奇怪	qíguài	形	strange/odd/to marvel/to be baffled
-3	其实	qíshí	副	actually; in fact; really
-3	其他	qítā	代	other/(sth or sb) else/the rest
-3	起	qǐ	动	to rise/to raise/to get up/to set out/to start/to appear/to launch/to initiate (action)/to draft/to establish/to get (from a depot or counter)/verb suffix, to start/starting from (a time, place, price etc)/classifier for occurrences or unpredictable events: case, instance/classifier for groups: batch, group
-3	起飞	qǐfēi	动	(of an aircraft or rocket) to take off; to lift off/(fig.) (of an enterprise etc) to start to develop rapidly
-3	汽车	qìchē	名	car/automobile/bus/CL:輛|辆[liang4]
-3	铅笔	qiānbǐ	名	(lead) pencil/CL:支[zhi1],枝[zhi1],桿|杆[gan3]
-3	前年	qiánnián	名	the year before last
-3	前天	qiántiān	名	the day before yesterday
-3	清楚	qīngchu	形、动	clear/distinct/to understand thoroughly/to be clear about
-3	请假	qǐngjià	动	to request leave of absence
-3	请客	qǐngkè	动	to give a dinner party/to entertain guests/to invite to dinner
-3	秋天	qiūtiān	名	autumn/CL:個|个[ge4]
-3	球场	qiúchǎng	名	stadium/sports ground/court/pitch/field/golf course/CL:個|个[ge4],處|处[chu4]
-3	裙子	qúnzi	名	skirt/CL:條|条[tiao2]
-3	然后	ránhòu	连	then; after that; afterwards
-3	热情	rèqíng	形	cordial/enthusiastic/passion/passionate/passionately
-3	认得	rènde	动	to recognize/to remember sth (or sb) on seeing it/to know
-3	认为	rènwéi	动	to believe; to think; to consider; to feel
-3	认真	rènzhēn	形	conscientious/earnest/serious/to take seriously/to take to heart
-3	容易	róngyì	形	easy; straightforward/likely; liable to; apt to
-3	如果	rúguǒ	连	if/in case/in the event that
-3	伞	sǎn	名	damask silk/variant of 傘|伞[san3]/umbrella/parasol/CL:把[ba3]
-3	扫	sǎo	动	to sweep (with a brush or broom)/to sweep away; to wipe out; to get rid of/to sweep (one's eyes etc) over; to scan
-3	沙发	shāfā	名	(loanword) sofa (CL:條|条[tiao2],張|张[zhang1])/(Internet slang) first reply to a forum post
-3	山	shān	名	mountain; hill (CL:座[zuo4])/(coll.) small bundle of straw for silkworms to spin cocoons on/surname Shan
-3	上衣	shàngyī	名	jacket/upper outer garment/CL:件[jian4]
-3	勺子	sháozi	名	spoon; ladle/CL:把[ba3]
-3	身边	shēnbiān	名	at one's side/on hand
-3	身高	shēngāo	名	(a person's) height
-3	声	shēng	名、量	sound/voice/tone/noise/reputation/classifier for sounds
-3	生活	shēnghuó	名、动	to live/life/livelihood
-3	生气	shēngqì	动	to get angry; to be furious/vitality; liveliness
-3	声音	shēngyīn	名	voice/sound/CL:個|个[ge4]
-3	市	shì	名	market/city/municipality (administrative unit)/(literary) to trade; to buy and sell goods
-3	试	shì	动	to test/to try/experiment/examination/test
-3	室	shì	名	room/work unit/grave/scabbard/family or clan/one of the 28 constellations of Chinese astronomy/surname Shi
-3	世界	shìjiè	名	world/CL:個|个[ge4]
-3	收	shōu	动	to receive/to accept/to collect/to put away/to restrain/to stop/in care of (used on address line after name)
-3	收到	shōudào	动	to receive
-3	受	shòu	动	to receive/to accept/to suffer/subjected to/to bear/to stand/pleasant/(passive marker)/(LGBT) bottom
-3	瘦	shòu	形	thin/to lose weight/(of clothing) tight/(of meat) lean/(of land) unproductive
-3	受到	shòudào	动	to receive (praise, an education, punishment etc)/to be ...ed (praised, educated, punished etc)
-3	叔叔	shūshu	名	father's younger brother; paternal uncle/form of address used by children for a male one generation older
-3	树	shù	名	tree/CL:棵[ke1]/to cultivate/to set up
-3	数学	shùxué	名	mathematics
-3	刷	shuā	动	a brush/to paint; to daub/to brush; to scrub/(fig.) to remove; to eliminate (from a contest); to fire (from a job)/(onom.) swish; rustle/to swipe (a card)/to scroll on (a phone)/(gaming) to grind; to farm (for experience points, equipment, levels etc)
-3	双	shuāng	量	surname Shuang/two/double/pair/both/even (number)/variant of 雙|双[shuang1]
-3	水平	shuǐpíng	名	horizontal; level/a standard; a level (of ability, development etc)
-3	司机	sījī	名	chauffeur; driver
-3	四季	sìjì	名	four seasons, namely: spring 春[chun1], summer 夏[xia4], autumn 秋[qiu1] and winter 冬[dong1]
-3	太阳	tàiyáng	名	sun/sunlight; sunshine/temple (on the side of the human head) (abbr. for 太陽穴|太阳穴[tai4 yang2 xue2])
-3	糖	táng	名	old variant of 糖[tang2]/sugar/sweets/candy/CL:顆|颗[ke1],塊|块[kuai4]
-3	特别	tèbié	形、副	unusual; special/very; especially; particularly/expressly; for a specific purpose/(often followed by 是[shi4]) in particular
-3	提高	tígāo	动	to raise/to increase/to improve
-3	体育	tǐyù	名	sports/physical education
-3	体育馆	tǐyùguǎn	名	gym/gymnasium/stadium/CL:個|个[ge4]
-3	甜	tián	形	sweet
-3	跳	tiào	动	to jump/to hop/to skip over/to bounce/to palpitate
-3	听说	tīngshuō	动	to hear (sth said)/one hears (that)/hearsay/listening and speaking
-3	挺	tǐng	副	straight/erect/to stick out (a part of the body)/to (physically) straighten up/to support/to withstand/outstanding/(coll.) quite/very/classifier for machine guns
-3	同事	tóngshì	名	colleague; co-worker
-3	同意	tóngyì	动	to agree/to consent/to approve
-3	头发	tóufa	名	hair (on the head)
-3	突然	tūrán	形	sudden; abrupt; unexpected
-3	图书馆	túshūguǎn	名	library/CL:家[jia1],個|个[ge4]
-3	腿	tuǐ	名	hip bone/old variant of 腿[tui3]/leg/CL:條|条[tiao2]
-3	外地	wàidì	名	parts of the country other than where one is
-3	外卖	wàimài	动、名	(of a restaurant) to provide a takeout or home delivery meal/takeout (business)/takeout (meal)
-3	外语	wàiyǔ	名	foreign language/CL:門|门[men2]
-3	完成	wánchéng	动	to complete; to accomplish
-3	碗	wǎn	名	bowl/cup/CL:隻|只[zhi1],個|个[ge4]/variant of 碗[wan3]
-3	晚点	wǎndiǎn	动	(of trains etc) late/delayed/behind schedule/light dinner
-3	晚会	wǎnhuì	名	evening party/CL:個|个[ge4]
-3	网球	wǎngqiú	名	tennis/tennis ball/CL:個|个[ge4]
-3	网站	wǎngzhàn	名	website
-3	忘记	wàngjì	动	to forget
-3	为	wèi	介	because of/for/to/variant of 為|为[wei4]
-3	为了	wèile	介	for; for the purpose of; in order to
-3	卫生间	wèishēngjiān	名	bathroom/toilet/WC/CL:間|间[jian1]
-3	文化	wénhuà	名	culture/civilization/cultural/CL:個|个[ge4],種|种[zhong3]
-3	屋子	wūzi	名	house/room/CL:間|间[jian1]
-3	西	xī	名	the West/abbr. for Spain 西班牙[Xi1 ban1 ya2]/Spanish/west
-3	西北	xīběi	名	Northwest China (Shaanxi, Gansu, Qinghai, Ningxia, Xinjiang)/northwest
-3	西方	xīfāng	名	the West/the Occident/Western countries
-3	西瓜	xīguā	名	watermelon/CL:顆|颗[ke1],個|个[ge5]
-3	西南	xīnán	名	southwest
-3	习惯	xíguàn	动、名	habit/custom/usual practice/to be used to/CL:個|个[ge4]
-3	喜爱	xǐ’ài	动	to like/to love/to be fond of/favorite
-3	洗衣机	xǐyījī	名	washing machine; washer/CL:臺|台[tai2]
-3	洗澡	xǐzǎo	动	to bathe/to take a shower
-3	夏天	xiàtiān	名	summer/CL:個|个[ge4]
-3	先	xiān	副	beforehand; first; earlier/at first; originally/for the time being; for now/(prefix) my late (in referring to deceased relatives older than oneself)
-3	香蕉	xiāngjiāo	名	banana/CL:根[gen1],個|个[ge4],把[ba3]
-3	相信	xiāngxìn	动	to believe; to be convinced; to accept as true
-3	箱子	xiāngzi	名	suitcase/chest/box/case/trunk/CL:隻|只[zhi1],個|个[ge4]
-3	向	xiàng	动、介	surname Xiang/to tend toward/to guide/variant of 向[xiang4]/towards/to face/to turn towards/direction/to support/to side with/shortly before/formerly/always/all along/(suffix) suitable for .../oriented to .../variant of 向[xiang4]/direction/orientation/to face/to turn toward/to/towards/shortly before/formerly
-3	像	xiàng	动	to resemble/to be like/to look as if/such as/appearance/image/portrait/image under a mapping (math.)
-3	相机	xiàngjī	名	camera (abbr. for 照相機|照相机[zhao4 xiang4 ji1])/at the opportune moment/as the circumstances allow
-3	小区	xiǎoqū	名	housing estate; community; neighborhood/(telecommunications) cell
-3	小心	xiǎoxīn	动、形	to be careful/to take care
-3	校园	xiàoyuán	名	campus
-3	校长	xiàozhǎng	名	(college, university) president/headmaster/CL:個|个[ge4],位[wei4],名[ming2]
-3	鞋	xié	名	shoe/CL:雙|双[shuang1],隻|只[zhi1]/variant of 鞋[xie2]
-3	心里	xīnlǐ	名	chest/heart; mind
-3	新年	xīnnián	名	New Year/CL:個|个[ge4]
-3	新闻	xīnwén	名	news/CL:條|条[tiao2],個|个[ge4]
-3	新鲜	xīnxiān	形	fresh (experience, food etc)/freshness/novel/uncommon
-3	信	xìn	动、名	letter/mail/CL:封[feng1]/to trust/to believe/to profess faith in/truthful/confidence/trust/at will/at random
-3	信用卡	xìnyòngkǎ	名	credit card
-3	行	xíng	动、形	(bound form) to walk; to go; to travel/(literary) trip; journey; visit/(bound form) temporary; makeshift/(bound form) current; in circulation/(bound form) to do; to perform/capable; competent/all right; OK!; will do/behavior; conduct (Taiwan pr. [xing4])/(literary) about to; soon
-3	行李	xíngli	名	luggage/CL:件[jian4]
-3	兴趣	xìngqù	名	interest (desire to know about sth)/interest (thing in which one is interested); hobby/CL:個|个[ge4]
-3	休假	xiūjià	动	to go on vacation; to have a holiday; to take leave
-3	需要	xūyào	动、名	to need; to want; to demand; to require/needs
-3	选	xuǎn	动	to choose/to pick/to select/to elect
-3	选择	xuǎnzé	动	to select; to pick/choice; option; alternative
-3	学期	xuéqī	名	term/semester/CL:個|个[ge4]
-3	牙	yá	名	tooth/ivory/CL:顆|颗[ke1]
-3	牙刷	yáshuā	名	toothbrush/CL:把[ba3]
-3	羊	yáng	名	sheep; goat/CL:頭|头[tou2],隻|只[zhi1]/surname Yang
-3	养	yǎng	动	to raise (animals)/to bring up (children)/to keep (pets)/to support/to give birth
-3	要求	yāoqiú	动、名	to request/to require/requirement/to stake a claim/to ask/to demand/CL:點|点[dian3]
-3	页	yè	量	page/leaf
-3	一定	yídìng	形、副	surely/certainly/necessarily/fixed/a certain (extent etc)/given/particular/must
-3	一共	yígòng	副	in total; altogether
-3	一块儿	yíkuàir	名、副	erhua variant of 一塊|一块[yi1 kuai4]
-3	一样	yíyàng	形	same/like/equal to/the same as/just like
-3	以后	yǐhòu	名	after/later/afterwards/following/later on/in the future
-3	以前	yǐqián	名	before/formerly/previous/ago
-3	以上	yǐshàng	名	that level or higher; that amount or more/the above-mentioned/(used to indicate that one has completed one's remarks) That is all.
-3	以外	yǐwài	名	apart from/other than/except for/external/outside of/on the other side of/beyond
-3	以为	yǐwéi	动	to think; to believe (often with the implication that the belief is mistaken – unless referring to one's own current belief)
-3	以下	yǐxià	名	that level or lower/that amount or less/the following
-3	一般	yìbān	形	same/ordinary/so-so/common/general/generally/in general
-3	一边	yìbiān	副	one side/either side/on the one hand/on the other hand/doing while
-3	一直	yìzhí	副	straight (in a straight line)/continuously; always; all the way through
-3	音乐	yīnyuè	名	music/CL:張|张[zhang1],曲[qu3],段[duan4]
-3	银行	yínháng	名	bank/CL:家[jia1],個|个[ge4]
-3	银行卡	yínhángkǎ	名	bank card
-3	饮料	yǐnliào	名	drink/beverage
-3	应该	yīnggāi	动	ought to; should; must
-3	影响	yǐngxiǎng	动、名	influence/effect/to influence/to affect (usually adversely)/to disturb/CL:股[gu3]
-3	用	yòng	动	to use; to make use of; to employ/(coverb) with; using/to need; to have to (usu. used in the negative or in questions)/usefulness; utility/(bound form) expense; outlay/(courteous) to eat; to drink/(literary) hence; therefore
-3	邮件	yóujiàn	名	mail/post/email
-3	游客	yóukè	名	traveler; tourist/(online gaming) guest player
-3	游戏	yóuxì	名	game (CL:場|场[chang3])/to play
-3	邮箱	yóuxiāng	名	mailbox/post office box/email/email inbox
-3	有关	yǒuguān	动、介	to have sth to do with/to relate to/related to/to concern/concerning
-3	有名	yǒumíng	形	famous/well-known
-3	有用	yǒuyòng	形	useful
-3	又	yòu	副	(once) again/also/both... and.../and yet/(used for emphasis) anyway
-3	羽毛球	yǔmáoqiú	名	badminton/shuttlecock
-3	语言	yǔyán	名	language/CL:門|门[men2],種|种[zhong3]
-3	雨衣	yǔyī	名	raincoat/CL:件[jian4]
-3	遇到	yùdào	动	to meet; to run into; to come across
-3	遇见	yùjiàn	动	to meet
-3	园	yuán	名	land used for growing plants/site used for public recreation/abbr. for a place ending in 園|园, such as a botanical garden 植物園|植物园, kindergarten 幼兒園|幼儿园 etc/surname Yuan
-3	员	yuán	后缀	(bound form) person engaged in a certain field of activity/(bound form) member/classifier for military generals
-3	愿意	yuànyì	动	to wish/to want/ready/willing (to do sth)
-3	越	yuè	副	generic word for peoples or states of south China or south Asia at different historical periods/abbr. for Vietnam 越南/to exceed/to climb over/to surpass/the more... the more
-3	月亮	yuèliang	名	the moon
-3	运动会	yùndònghuì	名	sports competition/CL:個|个[ge4]
-3	运动员	yùndòngyuán	名	athlete/CL:名[ming2],個|个[ge4]
-3	咱们	zánmen	代	we or us (including both the speaker and the person(s) spoken to)/(dialect) I or me/(dialect) (in a coaxing or familiar way) you/also pr. [za2 men5]
-3	脏	zāng	形	dirty/filthy/to get (sth) dirty
-3	怎么办	zěnmebàn		what's to be done
-3	怎样	zěnyàng	代	how/what kind
-3	站2	zhàn	动	station/to stand/to halt/to stop/branch of a company or organization/website
-3	张	zhāng	动、量	surname Zhang/to open up/to spread/sheet of paper/classifier for flat objects, sheet/classifier for votes
-3	长	zhǎng	动、后缀	chief/head/elder/to grow/to develop/to increase/to enhance
-3	着急	zháojí	形	to worry; to feel anxious/to feel a sense of urgency; to be in a hurry/Taiwan pr. [zhao1ji2]
-3	照	zhào	动	according to/in accordance with/to shine/to illuminate/to reflect/to look at (one's reflection)/to take (a photo)/photo/as requested/as before/variant of 照[zhao4]/to shine/to illuminate
-3	照顾	zhàogù	动	to take care of/to show consideration/to attend to/to look after
-3	照片	zhàopiàn	名	photograph/picture/CL:張|张[zhang1],套[tao4],幅[fu2]
-3	照相	zhàoxiàng	动	to take a photograph
-3	直到	zhídào	动	until
-3	只	zhǐ	副	only; merely; just/variant of 只[zhi3]
-3	纸	zhǐ	名	paper (CL:張|张[zhang1],沓[da2])/classifier for documents, letters etc/variant of 紙|纸[zhi3]
-3	只能	zhǐnéng		can only/obliged to do sth/to have no other choice
-3	只是	zhǐshì	副、连	merely; only; just; nothing but/simply/but; however
-3	只要	zhǐyào	连	so long as; provided; if
-3	只有	zhǐyǒu	连	only have ...; there is only .../(used in combination with 才[cai2]) it is only if ... (that one can ...) (as in 只有通過治療才能痊愈|只有通过治疗才能痊愈[zhi3 you3 tong1 guo4 zhi4 liao2 cai2 neng2 quan2 yu4] "the only way to cure it is with therapy")/it is only (someone) who ... (as in 只有男性才有此需要[zhi3 you3 nan2 xing4 cai2 you3 ci3 xu1 yao4] "only men would have such a requirement")/(used to express lack of alternatives) can only; have no choice but to (as in 只有屈服[zhi3 you3 qu1 fu2] "the only thing you can do is give in")
-3	中	zhōng	名	(bound form) China; Chinese/surname Zhong/within; among; in/middle; center/while (doing sth); during/(dialect) OK; all right
-3	中间	zhōngjiān	名	the middle; the inside/in the middle; within; between; among/during; in the meantime
-3	终于	zhōngyú	副	at last/in the end/finally/eventually
-3	种	zhǒng	量	seed/species/kind/type/classifier for types, kinds, sorts
-3	重要	zhòngyào	形	important; significant; major
-3	周末	zhōumò	名	weekend
-3	主要	zhǔyào	形	main; principal; major; primary
-3	注意	zhùyì	动	to take note of; to pay attention to
-3	住院	zhùyuàn	动	to stay in hospital; to be hospitalized
-3	字典	zìdiǎn	名	Chinese character dictionary (containing entries for single characters, contrasted with a 詞典|词典[ci2 dian3], which has entries for words of one or more characters)/(coll.) dictionary/CL:本[ben3]
-3	自行车	zìxíngchē	名	bicycle; bike/CL:輛|辆[liang4]
-3	子	zi	后缀	noun suffix, as in 椅子[yi3 zi5] "chair"
-3	总	zǒng	副	(bound form) general; overall/to sum up/in every case; always; invariably/anyway; after all; eventually; sooner or later/surely/(after a person's name) abbr. for 總經理|总经理[zong3 jing1 li3] or 總編|总编[zong3 bian1] etc
-3	总是	zǒngshì	副	always
-3	嘴	zuǐ	名	mouth/beak/nozzle/spout (of teapot etc)/CL:張|张[zhang1],個|个[ge4]
-3	最好	zuìhǎo	副	best/had better ...; it would be best to ...
-3	最后	zuìhòu	名	final; last; ultimate/finally; in the end
-3	最近	zuìjìn	名	recently/soon/nearest
-3	做客	zuòkè	动	to be a guest or visitor
-3	作业	zuòyè	名	school assignment/homework/work/task/operation/CL:個|个[ge4]/to operate
+level	word	pinyin	numbered	pos	cedict
+1	爱	ài	ai4	动	to love; to be fond of; to like/affection/to be inclined (to do sth); to tend to (happen)
+1	八	bā	ba1	数	eight
+1	爸爸	bàba	ba4 ba5	名	(coll.) father; dad/CL:個|个[ge4],位[wei4]
+1	吧	ba	ba5	助	(modal particle indicating suggestion or surmise)/...right?/...OK?/...I presume.
+1	白天	báitiān	bai2 tian1	名	daytime/during the day/day/CL:個|个[ge4]
+1	百	bǎi	bai3	数	hundred/numerous/all kinds of/surname Bai
+1	半	bàn	ban4	数	half/semi-/incomplete/(after a number) and a half
+1	包子	bāozi	bao1 zi5	名	baozi; bao (steamed stuffed bun)/CL:個|个[ge4]
+1	杯子	bēizi	bei1 zi5	名	cup/glass/CL:個|个[ge4],隻|只[zhi1]
+1	本1	běn	ben3	量	(bound form) root; stem/(bound form) origin; source/(bound form) one's own; this/(bound form) this; the current (year etc)/(bound form) original/(bound form) inherent/originally; initially/capital; principal/classifier for books, periodicals, files etc
+1	边	biān	bian1	名、后缀	side/edge/margin/border/boundary/CL:個|个[ge4]/simultaneously
+1	病	bìng	bing4	名、动	illness/CL:場|场[chang2]/disease/to fall ill/defect
+1	不	bù	bu4	副	no; not so/(bound form) not; un-
+1	不客气	búkèqi	bu2 ke4 qi5		you're welcome/don't mention it/impolite/rude/blunt
+1	不要	búyào	bu2 yao4	副	don't!; must not
+1	菜	cài	cai4	名	vegetable; greens (CL:棵[ke1])/dish (of food) (CL:樣|样[yang4],道[dao4],盤|盘[pan2])/(of one's skills etc) weak; poor/(coll.) (one's) type
+1	茶	chá	cha2	名	tea/tea plant/CL:杯[bei1],壺|壶[hu2]
+1	唱	chàng	chang4	动	to sing/to call loudly/to chant
+1	超市	chāoshì	chao1 shi4	名	supermarket (abbr. for 超級市場|超级市场[chao1 ji2 shi4 chang3])/CL:家[jia1]
+1	车	chē	che1	名	car/vehicle/CL:輛|辆[liang4]/machine/to shape with a lathe/Kangxi radical 159/surname Che
+1	吃	chī	chi1	动	to eat; to consume/to eat at (a cafeteria etc)/to eradicate; to destroy/to absorb/to suffer (shock, injury, defeat etc)/variant of 吃[chi1]
+1	出租车	chūzūchē	chu1 zu1 che1	名	taxi/(Tw) rental car
+1	穿	chuān	chuan1	动	to wear/to put on/to dress/to bore through/to pierce/to perforate/to penetrate/to pass through/to thread
+1	打电话	dǎdiànhuà	da3 dian4 hua4		to make a telephone call
+1	大	dà	da4	形	big; large; great/older (than another person)/eldest (as in 大姐[da4 jie3])/greatly; freely; fully/(dialect) father/(dialect) uncle (father's brother)
+1	大家	dàjiā	da4 jia1	代	everyone/influential family/great expert
+1	大学	dàxué	da4 xue2	名	the Great Learning, one of the Four Books 四書|四书[Si4 shu1] in Confucianism/university/college/CL:所[suo3]
+1	大学生	dàxuéshēng	da4 xue2 sheng1	名	university student; college student
+1	到	dào	dao4	动	to reach; to arrive/to leave for; to go to/to (a place); until (a time); up to (a point)/(verb complement indicating arriving at a place or reaching a point)/considerate; thoughtful; thorough
+1	的	de	de5	助	of; ~'s (possessive particle)/(used after an attribute when it modifies a noun)/(used at the end of a declarative sentence for emphasis)/(used after a noun, verb or adjective to form a nominal expression, as in 皮革的[pi2 ge2 de5] "one made of leather" or 跑堂兒的|跑堂儿的[pao3 tang2 r5 de5] "a waiter (literally, one who runs back and forth in a restaurant)" or 新的[xin1 de5] "new one")/also pr. [di4] or [di5] in poetry and songs
+1	第	dì	di4	前缀	(prefix indicating ordinal number, as in 第六[di4 liu4] "sixth")/(literary) grades in which successful candidates in the imperial examinations were placed/(old) residence of a high official/(literary) but; however/(literary) only; just
+1	弟弟	dìdi	di4 di5	名	younger brother/CL:個|个[ge4],位[wei4]
+1	点1	diǎn	dian3	量	to touch briefly; to tap/to mark with a dot; to check off (on a list)/to order (food etc); to select/to mention; to bring up (a topic or person)/to hint at; to imply/to administer (eye medicine etc) in drops/to light (a fire, a lamp etc); to ignite/to nod (one's head) in agreement; to beckon by moving (one's hand) up and down/point; dot; spot; speck/dot stroke in Chinese characters/(math.) decimal point/point in time or space/(after a number) o'clock/a small amount; a bit; (after a verb or adjective) a bit more/classifier for small amounts
+3	点1	diǎn	dian3	名	to touch briefly; to tap/to mark with a dot; to check off (on a list)/to order (food etc); to select/to mention; to bring up (a topic or person)/to hint at; to imply/to administer (eye medicine etc) in drops/to light (a fire, a lamp etc); to ignite/to nod (one's head) in agreement; to beckon by moving (one's hand) up and down/point; dot; spot; speck/dot stroke in Chinese characters/(math.) decimal point/point in time or space/(after a number) o'clock/a small amount; a bit; (after a verb or adjective) a bit more/classifier for small amounts
+1	店	diàn	dian4	名	inn; old-style hotel (CL:家[jia1])/(bound form) shop; store
+1	电话	diànhuà	dian4 hua4	名	telephone/CL:部[bu4]/phone call/CL:通[tong1]/phone number
+1	电脑	diànnǎo	dian4 nao3	名	computer/CL:臺|台[tai2]
+1	电视	diànshì	dian4 shi4	名	television; TV/CL:臺|台[tai2],部[bu4]
+1	电影	diànyǐng	dian4 ying3	名	movie; film/CL:部[bu4],片[pian4],場|场[chang3]
+1	电影院	diànyǐngyuàn	dian4 ying3 yuan4	名	cinema; movie theater/CL:家[jia1],座[zuo4]
+1	东西	dōngxi	dong1 xi5	名	thing/stuff/person/CL:個|个[ge4],件[jian4]
+1	都	dōu	dou1	副	all; both; entirely/(used for emphasis) even/already/(not) at all
+1	读	dú	du2	动	to read out; to read aloud/to read/to attend (school); to study (a subject in school)/to pronounce
+1	读书	dúshū	du2 shu1	动	to read a book/to study/to attend school
+1	对	duì	dui4	形、介	right; correct/towards; at; for/concerning; regarding/to treat (sb a certain way)/to face/(bound form) opposite; facing; matching/to match together; to adjust/to fit; to suit/to answer; to reply/to add; to pour in (a fluid)/to check; to compare/classifier: couple; pair
+1	对不起	duìbuqǐ	dui4 bu5 qi3	动	I'm sorry; excuse me; I beg your pardon/to let (sb) down; to disappoint
+1	多	duō	duo1	形、动、代	many; much; more; a lot of/too many; in excess/(after a numeral) ... odd/how (to what extent) (Taiwan pr. [duo2])/(bound form) multi-; poly-
+2	多	duō	duo1	数、副	many; much; more; a lot of/too many; in excess/(after a numeral) ... odd/how (to what extent) (Taiwan pr. [duo2])/(bound form) multi-; poly-
+1	多少	duōshao	duo1 shao5	代	how much?; how many?/(phone number, student ID etc) what number?
+1	儿子	érzi	er2 zi5	名	son
+1	二	èr	er4	数	two/2/(Beijing dialect) stupid
+1	饭	fàn	fan4	名	cooked rice/CL:碗[wan3]/meal/CL:頓|顿[dun4]/(loanword) fan/devotee
+1	饭店	fàndiàn	fan4 dian4	名	restaurant/hotel/CL:家[jia1],個|个[ge4]
+1	房间	fángjiān	fang2 jian1	名	room/CL:間|间[jian1],個|个[ge4]
+1	非常	fēicháng	fei1 chang2	副	very; really/unusual; extraordinary
+1	飞机	fēijī	fei1 ji1	名	airplane/CL:架[jia4]
+1	分	fēn	fen1	量	to divide; to separate/to distribute; to allocate/to distinguish (good and bad)/(bound form) branch of (an organization); sub- (as in 分局[fen1 ju2])/fraction/one tenth (of certain units)/unit of length equivalent to 0.33 cm/minute (unit of time)/minute (angular measurement unit)/a point (in sports or games)/0.01 yuan (unit of money)
+3	分	fēn	fen1	动、名	to divide; to separate/to distribute; to allocate/to distinguish (good and bad)/(bound form) branch of (an organization); sub- (as in 分局[fen1 ju2])/fraction/one tenth (of certain units)/unit of length equivalent to 0.33 cm/minute (unit of time)/minute (angular measurement unit)/a point (in sports or games)/0.01 yuan (unit of money)
+1	分钟	fēnzhōng	fen1 zhong1	量	minute
+1	高兴	gāoxìng	gao1 xing4	形	happy/glad/willing (to do sth)/in a cheerful mood
+1	歌	gē	ge1	名	song (CL:首[shou3],支[zhi1])/(bound form) to sing/variant of 歌[ge1]
+1	哥哥	gēge	ge1 ge5	名	older brother/CL:個|个[ge4],位[wei4]
+1	个	gè	ge4	量	(classifier used before a noun that has no specific classifier)/(bound form) individual/variant of 個|个[ge4]
+1	给	gěi	gei3	动	to/for/for the benefit of/to give/to allow/to do sth (for sb)/(grammatical equivalent of 被)/(grammatical equivalent of 把)/(sentence intensifier)
+2	给	gěi	gei3	介	to/for/for the benefit of/to give/to allow/to do sth (for sb)/(grammatical equivalent of 被)/(grammatical equivalent of 把)/(sentence intensifier)
+1	公司	gōngsī	gong1 si1	名	company; firm; corporation/CL:家[jia1]
+1	工作	gōngzuò	gong1 zuo4	动、名	to work/(of a machine) to operate/job/work/task/CL:個|个[ge4],份[fen4],項|项[xiang4]
+1	狗	gǒu	gou3	名	dog/CL:隻|只[zhi1],條|条[tiao2]
+1	贵	guì	gui4	形	Guizhou Province (abbr. for 貴州省|贵州省[Gui4 zhou1 Sheng3])/expensive/(bound form) highly valued; precious/(bound form) noble; of high rank/(prefix) (honorific) your
+1	国	guó	guo2	名	country; nation; state/(bound form) national/surname Guo
+1	还	hái	hai2	副	still/still in progress/still more/yet/even more/in addition/fairly/passably (good)/as early as/even/also/else
+1	孩子	háizi	hai2 zi5	名	child
+1	汉语	Hànyǔ	han4 yu3	名	Chinese language
+1	汉字	Hànzì	han4 zi4	名	Chinese character(s)
+1	好	hǎo	hao3	形	good/appropriate; proper/all right!/(before a verb) easy to/(before a verb) good to/(before an adjective for exclamatory effect) so/(verb complement indicating completion)/(of two people) close; on intimate terms/(after a personal pronoun) hello
+2	好	hǎo	hao3	副	good/appropriate; proper/all right!/(before a verb) easy to/(before a verb) good to/(before an adjective for exclamatory effect) so/(verb complement indicating completion)/(of two people) close; on intimate terms/(after a personal pronoun) hello
+1	好吃	hǎochī	hao3 chi1	形	tasty; delicious
+1	好看	hǎokàn	hao3 kan4	形	good-looking; nice-looking/(of a movie, book, TV show etc) good/in an embarrassing situation
+1	好听	hǎotīng	hao3 ting1	形	pleasant to hear
+1	好玩儿	hǎowánr	hao3 wan2 r5	形	erhua variant of 好玩[hao3 wan2]
+1	号	hào	hao4	名、量	ordinal number/day of a month/mark/sign/business establishment/size/ship suffix/horn (wind instrument)/bugle call/assumed name/to take a pulse/classifier used to indicate number of people
+1	喝	hē	he1	动	to drink/variant of 嗬[he1]
+1	和1	hé	he2	介、连	(joining two nouns) and; together with; with (Taiwan pr. [han4])/(math.) sum/to make peace/(sports) to draw; to tie/(bound form) harmonious/(bound form) Japan; Japanese/(literary) harmonious (variant of 和[he2])/old variant of 和[he2]/surname He
+1	很	hěn	hen3	副	very; quite/(also, often used before an adjective without intensifying its meaning, i.e. as a meaningless syntactic element)
+1	后	hòu	hou4	名	back/behind/rear/afterwards/after/later/post-/empress/queen/(archaic) monarch/ruler/surname Hou
+1	回	huí	hui2	动	to circle/to go back/to turn around/to answer/to return/to revolve/Hui ethnic group (Chinese Muslims)/time/classifier for acts of a play/section or chapter (of a classic book)/to curve/to return/to revolve/variant of 迴|回[hui2]
+3	回	huí	hui2	量	to circle/to go back/to turn around/to answer/to return/to revolve/Hui ethnic group (Chinese Muslims)/time/classifier for acts of a play/section or chapter (of a classic book)/to curve/to return/to revolve/variant of 迴|回[hui2]
+1	会1	huì	hui4	动	can; to have the skill; to know how to/to be likely to; to be sure to/to meet; to get together/meeting; gathering/(suffix) union; group; association/(bound form) a moment (Taiwan pr. [hui3])
+1	火车	huǒchē	huo3 che1	名	train/CL:列[lie4],節|节[jie2],班[ban1],趟[tang4]
+1	鸡蛋	jīdàn	ji1 dan4	名	(chicken) egg/hen's egg/CL:個|个[ge4],打[da2]
+1	几	jǐ	ji3	代、数	how much/how many/several/a few
+1	家	jiā	jia1	名、量	home/family/(polite) my (sister, uncle etc)/classifier for families or businesses/refers to the philosophical schools of pre-Han China/noun suffix for a specialist in some activity, such as a musician or revolutionary, corresponding to English -ist, -er, -ary or -ian/CL:個|个[ge4]/used in 傢伙|家伙[jia1 huo5] and 傢俱|家俱[jia1 ju4]
+3	家	jiā	jia1	后缀	home/family/(polite) my (sister, uncle etc)/classifier for families or businesses/refers to the philosophical schools of pre-Han China/noun suffix for a specialist in some activity, such as a musician or revolutionary, corresponding to English -ist, -er, -ary or -ian/CL:個|个[ge4]/used in 傢伙|家伙[jia1 huo5] and 傢俱|家俱[jia1 ju4]
+1	家人	jiārén	jia1 ren2	名	family member/(old) servant
+1	见	jiàn	jian4	动	to see/to meet/to appear (to be sth)/to interview/opinion/view
+1	件	jiàn	jian4	量	item/component/classifier for events, things, clothes etc
+1	饺子	jiǎozi	jiao3 zi5	名	dumpling/pot-sticker/CL:個|个[ge4],隻|只[zhi1]
+1	叫	jiào	jiao4	动	to shout/to call/to order/to ask/to be called/by (indicates agent in the passive mood)/variant of 叫[jiao4]
+1	姐姐	jiějie	jie3 jie5	名	older sister/CL:個|个[ge4]
+1	今年	jīnnián	jin1 nian2	名	this year
+1	今天	jīntiān	jin1 tian1	名	today/the present time; now
+1	九	jiǔ	jiu3	数	nine/9
+1	觉得	juéde	jue2 de5	动	to think that ...; to feel that .../to feel (uncomfortable etc)
+1	开	kāi	kai1	动	to open (transitive or intransitive)/(of ships, vehicles, troops etc) to start/to turn on; to put in operation; to operate; to run/to boil/to write out (a prescription, check, invoice etc)/(directional complement) away; off/carat (gold)/abbr. for Kelvin, 開爾文|开尔文[Kai1 er3 wen2]/abbr. for 開本|开本[kai1 ben3], book format
+1	开车	kāichē	kai1 che1	动	to drive a car (or train etc)/(slang) to post sexual content online; to make a sexual joke
+1	看	kàn	kan4	动	to see; to look at/to read/to watch/to visit; to call on/to consider; to regard as/to look after/to treat (a patient or illness)/to depend on/to feel (that)/(after a verb) to give it a try/to watch out for
+1	看病	kànbìng	kan4 bing4	动	to visit a doctor/to see a patient
+1	看见	kànjiàn	kan4 jian4	动	to see; to catch sight of
+1	可以	kěyǐ	ke3 yi3	动、形	can/may/possible/able to/not bad/pretty good
+1	课	kè	ke4	名	subject/course/CL:門|门[men2]/class/lesson/CL:堂[tang2],節|节[jie2]/to levy/tax/form of divination
+1	口	kǒu	kou3	名、量	mouth/classifier for things with mouths (people, domestic animals, cannons, wells etc)/classifier for bites or mouthfuls
+1	块	kuài	kuai4	量	lump; chunk; piece/classifier for pieces of cloth, cake, soap etc/(coll.) classifier for money and currency units
+1	来	lái	lai2	动	to come/(used as a substitute for a more specific verb)/hither (directional complement for motion toward the speaker, as in 回來|回来[hui2 lai5])/ever since (as in 自古以來|自古以来[zi4 gu3 yi3 lai2])/for the past (amount of time)/(prefix) the coming ...; the next ... (as in 來世|来世[lai2 shi4])/(between two verbs) in order to/(after a round number) approximately/(used after 得[de2] to indicate possibility, as in 談得來|谈得来[tan2 de5 lai2], or after 不[bu4] to indicate impossibility, as in 吃不來|吃不来[chi1 bu5 lai2])
+1	老师	lǎoshī	lao3 shi1	名	teacher/CL:個|个[ge4],位[wei4]
+1	了	le	le5	助	(completed action marker)/(modal particle indicating change of state, situation now)/(modal particle intensifying preceding clause)
+1	冷	lěng	leng3	形	cold/surname Leng
+1	里	lǐ	li3	名	Li (surname)/li, ancient measure of length, approx. 500 m/neighborhood/ancient administrative unit of 25 families/(Tw) borough, administrative unit between the township 鎮|镇[zhen4] and neighborhood 鄰|邻[lin2] levels/lining/interior/inside/internal/also written 裏|里[li3]/variant of 裡|里[li3]
+1	两1	liǎng	liang3	数	two/both/some/a few/tael, unit of weight equal to 50 grams (modern) or 1⁄16 of a catty 斤[jin1] (old)
+1	零	líng	ling2	数	zero/nought/zero sign/fractional/fragmentary/odd (of numbers)/(placed between two numbers to indicate a smaller quantity followed by a larger one)/fraction/(in mathematics) remainder (after division)/extra/to wither and fall/to wither
+1	六	liù	liu4	数	six/6
+1	妈妈	māma	ma1 ma5	名	mama/mommy/mother/CL:個|个[ge4],位[wei4]
+1	吗	ma	ma5	助	(question particle for "yes-no" questions)
+1	买	mǎi	mai3	动	to buy/to purchase
+1	卖	mài	mai4	动	to sell/to betray/to spare no effort/to show off or flaunt
+1	忙	máng	mang2	形、动	busy/hurriedly/to hurry/to rush
+1	猫	māo	mao1	名	cat (CL:隻|只[zhi1])/(dialect) to hide oneself/(loanword) (coll.) modem
+1	没关系	méiguānxi	mei2 guan1 xi5		it doesn't matter
+1	没事	méishì	mei2 shi4	动	it's not important/it's nothing/never mind/to have nothing to do/to be free/to be all right (out of danger or trouble)
+1	没有	méiyǒu	mei2 you3	动、副	haven't/hasn't/doesn't exist/to not have/to not be
+1	妹妹	mèimei	mei4 mei5	名	younger sister/young woman/CL:個|个[ge4]
+1	们	men	men5	后缀	plural marker for pronouns, and nouns referring to individuals
+1	米饭	mǐfàn	mi3 fan4	名	(cooked) rice
+1	面包	miànbāo	mian4 bao1	名	bread/CL:片[pian4],塊|块[kuai4]
+1	面条儿	miàntiáor	mian4 tiao2 r5	名	erhua variant of 麵條|面条[mian4 tiao2]
+1	明年	míngnián	ming2 nian2	名	next year
+1	明天	míngtiān	ming2 tian1	名	tomorrow
+1	名字	míngzi	ming2 zi5	名	name (of a person or thing)/CL:個|个[ge4]
+1	哪	nǎ	na3	代	how/which
+1	哪个	nǎge	na3 ge5	代	which/who
+1	哪里	nǎlǐ	na3 li3	代	where?/somewhere/anywhere/wherever/nowhere (negative answer to question)/humble expression denying compliment/where?/somewhere/anywhere/wherever/nowhere (negative answer to question)/humble expression denying compliment/also written 哪裡|哪里
+1	哪儿	nǎr	na3 r5	代	where?/wherever; anywhere; somewhere/(used in rhetorical questions) how can ...?; how could ...?
+1	哪些	nǎxiē	na3 xie1	代	which ones?/who?/what?
+1	那	nà	na4	代	(specifier) that; the; those (colloquial pr. [nei4])/(pronoun) that (referring to persons, things or situations)/then (in that case)
+2	那	nà	na4	连	(specifier) that; the; those (colloquial pr. [nei4])/(pronoun) that (referring to persons, things or situations)/then (in that case)
+1	那边	nàbiān	na4 bian1	代	over there/yonder
+1	那个	nàge	na4 ge5	代	that one/that thing/that (as opposed to this)/(used before a verb or adjective for emphasis)/(used to humorously or indirectly refer to sth embarrassing, funny etc, or when one can't think of the right word)/(used in speech as a filler, similar to "umm", "you know" etc)/(euph.) menstruation/sex/also pr. [nei4 ge5]
+1	那里	nàlǐ	na4 li3	代	there; that place
+1	那儿	nàr	na4 r5	代	there
+1	那些	nàxiē	na4 xie1	代	those
+1	男	nán	nan2	形	(bound form) male/baron, the lowest of the five ranks of nobility 五等爵位[wu3 deng3 jue2 wei4]
+1	男朋友	nánpéngyou	nan2 peng2 you5	名	boyfriend
+1	呢	ne	ne5	助	(sentence-final particle) used in questions to link back to prior discourse or context ("what about...?", "and...?")/(sentence-final particle) indicating that a state or situation still holds/(discourse particle) used to mark a slight pause or emphasis in speech
+1	能	néng	neng2	动	can/to be able to/might possibly/ability/(physics) energy/surname Neng
+1	你	nǐ	ni3	代	you (Note: In Taiwan, 妳 is used to address females, but in mainland China, it is not commonly used. Instead, 你 is used to address both males and females.)/you (informal, as opposed to courteous 您[nin2])
+1	你好	nǐhǎo	ni3 hao3		hello; hi
+1	你们	nǐmen	ni3 men5	代	you (plural)
+1	年	nián	nian2	名、量	grain/harvest (old)/variant of 年[nian2]/surname Nian/year/CL:個|个[ge4]
+1	您	nín	nin2	代	you (courteous, as opposed to informal 你[ni3])
+1	牛奶	niúnǎi	niu2 nai3	名	cow's milk/CL:瓶[ping2],杯[bei1]
+1	女	nǚ	nü3	形	female/woman/daughter
+1	女儿	nǚ’ér	nü3 er2	名	daughter
+1	女朋友	nǚpéngyou	nü3 peng2 you5	名	girlfriend
+1	女士	nǚshì	nü3 shi4	名	lady/madam/CL:個|个[ge4],位[wei4]/Miss/Ms
+1	朋友	péngyou	peng2 you5	名	friend/CL:個|个[ge4],位[wei4]
+1	便宜	piányi	pian2 yi5	形	cheap; inexpensive/a petty advantage/to let sb off lightly
+1	漂亮	piàoliang	piao4 liang5	形	pretty; beautiful
+1	苹果	píngguǒ	ping2 guo3	名	Apple (American tech company)/apple/CL:個|个[ge4],顆|颗[ke1]
+1	七	qī	qi1	数	seven/7
+1	起床	qǐchuáng	qi3 chuang2	动	to get out of bed; to get up
+1	千	qiān	qian1	数	thousand/used in 鞦韆|秋千[qiu1 qian1]
+1	前	qián	qian2	名	front/forward/ahead/first/top (followed by a number)/future/ago/before/BC (e.g. 前293年)/former/formerly
+1	钱	qián	qian2	名	coin/money/CL:筆|笔[bi3]/unit of weight, one tenth of a tael 兩|两[liang3]/surname Qian
+1	请	qǐng	qing3	动	to ask/to invite/please (do sth)/to treat (to a meal etc)/to request
+1	请问	qǐngwèn	qing3 wen4	动	Excuse me, may I ask...?
+1	去	qù	qu4	动	to go/to go to (a place)/(of a time etc) last/just passed/to send/to remove/to get rid of/to reduce/to be apart from in space or time/to die (euphemism)/to play (a part)/(when used either before or after a verb) to go in order to do sth/(after a verb of motion indicates movement away from the speaker)/(used after certain verbs to indicate detachment or separation)
+1	去年	qùnián	qu4 nian2	名	last year
+1	热	rè	re4	形	to warm up/to heat up/hot (of weather)/heat/fervent
+1	人	rén	ren2	名	person; people/CL:個|个[ge4],位[wei4]
+1	认识	rènshi	ren4 shi5	动	to know/to recognize/to be familiar with/to get acquainted with sb/knowledge/understanding/awareness/cognition
+1	日	rì	ri4	量	abbr. for 日本[Ri4 ben3], Japan/sun/day/date, day of the month
+1	三	sān	san1	数	surname San/three/3
+1	商店	shāngdiàn	shang1 dian4	名	store; shop/CL:家[jia1],個|个[ge4]
+1	上	shàng	shang4	名、动	(bound form) up; upper; above; previous/first (of multiple parts)/to climb; to get onto; to go up/to attend (class or university)/(directional complement) up/(noun suffix) on; above
+1	上班	shàngbān	shang4 ban1	动	to go to work/to be on duty/to start work/to go to the office
+1	上课	shàngkè	shang4 ke4	动	to go to class/to attend class/to go to teach a class
+1	上午	shàngwǔ	shang4 wu3	名	morning/CL:個|个[ge4]
+1	上学	shàngxué	shang4 xue2	动	to go to school/to attend school
+1	少	shǎo	shao3	形、动	few/less/to lack/to be missing/to stop (doing sth)/seldom
+1	谁	shéi/shuí	shei2/shui2	代	who/also pr. [shui2]
+1	什么	shénme	shen2 me5	代	what?/something; anything
+1	生病	shēngbìng	sheng1 bing4	动	to fall ill
+1	十	shí	shi2	数	ten/10
+1	时候	shíhou	shi2 hou5	名	time/length of time/moment/period
+1	时间	shíjiān	shi2 jian1	名	(concept of) time/(duration of) time/(point in) time
+1	事	shì	shi4	名	matter/thing/item/work/affair/CL:件[jian4],樁|桩[zhuang1],回[hui2]
+1	是	shì	shi4	动	to be (followed by substantives only)/correct; right; true/(respectful acknowledgement of a command) very well/(adverb for emphatic assertion)/variant of 是[shi4]
+1	手机	shǒujī	shou3 ji1	名	cell phone; mobile phone/CL:部[bu4],臺|台[tai2]
+1	书	shū	shu1	名	abbr. for 書經|书经[Shu1 jing1]/book/letter/document/CL:本[ben3],冊|册[ce4],部[bu4]/to write
+1	书店	shūdiàn	shu1 dian4	名	bookstore/CL:家[jia1]
+1	水	shuǐ	shui3	名	surname Shui/water/(after a name) ... River/to swim (used mostly in 會水|会水[hui4 shui3] and 水性[shui3 xing4])/(coll.) lacking in substance; shoddy/(bound form) additional cost; extra income/classifier for washings of a garment
+1	水果	shuǐguǒ	shui3 guo3	名	fruit/CL:個|个[ge4]
+1	睡	shuì	shui4	动	to sleep/to lie down
+1	睡觉	shuìjiào	shui4 jiao4	动	to go to bed/to sleep
+1	说	shuō	shuo1	动	to speak; to talk; to say/to explain; to comment/to scold; to tell off/(bound form) theory; doctrine/variant of 說|说[shuo1]
+1	说话	shuōhuà	shuo1 hua4	动	to speak/to say/to talk/to gossip/to tell stories/talk/word
+1	四	sì	si4	数	four/4
+1	岁	suì	sui4	量	classifier for years (of age)/year/year (of crop harvests)/variant of 歲|岁[sui4], year/years old
+1	他	tā	ta1	代	(third-person singular) (since the early 20th century, usu. male) he; him; his/(bound form) other; another; some other (as in 他日[ta1 ri4] and 他人[ta1 ren2])
+1	它	tā	ta1	代	it/it (pronoun for an animal)
+1	她	tā	ta1	代	she
+1	他们	tāmen	ta1 men5	代	they; them
+1	它们	tāmen	ta1 men5	代	they; them
+1	她们	tāmen	ta1 men5	代	they; them (females)
+1	太	tài	tai4	副	highest/greatest/too (much)/very/extremely
+1	天	tiān	tian1	名、量	day/sky/heaven
+1	天气	tiānqì	tian1 qi4	名	weather
+1	听	tīng	ting1	动	to listen to; to hear/to heed; to obey/a can (loanword from English "tin")/classifier for canned beverages/to let be; to allow (Taiwan pr. [ting4])/(literary) to administer; to deal with (Taiwan pr. [ting4])
+1	听见	tīngjiàn	ting1 jian4	动	to hear
+1	同学	tóngxué	tong2 xue2	名	to study at the same school/fellow student/classmate/CL:位[wei4],個|个[ge4]
+1	外	wài	wai4	名	outside/in addition/foreign/external
+1	外边	wàibian	wai4 bian5	名	outside/outer surface/abroad/place other than one's home
+1	玩	wán	wan2	动	to play/to have fun/to trifle with/toy/sth used for amusement/curio or antique (Taiwan pr. [wan4])/to keep sth for entertainment/variant of 玩[wan2]/Taiwan pr. [wan4]
+1	晚	wǎn	wan3	形	evening/night/late
+1	晚饭	wǎnfàn	wan3 fan4	名	evening meal/dinner/supper/CL:份[fen4],頓|顿[dun4],次[ci4],餐[can1]
+1	晚上	wǎnshang	wan3 shang5	名	evening/night/CL:個|个[ge4]/in the evening
+1	喂1	wèi	wei4	叹	hey/to feed (an animal, baby, invalid etc)/to feed/variant of 餵|喂[wei4]
+1	问	wèn	wen4	动	to ask; to inquire
+1	问题	wèntí	wen4 ti2	名	question/problem/issue/topic/CL:個|个[ge4]
+1	我	wǒ	wo3	代	I; me; my
+1	我们	wǒmen	wo3 men5	代	we; us; ourselves; our
+1	五	wǔ	wu3	数	five/5
+1	午饭	wǔfàn	wu3 fan4	名	lunch/CL:份[fen4],頓|顿[dun4],次[ci4],餐[can1]
+1	喜欢	xǐhuan	xi3 huan5	动	to like; to be fond of
+1	下	xià	xia4	名、动、量	down/downwards/below/lower/later/next (week etc)/second (of two parts)/to decline/to go down/to arrive at (a decision, conclusion etc)/measure word to show the frequency of an action
+1	下雨	xiàyǔ	xia4 yu3		to rain
+1	下班	xiàbān	xia4 ban1	动	to finish work; to get off work/next service (train, bus etc)
+1	下课	xiàkè	xia4 ke4	动	to finish class/to get out of class/(fig.) (esp. of a sports coach) to be dismissed/to be fired
+1	下午	xiàwǔ	xia4 wu3	名	afternoon/CL:個|个[ge4]/p.m.
+1	先生	xiānsheng	xian1 sheng5	名	teacher/gentleman; sir; mister (Mr.)/husband/(dialect) doctor/CL:位[wei4]
+1	现在	xiànzài	xian4 zai4	名	now; at present; currently
+1	想	xiǎng	xiang3	动	to think (about)/to think of; to devise/to think (that); to believe (that)/to desire; to want (to)/to miss (feel wistful about the absence of)
+1	小	xiǎo	xiao3	形、前缀	small/tiny/few/young
+1	小朋友	xiǎopéngyǒu	xiao3 peng2 you3	名	child; kid (used to refer to a child, or by an adult to address a child, or, in Taiwan, to refer to sb's own child)/CL:個|个[ge4]
+1	小时	xiǎoshí	xiao3 shi2	名	hour/CL:個|个[ge4]
+1	小学	xiǎoxué	xiao3 xue2	名	elementary school; primary school
+1	小学生	xiǎoxuéshēng	xiao3 xue2 sheng1	名	primary school student/schoolchild/CL:個|个[ge4],名[ming2]/(fig.) beginner
+1	些	xiē	xie1	量	classifier indicating a small amount or small number greater than 1: some, a few, several
+1	写	xiě	xie3	动	to write
+1	谢谢	xièxie	xie4 xie5	动	to thank/thanks/thank you
+1	新	xīn	xin1	形	abbr. for Xinjiang 新疆[Xin1 jiang1]/abbr. for Singapore 新加坡[Xin1 jia1 po1]/surname Xin/new/newly/meso- (chemistry)
+1	星期	xīngqī	xing1 qi1	名	week/CL:個|个[ge4]/day of the week/Sunday
+1	星期日	xīngqīrì	xing1 qi1 ri4	名	Sunday
+1	星期天	xīngqītiān	xing1 qi1 tian1	名	Sunday
+1	休息	xiūxi	xiu1 xi5	动	rest/to rest
+1	学	xué	xue2	动	to learn/to study/to imitate/science/-ology
+1	学生	xuéshēng	xue2 sheng1	名	student/schoolchild
+1	学习	xuéxí	xue2 xi2	动	to learn/to study
+1	学校	xuéxiào	xue2 xiao4	名	school/CL:所[suo3]
+1	雪	xuě	xue3	名	snow/CL:場|场[chang2]/(literary) to wipe away (a humiliation etc)/surname Xue
+1	要	yào	yao4	动	to want; to need; to ask for/will; shall; about to/need to; should/if (same as 要是[yao4 shi5])/(bound form) important
+1	也	yě	ye3	副	also; too; as well; (not ...) either/(used after a verbal or nominal expression X to indicate that X is an extreme or unexpected case) even (X)/(literary) particle having functions similar to 啊[a5]/surname Ye
+1	一	yī	yi1	数	one/single/a (article)/as soon as/entire; whole; all; throughout/"one" radical in Chinese characters (Kangxi radical 1)/also pr. [yao1] for greater clarity when spelling out numbers digit by digit
+1	衣服	yīfu	yi1 fu5	名	clothes/CL:件[jian4],套[tao4]
+1	医生	yīshēng	yi1 sheng1	名	doctor/CL:個|个[ge4],位[wei4],名[ming2]
+1	医院	yīyuàn	yi1 yuan4	名	hospital/CL:所[suo3],家[jia1],座[zuo4]
+1	一半	yíbàn	yi2 ban4	数	half
+1	一下	yíxià	yi2 xia4	数量	(after a verb) a bit; a little (indicating brief duration, or softening the tone, or suggesting giving sth a try)/all at once; suddenly
+1	椅子	yǐzi	yi3 zi5	名	chair/CL:把[ba3],張|张[zhang1]
+1	一点儿	yìdiǎnr	yi4 dian3 r5	数量	erhua variant of 一點|一点[yi1 dian3]
+1	一些	yìxiē	yi4 xie1	数量	some; a few; a little; (following an adjective) slightly ...er
+1	有	yǒu	you3	动	to have; there is/(bound form) having; with; -ful; -ed; -al (as in 有意[you3 yi4] intentional)
+1	有的	yǒude	you3 de5	代	(there are) some (who are...)/some (exist)
+1	有点儿	yǒudiǎnr	you3 dian3 r5	副	slightly/a little/somewhat
+1	有些	yǒuxiē	you3 xie1	代	some/somewhat
+3	有些	yǒuxiē	you3 xie1	副	some/somewhat
+1	雨	yǔ	yu3	名	rain/CL:陣|阵[zhen4],場|场[chang2]
+1	元	yuán	yuan2	量	currency unit (esp. Chinese yuan)/(bound form) first; original; primary/(bound form) basic; fundamental/(bound form) constituent; part/(prefix) meta-/(math.) argument; variable/era (of a reign)/(Tw) (geology) eon/surname Yuan/Yuan dynasty (1279–1368)
+1	月	yuè	yue4	名	moon/month/monthly/CL:個|个[ge4],輪|轮[lun2]
+1	再	zài	zai4	副	again; once more; re-/further; beyond this point of time/(before an adjective) more/then (after sth, and not until then)/no matter how ... (followed by an adjective or verb, and then (usually) 也[ye3] or 都[dou1] for emphasis)/(used to introduce additional information, as in 再則|再则[zai4 ze2], 再就是[zai4 jiu4 shi4] etc)/(literary) to reappear; to reoccur
+1	在	zài	zai4	动、介、副	to exist; to be alive/(of sb or sth) to be (located) at/(used before a verb to indicate an action in progress)
+1	再见	zàijiàn	zai4 jian4	动	goodbye/see you again later
+1	早	zǎo	zao3	形	early/morning/Good morning!/long ago/prematurely
+1	早饭	zǎofàn	zao3 fan4	名	breakfast/CL:份[fen4],頓|顿[dun4],次[ci4],餐[can1]
+1	早上	zǎoshang	zao3 shang5	名	early morning/CL:個|个[ge4]
+1	怎么	zěnme	zen3 me5	代	how?/what?/why?/variant of 怎麼|怎么[zen3 me5]
+1	怎么样	zěnmeyàng	zen3 me5 yang4	代	how?/how about?/how was it?/how are things?
+1	找	zhǎo	zhao3	动	to try to find/to look for/to call on sb/to find/to seek/to return/to give change
+1	这	zhè	zhe4	代	(pronoun) this; these/(bound form) this; the (followed by a noun)/(bound form) this; these (followed by a classifier) (in this sense, commonly pr. [zhei4], esp. in Beijing)
+1	这边	zhèbiān	zhe4 bian1	代	this side/here
+1	这个	zhège	zhe4 ge5	代	(pronoun) this/(adjective) this
+1	这里	zhèlǐ	zhe4 li3	代	here/variant of 這裡|这里[zhe4 li3]
+1	这儿	zhèr	zhe4 r5	代	here
+1	这些	zhèxiē	zhe4 xie1	代	these
+1	真	zhēn	zhen1	副	really/truly/indeed/real/true/genuine
+1	正在	zhèngzài	zheng4 zai4	副	to be in the process of (doing sth); to be currently ...-ing
+1	只	zhī	zhi1	量	classifier for birds and certain animals, one of a pair, some utensils, vessels etc/grain that has begun to ripen/variant of 隻|只[zhi1]
+1	知道	zhīdào	zhi1 dao4	动	to know; to become aware of/also pr. [zhi1dao5]
+1	中国	Zhōngguó	zhong1 guo2	名	China
+1	中文	Zhōngwén	zhong1 wen2	名	Chinese language
+1	中午	zhōngwǔ	zhong1 wu3	名	noon/midday/CL:個|个[ge4]
+1	中学	zhōngxué	zhong1 xue2	名	middle school
+1	中学生	zhōngxuéshēng	zhong1 xue2 sheng1	名	middle-school student/high school student
+1	住	zhù	zhu4	动	to live; to reside; to stay/to stop; to cease/(result complement indicating firmness or a stable achieved state)
+1	桌子	zhuōzi	zhuo1 zi5	名	table/desk/CL:張|张[zhang1],套[tao4]
+1	字	zì	zi4	名	letter/symbol/character/word/CL:個|个[ge4]/courtesy or style name traditionally given to males aged 20 in dynastic China
+1	昨天	zuótiān	zuo2 tian1	名	yesterday
+1	坐	zuò	zuo4	动	surname Zuo/to sit/to take a seat/to take (a bus, airplane etc)/to bear fruit/variant of 座[zuo4]
+1	做	zuò	zuo4	动	to make; to produce/to write; to compose/to do; to engage in; to hold (a party etc)/(of a person) to be (an intermediary, a good student etc); to become (husband and wife, friends etc)/(of a thing) to serve as; to be used for/to assume (an air or manner)
+1	做饭	zuòfàn	zuo4 fan4		to prepare a meal/to cook
+2	啊	a	a5	助	modal particle ending sentence, showing affirmation, approval, or consent
+2	爱好	àihào	ai4 hao4	动、名	to like; to be fond of; to take pleasure in; to be keen on/interest; hobby/CL:個|个[ge4]
+2	白色	báisè	bai2 se4	名	white/fig. reactionary/anti-communist
+2	班	bān	ban1	名	surname Ban/team; class; grade/(military) squad/work shift/CL:個|个[ge4]/classifier for groups of people and scheduled transport vehicles
+2	帮	bāng	bang1	动	old variant of 幫|帮[bang1]/to help/to assist/to support/for sb (i.e. as a help)/hired (as worker)/side (of pail, boat etc)/outer layer/upper (of a shoe)/group/gang/clique/party/secret society
+2	帮忙	bāngmáng	bang1 mang2	动	to help/to lend a hand/to do a favor/to do a good turn
+2	包	bāo	bao1	动、名、量	surname Bao/to cover/to wrap/to hold/to include/to take charge of/to contract (to or for)/package/wrapper/container/bag/to hold or embrace/bundle/packet/CL:個|个[ge4],隻|只[zhi1]
+2	本子	běnzi	ben3 zi5	名	book/notebook/Japanese-style self-published comic (esp. an erotic one), aka "dōjinshi"/CL:本[ben3]/edition
+2	比	bǐ	bi3	动、介	Belgium/Belgian/abbr. for 比利時|比利时[Bi3 li4 shi2]/to compare/(followed by a noun and adjective) more {adj.} than {noun}/ratio/to gesture/(Taiwan pr. [bi4] in some compounds derived from Classical Chinese)
+2	笔	bǐ	bi3	名	writing brush; writing implement (pen, pencil etc) (CL:支[zhi1],枝[zhi1])/brushstroke; stroke (in painting or calligraphy)/(bound form) style of writing; literary manner; technique of brushwork/(classifier) stroke of a Chinese character/(classifier) sum of money; financial transaction; piece of business/(literary) to write (with a brush or pen)
+2	别1	bié	bie2	副	surname Bie/to leave; to part (from)/(literary) to differentiate; to distinguish/(dialect) to turn away; to turn aside; to avert (one's face, gaze etc)/(bound form) other; another; different/don't ...!/to fasten with a pin or clip/to stick in; to insert (in order to hinder movement)/(noun suffix) category (as in 性別|性别[xing4 bie2], 派別|派别[pai4 bie2])
+2	不错	búcuò	bu2 cuo4	形	correct/right/not bad/pretty good
+2	不好意思	bùhǎoyìsi	bu4 hao3 yi4 si5		to feel embarrassed/to find it embarrassing/to be sorry (for inconveniencing sb)
+2	长	cháng	chang2	形	long/(bound form) length/(bound form) strong point; forte/(bound form) to be good at/(literary) surplus; spare (Taiwan pr. [zhang4])
+2	车站	chēzhàn	che1 zhan4	名	rail station/bus stop/CL:處|处[chu4],個|个[ge4]
+2	出	chū	chu1	动	to go out; to come out/to arise; to occur/to produce; to yield/to go beyond; to exceed/(used after a verb to indicate an outward direction or a positive result)/classifier for dramas, plays, operas etc/variant of 出[chu1] (classifier for plays or chapters of classical novels)
+2	出国	chūguó	chu1 guo2	动	to go abroad; to leave the country
+2	出来	chūlái	chu1 lai2	动	to come out/to appear/to arise
+2	出门	chūmén	chu1 men2	动	to go out/to leave home/to go on a journey/away from home/(of a woman) to get married
+2	出去	chūqù	chu1 qu4	动	to go out
+2	床	chuáng	chuang2	名	bed; couch (furniture that one can lie down on) (CL:張|张[zhang1])/bed; bottom (of rivers, oceans, gardens etc)/frame; chassis/classifier for blankets, quilts etc/variant of 床[chuang2]
+2	词	cí	ci2	名	old variant of 詞|词[ci2]/word/statement; speech; lyrics/a form of lyric poetry, flourishing in the Song dynasty 宋朝[Song4 chao2] (CL:首[shou3])
+2	次	cì	ci4	量	next in sequence/second/the second (day, time etc)/secondary/vice-/sub-/infra-/inferior quality/substandard/order/sequence/hypo- (chemistry)/classifier for enumerated events: time
+2	从	cóng	cong2	介	from; through; via/(bound form) to follow/(bound form) to obey/(bound form) to engage in (an activity)/(used before a negative) ever/(bound form) (Taiwan pr. [zong4]) retainer; attendant/(bound form) (Taiwan pr. [zong4]) assistant; auxiliary; subordinate/(bound form) (Taiwan pr. [zong4]) related by common paternal grandfather or earlier ancestor/surname Cong/variant of 從|从[cong2]
+2	从小	cóngxiǎo	cong2 xiao3	副	from childhood; from a young age
+2	错	cuò	cuo4	形	mistake/wrong/bad/interlocking/complex/to grind/to polish/to alternate/to stagger/to miss/to let slip/to evade/to inlay with gold or silver/surname Cuo
+2	打1	dǎ	da3	动	a semantically light, transitive verb that is combined with various grammatical objects to form compound verbs and verb-object phrases with a diverse range of meanings (e.g. 打傘|打伞[da3 san3] "to hold an umbrella", 打電話|打电话[da3 dian4 hua4] "to make a phone call", 打針|打针[da3 zhen1] "to get an injection", 打手套[da3 shou3 tao4] "to knit gloves", 打氣|打气[da3 qi4] "to inflate")/to hit; to strike/to fight/(coll.) from; since (as in 打那以後|打那以后[da3 na4 yi3 hou4] "since then")
+2	打车	dǎchē	da3 che1	动	to take a taxi (in town)/to hitch a lift
+2	打开	dǎkāi	da3 kai1	动	to open/to show (a ticket)/to turn on/to switch on
+2	但	dàn	dan4	连	but; yet; however; still/merely; only; just
+2	但是	dànshì	dan4 shi4	连	but; however
+2	得	de	de5	助	structural particle: used after a verb (or adjective as main verb), linking it to following phrase indicating effect, degree, possibility etc
+2	地	de	de5	助	-ly/structural particle: used before a verb or adjective, linking it to preceding modifying adverbial adjunct
+2	等1	děng	deng3	动	to wait for; to await/by the time; when; till/and so on; etc.; et al./(bound form) class; rank; grade/(bound form) equal to; same as/(used to end an enumeration)/(literary) (plural suffix attached to a personal pronoun or noun)
+2	地铁	dìtiě	di4 tie3	名	underground railway; subway/subway train
+2	点2	diǎn	dian3	动	to touch briefly; to tap/to mark with a dot; to check off (on a list)/to order (food etc); to select/to mention; to bring up (a topic or person)/to hint at; to imply/to administer (eye medicine etc) in drops/to light (a fire, a lamp etc); to ignite/to nod (one's head) in agreement; to beckon by moving (one's hand) up and down/point; dot; spot; speck/dot stroke in Chinese characters/(math.) decimal point/point in time or space/(after a number) o'clock/a small amount; a bit; (after a verb or adjective) a bit more/classifier for small amounts
+2	懂	dǒng	dong3	动	to understand/to comprehend
+2	动	dòng	dong4	动	(of sth) to move/to set in movement/to displace/to touch/to make use of/to stir (emotions)/to alter/abbr. for 動詞|动词[dong4 ci2], verb
+2	饭馆	fànguǎn	fan4 guan3	名	restaurant/CL:家[jia1]
+2	飞	fēi	fei1	动	to fly
+2	高	gāo	gao1	形、名	high/tall/above average/loud/your (honorific)/surname Gao
+2	高中	gāozhōng	gao1 zhong1	名	senior high school/abbr. for 高級中學|高级中学[gao1 ji2 zhong1 xue2]
+2	告诉	gàosu	gao4 su5	动	to tell; to inform; to let know
+2	个子	gèzi	ge4 zi5	名	stature; height; size (of a person or object)/(agriculture) bundle of cereal stalks tied together
+2	跟	gēn	gen1	介、连	heel/to follow closely/to go with/(of a woman) to marry sb/with/compared with/to/towards/and (joining two nouns)
+2	公交车	gōngjiāochē	gong1 jiao1 che1	名	public transport vehicle/town bus/CL:輛|辆[liang4]
+2	过	guò	guo4	动	to cross/to go over/to pass (time)/to celebrate (a holiday)/to live/to get along/excessively/too-
+2	过来	guòlái	guo4 lai2	动	to come over/to manage/to handle/to be able to take care of
+2	过年	guònián	guo4 nian2	动	to celebrate the Chinese New Year
+2	过去1	guòqù	guo4 qu4	动	(in the) past; former; previous/to go over; to pass by
+2	过	guo	guo5	助	(experienced action marker)
+2	还是	háishi	hai2 shi5	副、连	still (as before)/had better/unexpectedly/or
+2	黑色	hēisè	hei1 se4	名	black
+2	红茶	hóngchá	hong2 cha2	名	black tea/CL:杯[bei1],壺|壶[hu2]
+2	红色	hóngsè	hong2 se4	名	red (color)/revolutionary
+2	后面	hòumiàn	hou4 mian4	名	the back; the rear; the last bit/behind; near the end; at the back/later; afterwards
+2	花1	huā	hua1	动	flower/blossom/CL:朵[duo3],支[zhi1],束[shu4],把[ba3],盆[pen2],簇[cu4]/fancy pattern/florid/to spend (money, time)/(coll.) lecherous/lustful/old variant of 花[hua1]/surname Hua/variant of 花[hua1]/flower/blossom/also pr. [wei3]
+2	花2	huā	hua1	名	flower/blossom/CL:朵[duo3],支[zhi1],束[shu4],把[ba3],盆[pen2],簇[cu4]/fancy pattern/florid/to spend (money, time)/(coll.) lecherous/lustful/old variant of 花[hua1]/surname Hua/variant of 花[hua1]/flower/blossom/also pr. [wei3]
+2	画	huà	hua4	动、名	to draw; to paint/picture; painting (CL:幅[fu2],張|张[zhang1])/to draw (a line) (variant of 劃|划[hua4])/stroke of a Chinese character (variant of 劃|划[hua4])/(calligraphy) horizontal stroke (variant of 劃|划[hua4])
+2	坏	huài	huai4	形	bad/spoiled/broken/to break down/(suffix) to the utmost
+2	回来	huílái	hui2 lai2	动	to return; to come back
+2	回去	huíqù	hui2 qu4	动	to return/to go back
+2	机场	jīchǎng	ji1 chang3	名	airport; airfield/(slang) service provider for Shadowsocks or similar software for circumventing Internet censorship/CL:家[jia1],處|处[chu4]
+2	机票	jīpiào	ji1 piao4	名	plane ticket; airline ticket/CL:張|张[zhang1]
+2	记得	jìde	ji4 de5	动	to remember
+2	间	jiān	jian1	量	between/among/within a definite time or space/room/section of a room or lateral space between two pairs of pillars/classifier for rooms
+2	教	jiāo	jiao1	动	to teach; to instruct
+2	教室	jiàoshì	jiao4 shi4	名	classroom/CL:間|间[jian1]
+2	介绍	jièshào	jie4 shao4	动	to introduce (sb to sb)/to give a presentation/to present (sb for a job etc)/introduction
+2	进	jìn	jin4	动	to go forward/to advance/to go in/to enter/to put in/to submit/to take in/to admit/(math.) base of a number system/classifier for sections in a building or residential compound
+2	近	jìn	jin4	形	near/close to/approximately
+2	进来	jìnlái	jin4 lai2	动	to come in
+2	进去	jìnqù	jin4 qu4	动	to go in
+2	经常	jīngcháng	jing1 chang2	副	frequently; constantly; regularly; often/day-to-day; everyday; daily
+2	酒店	jiǔdiàn	jiu3 dian4	名	wine shop/pub (public house)/hotel/restaurant/(Tw) hostess club
+2	就	jiù	jiu4	副	(after a suppositional clause) in that case; then/(after a clause of action) as soon as; immediately after/(same as 就是[jiu4 shi4]) merely; nothing else but; simply; just; precisely; exactly/only; as little as/as much as; as many as/to approach; to move towards/to undertake; to engage in/(often followed by 著|着[zhe5]) taking advantage of/(of food) to go with/with regard to; concerning/(pattern: 就[jiu4] ... 也[ye3] ...) even if ... still .../(pattern: 不[bu4] ... 就[jiu4] ...) if not ... then must be ...
+2	咖啡	kāfēi	ka1 fei1	名	(loanword) coffee/CL:杯[bei1]
+2	开始	kāishǐ	kai1 shi3	动、名	to begin/beginning/to start/initial/CL:個|个[ge4]
+2	开学	kāixué	kai1 xue2	动	(of a student) to start school/(of a semester) to begin/(old) to found a school/the start of a new term
+2	考	kǎo	kao3	动	to beat/to hit/variant of 考[kao3]/to inspect/to test/to take an exam/to check/to verify/to test/to examine/to take an exam/to take an entrance exam for/deceased father
+2	考试	kǎoshì	kao3 shi4	动、名	to take an exam/exam/CL:次[ci4]
+2	可能	kěnéng	ke3 neng2	形、名、动	might (happen)/possible/probable/possibility/probability/maybe/perhaps/CL:個|个[ge4]
+2	裤子	kùzi	ku4 zi5	名	trousers/pants/CL:條|条[tiao2]/variant of 褲子|裤子, trousers/pants
+2	快	kuài	kuai4	形、副	rapid/quick/speed/rate/soon/almost/to make haste/clever/sharp (of knives or wits)/forthright/plainspoken/gratified/pleased/pleasant
+2	快乐	kuàilè	kuai4 le4	形	happy; joyful
+2	快要	kuàiyào	kuai4 yao4	副	nearly at the point of (doing sth); about to (do sth)
+2	篮球	lánqiú	lan2 qiu2	名	basketball/CL:個|个[ge4],隻|只[zhi1]
+2	累	lèi	lei4	形、动	tired/weary/to strain/to wear out/to work hard
+2	离	lí	li2	动	surname Li/to leave/to part from/to be away from/(in giving distances) from/without (sth)/independent of/one of the Eight Trigrams 八卦[ba1 gua4], symbolizing fire/☲
+2	里面	lǐmiàn	li3 mian4	名	inside/interior/also pr. [li3 mian5]/variant of 裡面|里面[li3 mian4]
+2	楼	lóu	lou2	名	house with more than 1 story/storied building/floor/CL:層|层[ceng2],座[zuo4],棟|栋[dong4]/surname Lou
+2	路	lù	lu4	名	road (CL:條|条[tiao2])/journey/route/line (bus etc)/sort; kind/surname Lu
+2	路上	lùshang	lu4 shang5	名	on the road/on the way; en route
+2	旅游	lǚyóu	lü3 you2	动	trip/journey/tourism/travel/tour/to travel
+2	绿茶	lǜchá	lü4 cha2	名	green tea/(slang) (of a girl) seemingly innocent and charming but actually calculating and manipulative; a girl who has these qualities
+2	绿色	lǜsè	lü4 se4	名	green
+2	慢	màn	man4	形	slow
+2	没意思	méiyìsi	mei2 yi4 si5		boring/of no interest
+2	每	měi	mei3	代	each/every
+2	门	mén	men2	名	gate/door/CL:扇[shan4]/gateway/doorway/CL:個|个[ge4]/opening/valve/switch/way to do something/knack/family/house/(religious) sect/school (of thought)/class/category/phylum or division (taxonomy)/classifier for large guns/classifier for lessons, subjects, branches of technology/(suffix) -gate (i.e. scandal; derived from Watergate)/surname Men
+2	门口	ménkǒu	men2 kou3	名	doorway/gate/CL:個|个[ge4]
+2	门票	ménpiào	men2 piao4	名	ticket (for theater, cinema etc)
+2	面1	miàn	mian4	后缀	face/side/surface/aspect/top/classifier for objects with flat surfaces such as drums, mirrors, flags etc/flour/noodles/(of food) soft (not crunchy)/(slang) (of a person) ineffectual/spineless/variant of 麵|面[mian4]
+2	名	míng	ming2	名、量	name/noun (part of speech)/place (e.g. among winners)/famous/classifier for people
+2	拿	ná	na2	动	old variant of 拿[na2]/to hold/to seize/to catch/to apprehend/to take/(used in the same way as 把[ba3]: to mark the following noun as a direct object)/variant of 拿[na2]
+2	那么	nàme	na4 me5	代、连	like that; in that way; to that extent/(before a number) ... or so; about .../then; in that case/variant of 那麼|那么[na4 me5]
+2	那样	nàyàng	na4 yang4	代	that kind/that sort
+2	奶茶	nǎichá	nai3 cha2	名	milk tea
+2	奶奶	nǎinai	nai3 nai5	名	(informal) grandma (paternal grandmother)/(respectful) mistress of the house/CL:位[wei4]/(coll.) boobies/breasts
+2	男孩儿	nánháir	nan2 hai2 r5	名	erhua form of 男孩[nan2 hai2]
+2	鸟	niǎo	niao3	名	bird/CL:隻|只[zhi1],群[qun2]/"bird" radical in Chinese characters (Kangxi radical 196)/(dialect) to pay attention to/(intensifier) damned/goddamn
+2	女孩儿	nǚháir	nü3 hai2 r5	名	erhua form of 女孩[nu : 3 hai2]
+2	旁边	pángbiān	pang2 bian1	名	side; adjacent place
+2	跑	pǎo	pao3	动	to run/to run away/to escape/to run around (on errands etc)/(of a gas or liquid) to leak or evaporate/(verb complement) away/off
+2	跑步	pǎobù	pao3 bu4	动	to run/to jog/(military) to march at the double
+2	票	piào	piao4	名	ticket/ballot/banknote/CL:張|张[zhang1]/person held for ransom/amateur performance of Chinese opera/classifier for groups, batches, business transactions
+2	妻子	qīzi	qi1 zi5	名	wife
+2	起来	qǐlái	qi3 lai2	动	to stand up; to get up/also pr. [qi3lai2]
+2	前面	qiánmiàn	qian2 mian4	名	ahead/in front/preceding/above/also pr. [qian2 mian5]
+2	晴	qíng	qing2	形	clear/fine (weather)
+2	球	qiú	qiu2	名	ball used for playing games (variant of 球[qiu2])/ball/sphere/globe/CL:個|个[ge4]/ball game/match/CL:場|场[chang3]
+2	让	ràng	rang4	动	to yield/to permit/to let sb do sth/to have sb do sth/to make sb (feel sad etc)/by (indicates the agent in a passive clause, like 被[bei4])
+2	肉	ròu	rou4	名	meat/flesh/pulp (of a fruit)/(coll.) (of a fruit) squashy/(of a person) flabby/irresolute/Kangxi radical 130
+2	商场	shāngchǎng	shang1 chang3	名	shopping mall/shopping center/department store/emporium/CL:家[jia1]/the business world
+2	上来	shànglái	shang4 lai2	动	to come up/to approach/(verb complement indicating success)
+2	上面	shàngmiàn	shang4 mian4	名	on top of/above-mentioned/also pr. [shang4 mian5]
+2	上去	shàngqù	shang4 qu4	动	to go up
+2	上网	shàngwǎng	shang4 wang3	动	to go online/to connect to the Internet/(of a document etc) to be uploaded to the Internet/(tennis, volleyball etc) to move in close to the net
+2	身体	shēntǐ	shen1 ti3	名	the body/one's health
+2	生日	shēngrì	sheng1 ri4	名	birthday/CL:個|个[ge4]
+2	时	shí	shi2	名	o'clock/time/when/hour/season/period/old variant of 時|时[shi2]/surname Shi
+2	事情	shìqing	shi4 qing5	名	affair; matter; thing; business/CL:件[jian4],樁|桩[zhuang1]
+2	手	shǒu	shou3	名	hand/(formal) to hold/person engaged in certain types of work/person skilled in certain types of work/personal(ly)/convenient/classifier for skill/CL:雙|双[shuang1],隻|只[zhi1]
+2	手表	shǒubiǎo	shou3 biao3	名	wristwatch/CL:塊|块[kuai4],隻|只[zhi1],個|个[ge4]
+2	书包	shūbāo	shu1 bao1	名	schoolbag/satchel/bookbag/CL:個|个[ge4],隻|只[zhi1]
+2	舒服	shūfu	shu1 fu5	形	comfortable/feeling well
+2	送	sòng	song4	动	to send; to deliver; to transmit/to give (as a present)/to see (sb) off/to accompany; to go along with
+2	虽然	suīrán	sui1 ran2	连	although; even though (often used correlatively with 可是[ke3 shi4] or 但是[dan4 shi4] etc)
+2	所以	suǒyǐ	suo3 yi3	连	therefore/as a result/so/the reason why
+2	疼	téng	teng2	形	(it) hurts; sore/to love dearly
+2	踢	tī	ti1	动	to kick/to play (e.g. soccer)/(slang) butch (in a lesbian relationship)
+2	题	tí	ti2	名	surname Ti/topic/problem for discussion/exam question/subject/to inscribe/to mention/CL:個|个[ge4],道[dao4]
+2	条	tiáo	tiao2	量	strip/item/article/clause (of law or treaty)/classifier for long thin things (ribbon, river, road, trousers etc)
+2	跳舞	tiàowǔ	tiao4 wu3	动	to dance
+2	头	tóu	tou2	名	head/hair style/the top/end/beginning or end/a stub/remnant/chief/boss/side/aspect/first/leading/classifier for pigs or livestock/CL:個|个[ge4]
+3	头	tóu	tou2	量	head/hair style/the top/end/beginning or end/a stub/remnant/chief/boss/side/aspect/first/leading/classifier for pigs or livestock/CL:個|个[ge4]
+2	外国	wàiguó	wai4 guo2	名	foreign country
+2	外面	wàimiàn	wai4 mian4	名	outside (also pr. [wai4 mian5] for this sense)/surface/exterior/external appearance
+2	完	wán	wan2	动	to finish/to be over/whole/complete/entire
+2	万	wàn	wan4	数	surname Wan/ten thousand/a great number
+2	往	wǎng	wang3	动、介	old variant of 往[wang3]/to go (in a direction)/to/towards/(of a train) bound for/past/previous
+2	网上	wǎngshang	wang3 shang5	名	online
+2	忘	wàng	wang4	动	to forget/to overlook/to neglect
+2	位	wèi	wei4	量	position/location/place/seat/classifier for people (honorific)/classifier for binary bits (e.g. 十六位 16-bit or 2 bytes)/(physics) potential
+2	为什么	wèishénme	wei4 shen2 me5		why?/for what reason?
+2	希望	xīwàng	xi1 wang4	动	to hope/a hope; a wish (CL:個|个[ge4])
+2	洗	xǐ	xi3	动	to wash; to bathe/to develop (photographs)/to shuffle (cards etc)/to erase (a recording)
+2	洗手间	xǐshǒujiān	xi3 shou3 jian1	名	toilet/lavatory/washroom
+2	下来	xiàlái	xia4 lai2	动	to come down/(completed action marker)/(after verb of motion, indicates motion down and towards us, also fig.)/(indicates continuation from the past towards us)/to be harvested (of crops)/to be over (of a period of time)/to go among the masses (said of leaders)
+2	下面	xiàmiàn	xia4 mian4	名	below/under/next/the following/also pr. [xia4 mian5]/to boil noodles
+2	下去	xiàqù	xia4 qu4	动	to go down/to descend/to go on/to continue/(of a servant) to withdraw
+2	小孩儿	xiǎoháir	xiao3 hai2 r5	名	erhua variant of 小孩[xiao3 hai2]
+2	小时候	xiǎoshíhou	xiao3 shi2 hou5	名	in one's childhood
+2	笑	xiào	xiao4	动	old variant of 笑[xiao4]/to laugh; to smile/to laugh at
+2	姓	xìng	xing4	名、动	family name; surname/to be surnamed ...
+2	姓名	xìngmíng	xing4 ming2	名	surname and given name; full name
+2	颜色	yánsè	yan2 se4	名	color/countenance/appearance/facial expression/pigment/dyestuff
+2	眼睛	yǎnjing	yan3 jing5	名	eye/CL:隻|只[zhi1],雙|双[shuang1]
+2	药	yào	yao4	名	leaf of the iris/variant of 藥|药[yao4]/medicine/drug/substance used for a specific purpose (e.g. poisoning, explosion, fermenting)/CL:種|种[zhong3],服[fu4],味[wei4]/to poison
+2	药店	yàodiàn	yao4 dian4	名	pharmacy; drugstore
+2	爷爷	yéye	ye2 ye5	名	(coll.) paternal grandfather; grandpa
+2	一会儿	yíhuìr	yi2 hui4 r5	数量	a moment/a while/in a moment/now...now.../also pr. [yi1 hui3 r5]
+3	一会儿	yíhuìr	yi2 hui4 r5	副	a moment/a while/in a moment/now...now.../also pr. [yi1 hui3 r5]
+2	已经	yǐjīng	yi3 jing1	副	already
+2	一起	yìqǐ	yi4 qi3	副	(in) the same place/together; in company (with)/altogether; in total/an instance of; a case of (murder, accident, dispute etc)
+2	意思	yìsi	yi4 si5	名	idea/opinion/meaning/wish/desire/interest/fun/token of appreciation, affection etc/CL:個|个[ge4]/to give as a small token/to do sth as a gesture of goodwill etc
+2	阴	yīn	yin1	形	overcast (weather)/cloudy/shady/Yin (the negative principle of Yin and Yang)/negative (electric.)/feminine/moon/implicit/hidden/genitalia/surname Yin/variant of 陰|阴[yin1]
+2	因为	yīnwèi	yin1 wei4	介、连	because/owing to/on account of
+2	游	yóu	you2	动	surname You/to swim/variant of 遊|游[you2]/to walk/to tour/to roam/to travel
+2	游泳	yóuyǒng	you2 yong3	动	swimming/to swim
+2	有意思	yǒuyìsi	you3 yi4 si5		interesting/meaningful/enjoyable/fun
+2	有时	yǒushí	you3 shi2	副	sometimes/now and then
+2	右	yòu	you4	名	(bound form) right; right-hand side/(bound form) (politics) right of center/(bound form) (old) west/(literary) the right side as the side of precedence
+2	右边	yòubian	you4 bian5	名	right side/right, to the right
+2	鱼	yú	yu2	名	fish (CL:條|条[tiao2],尾[wei3])/used in the names of various aquatic animals that are not fish (including abalone 鮑魚|鲍鱼[bao4 yu2], alligators and crocodiles 鱷魚|鳄鱼[e4 yu2] and octopi 章魚|章鱼[zhang1 yu2])/surname Yu
+2	远	yuǎn	yuan3	形	far/distant/remote/(intensifier in a comparison) by far/much (lower etc)
+2	运动	yùndòng	yun4 dong4	动、名	to move/to exercise/sports/exercise/motion/movement/campaign/CL:場|场[chang3]
+2	站1	zhàn	zhan4	名	station/to stand/to halt/to stop/branch of a company or organization/website
+2	丈夫	zhàngfu	zhang4 fu5	名	husband
+2	这么	zhème	zhe4 me5	代	so much/this much/how much?/this way/like this/variant of 這麼|这么[zhe4 me5]
+2	这样	zhèyàng	zhe4 yang4	代	this way; like this; so/(before a noun) this kind of; such
+2	着	zhe	zhe5	助	aspect particle indicating action in progress or ongoing state/variant of 著|着[zhe5]
+2	正	zhèng	zheng4	副	straight/upright/proper/main/principal/to correct/to rectify/exactly/just (at that time)/right (in that place)/(math.) positive
+2	周	zhōu	zhou1	名	surname Zhou/Zhou Dynasty (1046–256 BC)/to make a circuit/to circle/circle/circumference/lap/cycle/complete/all/all over/thorough/to help financially/week/weekly/variant of 周[zhou1]
+2	准备	zhǔnbèi	zhun3 bei4	动	preparation/to prepare/to intend/to be about to/reserve (fund)
+2	自己	zìjǐ	zi4 ji3	代	oneself; (attributive) one's own
+2	走	zǒu	zou3	动	to walk/to go/to run/to move (of vehicle)/to visit/to leave/to go away/to die (euph.)/from/through/away (in compound verbs, such as 撤走[che4 zou3])/to change (shape, form, meaning)
+2	走路	zǒulù	zou3 lu4	动	to walk; to go on foot/to leave; to depart/(informal) to clear off; to beat it/(of sb who gets fired or resigns) to leave the job; to get out
+2	足球	zúqiú	zu2 qiu2	名	soccer; football/a soccer ball; a football (CL:個|个[ge4])
+2	最	zuì	zui4	副	(before an adjective or verb) to the highest degree; (the) most ...; -est/(after 之[zhi1]) best or most extreme example (e.g. 世界之最[shi4 jie4 zhi1 zui4] "the greatest in the world")/old variant of 最[zui4]/variant of 最[zui4]
+2	左	zuǒ	zuo3	名	left/the Left (politics)/east/unorthodox/queer/wrong/differing/opposite/variant of 佐[zuo3]/surname Zuo
+2	左边	zuǒbian	zuo3 bian5	名	left/the left side/to the left of
+3	阿姨	āyí	a1 yi2	名	maternal aunt/step-mother/childcare worker/nursemaid/woman of similar age to one's parents (term of address used by child)/CL:個|个[ge4]
+3	矮	ǎi	ai3	形	(of a person) short/(of a wall etc) low/(of rank) inferior (to); lower (than)
+3	爱人	àiren	ai4 ren5	名	spouse (PRC)/lover (non-PRC)/CL:個|个[ge4]
+3	安静	ānjìng	an1 jing4	形	quiet/peaceful/calm
+3	安全	ānquán	an1 quan2	形	safe; secure/safety; security
+3	把	bǎ	ba3	量、介	to hold; to grasp/to hold a baby in position to help it urinate or defecate/handlebar/classifier: handful, bundle, bunch/classifier for things with handles/(used to put the object before the verb: 把[ba3] + {noun} + {verb})
+3	搬	bān	ban1	动	to move (i.e. relocate oneself)/to move (sth relatively heavy or bulky)/to shift/to copy indiscriminately
+3	班级	bānjí	ban1 ji2	名	class (group of students)/grade (in school)
+3	搬家	bānjiā	ban1 jia1	动	to move house; to relocate/to remove (sth)
+3	办	bàn	ban4	动	to take care of (a matter); to deal with (a task, procedure etc); to organize (an event)/to establish; to set up; to manage; to run (an enterprise)/(law) to handle; to investigate; to prosecute (a case or suspect)/(bound form) office (as in 招辦|招办[zhao1 ban4], admissions office) (abbr. for 辦公室|办公室[ban4 gong1 shi4])
+3	办法	bànfǎ	ban4 fa3	名	way of handling sth; means; measure; (practical) solution to a problem/CL:條|条[tiao2],個|个[ge4]
+3	办公室	bàngōngshì	ban4 gong1 shi4	名	office; business premises
+3	半天	bàntiān	ban4 tian1	数量	half of the day/a long time/quite a while/midair/CL:個|个[ge4]
+3	帮助	bāngzhù	bang1 zhu4	动	assistance; aid/to help; to assist
+3	饱	bǎo	bao3	形	to eat till full/satisfied
+3	报纸	bàozhǐ	bao4 zhi3	名	newspaper/newsprint/CL:份[fen4],期[qi1],張|张[zhang1]
+3	北	běi	bei3	名	north/(classical) to be defeated
+3	北方	běifāng	bei3 fang1	名	north/the northern part a country/China north of the Yellow River
+3	被	bèi	bei4	介	quilt/to cover (with)/(literary) to suffer (a misfortune)/used to indicate passive voice (placed before the doer of the action like "by" in English passive-voice sentences, or, if the doer is not mentioned, before the verb)/(since c. 2009) (sarcastic or jocular) used to indicate that the following word should be regarded as being in air quotes (as in 被旅遊|被旅游[bei4 lu : 3 you2] to "go on a trip")
+3	笔记	bǐjì	bi3 ji4	名	to take down (in writing)/notes/a type of literature consisting mainly of short sketches/CL:本[ben3]
+3	比较	bǐjiào	bi3 jiao4	动、介、副	to compare/to contrast/comparatively/relatively/quite/comparison
+3	笔记本	bǐjìběn	bi3 ji4 ben3	名	notebook (stationery) (CL:本[ben3])/(computing) laptop; notebook (abbr. for 筆記本電腦|笔记本电脑[bi3 ji4 ben3 dian4 nao3])
+3	比如	bǐrú	bi3 ru2	动	for example; for instance; such as
+3	比赛	bǐsài	bi3 sai4	动、名	competition (sports etc)/match/CL:場|场[chang3],次[ci4]/to compete
+3	必须	bìxū	bi4 xu1	副	to have to/must/compulsory/necessarily
+3	变	biàn	bian4	动	to change/to become different/to transform/to vary/rebellion
+3	遍	biàn	bian4	量	everywhere/all over/classifier for actions: one time/variant of 遍[bian4]
+3	变成	biànchéng	bian4 cheng2	动	to change into/to turn into/to become
+3	变化	biànhuà	bian4 hua4	动、名	(intransitive) to change; to vary/change; variation (CL:個|个[ge4])
+3	表演	biǎoyǎn	biao3 yan3	动	play/show/performance/exhibition/to perform/to act/to demonstrate/CL:場|场[chang3]
+3	别的	biéde	bie2 de5	代	else/other
+3	别人	biérén	bie2 ren2	代	other people; others; other person
+3	宾馆	bīnguǎn	bin1 guan3	名	guesthouse/lodge/hotel/CL:個|个[ge4],家[jia1]
+3	冰	bīng	bing1	名	ice/CL:塊|块[kuai4]/to chill sth/(of an object or substance) to feel cold/(of a person) cold/unfriendly/(slang) methamphetamine/variant of 冰[bing1]
+3	冰激凌	bīngjīlíng	bing1 ji1 ling2	名	ice cream
+3	冰箱	bīngxiāng	bing1 xiang1	名	refrigerator/(old) icebox
+3	病人	bìngrén	bing4 ren2	名	sick person/patient/invalid/CL:個|个[ge4]
+3	不但	búdàn	bu2 dan4	连	not only (... but also ...)
+3	不见	bújiàn	bu2 jian4	动	not to see/not to meet/to have disappeared/to be missing
+3	不用	búyòng	bu2 yong4	副	need not
+3	不同	bùtóng	bu4 tong2		different/distinct/not the same/not alike
+3	不久	bùjiǔ	bu4 jiu3	形	not long (after)/before too long/soon/soon after
+3	不行	bùxíng	bu4 xing2	动、形	won't do/be out of the question/be no good/not work/not be capable
+3	才1	cái	cai2	副	(variant of 才[cai2]) just now/(variant of 才[cai2]) (before an expression of quantity) only/ability; talent/sb of a certain type/a capable individual/then and only then/just now/(before an expression of quantity) only
+3	菜单	càidān	cai4 dan1	名	menu/CL:份[fen4],張|张[zhang1]
+3	参加	cānjiā	can1 jia1	动	to participate/to take part/to join
+3	草	cǎo	cao3	名	grass/straw/manuscript/draft (of a document)/careless/rough/CL:棵[ke1],撮[zuo3],株[zhu1],根[gen1]/variant of 草[cao3]
+3	草地	cǎodì	cao3 di4	名	lawn/meadow/sod/turf/CL:片[pian4]
+3	层	céng	ceng2	量	to pile on top of one another/layer; stratum/floor (of a building); story/(math.) sheaf/classifier for layers
+3	查	chá	cha2	动	to research/to check/to investigate/to examine/to refer to/to look up (e.g. a word in a dictionary)
+3	差	chà	cha4	形、动	different/wrong; mistaken/to fall short; to lack/not up to standard; inferior/Taiwan pr. [cha1]
+3	差不多	chàbuduō	cha4 bu5 duo1	形、副	almost/nearly/more or less/about the same/good enough/not bad
+3	尝	cháng	chang2	动	old variant of 嘗|尝[chang2]/to taste; to experience (variant of 嘗|尝[chang2])/to taste; to try (food)/to experience/(literary) ever; once
+3	常	cháng	chang2	副	always/ever/often/frequently/common/general/constant/surname Chang
+3	常见	chángjiàn	chang2 jian4		commonly seen/common/to see sth frequently
+3	常用	chángyòng	chang2 yong4		in common usage
+3	常常	chángcháng	chang2 chang2	副	frequently; often
+3	衬衫	chènshān	chen4 shan1	名	shirt/blouse/CL:件[jian4]
+3	成绩	chéngjì	cheng2 ji4	名	achievement/performance records/grades/CL:項|项[xiang4],個|个[ge4]
+3	城市	chéngshì	cheng2 shi4	名	city; town/CL:座[zuo4]
+3	迟到	chídào	chi2 dao4	动	to arrive late
+3	出发	chūfā	chu1 fa1	动	to set off/to start (on a journey)
+3	出生	chūshēng	chu1 sheng1	动	to be born
+3	出院	chūyuàn	chu1 yuan4	动	to leave hospital/to be discharged from hospital
+3	初中	chūzhōng	chu1 zhong1	名	junior high school (abbr. for 初級中學|初级中学[chu1 ji2 zhong1 xue2])
+3	除了	chúle	chu2 le5	介	apart from; besides; in addition to (used to exclude, as in 除了他，誰也沒來|除了他，谁也没来[chu2 le5 ta1 , shei2 ye3 mei2 lai2] "apart from him, nobody came", or to include, as in 除了英語，他也會法語|除了英语，他也会法语[chu2 le5 Ying1 yu3 , ta1 ye3 hui4 Fa3 yu3] "in addition to English, he also knows French")/(used to introduce one of two habitual alternatives in the pattern 除了[chu2 le5] + A + 就是[jiu4 shi4] + B, "either A or B")
+3	船	chuán	chuan2	名	boat/vessel/ship/CL:條|条[tiao2],艘[sou1],隻|只[zhi1]/variant of 船[chuan2]
+3	春天	chūntiān	chun1 tian1	名	spring (season)/CL:個|个[ge4]
+3	词典	cídiǎn	ci2 dian3	名	dictionary/also written 辭典|辞典[ci2 dian3]/CL:部[bu4],本[ben3]
+3	聪明	cōngmíng	cong1 ming2	形	intelligent; clever; bright/acute (of sight and hearing)
+3	打扫	dǎsǎo	da3 sao3	动	to clean/to sweep
+3	打算	dǎsuàn	da3 suan4	动、名	to plan/to intend/to calculate/plan/intention/calculation/CL:個|个[ge4]
+3	大概	dàgài	da4 gai4	形、副	roughly/probably/rough/approximate/about/general idea
+3	大人	dàren	da4 ren5	名	adult/grownup/title of respect toward superiors
+3	大小	dàxiǎo	da4 xiao3	名	large and small/size/adults and children/consideration of seniority/at any rate
+3	大熊猫	dàxióngmāo	da4 xiong2 mao1	名	giant panda (Ailuropoda melanoleuca)
+3	大衣	dàyī	da4 yi1	名	overcoat/topcoat/cloak/CL:件[jian4]
+3	带	dài	dai4	动	band/belt/girdle/ribbon/tire/area/zone/region/CL:條|条[tiao2]/to wear/to carry/to take along/to bear (i.e. to have)/to lead/to bring/to look after/to raise
+3	担心	dānxīn	dan1 xin1	动	anxious/worried/uneasy/to worry/to be anxious
+3	蛋糕	dàngāo	dan4 gao1	名	cake/CL:塊|块[kuai4],個|个[ge4]
+3	当然	dāngrán	dang1 ran2	副	only natural/as it should be/certainly/of course/without doubt
+3	到处	dàochù	dao4 chu4	副	everywhere
+3	得	dé	de2	动	to obtain/to get/to gain/to catch (a disease)/proper/suitable/proud/contented/to allow/to permit/ready/finished
+3	得到	dédào	de2 dao4	动	to get; to obtain; to receive
+3	得分	défēn	de2 fen1	动、名	to score a point (in a competition, test etc)/score; rating; grade
+3	的话	dehuà	de5 hua4	助	if (coming after a conditional clause)
+3	得	děi	dei3	动	to have to/must/ought to/to need to
+3	灯	dēng	deng1	名	lamp/light/lantern/CL:盞|盏[zhan3]
+3	地	dì	di4	名	earth/ground/field/place/land/CL:片[pian4]
+3	地点	dìdiǎn	di4 dian3	名	place/site/location/venue/CL:個|个[ge4]
+3	地方	dìfang	di4 fang5	名	place; location; area; space; territory/aspect; part/CL:個|个[ge4],處|处[chu4]
+3	地图	dìtú	di4 tu2	名	map/CL:張|张[zhang1],本[ben3]
+3	电	diàn	dian4	名	lightning/electricity/electric (bound form)/to get (or give) an electric shock/phone call or telegram etc/to send via telephone or telegram etc
+3	电梯	diàntī	dian4 ti1	名	elevator/escalator/CL:臺|台[tai2],部[bu4]
+3	电子书	diànzǐshū	dian4 zi3 shu1	名	electronic book/e-book/e-book reader
+3	丢	diū	diu1	动	to lose/to put aside/to throw
+3	东	dōng	dong1	名	east/host (i.e. sitting on east side of guest)/landlord/surname Dong
+3	东北	dōngběi	dong1 bei3	名	Northeast China; Manchuria/northeast
+3	东方	dōngfāng	dong1 fang1	名	east/the East; the Orient/two-character surname Dongfang
+3	东南	dōngnán	dong1 nan2	名	southeast
+3	冬天	dōngtiān	dong1 tian1	名	winter/CL:個|个[ge4]
+3	懂得	dǒngde	dong3 de5	动	to understand; to know; to comprehend
+3	动物	dòngwù	dong4 wu4	名	animal/CL:隻|只[zhi1],群[qun2],個|个[ge4]
+3	动物园	dòngwùyuán	dong4 wu4 yuan2	名	zoo/CL:個|个[ge4]
+3	短	duǎn	duan3	形	short/brief/to lack/weak point/fault
+3	短裤	duǎnkù	duan3 ku4	名	short pants/shorts
+3	段	duàn	duan4	量	paragraph/section/segment/stage (of a process)/classifier for stories, periods of time, lengths of thread etc/surname Duan
+3	锻炼	duànliàn	duan4 lian4	动	to toughen/to temper/to engage in physical exercise/to work out/(fig.) to develop one's skills/to train oneself
+3	对话	duìhuà	dui4 hua4	动	to talk (with sb)/dialogue; conversation
+3	饿	è	e4	形	hungry/to starve (sb)
+3	而且	érqiě	er2 qie3	连	(not only ...) but also/moreover/in addition/furthermore
+3	耳朵	ěrduo	er3 duo5	名	ear/CL:隻|只[zhi1],個|个[ge4],對|对[dui4]/handle (on a cup)
+3	耳机	ěrjī	er3 ji1	名	headphones/earphones/telephone receiver
+3	发	fā	fa1	动	to send out/to show (one's feeling)/to issue/to develop/to make a bundle of money/classifier for gunshots (rounds)
+3	发烧	fāshāo	fa1 shao1	动	to have a high temperature (from illness); to have a fever/(fig.) to be fascinated with; to obsess over/(fig.) flourishing; thriving; popular
+3	发生	fāshēng	fa1 sheng1	动	to happen; to occur; to take place; to break out
+3	发现	fāxiàn	fa1 xian4	动	to notice; to become aware of/to discover; to find; to detect/a discovery
+3	发展	fāzhǎn	fa1 zhan3	动	development/growth/to develop/to grow/to expand
+3	方便	fāngbiàn	fang1 bian4	形	convenient; suitable/to facilitate; to make things easy/having money to spare/(euphemism) to relieve oneself
+3	方便面	fāngbiànmiàn	fang1 bian4 mian4	名	instant noodles
+3	方法	fāngfǎ	fang1 fa3	名	method; way; technique; procedure/CL:個|个[ge4]
+3	方向	fāngxiàng	fang1 xiang4	名	direction; orientation/CL:個|个[ge4]
+3	房子	fángzi	fang2 zi5	名	house/building (single- or two-story)/apartment/room/CL:棟|栋[dong4],幢[zhuang4],座[zuo4],套[tao4],間|间[jian1]
+3	放	fàng	fang4	动	to put/to place/to release/to free/to let go/to let out/to set off (fireworks)
+3	放假	fàngjià	fang4 jia4	动	to have a holiday or vacation
+3	放心	fàngxīn	fang4 xin1	动	to feel relieved/to feel reassured/to be at ease
+3	放学	fàngxué	fang4 xue2	动	to dismiss students at the end of the school day
+3	分开	fēnkāi	fen1 kai1	动	to separate/to part
+3	风	fēng	feng1	名	wind/news/style/custom/manner/CL:陣|阵[zhen4],絲|丝[si1]
+3	封	fēng	feng1	量	surname Feng/to confer/to grant/to bestow a title/to seal/classifier for sealed objects, esp. letters
+3	夫妻	fūqī	fu1 qi1	名	husband and wife; married couple
+3	服务	fúwù	fu2 wu4	动	to serve/service/CL:項|项[xiang4]
+3	附近	fùjìn	fu4 jin4	名	nearby; neighboring/(in the) vicinity (of); neighborhood
+3	复习	fùxí	fu4 xi2	动	to review/revision/CL:次[ci4]/variant of 復習|复习[fu4 xi2]
+3	该1	gāi	gai1	动	should/ought to/probably/must be/to deserve/to owe/to be sb's turn to do sth/that/the above-mentioned
+3	干净	gānjìng	gan1 jing4	形	clean/neat
+3	感兴趣	gǎnxìngqù	gan3 xing4 qu4		to be interested
+3	感到	gǎndào	gan3 dao4	动	to feel; to sense; to perceive
+3	感冒	gǎnmào	gan3 mao4	名、动	to catch cold/(common) cold/CL:場|场[chang2],次[ci4]/(coll.) to be interested in (often used in the negative)/(Tw) to detest/can't stand
+3	干	gàn	gan4	动	tree trunk/main part of sth/to manage/to work/to do/capable/cadre/to kill (slang)/to fuck (vulgar)/(coll.) pissed off/annoyed
+3	刚	gāng	gang1	副	hard/firm/strong/just/barely/exactly
+3	刚才	gāngcái	gang1 cai2	名	just now (variant of 剛才|刚才[gang1 cai2])/just now/a moment ago
+3	刚刚	gānggāng	gang1 gang1	副	just recently/just a moment ago
+3	高铁	gāotiě	gao1 tie3	名	high speed rail
+3	根据	gēnjù	gen1 ju4	动、介	according to/based on/basis/foundation/CL:個|个[ge4]
+3	更	gèng	geng4	副	more/even more/further/still/still more
+3	公斤	gōngjīn	gong1 jin1	量	kilogram (kg)
+3	公园	gōngyuán	gong1 yuan2	名	park (for public recreation)/CL:座[zuo4]
+3	工作日	gōngzuòrì	gong1 zuo4 ri4	名	workday/working day/weekday
+3	故事	gùshi	gu4 shi5	名	narrative; story; tale
+3	刮	guā	gua1	动	to blow (of the wind)/to scrape/to blow/to shave/to plunder/to extort
+3	关	guān	guan1	动	mountain pass/to close; to shut; to turn off/to confine; to lock (sb) up; to shut (sb in a room, a bird in a cage etc)/to concern; to involve/surname Guan
+3	关机	guānjī	guan1 ji1	动	to turn off (a machine or device)/to finish shooting a film
+3	关系	guānxì	guan1 xi4	名	relation/relationship/to concern/to affect/to have to do with/guanxi/CL:個|个[ge4]/variant of 關係|关系[guan1 xi5]
+3	关心	guānxīn	guan1 xin1	动	to be concerned about; to care about
+3	关于	guānyú	guan1 yu2	介	pertaining to/concerning/with regard to/about/a matter of
+3	关注	guānzhù	guan1 zhu4	动	to pay attention to; to follow sth closely; to follow (on social media)/concern; interest; attention
+3	国家	guójiā	guo2 jia1	名	country; nation; state/CL:個|个[ge4]
+3	过节	guòjié	guo4 jie2	动	to celebrate a festival/after the celebrations (i.e. once the festival is over)
+3	过去2	guòqù	guo4 qu4	名	(in the) past; former; previous/to go over; to pass by
+3	海	hǎi	hai3	名	ocean/sea/CL:個|个[ge4],片[pian4]/great number of people or things/(dialect) numerous/surname Hai
+3	害怕	hàipà	hai4 pa4	动	to be afraid; to be scared
+3	好多	hǎoduō	hao3 duo1	数	many/quite a lot/much better
+3	好久	hǎojiǔ	hao3 jiu3	形	quite a while
+3	好像	hǎoxiàng	hao3 xiang4	动、副	as if/to seem like
+3	号码	hàomǎ	hao4 ma3	名	number/CL:堆[dui1],個|个[ge4]
+3	河	hé	he2	名	river (CL:條|条[tiao2],道[dao4])/(bound form) the Yellow River/(bound form) the Milky Way/(bound form) (on restaurant menus) rice noodles 河粉[he2 fen3]
+3	合适	héshì	he2 shi4	形	suitable; fitting; appropriate
+3	黑板	hēibǎn	hei1 ban3	名	blackboard/CL:塊|块[kuai4],個|个[ge4]
+3	红绿灯	hóng-lǜdēng	hong2 lü4 deng1	名	traffic light/traffic signal
+3	后来	hòulái	hou4 lai2	名	afterwards; later/newly arrived
+3	后年	hòunián	hou4 nian2	名	the year after next
+3	后天	hòutiān	hou4 tian1	名	the day after tomorrow/life after birth (the period in which one develops through experiences, contrasted with 先天[xian1 tian1])/acquired (not innate or congenital)/a posteriori
+3	护照	hùzhào	hu4 zhao4	名	passport/CL:本[ben3],個|个[ge4]
+3	花园	huāyuán	hua1 yuan2	名	garden (for flowers, ornamental plants etc); (landscaped) park; yard with decorative plants/CL:座[zuo4]
+3	画家	huàjiā	hua4 jia1	名	painter/CL:個|个[ge4]
+3	欢迎	huānyíng	huan1 ying2	动	to welcome/welcome
+3	还	huán	huan2	动	surname Huan/to pay back/to return
+3	环境	huánjìng	huan2 jing4	名	environment/circumstances/surroundings/CL:個|个[ge4]/ambient
+3	换	huàn	huan4	动	to exchange/to change (clothes etc)/to substitute/to switch/to convert (currency)
+3	黄色	huángsè	huang2 se4	名	yellow/vulgar; lewd; pornographic
+3	回答	huídá	hui2 da2	动	to reply; to answer/reply; answer
+3	会2	huì	hui4	名	can; to have the skill; to know how to/to be likely to; to be sure to/to meet; to get together/meeting; gathering/(suffix) union; group; association/(bound form) a moment (Taiwan pr. [hui3])
+3	会议	huìyì	hui4 yi4	名	meeting/conference/CL:場|场[chang3],屆|届[jie4]
+3	或	huò	huo4	连	maybe/perhaps/might/possibly/or
+3	或者	huòzhě	huo4 zhe3	连	or/possibly; maybe; perhaps
+3	鸡	jī	ji1	名	fowl/chicken/CL:隻|只[zhi1]/(slang) prostitute/variant of 雞|鸡[ji1]
+3	几乎	jīhū	ji1 hu1	副	almost; nearly; practically
+3	机会	jīhuì	ji1 hui4	名	opportunity/chance/occasion/CL:個|个[ge4]
+3	极	jí	ji2	副	extremely/pole (geography, physics)/utmost/top
+3	急	jí	ji2	形、动	urgent/pressing/rapid/hurried/worried/to make (sb) anxious
+3	记	jì	ji4	动	to record/to note/to memorize/to remember/mark/sign/classifier for blows, kicks, shots
+3	季	jì	ji4	名	season/the last month of a season/fourth or youngest amongst brothers/classifier for seasonal crop yields/surname Ji
+3	季节	jìjié	ji4 jie2	名	time/season/period/CL:個|个[ge4]
+3	加	jiā	jia1	动	Canada (abbr. for 加拿大[Jia1 na2 da4])/surname Jia/to add/(math.) plus/to increase; to augment/(used before a disyllabic verb, often after an adverb like 不[bu4], 大[da4], 稍[shao1] etc, to indicate that the action applies to sth previously mentioned, as in 稍加改良[shao1 jia1 gai3 liang2] "make some minor improvements to (it)")
+3	假期	jiàqī	jia4 qi1	名	vacation
+3	坚持	jiānchí	jian1 chi2	动	to persevere with/to persist in/to insist on
+3	检查	jiǎnchá	jian3 cha2	动	inspection/to examine/to inspect/CL:次[ci4]
+3	简单	jiǎndān	jian3 dan1	形	simple; not complicated
+3	检票	jiǎnpiào	jian3 piao4	动	to inspect a ticket/to examine a ballot
+3	健康	jiànkāng	jian4 kang1	形	health/healthy
+3	见面	jiànmiàn	jian4 mian4	动	to meet; to see each other/CL:次[ci4]
+3	讲	jiǎng	jiang3	动	to speak/to explain/to negotiate/to emphasize/to be particular about/as far as sth is concerned/speech/lecture
+3	角	jiǎo	jiao3	量	angle/corner/horn/horn-shaped/unit of money equal to 0.1 yuan, or 10 cents (a dime)/CL:個|个[ge4]
+3	脚	jiǎo	jiao3	名	foot/leg (of an animal or an object)/base (of an object)/CL:雙|双[shuang1],隻|只[zhi1]/classifier for kicks
+3	接	jiē	jie1	动	to receive/to answer (the phone)/to meet or welcome sb/to connect/to catch/to join/to extend/to take one's turn on duty/to take over for sb
+3	街	jiē	jie1	名	street/CL:條|条[tiao2]
+3	节	jié	jie2	量、名	joint; node/(bound form) section; segment/solar term (one of the 24 divisions of the year in the traditional Chinese calendar)/seasonal festival/(bound form) to economize; to save/(bound form) moral integrity; chastity/classifier for segments: lessons, train wagons, biblical verses etc/knot (nautical miles per hour)
+3	结婚	jiéhūn	jie2 hun1	动	to marry; to get married
+3	节目	jiémù	jie2 mu4	名	(TV or radio) program; show/item; act; segment; number (on the program of a concert, variety show or cultural event)/a planned activity (in one's schedule)/CL:個|个[ge4],場|场[chang3],項|项[xiang4],臺|台[tai2],套[tao4],檔|档[dang4]
+3	节日	jiérì	jie2 ri4	名	holiday/festival/CL:個|个[ge4]
+3	结束	jiéshù	jie2 shu4	动	termination/to finish/to end/to conclude/to close
+3	解决	jiějué	jie3 jue2	动	to solve; to resolve; to settle (a problem)/to eliminate; to wipe out (an enemy, bandits etc)
+3	姐妹	jiěmèi	jie3 mei4	名	sisters/siblings/sister (school, city etc)
+3	借	jiè	jie4	动	to borrow/(used in combination with 給|给[gei3] or 出[chu1] etc) to lend/to make use of; to avail oneself of/(sometimes followed by 著|着[zhe5]) by; with/variant of 借[jie4]
+3	斤	jīn	jin1	量	catty/(PRC) weight equal to 500 g/(Tw) weight equal to 600 g/(HK, Malaysia, Singapore) slightly over 604 g
+3	经过	jīngguò	jing1 guo4	动、名	to pass/to go through/process/course/CL:個|个[ge4]
+3	经理	jīnglǐ	jing1 li3	名	manager/director/CL:個|个[ge4],位[wei4],名[ming2]
+3	久	jiǔ	jiu3	形	(of a period of time) long
+3	酒	jiǔ	jiu3	名	wine (esp. rice wine)/liquor/spirits/alcoholic beverage/CL:杯[bei1],瓶[ping2],罐[guan4],桶[tong3],缸[gang1]
+3	旧	jiù	jiu4	形	old/opposite: new 新/former/worn (with age)
+3	句	jù	ju4	量	sentence/clause/phrase/classifier for phrases or lines of verse
+3	句子	jùzi	ju4 zi5	名	sentence/CL:個|个[ge4]
+3	决定	juédìng	jue2 ding4	动、名	to decide (to do something)/to resolve/decision/CL:個|个[ge4],項|项[xiang4]/certainly
+3	卡	kǎ	ka3	名	to stop/to block/(computing) (coll.) slow/(loanword) card/CL:張|张[zhang1],片[pian4]/truck (from "car")/calorie (abbr. for 卡路里[ka3 lu4 li3])/cassette
+3	开花	kāihuā	kai1 hua1	动	to bloom; to blossom; to flower/(fig.) to burst; to split open/(fig.) to burst with joy/(fig.) to spring up everywhere; to flourish
+3	开会	kāihuì	kai1 hui4	动	to hold a meeting/to attend a meeting
+3	开机	kāijī	kai1 ji1	动	to start an engine/to boot up (a computer)/to press Ctrl-Alt-Delete/to begin shooting a film or TV show
+3	开心	kāixīn	kai1 xin1	形	to feel happy/to rejoice/to have a great time/to make fun of sb
+3	看来	kànlái	kan4 lai2	动	apparently/it seems that
+3	可	kě	ke3	连	(prefix) can; may; able to; -able/to approve; to permit/to suit/(particle used for emphasis) certainly; very/but; however
+3	渴	kě	ke3	形	thirsty
+3	可爱	kě’ài	ke3 ai4	形	adorable/cute/lovely
+3	可是	kěshì	ke3 shi4	连	but; however/(used for emphasis) indeed
+3	刻	kè	ke4	量	quarter (hour)/moment/to carve/to engrave/to cut/oppressive/classifier for short time intervals
+3	课本	kèběn	ke4 ben3	名	textbook/CL:本[ben3]
+3	客人	kèrén	ke4 ren2	名	visitor/guest/customer/client/CL:位[wei4]
+3	课文	kèwén	ke4 wen2	名	text/CL:篇[pian1]
+3	空调	kōngtiáo	kong1 tiao2	名	air conditioning/air conditioner (including units that have a heating mode)/CL:臺|台[tai2]
+3	哭	kū	ku1	动	to cry; to weep
+3	筷子	kuàizi	kuai4 zi5	名	chopsticks/CL:對|对[dui4],根[gen1],把[ba3],雙|双[shuang1]
+3	矿泉水	kuàngquánshuǐ	kuang4 quan2 shui3	名	mineral water/CL:瓶[ping2],杯[bei1]
+3	来自	láizì	lai2 zi4	动	to come from (a place)/From: (in email header)
+3	蓝	lán	lan2	形	blue/indigo plant/surname Lan
+3	老	lǎo	lao3	形、前缀	prefix used before the surname of a person or a numeral indicating the order of birth of the children in a family or to indicate affection or familiarity/old (of people)/venerable (person)/experienced/of long standing/always/all the time/of the past/very/outdated/(of meat etc) tough
+3	老人	lǎorén	lao3 ren2	名	old man or woman/the elderly/one's aged parents or grandparents
+3	离开	líkāi	li2 kai1	动	to depart; to leave
+3	礼物	lǐwù	li3 wu4	名	gift; present/CL:件[jian4],個|个[ge4],份[fen4]
+3	历史	lìshǐ	li4 shi3	名	history/CL:門|门[men2],段[duan4]
+3	脸	liǎn	lian3	名	face/CL:張|张[zhang1],個|个[ge4]
+3	练	liàn	lian4	动	to practice/to train/to drill/to perfect (one's skill)/exercise/(literary) white silk/to boil and scour raw silk
+3	练习	liànxí	lian4 xi2	动、名	to practice/exercise/drill/practice/CL:個|个[ge4]
+3	凉快	liángkuai	liang2 kuai5	形	pleasantly cool (weather etc)/to cool oneself; to cool off/(Tw) (slang) (of clothing) scanty; revealing/(coll.) to stay out of it; to butt out
+3	辆	liàng	liang4	量	classifier for vehicles
+3	聊	liáo	liao2	动	(coll.) to chat/(literary) temporarily; for a while/(literary) somewhat; slightly/(literary) to depend upon
+3	聊天儿	liáotiānr	liao2 tian1 r5	动	erhua variant of 聊天[liao2 tian1]
+3	了解	liǎojiě	liao3 jie3	动	to understand/to realize/to find out
+3	邻居	línjū	lin2 ju1	名	neighbor/CL:個|个[ge4]
+3	留学	liúxué	liu2 xue2	动	to study abroad
+3	留学生	liúxuéshēng	liu2 xue2 sheng1	名	student studying abroad; returned student; foreign student; international student
+3	楼梯	lóutī	lou2 ti1	名	stair/staircase/CL:個|个[ge4]
+3	路边	lùbiān	lu4 bian1	名	curb; roadside; wayside
+3	路口	lùkǒu	lu4 kou3	名	crossing/intersection (of roads)
+3	马	mǎ	ma3	名	horse/CL:匹[pi3]/horse or cavalry piece in Chinese chess/knight in Western chess/surname Ma/abbr. for Malaysia 馬來西亞|马来西亚[Ma3 lai2 xi1 ya4]
+3	马路	mǎlù	ma3 lu4	名	street/road/CL:條|条[tiao2]
+3	马上	mǎshàng	ma3 shang4	副	at once/right away/immediately/on horseback (i.e. by military force)
+3	满意	mǎnyì	man3 yi4	动	satisfied/pleased/to one's satisfaction
+3	毛	máo	mao2	量	hair/feather/down/wool/mildew/mold/coarse or semifinished/young/raw/careless/unthinking/nervous/scared/(of currency) to devalue or depreciate/classifier for Chinese fractional monetary unit ( = 角[jiao3] , = one-tenth of a yuan or 10 fen 分[fen1])/surname Mao
+3	米	mǐ	mi3	量	surname Mi/uncooked rice/meter (unit of length)/(slang) Chinese yuan
+3	面前	miànqián	mian4 qian2	名	in front of/facing/(in the) presence (of)
+3	明白	míngbai	ming2 bai5	形、动	clear; obvious; unequivocal/sensible; reasonable/to understand; to realize
+3	名单	míngdān	ming2 dan1	名	list of names
+3	名人	míngrén	ming2 ren2	名	personage/celebrity
+3	南	nán	nan2	名	south/surname Nan
+3	难	nán	nan2	形	difficult (to...)/problem/difficulty/difficult/not good
+3	南方	nánfāng	nan2 fang1	名	south; southern direction/(in China) southern regions, often referring to areas south of the Yangtze River
+3	难过	nánguò	nan2 guo4	形	to feel sad/to feel unwell/(of life) to be difficult
+3	难看	nánkàn	nan2 kan4	形	ugly/unsightly
+3	男人	nánrén	nan2 ren2	名	a man/a male/men/CL:個|个[ge4]
+3	男生	nánshēng	nan2 sheng1	名	schoolboy/male student/boy/guy (young adult male)
+3	难题	nántí	nan2 ti2	名	difficult problem
+3	难听	nántīng	nan2 ting1	形	unpleasant to hear/coarse/vulgar/offensive/shameful
+3	年级	niánjí	nian2 ji2	名	grade/year (in school, college etc)/CL:個|个[ge4]
+3	年轻	niánqīng	nian2 qing1	形	young
+3	牛	niú	niu2	名	ox/cow/bull/CL:條|条[tiao2],頭|头[tou2]/newton (abbr. for 牛頓|牛顿[niu2 dun4])/(slang) awesome/surname Niu
+3	努力	nǔlì	nu3 li4	动、形	to make an effort; to try hard; to strive/hard-working; conscientious
+3	女人	nǚrén	nü3 ren2	名	woman
+3	女生	nǚshēng	nü3 sheng1	名	schoolgirl/female student/girl
+3	爬	pá	pa2	动	to crawl/to climb/to get up or sit up
+3	怕	pà	pa4	动	surname Pa/to be afraid/to fear/to dread/to be unable to endure/perhaps
+3	拍照	pāizhào	pai1 zhao4	动	to take a picture
+3	盘子	pánzi	pan2 zi5	名	tray/plate/dish/CL:個|个[ge4]
+3	胖	pàng	pang4	形	fat/plump
+3	啤酒	píjiǔ	pi2 jiu3	名	beer (loanword)/CL:杯[bei1],瓶[ping2],罐[guan4],桶[tong3],缸[gang1]
+3	平时	píngshí	ping2 shi2	名	ordinarily/in normal times/in peacetime
+3	瓶子	píngzi	ping2 zi5	名	bottle/CL:個|个[ge4]
+3	骑	qí	qi2	动	to sit astride/to ride (a horse, bike etc)/classifier for saddle horses
+3	奇怪	qíguài	qi2 guai4	形	strange/odd/to marvel/to be baffled
+3	其实	qíshí	qi2 shi2	副	actually; in fact; really
+3	其他	qítā	qi2 ta1	代	other/(sth or sb) else/the rest
+3	起	qǐ	qi3	动	to rise/to raise/to get up/to set out/to start/to appear/to launch/to initiate (action)/to draft/to establish/to get (from a depot or counter)/verb suffix, to start/starting from (a time, place, price etc)/classifier for occurrences or unpredictable events: case, instance/classifier for groups: batch, group
+3	起飞	qǐfēi	qi3 fei1	动	(of an aircraft or rocket) to take off; to lift off/(fig.) (of an enterprise etc) to start to develop rapidly
+3	汽车	qìchē	qi4 che1	名	car/automobile/bus/CL:輛|辆[liang4]
+3	铅笔	qiānbǐ	qian1 bi3	名	(lead) pencil/CL:支[zhi1],枝[zhi1],桿|杆[gan3]
+3	前年	qiánnián	qian2 nian2	名	the year before last
+3	前天	qiántiān	qian2 tian1	名	the day before yesterday
+3	清楚	qīngchu	qing1 chu5	形、动	clear/distinct/to understand thoroughly/to be clear about
+3	请假	qǐngjià	qing3 jia4	动	to request leave of absence
+3	请客	qǐngkè	qing3 ke4	动	to give a dinner party/to entertain guests/to invite to dinner
+3	秋天	qiūtiān	qiu1 tian1	名	autumn/CL:個|个[ge4]
+3	球场	qiúchǎng	qiu2 chang3	名	stadium/sports ground/court/pitch/field/golf course/CL:個|个[ge4],處|处[chu4]
+3	裙子	qúnzi	qun2 zi5	名	skirt/CL:條|条[tiao2]
+3	然后	ránhòu	ran2 hou4	连	then; after that; afterwards
+3	热情	rèqíng	re4 qing2	形	cordial/enthusiastic/passion/passionate/passionately
+3	认得	rènde	ren4 de5	动	to recognize/to remember sth (or sb) on seeing it/to know
+3	认为	rènwéi	ren4 wei2	动	to believe; to think; to consider; to feel
+3	认真	rènzhēn	ren4 zhen1	形	conscientious/earnest/serious/to take seriously/to take to heart
+3	容易	róngyì	rong2 yi4	形	easy; straightforward/likely; liable to; apt to
+3	如果	rúguǒ	ru2 guo3	连	if/in case/in the event that
+3	伞	sǎn	san3	名	damask silk/variant of 傘|伞[san3]/umbrella/parasol/CL:把[ba3]
+3	扫	sǎo	sao3	动	to sweep (with a brush or broom)/to sweep away; to wipe out; to get rid of/to sweep (one's eyes etc) over; to scan
+3	沙发	shāfā	sha1 fa1	名	(loanword) sofa (CL:條|条[tiao2],張|张[zhang1])/(Internet slang) first reply to a forum post
+3	山	shān	shan1	名	mountain; hill (CL:座[zuo4])/(coll.) small bundle of straw for silkworms to spin cocoons on/surname Shan
+3	上衣	shàngyī	shang4 yi1	名	jacket/upper outer garment/CL:件[jian4]
+3	勺子	sháozi	shao2 zi5	名	spoon; ladle/CL:把[ba3]
+3	身边	shēnbiān	shen1 bian1	名	at one's side/on hand
+3	身高	shēngāo	shen1 gao1	名	(a person's) height
+3	声	shēng	sheng1	名、量	sound/voice/tone/noise/reputation/classifier for sounds
+3	生活	shēnghuó	sheng1 huo2	名、动	to live/life/livelihood
+3	生气	shēngqì	sheng1 qi4	动	to get angry; to be furious/vitality; liveliness
+3	声音	shēngyīn	sheng1 yin1	名	voice/sound/CL:個|个[ge4]
+3	市	shì	shi4	名	market/city/municipality (administrative unit)/(literary) to trade; to buy and sell goods
+3	试	shì	shi4	动	to test/to try/experiment/examination/test
+3	室	shì	shi4	名	room/work unit/grave/scabbard/family or clan/one of the 28 constellations of Chinese astronomy/surname Shi
+3	世界	shìjiè	shi4 jie4	名	world/CL:個|个[ge4]
+3	收	shōu	shou1	动	to receive/to accept/to collect/to put away/to restrain/to stop/in care of (used on address line after name)
+3	收到	shōudào	shou1 dao4	动	to receive
+3	受	shòu	shou4	动	to receive/to accept/to suffer/subjected to/to bear/to stand/pleasant/(passive marker)/(LGBT) bottom
+3	瘦	shòu	shou4	形	thin/to lose weight/(of clothing) tight/(of meat) lean/(of land) unproductive
+3	受到	shòudào	shou4 dao4	动	to receive (praise, an education, punishment etc)/to be ...ed (praised, educated, punished etc)
+3	叔叔	shūshu	shu1 shu5	名	father's younger brother; paternal uncle/form of address used by children for a male one generation older
+3	树	shù	shu4	名	tree/CL:棵[ke1]/to cultivate/to set up
+3	数学	shùxué	shu4 xue2	名	mathematics
+3	刷	shuā	shua1	动	a brush/to paint; to daub/to brush; to scrub/(fig.) to remove; to eliminate (from a contest); to fire (from a job)/(onom.) swish; rustle/to swipe (a card)/to scroll on (a phone)/(gaming) to grind; to farm (for experience points, equipment, levels etc)
+3	双	shuāng	shuang1	量	surname Shuang/two/double/pair/both/even (number)/variant of 雙|双[shuang1]
+3	水平	shuǐpíng	shui3 ping2	名	horizontal; level/a standard; a level (of ability, development etc)
+3	司机	sījī	si1 ji1	名	chauffeur; driver
+3	四季	sìjì	si4 ji4	名	four seasons, namely: spring 春[chun1], summer 夏[xia4], autumn 秋[qiu1] and winter 冬[dong1]
+3	太阳	tàiyáng	tai4 yang2	名	sun/sunlight; sunshine/temple (on the side of the human head) (abbr. for 太陽穴|太阳穴[tai4 yang2 xue2])
+3	糖	táng	tang2	名	old variant of 糖[tang2]/sugar/sweets/candy/CL:顆|颗[ke1],塊|块[kuai4]
+3	特别	tèbié	te4 bie2	形、副	unusual; special/very; especially; particularly/expressly; for a specific purpose/(often followed by 是[shi4]) in particular
+3	提高	tígāo	ti2 gao1	动	to raise/to increase/to improve
+3	体育	tǐyù	ti3 yu4	名	sports/physical education
+3	体育馆	tǐyùguǎn	ti3 yu4 guan3	名	gym/gymnasium/stadium/CL:個|个[ge4]
+3	甜	tián	tian2	形	sweet
+3	跳	tiào	tiao4	动	to jump/to hop/to skip over/to bounce/to palpitate
+3	听说	tīngshuō	ting1 shuo1	动	to hear (sth said)/one hears (that)/hearsay/listening and speaking
+3	挺	tǐng	ting3	副	straight/erect/to stick out (a part of the body)/to (physically) straighten up/to support/to withstand/outstanding/(coll.) quite/very/classifier for machine guns
+3	同事	tóngshì	tong2 shi4	名	colleague; co-worker
+3	同意	tóngyì	tong2 yi4	动	to agree/to consent/to approve
+3	头发	tóufa	tou2 fa5	名	hair (on the head)
+3	突然	tūrán	tu1 ran2	形	sudden; abrupt; unexpected
+3	图书馆	túshūguǎn	tu2 shu1 guan3	名	library/CL:家[jia1],個|个[ge4]
+3	腿	tuǐ	tui3	名	hip bone/old variant of 腿[tui3]/leg/CL:條|条[tiao2]
+3	外地	wàidì	wai4 di4	名	parts of the country other than where one is
+3	外卖	wàimài	wai4 mai4	动、名	(of a restaurant) to provide a takeout or home delivery meal/takeout (business)/takeout (meal)
+3	外语	wàiyǔ	wai4 yu3	名	foreign language/CL:門|门[men2]
+3	完成	wánchéng	wan2 cheng2	动	to complete; to accomplish
+3	碗	wǎn	wan3	名	bowl/cup/CL:隻|只[zhi1],個|个[ge4]/variant of 碗[wan3]
+3	晚点	wǎndiǎn	wan3 dian3	动	(of trains etc) late/delayed/behind schedule/light dinner
+3	晚会	wǎnhuì	wan3 hui4	名	evening party/CL:個|个[ge4]
+3	网球	wǎngqiú	wang3 qiu2	名	tennis/tennis ball/CL:個|个[ge4]
+3	网站	wǎngzhàn	wang3 zhan4	名	website
+3	忘记	wàngjì	wang4 ji4	动	to forget
+3	为	wèi	wei4	介	because of/for/to/variant of 為|为[wei4]
+3	为了	wèile	wei4 le5	介	for; for the purpose of; in order to
+3	卫生间	wèishēngjiān	wei4 sheng1 jian1	名	bathroom/toilet/WC/CL:間|间[jian1]
+3	文化	wénhuà	wen2 hua4	名	culture/civilization/cultural/CL:個|个[ge4],種|种[zhong3]
+3	屋子	wūzi	wu1 zi5	名	house/room/CL:間|间[jian1]
+3	西	xī	xi1	名	the West/abbr. for Spain 西班牙[Xi1 ban1 ya2]/Spanish/west
+3	西北	xīběi	xi1 bei3	名	Northwest China (Shaanxi, Gansu, Qinghai, Ningxia, Xinjiang)/northwest
+3	西方	xīfāng	xi1 fang1	名	the West/the Occident/Western countries
+3	西瓜	xīguā	xi1 gua1	名	watermelon/CL:顆|颗[ke1],個|个[ge5]
+3	西南	xīnán	xi1 nan2	名	southwest
+3	习惯	xíguàn	xi2 guan4	动、名	habit/custom/usual practice/to be used to/CL:個|个[ge4]
+3	喜爱	xǐ’ài	xi3 ai4	动	to like/to love/to be fond of/favorite
+3	洗衣机	xǐyījī	xi3 yi1 ji1	名	washing machine; washer/CL:臺|台[tai2]
+3	洗澡	xǐzǎo	xi3 zao3	动	to bathe/to take a shower
+3	夏天	xiàtiān	xia4 tian1	名	summer/CL:個|个[ge4]
+3	先	xiān	xian1	副	beforehand; first; earlier/at first; originally/for the time being; for now/(prefix) my late (in referring to deceased relatives older than oneself)
+3	香蕉	xiāngjiāo	xiang1 jiao1	名	banana/CL:根[gen1],個|个[ge4],把[ba3]
+3	相信	xiāngxìn	xiang1 xin4	动	to believe; to be convinced; to accept as true
+3	箱子	xiāngzi	xiang1 zi5	名	suitcase/chest/box/case/trunk/CL:隻|只[zhi1],個|个[ge4]
+3	向	xiàng	xiang4	动、介	surname Xiang/to tend toward/to guide/variant of 向[xiang4]/towards/to face/to turn towards/direction/to support/to side with/shortly before/formerly/always/all along/(suffix) suitable for .../oriented to .../variant of 向[xiang4]/direction/orientation/to face/to turn toward/to/towards/shortly before/formerly
+3	像	xiàng	xiang4	动	to resemble/to be like/to look as if/such as/appearance/image/portrait/image under a mapping (math.)
+3	相机	xiàngjī	xiang4 ji1	名	camera (abbr. for 照相機|照相机[zhao4 xiang4 ji1])/at the opportune moment/as the circumstances allow
+3	小区	xiǎoqū	xiao3 qu1	名	housing estate; community; neighborhood/(telecommunications) cell
+3	小心	xiǎoxīn	xiao3 xin1	动、形	to be careful/to take care
+3	校园	xiàoyuán	xiao4 yuan2	名	campus
+3	校长	xiàozhǎng	xiao4 zhang3	名	(college, university) president/headmaster/CL:個|个[ge4],位[wei4],名[ming2]
+3	鞋	xié	xie2	名	shoe/CL:雙|双[shuang1],隻|只[zhi1]/variant of 鞋[xie2]
+3	心里	xīnlǐ	xin1 li3	名	chest/heart; mind
+3	新年	xīnnián	xin1 nian2	名	New Year/CL:個|个[ge4]
+3	新闻	xīnwén	xin1 wen2	名	news/CL:條|条[tiao2],個|个[ge4]
+3	新鲜	xīnxiān	xin1 xian1	形	fresh (experience, food etc)/freshness/novel/uncommon
+3	信	xìn	xin4	动、名	letter/mail/CL:封[feng1]/to trust/to believe/to profess faith in/truthful/confidence/trust/at will/at random
+3	信用卡	xìnyòngkǎ	xin4 yong4 ka3	名	credit card
+3	行	xíng	xing2	动、形	(bound form) to walk; to go; to travel/(literary) trip; journey; visit/(bound form) temporary; makeshift/(bound form) current; in circulation/(bound form) to do; to perform/capable; competent/all right; OK!; will do/behavior; conduct (Taiwan pr. [xing4])/(literary) about to; soon
+3	行李	xíngli	xing2 li5	名	luggage/CL:件[jian4]
+3	兴趣	xìngqù	xing4 qu4	名	interest (desire to know about sth)/interest (thing in which one is interested); hobby/CL:個|个[ge4]
+3	休假	xiūjià	xiu1 jia4	动	to go on vacation; to have a holiday; to take leave
+3	需要	xūyào	xu1 yao4	动、名	to need; to want; to demand; to require/needs
+3	选	xuǎn	xuan3	动	to choose/to pick/to select/to elect
+3	选择	xuǎnzé	xuan3 ze2	动	to select; to pick/choice; option; alternative
+3	学期	xuéqī	xue2 qi1	名	term/semester/CL:個|个[ge4]
+3	牙	yá	ya2	名	tooth/ivory/CL:顆|颗[ke1]
+3	牙刷	yáshuā	ya2 shua1	名	toothbrush/CL:把[ba3]
+3	羊	yáng	yang2	名	sheep; goat/CL:頭|头[tou2],隻|只[zhi1]/surname Yang
+3	养	yǎng	yang3	动	to raise (animals)/to bring up (children)/to keep (pets)/to support/to give birth
+3	要求	yāoqiú	yao1 qiu2	动、名	to request/to require/requirement/to stake a claim/to ask/to demand/CL:點|点[dian3]
+3	页	yè	ye4	量	page/leaf
+3	一定	yídìng	yi2 ding4	形、副	surely/certainly/necessarily/fixed/a certain (extent etc)/given/particular/must
+3	一共	yígòng	yi2 gong4	副	in total; altogether
+3	一块儿	yíkuàir	yi2 kuai4 r5	名、副	erhua variant of 一塊|一块[yi1 kuai4]
+3	一样	yíyàng	yi2 yang4	形	same/like/equal to/the same as/just like
+3	以后	yǐhòu	yi3 hou4	名	after/later/afterwards/following/later on/in the future
+3	以前	yǐqián	yi3 qian2	名	before/formerly/previous/ago
+3	以上	yǐshàng	yi3 shang4	名	that level or higher; that amount or more/the above-mentioned/(used to indicate that one has completed one's remarks) That is all.
+3	以外	yǐwài	yi3 wai4	名	apart from/other than/except for/external/outside of/on the other side of/beyond
+3	以为	yǐwéi	yi3 wei2	动	to think; to believe (often with the implication that the belief is mistaken – unless referring to one's own current belief)
+3	以下	yǐxià	yi3 xia4	名	that level or lower/that amount or less/the following
+3	一般	yìbān	yi4 ban1	形	same/ordinary/so-so/common/general/generally/in general
+3	一边	yìbiān	yi4 bian1	副	one side/either side/on the one hand/on the other hand/doing while
+3	一直	yìzhí	yi4 zhi2	副	straight (in a straight line)/continuously; always; all the way through
+3	音乐	yīnyuè	yin1 yue4	名	music/CL:張|张[zhang1],曲[qu3],段[duan4]
+3	银行	yínháng	yin2 hang2	名	bank/CL:家[jia1],個|个[ge4]
+3	银行卡	yínhángkǎ	yin2 hang2 ka3	名	bank card
+3	饮料	yǐnliào	yin3 liao4	名	drink/beverage
+3	应该	yīnggāi	ying1 gai1	动	ought to; should; must
+3	影响	yǐngxiǎng	ying3 xiang3	动、名	influence/effect/to influence/to affect (usually adversely)/to disturb/CL:股[gu3]
+3	用	yòng	yong4	动	to use; to make use of; to employ/(coverb) with; using/to need; to have to (usu. used in the negative or in questions)/usefulness; utility/(bound form) expense; outlay/(courteous) to eat; to drink/(literary) hence; therefore
+3	邮件	yóujiàn	you2 jian4	名	mail/post/email
+3	游客	yóukè	you2 ke4	名	traveler; tourist/(online gaming) guest player
+3	游戏	yóuxì	you2 xi4	名	game (CL:場|场[chang3])/to play
+3	邮箱	yóuxiāng	you2 xiang1	名	mailbox/post office box/email/email inbox
+3	有关	yǒuguān	you3 guan1	动、介	to have sth to do with/to relate to/related to/to concern/concerning
+3	有名	yǒumíng	you3 ming2	形	famous/well-known
+3	有用	yǒuyòng	you3 yong4	形	useful
+3	又	yòu	you4	副	(once) again/also/both... and.../and yet/(used for emphasis) anyway
+3	羽毛球	yǔmáoqiú	yu3 mao2 qiu2	名	badminton/shuttlecock
+3	语言	yǔyán	yu3 yan2	名	language/CL:門|门[men2],種|种[zhong3]
+3	雨衣	yǔyī	yu3 yi1	名	raincoat/CL:件[jian4]
+3	遇到	yùdào	yu4 dao4	动	to meet; to run into; to come across
+3	遇见	yùjiàn	yu4 jian4	动	to meet
+3	园	yuán	yuan2	名	land used for growing plants/site used for public recreation/abbr. for a place ending in 園|园, such as a botanical garden 植物園|植物园, kindergarten 幼兒園|幼儿园 etc/surname Yuan
+3	员	yuán	yuan2	后缀	(bound form) person engaged in a certain field of activity/(bound form) member/classifier for military generals
+3	愿意	yuànyì	yuan4 yi4	动	to wish/to want/ready/willing (to do sth)
+3	越	yuè	yue4	副	generic word for peoples or states of south China or south Asia at different historical periods/abbr. for Vietnam 越南/to exceed/to climb over/to surpass/the more... the more
+3	月亮	yuèliang	yue4 liang5	名	the moon
+3	运动会	yùndònghuì	yun4 dong4 hui4	名	sports competition/CL:個|个[ge4]
+3	运动员	yùndòngyuán	yun4 dong4 yuan2	名	athlete/CL:名[ming2],個|个[ge4]
+3	咱们	zánmen	zan2 men5	代	we or us (including both the speaker and the person(s) spoken to)/(dialect) I or me/(dialect) (in a coaxing or familiar way) you/also pr. [za2 men5]
+3	脏	zāng	zang1	形	dirty/filthy/to get (sth) dirty
+3	怎么办	zěnmebàn	zen3 me5 ban4		what's to be done
+3	怎样	zěnyàng	zen3 yang4	代	how/what kind
+3	站2	zhàn	zhan4	动	station/to stand/to halt/to stop/branch of a company or organization/website
+3	张	zhāng	zhang1	动、量	surname Zhang/to open up/to spread/sheet of paper/classifier for flat objects, sheet/classifier for votes
+3	长	zhǎng	zhang3	动、后缀	chief/head/elder/to grow/to develop/to increase/to enhance
+3	着急	zháojí	zhao2 ji2	形	to worry; to feel anxious/to feel a sense of urgency; to be in a hurry/Taiwan pr. [zhao1ji2]
+3	照	zhào	zhao4	动	according to/in accordance with/to shine/to illuminate/to reflect/to look at (one's reflection)/to take (a photo)/photo/as requested/as before/variant of 照[zhao4]/to shine/to illuminate
+3	照顾	zhàogù	zhao4 gu4	动	to take care of/to show consideration/to attend to/to look after
+3	照片	zhàopiàn	zhao4 pian4	名	photograph/picture/CL:張|张[zhang1],套[tao4],幅[fu2]
+3	照相	zhàoxiàng	zhao4 xiang4	动	to take a photograph
+3	直到	zhídào	zhi2 dao4	动	until
+3	只	zhǐ	zhi3	副	only; merely; just/variant of 只[zhi3]
+3	纸	zhǐ	zhi3	名	paper (CL:張|张[zhang1],沓[da2])/classifier for documents, letters etc/variant of 紙|纸[zhi3]
+3	只能	zhǐnéng	zhi3 neng2		can only/obliged to do sth/to have no other choice
+3	只是	zhǐshì	zhi3 shi4	副、连	merely; only; just; nothing but/simply/but; however
+3	只要	zhǐyào	zhi3 yao4	连	so long as; provided; if
+3	只有	zhǐyǒu	zhi3 you3	连	only have ...; there is only .../(used in combination with 才[cai2]) it is only if ... (that one can ...) (as in 只有通過治療才能痊愈|只有通过治疗才能痊愈[zhi3 you3 tong1 guo4 zhi4 liao2 cai2 neng2 quan2 yu4] "the only way to cure it is with therapy")/it is only (someone) who ... (as in 只有男性才有此需要[zhi3 you3 nan2 xing4 cai2 you3 ci3 xu1 yao4] "only men would have such a requirement")/(used to express lack of alternatives) can only; have no choice but to (as in 只有屈服[zhi3 you3 qu1 fu2] "the only thing you can do is give in")
+3	中	zhōng	zhong1	名	(bound form) China; Chinese/surname Zhong/within; among; in/middle; center/while (doing sth); during/(dialect) OK; all right
+3	中间	zhōngjiān	zhong1 jian1	名	the middle; the inside/in the middle; within; between; among/during; in the meantime
+3	终于	zhōngyú	zhong1 yu2	副	at last/in the end/finally/eventually
+3	种	zhǒng	zhong3	量	seed/species/kind/type/classifier for types, kinds, sorts
+3	重要	zhòngyào	zhong4 yao4	形	important; significant; major
+3	周末	zhōumò	zhou1 mo4	名	weekend
+3	主要	zhǔyào	zhu3 yao4	形	main; principal; major; primary
+3	注意	zhùyì	zhu4 yi4	动	to take note of; to pay attention to
+3	住院	zhùyuàn	zhu4 yuan4	动	to stay in hospital; to be hospitalized
+3	字典	zìdiǎn	zi4 dian3	名	Chinese character dictionary (containing entries for single characters, contrasted with a 詞典|词典[ci2 dian3], which has entries for words of one or more characters)/(coll.) dictionary/CL:本[ben3]
+3	自行车	zìxíngchē	zi4 xing2 che1	名	bicycle; bike/CL:輛|辆[liang4]
+3	子	zi	zi5	后缀	noun suffix, as in 椅子[yi3 zi5] "chair"
+3	总	zǒng	zong3	副	(bound form) general; overall/to sum up/in every case; always; invariably/anyway; after all; eventually; sooner or later/surely/(after a person's name) abbr. for 總經理|总经理[zong3 jing1 li3] or 總編|总编[zong3 bian1] etc
+3	总是	zǒngshì	zong3 shi4	副	always
+3	嘴	zuǐ	zui3	名	mouth/beak/nozzle/spout (of teapot etc)/CL:張|张[zhang1],個|个[ge4]
+3	最好	zuìhǎo	zui4 hao3	副	best/had better ...; it would be best to ...
+3	最后	zuìhòu	zui4 hou4	名	final; last; ultimate/finally; in the end
+3	最近	zuìjìn	zui4 jin4	名	recently/soon/nearest
+3	做客	zuòkè	zuo4 ke4	动	to be a guest or visitor
+3	作业	zuòyè	zuo4 ye4	名	school assignment/homework/work/task/operation/CL:個|个[ge4]/to operate

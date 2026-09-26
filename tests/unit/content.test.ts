@@ -28,6 +28,10 @@ describe('word bank', () => {
     expect(toneMarkCount(w.p)).toBeLessThanOrEqual([...w.h].length);
     if (w.quiz !== false) expect(toneMarkCount(w.p)).toBeGreaterThanOrEqual(1);
     for (const m of w.mw ?? []) expect(m).toMatch(HANZI);
+    // one numbered syllable per character, tones 1–5
+    const syl = w.pn.split(' ');
+    expect(syl.length).toBe([...w.h].length);
+    for (const s of syl) expect(s).toMatch(/^[a-zü]+[1-5]$/);
   });
 });
 
