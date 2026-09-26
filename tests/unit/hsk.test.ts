@@ -7,7 +7,7 @@ import { build } from '../../scripts/build-content.mjs';
 // The app follows the 2025 HSK syllabus (新版HSK考试大纲), in force since July 2026:
 // 300 words at level 1, 500 cumulative at level 2, 1,000 at level 3.
 const crosscheck = new Map<string, number>();
-for (const line of readFileSync('data/vendor/hsk2025-levels-crosscheck.tsv', 'utf8').split('\n')) {
+for (const line of readFileSync('data/vendor/hsk2025-levels-crosscheck.tsv', 'utf8').split(/\r?\n/)) {
   if (!line || line.startsWith('#') || line.startsWith('word\t')) continue;
   const [w, l] = line.split('\t');
   const h = w.replace(/\d/g, '');
@@ -36,6 +36,6 @@ describe('HSK 2025 syllabus', () => {
 
   it('the generated file is up to date with its sources', () => {
     const { json } = build();
-    expect(readFileSync('src/content/generated/hsk.json', 'utf8')).toBe(json);
+    expect(readFileSync('src/content/generated/hsk.json', 'utf8').replace(/\r\n/g, '\n')).toBe(json);
   });
 });

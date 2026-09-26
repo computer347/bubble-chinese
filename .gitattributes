@@ -1,0 +1,4 @@
+# Keep Unix line endings on every platform, so data files and generated files match byte for byte.
+* text=auto eol=lf
+*.mp3 binary
+*.png binary

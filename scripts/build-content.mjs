@@ -16,7 +16,8 @@ const POS = { 名: 'n', 动: 'v', 形: 'adj', 副: 'adv', 代: 'pron', 量: 'mw'
 /** Grammar words are taught in sentences (Plug mode), not by "what does it mean?". */
 const NOT_QUIZZED = new Set(['part', 'suffix', 'prefix']);
 
-const tsv = file => readFileSync(join(root, file), 'utf8').split('\n').filter(l => l && !l.startsWith('#'));
+// accepts Windows (CRLF) line endings too, in case git converted the files on checkout
+const tsv = file => readFileSync(join(root, file), 'utf8').split(/\r?\n/).filter(l => l && !l.startsWith('#'));
 
 function readGlosses() {
   const map = new Map();
@@ -85,7 +86,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const { words, json } = build();
   if (process.argv.includes('--check')) {
     let current = '';
-    try { current = readFileSync(OUT, 'utf8'); } catch { /* missing */ }
+    try { current = readFileSync(OUT, 'utf8').replace(/\r\n/g, '\n'); } catch { /* missing */ }
     if (current !== json) {
       console.error('src/content/generated/hsk.json is out of date. Run: npm run build:content');
       process.exit(1);
