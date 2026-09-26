@@ -1,36 +1,54 @@
 import { describe, it, expect } from 'vitest';
-import { WORDS } from '../../src/content/words';
+import { QUIZ_WORDS } from '../../src/content/words';
 import { WordScheduler, Bag } from '../../src/game/scheduler';
 import { emptyProgress } from '../../src/game/progress';
+import { newCard, review, Rating } from '../../src/game/memory';
 import { mulberry32 } from '../../src/game/random';
 
+const now = new Date('2026-09-26T12:00:00Z');
+const pool = QUIZ_WORDS.filter(w => w.level <= 2);
+
 describe('WordScheduler', () => {
-  it('never repeats a word within the recent window', () => {
-    const s = new WordScheduler(WORDS, 10, mulberry32(5));
+  it('starts with new words from HSK 1 before HSK 2', () => {
+    const s = new WordScheduler(6, mulberry32(1));
     const data = emptyProgress();
-    const picks = Array.from({ length: 300 }, () => s.next(data).h);
-    for (let i = 0; i < picks.length; i++) {
-      expect(picks.slice(Math.max(0, i - 10), i)).not.toContain(picks[i]);
+    for (let i = 0; i < 40; i++) {
+      const w = s.next(pool, data, now);
+      expect(w.level).toBe(1);
+      data.cards[w.id] = review(newCard(now), Rating.Good, now);   // due again in minutes, not now
     }
   });
 
-  it('brings missed words back more often than mastered ones', () => {
+  it('puts due reviews ahead of new words, most overdue first', () => {
+    const s = new WordScheduler(6, mulberry32(2));
     const data = emptyProgress();
-    const missed = WORDS[0].h, mastered = WORDS[1].h;
-    for (const w of WORDS) { data.seen[w.h] = 1; data.m[w.h] = 2; }
-    data.m[missed] = 0; data.miss[missed] = 3;
-    data.m[mastered] = 3;
-    const s = new WordScheduler(WORDS, 0, mulberry32(9));
-    const counts: Record<string, number> = {};
-    for (let i = 0; i < 20000; i++) { const h = s.next(data).h; counts[h] = (counts[h] ?? 0) + 1; }
-    expect(counts[missed]).toBeGreaterThan((counts[mastered] ?? 0) * 5);
+    const [a, b, c] = pool;
+    data.cards[a.id] = { ...newCard(now), due: new Date(now.getTime() - 3 * 86_400_000) };
+    data.cards[b.id] = { ...newCard(now), due: new Date(now.getTime() - 86_400_000) };
+    data.cards[c.id] = { ...newCard(now), due: new Date(now.getTime() + 86_400_000) };
+    const first = [s.next(pool, data, now), s.next(pool, data, now)].map(w => w.id);
+    expect(first.sort()).toEqual([a.id, b.id].sort());
+  });
+
+  it('never repeats a word within the recent window', () => {
+    const s = new WordScheduler(6, mulberry32(5));
+    const data = emptyProgress();
+    const picks = Array.from({ length: 100 }, () => s.next(pool, data, now).id);
+    for (let i = 0; i < picks.length; i++) expect(picks.slice(Math.max(0, i - 6), i)).not.toContain(picks[i]);
+  });
+
+  it('reviews ahead once every word has been met and nothing is due', () => {
+    const s = new WordScheduler(0, mulberry32(3));
+    const data = emptyProgress();
+    const small = pool.slice(0, 5);
+    small.forEach((w, i) => { data.cards[w.id] = { ...newCard(now), due: new Date(now.getTime() + (i + 1) * 3_600_000) }; });
+    expect(s.next(small, data, now).id).toBe(small[0].id);
   });
 });
 
 describe('Bag', () => {
   it('draws everything once before repeating', () => {
     const bag = new Bag([1, 2, 3, 4, 5], mulberry32(2));
-    const first = Array.from({ length: 5 }, () => bag.next());
-    expect([...first].sort()).toEqual([1, 2, 3, 4, 5]);
+    expect(Array.from({ length: 5 }, () => bag.next()).sort()).toEqual([1, 2, 3, 4, 5]);
   });
 });

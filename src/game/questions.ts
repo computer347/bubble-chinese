@@ -1,4 +1,4 @@
-import type { Word } from '../content/words';
+import { type Word, overlaps } from '../content/words';
 import { type Rng, defaultRng, shuffle } from './random';
 
 /** 0: characters → meaning, 1: characters → pinyin, 2: meaning → characters. */
@@ -49,11 +49,16 @@ export function retone(p: string, rng: Rng = defaultRng): string | null {
   return chars.join('');
 }
 
-/** Picks n values of `key` from the pool that differ from the correct value and from each other. */
-export function distinct(correct: string, pool: readonly Word[], n: number, key: keyof Word, rng: Rng = defaultRng, extra: string[] = []): string[] {
+/**
+ * Picks n distractor values of `key` from the pool. They differ from the answer and from each other,
+ * never come from a word with the same characters, and never share a gloss with the answer
+ * (so "time" is never offered against "time; moment").
+ */
+export function distinct(answer: Word, pool: readonly Word[], n: number, key: 'h' | 'p' | 'e', rng: Rng = defaultRng, extra: string[] = [], ordered = false): string[] {
   const out: string[] = [];
-  const used = new Set([correct, ...extra]);
-  for (const w of shuffle(pool.slice(), rng)) {
+  const used = new Set([answer[key], ...extra]);
+  for (const w of ordered ? pool : shuffle(pool.slice(), rng)) {
+    if (w.h === answer.h || overlaps(w, answer)) continue;
     const v = w[key];
     if (!used.has(v)) {
       used.add(v);
@@ -64,19 +69,24 @@ export function distinct(correct: string, pool: readonly Word[], n: number, key:
   return out;
 }
 
-/** The three layers of a bubble for one word, outermost first. */
+/** The three layers of a bubble for one word, outermost first. The bank should hold quiz words only. */
 export function makeQuestions(w: Word, bank: readonly Word[], rng: Rng = defaultRng): Question[] {
   const len = [...w.h].length;
-  const others = bank.filter(x => x !== w);
-  const same = others.filter(x => [...x.h].length === len);
-  const pool = same.length >= 6 ? same : others;
+  const others = bank.filter(x => x.id !== w.id);
+  // look-alike options first: same number of characters, then the closest lengths
+  const byLength = new Map<number, Word[]>();
+  for (const x of others) {
+    const d = Math.abs([...x.h].length - len);
+    byLength.set(d, [...(byLength.get(d) ?? []), x]);
+  }
+  const pool = [...byLength.keys()].sort((a, b) => a - b).flatMap(d => shuffle(byLength.get(d)!, rng));
   const tone = retone(w.p, rng);
   const pinD = tone && tone !== w.p ? [tone] : [];
-  pinD.push(...distinct(w.p, pool, 3 - pinD.length, 'p', rng, pinD));
+  pinD.push(...distinct(w, pool, 3 - pinD.length, 'p', rng, pinD, true));
   return [
-    { type: 0, prompt: w.h, zh: true, ask: 'What does it mean?', answer: w.e, choices: [w.e, ...distinct(w.e, others, 3, 'e', rng)], chipZh: false },
+    { type: 0, prompt: w.h, zh: true, ask: 'What does it mean?', answer: w.e, choices: [w.e, ...distinct(w, others, 3, 'e', rng)], chipZh: false },
     { type: 1, prompt: w.h, zh: true, ask: 'How is it said?', answer: w.p, choices: [w.p, ...pinD], chipZh: false },
-    { type: 2, prompt: w.e, zh: false, ask: len > 1 ? 'Which characters?' : 'Which character?', answer: w.h, choices: [w.h, ...distinct(w.h, pool, 3, 'h', rng)], chipZh: true }
+    { type: 2, prompt: w.e, zh: false, ask: len > 1 ? 'Which characters?' : 'Which character?', answer: w.h, choices: [w.h, ...distinct(w, pool, 3, 'h', rng, [], true)], chipZh: true }
   ];
 }
 

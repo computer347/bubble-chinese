@@ -3,33 +3,35 @@ import type { ProgressData } from './progress';
 import { type Rng, defaultRng, shuffle } from './random';
 
 /**
- * Chooses the next word. A light spaced-repetition weighting until Phase 1 brings FSRS:
- * new words come up often, missed words more often, mastered words rarely,
- * and the last few words never repeat back to back.
+ * Chooses the next bubble:
+ * 1. a word that is due for review (the most overdue first, lightly shuffled),
+ * 2. otherwise a new word from the lowest level with words left,
+ * 3. otherwise the word due soonest (reviewing ahead).
+ * The last few words never come back to back.
  */
 export class WordScheduler {
   private recent: string[] = [];
-  constructor(private readonly bank: readonly Word[], private readonly recentSize = 10, private readonly rng: Rng = defaultRng) {}
+  constructor(private readonly recentSize = 6, private readonly rng: Rng = defaultRng) {}
 
-  weight(w: Word, data: ProgressData): number {
-    if (this.recent.includes(w.h)) return 0;
-    const lv = data.m[w.h] ?? 0;
-    let wt = !data.seen[w.h] ? 2.2 : [3, 1.5, 0.7, 0.25][lv];
-    const miss = data.miss[w.h] ?? 0;
-    if (miss && lv < 2) wt += Math.min(3, miss) * 0.8;
-    return wt;
-  }
-
-  next(data: ProgressData): Word {
-    const wts = this.bank.map(w => this.weight(w, data));
-    const total = wts.reduce((a, b) => a + b, 0);
-    let r = this.rng() * total;
-    let pick = this.bank[Math.floor(this.rng() * this.bank.length)];
-    for (let i = 0; i < this.bank.length; i++) {
-      r -= wts[i];
-      if (r <= 0 && wts[i] > 0) { pick = this.bank[i]; break; }
+  next(pool: readonly Word[], data: ProgressData, now = new Date()): Word {
+    const fresh = pool.filter(w => !this.recent.includes(w.id));
+    const candidates = fresh.length ? fresh : pool;
+    const due = candidates
+      .filter(w => data.cards[w.id] && data.cards[w.id].due <= now)
+      .sort((a, b) => data.cards[a.id].due.getTime() - data.cards[b.id].due.getTime());
+    let pick: Word | undefined;
+    if (due.length) {
+      pick = due[Math.floor(this.rng() * Math.min(3, due.length))];
+    } else {
+      const unseen = candidates.filter(w => !data.cards[w.id]);
+      if (unseen.length) {
+        const lowest = Math.min(...unseen.map(w => w.level));
+        pick = shuffle(unseen.filter(w => w.level === lowest), this.rng)[0];
+      } else {
+        pick = candidates.slice().sort((a, b) => data.cards[a.id].due.getTime() - data.cards[b.id].due.getTime())[0];
+      }
     }
-    this.recent.push(pick.h);
+    this.recent.push(pick.id);
     if (this.recent.length > this.recentSize) this.recent.shift();
     return pick;
   }

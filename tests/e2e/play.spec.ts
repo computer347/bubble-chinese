@@ -3,6 +3,7 @@ import { test, expect, type Page } from '@playwright/test';
 type Snap = {
   state: string; word: string | null; layers: number; totalLayers: number;
   correctEdge: string; score: number; streak: number; detail: number; asleep: boolean; wrong: number; queue: string[];
+  pool: number; due: number; maxLevel: number;
 };
 
 const snap = (page: Page) => page.evaluate(() => window.__squish!.snapshot() as unknown as Snap);
@@ -19,13 +20,19 @@ async function waitFor(page: Page, pred: (s: Snap) => boolean, label: string): P
 }
 
 async function start(page: Page): Promise<Snap> {
+  await openHome(page);
+  await page.click('[data-mode="words"]');
+  return waitFor(page, s => s.state === 'live', 'first bubble to be live');
+}
+
+async function openHome(page: Page): Promise<Snap> {
   const errors: string[] = [];
   page.on('pageerror', e => errors.push(String(e)));
   page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
   (page as unknown as { __errors: string[] }).__errors = errors;
   await page.goto('/?e2e');
   await page.waitForFunction(() => !!window.__squish);
-  return waitFor(page, s => s.state === 'live', 'first bubble to be live');
+  return waitFor(page, s => s.state === 'home', 'the home screen');
 }
 
 const errorsOf = (page: Page) => (page as unknown as { __errors: string[] }).__errors;
@@ -72,9 +79,11 @@ test('three right answers pop every layer and deliver a fortune slip', async ({ 
   const s = await snap(page);
   expect(s.streak).toBe(3);
   expect(s.score).toBeGreaterThan(0);
+  await expect(page.locator('#result')).toContainText('Next review in');
   await page.click('#next');
-  await waitFor(page, x => x.state === 'live' && x.layers === 3, 'the next bubble');
-  await expect(page.locator('#learned')).toHaveText('1');
+  const next = await waitFor(page, x => x.state === 'live' && x.layers === 3, 'the next bubble');
+  expect(next.word).not.toBe(s0.word);
+  expect(next.due).toBe(0);
   expect(errorsOf(page)).toEqual([]);
 });
 
@@ -118,13 +127,41 @@ test('dragging the bubble onto the right chip stretches it until it pops', async
   expect(errorsOf(page)).toEqual([]);
 });
 
-test('the words panel lists words that were met', async ({ page }) => {
+test('the words panel lists popped words with their next review', async ({ page }) => {
   const s = await start(page);
-  await answer(page, false);
-  await waitFor(page, x => x.wrong === 1, 'a miss to register');
+  for (let i = 0; i < 3; i++) {
+    const before = await snap(page);
+    await answer(page);
+    await waitFor(page, x => x.layers === before.layers - 1, `layer ${i + 1} to pop`);
+  }
+  await waitFor(page, x => x.state === 'note', 'the fortune slip');
+  await page.click('#next');
+  await waitFor(page, x => x.state === 'live', 'the next bubble');
   await page.click('#wordsBtn');
   await expect(page.locator('#drawer')).toBeVisible();
   await expect(page.locator('#wordsList .h').first()).toHaveText(s.word!);
+  await expect(page.locator('#wordsList .due').first()).toContainText('in ');
   await page.keyboard.press('Escape');
   await expect(page.locator('#drawer')).toBeHidden();
+  expect(errorsOf(page)).toEqual([]);
+});
+
+test('the home screen: modes, HSK level, and back again', async ({ page }) => {
+  const s = await openHome(page);
+  await expect(page.locator('#home')).toBeVisible();
+  expect(s.maxLevel).toBe(1);
+  expect(s.pool).toBeGreaterThan(280);           // quiz words in HSK 1 (grammar particles excluded)
+  await expect(page.locator('#homeStats')).toContainText('new words to meet up to HSK 1');
+  await expect(page.locator('.m-plug')).toBeDisabled();
+  await page.click('[data-level="2"]');
+  const s2 = await snap(page);
+  expect(s2.maxLevel).toBe(2);
+  expect(s2.pool).toBeGreaterThan(s.pool + 150);
+  await page.click('[data-mode="words"]');
+  await waitFor(page, x => x.state === 'live', 'a bubble');
+  await expect(page.locator('#home')).toBeHidden();
+  await page.click('#homeBtn');
+  await waitFor(page, x => x.state === 'home', 'back home');
+  await expect(page.locator('#home')).toBeVisible();
+  expect(errorsOf(page)).toEqual([]);
 });

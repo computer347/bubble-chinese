@@ -2,7 +2,7 @@
 
 Pop soft, jiggly bubbles to learn Chinese.
 
-A bubble sits pinned in the middle of the screen with four answers on the edges. Pull it toward the right answer and stretch it until it bursts. Each bubble has layers: two soap films (meaning, then pinyin) around a coloured core (the characters). Popping the core sends it flying, spews a new colour scheme across the page and hands you a fortune slip with the word to learn.
+Pick a mode on the home screen by popping its bubble. In Words, a bubble sits pinned in the middle of the screen with four answers on the edges. Pull it toward the right answer and stretch it until it bursts. Each bubble has layers: two soap films (meaning, then pinyin) around a coloured core (the characters). Popping the core sends it flying, spews a new colour scheme across the page and hands you a fortune slip with the word to learn.
 
 ## Run it
 
@@ -25,6 +25,7 @@ npm run typecheck    # TypeScript, strict
 npm test             # unit tests: content validation, quiz logic, scheduler, progress, physics stability
 npm run build        # production build into dist/
 npm run e2e          # Playwright plays the game in headless Chromium
+npm run check:content  # the generated word list matches its sources
 npm run check        # all of the above
 ```
 
@@ -49,6 +50,10 @@ docs/PLAN.md   the phased roadmap with verification for each phase
 ```
 
 ## Where things come from
+
+- **Vocabulary** follows the 2025 HSK syllabus (新版HSK考试大纲), in force since July 2026: 300 words at level 1, 500 cumulative at level 2, 1,000 at level 3. Levels 1–2 are in the app so far. See `data/README.md` for sources, licences and how to add a level.
+- **Glosses** (the short English meanings) are written for this project, so they fit an answer chip and never make two answers correct.
+- **Memory** uses FSRS (via ts-fsrs). Each finished bubble is one review: a clean pop is Good, one miss is Hard, two misses or "I forgot" is Again.
 
 - **Sound effects** are synthesised live with the Web Audio API. There are no audio files.
 - **Pronunciation** currently uses the browser's speech synthesis (Web Speech API), so the voice depends on the device and can be missing. Phase 1 replaces it with pre-generated clips.

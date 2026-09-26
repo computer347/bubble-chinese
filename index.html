@@ -15,7 +15,7 @@
 <canvas id="stage" tabindex="0" role="img" aria-label="A bubble pinned in the middle of the screen. Pull it toward the edge with the right answer until it bursts. Keyboard: arrow keys pull toward that edge, F shows the answer and adds a layer, Space pokes it."></canvas>
 
 <div class="corner tl">
-  <p class="mark">Squish</p>
+  <button type="button" class="mark" id="homeBtn" aria-label="Squish, back to the home screen">Squish</button>
   <div class="q">
     <div class="pips" id="pips" aria-hidden="true"><small id="layerTxt">Layer 1 of 3</small></div>
     <p class="ask" id="ask" aria-live="polite">What does it mean?</p>
@@ -35,6 +35,24 @@
   <label class="slider"><span>Wobble</span><input id="wobble" type="range" min="0" max="100" value="55"></label>
   <label class="slider"><span>Detail</span><input id="detail" type="range" min="0" max="2" step="1" value="1" aria-valuetext="2,562 points"><output id="detailOut">2,562</output></label>
 </div>
+
+<section class="home" id="home" hidden aria-labelledby="homeTitle">
+  <h2 class="home-title" id="homeTitle">Pop a bubble to start</h2>
+  <p class="home-stats" id="homeStats"></p>
+  <div class="modes">
+    <button type="button" class="mode m-words" data-mode="words"><span class="mode-name">Words</span><span class="mode-desc">HSK vocabulary, three layers a bubble</span></button>
+    <button type="button" class="mode m-plug" disabled aria-disabled="true"><span class="mode-name">Plug</span><span class="mode-desc">Build sentences</span><span class="soon">Soon</span></button>
+    <button type="button" class="mode m-listen" disabled aria-disabled="true"><span class="mode-name">Listen</span><span class="mode-desc">Tones and listening</span><span class="soon">Soon</span></button>
+    <button type="button" class="mode m-learn" disabled aria-disabled="true"><span class="mode-name">Learn</span><span class="mode-desc">Meet new words, trace strokes</span><span class="soon">Soon</span></button>
+  </div>
+  <div class="levels" role="radiogroup" aria-label="Words up to HSK level">
+    <span class="levels-label">Words up to</span>
+    <button type="button" role="radio" data-level="1" aria-checked="true">HSK 1</button>
+    <button type="button" role="radio" data-level="2" aria-checked="false">HSK 2</button>
+    <button type="button" role="radio" data-level="3" aria-checked="false">HSK 3</button>
+  </div>
+  <p class="home-note">Levels follow the 2025 HSK syllabus, in force since July 2026.</p>
+</section>
 
 <div class="corner br"><button type="button" class="pill solid" id="wordsBtn">Your words</button></div>
 

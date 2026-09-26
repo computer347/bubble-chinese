@@ -13,14 +13,17 @@
     "test:watch": "vitest",
     "validate:content": "vitest run tests/unit/content.test.ts",
     "e2e": "playwright test",
-    "check": "npm run typecheck && npm run test && npm run build && npm run e2e"
+    "check": "npm run check:content && npm run typecheck && npm run test && npm run build && npm run e2e",
+    "build:content": "node scripts/build-content.mjs",
+    "check:content": "node scripts/build-content.mjs --check"
   },
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
     "gsap": "^3.15.0",
-    "three": "^0.186.1"
+    "three": "^0.186.1",
+    "ts-fsrs": "^5.4.2"
   },
   "devDependencies": {
     "@playwright/test": "1.56.0",

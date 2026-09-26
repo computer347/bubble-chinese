@@ -1,6 +1,7 @@
 import './styles.css';
 import { startGame, type GameHandle } from './game/game';
 import { Progress, IndexedDbStore, MemoryStore } from './game/progress';
+import { WORDS } from './content/words';
 
 declare global {
   interface Window { __squish?: GameHandle }
@@ -10,7 +11,7 @@ async function boot(): Promise<void> {
   const params = new URLSearchParams(location.search);
   const e2e = params.has('e2e');
   // tests start from a clean slate; players keep their progress in IndexedDB
-  const progress = new Progress(e2e || typeof indexedDB === 'undefined' ? new MemoryStore() : new IndexedDbStore());
+  const progress = new Progress(e2e || typeof indexedDB === 'undefined' ? new MemoryStore() : new IndexedDbStore(), WORDS);
   await progress.init(e2e ? null : undefined);
   const game = startGame({
     canvas: document.getElementById('stage') as HTMLCanvasElement,

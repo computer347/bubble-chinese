@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { gsap } from 'gsap';
-import { WORDS, type Word } from '../content/words';
+import { QUIZ_WORDS, LEVELS, type Word } from '../content/words';
 import { FORTUNES } from '../content/fortunes';
 import { PALETTES, PHYS, type Physics } from '../content/palettes';
 import { SoftBody, DETAILS } from '../engine/softbody';
@@ -12,10 +12,11 @@ import { Backdrop, type BallView } from '../render/backdrop';
 import { makeQuestions, applyForgot, type Question } from './questions';
 import { WordScheduler, Bag } from './scheduler';
 import { Progress } from './progress';
+import { gradeBubble, masteryDots, dueLabel } from './memory';
 import { rand, shuffle } from './random';
 import { $, fmt, smooth } from '../ui/dom';
 
-export type GameState = 'intro' | 'live' | 'between' | 'popping' | 'note';
+export type GameState = 'home' | 'intro' | 'live' | 'between' | 'popping' | 'note';
 type Edge = 'top' | 'right' | 'bottom' | 'left';
 const EDGES: Edge[] = ['top', 'right', 'bottom', 'left'];
 const EDGE_DIR: Record<Edge, [number, number]> = { top: [0, 1], bottom: [0, -1], left: [-1, 0], right: [1, 0] };
@@ -30,12 +31,18 @@ export interface GameOptions {
 
 /** A read-only view of the game, used by the end-to-end tests. */
 export interface GameHandle {
+  /** Leaves the home screen and starts a mode. Only "words" exists so far. */
+  enter(mode: 'words'): void;
+  /** Abandons the current bubble (ungraded) and shows the home screen. */
+  home(): void;
   snapshot(): {
     state: GameState; word: string | null; layers: number; totalLayers: number;
     correctEdge: Edge; score: number; streak: number; detail: number; asleep: boolean;
     /** Wrong answers on the current layer. */
     wrong: number;
     queue: string[];
+    /** Words available at the chosen level, and how many are due. */
+    pool: number; due: number; maxLevel: number;
   };
 }
 
@@ -49,9 +56,12 @@ export function startGame(opts: GameOptions): GameHandle {
   const { canvas, progress, reduceMotion } = opts;
   const rm = reduceMotion ? 0.45 : 1;
   const maxFrameDt = opts.e2e ? 1 / 4 : 1 / 30;
+  // in tests, animations follow the wall clock even when software rendering drops to a few frames a second
+  if (opts.e2e) gsap.ticker.lagSmoothing(0);
   const sound = new Sound();
   const speech = new Speech();
-  const scheduler = new WordScheduler(WORDS);
+  const scheduler = new WordScheduler();
+  const pool = () => QUIZ_WORDS.filter(w => w.level <= progress.data.settings.maxLevel);
   const fortunes = new Bag(FORTUNES);
 
   /* ---------- renderer and scene ---------- */
@@ -141,7 +151,7 @@ export function startGame(opts: GameOptions): GameHandle {
   const setWobble = (v: number) => { kMul = THREE.MathUtils.lerp(2.3, 0.42, v); cMul = THREE.MathUtils.lerp(1.9, 0.55, v); };
   setWobble(0.55);
   const C = new THREE.Vector3(), Vc = new THREE.Vector3(), Pw = new THREE.Vector3(), thrust = new THREE.Vector3();
-  let simTime = 0, dragging = false, autoDrag = false, grabVi = 0, state: GameState = 'intro';
+  let simTime = 0, dragging = false, autoDrag = false, grabVi = 0, state: GameState = 'home';
   let sleepFrames = 0, asleep = false;
   const wake = () => { sleepFrames = 0; asleep = false; };
   const outerScale = () => (stack[0] ? stack[0].sc.v : 1) * bs.s;
@@ -195,6 +205,7 @@ export function startGame(opts: GameOptions): GameHandle {
   /* ---------- the quiz ---------- */
   let word: Word | null = null, questions: Question[] = [], correctEdge: Edge = 'top';
   let wrongThisLayer = 0, cleanRun = true, bubblePts = 0, score = 0, streak = 0, cooldown = 0, tension = 0;
+  let bubbleWrong = 0, forgotUsed = false;
   let palIdx = 0, layersTotal = 3, firstBubble = true;
 
   const chips = Object.fromEntries(EDGES.map(edge => {
@@ -267,12 +278,12 @@ export function startGame(opts: GameOptions): GameHandle {
     chipsIn();
     wrongThisLayer = 0;
   }
-  const hud = { score: $('score'), streak: $('streak'), learned: $('learned') };
-  $('total').textContent = String(WORDS.length);
+  const hud = { score: $('score'), streak: $('streak'), learned: $('learned'), total: $('total') };
   function updateHud(): void {
     hud.score.textContent = fmt(score);
     hud.streak.textContent = String(streak);
-    hud.learned.textContent = String(progress.learnedCount());
+    hud.learned.textContent = String(progress.learnedCount(pool()));
+    hud.total.textContent = String(pool().length);
   }
 
   /* ---------- pulling to an edge ---------- */
@@ -339,7 +350,7 @@ export function startGame(opts: GameOptions): GameHandle {
       impulse(vi, -25 * rm, 0.04);
       impulse(frontVertex(), 18 * rm, 0.05);
       if (wrongThisLayer >= 2) chips[correctEdge].el.classList.add('hint');
-      if (word) progress.miss(word.h);
+      bubbleWrong++;
       updateHud();
       return;
     }
@@ -382,7 +393,7 @@ export function startGame(opts: GameOptions): GameHandle {
     if (state !== 'live' || dragging || stack.length >= MAX_LAYERS || !questions[0] || questions[0].revealed || !word) return;
     sound.unlock();
     const q = questions[0];
-    questions = applyForgot(questions, word, WORDS);
+    questions = applyForgot(questions, word, pool());
     const film = films.find(f => !stack.includes(f))!;
     fade(film).value = 0;
     film.mesh.visible = true;
@@ -393,8 +404,8 @@ export function startGame(opts: GameOptions): GameHandle {
     gsap.to(fade(film), { value: 1, duration: 0.35, ease: 'power2.out' });
     sound.inflate();
     impulse(frontVertex(), 22 * rm, 0.06);
-    streak = 0; cleanRun = false; wrongThisLayer = 1;
-    progress.miss(word.h); updateHud();
+    streak = 0; cleanRun = false; wrongThisLayer = 1; forgotUsed = true;
+    updateHud();
     chips[correctEdge].el.classList.add('hint', 'reveal');
     askEl.textContent = q.type === 2 ? `It’s ${q.answer}. Pull it there.` : `It’s “${q.answer}”. Pull it there.`;
     if (q.type !== 0) speech.speak(word.h);
@@ -404,7 +415,7 @@ export function startGame(opts: GameOptions): GameHandle {
 
   /* ---------- popping the core: deflate, fly away, spew the next palette, show the slip ---------- */
   const POP_DUR = reduceMotion ? 0.8 : 1.45;
-  let popT = 0, holeV = 0, pendingPal = 0;
+  let popT = 0, holeV = 0, pendingPal = 0, lastDue = new Date();
   const spin = new THREE.Vector3(), _dq = new THREE.Quaternion(), _axis = new THREE.Vector3();
   function popCore(vi: number): void {
     state = 'popping'; popT = 0; holeV = vi;
@@ -425,7 +436,7 @@ export function startGame(opts: GameOptions): GameHandle {
     askEl.textContent = 'Popped!';
     stack = [];
     renderPips();
-    if (word) progress.finish(word.h, cleanRun);
+    if (word) lastDue = progress.review(word.id, gradeBubble({ wrong: bubbleWrong, forgot: forgotUsed })).due;
     updateHud();
   }
   function holeScreen(): { x: number; y: number; nx: number; ny: number } {
@@ -470,9 +481,9 @@ export function startGame(opts: GameOptions): GameHandle {
     env.build(p.bg);
   }
   function spawnBubble(): void {
-    word = scheduler.next(progress.data);
-    questions = makeQuestions(word, WORDS);
-    cleanRun = true; bubblePts = 0;
+    word = scheduler.next(pool(), progress.data);
+    questions = makeQuestions(word, pool());
+    cleanRun = true; bubblePts = 0; bubbleWrong = 0; forgotUsed = false;
     const pal = PALETTES[palIdx];
     applyCore(coreMat, pal.mat);
     baseEmissive = pal.mat.emissive;
@@ -506,7 +517,10 @@ export function startGame(opts: GameOptions): GameHandle {
   function showNote(): void {
     if (!word) return;
     noteOpen = true;
-    $('result').textContent = cleanRun ? `Clean pop, ${bubblePts} points. Streak ${streak}.` : `${bubblePts} points. This word will come back soon.`;
+    const next = dueLabel({ due: lastDue }, new Date()).replace('due now', 'right away');
+    $('result').textContent = cleanRun
+      ? `Clean pop, ${bubblePts} points. Streak ${streak}. Next review ${next}.`
+      : `${bubblePts} points. This word comes back ${next}.`;
     $('fortuneText').textContent = fortunes.next();
     $('zhBig').textContent = word.h;
     $('zhPy').textContent = word.p;
@@ -544,17 +558,19 @@ export function startGame(opts: GameOptions): GameHandle {
     slowToggle.textContent = slowVoice ? 'Slow voice on' : 'Slow voice';
   });
   function openDrawer(): void {
-    const seen = WORDS.filter(w => progress.data.seen[w.h]).sort((a, b) => progress.data.seen[b.h] - progress.data.seen[a.h]);
-    $('drawerSub').textContent = `${progress.learnedCount()} learned, ${seen.length} met, ${WORDS.length} in the bank. Best streak ${progress.data.best}.`;
+    const now = new Date();
+    const met = pool().filter(w => progress.card(w.id))
+      .sort((x, y) => (progress.card(y.id)!.last_review?.getTime() ?? 0) - (progress.card(x.id)!.last_review?.getTime() ?? 0));
+    $('drawerSub').textContent = `${progress.learnedCount(pool())} learned, ${met.length} met, ${progress.dueCount(pool())} due. ${pool().length} words up to HSK ${progress.data.settings.maxLevel}. Best streak ${progress.data.best}.`;
     wordsList.replaceChildren();
-    if (!seen.length) {
+    if (!met.length) {
       const li = document.createElement('li');
       li.className = 'empty';
       li.textContent = 'Pop your first bubble and its word will land here. Tap a word to hear it.';
       wordsList.appendChild(li);
     }
-    for (const w of seen) {
-      const li = document.createElement('li'), b = document.createElement('button'), lv = progress.level(w.h);
+    for (const w of met) {
+      const li = document.createElement('li'), b = document.createElement('button'), card = progress.card(w.id)!, lv = masteryDots(card);
       b.type = 'button';
       const h = Object.assign(document.createElement('span'), { className: 'h', textContent: w.h });
       h.lang = 'zh-Hans';
@@ -563,16 +579,17 @@ export function startGame(opts: GameOptions): GameHandle {
       const dots = Object.assign(document.createElement('span'), { className: 'lv' });
       dots.setAttribute('aria-label', `Mastery ${lv} of 3`);
       for (let i = 0; i < 3; i++) dots.appendChild(Object.assign(document.createElement('i'), { className: lv > i ? 'on' : '' }));
-      b.append(h, pEl, e, dots);
+      const due = Object.assign(document.createElement('span'), { className: 'due', textContent: dueLabel(card, now) });
+      b.append(h, pEl, e, dots, due);
       b.addEventListener('click', () => speech.speak(w.h, slowVoice));
       li.appendChild(b); wordsList.appendChild(li);
     }
     drawer.hidden = false;
-    gsap.fromTo(drawer, { xPercent: 100 }, { xPercent: 0, duration: reduceMotion ? 0.01 : 0.45, ease: 'power3.out' });
+    gsap.fromTo(drawer, { xPercent: 100 }, { xPercent: 0, duration: reduceMotion ? 0.01 : 0.45, ease: 'power3.out', overwrite: true });
     $('drawerClose').focus({ preventScroll: true });
   }
   function closeDrawer(): void {
-    gsap.to(drawer, { xPercent: 100, duration: reduceMotion ? 0.01 : 0.3, ease: 'power2.in', onComplete: () => { drawer.hidden = true; } });
+    gsap.to(drawer, { xPercent: 100, duration: reduceMotion ? 0.01 : 0.3, ease: 'power2.in', overwrite: true, onComplete: () => { drawer.hidden = true; } });
     $('wordsBtn').focus({ preventScroll: true });
   }
   $('wordsBtn').addEventListener('click', openDrawer);
@@ -739,21 +756,73 @@ export function startGame(opts: GameOptions): GameHandle {
     requestAnimationFrame(frame);
   }
 
+  /* ---------- home screen: each mode is a bubble you pop to enter ---------- */
+  const homeEl = $('home');
+  const levelBtns = [...homeEl.querySelectorAll<HTMLButtonElement>('[data-level]')];
+  function renderHome(): void {
+    const max = progress.data.settings.maxLevel;
+    levelBtns.forEach(b => {
+      const lv = Number(b.dataset.level);
+      b.hidden = !LEVELS.includes(lv);
+      b.setAttribute('aria-checked', String(lv === max));
+    });
+    const p = pool(), due = progress.dueCount(p), fresh = progress.newCount(p);
+    $('homeStats').textContent = due
+      ? `${due} ${due === 1 ? 'word is' : 'words are'} due for review, and ${fresh} new ${fresh === 1 ? 'word waits' : 'words wait'}.`
+      : fresh ? `Nothing due right now. ${fresh} new ${fresh === 1 ? 'word' : 'words'} to meet up to HSK ${progress.data.settings.maxLevel}.`
+      : `You have met every word up to HSK ${progress.data.settings.maxLevel}. Reviews will come as they fall due.`;
+    updateHud();
+  }
+  levelBtns.forEach(b => b.addEventListener('click', () => { progress.setMaxLevel(Number(b.dataset.level)); renderHome(); }));
+  function showHome(): void {
+    if (state === 'popping') return;
+    endDrag();
+    gsap.killTweensOf(bs);
+    state = 'home';
+    body.visible = false;
+    noteOpen = false; noteEl.hidden = true;
+    chipsOut();
+    backdrop.setWord('', false);
+    document.body.classList.add('at-home');
+    homeEl.hidden = false;
+    renderHome();
+    gsap.fromTo(homeEl.querySelectorAll('.mode'), { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: reduceMotion ? 0.1 : 0.9, stagger: 0.07, ease: 'elastic.out(1,.45)' });
+    homeEl.querySelector<HTMLButtonElement>('[data-mode="words"]')?.focus({ preventScroll: true });
+    $('title').textContent = 'Squish: pop bubbles to learn Chinese';
+  }
+  function enter(mode: 'words'): void {
+    if (state !== 'home') return;
+    sound.unlock();
+    sound.pop(false);
+    const btn = homeEl.querySelector<HTMLElement>(`[data-mode="${mode}"]`);
+    gsap.to(btn, { scale: 1.35, opacity: 0, duration: 0.22, ease: 'power2.out' });
+    gsap.to(homeEl, { opacity: 0, duration: 0.3, delay: 0.1, onComplete: () => {
+      homeEl.hidden = true;
+      gsap.set(homeEl, { opacity: 1 });
+      document.body.classList.remove('at-home');
+      spawnBubble();
+    } });
+  }
+  homeEl.querySelector('[data-mode="words"]')!.addEventListener('click', () => enter('words'));
+  $('homeBtn').addEventListener('click', () => showHome());
+
   /* ---------- boot ---------- */
   setDetail(1);
   resize();
   commitPalette(0, true);
-  updateHud();
-  spawnBubble();
+  showHome();
   if (!reduceMotion) gsap.from('.corner', { opacity: 0, y: 10, duration: 0.8, delay: 0.6, stagger: 0.08, ease: 'power2.out' });
   requestAnimationFrame(t => { last = t; frame(t); });
   document.fonts?.ready.then(() => { backdrop.layout(); measureChips(); }).catch(() => {});
 
   return {
+    enter,
+    home: showHome,
     snapshot: () => ({
       state, word: word?.h ?? null, layers: stack.length, totalLayers: layersTotal, correctEdge,
       score, streak, detail: DETAILS[soft.detailIndex].level, asleep, wrong: wrongThisLayer,
-      queue: questions.map(q => `${q.type}${q.revealed ? 'r' : ''}${q.retest ? 't' : ''}`)
+      queue: questions.map(q => `${q.type}${q.revealed ? 'r' : ''}${q.retest ? 't' : ''}`),
+      pool: pool().length, due: progress.dueCount(pool()), maxLevel: progress.data.settings.maxLevel
     })
   };
 }
