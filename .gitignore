@@ -9,3 +9,4 @@ test-results
 .env.local
 .env
 audio-samples
+data/audio-missing.tsv

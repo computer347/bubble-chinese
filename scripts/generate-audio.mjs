@@ -5,6 +5,7 @@
 //   node scripts/generate-audio.mjs --sample   render a few words in several voices, then open audio-samples/index.html
 //   node scripts/generate-audio.mjs            render every missing or changed clip (normal + slow)
 //   node scripts/generate-audio.mjs --voice "Chinese (Mandarin)_Warm_Girl" --force
+//   node scripts/generate-audio.mjs --status --voice "..."   list words still missing clips (no API calls)
 //
 // Options: --voice <id>  --limit <n>  --rpm <n> (requests per minute, default 50; MiniMax allows 60 on pay-as-you-go)
 //          --force (re-render everything)  --dry-run (show what would be sent)
@@ -50,7 +51,19 @@ async function throttle() {
 async function synthesize(body, attempt = 1) {
   await throttle();
   const url = `${HOST}/v1/t2a_v2${GROUP ? `?GroupId=${encodeURIComponent(GROUP)}` : ''}`;
-  const res = await fetch(url, { method: 'POST', headers: { Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  let res;
+  try {
+    res = await fetch(url, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(60_000)
+    });
+  } catch (e) {
+    // "fetch failed": a dropped connection, DNS hiccup or timeout. Wait and try again.
+    if (attempt < 8) { await sleep(2000 * 2 ** Math.min(attempt - 1, 4)); return synthesize(body, attempt + 1); }
+    throw new Error(`network: ${e.cause?.code ?? e.name ?? e.message}`);
+  }
   const json = await res.json().catch(() => ({}));
   const code = json?.base_resp?.status_code;
   if (res.ok && code === 0 && json?.data?.audio) return Buffer.from(json.data.audio, 'hex');
@@ -99,7 +112,31 @@ function writeReview(voice) {
   writeFileSync(join(root, 'data/audio-review.md'), lines.join('\n') + '\n');
 }
 
+/** Lists words whose clips are missing or out of date, without calling the API. */
+function status() {
+  const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, 'utf8')) : {};
+  const voice = opt('voice', DEFAULT_VOICE);
+  const rows = [];
+  for (const w of WORDS) {
+    const missing = ['normal', 'slow'].filter(kind => {
+      const have = manifest[w.id]?.[kind];
+      const hash = requestHash(requestBody(w, SPEEDS[kind], voice));
+      return !have || !existsSync(join(AUDIO_DIR, have.file)) || (!flag('any-voice') && have.hash !== hash);
+    });
+    if (missing.length) rows.push([w.h, w.p, w.e, missing.join('+')]);
+  }
+  const out = join(root, 'data/audio-missing.tsv');
+  writeFileSync(out, ['characters\tpinyin\tgloss\tmissing', ...rows.map(r => r.join('\t'))].join('\n') + '\n');
+  const done = WORDS.length - rows.length;
+  console.log(`${done} of ${WORDS.length} words have both clips for voice "${voice}". ${rows.length} still need rendering.`);
+  if (rows.length) {
+    console.log(rows.slice(0, 40).map(r => `  ${r[0]} ${r[1]} (${r[3]})`).join('\n') + (rows.length > 40 ? `\n  … and ${rows.length - 40} more` : ''));
+    console.log(`Full list: data/audio-missing.tsv. Run the same generate command again to render only these.`);
+  }
+}
+
 async function main() {
+  if (flag('status')) return status();
   if (!KEY && !flag('dry-run')) {
     console.error('Set MINIMAX_API_KEY first (PowerShell: $env:MINIMAX_API_KEY = "your key"), or add it to .env.local.');
     process.exit(1);
