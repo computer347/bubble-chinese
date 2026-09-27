@@ -105,6 +105,19 @@ Hanzi Writer (MIT) animates stroke order and checks tracing, loading stroke data
 
 **Verify:** tracing judged correctly across every HSK 1 character (checked in the end-to-end test for the first character of lesson 1 so far); new words enter review at the right intervals.
 
+## Phase R: Revamp (one world, glass on top)
+
+The app as one continuous place: the 3D scene always behind, every screen a glass panel over it, one motion language. Decided: four tabs (Path with Today on top, Practice, Read, You); stories written to a spec (by people or models) and checked by the build, plus CC BY stories from StoryWeaver filtered to each level.
+
+**Needs:** 2–4. **Gives:** the shell every later mode lives in.
+
+- [ ] R1 Shell: floating glass tab bar (路 Path · 练 Practice · 读 Read · 我 You), routing, the scene always behind; Today at the top of Path; You holds your words, streak, tone accuracy and every setting (the ☰ menu and the drawer go)
+- [ ] R2 Motion: entering a task zooms and fills from its button, and the bubble inflates from there; press and tab micro-animations; the fortune slip unfolds as a glass card from the popped core; a compact result chip inside lessons
+- [ ] R3 Read: story format and build checks (`docs/STORIES.md`, `npm run story-prompt`); the reader: pinyin over characters with an opacity slider, tap a word for its meaning above it, long-press for the sentence's translation (split at 。？！), play a sentence or the story; stories unlock with path units; a StoryWeaver importer (CC BY 4.0, level-filtered, credited); then one MiniMax run records dialogues and stories
+- [ ] R4 Glass: liquid-glass materials (backdrop blur, specular edge, inner glow, refraction on large panels where supported), a rice-paper version for the ink style, a phone budget of two stacked glass layers with automatic fallback
+
+**Verify:** every existing flow reachable from the tabs; layout tests on all sizes; frame rate holds on a phone with glass on; stories pass the level check.
+
 ## Phase 5: Many bodies
 
 Engine work only, no new mode. The bubble is one sphere today; Plug needs several shaped bodies on screen that touch, and the arcade needs many bubbles at once.

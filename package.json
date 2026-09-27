@@ -20,7 +20,8 @@
     "audio:sample": "node scripts/generate-audio.mjs --sample",
     "audio:status": "node scripts/generate-audio.mjs --status",
     "import:tatoeba": "node scripts/import-tatoeba.mjs",
-    "strokes": "node scripts/copy-strokes.mjs"
+    "strokes": "node scripts/copy-strokes.mjs",
+    "story-prompt": "node scripts/story-prompt.mjs"
   },
   "engines": {
     "node": ">=20"
