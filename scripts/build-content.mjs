@@ -179,6 +179,8 @@ export function buildWordOfDay(words) {
 
 const PATH_FILE = 'data/content/path-hsk1.txt';
 const PATH_OUT = join(root, 'src/content/generated/path.json');
+/** New words a lesson may teach: 10 is the aim. */
+const LESSON_WORDS = [8, 12];
 
 /**
  * Parses role-tagged chunks ("我/S 很/A 好/V 。") into chunks of word ids and punctuation.
@@ -210,7 +212,7 @@ function parseChunks(chunkText, byHanzi, where) {
  * not yet taught (in this lesson or an earlier one), teaches a word twice, or teaches a word it
  * never uses.
  */
-export function buildPath(words, file = PATH_FILE, level = 1) {
+export function buildPath(words, file = PATH_FILE, level = 1, sizes = LESSON_WORDS) {
   const byHanzi = new Map();
   for (const w of words) if (!byHanzi.has(w.h) || w.quiz !== false) byHanzi.set(w.h, w);
   const byId = new Map(words.map(w => [w.id, w]));
@@ -234,8 +236,14 @@ export function buildPath(words, file = PATH_FILE, level = 1) {
       const [id, title, zh, topic] = parts;
       need(id && title && zh && topic, n, 'a unit needs: id | title | Chinese title | topic');
       need(!units.some(u => u.id === id), n, `duplicate unit ${id}`);
-      units.push(unit = { id, title, zh, topic, lessons: [] });
+      units.push(unit = { id, title, zh, topic, notes: [], lessons: [] });
       lesson = null;
+    } else if (kind === 'note') {
+      need(unit && !lesson, n, 'a culture note belongs to a unit, before its lessons');
+      // a note is free text: the rest of the line as written, bars and all
+      const text = line.slice(sp + 1).trim();
+      need(sp > 0 && text, n, 'an empty note');
+      unit.notes.push(text);
     } else if (kind === 'lesson') {
       need(unit, n, 'a lesson must follow a unit');
       const [id, title] = parts;
@@ -279,10 +287,11 @@ export function buildPath(words, file = PATH_FILE, level = 1) {
       const py = contextPinyin(s.chunks.flatMap(c => c.words.map(id => byId.get(id).h)), byHanzi);
       lesson.builds.push({ text: s.text, en, pattern: s.pattern, chunks: s.chunks, punct: s.punct, py });
     } else {
-      need(false, n, `unknown line "${kind}" (expected unit, lesson, new, say or build)`);
+      need(false, n, `unknown line "${kind}" (expected unit, note, lesson, new, say or build)`);
     }
   });
   for (const u of units) for (const l of u.lessons) {
+    if (l.words.length < sizes[0] || l.words.length > sizes[1]) throw new Error(`${file}: lesson ${l.id} teaches ${l.words.length} words; a lesson teaches ${sizes[0]}–${sizes[1]} (10 is the aim)`);
     for (const id of l.words) if (!l.used.has(id)) throw new Error(`${file}: lesson ${l.id} teaches "${byId.get(id).h}" but never uses it`);
     delete l.used;
   }

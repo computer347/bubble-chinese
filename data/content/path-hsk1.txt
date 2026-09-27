@@ -3,6 +3,7 @@
 # that every word is an HSK word taught in this lesson or an earlier one.
 #
 #   unit <id> | <English title> | <Chinese title> | <syllabus topic>
+#   note <a paragraph of the unit's culture note>
 #   lesson <id> | <English title>
 #   new <the lesson's new words, separated by spaces>
 #   say <speaker> | <Chinese, words separated by spaces> | <English>      a line of the lesson's dialogue
@@ -11,78 +12,95 @@
 # In dialogue, a name that is not an HSK word is written {characters=pinyin}.
 # Units without lessons are on the path already, and filled in later.
 #
-# Lessons are about 10–14 new words: a dialogue of 8–10 lines that reuses earlier words, and
-# four sentences to build.
+# Lessons teach 10 new words (the build allows 8–12): a dialogue that reuses earlier words, and
+# four sentences to build. Each unit has a short culture note.
 #
 # Status: units 1–2 drafted, for review by a Chinese speaker. The topic outline is taken from a
 # secondary source and is to be checked against the official 2025 syllabus.
 
 unit hello | Hello | 你好 | Daily life: interaction, polite behaviour (交往)
+note Chinese has two words for "you": 你 nǐ, for friends and people your own age, and 您 nín, a polite "you" for elders, teachers and people you want to show respect to. 您好 is a respectful hello.
+note In class, students greet their teacher together with 老师好! ("hello, teacher"). Among friends a greeting is often simply the other person's name.
 
-lesson hello-1 | Hello, thank you
-new 你好 您 好 你 我 很 吗 呢 也 谢谢 不客气 对不起 没关系 再见
+lesson hello-1 | Hello
+new 你好 您 好 你 我 很 吗 呢 也 再见
 say A | 你好 ！ | Hello!
 say B | 您 好 ！ | Hello! (polite)
 say A | 你 好 吗 ？ | How are you?
-say B | 我 很 好 ， 谢谢 ！ 你 呢 ？ | I'm fine, thanks! And you?
+say B | 我 很 好 。 你 呢 ？ | I'm fine. And you?
 say A | 我 也 很 好 。 | I'm fine too.
-say B | 对不起 ！ | Oh, sorry!
-say A | 没关系 ！ | That's all right!
-say B | 谢谢 ！ 再见 ！ | Thank you! Goodbye!
-say A | 不客气 。 再见 ！ | You're welcome. Goodbye!
+say B | 再见 ！ | Goodbye!
+say A | 再见 ！ | Goodbye!
 build 我/S 很/A 好/V 。 | I'm fine.
 build 我/S 也/A 很/A 好/V 。 | I'm fine too.
 build 你/S 好/V 吗/X ？ | How are you?
 build 你/S 呢/X ？ | And you?
 
-lesson hello-2 | Who is who
-new 大家 老师 是 学生 你们 我们 都 他 不 她 他们
+lesson hello-2 | In class
+new 大家 老师 学生 是 不 都 谢谢 不客气 对不起 没关系
 say A | 大家 好 ！ | Hello, everyone!
 say B | 老师 好 ！ | Hello, teacher!
-say A | 你们 是 学生 吗 ？ | Are you students?
-say B | 是 ， 我们 都 是 学生 。 | Yes, we're all students.
-say A | 他 呢 ？ 他 也 是 学生 吗 ？ | And him? Is he a student too?
-say B | 他 不 是 学生 ， 他 是 老师 。 | He isn't a student, he's a teacher.
-say A | 她 呢 ？ | And her?
-say B | 她 也 是 老师 。 他们 都 是 老师 。 | She's a teacher too. They're both teachers.
-build 我们/S 都/A 是/V 学生/O 。 | We're all students.
-build 他/S 不/A 是/V 老师/O 。 | He isn't a teacher.
-build 她/S 也/A 是/V 老师/O 。 | She's a teacher too.
-build 你们/S 是/V 学生/O 吗/X ？ | Are you students?
+say A | 大家 都 是 学生 吗 ？ | Is everyone here a student?
+say B | 是 ， 我 是 学生 。 | Yes, I'm a student.
+say C | 对不起 ， 我 不 是 学生 ， 我 是 老师 。 | Sorry, I'm not a student, I'm a teacher.
+say A | 没关系 ！ 您 好 ！ | That's all right! Hello!
+say B | 老师 ， 谢谢 ！ | Thank you, teacher!
+say A | 不客气 。 | You're welcome.
+build 我/S 是/V 学生/O 。 | I'm a student.
+build 我/S 不/A 是/V 老师/O 。 | I'm not a teacher.
+build 大家/S 都/A 是/V 学生/O 。 | Everyone is a student.
+build 你/S 是/V 老师/O 吗/X ？ | Are you a teacher?
 
 unit me | About me | 我 | Basic information: personal information (个人信息)
+note In a Chinese name the family name comes first. In 王丽 Wáng Lì, 王 is the family name and 丽 the given name. Most family names are a single character.
+note People are often addressed by family name and title, like 李老师 ("Teacher Li"), rather than by their given name.
+note 你几岁？ expects a small number, so it is how you ask a child's age. With adults, 你多大？ is more usual, and elders are asked more politely still.
 
-lesson me-1 | Names and countries
-new 叫 什么 名字 哪 国 人 中国 这 那 谁
+lesson me-1 | Names
+new 叫 什么 名字 这 那 他 她 他们 我们 你们
 say A | 你好 ！ 你 叫 什么 名字 ？ | Hello! What's your name?
 say B | 我 叫 {大卫=Dàwèi} 。 你 呢 ？ | I'm David. And you?
-say A | 我 叫 {王丽=Wáng Lì} 。 你 是 哪 国 人 ？ | I'm Wang Li. Where are you from?
-say B | 我 是 {英国=Yīngguó} 人 。 你 是 中国 人 吗 ？ | I'm British. Are you Chinese?
-say A | 是 ， 我 是 中国 人 。 | Yes, I'm Chinese.
-say B | 那 是 谁 ？ | Who's that?
-say A | 那 是 我们 老师 ， 她 叫 {李=Lǐ} 老师 。 | That's our teacher, she's called Teacher Li.
-say B | 这 是 谁 ？ | And who's this?
-say A | 这 是 {小明=Xiǎomíng} ， 他 也 是 学生 。 | This is Xiaoming, he's a student too.
+say A | 我 叫 {王丽=Wáng Lì} 。 | I'm Wang Li.
+say B | 这 是 你们 老师 吗 ？ | Is this your teacher?
+say A | 是 ， 她 是 我们 老师 ， 她 叫 {李=Lǐ} 老师 。 | Yes, she's our teacher. She's Teacher Li.
+say B | 那 是 {小明=Xiǎomíng} 吗 ？ | Is that Xiaoming?
+say A | 不 是 。 他 叫 {小华=Xiǎohuá} 。 | No. He's called Xiaohua.
+say B | 他们 都 是 学生 吗 ？ | Are they all students?
+say A | 是 ， 他们 都 是 学生 。 | Yes, they're all students.
 build 你/S 叫/V 什么+名字/O ？ | What's your name?
+build 这/S 是/V 我们+老师/O 。 | This is our teacher.
+build 他/S 不/A 是/V 老师/O 。 | He isn't a teacher.
+build 他们/S 都/A 是/V 学生/O 。 | They're all students.
+
+lesson me-2 | Where are you from?
+new 认识 高兴 哪 国 人 中国 谁 的 朋友 同学
+say A | 认识 你 很 高兴 ！ | Nice to meet you!
+say B | 我 也 很 高兴 ！ 你 是 哪 国 人 ？ | Nice to meet you too! Where are you from?
+say A | 我 是 {英国=Yīngguó} 人 。 你 是 中国 人 吗 ？ | I'm British. Are you Chinese?
+say B | 是 ， 我 是 中国 人 。 | Yes, I'm Chinese.
+say A | 那 是 谁 ？ | Who's that?
+say B | 那 是 我 的 朋友 {小明=Xiǎomíng} 。 | That's my friend Xiaoming.
+say A | 他 也 是 中国 人 吗 ？ | Is he Chinese too?
+say B | 是 。 他 也 是 我 的 同学 。 | Yes. He's my classmate too.
 build 你/S 是/V 哪+国+人/O ？ | Where are you from?
 build 我/S 是/V 中国+人/O 。 | I'm Chinese.
 build 那/S 是/V 谁/O ？ | Who's that?
-
-lesson me-2 | Age and friends
-new 认识 高兴 今年 多 大 十 八 岁 的 朋友 同学
-say A | 认识 你 很 高兴 ！ | Nice to meet you!
-say B | 我 也 很 高兴 ！ 你 今年 多 大 ？ | Nice to meet you too! How old are you?
-say A | 我 今年 十 八 岁 。 你 呢 ？ | I'm eighteen. And you?
-say B | 我 也 十 八 岁 ！ | I'm eighteen too!
-say A | 这 是 我 的 朋友 {小明=Xiǎomíng} 。 | This is my friend Xiaoming.
-say B | 他 也 是 你 的 同学 吗 ？ | Is he your classmate too?
-say A | 是 ， 他 是 我 的 朋友 ， 也 是 我 的 同学 。 | Yes, he's my friend and my classmate.
-say B | 你们 都 是 中国 人 吗 ？ | Are you both Chinese?
-say A | 是 ， 我们 都 是 中国 人 。 | Yes, we're both Chinese.
-build 我/S 今年/T 十+八+岁/V 。 | I'm eighteen this year.
 build 他/S 是/V 我+的+朋友/O 。 | He's my friend.
-build 我/S 也/A 很/A 高兴/V 。 | I'm pleased too.
-build 你/S 今年/T 多+大/V ？ | How old are you this year?
+
+lesson me-3 | How old?
+new 孩子 小朋友 几 岁 八 小 今年 多 大 十
+say A | {李=Lǐ} 老师 ， 这 是 您 的 孩子 吗 ？ | Teacher Li, is this your child?
+say B | 是 ， 他 是 我 的 孩子 。 | Yes, he's my child.
+say A | 小朋友 ， 你 几 岁 ？ | How old are you, little one?
+say C | 我 八 岁 ！ | I'm eight!
+say B | 他 很 小 。 你 呢 ？ 你 今年 多 大 ？ | He's little. And you? How old are you this year?
+say A | 我 今年 十 八 岁 。 | I'm eighteen this year.
+say B | {大卫=Dàwèi} 呢 ？ | And David?
+say A | 他 也 十 八 岁 。 | He's eighteen too.
+build 你/S 几+岁/V ？ | How old are you? (to a child)
+build 他/S 很/A 小/V 。 | He's little.
+build 这/S 是/V 我+的+孩子/O 。 | This is my child.
+build 我/S 今年/T 十+八+岁/V 。 | I'm eighteen this year.
 
 unit numbers | Numbers and dates | 数字 | Basic information: event information (事件信息)
 unit family | Family | 家人 | Basic information: personal information, family and friends (个人信息)

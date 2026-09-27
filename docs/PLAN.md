@@ -78,9 +78,12 @@ A course alongside the general model, in the spirit of HelloChinese: units follo
 **Needs:** 2, 3 (audio prompts). **Gives:** the first meeting of new words, words in context; later upgraded by Plug (7).
 
 - [x] Course file `data/content/path-hsk1.txt`: units → lessons → new words, a short dialogue, sentences to build; the build fails if a lesson uses a word not yet taught, teaches one twice, or never uses a word it teaches
-- [x] All 15 HSK 1 units on the path (titles and topics); units 1–2 drafted (8 lessons, 42 words)
+- [x] Lessons of 10 new words (the build allows 8–12): a dialogue that reuses earlier words, four sentences to build. For scale: HSK Standard Course 1 has ~10 new words a lesson, Integrated Chinese ~25–30 a (1–2 week) lesson, Duolingo 1–2 a few-minute lesson
+- [x] A culture note per unit
+- [x] All 15 HSK 1 units on the path (titles and topics); units 1–2 drafted (5 lessons, 50 words)
 - [ ] The path screen: units and lessons, locked, open and done, in both styles
-- [ ] The lesson player: meet (first meeting: sound, meaning, example) → pop (bubbles on the lesson's words) → in context (the dialogue, tap to hear) → build (put a sentence in order) → checkpoint (a boss bubble, one layer per word)
+- [ ] The lesson player: meet (first meeting: sound, meaning, example) → pop (bubbles on the lesson's words) → in context (the dialogue, tap to hear) → build (put a sentence in order) → checkpoint (a boss bubble, one layer per word); the unit's culture note before its first lesson
+- [ ] A "write" side lesson on each lesson: stroke order for its new characters (needs 4b)
 - [ ] Today takes its new words from the next lesson
 - [ ] Dialogue audio with the MiniMax generator
 - [ ] Units 3–15 for HSK 1, then HSK 2
@@ -89,8 +92,11 @@ A course alongside the general model, in the spirit of HelloChinese: units follo
 
 ## Phase 4b: Writing
 
-**Needs:** 2. Separate module. (Its "first meeting" moved to the path.)
+**Needs:** 2. Separate module; the path's side lessons use it. (Its "first meeting" moved to the path.)
 
+Likely route: Hanzi Writer (MIT) animates stroke order and checks tracing; its stroke data (hanzi-writer-data) comes from Make Me a Hanzi, whose stroke data is, as far as known, under the Arphic Public License. Copy only the characters the app teaches into `public/strokes/`, with the licence, as the voice clips are.
+
+- [ ] Confirm the licences of Hanzi Writer and its stroke data before importing anything
 - [ ] Stroke data pipeline from Make Me a Hanzi (check the licence of the stroke and decomposition files before importing)
 - [ ] Stroke-order tracing on the bubble, the `write` skill
 - [ ] Radical split: the parts of a character and what they hint at
