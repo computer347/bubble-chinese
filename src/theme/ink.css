@@ -6,7 +6,14 @@ body.style-ink{
   --seal:#B8262B;
   font-variation-settings:normal;
 }
-body.style-ink .mark{ font-family:var(--brush); font-weight:400; letter-spacing:0; font-size:clamp(26px,2.4vw,34px); }
+body.style-ink .brand{ font-family:var(--brush); font-weight:400; letter-spacing:0; font-size:clamp(24px,2.3vw,30px); }
+body.style-ink .brand .zh{ font-family:var(--brush); font-weight:400; }
+body.style-ink .fortune-day{ font-family:var(--brush); font-style:normal; }
+body.style-ink .wcard, body.style-ink .card, body.style-ink .menu-words{ border-radius:6px; font-family:var(--font); }
+body.style-ink .wcard .h{ font-family:var(--brush); font-weight:400; }
+body.style-ink .card-name{ font-family:var(--brush); font-weight:400; font-size:24px; }
+body.style-ink .m-today{ --c1:#E0472F; --c2:#8E1510; }
+body.style-ink .menu-head h2{ font-family:var(--brush); }
 body.style-ink .ask{ font-size:19px; font-weight:600; }
 body.style-ink .stats dd{ font-family:var(--font); font-weight:700; }
 
@@ -27,8 +34,7 @@ body.style-ink .pill, body.style-ink .forgot, body.style-ink .levels button{ bor
 /* home: calligraphy heading, and a paper lantern for each mode */
 body.style-ink .home-title{ font-family:var(--brush); font-weight:400; letter-spacing:0; }
 body.style-ink .mode{
-  --size:clamp(124px,14vw,172px);
-  width:calc(var(--size) * 1.05); height:calc(var(--size) * .9); margin:14px 4px;
+  width:calc(var(--size) * 1.05); height:calc(var(--size) * .9); margin:10px 4px 16px;
   border-radius:50% / 46%;
   background:
     repeating-linear-gradient(90deg, rgba(0,0,0,0) 0 16%, rgba(60,10,0,.28) 16% 17.2%),
@@ -64,6 +70,5 @@ body.style-ink .next{ border-radius:4px; font-family:var(--font); font-size:17px
   body.style-ink .ans.zh{ font-size:21px; padding:5px 11px 7px; }
   body.style-ink .ans[data-edge="left"], body.style-ink .ans[data-edge="right"]{ max-width:25vw; }
   body.style-ink .ask{ font-size:16px; }
-  body.style-ink .mode{ --size:112px; margin:8px 2px; }
   body.style-ink .mode-desc{ font-size:12.5px; }
 }

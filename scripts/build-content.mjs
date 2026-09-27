@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(root, 'src/content/generated/hsk.json');
 const SENTENCES_OUT = join(root, 'src/content/generated/sentences.json');
+const WOTD_OUT = join(root, 'src/content/generated/word-of-day.json');
 const SENTENCE_FILE = 'data/content/sentences.tsv';
 const TATOEBA_FILE = 'data/content/sentences-tatoeba.tsv';
 export const ROLES = ['S', 'T', 'P', 'A', 'V', 'O', 'X'];
@@ -157,12 +158,47 @@ export function buildSentences(words) {
   return { sentences: out, json };
 }
 
+/**
+ * Words of the day: syllabus words above the shipped levels, with a short meaning from their
+ * CC-CEDICT definition (the first sense, without classifiers or cross-references). A small daily
+ * look beyond what the app teaches; a fetched source can replace this list later.
+ */
+export function shortGloss(def) {
+  const sense = def.split('/').map(s => s.replace(/\(bound form\)\s*/g, '').replace(/CL:\S+/g, '').trim())
+    .find(s => s && !/^(variant of|see |used in |old variant|surname )/i.test(s));
+  if (!sense) return '';
+  const parts = sense.split(';').map(s => s.trim()).filter(Boolean);
+  let out = parts[0];
+  if (parts[1] && (out + '; ' + parts[1]).length <= 32) out += '; ' + parts[1];
+  return out.length > 40 ? out.slice(0, 39).replace(/\s+\S*$/, '') + '…' : out;
+}
+
+export function buildWordOfDay(words) {
+  const known = new Set(words.map(w => w.h));
+  const [header, ...rows] = tsv('data/vendor/hsk2025-syllabus.tsv');
+  const cols = header.split('\t');
+  const out = [], seen = new Set();
+  for (const line of rows) {
+    const r = Object.fromEntries(line.split('\t').map((v, i) => [cols[i], v]));
+    const level = Number(r.level);
+    if (LEVELS.includes(level)) continue;
+    const h = r.word.replace(/\d/g, '');
+    if (known.has(h) || seen.has(h)) continue;
+    const e = shortGloss(r.cedict ?? '');
+    if (!e) continue;
+    seen.add(h);
+    out.push({ h, p: r.pinyin.split('/')[0], pn: r.numbered.split('/')[0], e, level });
+  }
+  return { list: out, json: '[\n' + out.map(x => '  ' + JSON.stringify(x)).join(',\n') + '\n]\n' };
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const { words, json } = build();
   const { sentences, json: sjson } = buildSentences(words);
+  const { list: wotd, json: wjson } = buildWordOfDay(words);
   const read = f => { try { return readFileSync(f, 'utf8').replace(/\r\n/g, '\n'); } catch { return ''; } };
   if (process.argv.includes('--check')) {
-    if (read(OUT) !== json || read(SENTENCES_OUT) !== sjson) {
+    if (read(OUT) !== json || read(SENTENCES_OUT) !== sjson || read(WOTD_OUT) !== wjson) {
       console.error('Generated content is out of date. Run: npm run build:content');
       process.exit(1);
     }
@@ -171,6 +207,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     mkdirSync(dirname(OUT), { recursive: true });
     writeFileSync(OUT, json);
     writeFileSync(SENTENCES_OUT, sjson);
+    writeFileSync(WOTD_OUT, wjson);
+    console.log(`Wrote ${wotd.length} words of the day (above HSK ${Math.max(...LEVELS)}).`);
     const per = LEVELS.map(l => `HSK ${l}: ${words.filter(w => w.level === l).length}`).join(', ');
     console.log(`Wrote ${words.length} words (${per}) and ${sentences.length} sentences to src/content/generated/`);
   }

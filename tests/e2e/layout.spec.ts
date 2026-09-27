@@ -36,6 +36,11 @@ async function rects(page: Page, sel: string): Promise<Array<Rect & { name: stri
   }));
 }
 
+/** The game's last fit, for failure messages: where it sent the bubble, how long ago, and the answers it avoided. */
+const lastFit = (page: Page) => page.evaluate(() => {
+  const f = (window.__squish!.snapshot() as unknown as { lastFit: { y: number; r: number; at: number; obstacles: Rect[] } | null }).lastFit;
+  return f ? JSON.stringify({ y: f.y | 0, r: f.r | 0, ago: (performance.now() - f.at) | 0, answers: f.obstacles.slice(0, 4).map(q => [q.l | 0, q.t | 0, q.r | 0, q.b | 0]) }) : 'none';
+});
 /** Distance from a vertical line (the tassel) to a rectangle. */
 const lineDist = (x: number, y0: number, y1: number, q: Rect) => Math.hypot(Math.max(q.l - x, 0, x - q.r), Math.max(q.t - y1, 0, y0 - q.b));
 /** Distance from a circle's centre to a rectangle. */
@@ -62,10 +67,10 @@ async function check(page: Page, W: number, H: number, where: string, tail = 1):
   }
   // the resting bubble plus 8% for its wobble must stay clear of the answers and the corners
   const { x, y, r } = s.ball, room = r * 1.08;
-  for (const c of [...chips, ...(await rects(page, '.corner .q, .stats, #modeLabel'))]) {
+  for (const c of [...chips, ...(await rects(page, '.corner .q, .topbar .brand, .topbar .bar-right, .topbar .icon-btn'))]) {
     // a lantern's tassel hangs below it
     if (tail > 1 && lineDist(x, y + r * 0.8, y + tail * r, c) < 1) problems.push(`${where}: tassel touches ${c.name}: ball ${x | 0},${y | 0},${r | 0} chip ${c.l | 0},${c.t | 0},${c.r | 0},${c.b | 0}`);
-    if (dist(x, y, c) < room) problems.push(`${where}: bubble (r ${r | 0} at ${x | 0},${y | 0}) covers ${c.name} (${c.l | 0},${c.t | 0})-(${c.r | 0},${c.b | 0})`);
+    if (dist(x, y, c) < room) problems.push(`${where}: bubble (r ${r | 0} at ${x | 0},${y | 0}) covers ${c.name} (${c.l | 0},${c.t | 0})-(${c.r | 0},${c.b | 0}); last fit ${await lastFit(page)}`);
   }
   return problems;
 }
@@ -81,14 +86,13 @@ for (const [name, W, H, style] of RUNS) {
     await page.setViewportSize({ width: W, height: H });
     await page.goto('/?e2e');
     await page.waitForFunction(() => !!window.__squish);
-    // lanterns sway, so clicks on them skip the wait for a still target
-    const force = style === 'ink';
-    if (force) await page.click('[data-style="ink"]');
-    const tail = force ? 1.45 : 1;
+    const ink = style === 'ink';
+    if (ink) { await page.click('#menuBtn'); await page.click('[data-style="ink"]'); await page.click('#menuClose'); }
+    const tail = ink ? 1.45 : 1;
     const problems: string[] = [];
     for (const mode of ['words', 'listen']) {
       await until(page, s => s.state === 'home');
-      await page.click(`[data-mode="${mode}"]`, { force });
+      await page.click(`[data-mode="${mode}"]`);
       for (let layer = 0; layer < 3; layer++) {
         problems.push(...await check(page, W, H, `${mode} layer ${layer + 1}`, tail));
         const before = await snap(page);

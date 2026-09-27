@@ -12,6 +12,8 @@ import { Slip } from '../ui/slip';
 import { Dictation } from '../ui/dictation';
 import { Drawer } from '../ui/drawer';
 import { Home } from '../ui/home';
+import { Menu } from '../ui/menu';
+import { todayLeft, TodayMode } from '../modes/today';
 import { MODES, type ModeId } from '../modes';
 import type { Mode, ModeContext } from '../modes/mode';
 import { LayeredMode } from '../modes/layered';
@@ -97,9 +99,11 @@ export function startGame(opts: GameOptions): GameHandle {
   function fit(instant = false): void {
     const W = window.innerWidth, H = window.innerHeight, d = bubble.designed();
     const answers = dictation.shown ? [shown($('dictation'))] : chips.layoutRects();
-    const panels = [...document.querySelectorAll('.corner, #modeLabel')].map(shown);
+    const panels = [...document.querySelectorAll('.corner, .topbar')].map(shown);
     const obstacles = [...answers, ...panels].filter((q): q is Rect => !!q);
-    const f = fitBubble({ W, H, x: W / 2, obstacles, maxR: d.r, prefY: d.y, tail: THEMES[progress.data.settings.style].tail });
+    // the resting bubble bobs 0.05 world units each way (none with reduced motion); a little more for spring lag
+    const bob = reduceMotion ? 0 : 0.05 * 1.3 * H / stage.visH;
+    const f = fitBubble({ W, H, x: W / 2, obstacles, maxR: d.r, prefY: d.y, tail: THEMES[progress.data.settings.style].tail, bob });
     lastFit = { ...f, at: performance.now(), obstacles };
     bubble.place(f.y, f.r, instant);
   }
@@ -111,17 +115,23 @@ export function startGame(opts: GameOptions): GameHandle {
     if (!playing || refit) return;
     refit = requestAnimationFrame(() => { refit = 0; if (bubble.state !== 'popping' && bubble.state !== 'hidden') fit(); });
   });
-  document.querySelectorAll('.ans, .corner, #modeLabel, #dictation').forEach(el => watch.observe(el));
+  document.querySelectorAll('.ans, .corner, .topbar, #dictation').forEach(el => watch.observe(el));
 
-  const ctx: ModeContext = { stage, bubble, chips, hud, slip, dictation, sound, speech, voice, progress, session, pool, updateHud, fit };
+  const ctx: ModeContext = { stage, bubble, chips, hud, slip, dictation, sound, speech, voice, progress, session, pool, updateHud, fit, home: () => showHome() };
   const modes = new Map<ModeId, Mode>(MODES.filter(m => m.make).map(m => [m.id, m.make!(ctx)]));
   let current: Mode | null = null;
   let currentId: ModeId | null = null;
   /** True once the chosen mode has started (after the home screen has faded). */
   let playing = false;
 
-  /* ---------- home screen: each mode is a bubble you pop to enter ---------- */
-  const home = new Home({ progress, reduceMotion, modes: MODES, pool, onEnter: id => enter(id), onLevel: updateHud, onStyle: style => applyStyle(style) });
+  /* ---------- home screen and menu ---------- */
+  const today = modes.get('today') as TodayMode;
+  const home = new Home({ progress, voice, reduceMotion, modes: MODES, pool, today: () => todayLeft(ctx, today.heardPool()), onEnter: id => enter(id) });
+  const menu = new Menu({
+    progress, reduceMotion,
+    onStudy: () => { updateHud(); if (home.shown) home.render(); },
+    onStyle: style => applyStyle(style)
+  });
 
   /* ---------- style: soap bubbles, or ink and lanterns ---------- */
   function applyStyle(style: StyleId, instant = false): void {
@@ -160,7 +170,7 @@ export function startGame(opts: GameOptions): GameHandle {
   document.addEventListener('keydown', () => sound.unlock(), { capture: true });
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
-    if (drawer.open) drawer.close(); else if (slip.open) slip.close();
+    if (menu.open) menu.close(); else if (drawer.open) drawer.close(); else if (slip.open) slip.close();
   });
   canvas.addEventListener('keydown', e => current?.key?.(e));
   const soundBtn = $('sound');
@@ -186,7 +196,8 @@ export function startGame(opts: GameOptions): GameHandle {
   stage.resize();
   applyStyle(progress.data.settings.style, true);
   showHome();
-  if (!reduceMotion) gsap.from('.corner', { opacity: 0, y: 10, duration: 0.8, delay: 0.6, stagger: 0.08, ease: 'power2.out' });
+  hud.modeLabel(null);
+  if (!reduceMotion) gsap.from('.topbar', { opacity: 0, y: -10, duration: 0.8, delay: 0.3, ease: 'power2.out' });
   stage.run(dt => bubble.update(dt));
   document.fonts?.ready.then(() => { stage.backdrop.layout(); chips.measure(); }).catch(() => {});
 

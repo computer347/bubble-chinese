@@ -147,6 +147,10 @@ Separate modules that change how things look and fit, not how they play.
 
 - [x] Layout from measurement, not device detection: after the answers are placed, the bubble is sized and placed in the space they and the panels leave, and re-fitted when anything changes size (late fonts, wrapping, rotation). Checked on seven screen sizes in `tests/e2e/layout.spec.ts`
 - [x] Style choice on the home screen: soap bubbles, or ink and lanterns (paper wall with grain, brush calligraphy, paper-tag answers with a red seal, a ribbed silk lantern in paper shades with gold caps and a tassel, lanterns on the home screen)
+- [x] Home screen: title bar (☰, centred name, day streak), fortune of the day, a Today bubble with what is left today, a words strip with a word of the day, and a carousel of modes with progress; every setting in the ☰ menu, on home and in play
+- [x] Today: due reviews first across Words and Listen (the longest waiting), then new words up to a daily limit (menu: 5, 10, 15 or 20), then done
+- [x] Word of the day from the level above the app's (HSK 3 syllabus, CC-CEDICT meanings), same all day; one function to swap for a fetched source
+- [ ] Word of the day from an outside source (fetched), with audio
 - [ ] More styles only if asked; each is a palette set, materials, fonts and CSS in `src/theme/`
 
 ## Content track

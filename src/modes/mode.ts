@@ -33,6 +33,8 @@ export interface ModeContext {
   updateHud(): void;
   /** Sizes and places the bubble in the space the answers and panels leave free. */
   fit(instant?: boolean): void;
+  /** Leaves the mode for the home screen. */
+  home(): void;
 }
 
 /** A way to play, entered by popping its bubble on the home screen. */

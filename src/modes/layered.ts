@@ -13,6 +13,9 @@ import type { Mode, ModeContext } from './mode';
  * on the edges. Pull the bubble to the right answer to pop a layer; the core ends in a fortune slip.
  * Subclasses say which skill it trains, how the layers are asked, and what happens around them.
  */
+/** One bubble to play: a word, and the skill it trains. */
+export interface NextBubble { word: Word; skill: Skill }
+
 export abstract class LayeredMode implements Mode {
   word: Word | null = null;
   questions: Question[] = [];
@@ -29,8 +32,13 @@ export abstract class LayeredMode implements Mode {
   private forgotUsed = false;
   private firstBubble = true;
   private lastDue = new Date();
-  /** The next word, chosen early (while the slip is up) so its sounds are ready when it arrives. */
-  private upcoming: Word | null = null;
+  /**
+   * The next bubble, chosen early (while the slip is up) so its sounds are ready when it arrives.
+   * undefined: not chosen yet; null: nothing left to play.
+   */
+  private upcoming: NextBubble | null | undefined = undefined;
+  /** The skill the bubble on screen trains (a mode may mix skills). */
+  protected current: Skill = 'words';
 
   constructor(protected readonly ctx: ModeContext) {
     ctx.hud.forgot.addEventListener('click', () => { if (this.active) this.forgot(); });
@@ -40,6 +48,10 @@ export abstract class LayeredMode implements Mode {
   protected abstract makeQuestions(w: Word, bank: readonly Word[]): Question[];
   /** The next word to play. */
   protected pick(): Word { return this.scheduler.next(this.ctx.pool(), this.ctx.progress.cards(this.skill)); }
+  /** The next bubble: a word and the skill it trains, or null when the session is over. */
+  protected choose(): NextBubble | null { return { word: this.pick(), skill: this.skill }; }
+  /** Nothing left to play: back to the home screen. */
+  protected finish(): void { this.ctx.home(); }
   /** A layer has come up. `fresh` is true for the first layer and whenever the prompt changes. */
   protected onLayer(_q: Question, _fresh: boolean): void {}
   /** A wrong answer on the current layer. */
@@ -58,7 +70,7 @@ export abstract class LayeredMode implements Mode {
   private get active(): boolean { return this.ctx.bubble.handler?.reach === this.reach; }
   private readonly reach = (edge: Edge, vi: number) => this.judge(edge, vi);
 
-  prepare(): void { this.upcoming = this.pick(); }
+  prepare(): void { this.upcoming = this.choose(); }
 
   start(): void {
     this.ctx.bubble.handler = { reach: this.reach, popped: () => this.showSlip(), poked: () => this.onPoke() };
@@ -71,7 +83,7 @@ export abstract class LayeredMode implements Mode {
     const { bubble, chips, slip, stage, voice } = this.ctx;
     bubble.hide();
     bubble.handler = null;
-    this.upcoming = null;
+    this.upcoming = undefined;
     slip.dismiss();
     voice.stop();
     chips.out();
@@ -107,8 +119,11 @@ export abstract class LayeredMode implements Mode {
 
   private spawn(): void {
     const { bubble, voice, hud, pool } = this.ctx;
-    const word = this.word = this.upcoming ?? this.pick();
-    this.upcoming = null;
+    const next = this.upcoming !== undefined ? this.upcoming : this.choose();
+    this.upcoming = undefined;
+    if (!next) { this.finish(); return; }
+    const word = this.word = next.word;
+    this.current = next.skill;
     this.questions = arrange(this.makeQuestions(word, pool()), this.ctx.progress.data.settings.ask);
     voice.preload(word);
     this.cleanRun = true; this.bubblePts = 0; this.bubbleWrong = 0; this.forgotUsed = false;
@@ -185,8 +200,8 @@ export abstract class LayeredMode implements Mode {
     chips.out();
     hud.ask('Popped!');
     this.renderPips();
-    if (this.word) this.lastDue = progress.review(this.skill, this.word.id, gradeBubble({ wrong: this.bubbleWrong, forgot: this.forgotUsed })).due;
-    this.upcoming = this.pick();
+    if (this.word) this.lastDue = progress.review(this.current, this.word.id, gradeBubble({ wrong: this.bubbleWrong, forgot: this.forgotUsed })).due;
+    this.upcoming = this.choose();
     this.ctx.updateHud();
   }
 

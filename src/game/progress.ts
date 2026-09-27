@@ -21,6 +21,8 @@ export interface Settings {
   ask: AskKind[];
   /** The look: soap bubbles, or ink and lanterns. */
   style: StyleId;
+  /** New words a day in Today's session. */
+  newPerDay: number;
 }
 
 /** Everything we keep about the learner, on this device. Version 3: FSRS cards per skill. */
@@ -42,7 +44,7 @@ export interface ReviewEntry {
 }
 
 const emptyCards = (): ProgressData['cards'] => Object.fromEntries(SKILLS.map(s => [s, {}])) as ProgressData['cards'];
-export const emptyProgress = (): ProgressData => ({ version: 3, cards: emptyCards(), best: 0, settings: { maxLevel: 1, ask: [...ASK_KINDS], style: 'bubble' } });
+export const emptyProgress = (): ProgressData => ({ version: 3, cards: emptyCards(), best: 0, settings: { maxLevel: 1, ask: [...ASK_KINDS], style: 'bubble', newPerDay: 10 } });
 
 /** The version-1 shape from the single-file game and Phase 0 (mastery 0–3 keyed by characters). */
 interface ProgressV1 { m?: Record<string, number>; seen?: Record<string, number>; miss?: Record<string, number>; best?: number }
@@ -211,6 +213,8 @@ export class Progress {
   setMaxLevel(level: number): void { this.data.settings.maxLevel = level; this.persist(); }
 
   setStyle(style: StyleId): void { this.data.settings.style = style; this.persist(); }
+
+  setNewPerDay(n: number): void { this.data.settings.newPerDay = Math.max(0, Math.round(n)); this.persist(); }
 
   /** Chooses what bubbles ask about. An empty choice is ignored: there must be something to ask. */
   setAsk(ask: readonly AskKind[]): void {

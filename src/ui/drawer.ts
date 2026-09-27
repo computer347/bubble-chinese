@@ -78,6 +78,6 @@ export class Drawer {
 
   close(): void {
     gsap.to(this.el, { xPercent: 100, duration: this.d.reduceMotion ? 0.01 : 0.3, ease: 'power2.in', overwrite: true, onComplete: () => { this.el.hidden = true; } });
-    $('wordsBtn').focus({ preventScroll: true });
+    $('menuBtn').focus({ preventScroll: true });
   }
 }

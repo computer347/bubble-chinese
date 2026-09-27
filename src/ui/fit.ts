@@ -26,6 +26,8 @@ export interface FitOptions {
   wobble?: number;
   /** Clear space kept around the bubble. */
   gap?: number;
+  /** How far the resting bubble bobs up and down, in pixels; the whole range must stay clear. */
+  bob?: number;
 }
 
 /**
@@ -53,9 +55,12 @@ export function fitBubble(o: FitOptions): { y: number; r: number } {
     }
     return r;
   };
-  let best = { y: o.prefY, r: radiusAt(o.prefY) };
+  // the bobbing centre sweeps y ± bob: the smallest room anywhere on that sweep is what counts
+  const bob = o.bob ?? 0;
+  const roomAt = bob ? (y: number) => Math.min(radiusAt(y - bob), radiusAt(y), radiusAt(y + bob)) : radiusAt;
+  let best = { y: o.prefY, r: roomAt(o.prefY) };
   for (let y = 0; y <= o.H; y += 2) {
-    const r = radiusAt(y);
+    const r = roomAt(y);
     // a clearly larger fit wins; a near-equal one wins only if it is closer to the designed height
     if (r > best.r + 1 || (r > best.r - 1 && Math.abs(y - o.prefY) < Math.abs(best.y - o.prefY))) best = { y, r };
   }

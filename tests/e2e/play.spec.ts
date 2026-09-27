@@ -147,6 +147,7 @@ test('the words panel lists popped words with their next review', async ({ page 
   await waitFor(page, x => x.state === 'note', 'the fortune slip');
   await page.click('#next');
   await waitFor(page, x => x.state === 'live', 'the next bubble');
+  await page.click('#menuBtn');
   await page.click('#wordsBtn');
   await expect(page.locator('#drawer')).toBeVisible();
   await expect(page.locator('#wordsList .h').first()).toHaveText(s.word!);
@@ -161,10 +162,18 @@ test('the home screen: modes, HSK level, and back again', async ({ page }) => {
   await expect(page.locator('#home')).toBeVisible();
   expect(s.maxLevel).toBe(1);
   expect(s.pool).toBeGreaterThan(280);           // quiz words in HSK 1 (grammar particles excluded)
-  await expect(page.locator('#homeStats')).toContainText('new words to meet up to HSK 1');
-  await expect(page.locator('.m-plug')).toBeDisabled();
-  await expect(page.locator('.m-listen')).toBeEnabled();
+  await expect(page.locator('#homeStats')).toContainText('10 new words');
+  await expect(page.locator('#fortuneDay')).not.toBeEmpty();
+  await expect(page.locator('.wcard.wotd')).toContainText('Word of the day');
+  await expect(page.locator('[data-mode="plug"]')).toBeDisabled();
+  await expect(page.locator('[data-mode="listen"]')).toBeEnabled();
+  // the settings live in the ☰ menu
+  await expect(page.locator('#menu')).toBeHidden();
+  await page.click('#menuBtn');
+  await expect(page.locator('#menu')).toBeVisible();
   await page.click('[data-level="2"]');
+  await page.click('#menuClose');
+  await expect(page.locator('#menu')).toBeHidden();
   const s2 = await snap(page);
   expect(s2.maxLevel).toBe(2);
   expect(s2.pool).toBeGreaterThan(s.pool + 150);
@@ -200,6 +209,7 @@ test('Listen: the word is heard, and its tones, meaning and characters pop by ea
   expect(played.voice.latency!).toBeLessThan(150);
   await waitFor(page, s => s.state === 'live' && s.layers === 3, 'the next bubble');
   // the tone layer counted for the tone statistics
+  await page.click('#menuBtn');
   await page.click('#wordsBtn');
   await expect(page.locator('#drawerSub')).toContainText('Tones heard right');
   expect(errorsOf(page)).toEqual([]);
@@ -256,15 +266,46 @@ test('Listen dictation: type the pinyin you hear, with tone numbers', async ({ p
 
 test('Ask about: characters only makes one-layer bubbles, and one kind always stays on', async ({ page }) => {
   await openHome(page);
+  await page.click('#menuBtn');
   await page.click('[data-ask="meaning"]');
   await page.click('[data-ask="pinyin"]');
   await expect(page.locator('[data-ask="characters"]')).toBeDisabled();
   await expect(page.locator('[data-ask="meaning"]')).toHaveAttribute('aria-pressed', 'false');
+  await page.click('#menuClose');
   await page.click('[data-mode="words"]');
   const s = await waitFor(page, x => x.state === 'live', 'a bubble');
   expect(s.queue).toEqual(['2']);
   expect(s.layers).toBe(1);
   await answer(page);
   await waitFor(page, x => x.state === 'note', 'the fortune slip');
+  expect(errorsOf(page)).toEqual([]);
+});
+
+test('Today: new words up to the daily limit, then done and back home', async ({ page }) => {
+  await openHome(page);
+  // one layer a bubble and five new words a day keep this quick
+  await page.click('#menuBtn');
+  await page.click('[data-ask="meaning"]');
+  await page.click('[data-ask="pinyin"]');
+  await page.click('[data-new="5"]');
+  await page.click('#menuClose');
+  await expect(page.locator('#homeStats')).toContainText('0 reviews due · 5 new words');
+  await page.click('#todayBtn');
+  const seen = new Set<string>();
+  for (let i = 0; i < 5; i++) {
+    const s = await waitFor(page, x => x.state === 'live', `Today bubble ${i + 1}`);
+    expect(s.mode).toBe('today');
+    seen.add(s.word!);
+    await answer(page);
+    await waitFor(page, x => x.state === 'note', 'the fortune slip');
+    await page.click('#next');
+  }
+  expect(seen.size).toBe(5);
+  // the day's new words are done and nothing is due yet: Today ends and says so
+  await waitFor(page, x => x.state === 'home', 'back home');
+  await expect(page.locator('#homeStats')).toContainText('All done for today');
+  await expect(page.locator('#todayBtn')).toBeDisabled();
+  await expect(page.locator('#days')).toHaveText('1');
+  await expect(page.locator('#wordStrip .wcard:not(.wotd)')).toHaveCount(5);
   expect(errorsOf(page)).toEqual([]);
 });

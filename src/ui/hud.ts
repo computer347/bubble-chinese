@@ -21,15 +21,16 @@ export class Hud {
 
   ask(text: string): void { this.askEl.textContent = text; }
 
-  /** The mode's name at the top centre, in English and characters ("Listen 听"), or none. */
+  /**
+   * The title bar's centre: the mode being played, in English and characters ("Listen 听"),
+   * or the app's name when none is. Either way it leads home.
+   */
   modeLabel(label: { en: string; zh: string; py: string } | null): void {
-    const el = $('modeLabel');
-    el.hidden = !label;
-    document.body.classList.toggle('labelled', !!label);
-    if (!label) return;
-    const zh = Object.assign(document.createElement('span'), { className: 'zh', textContent: label.zh, title: label.py });
+    const l = label ?? { en: 'Squish', zh: '泡泡', py: 'pàopao' };
+    const zh = Object.assign(document.createElement('span'), { className: 'zh', textContent: l.zh, title: l.py });
     zh.lang = 'zh-Hans';
-    el.replaceChildren(label.en, zh);
+    $('brandName').replaceChildren(`${l.en} `, zh);
+    $('homeBtn').setAttribute('aria-label', label ? `${l.en}. Back to the home screen` : 'Squish, home screen');
   }
 
   tip(show: boolean): void { this.tipEl.style.display = show ? '' : 'none'; }

@@ -39,6 +39,13 @@ describe('fitBubble', () => {
     expect(lineToRect(196, f.y + f.r, f.y + 1.45 * f.r * 1.1, bottom)).toBeGreaterThanOrEqual(8 - 1e-6);
   });
 
+  it('keeps the whole bob clear: the bubble fits at both ends of its swing', () => {
+    const bottom = rect(150, 600, 240, 640);
+    const f = fitBubble({ W: 390, H: 700, x: 195, obstacles: [bottom], maxR: 200, prefY: 400, bob: 12 });
+    expect(distToRect(195, f.y + 12, bottom)).toBeGreaterThanOrEqual(f.r * 1.1 + 8 - 1e-6);
+    expect(distToRect(195, f.y - 12, bottom)).toBeGreaterThanOrEqual(f.r * 1.1 + 8 - 1e-6);
+  });
+
   it('stays on screen', () => {
     const f = fitBubble({ W: 300, H: 200, x: 150, obstacles: [], maxR: 500, prefY: 100 });
     expect(f.r * 1.1 + 8).toBeLessThanOrEqual(100 + 1e-9);
