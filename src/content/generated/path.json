@@ -1,0 +1,1387 @@
+{
+ "level": 1,
+ "units": [
+  {
+   "id": "hello",
+   "title": "Hello",
+   "zh": "你好",
+   "topic": "Daily life: interaction, polite behaviour (交往)",
+   "lessons": [
+    {
+     "id": "hello-1",
+     "title": "Greetings",
+     "words": [
+      "你好|nǐhǎo",
+      "您|nín",
+      "好|hǎo",
+      "再见|zàijiàn"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "Hello!",
+       "text": "你好！",
+       "tokens": [
+        {
+         "id": "你好|nǐhǎo",
+         "py": "nǐhǎo"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Hello!",
+       "text": "你好！",
+       "tokens": [
+        {
+         "id": "你好|nǐhǎo",
+         "py": "nǐhǎo"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Hello! (polite)",
+       "text": "您好！",
+       "tokens": [
+        {
+         "id": "您|nín",
+         "py": "nín"
+        },
+        {
+         "id": "好|hǎo",
+         "py": "hǎo"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Goodbye!",
+       "text": "再见！",
+       "tokens": [
+        {
+         "id": "再见|zàijiàn",
+         "py": "zàijiàn"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      }
+     ],
+     "builds": []
+    },
+    {
+     "id": "hello-2",
+     "title": "Thank you, sorry",
+     "words": [
+      "谢谢|xièxie",
+      "不客气|búkèqi",
+      "对不起|duìbuqǐ",
+      "没关系|méiguānxi"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "Thank you!",
+       "text": "谢谢！",
+       "tokens": [
+        {
+         "id": "谢谢|xièxie",
+         "py": "xièxie"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "You're welcome!",
+       "text": "不客气！",
+       "tokens": [
+        {
+         "id": "不客气|búkèqi",
+         "py": "búkèqi"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Sorry!",
+       "text": "对不起！",
+       "tokens": [
+        {
+         "id": "对不起|duìbuqǐ",
+         "py": "duìbuqǐ"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "That's all right!",
+       "text": "没关系！",
+       "tokens": [
+        {
+         "id": "没关系|méiguānxi",
+         "py": "méiguānxi"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      }
+     ],
+     "builds": []
+    },
+    {
+     "id": "hello-3",
+     "title": "How are you?",
+     "words": [
+      "你|nǐ",
+      "我|wǒ",
+      "很|hěn",
+      "吗|ma",
+      "呢|ne",
+      "也|yě"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "How are you?",
+       "text": "你好吗？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "好|hǎo",
+         "py": "hǎo"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I'm fine. And you?",
+       "text": "我很好。你呢？",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "好|hǎo",
+         "py": "hǎo"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I'm fine too.",
+       "text": "我也很好。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "也|yě",
+         "py": "yě"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "好|hǎo",
+         "py": "hǎo"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "我很好。",
+       "en": "I'm fine.",
+       "pattern": "S A V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "很|hěn"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "好|hǎo"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "hěn",
+        "hǎo"
+       ]
+      },
+      {
+       "text": "我也很好。",
+       "en": "I'm fine too.",
+       "pattern": "S A A V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "也|yě"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "很|hěn"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "好|hǎo"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "yě",
+        "hěn",
+        "hǎo"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "hello-4",
+     "title": "Who is who",
+     "words": [
+      "是|shì",
+      "不|bù",
+      "他|tā",
+      "她|tā",
+      "老师|lǎoshī",
+      "学生|xuéshēng",
+      "我们|wǒmen",
+      "你们|nǐmen",
+      "他们|tāmen"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "Are you a teacher?",
+       "text": "你是老师吗？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "老师|lǎoshī",
+         "py": "lǎoshī"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I'm not a teacher, I'm a student.",
+       "text": "我不是老师，我是学生。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "不|bù",
+         "py": "bú"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "老师|lǎoshī",
+         "py": "lǎoshī"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "学生|xuéshēng",
+         "py": "xuéshēng"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "And them?",
+       "text": "他们呢？",
+       "tokens": [
+        {
+         "id": "他们|tāmen",
+         "py": "tāmen"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "They're students too.",
+       "text": "他们也是学生。",
+       "tokens": [
+        {
+         "id": "他们|tāmen",
+         "py": "tāmen"
+        },
+        {
+         "id": "也|yě",
+         "py": "yě"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "学生|xuéshēng",
+         "py": "xuéshēng"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "You are students, I'm a teacher.",
+       "text": "你们是学生，我是老师。",
+       "tokens": [
+        {
+         "id": "你们|nǐmen",
+         "py": "nǐmen"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "学生|xuéshēng",
+         "py": "xuéshēng"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "老师|lǎoshī",
+         "py": "lǎoshī"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "我是学生。",
+       "en": "I'm a student.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "是|shì"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "学生|xuéshēng"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "shì",
+        "xuéshēng"
+       ]
+      },
+      {
+       "text": "我们是学生。",
+       "en": "We're students.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我们|wǒmen"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "是|shì"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "学生|xuéshēng"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒmen",
+        "shì",
+        "xuéshēng"
+       ]
+      },
+      {
+       "text": "她是老师。",
+       "en": "She's a teacher.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "她|tā"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "是|shì"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "老师|lǎoshī"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "tā",
+        "shì",
+        "lǎoshī"
+       ]
+      },
+      {
+       "text": "他不是老师。",
+       "en": "He isn't a teacher.",
+       "pattern": "S A V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "他|tā"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "不|bù"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "是|shì"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "老师|lǎoshī"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "tā",
+        "bú",
+        "shì",
+        "lǎoshī"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "me",
+   "title": "About me",
+   "zh": "我",
+   "topic": "Basic information: personal information (个人信息)",
+   "lessons": [
+    {
+     "id": "me-1",
+     "title": "Names",
+     "words": [
+      "叫|jiào",
+      "什么|shénme",
+      "名字|míngzi"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "What's your name?",
+       "text": "你叫什么名字？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "叫|jiào",
+         "py": "jiào"
+        },
+        {
+         "id": "什么|shénme",
+         "py": "shénme"
+        },
+        {
+         "id": "名字|míngzi",
+         "py": "míngzi"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I'm called David. And you?",
+       "text": "我叫大卫。你呢？",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "叫|jiào",
+         "py": "jiào"
+        },
+        {
+         "name": "大卫",
+         "py": "Dàwèi"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I'm called Wang Li.",
+       "text": "我叫王丽。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "叫|jiào",
+         "py": "jiào"
+        },
+        {
+         "name": "王丽",
+         "py": "Wáng Lì"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "你叫什么名字？",
+       "en": "What's your name?",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "你|nǐ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "叫|jiào"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "什么|shénme",
+          "名字|míngzi"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "nǐ",
+        "jiào",
+        "shénme",
+        "míngzi"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "me-2",
+     "title": "Where are you from?",
+     "words": [
+      "哪|nǎ",
+      "国|guó",
+      "人|rén",
+      "中国|Zhōngguó"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "Which country are you from?",
+       "text": "你是哪国人？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "哪|nǎ",
+         "py": "nǎ"
+        },
+        {
+         "id": "国|guó",
+         "py": "guó"
+        },
+        {
+         "id": "人|rén",
+         "py": "rén"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I'm Chinese. And you?",
+       "text": "我是中国人。你呢？",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "中国|Zhōngguó",
+         "py": "Zhōngguó"
+        },
+        {
+         "id": "人|rén",
+         "py": "rén"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I'm not Chinese.",
+       "text": "我不是中国人。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "不|bù",
+         "py": "bú"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "中国|Zhōngguó",
+         "py": "Zhōngguó"
+        },
+        {
+         "id": "人|rén",
+         "py": "rén"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "我是中国人。",
+       "en": "I'm Chinese.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "是|shì"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "中国|Zhōngguó",
+          "人|rén"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "shì",
+        "Zhōngguó",
+        "rén"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "me-3",
+     "title": "How old are you?",
+     "words": [
+      "多|duō",
+      "大|dà",
+      "今年|jīnnián",
+      "岁|suì",
+      "十|shí",
+      "八|bā",
+      "几|jǐ"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "How old are you this year?",
+       "text": "你今年多大？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "今年|jīnnián",
+         "py": "jīnnián"
+        },
+        {
+         "id": "多|duō",
+         "py": "duō"
+        },
+        {
+         "id": "大|dà",
+         "py": "dà"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I'm eighteen this year. And you?",
+       "text": "我今年十八岁。你呢？",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "今年|jīnnián",
+         "py": "jīnnián"
+        },
+        {
+         "id": "十|shí",
+         "py": "shí"
+        },
+        {
+         "id": "八|bā",
+         "py": "bā"
+        },
+        {
+         "id": "岁|suì",
+         "py": "suì"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I'm eighteen too.",
+       "text": "我也十八岁。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "也|yě",
+         "py": "yě"
+        },
+        {
+         "id": "十|shí",
+         "py": "shí"
+        },
+        {
+         "id": "八|bā",
+         "py": "bā"
+        },
+        {
+         "id": "岁|suì",
+         "py": "suì"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "How old is he? (a child)",
+       "text": "他几岁？",
+       "tokens": [
+        {
+         "id": "他|tā",
+         "py": "tā"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "id": "岁|suì",
+         "py": "suì"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "He's eight.",
+       "text": "他八岁。",
+       "tokens": [
+        {
+         "id": "他|tā",
+         "py": "tā"
+        },
+        {
+         "id": "八|bā",
+         "py": "bā"
+        },
+        {
+         "id": "岁|suì",
+         "py": "suì"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "我今年十八岁。",
+       "en": "I'm eighteen this year.",
+       "pattern": "S T V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "T",
+         "words": [
+          "今年|jīnnián"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "十|shí",
+          "八|bā",
+          "岁|suì"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "jīnnián",
+        "shí",
+        "bā",
+        "suì"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "me-4",
+     "title": "Nice to meet you",
+     "words": [
+      "认识|rènshi",
+      "高兴|gāoxìng",
+      "朋友|péngyou",
+      "同学|tóngxué",
+      "的|de"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "Nice to meet you!",
+       "text": "认识你很高兴！",
+       "tokens": [
+        {
+         "id": "认识|rènshi",
+         "py": "rènshi"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "高兴|gāoxìng",
+         "py": "gāoxìng"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Pleased to meet you too.",
+       "text": "我也很高兴。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "也|yě",
+         "py": "yě"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "高兴|gāoxìng",
+         "py": "gāoxìng"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "He's my friend, and my classmate too.",
+       "text": "他是我的朋友，也是我的同学。",
+       "tokens": [
+        {
+         "id": "他|tā",
+         "py": "tā"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "朋友|péngyou",
+         "py": "péngyou"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "也|yě",
+         "py": "yě"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "同学|tóngxué",
+         "py": "tóngxué"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "他是我的朋友。",
+       "en": "He's my friend.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "他|tā"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "是|shì"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "我|wǒ",
+          "的|de",
+          "朋友|péngyou"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "tā",
+        "shì",
+        "wǒ",
+        "de",
+        "péngyou"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "numbers",
+   "title": "Numbers and dates",
+   "zh": "数字",
+   "topic": "Basic information: event information (事件信息)",
+   "lessons": []
+  },
+  {
+   "id": "family",
+   "title": "Family",
+   "zh": "家人",
+   "topic": "Basic information: personal information, family and friends (个人信息)",
+   "lessons": []
+  },
+  {
+   "id": "food",
+   "title": "Eating",
+   "zh": "吃饭",
+   "topic": "Daily life: food and drink (饮食)",
+   "lessons": []
+  },
+  {
+   "id": "shopping",
+   "title": "Shopping",
+   "zh": "买东西",
+   "topic": "Daily life: shopping (购物)",
+   "lessons": []
+  },
+  {
+   "id": "travel",
+   "title": "Getting around",
+   "zh": "去哪儿",
+   "topic": "Daily life: transport (交通出行)",
+   "lessons": []
+  },
+  {
+   "id": "weather",
+   "title": "Weather",
+   "zh": "天气",
+   "topic": "Basic information: environment, weather (环境信息)",
+   "lessons": []
+  },
+  {
+   "id": "school",
+   "title": "School",
+   "zh": "学校",
+   "topic": "Education: study and campus life (学习情况, 校园生活)",
+   "lessons": []
+  },
+  {
+   "id": "work",
+   "title": "Work",
+   "zh": "工作",
+   "topic": "Work: work and occupations (工作情况, 职业)",
+   "lessons": []
+  },
+  {
+   "id": "health",
+   "title": "Feeling ill",
+   "zh": "看病",
+   "topic": "Daily life: health (医疗健康)",
+   "lessons": []
+  },
+  {
+   "id": "free",
+   "title": "Free time",
+   "zh": "周末",
+   "topic": "Daily life: leisure (休闲)",
+   "lessons": []
+  },
+  {
+   "id": "things",
+   "title": "Things around me",
+   "zh": "东西",
+   "topic": "Basic information: objects (物品信息)",
+   "lessons": []
+  },
+  {
+   "id": "places",
+   "title": "Here and there",
+   "zh": "这儿",
+   "topic": "Basic information: places and directions (事件信息, 环境信息)",
+   "lessons": []
+  },
+  {
+   "id": "culture",
+   "title": "Chinese food",
+   "zh": "中国菜",
+   "topic": "Culture: food culture (饮食文化)",
+   "lessons": []
+  }
+ ]
+}

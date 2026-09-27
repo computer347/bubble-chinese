@@ -1,0 +1,97 @@
+# The path for HSK 1: units follow the level's topic outline (5 areas, 15 sub-areas), ordered for
+# teaching. Built into src/content/generated/path.json by `npm run build:content`, which checks
+# that every word is an HSK word taught in this lesson or an earlier one.
+#
+#   unit <id> | <English title> | <Chinese title> | <syllabus topic>
+#   lesson <id> | <English title>
+#   new <the lesson's new words, separated by spaces>
+#   say <speaker> | <Chinese, words separated by spaces> | <English>      a line of the lesson's dialogue
+#   build <role-tagged chunks, as in sentences.tsv> | <English>          a sentence to put in order
+#
+# In dialogue, a name that is not an HSK word is written {characters=pinyin}.
+# Units without lessons are on the path already, and filled in later.
+#
+# Status: units 1–2 drafted, for review by a Chinese speaker. The topic outline is taken from a
+# secondary source and is to be checked against the official 2025 syllabus.
+
+unit hello | Hello | 你好 | Daily life: interaction, polite behaviour (交往)
+
+lesson hello-1 | Greetings
+new 你好 您 好 再见
+say A | 你好 ！ | Hello!
+say B | 你好 ！ | Hello!
+say A | 您 好 ！ | Hello! (polite)
+say B | 再见 ！ | Goodbye!
+
+lesson hello-2 | Thank you, sorry
+new 谢谢 不客气 对不起 没关系
+say A | 谢谢 ！ | Thank you!
+say B | 不客气 ！ | You're welcome!
+say A | 对不起 ！ | Sorry!
+say B | 没关系 ！ | That's all right!
+
+lesson hello-3 | How are you?
+new 你 我 很 吗 呢 也
+say A | 你 好 吗 ？ | How are you?
+say B | 我 很 好 。 你 呢 ？ | I'm fine. And you?
+say A | 我 也 很 好 。 | I'm fine too.
+build 我/S 很/A 好/V 。 | I'm fine.
+build 我/S 也/A 很/A 好/V 。 | I'm fine too.
+
+lesson hello-4 | Who is who
+new 是 不 他 她 老师 学生 我们 你们 他们
+say A | 你 是 老师 吗 ？ | Are you a teacher?
+say B | 我 不 是 老师 ， 我 是 学生 。 | I'm not a teacher, I'm a student.
+say A | 他们 呢 ？ | And them?
+say B | 他们 也 是 学生 。 | They're students too.
+say A | 你们 是 学生 ， 我 是 老师 。 | You are students, I'm a teacher.
+build 我/S 是/V 学生/O 。 | I'm a student.
+build 我们/S 是/V 学生/O 。 | We're students.
+build 她/S 是/V 老师/O 。 | She's a teacher.
+build 他/S 不/A 是/V 老师/O 。 | He isn't a teacher.
+
+unit me | About me | 我 | Basic information: personal information (个人信息)
+
+lesson me-1 | Names
+new 叫 什么 名字
+say A | 你 叫 什么 名字 ？ | What's your name?
+say B | 我 叫 {大卫=Dàwèi} 。 你 呢 ？ | I'm called David. And you?
+say A | 我 叫 {王丽=Wáng Lì} 。 | I'm called Wang Li.
+build 你/S 叫/V 什么+名字/O ？ | What's your name?
+
+lesson me-2 | Where are you from?
+new 哪 国 人 中国
+say A | 你 是 哪 国 人 ？ | Which country are you from?
+say B | 我 是 中国 人 。 你 呢 ？ | I'm Chinese. And you?
+say A | 我 不 是 中国 人 。 | I'm not Chinese.
+build 我/S 是/V 中国+人/O 。 | I'm Chinese.
+
+lesson me-3 | How old are you?
+new 多 大 今年 岁 十 八 几
+say A | 你 今年 多 大 ？ | How old are you this year?
+say B | 我 今年 十 八 岁 。 你 呢 ？ | I'm eighteen this year. And you?
+say A | 我 也 十 八 岁 。 | I'm eighteen too.
+say B | 他 几 岁 ？ | How old is he? (a child)
+say A | 他 八 岁 。 | He's eight.
+build 我/S 今年/T 十+八+岁/V 。 | I'm eighteen this year.
+
+lesson me-4 | Nice to meet you
+new 认识 高兴 朋友 同学 的
+say A | 认识 你 很 高兴 ！ | Nice to meet you!
+say B | 我 也 很 高兴 。 | Pleased to meet you too.
+say A | 他 是 我 的 朋友 ， 也 是 我 的 同学 。 | He's my friend, and my classmate too.
+build 他/S 是/V 我+的+朋友/O 。 | He's my friend.
+
+unit numbers | Numbers and dates | 数字 | Basic information: event information (事件信息)
+unit family | Family | 家人 | Basic information: personal information, family and friends (个人信息)
+unit food | Eating | 吃饭 | Daily life: food and drink (饮食)
+unit shopping | Shopping | 买东西 | Daily life: shopping (购物)
+unit travel | Getting around | 去哪儿 | Daily life: transport (交通出行)
+unit weather | Weather | 天气 | Basic information: environment, weather (环境信息)
+unit school | School | 学校 | Education: study and campus life (学习情况, 校园生活)
+unit work | Work | 工作 | Work: work and occupations (工作情况, 职业)
+unit health | Feeling ill | 看病 | Daily life: health (医疗健康)
+unit free | Free time | 周末 | Daily life: leisure (休闲)
+unit things | Things around me | 东西 | Basic information: objects (物品信息)
+unit places | Here and there | 这儿 | Basic information: places and directions (事件信息, 环境信息)
+unit culture | Chinese food | 中国菜 | Culture: food culture (饮食文化)

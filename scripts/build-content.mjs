@@ -102,22 +102,7 @@ export function buildSentences(words) {
   for (const line of tsv(SENTENCE_FILE)) {
     const [chunkText, en, altText] = line.split('\t');
     if (!en) throw new Error(`${SENTENCE_FILE}: no English for "${chunkText}"`);
-    const chunks = [], punct = [];
-    let text = '';
-    for (const tok of chunkText.trim().split(/\s+/)) {
-      if (PUNCT.has(tok)) { text += tok; punct.push({ at: chunks.length, p: tok }); continue; }
-      const m = tok.match(/^(.+)\/([A-Z])$/);
-      if (!m) throw new Error(`${SENTENCE_FILE}: chunk "${tok}" needs a role, e.g. 学生/O ("${chunkText}")`);
-      const [, body, role] = m;
-      if (!ROLES.includes(role)) throw new Error(`${SENTENCE_FILE}: unknown role ${role} in "${chunkText}"`);
-      const ws = body.split('+').map(h => {
-        const w = byHanzi.get(h);
-        if (!w) throw new Error(`${SENTENCE_FILE}: "${h}" is not in the HSK word list ("${chunkText}")`);
-        return w.id;
-      });
-      text += body.replace(/\+/g, '');
-      chunks.push({ role, words: ws });
-    }
+    const { chunks, punct, text } = parseChunks(chunkText, byHanzi, SENTENCE_FILE);
     if (seen.has(text)) throw new Error(`${SENTENCE_FILE}: duplicate sentence ${text}`);
     seen.add(text);
     const pattern = chunks.map(c => c.role).join(' ');
@@ -192,13 +177,127 @@ export function buildWordOfDay(words) {
   return { list: out, json: '[\n' + out.map(x => '  ' + JSON.stringify(x)).join(',\n') + '\n]\n' };
 }
 
+const PATH_FILE = 'data/content/path-hsk1.txt';
+const PATH_OUT = join(root, 'src/content/generated/path.json');
+
+/**
+ * Parses role-tagged chunks ("我/S 很/A 好/V 。") into chunks of word ids and punctuation.
+ * `where` names the line in error messages.
+ */
+function parseChunks(chunkText, byHanzi, where) {
+  const chunks = [], punct = [];
+  let text = '';
+  for (const tok of chunkText.trim().split(/\s+/)) {
+    if (PUNCT.has(tok)) { text += tok; punct.push({ at: chunks.length, p: tok }); continue; }
+    const m = tok.match(/^(.+)\/([A-Z])$/);
+    if (!m) throw new Error(`${where}: chunk "${tok}" needs a role, e.g. 学生/O ("${chunkText}")`);
+    const [, body, role] = m;
+    if (!ROLES.includes(role)) throw new Error(`${where}: unknown role ${role} in "${chunkText}"`);
+    const ws = body.split('+').map(h => {
+      const w = byHanzi.get(h);
+      if (!w) throw new Error(`${where}: "${h}" is not in the HSK word list ("${chunkText}")`);
+      return w.id;
+    });
+    text += body.replace(/\+/g, '');
+    chunks.push({ role, words: ws });
+  }
+  return { chunks, punct, text, pattern: chunks.map(c => c.role).join(' ') };
+}
+
+/**
+ * The path: units (topics) of lessons, each with its new words, a short dialogue and sentences to
+ * build. Fails the build if a lesson uses a word that is not an HSK word of the path's level, or
+ * not yet taught (in this lesson or an earlier one), teaches a word twice, or teaches a word it
+ * never uses.
+ */
+export function buildPath(words, file = PATH_FILE, level = 1) {
+  const byHanzi = new Map();
+  for (const w of words) if (!byHanzi.has(w.h) || w.quiz !== false) byHanzi.set(w.h, w);
+  const byId = new Map(words.map(w => [w.id, w]));
+  const units = [], taught = new Map();           // word id → lesson id
+  let unit = null, lesson = null;
+  const lines = readFileSync(join(root, file), 'utf8').split(/\r?\n/);
+  const need = (cond, n, msg) => { if (!cond) throw new Error(`${file}:${n}: ${msg}`); };
+  const known = (h, n) => {
+    const w = byHanzi.get(h);
+    need(w, n, `"${h}" is not an HSK word`);
+    need(taught.has(w.id), n, `"${h}" is used before it is taught (add it to a "new" line in this lesson or an earlier one)`);
+    return w;
+  };
+  lines.forEach((raw, i) => {
+    const n = i + 1, line = raw.trim();
+    if (!line || line.startsWith('#')) return;
+    const sp = line.indexOf(' ');
+    const kind = sp < 0 ? line : line.slice(0, sp);
+    const parts = (sp < 0 ? '' : line.slice(sp + 1)).split('|').map(s => s.trim());
+    if (kind === 'unit') {
+      const [id, title, zh, topic] = parts;
+      need(id && title && zh && topic, n, 'a unit needs: id | title | Chinese title | topic');
+      need(!units.some(u => u.id === id), n, `duplicate unit ${id}`);
+      units.push(unit = { id, title, zh, topic, lessons: [] });
+      lesson = null;
+    } else if (kind === 'lesson') {
+      need(unit, n, 'a lesson must follow a unit');
+      const [id, title] = parts;
+      need(id && title, n, 'a lesson needs: id | title');
+      need(!units.some(u => u.lessons.some(l => l.id === id)), n, `duplicate lesson ${id}`);
+      unit.lessons.push(lesson = { id, title, words: [], dialogue: [], builds: [], used: new Set() });
+    } else if (kind === 'new') {
+      need(lesson, n, '"new" must follow a lesson');
+      for (const h of parts[0].split(/\s+/)) {
+        const w = byHanzi.get(h);
+        need(w, n, `"${h}" is not an HSK word`);
+        need(w.level <= level, n, `"${h}" is HSK ${w.level}, above this path's level ${level}`);
+        need(!taught.has(w.id), n, `"${h}" is already taught in ${taught.get(w.id)}`);
+        taught.set(w.id, lesson.id);
+        lesson.words.push(w.id);
+      }
+    } else if (kind === 'say') {
+      need(lesson, n, '"say" must follow a lesson');
+      const [who, zh, en] = parts;
+      need(who && zh && en, n, 'a dialogue line needs: speaker | Chinese | English');
+      // names in braces may contain spaces ({王丽=Wáng Lì})
+      const tokens = zh.match(/\{[^}]*\}|\S+/g).map(t => {
+        if (PUNCT.has(t)) return { p: t };
+        const name = t.match(/^\{(.+)=(.+)\}$/);
+        if (name) return { name: name[1], py: name[2] };
+        const w = known(t, n);
+        lesson.used.add(w.id);
+        return { id: w.id };
+      });
+      // pinyin as said here (不 bú, 一 yí/yì), one per token so punctuation still marks the pauses;
+      // names keep their own
+      const shown = tokens.map(t => t.p ?? t.name ?? byId.get(t.id).h);
+      const py = contextPinyin(shown, byHanzi);
+      lesson.dialogue.push({ who, en, text: shown.join(''), tokens: tokens.map((t, k) => (t.p || t.name ? t : { ...t, py: py[k] })) });
+    } else if (kind === 'build') {
+      need(lesson, n, '"build" must follow a lesson');
+      const [chunkText, en] = parts;
+      need(chunkText && en, n, 'a sentence to build needs: chunks | English');
+      const s = parseChunks(chunkText, byHanzi, `${file}:${n}`);
+      for (const c of s.chunks) for (const id of c.words) { known(byId.get(id).h, n); lesson.used.add(id); }
+      const py = contextPinyin(s.chunks.flatMap(c => c.words.map(id => byId.get(id).h)), byHanzi);
+      lesson.builds.push({ text: s.text, en, pattern: s.pattern, chunks: s.chunks, punct: s.punct, py });
+    } else {
+      need(false, n, `unknown line "${kind}" (expected unit, lesson, new, say or build)`);
+    }
+  });
+  for (const u of units) for (const l of u.lessons) {
+    for (const id of l.words) if (!l.used.has(id)) throw new Error(`${file}: lesson ${l.id} teaches "${byId.get(id).h}" but never uses it`);
+    delete l.used;
+  }
+  const out = { level, units };
+  return { path: out, json: JSON.stringify(out, null, 1) + '\n' };
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const { words, json } = build();
   const { sentences, json: sjson } = buildSentences(words);
   const { list: wotd, json: wjson } = buildWordOfDay(words);
+  const { path, json: pjson } = buildPath(words);
   const read = f => { try { return readFileSync(f, 'utf8').replace(/\r\n/g, '\n'); } catch { return ''; } };
   if (process.argv.includes('--check')) {
-    if (read(OUT) !== json || read(SENTENCES_OUT) !== sjson || read(WOTD_OUT) !== wjson) {
+    if (read(OUT) !== json || read(SENTENCES_OUT) !== sjson || read(WOTD_OUT) !== wjson || read(PATH_OUT) !== pjson) {
       console.error('Generated content is out of date. Run: npm run build:content');
       process.exit(1);
     }
@@ -208,6 +307,9 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     writeFileSync(OUT, json);
     writeFileSync(SENTENCES_OUT, sjson);
     writeFileSync(WOTD_OUT, wjson);
+    writeFileSync(PATH_OUT, pjson);
+    const lessons = path.units.flatMap(u => u.lessons);
+    console.log(`Wrote the path: ${path.units.length} units, ${lessons.length} lessons, ${lessons.reduce((n, l) => n + l.words.length, 0)} words taught.`);
     console.log(`Wrote ${wotd.length} words of the day (above HSK ${Math.max(...LEVELS)}).`);
     const per = LEVELS.map(l => `HSK ${l}: ${words.filter(w => w.level === l).length}`).join(', ');
     console.log(`Wrote ${words.length} words (${per}) and ${sentences.length} sentences to src/content/generated/`);

@@ -5,13 +5,13 @@ Phases are built in order. Each one is either a dependency of a later phase (**G
 Each phase ends with green CI, a preview deploy, and the checks under "Verify".
 
 ```
-0 Foundation ─ 1 Content, audio, memory ─ 2 Mode framework ─┬─ 3 Listen ─────────┐
-                                                            ├─ 4 Learn           │
+0 Foundation ─ 1 Content, audio, memory ─ 2 Mode framework ─┬─ 3 Listen ─ 4 Path ┐
+                                                            ├─ 4b Writing        │
                                                             ├─ 5 Many bodies ─ 6 Plug
                                                             │        └──────── 7 Review and arcade
                                                             ├─ 8 Speak
                                                             └─ 9 Ship
-Content track: HSK 3 glosses · role tags for Tatoeba sentences (→ 6) · read-throughs
+Content track: path lessons for HSK 1, then 2 (→ 4) · HSK 3 glosses · role tags for Tatoeba sentences (→ 6) · read-throughs
 Human checks:  frame rate on real devices · listening review · gloss review
 ```
 
@@ -71,11 +71,26 @@ The first new mode, and the cheapest: it reuses the single bubble and its four e
 - [x] Audio starts within 150 ms of being asked for, once primed (end-to-end, measured on the second bubble)
 - [x] Wrong answers replay slowly; tone and listen items schedule separately from Words
 
-## Phase 4: Learn
+## Phase 4: Path
 
-**Needs:** 2 (and 3's audio prompts). Separate module; its only effect on other modes is the "met" gate below.
+A course alongside the general model, in the spirit of HelloChinese: units follow the HSK topic outline, and each lesson teaches a handful of words in context. The path feeds Today: words met in a lesson join the reviews; without the path, Today still introduces words in HSK order.
 
-- [ ] First meeting: a calm introduction of each new word (sound, meaning, example) before any mode quizzes it; the scheduler only draws words you have met
+**Needs:** 2, 3 (audio prompts). **Gives:** the first meeting of new words, words in context; later upgraded by Plug (7).
+
+- [x] Course file `data/content/path-hsk1.txt`: units → lessons → new words, a short dialogue, sentences to build; the build fails if a lesson uses a word not yet taught, teaches one twice, or never uses a word it teaches
+- [x] All 15 HSK 1 units on the path (titles and topics); units 1–2 drafted (8 lessons, 42 words)
+- [ ] The path screen: units and lessons, locked, open and done, in both styles
+- [ ] The lesson player: meet (first meeting: sound, meaning, example) → pop (bubbles on the lesson's words) → in context (the dialogue, tap to hear) → build (put a sentence in order) → checkpoint (a boss bubble, one layer per word)
+- [ ] Today takes its new words from the next lesson
+- [ ] Dialogue audio with the MiniMax generator
+- [ ] Units 3–15 for HSK 1, then HSK 2
+
+**Verify:** every lesson only uses taught words (build check); a lesson can be finished by keyboard; words finished in a lesson show up in Today's reviews; the path's order survives a reload.
+
+## Phase 4b: Writing
+
+**Needs:** 2. Separate module. (Its "first meeting" moved to the path.)
+
 - [ ] Stroke data pipeline from Make Me a Hanzi (check the licence of the stroke and decomposition files before importing)
 - [ ] Stroke-order tracing on the bubble, the `write` skill
 - [ ] Radical split: the parts of a character and what they hint at
@@ -164,4 +179,6 @@ Separate modules that change how things look and fit, not how they play.
 - [ ] Frame rate on real devices with `?fps`: 60 fps on a mid-range laptop, 45 fps or more on a mid-range Android phone
 - [ ] Listen through `data/audio-review.md` (words with multi-reading characters)
 - [ ] Review of the glosses by a second Chinese speaker
+- [ ] Review of the path dialogues by a Chinese speaker (natural, polite enough, right for the level)
+- [ ] Check the path's topic outline against the official 2025 HSK syllabus (it comes from a secondary source)
 - [ ] Play Listen on a phone with sound: the voice starts promptly and is not drowned by the inflating sound
