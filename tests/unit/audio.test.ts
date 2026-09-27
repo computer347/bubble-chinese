@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { existsSync } from 'node:fs';
 import { WORDS } from '../../src/content/words';
 import manifest from '../../src/content/generated/audio.json';
-import { Voice, type AudioManifest } from '../../src/audio/voice';
+import { Voice, KEEP_CLIPS, type AudioManifest } from '../../src/audio/voice';
 import type { Speech } from '../../src/audio/speech';
 // @ts-expect-error plain ESM script without types
 import { pronunciationRule, requestBody, requestHash, clipFile, polyphones, SPEEDS } from '../../scripts/audio-lib.mjs';
@@ -94,5 +94,38 @@ describe('Voice with sentences', () => {
     expect(calls.pop()).toBe(s.text);
     await v.sayWordIn(s, 0, WORDS.find(w => w.h === '我')!);
     expect(calls.pop()).toBe('我');
+  });
+});
+
+describe('Voice memory', () => {
+  it('keeps only the most recent clips, releasing older ones', () => {
+    const released: string[] = [];
+    class FakeAudio {
+      preload = ''; currentTime = 0;
+      constructor(public src: string) {}
+      removeAttribute() { released.push(this.src); }
+      load() {}
+      play() { return Promise.resolve(); }
+      pause() {}
+    }
+    const g = globalThis as unknown as { Audio?: unknown };
+    const saved = g.Audio;
+    g.Audio = FakeAudio;
+    try {
+      const speech = { speak: () => {}, cancel: () => {} } as unknown as Speech;
+      const words = WORDS.slice(0, 40);
+      const clips: AudioManifest = Object.fromEntries(words.map((w, i) => [w.id, { p: w.p, normal: { file: `n${i}.mp3`, hash: '' }, slow: { file: `s${i}.mp3`, hash: '' } }]));
+      const v = new Voice(speech, clips, '/');
+      for (const w of words) v.preload(w);
+      expect(v.held.elements).toBe(KEEP_CLIPS);
+      expect(released).toHaveLength(80 - KEEP_CLIPS);
+      expect(released[0]).toBe('/audio/n0.mp3');           // the oldest go first
+      // a clip used again moves to the front and survives the next trims
+      v.say(words[39]);
+      for (const w of words.slice(0, 10)) v.preload(w);
+      expect(released).not.toContain('/audio/n39.mp3');
+    } finally {
+      g.Audio = saved;
+    }
   });
 });

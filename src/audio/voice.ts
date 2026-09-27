@@ -13,6 +13,16 @@ export interface SentenceClip extends Clip { words: [number, number][] | null }
 export interface SentenceEntry { text: string; normal?: SentenceClip; slow?: SentenceClip }
 export type SentenceManifest = Record<string, SentenceEntry>;
 
+/** Clips kept ready at once. Older ones are let go, so a long session doesn't pile up decoded audio. */
+export const KEEP_CLIPS = 24;
+
+/** Moves a key to the most recent end of a Map (Maps keep insertion order). */
+function touch<K, V>(m: Map<K, V>, k: K): V | undefined {
+  const v = m.get(k);
+  if (v !== undefined) { m.delete(k); m.set(k, v); }
+  return v;
+}
+
 /**
  * Plays words and sentences: recorded MiniMax clips when they exist, otherwise the browser's
  * speech synthesis. Sentences play through Web Audio, so a single word can be cut out of the
@@ -54,14 +64,33 @@ export class Voice {
   }
 
   private element(file: string): HTMLAudioElement {
-    let el = this.cache.get(file);
+    let el = touch(this.cache, file);
     if (!el) {
       el = new Audio(`${this.base}audio/${file}`);
       el.preload = 'auto';
       this.cache.set(file, el);
+      this.trim();
     }
     return el;
   }
+
+  /** Lets go of the least recently used clips beyond KEEP_CLIPS (never the one playing). */
+  private trim(): void {
+    for (const [file, el] of this.cache) {
+      if (this.cache.size <= KEEP_CLIPS) break;
+      if (el === this.playing) continue;
+      el.removeAttribute('src'); el.load();          // releases the media resource
+      this.cache.delete(file);
+    }
+    for (const file of this.buffers.keys()) {
+      if (this.buffers.size <= KEEP_CLIPS) break;
+      this.buffers.delete(file);
+      this.decoded.delete(file);
+    }
+  }
+
+  /** How many clips are held, for tests and the ?fps meter. */
+  get held(): { elements: number; buffers: number } { return { elements: this.cache.size, buffers: this.buffers.size }; }
 
   private audio(): AudioContext | null {
     if (!this.ctx) {
@@ -74,13 +103,15 @@ export class Voice {
   }
 
   private buffer(file: string): Promise<AudioBuffer> {
-    let p = this.buffers.get(file);
+    let p = touch(this.buffers, file);
+    if (p) touch(this.decoded, file);
     if (!p) {
       p = fetch(`${this.base}audio/${file}`)
         .then(r => { if (!r.ok) throw new Error(String(r.status)); return r.arrayBuffer(); })
         .then(b => this.audio()!.decodeAudioData(b));
       p.catch(() => this.buffers.delete(file));
       this.buffers.set(file, p);
+      this.trim();
     }
     return p;
   }
@@ -95,7 +126,7 @@ export class Voice {
     if (!this.audio()) return;
     for (const slow of [false, true]) {
       const c = this.clip(word, slow);
-      if (c && !this.decoded.has(c.file)) this.buffer(c.file).then(b => this.decoded.set(c.file, b)).catch(() => {});
+      if (c && !this.decoded.has(c.file)) this.buffer(c.file).then(b => { if (this.buffers.has(c.file)) this.decoded.set(c.file, b); }).catch(() => {});
     }
   }
 

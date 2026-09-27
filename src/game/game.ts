@@ -68,6 +68,7 @@ export function startGame(opts: GameOptions): GameHandle {
     }
   });
   stage.onResize(() => chips.measure());
+  stage.idle = () => bubble.asleep || bubble.state === 'hidden';
   stage.perf = {
     busy: () => bubble.state === 'popping' || bubble.dragging,
     lowerDetail: () => { if (bubble.detailIndex === 0) return false; bubble.setDetail(bubble.detailIndex - 1); return true; }

@@ -137,6 +137,8 @@ export class Bubble {
 
   private bindGeometry(): void {
     const { soft, geo } = this;
+    // frees the GPU buffers of the previous mesh; the geometry is uploaded afresh on the next render
+    geo.dispose();
     this.posAttr = new THREE.BufferAttribute(soft.positions, 3).setUsage(THREE.DynamicDrawUsage);
     this.nrmAttr = new THREE.BufferAttribute(soft.normals, 3).setUsage(THREE.DynamicDrawUsage);
     geo.setAttribute('position', this.posAttr);
@@ -501,6 +503,8 @@ export class Bubble {
 
   /** Advances the bubble by dt and returns where it is on screen. */
   update(dt: number): BallView {
+    // off stage (home screen, fortune slip): nothing to simulate
+    if (this.state === 'hidden') { this.opts.onTension(null, 0); return this.project(); }
     if (this.state === 'popping') this.updatePop(dt);
     const { soft, stage } = this;
     if (!this.asleep) {
@@ -512,7 +516,10 @@ export class Bubble {
       if (n >= maxSteps) this.acc = 0;
       soft.updateGeometry();
       this.posAttr.needsUpdate = true; this.nrmAttr.needsUpdate = true;
-      const calm = this.state === 'live' && !this._dragging && vmax < 0.004 && this.Vc.lengthSq() < 0.0004 && this.tension === 0;
+      // still, apart from the gentle bob: measure the centre's speed relative to the bob's own
+      const bobV = stage.reduceMotion ? 0 : Math.cos(this.simTime * 1.15) * 0.05 * 1.15;
+      const rel = this.Vc.x ** 2 + (this.Vc.y - bobV) ** 2 + this.Vc.z ** 2;
+      const calm = this.state === 'live' && !this._dragging && vmax < 0.004 && rel < 0.0004 && this.tension === 0;
       this.sleepFrames = calm ? this.sleepFrames + 1 : 0;
       if (this.sleepFrames > 45) { this.asleep = true; this.acc = 0; }
     } else {

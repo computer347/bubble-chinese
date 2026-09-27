@@ -18,8 +18,9 @@ export interface BallView { x: number; y: number; r: number; vx: number; vy: num
 
 /**
  * The flat wall behind the bubble: the prompt word (whose letters get shoved around by the ball),
- * the contact shadow, and the paint, flashes and shreds from pops. Drawn with Canvas 2D into a
- * texture, and only redrawn when something visible changed.
+ * and the paint, flashes and shreds from pops. Drawn with Canvas 2D into a texture, and only redrawn
+ * when something visible changed. The ball's contact shadow is a separate small mesh on the wall,
+ * so the bubble's constant bobbing never forces a full-screen redraw and upload.
  */
 export class Backdrop {
   readonly canvas = document.createElement('canvas');
@@ -39,6 +40,9 @@ export class Backdrop {
   floodColor = '#000';
   private dirty = true;
   private lastSig = '';
+  private readonly shadowCanvas = document.createElement('canvas');
+  private readonly shadowTex: THREE.CanvasTexture;
+  private readonly shadow: THREE.Mesh;
 
   constructor(private readonly reduceMotion: boolean) {
     this.g = this.canvas.getContext('2d')!;
@@ -48,6 +52,35 @@ export class Backdrop {
     this.tex.generateMipmaps = false;
     this.mesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: this.tex, toneMapped: false }));
     this.mesh.position.z = -3.2;
+    this.shadowCanvas.width = this.shadowCanvas.height = 128;
+    this.shadowTex = new THREE.CanvasTexture(this.shadowCanvas);
+    this.shadowTex.colorSpace = THREE.SRGBColorSpace;
+    this.shadow = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: this.shadowTex, transparent: true, depthWrite: false, toneMapped: false }));
+    this.shadow.position.z = 0.001;
+    this.mesh.add(this.shadow);
+    this.drawShadow();
+  }
+
+  /** The shadow's radial falloff, in the palette's shadow colour; redrawn only when the palette changes. */
+  private drawShadow(): void {
+    const g = this.shadowCanvas.getContext('2d')!, s = this.colors.shadow;
+    g.clearRect(0, 0, 128, 128);
+    const grad = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+    grad.addColorStop(0, s);
+    grad.addColorStop(0.55, s.replace(/[\d.]+\)$/, m => (parseFloat(m) * 0.45).toFixed(3) + ')'));
+    grad.addColorStop(1, s.replace(/[\d.]+\)$/, '0)'));
+    g.fillStyle = grad; g.fillRect(0, 0, 128, 128);
+    this.shadowTex.needsUpdate = true;
+  }
+
+  /** Places the contact shadow under the ball (the wall mesh spans -0.5…0.5 in its own units). */
+  private placeShadow(ball: BallView): void {
+    this.shadow.visible = ball.visible;
+    if (!ball.visible) return;
+    const sx = ball.x + ball.r * 0.16, sy = ball.y + ball.r * 0.5, sr = ball.r * 1.35;
+    this.shadow.position.x = sx / this.cw - 0.5;
+    this.shadow.position.y = 0.5 - sy / this.ch;
+    this.shadow.scale.set(2 * sr / this.cw, 2 * sr / this.ch, 1);
   }
 
   resize(w: number, h: number): void {
@@ -148,9 +181,11 @@ export class Backdrop {
 
   /** Makes the new page colour official and clears the paint. */
   setColors(bg: string, ink: string, shadow: string): void {
+    const shadowChanged = shadow !== this.colors.shadow;
     this.colors.bg = bg; this.colors.ink = ink; this.colors.shadow = shadow;
     this.droplets = []; this.splats = []; this.flood = null;
     this.dirty = true;
+    if (shadowChanged) this.drawShadow();
   }
 
   update(dt: number, ball: BallView): void {
@@ -201,9 +236,9 @@ export class Backdrop {
     return !!(this.droplets.length || this.splats.length || this.rings.length || this.shards.length || this.flood);
   }
 
-  private signature(ball: BallView): string {
+  private signature(): string {
     const c = this.colors;
-    let s = `${c.bg}|${c.ink}|${ball.visible ? 1 : 0}|${Math.round(ball.x)}|${Math.round(ball.y)}|${Math.round(ball.r)}`;
+    let s = `${c.bg}|${c.ink}`;
     for (const L of this.letters) {
       if (!L.dying && L.delay > 0) continue;
       s += `|${Math.round(L.ox * 2)},${Math.round(L.oy * 2)},${Math.round(L.rot * 400)},${Math.round(L.w / 10)},${Math.round(L.alpha * 40)}`;
@@ -211,16 +246,18 @@ export class Backdrop {
     return s;
   }
 
-  /** Redraws and re-uploads the texture only if something visible changed. */
-  render(ball: BallView): void {
-    const sig = this.signature(ball);
-    if (!this.dirty && !this.effectsActive && sig === this.lastSig) return;
-    this.draw(ball);
+  /** Redraws and re-uploads the texture only if something visible changed. Returns whether it did. */
+  render(ball: BallView): boolean {
+    this.placeShadow(ball);
+    const sig = this.signature();
+    if (!this.dirty && !this.effectsActive && sig === this.lastSig) return false;
+    this.draw();
     this.tex.needsUpdate = true;
     this.lastSig = sig; this.dirty = false;
+    return true;
   }
 
-  private draw(ball: BallView): void {
+  private draw(): void {
     const g = this.g, { cw, ch } = this, col = this.colors;
     g.globalAlpha = 1; g.fillStyle = col.bg; g.fillRect(0, 0, cw, ch);
     if (this.splats.length || this.flood) {
@@ -233,14 +270,6 @@ export class Backdrop {
         const u = Math.min(1, this.flood.t / this.flood.dur), e = 1 - Math.pow(1 - u, 3);
         g.beginPath(); g.arc(this.flood.x, this.flood.y, this.flood.R * e, 0, Math.PI * 2); g.fill();
       }
-    }
-    if (ball.visible) {
-      const sx = ball.x + ball.r * 0.16, sy = ball.y + ball.r * 0.5, sr = ball.r * 1.35;
-      const sh = g.createRadialGradient(sx, sy, 0, sx, sy, sr);
-      sh.addColorStop(0, col.shadow);
-      sh.addColorStop(0.55, col.shadow.replace(/[\d.]+\)$/, m => (parseFloat(m) * 0.45).toFixed(3) + ')'));
-      sh.addColorStop(1, col.shadow.replace(/[\d.]+\)$/, '0)'));
-      g.fillStyle = sh; g.beginPath(); g.arc(sx, sy, sr, 0, Math.PI * 2); g.fill();
     }
     g.fillStyle = col.ink; g.textAlign = 'center'; g.textBaseline = 'alphabetic';
     const cy = this.fontSize * 0.35;

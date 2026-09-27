@@ -43,6 +43,9 @@ export class Stage {
   visW = 1; visH = 1; camZ = 8; homeY = 0;
   palIdx = 0;
   perf: PerfHooks | null = null;
+  /** True while the scene is at rest (the bubble asleep or hidden). With the backdrop unchanged too, it is drawn every other frame. */
+  idle: (() => boolean) | null = null;
+  private frameNo = 0;
   private pixelRatio: number;
   private shakeAmt = 0;
   private readonly resizeListeners: Array<() => void> = [];
@@ -126,7 +129,9 @@ export class Stage {
       this.guard(rawMs, dt);
       const ball = tick(dt);
       this.backdrop.update(dt, ball);
-      this.backdrop.render(ball);
+      const redrawn = this.backdrop.render(ball);
+      // at rest only the slow bob moves: half the frame rate looks the same and halves the GPU work
+      if (!redrawn && this.shakeAmt === 0 && this.idle?.() && (this.frameNo++ & 1)) { requestAnimationFrame(frame); return; }
       const camZ = this.camZ;
       if (this.shakeAmt > 0) {
         this.shakeAmt = Math.max(0, this.shakeAmt - dt * 4);
