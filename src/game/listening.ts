@@ -4,9 +4,6 @@ import type { ReviewEntry } from './progress';
 import { TONES, distinct, type Question } from './questions';
 import { type Rng, defaultRng, shuffle } from './random';
 
-/** Written behind a bubble whose prompt is heard: 听, "listen". */
-export const LISTEN_PROMPT = '听';
-
 /** The tones (1–4) marked in a pinyin string, in order. Neutral-tone syllables carry no mark and are skipped. */
 export function markedTones(p: string): number[] {
   const out: number[] = [];
@@ -79,7 +76,8 @@ export function makeListenQuestions(w: Word, bank: readonly Word[], rng: Rng = d
   const others = bank.filter(x => x.id !== w.id && !soundsSame(x, w));
   const tones = shuffle(toneVariants(w.p).filter(v => !isSandhiOf(w.p, v)), rng).slice(0, 3);
   if (tones.length < 3) tones.push(...distinct(w, others, 3 - tones.length, 'p', rng, tones));
-  const base = { prompt: LISTEN_PROMPT, zh: true, audio: true } as const;
+  // nothing is written behind the bubble: the word is only heard
+  const base = { prompt: '', zh: false, audio: true } as const;
   return [
     { ...base, type: 3, ask: 'Which tones did you hear?', answer: w.p, choices: [w.p, ...tones], chipZh: false },
     { ...base, type: 4, ask: 'What did you hear?', answer: w.e, choices: [w.e, ...distinct(w, others, 3, 'e', rng)], chipZh: false },

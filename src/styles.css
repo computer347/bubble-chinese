@@ -91,6 +91,11 @@ button{ font-family:inherit; }
 @keyframes hint{ 50%{ box-shadow:0 0 0 7px var(--line); border-color:var(--ui); } }
 .ans.off{ pointer-events:none; }
 .ans[data-edge="top"]   { top:calc(var(--st) + var(--pad)); left:50%; }
+/* the mode's name, top centre; the top chip moves down to make room */
+.mode-label{ position:fixed; z-index:2; top:calc(var(--st) + var(--pad)); left:50%; transform:translateX(-50%); margin:0; font-size:15px; font-weight:600; letter-spacing:.02em; white-space:nowrap; pointer-events:none; }
+.mode-label[hidden]{ display:none; }
+.mode-label .zh{ font-family:var(--zh); font-size:1.25em; font-weight:500; margin-left:.35em; }
+body.labelled .ans[data-edge="top"]{ top:calc(var(--st) + var(--pad) + 32px); }
 .ans[data-edge="bottom"]{ bottom:calc(var(--sb) + var(--pad)); left:50%; }
 .ans[data-edge="left"]  { left:calc(var(--sl) + var(--pad)); top:52%; --tx:0px; --ty:-50%; max-width:min(24vw, 240px); }
 .ans[data-edge="right"] { right:calc(var(--sr) + var(--pad)); top:52%; --tx:0px; --ty:-50%; max-width:min(24vw, 240px); }
@@ -167,6 +172,9 @@ button{ font-family:inherit; }
   .ans{ font-size:14px; padding:10px 14px; }
   .ans.zh{ font-size:22px; padding:6px 14px 8px; }
   .ans[data-edge="top"]{ top:calc(var(--st) + 118px); }
+  /* below the question panel in the top-left corner */
+  .mode-label{ top:calc(var(--st) + 150px); }
+  body.labelled .ans[data-edge="top"]{ top:calc(var(--st) + 180px); }
   .ans[data-edge="bottom"]{ bottom:calc(var(--sb) + 74px); }
   .ans[data-edge="left"], .ans[data-edge="right"]{ max-width:30vw; }
   .learnrow{ gap:12px; flex-wrap:wrap; }

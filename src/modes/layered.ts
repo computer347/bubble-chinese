@@ -49,6 +49,8 @@ export abstract class LayeredMode implements Mode {
   protected onForgot(q: Question): void { if (q.type !== 0 && this.word) this.ctx.voice.say(this.word); }
   /** The bubble was tapped or poked with Space. */
   protected onPoke(): void {}
+  /** The name shown at the top centre while playing, if any. */
+  protected label(): { en: string; zh: string; py: string } | null { return null; }
   /** The page title while this word is up (read by screen readers). */
   protected title(w: Word): string { return `Squish: ${w.e}`; }
 
@@ -59,6 +61,8 @@ export abstract class LayeredMode implements Mode {
 
   start(): void {
     this.ctx.bubble.handler = { reach: this.reach, popped: () => this.showSlip(), poked: () => this.onPoke() };
+    this.ctx.hud.modeLabel(this.label());
+    this.ctx.chips.measure();
     this.spawn();
   }
 
@@ -71,6 +75,7 @@ export abstract class LayeredMode implements Mode {
     voice.stop();
     chips.out();
     this.ctx.dictation.hide();
+    this.ctx.hud.modeLabel(null);
     stage.backdrop.setWord('', false);
   }
 

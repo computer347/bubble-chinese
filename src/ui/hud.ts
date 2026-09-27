@@ -21,6 +21,17 @@ export class Hud {
 
   ask(text: string): void { this.askEl.textContent = text; }
 
+  /** The mode's name at the top centre, in English and characters ("Listen 听"), or none. */
+  modeLabel(label: { en: string; zh: string; py: string } | null): void {
+    const el = $('modeLabel');
+    el.hidden = !label;
+    document.body.classList.toggle('labelled', !!label);
+    if (!label) return;
+    const zh = Object.assign(document.createElement('span'), { className: 'zh', textContent: label.zh, title: label.py });
+    zh.lang = 'zh-Hans';
+    el.replaceChildren(label.en, zh);
+  }
+
   tip(show: boolean): void { this.tipEl.style.display = show ? '' : 'none'; }
 
   /** One pip per layer, lit while the layer is still on; `left` layers remain of `total`. */

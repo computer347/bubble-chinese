@@ -56,5 +56,7 @@ export class ListenMode extends LayeredMode {
     if (q.type === 3 && this.word) this.ctx.progress.review('tone', this.word.id, firstTry ? Rating.Good : Rating.Again);
   }
 
+  protected label() { return { en: 'Listen', zh: '听', py: 'tīng' }; }
+
   protected title(): string { return 'Squish: listen and pop'; }
 }
