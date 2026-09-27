@@ -3,6 +3,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { WORDS } from '../../src/content/words';
 import { SENTENCES, examplesFor, sentenceWords } from '../../src/content/sentences';
 import sentenceManifest from '../../src/content/generated/sentence-audio.json';
+import path from '../../src/content/generated/path.json';
 // @ts-expect-error plain ESM script without types
 import { buildSentences, build, ROLES } from '../../scripts/build-content.mjs';
 // @ts-expect-error plain ESM script without types
@@ -92,10 +93,19 @@ describe('word timings from subtitle files', () => {
   });
 });
 
+const DIALOGUE = new Map(path.units.flatMap(u => u.lessons.flatMap(l => l.dialogue)).map(d => [d.id, d]));
+
 describe('sentence audio manifest', () => {
   it('every clip exists, matches its sentence text, and has one timing per word', () => {
     const m = sentenceManifest as Record<string, { text: string; normal?: { file: string; words: unknown[] | null }; slow?: { file: string; words: unknown[] | null } }>;
     for (const [id, e] of Object.entries(m)) {
+      const line = DIALOGUE.get(id);
+      if (line) {
+        // a path dialogue line: made for its current text, and its clips exist
+        expect(e.text).toBe(line.text);
+        for (const c of [e.normal, e.slow]) if (c) expect(existsSync(`public/audio/${c.file}`), c.file).toBe(true);
+        continue;
+      }
       const s = SENTENCES.find(x => x.id === id);
       if (!s) continue;                                   // an old sentence that was edited away
       expect(e.text).toBe(s.text);

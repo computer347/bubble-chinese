@@ -3,12 +3,13 @@ import { WORDS, type Word } from '../content/words';
 import { PATH, LESSONS, taughtThrough, type Lesson, type Unit, type Token, type BuildSentence } from '../content/path';
 import { shuffle } from '../game/random';
 import { LessonCard, type CardResult } from '../ui/lessoncard';
-import { PathView } from '../ui/pathview';
 import { DrillMode, CheckpointMode } from './drills';
 import { StrokeBox, hanziOf } from '../ui/strokes';
 import { Rating } from '../game/memory';
 import type { LayeredMode } from './layered';
+import type { Sentence } from '../content/sentences';
 import type { Mode, ModeContext } from './mode';
+import type { StartArg } from '../ui/shell';
 
 const byId = new Map(WORDS.map(w => [w.id, w]));
 const el = <K extends keyof HTMLElementTagNameMap>(tag: K, cls = '', text = ''): HTMLElementTagNameMap[K] =>
@@ -16,10 +17,10 @@ const el = <K extends keyof HTMLElementTagNameMap>(tag: K, cls = '', text = ''):
 const zhEl = <K extends keyof HTMLElementTagNameMap>(tag: K, cls: string, text: string) => { const e = el(tag, cls, text); e.lang = 'zh-Hans'; return e; };
 
 /** Where the path mode is, for the end-to-end tests. */
-export interface PathStatus { screen: 'map' | 'card' | 'drill' | 'checkpoint' | 'none'; step: string; lesson: string | null }
+export interface PathStatus { screen: 'card' | 'drill' | 'checkpoint' | 'none'; step: string; lesson: string | null }
 
 /**
- * The path: a map of units and lessons, and the lesson player. A lesson runs as a series of steps:
+ * The path's lesson player (the map itself is drawn in the Path tab). A lesson runs as a series of steps:
  * the unit's culture note (on its first lesson), meeting each new word, popping them in bubbles
  * (each pop a review, so the words join Today), the dialogue in context with two questions,
  * putting sentences in order, and a checkpoint bubble with a layer per word.
@@ -27,7 +28,6 @@ export interface PathStatus { screen: 'map' | 'card' | 'drill' | 'checkpoint' | 
 export class PathMode implements Mode {
   private readonly drill: DrillMode;
   private readonly checkpoint: CheckpointMode;
-  private readonly view: PathView;
   private readonly card: LessonCard;
   /** Bumped whenever a lesson is left, so a lesson still awaiting a card gives up quietly. */
   private run = 0;
@@ -38,23 +38,22 @@ export class PathMode implements Mode {
     this.drill = new DrillMode(ctx);
     this.checkpoint = new CheckpointMode(ctx);
     this.card = new LessonCard(ctx.stage.reduceMotion);
-    this.view = new PathView({
-      reduceMotion: ctx.stage.reduceMotion,
-      done: () => ctx.progress.data.path.done,
-      onLesson: i => void this.lesson(i),
-      onNote: u => void this.noteOnly(u),
-      onWrite: i => void this.write(i)
-    });
   }
 
-  start(): void { this.map(); }
+  /** Opens a lesson, its Write side lesson, or a unit's culture note. */
+  start(arg?: unknown): void {
+    const a = arg as StartArg | undefined;
+    if (a?.kind === 'lesson') void this.lesson(a.index);
+    else if (a?.kind === 'write') void this.write(a.index);
+    else if (a?.kind === 'note') void this.noteOnly(a.unit);
+    else this.back();
+  }
 
   stop(): void {
     this.run++;
     this.active?.stop();
     this.active = null;
     this.card.hide();
-    this.view.hide();
     this.ctx.hud.modeLabel(null);
     this.status = { screen: 'none', step: '', lesson: null };
   }
@@ -65,20 +64,18 @@ export class PathMode implements Mode {
   layered(): LayeredMode | null { return this.active; }
   snapshot(): PathStatus { return { ...this.status }; }
 
-  private map(): void {
+  /** Back to the Path tab. */
+  private back(): void {
     this.card.hide();
     this.active = null;
-    this.ctx.hud.modeLabel({ en: 'Path', zh: '学', py: 'xué' });
-    this.view.show();
-    this.status = { screen: 'map', step: '', lesson: null };
-    $title('Squish: the path');
+    this.ctx.home();
   }
 
   private async noteOnly(u: Unit): Promise<void> {
     const token = ++this.run;
-    this.view.hide();
+    this.ctx.hud.modeLabel({ en: u.title, zh: u.zh, py: '' });
     const r = await this.showCard({ step: `Unit · ${u.title}`, progress: 0, body: noteBody(u), next: 'Back to the path' });
-    if (token === this.run && r) this.map();
+    if (token === this.run && r) this.back();
   }
 
   /** Shows a card; resolves true to carry on, false if the lesson was left meanwhile. */
@@ -89,7 +86,7 @@ export class PathMode implements Mode {
     onShown?.();
     const r: CardResult = await p;
     if (token !== this.run) return false;
-    if (r === 'quit') { this.run++; this.ctx.voice.stop(); this.map(); return false; }
+    if (r === 'quit') { this.run++; this.ctx.voice.stop(); this.back(); return false; }
     return true;
   }
 
@@ -116,7 +113,6 @@ export class PathMode implements Mode {
     let at = 0;
     const prog = () => at++ / total;
     const live = () => token === this.run;
-    this.view.hide();
     this.status = { screen: 'card', step: '', lesson: lesson.id };
     this.ctx.hud.modeLabel(label);
     $title(`Squish: lesson ${index + 1}, ${lesson.title}`);
@@ -170,7 +166,7 @@ export class PathMode implements Mode {
     writeBtn.type = 'button';
     writeBtn.addEventListener('click', () => void this.write(index));
     if (!await this.showCard({ step: 'Lesson complete', progress: 1, next: 'Back to the path', body: [...doneBody(lesson, words, next?.lesson), writeBtn] })) return;
-    if (live()) this.map();
+    if (live()) this.back();
   }
 
   /**
@@ -185,7 +181,6 @@ export class PathMode implements Mode {
     const css = getComputedStyle(document.documentElement);
     const colors = { stroke: css.getPropertyValue('--print-red').trim() || '#B8262B', outline: 'rgba(35,64,127,.16)', drawing: css.getPropertyValue('--print-blue').trim() || '#23407F', highlight: '#E8B04A' };
     const size = Math.min(260, window.innerWidth - 90);
-    this.view.hide();
     this.ctx.hud.modeLabel({ en: 'Write', zh: '写', py: 'xiě' });
     this.status = { screen: 'card', step: '', lesson: lesson.id };
     let clean = 0;
@@ -219,7 +214,7 @@ export class PathMode implements Mode {
       el('h3', 'lh', 'Characters practised'),
       el('p', 'lp', `${chars.length} characters, ${clean} traced without a slip. Practise them again any time with Write on the path.`)
     ] })) return;
-    this.map();
+    this.back();
   }
 }
 
@@ -275,7 +270,8 @@ function dialogueBody(lesson: Lesson, ctx: ModeContext): Node[] {
     const play = el('button', 'dplay', '▶');
     play.type = 'button';
     play.setAttribute('aria-label', `Play: ${d.text}`);
-    play.addEventListener('click', () => ctx.speech.speak(d.text));
+    // the recorded line when there is one, the device's voice otherwise
+    play.addEventListener('click', () => void ctx.voice.saySentence(d as unknown as Sentence));
     const bubble = el('div', 'dbubble');
     bubble.append(lineEl(d.tokens, ctx), el('p', 'den', d.en));
     row.append(el('span', 'dwho', d.who), bubble, play);

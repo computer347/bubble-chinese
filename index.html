@@ -15,8 +15,8 @@
 <canvas id="stage" tabindex="0" role="img" aria-label="A bubble pinned in the middle of the screen. Pull it toward the edge with the right answer until it bursts. Keyboard: arrow keys pull toward that edge, F shows the answer and adds a layer, Space pokes it."></canvas>
 
 <header class="topbar" id="topbar">
-  <button type="button" class="icon-btn" id="menuBtn" aria-label="Menu" aria-controls="menu" aria-expanded="false"><span class="burger" aria-hidden="true"></span></button>
-  <button type="button" class="brand" id="homeBtn" aria-label="Squish, home screen"><span class="brand-back" aria-hidden="true"></span><span id="brandName">Squish <span class="zh" lang="zh-Hans">泡泡</span></span></button>
+  <button type="button" class="back" id="homeBtn" aria-label="Back"><span class="brand-back" aria-hidden="true"></span></button>
+  <p class="brand" id="brandName">Squish <span class="zh" lang="zh-Hans">泡泡</span></p>
   <div class="bar-right">
     <span class="bar-stat play-only" title="Score"><b id="score">0</b> <span class="bar-lbl">pts</span></span>
     <span class="bar-stat flame play-only" title="Right answers in a row"><span class="flame-ico" aria-hidden="true"></span><b id="streak">0</b><span class="sr"> in a row</span></span>
@@ -33,29 +33,93 @@
   </div>
 </div>
 
-<section class="home" id="home" hidden aria-labelledby="homeTitle">
-  <p class="fortune-day" id="fortuneDay"></p>
-  <div class="today">
-    <h2 class="home-title" id="homeTitle">Today</h2>
-    <p class="home-stats" id="homeStats"></p>
-    <button type="button" class="hero" data-mode="today" id="todayBtn"><span class="mode m-today hero-orb"><span class="mode-name" id="todayName">Start</span></span></button>
-  </div>
-  <div class="shelf">
-    <h3 class="shelf-title">Words</h3>
-    <ul class="strip" id="wordStrip"></ul>
-  </div>
-  <div class="shelf">
-    <h3 class="shelf-title">Modes</h3>
-    <ul class="cards" id="modeCards"><!-- built from src/modes/index.ts --></ul>
-    <div class="dots" id="modeDots" aria-hidden="true"></div>
-  </div>
-</section>
+<main class="shell" id="home" hidden>
+  <section class="tab" id="tab-path" data-tab="path" aria-labelledby="homeTitle">
+    <p class="fortune-day" id="fortuneDay"></p>
+    <div class="today">
+      <h2 class="home-title" id="homeTitle">Today</h2>
+      <p class="home-stats" id="homeStats"></p>
+      <button type="button" class="hero" data-mode="today" id="todayBtn"><span class="mode m-today hero-orb"><span class="mode-name" id="todayName">Start</span></span></button>
+    </div>
+    <h2 class="tab-title">The path</h2>
+    <p class="path-intro" id="pathIntro"></p>
+    <div class="path-units" id="pathUnits"></div>
+  </section>
 
-<section class="pathview" id="pathView" hidden aria-labelledby="pathTitle">
-  <h2 class="sr" id="pathTitle">The path</h2>
-  <p class="path-intro" id="pathIntro"></p>
-  <div class="path-units" id="pathUnits"></div>
-</section>
+  <section class="tab" id="tab-practice" data-tab="practice" hidden aria-labelledby="practiceTitle">
+    <h2 class="tab-title" id="practiceTitle">Practice</h2>
+    <p class="tab-sub">Free play. Pick what to train; every bubble counts toward your reviews.</p>
+    <ul class="tiles" id="modeCards"><!-- built from src/modes/index.ts --></ul>
+  </section>
+
+  <section class="tab" id="tab-read" data-tab="read" hidden aria-labelledby="readTitle">
+    <h2 class="tab-title" id="readTitle">Read</h2>
+    <ul class="strip" id="wotdStrip"></ul>
+    <p class="tab-sub">Stories at your level are on their way: tap a word for its meaning, hold a sentence for its translation.</p>
+  </section>
+
+  <section class="tab" id="tab-you" data-tab="you" hidden aria-labelledby="youTitle">
+    <h2 class="tab-title" id="youTitle">You</h2>
+    <div class="you-stats">
+      <div class="you-stat"><b id="youDays">0</b><span>days in a row</span></div>
+      <div class="you-stat"><b id="learned">0</b><span>of <span id="total">0</span> learned</span></div>
+      <div class="you-stat"><b id="youBest">0</b><span>best streak</span></div>
+    </div>
+    <h3 class="shelf-title">Your words</h3>
+    <ul class="strip" id="wordStrip"></ul>
+    <p class="you-sub" id="drawerSub"></p>
+    <ul class="words" id="wordsList"></ul>
+
+    <section class="menu-sec" aria-labelledby="mStudy">
+      <h3 id="mStudy">Study</h3>
+      <div class="levels" role="radiogroup" aria-label="Words up to HSK level">
+        <span class="levels-label">Words up to</span>
+        <button type="button" role="radio" data-level="1" aria-checked="true">HSK 1</button>
+        <button type="button" role="radio" data-level="2" aria-checked="false">HSK 2</button>
+        <button type="button" role="radio" data-level="3" aria-checked="false">HSK 3</button>
+      </div>
+      <div class="levels asks" role="group" aria-label="What bubbles ask about">
+        <span class="levels-label">Ask about</span>
+        <button type="button" aria-pressed="true" data-ask="meaning">Meaning</button>
+        <button type="button" aria-pressed="true" data-ask="pinyin">Pinyin</button>
+        <button type="button" aria-pressed="true" data-ask="characters">Characters</button>
+      </div>
+      <div class="levels" role="radiogroup" aria-label="New words a day">
+        <span class="levels-label">New words a day</span>
+        <button type="button" role="radio" data-new="5" aria-checked="false">5</button>
+        <button type="button" role="radio" data-new="10" aria-checked="true">10</button>
+        <button type="button" role="radio" data-new="15" aria-checked="false">15</button>
+        <button type="button" role="radio" data-new="20" aria-checked="false">20</button>
+      </div>
+    </section>
+    <section class="menu-sec" aria-labelledby="mLook">
+      <h3 id="mLook">Look</h3>
+      <div class="levels styles" role="radiogroup" aria-label="Style">
+        <span class="levels-label">Style</span>
+        <button type="button" role="radio" data-style="bubble" aria-checked="true">Bubbles</button>
+        <button type="button" role="radio" data-style="ink" aria-checked="false">Ink &amp; lanterns</button>
+      </div>
+      <label class="slider"><span>Wobble</span><input id="wobble" type="range" min="0" max="100" value="55"></label>
+      <label class="slider"><span>Detail</span><input id="detail" type="range" min="0" max="2" step="1" value="1" aria-valuetext="2,562 points"><output id="detailOut">2,562</output></label>
+    </section>
+    <section class="menu-sec" aria-labelledby="mSound">
+      <h3 id="mSound">Sound</h3>
+      <div class="levels">
+        <button type="button" class="pill" id="sound" aria-pressed="true">Sound on</button>
+        <button type="button" class="pill" id="slowToggle" aria-pressed="false">Slow voice</button>
+      </div>
+    </section>
+    <p class="home-note">Levels follow the 2025 HSK syllabus, in force since July 2026. Word of the day comes from the level above yours, with meanings from CC-CEDICT. Stroke order drawn with Hanzi Writer (MIT); stroke data from Make Me a Hanzi, derived from Arphic fonts, under the Arphic Public License.</p>
+  </section>
+</main>
+
+<nav class="tabbar" id="tabbar" aria-label="Sections">
+  <i class="tab-drop" aria-hidden="true"></i>
+  <button type="button" class="tabbtn" data-tab="path" aria-current="page"><span class="tab-zh" lang="zh-Hans">路</span><span class="tab-en">Path</span></button>
+  <button type="button" class="tabbtn" data-tab="practice"><span class="tab-zh" lang="zh-Hans">练</span><span class="tab-en">Practice</span></button>
+  <button type="button" class="tabbtn" data-tab="read"><span class="tab-zh" lang="zh-Hans">读</span><span class="tab-en">Read</span></button>
+  <button type="button" class="tabbtn" data-tab="you"><span class="tab-zh" lang="zh-Hans">我</span><span class="tab-en">You</span></button>
+</nav>
 
 <section class="lesson" id="lesson" hidden aria-labelledby="lStep">
   <div class="lcard" id="lcard">
@@ -68,52 +132,6 @@
     <div class="lfoot"><button type="button" class="next" id="lNext">Next</button></div>
   </div>
 </section>
-
-<div class="scrim" id="scrim" hidden></div>
-<aside class="menu" id="menu" hidden aria-labelledby="menuTitle">
-  <div class="menu-head"><h2 id="menuTitle">Menu</h2><button type="button" class="close" id="menuClose">Close</button></div>
-  <button type="button" class="menu-words" id="wordsBtn">Your words <small><span id="learned">0</span> of <span id="total">0</span> learned</small></button>
-  <section class="menu-sec" aria-labelledby="mStudy">
-    <h3 id="mStudy">Study</h3>
-    <div class="levels" role="radiogroup" aria-label="Words up to HSK level">
-      <span class="levels-label">Words up to</span>
-      <button type="button" role="radio" data-level="1" aria-checked="true">HSK 1</button>
-      <button type="button" role="radio" data-level="2" aria-checked="false">HSK 2</button>
-      <button type="button" role="radio" data-level="3" aria-checked="false">HSK 3</button>
-    </div>
-    <div class="levels asks" role="group" aria-label="What bubbles ask about">
-      <span class="levels-label">Ask about</span>
-      <button type="button" aria-pressed="true" data-ask="meaning">Meaning</button>
-      <button type="button" aria-pressed="true" data-ask="pinyin">Pinyin</button>
-      <button type="button" aria-pressed="true" data-ask="characters">Characters</button>
-    </div>
-    <div class="levels" role="radiogroup" aria-label="New words a day">
-      <span class="levels-label">New words a day</span>
-      <button type="button" role="radio" data-new="5" aria-checked="false">5</button>
-      <button type="button" role="radio" data-new="10" aria-checked="true">10</button>
-      <button type="button" role="radio" data-new="15" aria-checked="false">15</button>
-      <button type="button" role="radio" data-new="20" aria-checked="false">20</button>
-    </div>
-  </section>
-  <section class="menu-sec" aria-labelledby="mLook">
-    <h3 id="mLook">Look</h3>
-    <div class="levels styles" role="radiogroup" aria-label="Style">
-      <span class="levels-label">Style</span>
-      <button type="button" role="radio" data-style="bubble" aria-checked="true">Bubbles</button>
-      <button type="button" role="radio" data-style="ink" aria-checked="false">Ink &amp; lanterns</button>
-    </div>
-    <label class="slider"><span>Wobble</span><input id="wobble" type="range" min="0" max="100" value="55"></label>
-    <label class="slider"><span>Detail</span><input id="detail" type="range" min="0" max="2" step="1" value="1" aria-valuetext="2,562 points"><output id="detailOut">2,562</output></label>
-  </section>
-  <section class="menu-sec" aria-labelledby="mSound">
-    <h3 id="mSound">Sound</h3>
-    <div class="levels">
-      <button type="button" class="pill" id="sound" aria-pressed="true">Sound on</button>
-      <button type="button" class="pill" id="slowToggle" aria-pressed="false">Slow voice</button>
-    </div>
-  </section>
-  <p class="home-note">Levels follow the 2025 HSK syllabus, in force since July 2026. Word of the day comes from the level above yours, with meanings from CC-CEDICT. Stroke order drawn with Hanzi Writer (MIT); stroke data from Make Me a Hanzi, derived from Arphic fonts, under the Arphic Public License.</p>
-</aside>
 
 <form class="dictation" id="dictation" hidden autocomplete="off">
   <label for="dictIn" class="sr">Type the pinyin you hear, with tone numbers or tone marks</label>
@@ -161,13 +179,6 @@
   </div>
 </div>
 
-<aside class="drawer" id="drawer" hidden aria-labelledby="drawerTitle">
-  <div class="drawer-head">
-    <div><h2 id="drawerTitle">Your words</h2><p id="drawerSub"></p></div>
-    <button type="button" class="close" id="drawerClose">Close</button>
-  </div>
-  <ul class="words" id="wordsList"></ul>
-</aside>
 
 <script type="module" src="/src/main.ts"></script>
 </body>

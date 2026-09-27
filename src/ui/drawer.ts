@@ -1,4 +1,3 @@
-import { gsap } from 'gsap';
 import { WORDS, type Word } from '../content/words';
 import type { Voice } from '../audio/voice';
 import type { Progress } from '../game/progress';
@@ -9,7 +8,6 @@ import { $ } from './dom';
 export interface DrawerDeps {
   progress: Progress;
   voice: Voice;
-  reduceMotion: boolean;
   /** Quiz words up to the chosen level. */
   pool(): readonly Word[];
 }
@@ -23,11 +21,13 @@ export function toneLine(stats: ReturnType<typeof toneAccuracy>): string {
   return parts.length ? ` Tones heard right: ${parts.join(', ')}.` : '';
 }
 
-/** "Your words": every word you have met, with its mastery and next review. Also holds the slow-voice toggle. */
+/**
+ * "Your words" in the You tab: every word you have met, with its mastery and next review.
+ * Also holds the slow-voice toggle, which the whole app follows.
+ */
 export class Drawer {
   /** Whether taps on words play the slow voice. */
   slow = false;
-  private readonly el = $('drawer');
 
   constructor(private readonly d: DrawerDeps) {
     const toggle = $('slowToggle');
@@ -36,18 +36,15 @@ export class Drawer {
       toggle.setAttribute('aria-pressed', String(this.slow));
       toggle.textContent = this.slow ? 'Slow voice on' : 'Slow voice';
     });
-    $('wordsBtn').addEventListener('click', () => this.show());
-    $('drawerClose').addEventListener('click', () => this.close());
   }
 
-  get open(): boolean { return !this.el.hidden; }
-
-  show(): void {
+  /** Draws the list afresh. */
+  render(): void {
     const { progress, voice, pool } = this.d;
     const now = new Date(), words = pool(), cards = progress.cards('words');
     const met = words.filter(w => cards[w.id])
       .sort((x, y) => (cards[y.id].last_review?.getTime() ?? 0) - (cards[x.id].last_review?.getTime() ?? 0));
-    $('drawerSub').textContent = `${progress.learnedCount('words', words)} learned, ${met.length} met, ${progress.dueCount('words', words)} due. ${words.length} words up to HSK ${progress.data.settings.maxLevel}. Best streak ${progress.data.best}.${toneLine(toneAccuracy(progress.log, byId))}`;
+    $('drawerSub').textContent = `${progress.learnedCount('words', words)} learned, ${met.length} met, ${progress.dueCount('words', words)} due. ${words.length} words up to HSK ${progress.data.settings.maxLevel}.${toneLine(toneAccuracy(progress.log, byId))}`;
     const list = $('wordsList');
     list.replaceChildren();
     if (!met.length) {
@@ -71,13 +68,7 @@ export class Drawer {
       b.addEventListener('click', () => voice.say(w, this.slow));
       li.appendChild(b); list.appendChild(li);
     }
-    this.el.hidden = false;
-    gsap.fromTo(this.el, { xPercent: 100 }, { xPercent: 0, duration: this.d.reduceMotion ? 0.01 : 0.45, ease: 'power3.out', overwrite: true });
-    $('drawerClose').focus({ preventScroll: true });
-  }
-
-  close(): void {
-    gsap.to(this.el, { xPercent: 100, duration: this.d.reduceMotion ? 0.01 : 0.3, ease: 'power2.in', overwrite: true, onComplete: () => { this.el.hidden = true; } });
-    $('menuBtn').focus({ preventScroll: true });
+    $('youDays').textContent = $('days').textContent;
+    $('youBest').textContent = String(progress.data.best);
   }
 }

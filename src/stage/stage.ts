@@ -124,7 +124,8 @@ export class Stage {
    */
   run(tick: (dt: number) => BallView): void {
     let last = performance.now();
-    const frame = (now: number): void => {
+    let failures = 0;
+    const step = (now: number): void => {
       const rawMs = now - last;
       const dt = Math.min(rawMs / 1000, this.maxFrameDt);
       last = now;
@@ -133,7 +134,7 @@ export class Stage {
       this.backdrop.update(dt, ball);
       const redrawn = this.backdrop.render(ball);
       // at rest only the slow bob moves: half the frame rate looks the same and halves the GPU work
-      if (!redrawn && this.shakeAmt === 0 && this.idle?.() && (this.frameNo++ & 1)) { requestAnimationFrame(frame); return; }
+      if (!redrawn && this.shakeAmt === 0 && this.idle?.() && (this.frameNo++ & 1)) return;
       const camZ = this.camZ;
       if (this.shakeAmt > 0) {
         this.shakeAmt = Math.max(0, this.shakeAmt - dt * 4);
@@ -141,6 +142,12 @@ export class Stage {
       } else this.camera.position.set(0, 0, camZ);
       this.camera.updateMatrixWorld();
       this.renderer.render(this.scene, this.camera);
+    };
+    // the next frame is always asked for, so one frame that throws can never freeze the app;
+    // the error is still reported (the first few times), so it gets seen and fixed
+    const frame = (now: number): void => {
+      try { step(now); }
+      catch (e) { if (failures++ < 5) console.error('Frame failed:', e); }
       requestAnimationFrame(frame);
     };
     requestAnimationFrame(t => { last = t; frame(t); });

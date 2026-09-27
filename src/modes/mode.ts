@@ -41,8 +41,8 @@ export interface ModeContext {
 export interface Mode {
   /** The mode was chosen: a moment to get ready (fetch sounds) while the home screen fades. */
   prepare?(): void;
-  /** Starts playing, once the home screen has gone. */
-  start(): void;
+  /** Starts playing, once the home screen has gone; `arg` says what to open (a lesson, say). */
+  start(arg?: unknown): void;
   /** Leaves without grading what is on screen. */
   stop(): void;
   /** A key pressed on the stage that the bubble does not use itself. */

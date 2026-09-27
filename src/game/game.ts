@@ -11,8 +11,9 @@ import { Hud } from '../ui/hud';
 import { Slip } from '../ui/slip';
 import { Dictation } from '../ui/dictation';
 import { Drawer } from '../ui/drawer';
-import { Home } from '../ui/home';
-import { Menu } from '../ui/menu';
+import { Shell, type Tab, type StartArg } from '../ui/shell';
+import { Settings } from '../ui/menu';
+import { LESSONS } from '../content/path';
 import { todayLeft, TodayMode } from '../modes/today';
 import { PathMode, type PathStatus } from '../modes/path';
 import { MODES, type ModeId } from '../modes';
@@ -35,12 +36,14 @@ export interface GameOptions {
 
 /** A read-only view of the game, used by the end-to-end tests. */
 export interface GameHandle {
-  /** Leaves the home screen and starts a mode. */
-  enter(mode: ModeId): void;
+  /** Leaves the shell and starts a mode (a lesson: mode 'path' with its start argument). */
+  enter(mode: ModeId, arg?: StartArg): void;
   /** Abandons the current bubble (ungraded) and shows the home screen. */
   home(): void;
   snapshot(): {
     mode: ModeId | null;
+    /** The shell's open tab. */
+    tab: Tab;
     state: GameState; word: string | null; layers: number; totalLayers: number;
     correctEdge: Edge; score: number; streak: number; detail: number; asleep: boolean;
     /** Wrong answers on the current layer. */
@@ -86,7 +89,7 @@ export function startGame(opts: GameOptions): GameHandle {
   };
 
   const hud = new Hud();
-  const drawer = new Drawer({ progress, voice, reduceMotion, pool });
+  const drawer = new Drawer({ progress, voice, pool });
   const slip = new Slip({ sound, speech, voice, reduceMotion, slow: () => drawer.slow });
   const dictation = new Dictation(reduceMotion, text => { if (current instanceof LayeredMode) current.typed(text); });
   const session = { score: 0, streak: 0 };
@@ -127,11 +130,16 @@ export function startGame(opts: GameOptions): GameHandle {
   /** True once the chosen mode has started (after the home screen has faded). */
   let playing = false;
 
-  /* ---------- home screen and menu ---------- */
+  /* ---------- the shell: four tabs, and the settings in You ---------- */
   const today = modes.get('today') as TodayMode;
-  const home = new Home({ progress, voice, reduceMotion, modes: MODES, pool, today: () => todayLeft(ctx, today.heardPool()), onEnter: id => enter(id) });
-  const menu = new Menu({
-    progress, reduceMotion,
+  const home = new Shell({
+    progress, voice, reduceMotion, modes: MODES, pool,
+    today: () => todayLeft(ctx, today.heardPool()),
+    onEnter: (id, from, arg) => enter(id, arg, from),
+    onTab: tab => { if (tab === 'you') { updateHud(); drawer.render(); } }
+  });
+  new Settings({
+    progress,
     onStudy: () => { updateHud(); if (home.shown) home.render(); },
     onStyle: style => applyStyle(style)
   });
@@ -148,6 +156,7 @@ export function startGame(opts: GameOptions): GameHandle {
     chips.measure();
     if (playing) fit();
   }
+  /** Back to the shell, on the tab you left from. */
   function showHome(): void {
     if (bubble.state === 'popping') return;
     current?.stop();
@@ -157,14 +166,22 @@ export function startGame(opts: GameOptions): GameHandle {
     home.show();
     updateHud();
   }
-  function enter(id: ModeId): void {
+  /** Leaves the shell for a mode; `from` is the tapped button, whose orb zooms into the task. */
+  function enter(id: ModeId, arg?: StartArg, from?: HTMLElement | null): void {
+    // the Write tile opens stroke practice for the latest finished lesson
+    if (id === 'write') {
+      const done = LESSONS.filter(x => progress.data.path.done[x.lesson.id]);
+      if (!done.length) return;
+      id = 'path'; arg = { kind: 'write', index: done[done.length - 1].index };
+    }
     const mode = modes.get(id);
     if (!home.shown || current || !mode) return;
     sound.unlock();
     sound.pop(false);
     current = mode; currentId = id;
     mode.prepare?.();
-    home.leave(id, () => { playing = true; mode.start(); });
+    const target = from ?? document.querySelector<HTMLElement>(`[data-mode="${id}"]`);
+    home.leave(target, () => { playing = true; mode.start(arg); });
   }
   $('homeBtn').addEventListener('click', () => showHome());
 
@@ -173,7 +190,7 @@ export function startGame(opts: GameOptions): GameHandle {
   document.addEventListener('keydown', () => sound.unlock(), { capture: true });
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
-    if (menu.open) menu.close(); else if (drawer.open) drawer.close(); else if (slip.open) slip.close();
+    if (slip.open) slip.close(); else if (playing) showHome();
   });
   canvas.addEventListener('keydown', e => current?.key?.(e));
   const soundBtn = $('sound');
@@ -212,7 +229,7 @@ export function startGame(opts: GameOptions): GameHandle {
     enter,
     home: showHome,
     snapshot: () => { const words = layered(); return {
-      mode: currentId, state: state(), word: words.word?.h ?? null, layers: bubble.layers, totalLayers: bubble.totalLayers, correctEdge: words.correctEdge,
+      mode: currentId, tab: home.tab, state: state(), word: words.word?.h ?? null, layers: bubble.layers, totalLayers: bubble.totalLayers, correctEdge: words.correctEdge,
       score: session.score, streak: session.streak, detail: DETAILS[bubble.detailIndex].level, asleep: bubble.asleep, wrong: words.wrongThisLayer,
       queue: words.queue(),
       pool: pool().length, due: progress.dueCount('words', pool()), maxLevel: progress.data.settings.maxLevel,

@@ -6,7 +6,7 @@
 //   node scripts/generate-audio.mjs            render every missing or changed clip (normal + slow)
 //   node scripts/generate-audio.mjs --voice "Chinese (Mandarin)_Warm_Girl" --force
 //   node scripts/generate-audio.mjs --status --voice "..."   list words and sentences still missing clips (no API calls)
-//   --only words | --only sentences   render just one kind
+//   --only words | --only sentences   render just one kind (sentences include the path's dialogue lines)
 //
 // Options: --voice <id>  --limit <n>  --rpm <n> (requests per minute, default 50; MiniMax allows 60 on pay-as-you-go)
 //          --force (re-render everything)  --dry-run (show what would be sent)
@@ -21,6 +21,13 @@ const WORDS = JSON.parse(readFileSync(join(root, 'src/content/generated/hsk.json
 const MANIFEST = join(root, 'src/content/generated/audio.json');
 const SENTENCES = JSON.parse(readFileSync(join(root, 'src/content/generated/sentences.json'), 'utf8'));
 const SENTENCE_MANIFEST = join(root, 'src/content/generated/sentence-audio.json');
+// the path's dialogue lines, recorded like sentences: one entry per distinct line, its HSK words
+// listed for pinning readings (names are left to the voice)
+const PATH = JSON.parse(readFileSync(join(root, 'src/content/generated/path.json'), 'utf8'));
+const DIALOGUE = [...new Map(PATH.units.flatMap(u => u.lessons.flatMap(l => l.dialogue)).map(d => [d.id, {
+  id: d.id, text: d.text, chunks: [{ role: null, words: d.tokens.filter(t => t.id).map(t => t.id) }]
+}])).values()];
+const SPOKEN = [...SENTENCES, ...DIALOGUE];
 const WORDS_BY_ID = new Map(WORDS.map(w => [w.id, w]));
 const AUDIO_DIR = join(root, 'public/audio');
 
@@ -154,11 +161,11 @@ function status() {
   const out = join(root, 'data/audio-missing.tsv');
   writeFileSync(out, ['characters\tpinyin\tgloss\tmissing', ...rows.map(r => r.join('\t'))].join('\n') + '\n');
   const smanifest = existsSync(SENTENCE_MANIFEST) ? JSON.parse(readFileSync(SENTENCE_MANIFEST, 'utf8')) : {};
-  const sMissing = SENTENCES.filter(st => ['normal', 'slow'].some(kind => {
+  const sMissing = SPOKEN.filter(st => ['normal', 'slow'].some(kind => {
     const have = smanifest[st.id]?.[kind];
     return !have || !existsSync(join(AUDIO_DIR, have.file)) || (!flag('any-voice') && have.hash !== requestHash(sentenceRequestBody(st, WORDS_BY_ID, SPEEDS[kind], voice)));
   }));
-  console.log(`${SENTENCES.length - sMissing.length} of ${SENTENCES.length} sentences have both clips.${sMissing.length ? ' Missing: ' + sMissing.slice(0, 8).map(s => s.text).join(' ') + (sMissing.length > 8 ? ' …' : '') : ''}`);
+  console.log(`${SPOKEN.length - sMissing.length} of ${SPOKEN.length} sentences and dialogue lines have both clips.${sMissing.length ? ' Missing: ' + sMissing.slice(0, 8).map(s => s.text).join(' ') + (sMissing.length > 8 ? ' …' : '') : ''}`);
   const done = WORDS.length - rows.length;
   console.log(`${done} of ${WORDS.length} words have both clips for voice "${voice}". ${rows.length} still need rendering.`);
   if (rows.length) {
@@ -183,7 +190,7 @@ async function main() {
   const only = opt('only', 'all');
   const jobs = [];
   if (only !== 'words') {
-    for (const st of SENTENCES) {
+    for (const st of SPOKEN) {
       for (const kind of ['normal', 'slow']) {
         const body = sentenceRequestBody(st, WORDS_BY_ID, SPEEDS[kind], voice);
         const hash = requestHash(body);

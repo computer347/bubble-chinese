@@ -6,7 +6,7 @@ const path = JSON.parse(readFileSync('src/content/generated/path.json', 'utf8'))
 const LESSON_COUNT = path.units.reduce((n, u) => n + u.lessons.length, 0);
 const UNITS_TO_COME = path.units.filter(u => !u.lessons.length).length;
 
-type Snap = { state: string; layers: number; correctEdge: string; path: { screen: string; step: string; lesson: string | null } | null };
+type Snap = { state: string; tab: string; layers: number; correctEdge: string; path: { screen: string; step: string; lesson: string | null } | null };
 const snap = (page: Page) => page.evaluate(() => window.__squish!.snapshot() as unknown as Snap);
 
 async function until(page: Page, pred: (s: Snap) => boolean, label: string): Promise<Snap> {
@@ -43,13 +43,13 @@ test('the path: lesson 1 from its culture note to done, and its words join the r
   await page.waitForFunction(() => !!window.__squish);
   await until(page, s => s.state === 'home', 'home');
   // one layer a bubble keeps the drills short
-  await page.click('#menuBtn');
+  await page.click('.tabbtn[data-tab="you"]');
   await page.click('[data-ask="meaning"]');
   await page.click('[data-ask="pinyin"]');
-  await page.click('#menuClose');
+  await page.click('.tabbtn[data-tab="path"]');
 
-  await page.click('[data-mode="path"]');
-  await until(page, s => s.path?.screen === 'map', 'the path map');
+  // the path is the Path tab itself
+  await until(page, s => s.state === 'home' && s.tab === 'path', 'the path tab');
   await expect(page.locator('.stop.open')).toHaveCount(1);
   await expect(page.locator('.stop.open [data-lesson="hello-1"]')).toHaveCount(1);
   await expect(page.locator('.stop.locked')).toHaveCount(LESSON_COUNT - 1);
@@ -117,7 +117,7 @@ test('the path: lesson 1 from its culture note to done, and its words join the r
   await expect(page.locator('.ldone li')).toHaveCount(10);
   await shot(page, '9-done');
   await page.click('#lNext');
-  await until(page, s => s.path?.screen === 'map', 'back on the map');
+  await until(page, s => s.state === 'home' && s.tab === 'path', 'back on the path');
   await expect(page.locator('.stop.done [data-lesson="hello-1"]')).toHaveCount(1);
   await expect(page.locator('.stop.open [data-lesson="hello-2"]')).toHaveCount(1);
 
@@ -147,11 +147,10 @@ test('the path: lesson 1 from its culture note to done, and its words join the r
   await expect(page.locator('.wstatus')).toHaveText(/Clean!|Done, with/);
   await expect(page.locator('#lNext')).toHaveText('Next');
   await page.click('#lQuit');
-  await until(page, s => s.path?.screen === 'map', 'back on the map');
-  await page.click('#homeBtn');
-  await until(page, s => s.state === 'home', 'home');
-  await expect(page.locator('#wordStrip .wcard:not(.wotd)')).toHaveCount(8);
-  await expect(page.locator('[data-mode="path"] .card-meta')).toHaveText(`1 of ${LESSON_COUNT} lessons`);
+  await until(page, s => s.state === 'home' && s.tab === 'path', 'back on the path');
+  await expect(page.locator('#pathIntro')).toContainText(`1 of ${LESSON_COUNT} lessons done`);
+  await page.click('.tabbtn[data-tab="you"]');
+  await expect(page.locator('#wordStrip .wcard')).toHaveCount(8);
   expect(errors).toEqual([]);
 });
 
@@ -159,13 +158,11 @@ test('the path: leaving mid-lesson goes back to the map, and nothing is marked d
   await page.goto('/?e2e');
   await page.waitForFunction(() => !!window.__squish);
   await until(page, s => s.state === 'home', 'home');
-  await page.click('[data-mode="path"]');
-  await until(page, s => s.path?.screen === 'map', 'the map');
   await page.click('[data-lesson="hello-1"]');
   await page.click('#lNext');                        // past the culture note
   await expect(page.locator('#lStep')).toHaveText('Meet · 1 of 10');
   await page.click('#lQuit');
-  await until(page, s => s.path?.screen === 'map', 'back on the map');
+  await until(page, s => s.state === 'home' && s.tab === 'path', 'back on the path');
   await expect(page.locator('.stop.open [data-lesson="hello-1"]')).toHaveCount(1);
   await expect(page.locator('#lesson')).toBeHidden();
 });

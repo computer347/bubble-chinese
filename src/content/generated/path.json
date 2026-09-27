@@ -28,6 +28,7 @@
      ],
      "dialogue": [
       {
+       "id": "d3faa70ab",
        "who": "A",
        "en": "Hello!",
        "text": "你好！",
@@ -42,6 +43,7 @@
        ]
       },
       {
+       "id": "d9a7bd6ed",
        "who": "B",
        "en": "Hello! (polite)",
        "text": "您好！",
@@ -60,6 +62,7 @@
        ]
       },
       {
+       "id": "d45ae2151",
        "who": "A",
        "en": "How are you?",
        "text": "你好吗？",
@@ -82,6 +85,7 @@
        ]
       },
       {
+       "id": "d9047b8de",
        "who": "B",
        "en": "I'm fine. And you?",
        "text": "我很好。你呢？",
@@ -115,6 +119,7 @@
        ]
       },
       {
+       "id": "d6006a3cf",
        "who": "A",
        "en": "I'm fine too.",
        "text": "我也很好。",
@@ -141,6 +146,7 @@
        ]
       },
       {
+       "id": "dde1edbfd",
        "who": "B",
        "en": "Goodbye!",
        "text": "再见！",
@@ -155,6 +161,7 @@
        ]
       },
       {
+       "id": "dde1edbfd",
        "who": "A",
        "en": "Goodbye!",
        "text": "再见！",
@@ -333,6 +340,7 @@
      ],
      "dialogue": [
       {
+       "id": "d4d72a33f",
        "who": "A",
        "en": "Hello, everyone!",
        "text": "大家好！",
@@ -351,6 +359,7 @@
        ]
       },
       {
+       "id": "d2448ea00",
        "who": "B",
        "en": "Hello, teacher!",
        "text": "老师好！",
@@ -369,6 +378,7 @@
        ]
       },
       {
+       "id": "d0b42b029",
        "who": "A",
        "en": "Is everyone here a student?",
        "text": "大家都是学生吗？",
@@ -399,6 +409,7 @@
        ]
       },
       {
+       "id": "dc5007084",
        "who": "B",
        "en": "Yes, I'm a student.",
        "text": "是，我是学生。",
@@ -428,6 +439,7 @@
        ]
       },
       {
+       "id": "dbcbf2960",
        "who": "C",
        "en": "Sorry, I'm not a student, I'm a teacher.",
        "text": "对不起，我不是学生，我是老师。",
@@ -476,6 +488,7 @@
        ]
       },
       {
+       "id": "d152847ac",
        "who": "A",
        "en": "That's all right! Hello!",
        "text": "没关系！您好！",
@@ -501,6 +514,7 @@
        ]
       },
       {
+       "id": "dbc009ceb",
        "who": "B",
        "en": "Thank you, teacher!",
        "text": "老师，谢谢！",
@@ -522,6 +536,7 @@
        ]
       },
       {
+       "id": "def70158e",
        "who": "A",
        "en": "You're welcome.",
        "text": "不客气。",
@@ -734,6 +749,7 @@
      ],
      "dialogue": [
       {
+       "id": "d26f379c0",
        "who": "A",
        "en": "Hello! What's your name?",
        "text": "你好！你叫什么名字？",
@@ -767,6 +783,7 @@
        ]
       },
       {
+       "id": "d28d9b011",
        "who": "B",
        "en": "I'm David. And you?",
        "text": "我叫大卫。你呢？",
@@ -800,6 +817,7 @@
        ]
       },
       {
+       "id": "d2918b669",
        "who": "A",
        "en": "I'm Wang Li.",
        "text": "我叫王丽。",
@@ -822,6 +840,7 @@
        ]
       },
       {
+       "id": "d48a4fba1",
        "who": "B",
        "en": "Is this your teacher?",
        "text": "这是你们老师吗？",
@@ -852,6 +871,7 @@
        ]
       },
       {
+       "id": "d6922188a",
        "who": "A",
        "en": "Yes, she's our teacher. She's Teacher Li.",
        "text": "是，她是我们老师，她叫李老师。",
@@ -904,6 +924,7 @@
        ]
       },
       {
+       "id": "d37a42c08",
        "who": "B",
        "en": "Is that Xiaoming?",
        "text": "那是小明吗？",
@@ -930,6 +951,7 @@
        ]
       },
       {
+       "id": "d77206d10",
        "who": "A",
        "en": "No. He's called Xiaohua.",
        "text": "不是。他叫小华。",
@@ -963,6 +985,7 @@
        ]
       },
       {
+       "id": "d035fbd8f",
        "who": "B",
        "en": "Are they all students?",
        "text": "他们都是学生吗？",
@@ -993,6 +1016,7 @@
        ]
       },
       {
+       "id": "d6bf57ebf",
        "who": "A",
        "en": "Yes, they're all students.",
        "text": "是，他们都是学生。",
@@ -1208,6 +1232,7 @@
      ],
      "dialogue": [
       {
+       "id": "da9ea90d0",
        "who": "A",
        "en": "Nice to meet you!",
        "text": "认识你很高兴！",
@@ -1234,6 +1259,7 @@
        ]
       },
       {
+       "id": "d665ff3bb",
        "who": "B",
        "en": "Nice to meet you too! Where are you from?",
        "text": "我也很高兴！你是哪国人？",
@@ -1283,6 +1309,7 @@
        ]
       },
       {
+       "id": "daa75d6f3",
        "who": "A",
        "en": "I'm British. Are you Chinese?",
        "text": "我是英国人。你是中国人吗？",
@@ -1332,6 +1359,7 @@
        ]
       },
       {
+       "id": "d74574479",
        "who": "B",
        "en": "Yes, I'm Chinese.",
        "text": "是，我是中国人。",
@@ -1365,6 +1393,7 @@
        ]
       },
       {
+       "id": "d7d95ed9e",
        "who": "A",
        "en": "Who's that?",
        "text": "那是谁？",
@@ -1387,6 +1416,7 @@
        ]
       },
       {
+       "id": "d44d6eb12",
        "who": "B",
        "en": "That's my friend Xiaoming.",
        "text": "那是我的朋友小明。",
@@ -1421,6 +1451,7 @@
        ]
       },
       {
+       "id": "dc508a846",
        "who": "A",
        "en": "Is he Chinese too?",
        "text": "他也是中国人吗？",
@@ -1455,6 +1486,7 @@
        ]
       },
       {
+       "id": "d097e1941",
        "who": "B",
        "en": "Yes. He's my classmate too.",
        "text": "是。他也是我的同学。",
@@ -1670,6 +1702,7 @@
      ],
      "dialogue": [
       {
+       "id": "db5fe5341",
        "who": "A",
        "en": "Teacher Li, is this your child?",
        "text": "李老师，这是您的孩子吗？",
@@ -1715,6 +1748,7 @@
        ]
       },
       {
+       "id": "d0a86dca3",
        "who": "B",
        "en": "Yes, he's my child.",
        "text": "是，他是我的孩子。",
@@ -1752,6 +1786,7 @@
        ]
       },
       {
+       "id": "d248622e7",
        "who": "A",
        "en": "How old are you, little one?",
        "text": "小朋友，你几岁？",
@@ -1781,6 +1816,7 @@
        ]
       },
       {
+       "id": "dd5b86037",
        "who": "C",
        "en": "I'm eight!",
        "text": "我八岁！",
@@ -1803,6 +1839,7 @@
        ]
       },
       {
+       "id": "d9e57264f",
        "who": "B",
        "en": "He's little. And you? How old are you this year?",
        "text": "他很小。你呢？你今年多大？",
@@ -1855,6 +1892,7 @@
        ]
       },
       {
+       "id": "d9f3ca3b0",
        "who": "A",
        "en": "I'm eighteen this year.",
        "text": "我今年十八岁。",
@@ -1885,6 +1923,7 @@
        ]
       },
       {
+       "id": "de1ed7353",
        "who": "B",
        "en": "And David?",
        "text": "大卫呢？",
@@ -1903,6 +1942,7 @@
        ]
       },
       {
+       "id": "d1a73fbc0",
        "who": "A",
        "en": "He's eighteen too.",
        "text": "他也十八岁。",
@@ -2112,6 +2152,7 @@
      ],
      "dialogue": [
       {
+       "id": "dbf4bcabc",
        "who": "A",
        "en": "How many of you are there?",
        "text": "你们几个人？",
@@ -2138,6 +2179,7 @@
        ]
       },
       {
+       "id": "d353df049",
        "who": "B",
        "en": "One, two, three, four. There are four of us.",
        "text": "一，二，三，四。我们四个人。",
@@ -2192,6 +2234,7 @@
        ]
       },
       {
+       "id": "d3630d313",
        "who": "A",
        "en": "And them?",
        "text": "他们呢？",
@@ -2210,6 +2253,7 @@
        ]
       },
       {
+       "id": "da2409c42",
        "who": "B",
        "en": "There are two of them.",
        "text": "他们两个人。",
@@ -2236,6 +2280,7 @@
        ]
       },
       {
+       "id": "ddf817dd4",
        "who": "A",
        "en": "How old is Xiaoming?",
        "text": "小明几岁？",
@@ -2258,6 +2303,7 @@
        ]
       },
       {
+       "id": "dfe4e2210",
        "who": "B",
        "en": "He's seven. His friend is nine.",
        "text": "他七岁。他的朋友九岁。",
@@ -2303,6 +2349,7 @@
        ]
       },
       {
+       "id": "d7b4c9de9",
        "who": "A",
        "en": "What number is that?",
        "text": "那是几？",
@@ -2325,6 +2372,7 @@
        ]
       },
       {
+       "id": "d818cbba9",
        "who": "B",
        "en": "That's six, not nine!",
        "text": "那是六，不是九！",
@@ -2362,6 +2410,7 @@
        ]
       },
       {
+       "id": "dd382f712",
        "who": "A",
        "en": "Five, six, seven, eight.",
        "text": "五，六，七，八。",
@@ -2551,6 +2600,7 @@
      ],
      "dialogue": [
       {
+       "id": "dc361d0fa",
        "who": "A",
        "en": "What's the date today?",
        "text": "今天几月几号？",
@@ -2581,6 +2631,7 @@
        ]
       },
       {
+       "id": "d47803da4",
        "who": "B",
        "en": "Today is the 27th of September.",
        "text": "今天九月二十七号。",
@@ -2619,6 +2670,7 @@
        ]
       },
       {
+       "id": "d4fb1a288",
        "who": "A",
        "en": "What day is it today?",
        "text": "今天星期几？",
@@ -2641,6 +2693,7 @@
        ]
       },
       {
+       "id": "d48fa101a",
        "who": "B",
        "en": "Today is Saturday, tomorrow is Sunday.",
        "text": "今天星期六，明天星期天。",
@@ -2674,6 +2727,7 @@
        ]
       },
       {
+       "id": "d9c39ee25",
        "who": "A",
        "en": "Yesterday was Friday.",
        "text": "昨天是星期五。",
@@ -2700,6 +2754,7 @@
        ]
       },
       {
+       "id": "db7b84a70",
        "who": "B",
        "en": "This year is 2026.",
        "text": "今年是二零二六年。",
@@ -2738,6 +2793,7 @@
        ]
       },
       {
+       "id": "d5a45b121",
        "who": "A",
        "en": "Last year was 2025, next year is 2027.",
        "text": "去年是二零二五年，明年是二零二七年。",
@@ -2985,6 +3041,7 @@
      ],
      "dialogue": [
       {
+       "id": "d70a1dbda",
        "who": "A",
        "en": "How many people are in your family?",
        "text": "你家有几个人？",
@@ -3019,6 +3076,7 @@
        ]
       },
       {
+       "id": "d9106fa67",
        "who": "B",
        "en": "There are five of us.",
        "text": "我家有五个人。",
@@ -3053,6 +3111,7 @@
        ]
       },
       {
+       "id": "d9656d90d",
        "who": "B",
        "en": "Dad, Mum, my older brother, my younger sister and me.",
        "text": "爸爸，妈妈，哥哥，妹妹和我。",
@@ -3096,6 +3155,7 @@
        ]
       },
       {
+       "id": "dfe439181",
        "who": "A",
        "en": "Do you have an older sister?",
        "text": "你有姐姐吗？",
@@ -3122,6 +3182,7 @@
        ]
       },
       {
+       "id": "d7f2b575e",
        "who": "B",
        "en": "I don't have an older sister. And you?",
        "text": "我没有姐姐。你呢？",
@@ -3155,6 +3216,7 @@
        ]
       },
       {
+       "id": "d1e6d5877",
        "who": "A",
        "en": "I have a younger brother, and no older brother.",
        "text": "我有一个弟弟，没有哥哥。",
@@ -3196,6 +3258,7 @@
        ]
       },
       {
+       "id": "d2ec1a7ed",
        "who": "B",
        "en": "How old is your younger brother?",
        "text": "你的弟弟几岁？",
@@ -3226,6 +3289,7 @@
        ]
       },
       {
+       "id": "d88bc360f",
        "who": "A",
        "en": "He's nine.",
        "text": "他九岁。",
@@ -3429,6 +3493,7 @@
      ],
      "dialogue": [
       {
+       "id": "d001da83d",
        "who": "A",
        "en": "Is this your family?",
        "text": "这是你的家人吗？",
@@ -3463,6 +3528,7 @@
        ]
       },
       {
+       "id": "d53a47f3e",
        "who": "B",
        "en": "Yes. This is my son, and that's my daughter.",
        "text": "是。这是我的儿子，那是我的女儿。",
@@ -3523,6 +3589,7 @@
        ]
       },
       {
+       "id": "dea48ec69",
        "who": "A",
        "en": "Does your son have a girlfriend?",
        "text": "你的儿子有女朋友吗？",
@@ -3557,6 +3624,7 @@
        ]
       },
       {
+       "id": "dd2d2cf32",
        "who": "B",
        "en": "He does, he loves her very much.",
        "text": "有，他很爱她。",
@@ -3590,6 +3658,7 @@
        ]
       },
       {
+       "id": "d862797ae",
        "who": "A",
        "en": "And your daughter? Does she have a boyfriend?",
        "text": "你的女儿呢？她有男朋友吗？",
@@ -3635,6 +3704,7 @@
        ]
       },
       {
+       "id": "d5f53c2b5",
        "who": "B",
        "en": "She's eight! She loves our cat.",
        "text": "她八岁！她爱我们家的猫。",
@@ -3684,6 +3754,7 @@
        ]
       },
       {
+       "id": "db49a661d",
        "who": "A",
        "en": "We have a dog. It's called Dahei.",
        "text": "我家有一只狗，它叫大黑。",
@@ -3932,6 +4003,7 @@
      ],
      "dialogue": [
       {
+       "id": "def4b2c45",
        "who": "A",
        "en": "What would you like to eat?",
        "text": "你想吃什么？",
@@ -3958,6 +4030,7 @@
        ]
       },
       {
+       "id": "d7fc6dbc9",
        "who": "B",
        "en": "I'd like rice. And you?",
        "text": "我想吃米饭。你呢？",
@@ -3995,6 +4068,7 @@
        ]
       },
       {
+       "id": "d4c8cdec8",
        "who": "A",
        "en": "I'll have noodles.",
        "text": "我要面条儿。",
@@ -4017,6 +4091,7 @@
        ]
       },
       {
+       "id": "d0da75487",
        "who": "B",
        "en": "What would you like to drink? Tea?",
        "text": "你想喝什么？茶吗？",
@@ -4054,6 +4129,7 @@
        ]
       },
       {
+       "id": "dbb5d4ad8",
        "who": "A",
        "en": "No, I don't drink tea. I'll have water.",
        "text": "不，我不喝茶。我要水。",
@@ -4102,6 +4178,7 @@
        ]
       },
       {
+       "id": "d1b5ad0d5",
        "who": "B",
        "en": "I'll have milk. I'm really hungry!",
        "text": "我喝牛奶。我很想吃饭！",
@@ -4332,6 +4409,7 @@
      ],
      "dialogue": [
       {
+       "id": "d3724ad3b",
        "who": "A",
        "en": "What do you have for breakfast?",
        "text": "你早饭吃什么？",
@@ -4358,6 +4436,7 @@
        ]
       },
       {
+       "id": "d01673c82",
        "who": "B",
        "en": "I have eggs and bread, and drink milk.",
        "text": "我吃鸡蛋和面包，喝牛奶。",
@@ -4399,6 +4478,7 @@
        ]
       },
       {
+       "id": "d164f7cd5",
        "who": "A",
        "en": "I have steamed buns. They're delicious!",
        "text": "我早饭吃包子。包子很好吃！",
@@ -4440,6 +4520,7 @@
        ]
       },
       {
+       "id": "d443b576b",
        "who": "B",
        "en": "And for lunch?",
        "text": "你午饭吃什么？",
@@ -4466,6 +4547,7 @@
        ]
       },
       {
+       "id": "d0c87e7d7",
        "who": "A",
        "en": "Rice and vegetables. For dinner I have noodles.",
        "text": "米饭和菜。晚饭我吃面条儿。",
@@ -4507,6 +4589,7 @@
        ]
       },
       {
+       "id": "d75d59642",
        "who": "B",
        "en": "Do you eat fruit?",
        "text": "你吃水果吗？",
@@ -4533,6 +4616,7 @@
        ]
       },
       {
+       "id": "d7f8e5b1e",
        "who": "A",
        "en": "Yes, I love apples.",
        "text": "吃，我很爱吃苹果。",
@@ -4768,6 +4852,7 @@
      ],
      "dialogue": [
       {
+       "id": "d7ae89218",
        "who": "A",
        "en": "Hello! How much are the apples?",
        "text": "你好！苹果多少钱？",
@@ -4797,6 +4882,7 @@
        ]
       },
       {
+       "id": "dd08675e1",
        "who": "B",
        "en": "The apples are five yuan.",
        "text": "苹果五块。",
@@ -4819,6 +4905,7 @@
        ]
       },
       {
+       "id": "d72e649f5",
        "who": "A",
        "en": "That's too expensive!",
        "text": "太贵了！",
@@ -4841,6 +4928,7 @@
        ]
       },
       {
+       "id": "d5ad2daac",
        "who": "B",
        "en": "It's not expensive, it's cheap! How many would you like?",
        "text": "不贵，很便宜！你买几个？",
@@ -4889,6 +4977,7 @@
        ]
       },
       {
+       "id": "d90bf0370",
        "who": "A",
        "en": "I'll take two. What else do you sell?",
        "text": "我买两个。你还卖什么？",
@@ -4934,6 +5023,7 @@
        ]
       },
       {
+       "id": "d7f14abad",
        "who": "B",
        "en": "I also sell milk and bread.",
        "text": "我还卖牛奶和面包。",
@@ -4968,6 +5058,7 @@
        ]
       },
       {
+       "id": "d5506b104",
        "who": "A",
        "en": "How much is the milk?",
        "text": "牛奶多少钱？",
@@ -4990,6 +5081,7 @@
        ]
       },
       {
+       "id": "d972de700",
        "who": "B",
        "en": "Three yuan.",
        "text": "三元。",
@@ -5184,6 +5276,7 @@
      ],
      "dialogue": [
       {
+       "id": "da12d9ea6",
        "who": "A",
        "en": "Do you like this top?",
        "text": "你喜欢这件衣服吗？",
@@ -5218,6 +5311,7 @@
        ]
       },
       {
+       "id": "d4c45d01b",
        "who": "B",
        "en": "I love it! It's lovely.",
        "text": "很喜欢！很好看。",
@@ -5247,6 +5341,7 @@
        ]
       },
       {
+       "id": "dc19ea5f9",
        "who": "A",
        "en": "You look pretty in this one.",
        "text": "你穿这件很漂亮。",
@@ -5281,6 +5376,7 @@
        ]
       },
       {
+       "id": "d9827fb17",
        "who": "B",
        "en": "What about that one? That one's nice too.",
        "text": "那个呢？那个也很好看。",
@@ -5318,6 +5414,7 @@
        ]
       },
       {
+       "id": "dc11da5b2",
        "who": "A",
        "en": "Things in this shop are expensive.",
        "text": "这个商店的东西很贵。",
@@ -5352,6 +5449,7 @@
        ]
       },
       {
+       "id": "dbc8dab30",
        "who": "B",
        "en": "Things at the supermarket are cheap.",
        "text": "超市的东西很便宜。",
@@ -5382,6 +5480,7 @@
        ]
       },
       {
+       "id": "d99595049",
        "who": "A",
        "en": "I like the supermarket too!",
        "text": "我也喜欢超市！",
@@ -5609,6 +5708,7 @@
      ],
      "dialogue": [
       {
+       "id": "d10bdeb61",
        "who": "A",
        "en": "Where are you going?",
        "text": "你去哪儿？",
@@ -5631,6 +5731,7 @@
        ]
       },
       {
+       "id": "db04e8d7e",
        "who": "B",
        "en": "To the supermarket. And you?",
        "text": "我去超市。你呢？",
@@ -5664,6 +5765,7 @@
        ]
       },
       {
+       "id": "d010552b3",
        "who": "A",
        "en": "I'm going home.",
        "text": "我回家。",
@@ -5686,6 +5788,7 @@
        ]
       },
       {
+       "id": "d59fecbbe",
        "who": "B",
        "en": "Where do you live?",
        "text": "你家在哪里？",
@@ -5712,6 +5815,7 @@
        ]
       },
       {
+       "id": "d438921ab",
        "who": "A",
        "en": "My home is over there.",
        "text": "我家在那儿。",
@@ -5738,6 +5842,7 @@
        ]
       },
       {
+       "id": "da565f40e",
        "who": "B",
        "en": "Is Xiaoming here?",
        "text": "小明在这儿吗？",
@@ -5764,6 +5869,7 @@
        ]
       },
       {
+       "id": "df1df0e6b",
        "who": "A",
        "en": "He isn't. He's coming tomorrow.",
        "text": "他不在。他明天来。",
@@ -5801,6 +5907,7 @@
        ]
       },
       {
+       "id": "dbc732662",
        "who": "B",
        "en": "He arrives tomorrow?",
        "text": "他明天到？",
@@ -5823,6 +5930,7 @@
        ]
       },
       {
+       "id": "d628ab0c1",
        "who": "A",
        "en": "Yes, tomorrow.",
        "text": "是，明天到。",
@@ -6014,6 +6122,7 @@
      ],
      "dialogue": [
       {
+       "id": "d2ab0e31a",
        "who": "A",
        "en": "How are you getting to Shanghai tomorrow?",
        "text": "明天你怎么去上海？",
@@ -6044,6 +6153,7 @@
        ]
       },
       {
+       "id": "d0160efde",
        "who": "B",
        "en": "By train. And you?",
        "text": "我坐火车去。你呢？",
@@ -6081,6 +6191,7 @@
        ]
       },
       {
+       "id": "dd8525017",
        "who": "A",
        "en": "I'm flying.",
        "text": "我坐飞机。",
@@ -6103,6 +6214,7 @@
        ]
       },
       {
+       "id": "d448a2186",
        "who": "B",
        "en": "Does your dad drive?",
        "text": "你爸爸开车吗？",
@@ -6129,6 +6241,7 @@
        ]
       },
       {
+       "id": "d872a4d6c",
        "who": "A",
        "en": "He doesn't drive. We take taxis.",
        "text": "他不开车。我们坐出租车。",
@@ -6166,6 +6279,7 @@
        ]
       },
       {
+       "id": "d31b41603",
        "who": "A",
        "en": "Excuse me, is this a taxi?",
        "text": "请问，这是出租车吗？",
@@ -6199,6 +6313,7 @@
        ]
       },
       {
+       "id": "d7af18ef8",
        "who": "C",
        "en": "Yes, this is my car. Please, have a seat!",
        "text": "是，这是我的车。请坐！",
@@ -6247,6 +6362,7 @@
        ]
       },
       {
+       "id": "d07dd2bce",
        "who": "A",
        "en": "We're going to the supermarket, is that all right?",
        "text": "我们去超市，可以吗？",
@@ -6280,6 +6396,7 @@
        ]
       },
       {
+       "id": "d97291bd3",
        "who": "C",
        "en": "Of course!",
        "text": "可以！",
@@ -6477,6 +6594,7 @@
      ],
      "dialogue": [
       {
+       "id": "d3214b65a",
        "who": "A",
        "en": "What's the weather like today?",
        "text": "今天天气怎么样？",
@@ -6499,6 +6617,7 @@
        ]
       },
       {
+       "id": "ddf306356",
        "who": "B",
        "en": "A bit cold. It's been really hot these last few days!",
        "text": "有点儿冷。这几天真热！",
@@ -6540,6 +6659,7 @@
        ]
       },
       {
+       "id": "d2327aa45",
        "who": "A",
        "en": "And tomorrow? Will it rain?",
        "text": "明天呢？明天下雨吗？",
@@ -6573,6 +6693,7 @@
        ]
       },
       {
+       "id": "d86b79fab",
        "who": "B",
        "en": "It'll rain tomorrow.",
        "text": "明天下雨。",
@@ -6591,6 +6712,7 @@
        ]
       },
       {
+       "id": "d7b72becd",
        "who": "A",
        "en": "I don't like rain. I like snow!",
        "text": "我不喜欢雨。我喜欢雪！",
@@ -6632,6 +6754,7 @@
        ]
       },
       {
+       "id": "ddfefd961",
        "who": "B",
        "en": "I like snow too, it's beautiful.",
        "text": "我也喜欢雪，雪很漂亮。",
@@ -6830,6 +6953,7 @@
      ],
      "dialogue": [
       {
+       "id": "d7af2e1a0",
        "who": "A",
        "en": "What time is it now?",
        "text": "现在几点？",
@@ -6852,6 +6976,7 @@
        ]
       },
       {
+       "id": "d12bc2f84",
        "who": "B",
        "en": "Half past nine.",
        "text": "九点半。",
@@ -6874,6 +6999,7 @@
        ]
       },
       {
+       "id": "d006824b0",
        "who": "A",
        "en": "What time do you have breakfast?",
        "text": "你早上几点吃早饭？",
@@ -6908,6 +7034,7 @@
        ]
       },
       {
+       "id": "df5fc2a2a",
        "who": "B",
        "en": "At seven.",
        "text": "七点。",
@@ -6926,6 +7053,7 @@
        ]
       },
       {
+       "id": "de643d368",
        "who": "A",
        "en": "You're early! I eat at ten past eight.",
        "text": "你真早！我八点十分吃。",
@@ -6975,6 +7103,7 @@
        ]
       },
       {
+       "id": "d419e8540",
        "who": "B",
        "en": "Are you at home in the morning?",
        "text": "你上午在家吗？",
@@ -7005,6 +7134,7 @@
        ]
       },
       {
+       "id": "dfb11a4fe",
        "who": "A",
        "en": "In the morning, yes; at noon and in the afternoon, no.",
        "text": "上午在家，中午和下午不在。",
@@ -7050,6 +7180,7 @@
        ]
       },
       {
+       "id": "d4b5d96bf",
        "who": "B",
        "en": "And in the evening?",
        "text": "晚上呢？",
@@ -7068,6 +7199,7 @@
        ]
       },
       {
+       "id": "d8e9c9b5b",
        "who": "A",
        "en": "In the evening I'm at home.",
        "text": "晚上在家。",
@@ -7288,6 +7420,7 @@
      ],
      "dialogue": [
       {
+       "id": "dc28b8446",
        "who": "A",
        "en": "Where do you study?",
        "text": "你在哪儿学习？",
@@ -7314,6 +7447,7 @@
        ]
       },
       {
+       "id": "d28823850",
        "who": "B",
        "en": "I study Chinese at a school in Beijing.",
        "text": "我在北京的一个学校学习汉语。",
@@ -7360,6 +7494,7 @@
        ]
       },
       {
+       "id": "da67ff6d1",
        "who": "A",
        "en": "Do you like learning characters?",
        "text": "你喜欢学汉字吗？",
@@ -7390,6 +7525,7 @@
        ]
       },
       {
+       "id": "d6afbbb5a",
        "who": "B",
        "en": "Very much! Characters are beautiful.",
        "text": "很喜欢！汉字很漂亮。",
@@ -7423,6 +7559,7 @@
        ]
       },
       {
+       "id": "d093696c4",
        "who": "A",
        "en": "What time do your classes start?",
        "text": "你几点上课？",
@@ -7449,6 +7586,7 @@
        ]
       },
       {
+       "id": "d40b4e435",
        "who": "B",
        "en": "They start at eight and finish at twelve.",
        "text": "八点上课，十二点下课。",
@@ -7490,6 +7628,7 @@
        ]
       },
       {
+       "id": "d688fb208",
        "who": "A",
        "en": "Is this your book?",
        "text": "这是你的书吗？",
@@ -7524,6 +7663,7 @@
        ]
       },
       {
+       "id": "d418247b6",
        "who": "B",
        "en": "Yes, it's my Chinese book. I have no classes this afternoon.",
        "text": "是，这是我的中文书。今天下午没有课。",
@@ -7763,6 +7903,7 @@
      ],
      "dialogue": [
       {
+       "id": "d4f798384",
        "who": "A",
        "en": "Hello, everyone!",
        "text": "同学们好！",
@@ -7785,6 +7926,7 @@
        ]
       },
       {
+       "id": "d2448ea00",
        "who": "B",
        "en": "Hello, teacher!",
        "text": "老师好！",
@@ -7803,6 +7945,7 @@
        ]
       },
       {
+       "id": "d264494db",
        "who": "A",
        "en": "Are you all university students?",
        "text": "你们都是大学生吗？",
@@ -7833,6 +7976,7 @@
        ]
       },
       {
+       "id": "d12c41fe6",
        "who": "B",
        "en": "Yes, we're university students. Our university is big. My younger sister is at secondary school.",
        "text": "是，我们是大学生。我们的大学很大。我妹妹是中学生。",
@@ -7904,6 +8048,7 @@
        ]
       },
       {
+       "id": "d9c3c6527",
        "who": "C",
        "en": "My younger brother is at primary school. He's seven and started school this year.",
        "text": "我弟弟是小学生。他七岁，今年上学。",
@@ -7956,6 +8101,7 @@
        ]
       },
       {
+       "id": "d5990423d",
        "who": "A",
        "en": "Where's his primary school?",
        "text": "他的小学在哪儿？",
@@ -7986,6 +8132,7 @@
        ]
       },
       {
+       "id": "d88e47414",
        "who": "C",
        "en": "His primary school is over there, and my secondary school was there too.",
        "text": "他的小学在那儿，我的中学也在那儿。",
@@ -8043,6 +8190,7 @@
        ]
       },
       {
+       "id": "d6c3c63c3",
        "who": "A",
        "en": "Xiaoming, what are you writing?",
        "text": "小明，你写什么？",
@@ -8072,6 +8220,7 @@
        ]
       },
       {
+       "id": "da4c26bad",
        "who": "D",
        "en": "Characters. Does this one look right?",
        "text": "我写汉字。这个字好看吗？",
@@ -8113,6 +8262,7 @@
        ]
       },
       {
+       "id": "dfc2b15b0",
        "who": "A",
        "en": "It looks great!",
        "text": "很好看！",
@@ -8311,6 +8461,7 @@
      ],
      "dialogue": [
       {
+       "id": "dcd28c06a",
        "who": "A",
        "en": "What do you do?",
        "text": "你做什么工作？",
@@ -8337,6 +8488,7 @@
        ]
       },
       {
+       "id": "d2bba4e78",
        "who": "B",
        "en": "I'm a doctor. And you?",
        "text": "我是医生。你呢？",
@@ -8370,6 +8522,7 @@
        ]
       },
       {
+       "id": "d5880738f",
        "who": "A",
        "en": "I work at a company.",
        "text": "我在一个公司工作。",
@@ -8404,6 +8557,7 @@
        ]
       },
       {
+       "id": "dac0d98c9",
        "who": "B",
        "en": "Are you busy?",
        "text": "你忙吗？",
@@ -8426,6 +8580,7 @@
        ]
       },
       {
+       "id": "dff4f50ca",
        "who": "A",
        "en": "Very. I start at eight and finish at seven in the evening.",
        "text": "很忙。我八点上班，晚上七点下班。",
@@ -8482,6 +8637,7 @@
        ]
       },
       {
+       "id": "d8e0ebcec",
        "who": "B",
        "en": "Are Mr Wang and Ms Li at your company too?",
        "text": "王先生和李女士也在你们公司吗？",
@@ -8532,6 +8688,7 @@
        ]
       },
       {
+       "id": "d2f101f18",
        "who": "A",
        "en": "Yes. They have something on today, so they're not at work.",
        "text": "是。他们今天有事，不上班。",
@@ -8757,6 +8914,7 @@
      ],
      "dialogue": [
       {
+       "id": "d546ea52c",
        "who": "A",
        "en": "Hello?",
        "text": "喂？你好！",
@@ -8778,6 +8936,7 @@
        ]
       },
       {
+       "id": "d393b414c",
        "who": "B",
        "en": "Hi, it's David. Can you talk now?",
        "text": "喂，我是大卫。你现在可以说话吗？",
@@ -8830,6 +8989,7 @@
        ]
       },
       {
+       "id": "d479676af",
        "who": "A",
        "en": "Sure. What's up?",
        "text": "可以。什么事？",
@@ -8855,6 +9015,7 @@
        ]
       },
       {
+       "id": "deddd5b52",
        "who": "B",
        "en": "I'd like to ask you something.",
        "text": "我想问你一个问题。",
@@ -8893,6 +9054,7 @@
        ]
       },
       {
+       "id": "de32ded9f",
        "who": "A",
        "en": "Go ahead.",
        "text": "你说。",
@@ -8911,6 +9073,7 @@
        ]
       },
       {
+       "id": "ddc8f458d",
        "who": "B",
        "en": "What's Teacher Li's phone number?",
        "text": "李老师的电话是多少？",
@@ -8945,6 +9108,7 @@
        ]
       },
       {
+       "id": "d9747db9a",
        "who": "A",
        "en": "I don't know. Call Xiaoming and ask; he knows.",
        "text": "我不知道。你打电话问小明，他知道。",
@@ -8997,6 +9161,7 @@
        ]
       },
       {
+       "id": "d415b90ab",
        "who": "B",
        "en": "Right! I've got his mobile number. Thanks!",
        "text": "对！他的手机我知道。谢谢！",
@@ -9249,6 +9414,7 @@
      ],
      "dialogue": [
       {
+       "id": "db306f745",
        "who": "A",
        "en": "What's wrong?",
        "text": "你怎么了？",
@@ -9271,6 +9437,7 @@
        ]
       },
       {
+       "id": "d9835ec97",
        "who": "B",
        "en": "I'm ill.",
        "text": "我生病了。",
@@ -9293,6 +9460,7 @@
        ]
       },
       {
+       "id": "d834f1e0f",
        "who": "A",
        "en": "You should go to the hospital and see a doctor.",
        "text": "你要去医院看病。",
@@ -9323,6 +9491,7 @@
        ]
       },
       {
+       "id": "d70bac739",
        "who": "C",
        "en": "It's nothing, not a serious illness.",
        "text": "没事，不是大病。",
@@ -9356,6 +9525,7 @@
        ]
       },
       {
+       "id": "d039bec2b",
        "who": "C",
        "en": "You need to rest and drink plenty of water.",
        "text": "你要多休息，多喝水。",
@@ -9397,6 +9567,7 @@
        ]
       },
       {
+       "id": "d3371ff68",
        "who": "B",
        "en": "Can I go to work?",
        "text": "我可以上班吗？",
@@ -9423,6 +9594,7 @@
        ]
       },
       {
+       "id": "d613b4901",
        "who": "C",
        "en": "Don't go to work; you need to sleep.",
        "text": "不要上班，你要睡觉。",
@@ -9456,6 +9628,7 @@
        ]
       },
       {
+       "id": "df33c178a",
        "who": "B",
        "en": "Can I eat a little?",
        "text": "我吃一点儿东西，可以吗？",
@@ -9493,6 +9666,7 @@
        ]
       },
       {
+       "id": "d06c1b356",
        "who": "C",
        "en": "Yes. And go to bed a bit early.",
        "text": "可以。早一点儿睡。",
@@ -9679,6 +9853,7 @@
      ],
      "dialogue": [
       {
+       "id": "d08e42a03",
        "who": "A",
        "en": "What time do you get up?",
        "text": "你几点起床？",
@@ -9705,6 +9880,7 @@
        ]
       },
       {
+       "id": "dc28a3552",
        "who": "B",
        "en": "Seven. And you?",
        "text": "七点。你呢？",
@@ -9734,6 +9910,7 @@
        ]
       },
       {
+       "id": "d3eb55149",
        "who": "A",
        "en": "I get up late, at nine!",
        "text": "我起床很晚，九点！",
@@ -9771,6 +9948,7 @@
        ]
       },
       {
+       "id": "d3eccbaeb",
        "who": "A",
        "en": "I sleep eight hours a day.",
        "text": "我一天睡八个小时。",
@@ -9809,6 +9987,7 @@
        ]
       },
       {
+       "id": "de405533e",
        "who": "B",
        "en": "When do you have time?",
        "text": "你什么时候有时间？",
@@ -9839,6 +10018,7 @@
        ]
       },
       {
+       "id": "d25ad88c4",
        "who": "A",
        "en": "Not in the daytime; in the evening I do.",
        "text": "白天没有时间，晚上有。",
@@ -9872,6 +10052,7 @@
        ]
       },
       {
+       "id": "d84434047",
        "who": "B",
        "en": "OK, see you this evening.",
        "text": "好，我们晚上见。",
@@ -9901,6 +10082,7 @@
        ]
       },
       {
+       "id": "d020e8d44",
        "who": "A",
        "en": "I'm going to rest for a bit, ten minutes.",
        "text": "我休息一下，十分钟。",
@@ -9934,6 +10116,7 @@
        ]
       },
       {
+       "id": "d0a6b9767",
        "who": "B",
        "en": "OK, let's talk tomorrow.",
        "text": "好，明天再说。",
@@ -10150,6 +10333,7 @@
      ],
      "dialogue": [
       {
+       "id": "d36f6bdda",
        "who": "A",
        "en": "What are you doing on Sunday?",
        "text": "星期天你做什么？",
@@ -10176,6 +10360,7 @@
        ]
       },
       {
+       "id": "ddf9a56ee",
        "who": "B",
        "en": "I'm going to the cinema to see a film.",
        "text": "我去电影院看电影。",
@@ -10206,6 +10391,7 @@
        ]
       },
       {
+       "id": "de9abd1be",
        "who": "A",
        "en": "I'll be at home watching TV and listening to music.",
        "text": "我在家看电视，听歌。",
@@ -10247,6 +10433,7 @@
        ]
       },
       {
+       "id": "de2b15fe5",
        "who": "B",
        "en": "Do you like singing?",
        "text": "你喜欢唱歌吗？",
@@ -10277,6 +10464,7 @@
        ]
       },
       {
+       "id": "d5b96cb06",
        "who": "A",
        "en": "Very much. My younger sister sings beautifully.",
        "text": "很喜欢。我妹妹唱歌很好听。",
@@ -10322,6 +10510,7 @@
        ]
       },
       {
+       "id": "d6aa531e6",
        "who": "B",
        "en": "Where do you go to have fun?",
        "text": "你们去哪儿玩？",
@@ -10348,6 +10537,7 @@
        ]
       },
       {
+       "id": "db19c7c40",
        "who": "A",
        "en": "We go round to Xiaoming's; it's great fun!",
        "text": "我们去小明家玩，很好玩儿！",
@@ -10569,6 +10759,7 @@
      ],
      "dialogue": [
       {
+       "id": "db194278a",
        "who": "A",
        "en": "Can you speak Chinese?",
        "text": "你会说汉语吗？",
@@ -10599,6 +10790,7 @@
        ]
       },
       {
+       "id": "dd3f91444",
        "who": "B",
        "en": "A little. I can read characters too.",
        "text": "会一点儿。我也能读汉字。",
@@ -10640,6 +10832,7 @@
        ]
       },
       {
+       "id": "d163a601c",
        "who": "A",
        "en": "What do you think of Chinese?",
        "text": "你觉得汉语怎么样？",
@@ -10666,6 +10859,7 @@
        ]
       },
       {
+       "id": "d745cad6b",
        "who": "B",
        "en": "I think Chinese is great fun!",
        "text": "我觉得汉语非常好玩儿！",
@@ -10696,6 +10890,7 @@
        ]
       },
       {
+       "id": "d5fbbdb6a",
        "who": "A",
        "en": "Let's go to the bookshop on Sunday!",
        "text": "星期日我们去书店吧！",
@@ -10726,6 +10921,7 @@
        ]
       },
       {
+       "id": "dda02127e",
        "who": "B",
        "en": "Great! I love reading. Can you come?",
        "text": "好！我喜欢读书。你能去吗？",
@@ -10774,6 +10970,7 @@
        ]
       },
       {
+       "id": "d04c68bfc",
        "who": "A",
        "en": "Yes! I don't want to stay home on the computer.",
        "text": "能！我不想在家玩电脑。",
@@ -11023,6 +11220,7 @@
      ],
      "dialogue": [
       {
+       "id": "d1a4152ce",
        "who": "A",
        "en": "Is this your room?",
        "text": "这是你的房间吗？",
@@ -11057,6 +11255,7 @@
        ]
       },
       {
+       "id": "d3d6a962b",
        "who": "B",
        "en": "Yes. This is my desk and chair.",
        "text": "是。这是我的桌子和椅子。",
@@ -11102,6 +11301,7 @@
        ]
       },
       {
+       "id": "d60f5f5b8",
        "who": "A",
        "en": "Which books are yours?",
        "text": "哪些书是你的？",
@@ -11132,6 +11332,7 @@
        ]
       },
       {
+       "id": "dcf12d1ad",
        "who": "B",
        "en": "These are mine; those are my younger sister's.",
        "text": "这些是我的，那些是我妹妹的。",
@@ -11181,6 +11382,7 @@
        ]
       },
       {
+       "id": "d77c691e6",
        "who": "A",
        "en": "How many Chinese books do you have?",
        "text": "你有几本汉语书？",
@@ -11215,6 +11417,7 @@
        ]
       },
       {
+       "id": "d92afe1df",
        "who": "B",
        "en": "Five.",
        "text": "五本。",
@@ -11233,6 +11436,7 @@
        ]
       },
       {
+       "id": "de4479400",
        "who": "A",
        "en": "Which cup is yours?",
        "text": "哪个杯子是你的？",
@@ -11263,6 +11467,7 @@
        ]
       },
       {
+       "id": "d9bae4221",
        "who": "B",
        "en": "This one's mine. Let's go and buy some cups!",
        "text": "这个是我的。我们去买些杯子吧！",
@@ -11494,6 +11699,7 @@
      ],
      "dialogue": [
       {
+       "id": "d7a233f2e",
        "who": "A",
        "en": "What are you looking for?",
        "text": "你找什么？",
@@ -11516,6 +11722,7 @@
        ]
       },
       {
+       "id": "dfa5d1dd7",
        "who": "B",
        "en": "My new phone.",
        "text": "我找我的新手机。",
@@ -11550,6 +11757,7 @@
        ]
       },
       {
+       "id": "d7e428ef6",
        "who": "A",
        "en": "Here it is! There you go.",
        "text": "在这儿！给你。",
@@ -11579,6 +11787,7 @@
        ]
       },
       {
+       "id": "d2f585faa",
        "who": "B",
        "en": "Thanks! This phone cost two thousand yuan.",
        "text": "谢谢！这个手机两千块。",
@@ -11616,6 +11825,7 @@
        ]
       },
       {
+       "id": "d7de557b2",
        "who": "A",
        "en": "That's so expensive! Mine was eight hundred.",
        "text": "太贵了！我的手机八百块。",
@@ -11665,6 +11875,7 @@
        ]
       },
       {
+       "id": "da5d1d778",
        "who": "B",
        "en": "I have some money, and I give half to my mum.",
        "text": "我有一些钱，我给妈妈一半。",
@@ -11710,6 +11921,7 @@
        ]
       },
       {
+       "id": "ddc700f09",
        "who": "A",
        "en": "Some classmates have very little money.",
        "text": "有的同学钱很少。",
@@ -11740,6 +11952,7 @@
        ]
       },
       {
+       "id": "dea2b7891",
        "who": "B",
        "en": "Some things are cheap, and some are expensive.",
        "text": "有些东西很便宜，有些很贵。",
@@ -11971,6 +12184,7 @@
      ],
      "dialogue": [
       {
+       "id": "d1fb5c661",
        "who": "A",
        "en": "Where's my book?",
        "text": "我的书在哪儿？",
@@ -12001,6 +12215,7 @@
        ]
       },
       {
+       "id": "d65c8e466",
        "who": "B",
        "en": "On the table.",
        "text": "在桌子上。",
@@ -12023,6 +12238,7 @@
        ]
       },
       {
+       "id": "d3d0a28e9",
        "who": "A",
        "en": "And my cat?",
        "text": "我的猫呢？",
@@ -12049,6 +12265,7 @@
        ]
       },
       {
+       "id": "d599e4061",
        "who": "B",
        "en": "Under the chair.",
        "text": "在椅子下。",
@@ -12071,6 +12288,7 @@
        ]
       },
       {
+       "id": "db18a6b4b",
        "who": "A",
        "en": "Where are you? I'm outside.",
        "text": "你在哪里？我在外边。",
@@ -12108,6 +12326,7 @@
        ]
       },
       {
+       "id": "d2bb6fa13",
        "who": "B",
        "en": "I'm at home. Is it cold out?",
        "text": "我在家里。外边冷吗？",
@@ -12149,6 +12368,7 @@
        ]
       },
       {
+       "id": "da0b8f5ed",
        "who": "A",
        "en": "Very! There are lots of foreigners here.",
        "text": "很冷！这里有很多外国人。",
@@ -12198,6 +12418,7 @@
        ]
       },
       {
+       "id": "dcae9c14e",
        "who": "B",
        "en": "What about there? Is the supermarket on this side?",
        "text": "那里呢？超市在这边吗？",
@@ -12235,6 +12456,7 @@
        ]
       },
       {
+       "id": "d14aff06b",
        "who": "A",
        "en": "Not this side; it's on that side, next to the bookshop.",
        "text": "不在这边，在那边，书店边上。",
@@ -12453,6 +12675,7 @@
      ],
      "dialogue": [
       {
+       "id": "d8641b972",
        "who": "A",
        "en": "Where do you live?",
        "text": "你住在哪儿？",
@@ -12479,6 +12702,7 @@
        ]
       },
       {
+       "id": "dbcf6a7af",
        "who": "B",
        "en": "Behind the school.",
        "text": "我住在学校后边。",
@@ -12513,6 +12737,7 @@
        ]
       },
       {
+       "id": "d203ca767",
        "who": "A",
        "en": "How many people are in your family?",
        "text": "你家有几口人？",
@@ -12547,6 +12772,7 @@
        ]
       },
       {
+       "id": "db817d58c",
        "who": "B",
        "en": "Four. There's a supermarket in front of our home.",
        "text": "四口人。我家前边有一个超市。",
@@ -12604,6 +12830,7 @@
        ]
       },
       {
+       "id": "da6d2482a",
        "who": "A",
        "en": "Have you seen Xiaoming?",
        "text": "你看见小明了吗？",
@@ -12634,6 +12861,7 @@
        ]
       },
       {
+       "id": "d9a9b821e",
        "who": "B",
        "en": "Yes, he's switching on his computer.",
        "text": "看见了，他正在开电脑。",
@@ -12671,6 +12899,7 @@
        ]
       },
       {
+       "id": "de3354bb5",
        "who": "A",
        "en": "Can you hear that? They're singing.",
        "text": "你听见了吗？她们在唱歌。",
@@ -12716,6 +12945,7 @@
        ]
       },
       {
+       "id": "dfc78eec7",
        "who": "B",
        "en": "I can! Where are our cats?",
        "text": "听见了！我们的猫呢？",
@@ -12753,6 +12983,7 @@
        ]
       },
       {
+       "id": "d7695a7c9",
        "who": "A",
        "en": "They're playing outside.",
        "text": "它们在外边玩。",
@@ -12974,6 +13205,7 @@
      ],
      "dialogue": [
       {
+       "id": "db960bc76",
        "who": "A",
        "en": "Can you cook?",
        "text": "你会做饭吗？",
@@ -13000,6 +13232,7 @@
        ]
       },
       {
+       "id": "d04aca045",
        "who": "B",
        "en": "Yes! I love making dumplings.",
        "text": "会！我很喜欢做饺子。",
@@ -13037,6 +13270,7 @@
        ]
       },
       {
+       "id": "d69ee38da",
        "who": "A",
        "en": "I can't cook. Let's go to a restaurant for dumplings!",
        "text": "我不会做饭。我们去饭店吃饺子吧！",
@@ -13090,6 +13324,7 @@
        ]
       },
       {
+       "id": "dce26b9aa",
        "who": "B",
        "en": "Great! The dumplings here are really good; my classmates all love them.",
        "text": "好！这个店的饺子非常好吃，我的男同学和女同学都喜欢。",
@@ -13170,6 +13405,7 @@
        ]
       },
       {
+       "id": "d85ba1289",
        "who": "A",
        "en": "This is my first dumpling ever! It's so good!",
        "text": "这是我第一个饺子！真好吃！",
@@ -13219,6 +13455,7 @@
        ]
       },
       {
+       "id": "d7f8947b3",
        "who": "B",
        "en": "Let's come back on Sunday.",
        "text": "我们星期日再来吧。",

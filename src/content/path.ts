@@ -4,7 +4,8 @@ import type { Chunk } from './sentences';
 /** A word in a dialogue line: an HSK word (with its pinyin as said here), a name, or punctuation. */
 export type Token = { id: string; py: string } | { name: string; py: string } | { p: string };
 
-export interface DialogueLine { who: string; en: string; text: string; tokens: Token[] }
+/** A line of a lesson's dialogue; its id names its recording (shared by lines with the same text). */
+export interface DialogueLine { id: string; who: string; en: string; text: string; tokens: Token[] }
 
 /** A sentence to put in order: its chunks are the tiles. */
 export interface BuildSentence { text: string; en: string; pattern: string; chunks: Chunk[]; punct: { at: number; p: string }[]; py: string[] }

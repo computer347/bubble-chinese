@@ -9,4 +9,5 @@ import { LayeredMode } from './layered';
 export class WordsMode extends LayeredMode {
   protected readonly skill = 'words' as const;
   protected makeQuestions(w: Word, bank: readonly Word[]) { return makeQuestions(w, bank); }
+  protected label() { return { en: 'Words', zh: '字', py: 'zì' }; }
 }

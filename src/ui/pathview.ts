@@ -1,4 +1,3 @@
-import { gsap } from 'gsap';
 import { PATH, LESSONS, lessonStates, type Unit } from '../content/path';
 import { $ } from './dom';
 
@@ -7,24 +6,20 @@ export interface PathViewDeps {
   /** When each lesson was finished, by id. */
   done(): Readonly<Record<string, number>>;
   /** A lesson's bubble was popped (only open and finished lessons can be). */
-  onLesson(index: number): void;
+  onLesson(index: number, from: HTMLElement): void;
   /** A unit's culture note was asked for. */
-  onNote(unit: Unit): void;
+  onNote(unit: Unit, from: HTMLElement): void;
   /** The side lesson: writing a finished lesson's characters. */
-  onWrite(index: number): void;
+  onWrite(index: number, from: HTMLElement): void;
 }
 
 /**
  * The path: each unit a header (title, topic, its culture note) and its lessons as bubbles along a
  * winding trail. Finished lessons are ticked, the next one glows, later ones wait, locked.
- * Units still to be written are listed, so the whole way ahead is visible.
+ * Units still to be written are listed, so the whole way ahead is visible. Drawn into the Path tab.
  */
 export class PathView {
-  private readonly el = $('pathView');
-
   constructor(private readonly d: PathViewDeps) {}
-
-  get shown(): boolean { return !this.el.hidden; }
 
   render(): void {
     const done = this.d.done(), states = lessonStates(done);
@@ -43,7 +38,7 @@ export class PathView {
         Object.assign(document.createElement('p'), { className: 'punit-topic', textContent: u.topic }));
       if (u.notes.length) {
         const b = Object.assign(document.createElement('button'), { type: 'button', className: 'punit-note', textContent: 'Culture note' });
-        b.addEventListener('click', () => this.d.onNote(u));
+        b.addEventListener('click', () => this.d.onNote(u, b));
         head.append(b);
       }
       box.append(head);
@@ -64,13 +59,13 @@ export class PathView {
         const orb = Object.assign(document.createElement('span'), { className: `mode mini m-path${state === 'done' ? ' m-done' : ''}` });
         orb.append(Object.assign(document.createElement('span'), { className: 'stop-no', textContent: state === 'done' ? '✓' : String(index + 1) }));
         b.append(orb, Object.assign(document.createElement('span'), { className: 'stop-title', textContent: l.title }));
-        b.addEventListener('click', () => this.d.onLesson(index));
+        b.addEventListener('click', () => this.d.onLesson(index, b));
         li.append(b);
         if (state === 'done') {
           const w = Object.assign(document.createElement('button'), { type: 'button', className: 'stop-write', textContent: 'Write' });
           w.dataset.write = l.id;
           w.setAttribute('aria-label', `Write the characters of lesson ${index + 1}`);
-          w.addEventListener('click', () => this.d.onWrite(index));
+          w.addEventListener('click', () => this.d.onWrite(index, w));
           li.append(w);
         }
         trail.append(li);
@@ -79,16 +74,4 @@ export class PathView {
       return box;
     }));
   }
-
-  show(): void {
-    this.render();
-    this.el.hidden = false;
-    // bring the next lesson into view
-    const open = this.el.querySelector<HTMLElement>('.stop.open');
-    this.el.scrollTop = 0;
-    if (open) this.el.scrollTop = Math.max(0, open.offsetTop - this.el.clientHeight / 2);
-    gsap.fromTo(this.el.querySelectorAll('.stop .mode'), { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: this.d.reduceMotion ? 0.1 : 0.7, stagger: 0.04, ease: 'elastic.out(1,.5)', clearProps: 'transform' });
-  }
-
-  hide(): void { this.el.hidden = true; }
 }

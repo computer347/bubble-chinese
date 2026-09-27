@@ -82,3 +82,9 @@ body.style-ink .m-done{ --c1:#E8B04A; --c2:#9A5B0C; }
 body.style-ink .lh{ font-family:var(--brush); }
 body.style-ink .meet-h, body.style-ink .meet-exzh{ font-family:var(--brush); font-weight:400; }
 body.style-ink .lcard{ font-family:var(--font); }
+
+/* the shell in the ink style */
+body.style-ink .tab-title{ font-family:var(--brush); font-weight:400; }
+body.style-ink .tab-zh{ font-family:var(--brush); font-weight:400; font-size:22px; }
+body.style-ink .tabbar, body.style-ink .tab-drop, body.style-ink .you-stat, body.style-ink #tab-you .words button{ border-radius:8px; }
+body.style-ink .tab-drop{ border-radius:6px; }

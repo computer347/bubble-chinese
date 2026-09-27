@@ -67,7 +67,7 @@ async function check(page: Page, W: number, H: number, where: string, tail = 1):
   }
   // the resting bubble plus 8% for its wobble must stay clear of the answers and the corners
   const { x, y, r } = s.ball, room = r * 1.08;
-  for (const c of [...chips, ...(await rects(page, '.corner .q, .topbar .brand, .topbar .bar-right, .topbar .icon-btn'))]) {
+  for (const c of [...chips, ...(await rects(page, '.corner .q, .topbar .brand, .topbar .bar-right, .topbar .back'))]) {
     // a lantern's tassel hangs below it
     if (tail > 1 && lineDist(x, y + r * 0.8, y + tail * r, c) < 1) problems.push(`${where}: tassel touches ${c.name}: ball ${x | 0},${y | 0},${r | 0} chip ${c.l | 0},${c.t | 0},${c.r | 0},${c.b | 0}`);
     if (dist(x, y, c) < room) problems.push(`${where}: bubble (r ${r | 0} at ${x | 0},${y | 0}) covers ${c.name} (${c.l | 0},${c.t | 0})-(${c.r | 0},${c.b | 0}); last fit ${await lastFit(page)}`);
@@ -83,15 +83,20 @@ const RUNS: Array<[string, number, number, 'bubble' | 'ink']> = [
 
 for (const [name, W, H, style] of RUNS) {
   test(`layout: ${name} (${W}×${H})${style === 'ink' ? ', ink & lanterns' : ''}`, async ({ page }) => {
+    // page errors are reported with any layout problem: a frame that throws freezes what is measured
+    const errors: string[] = [];
+    page.on('pageerror', e => errors.push(String(e)));
+    page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
     await page.setViewportSize({ width: W, height: H });
     await page.goto('/?e2e');
     await page.waitForFunction(() => !!window.__squish);
     const ink = style === 'ink';
-    if (ink) { await page.click('#menuBtn'); await page.click('[data-style="ink"]'); await page.click('#menuClose'); }
+    if (ink) { await page.click('.tabbtn[data-tab="you"]'); await page.click('[data-style="ink"]'); }
     const tail = ink ? 1.45 : 1;
     const problems: string[] = [];
     for (const mode of ['words', 'listen']) {
       await until(page, s => s.state === 'home');
+      await page.click('.tabbtn[data-tab="practice"]');
       await page.click(`[data-mode="${mode}"]`);
       for (let layer = 0; layer < 3; layer++) {
         problems.push(...await check(page, W, H, `${mode} layer ${layer + 1}`, tail));
@@ -104,6 +109,6 @@ for (const [name, W, H, style] of RUNS) {
       await until(page, s => s.state === 'home' || s.state === 'popping' || s.state === 'note');
       if ((await snap(page)).state !== 'home') { await until(page, s => s.state === 'note'); await page.click('#homeBtn'); }
     }
-    expect(problems).toEqual([]);
+    expect([...problems, ...errors.map(e => `page error: ${e}`)]).toEqual([]);
   });
 }

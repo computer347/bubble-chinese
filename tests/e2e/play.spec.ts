@@ -1,7 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 
 type Snap = {
-  mode: string | null; voice: { latency: number | null; primed: boolean };
+  mode: string | null; tab: string; voice: { latency: number | null; primed: boolean };
   state: string; word: string | null; layers: number; totalLayers: number;
   correctEdge: string; score: number; streak: number; detail: number; asleep: boolean; wrong: number; queue: string[];
   pool: number; due: number; maxLevel: number;
@@ -20,8 +20,12 @@ async function waitFor(page: Page, pred: (s: Snap) => boolean, label: string): P
   return s;
 }
 
+/** Opens a tab of the shell. */
+const tab = (page: Page, name: 'path' | 'practice' | 'read' | 'you') => page.click(`.tabbtn[data-tab="${name}"]`);
+
 async function start(page: Page, mode = 'words'): Promise<Snap> {
   await openHome(page);
+  if (mode !== 'today') await tab(page, 'practice');
   await page.click(`[data-mode="${mode}"]`);
   return waitFor(page, s => s.state === 'live', 'first bubble to be live');
 }
@@ -147,13 +151,14 @@ test('the words panel lists popped words with their next review', async ({ page 
   await waitFor(page, x => x.state === 'note', 'the fortune slip');
   await page.click('#next');
   await waitFor(page, x => x.state === 'live', 'the next bubble');
-  await page.click('#menuBtn');
-  await page.click('#wordsBtn');
-  await expect(page.locator('#drawer')).toBeVisible();
+  await page.click('#homeBtn');
+  await waitFor(page, x => x.state === 'home', 'back in the shell');
+  await tab(page, 'you');
+  await expect(page.locator('#tab-you')).toBeVisible();
   await expect(page.locator('#wordsList .h').first()).toHaveText(s.word!);
   await expect(page.locator('#wordsList .due').first()).toContainText('in ');
-  await page.keyboard.press('Escape');
-  await expect(page.locator('#drawer')).toBeHidden();
+  await tab(page, 'path');
+  await expect(page.locator('#tab-you')).toBeHidden();
   expect(errorsOf(page)).toEqual([]);
 });
 
@@ -164,25 +169,28 @@ test('the home screen: modes, HSK level, and back again', async ({ page }) => {
   expect(s.pool).toBeGreaterThan(280);           // quiz words in HSK 1 (grammar particles excluded)
   await expect(page.locator('#homeStats')).toContainText('10 new words');
   await expect(page.locator('#fortuneDay')).not.toBeEmpty();
+  await expect(page.locator('#tabbar')).toBeVisible();
+  await tab(page, 'read');
   await expect(page.locator('.wcard.wotd')).toContainText('Word of the day');
+  await tab(page, 'practice');
   await expect(page.locator('[data-mode="plug"]')).toBeDisabled();
   await expect(page.locator('[data-mode="listen"]')).toBeEnabled();
-  // the settings live in the ☰ menu
-  await expect(page.locator('#menu')).toBeHidden();
-  await page.click('#menuBtn');
-  await expect(page.locator('#menu')).toBeVisible();
+  // the settings live in the You tab
+  await tab(page, 'you');
   await page.click('[data-level="2"]');
-  await page.click('#menuClose');
-  await expect(page.locator('#menu')).toBeHidden();
+  await tab(page, 'practice');
   const s2 = await snap(page);
   expect(s2.maxLevel).toBe(2);
   expect(s2.pool).toBeGreaterThan(s.pool + 150);
   await page.click('[data-mode="words"]');
   await waitFor(page, x => x.state === 'live', 'a bubble');
   await expect(page.locator('#home')).toBeHidden();
+  await expect(page.locator('#tabbar')).toBeHidden();
   await page.click('#homeBtn');
-  await waitFor(page, x => x.state === 'home', 'back home');
+  const back = await waitFor(page, x => x.state === 'home', 'back home');
   await expect(page.locator('#home')).toBeVisible();
+  // back on the tab it was entered from
+  expect(back.tab).toBe('practice');
   expect(errorsOf(page)).toEqual([]);
 });
 
@@ -208,9 +216,10 @@ test('Listen: the word is heard, and its tones, meaning and characters pop by ea
   const played = await waitFor(page, s => s.voice.latency !== null, 'the next word to play');
   expect(played.voice.latency!).toBeLessThan(150);
   await waitFor(page, s => s.state === 'live' && s.layers === 3, 'the next bubble');
-  // the tone layer counted for the tone statistics
-  await page.click('#menuBtn');
-  await page.click('#wordsBtn');
+  // the tone layer counted for the tone statistics, shown in the You tab
+  await page.click('#homeBtn');
+  await waitFor(page, s => s.state === 'home', 'back in the shell');
+  await tab(page, 'you');
   await expect(page.locator('#drawerSub')).toContainText('Tones heard right');
   expect(errorsOf(page)).toEqual([]);
 });
@@ -222,6 +231,7 @@ test('Listen: a wrong answer replays the word slowly; home and back to Words', a
   await waitFor(page, s => s.wrong === 1, 'the miss to register');
   await page.click('#homeBtn');
   await waitFor(page, s => s.state === 'home' && s.mode === null, 'back home');
+  await tab(page, 'practice');
   await page.click('[data-mode="words"]');
   const s = await waitFor(page, x => x.state === 'live', 'a Words bubble');
   expect(s.mode).toBe('words');
@@ -231,6 +241,7 @@ test('Listen: a wrong answer replays the word slowly; home and back to Words', a
 
 test('Listen dictation: type the pinyin you hear, with tone numbers', async ({ page }) => {
   await openHome(page, '&dictation');
+  await tab(page, 'practice');
   await page.click('[data-mode="listen"]');
   const s0 = await waitFor(page, s => s.state === 'live', 'a Listen bubble');
   expect([...s0.queue].sort()).toEqual(['3', '4', '6']);
@@ -266,12 +277,12 @@ test('Listen dictation: type the pinyin you hear, with tone numbers', async ({ p
 
 test('Ask about: characters only makes one-layer bubbles, and one kind always stays on', async ({ page }) => {
   await openHome(page);
-  await page.click('#menuBtn');
+  await tab(page, 'you');
   await page.click('[data-ask="meaning"]');
   await page.click('[data-ask="pinyin"]');
   await expect(page.locator('[data-ask="characters"]')).toBeDisabled();
   await expect(page.locator('[data-ask="meaning"]')).toHaveAttribute('aria-pressed', 'false');
-  await page.click('#menuClose');
+  await tab(page, 'practice');
   await page.click('[data-mode="words"]');
   const s = await waitFor(page, x => x.state === 'live', 'a bubble');
   expect(s.queue).toEqual(['2']);
@@ -284,11 +295,11 @@ test('Ask about: characters only makes one-layer bubbles, and one kind always st
 test('Today: new words up to the daily limit, then done and back home', async ({ page }) => {
   await openHome(page);
   // one layer a bubble and five new words a day keep this quick
-  await page.click('#menuBtn');
+  await tab(page, 'you');
   await page.click('[data-ask="meaning"]');
   await page.click('[data-ask="pinyin"]');
   await page.click('[data-new="5"]');
-  await page.click('#menuClose');
+  await tab(page, 'path');
   await expect(page.locator('#homeStats')).toContainText('0 reviews due · 5 new words');
   await page.click('#todayBtn');
   const seen = new Set<string>();
@@ -306,6 +317,7 @@ test('Today: new words up to the daily limit, then done and back home', async ({
   await expect(page.locator('#homeStats')).toContainText('All done for today');
   await expect(page.locator('#todayBtn')).toBeDisabled();
   await expect(page.locator('#days')).toHaveText('1');
-  await expect(page.locator('#wordStrip .wcard:not(.wotd)')).toHaveCount(5);
+  await tab(page, 'you');
+  await expect(page.locator('#wordStrip .wcard')).toHaveCount(5);
   expect(errorsOf(page)).toEqual([]);
 });

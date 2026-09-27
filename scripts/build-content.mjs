@@ -277,7 +277,8 @@ export function buildPath(words, file = PATH_FILE, level = 1, sizes = LESSON_WOR
       // names keep their own
       const shown = tokens.map(t => t.p ?? t.name ?? byId.get(t.id).h);
       const py = contextPinyin(shown, byHanzi);
-      lesson.dialogue.push({ who, en, text: shown.join(''), tokens: tokens.map((t, k) => (t.p || t.name ? t : { ...t, py: py[k] })) });
+      const text = shown.join('');
+      lesson.dialogue.push({ id: 'd' + createHash('sha1').update(text).digest('hex').slice(0, 8), who, en, text, tokens: tokens.map((t, k) => (t.p || t.name ? t : { ...t, py: py[k] })) });
     } else if (kind === 'build') {
       need(lesson, n, '"build" must follow a lesson');
       const [chunkText, en] = parts;
