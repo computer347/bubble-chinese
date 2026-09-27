@@ -17,6 +17,7 @@ import { Settings } from '../ui/menu';
 import { LESSONS } from '../content/path';
 import { todayLeft, TodayMode } from '../modes/today';
 import { PathMode, type PathStatus } from '../modes/path';
+import { ReadMode, type ReadStatus } from '../modes/read';
 import { MODES, type ModeId } from '../modes';
 import type { Mode, ModeContext } from '../modes/mode';
 import { LayeredMode } from '../modes/layered';
@@ -41,6 +42,8 @@ export interface GameHandle {
   enter(mode: ModeId, arg?: StartArg): void;
   /** Abandons the current bubble (ungraded) and shows the home screen. */
   home(): void;
+  /** Marks the first n path lessons finished, as if played (for tests of what they open). */
+  finishLessons(n: number): void;
   snapshot(): {
     mode: ModeId | null;
     /** The shell's open tab. */
@@ -58,6 +61,7 @@ export interface GameHandle {
     ball: { x: number; y: number; r: number };
     /** Where the path is: map, a lesson card, a drill or the checkpoint. */
     path: PathStatus | null;
+    read: ReadStatus | null;
     /** The last fit: where the bubble was sent, when, and what it avoided. */
     lastFit: { y: number; r: number; at: number; obstacles: Array<{ l: number; t: number; r: number; b: number }> } | null;
   };
@@ -237,6 +241,7 @@ export function startGame(opts: GameOptions): GameHandle {
   return {
     enter,
     home: showHome,
+    finishLessons: n => { for (const x of LESSONS.slice(0, n)) progress.completeLesson(x.lesson.id); if (!playing) home.render(); },
     snapshot: () => { const words = layered(); return {
       mode: currentId, tab: home.tab, state: state(), word: words.word?.h ?? null, layers: bubble.layers, totalLayers: bubble.totalLayers, correctEdge: words.correctEdge,
       score: session.score, streak: session.streak, detail: DETAILS[bubble.detailIndex].level, asleep: bubble.asleep, wrong: words.wrongThisLayer,
@@ -245,6 +250,7 @@ export function startGame(opts: GameOptions): GameHandle {
       voice: { latency: voice.lastLatency, primed: !!words.word && voice.primed(words.word) },
       ball: bubble.screenCircle(),
       path: current instanceof PathMode ? current.snapshot() : null,
+      read: current instanceof ReadMode ? current.snapshot() : null,
       lastFit: lastFit && { ...lastFit, now: bubble.fitState() }
     }; }
   };

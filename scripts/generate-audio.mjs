@@ -27,7 +27,12 @@ const PATH = JSON.parse(readFileSync(join(root, 'src/content/generated/path.json
 const DIALOGUE = [...new Map(PATH.units.flatMap(u => u.lessons.flatMap(l => l.dialogue)).map(d => [d.id, {
   id: d.id, text: d.text, chunks: [{ role: null, words: d.tokens.filter(t => t.id).map(t => t.id) }]
 }])).values()];
-const SPOKEN = [...SENTENCES, ...DIALOGUE];
+// the stories' sentences, the same way
+const STORY_FILE = join(root, 'src/content/generated/stories.json');
+const STORY_LINES = existsSync(STORY_FILE) ? [...new Map(JSON.parse(readFileSync(STORY_FILE, 'utf8')).flatMap(st => st.paras.flat()).map(l => [l.id, {
+  id: l.id, text: l.text, chunks: [{ role: null, words: l.tokens.filter(t => t.id).map(t => t.id) }]
+}])).values()] : [];
+const SPOKEN = [...SENTENCES, ...DIALOGUE, ...STORY_LINES];
 const WORDS_BY_ID = new Map(WORDS.map(w => [w.id, w]));
 const AUDIO_DIR = join(root, 'public/audio');
 
@@ -165,7 +170,7 @@ function status() {
     const have = smanifest[st.id]?.[kind];
     return !have || !existsSync(join(AUDIO_DIR, have.file)) || (!flag('any-voice') && have.hash !== requestHash(sentenceRequestBody(st, WORDS_BY_ID, SPEEDS[kind], voice)));
   }));
-  console.log(`${SPOKEN.length - sMissing.length} of ${SPOKEN.length} sentences and dialogue lines have both clips.${sMissing.length ? ' Missing: ' + sMissing.slice(0, 8).map(s => s.text).join(' ') + (sMissing.length > 8 ? ' …' : '') : ''}`);
+  console.log(`${SPOKEN.length - sMissing.length} of ${SPOKEN.length} sentences, dialogue and story lines have both clips.${sMissing.length ? ' Missing: ' + sMissing.slice(0, 8).map(s => s.text).join(' ') + (sMissing.length > 8 ? ' …' : '') : ''}`);
   const done = WORDS.length - rows.length;
   console.log(`${done} of ${WORDS.length} words have both clips for voice "${voice}". ${rows.length} still need rendering.`);
   if (rows.length) {

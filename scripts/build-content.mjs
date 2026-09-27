@@ -2,7 +2,7 @@
 // Builds src/content/generated/hsk.json from the 2025 HSK syllabus and our hand-written glosses.
 //   node scripts/build-content.mjs          write the file
 //   node scripts/build-content.mjs --check  fail if the committed file is out of date (used in CI)
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { segment, contextPinyin, readingProblem } from './segment.mjs';
@@ -300,14 +300,131 @@ export function buildPath(words, file = PATH_FILE, level = 1, sizes = LESSON_WOR
   return { path: out, json: JSON.stringify(out, null, 1) + '\n' };
 }
 
+const STORY_DIR = 'data/content/stories';
+const STORIES_OUT = join(root, 'src/content/generated/stories.json');
+/** Limits for a story: its length in characters, and a sentence's. */
+const STORY_CHARS = [120, 360];
+const SENTENCE_CHARS = 26;
+const LICENCES = new Set(['CC0', 'CC BY 4.0']);
+
+/** Hanzi count, ignoring punctuation and the pinyin of names. */
+const hanziCount = s => [...s].filter(c => /[\u3400-\u9fff]/.test(c)).length;
+
+/**
+ * Splits a story sentence into tokens: syllabus words (with pinyin as said here), names written
+ * {characters=pinyin}, and punctuation. Throws with the part it cannot split.
+ */
+export function storyTokens(zh, byHanzi, where) {
+  const out = [];
+  for (const piece of zh.match(/\{[^}]*\}|[^{]+/g) ?? []) {
+    const name = piece.match(/^\{(.+)=(.+)\}$/);
+    if (name) { out.push({ name: name[1], py: name[2].trim() }); continue; }
+    if (piece.startsWith('{')) throw new Error(`${where}: a name is written {characters=pinyin}, not "${piece}"`);
+    // a space forces a split where the fewest words would read wrongly: 不 要 (doesn't want), not 不要 (don't)
+    // and a colon (before what someone says) is punctuation of its own
+    for (const text of piece.split(/\s+|(：)/).filter(Boolean)) {
+      if (text === '：') { out.push({ p: text }); continue; }
+      const bad = [...text].find(c => !/[\u3400-\u9fff]/.test(c) && !PUNCT.has(c));
+      if (bad) throw new Error(`${where}: "${bad}" is not allowed (only characters and 。？！，：; numbers in characters)`);
+      const toks = segment(text, byHanzi);
+      if (!toks) {
+        // name the first stretch that no run of words can reach
+        const chars = [...text];
+        let reach = 0;
+        for (let i = 1; i <= chars.length; i++) if (segment(chars.slice(0, i).join(''), byHanzi)) reach = i;
+        const rest = chars.slice(reach).join('');
+        throw new Error(`${where}: cannot split "${rest.slice(0, 4)}…" in "${text}" into words of the level (is one of them above it, or a name without {=}?)`);
+      }
+      out.push(...toks.map(t => (PUNCT.has(t) ? { p: t } : { h: t })));
+    }
+  }
+  const problem = readingProblem(out.map(t => t.h ?? t.p ?? t.name));
+  if (problem) throw new Error(`${where}: ${problem}: please reword "${zh}"`);
+  const shown = out.map(t => t.h ?? t.p ?? t.name);
+  const py = contextPinyin(shown, byHanzi);
+  return out.map((t, k) => (t.h ? { id: byHanzi.get(t.h).id, py: py[k] } : t));
+}
+
+/**
+ * The graded stories of the Read tab, one file each in data/content/stories (docs/STORIES.md).
+ * Fails the build if a story uses a word above its level, reads a character ambiguously, runs too
+ * long or short, or lacks an English line or a free licence. A story opens once the path has taught
+ * every word in it: `after` is the lesson that teaches its last one (null when it goes beyond the path).
+ */
+export function buildStories(words, path, dir = STORY_DIR) {
+  const lessonOf = new Map(path.units.flatMap(u => u.lessons).flatMap((l, i) => l.words.map(id => [id, { i, id: l.id }])));
+  const unitIds = new Set(path.units.map(u => u.id));
+  const byId = new Map(words.map(w => [w.id, w]));
+  const full = join(root, dir);
+  const files = existsSync(full) ? readdirSync(full).filter(f => f.endsWith('.txt')).sort() : [];
+  const stories = [];
+  for (const f of files) {
+    const file = `${dir}/${f}`;
+    const lines = readFileSync(join(full, f), 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/);
+    const need = (cond, n, msg) => { if (!cond) throw new Error(`${file}:${n}: ${msg}`); };
+    let n = 0;
+    const next = () => { while (n < lines.length && !lines[n].trim()) n++; return lines[n++]?.trim() ?? ''; };
+    const head = next();
+    const m = head.match(/^story\s+(\S+)\s*\|(.+)$/);
+    need(m, n, 'the first line is: story <id> | English title | Chinese title | level | unit');
+    const [title, zhTitle, levelText, unit] = m[2].split('|').map(s => s.trim());
+    const id = m[1], level = Number(levelText);
+    need(title && zhTitle && unit, n, 'the first line is: story <id> | English title | Chinese title | level | unit');
+    need(/^[a-z0-9-]+$/.test(id), n, `story id "${id}": use lower case letters, digits and -`);
+    need(!stories.some(s => s.id === id), n, `duplicate story id ${id}`);
+    need(Number.isInteger(level) && level >= 1 && level <= 9, n, `level "${levelText}" should be 1–9`);
+    need(unit === '-' || unitIds.has(unit), n, `"${unit}" is not a path unit (${[...unitIds].join(', ')}), or write -`);
+    const credit = next();
+    const cm = credit.match(/^by\s+(.+?)\s*\|\s*(.+)$/);
+    need(cm, n, 'the second line is: by <who wrote it> | <licence>');
+    need(LICENCES.has(cm[2]), n, `licence "${cm[2]}": use ${[...LICENCES].join(' or ')}`);
+    const byHanzi = new Map();
+    for (const w of words) if (w.level <= level && (!byHanzi.has(w.h) || w.quiz !== false)) byHanzi.set(w.h, w);
+    const paras = [];
+    let para = null, chars = 0;
+    const used = new Set();
+    for (; n < lines.length; n++) {
+      const line = lines[n].trim();
+      if (!line) { para = null; continue; }
+      if (line.startsWith('#')) continue;
+      const where = `${file}:${n + 1}`;
+      const bar = line.indexOf('|');
+      need(bar > 0, n + 1, 'a sentence line is: Chinese | English');
+      const zh = line.slice(0, bar).trim(), en = line.slice(bar + 1).trim();
+      need(zh && en, n + 1, 'a sentence line is: Chinese | English');
+      need(/[。？！]$/.test(zh), n + 1, `a sentence ends in 。？！ ("${zh}")`);
+      const tokens = storyTokens(zh, byHanzi, where);
+      const text = tokens.map(t => t.p ?? t.name ?? byId.get(t.id).h).join('');
+      const count = hanziCount(text);
+      need(count <= SENTENCE_CHARS, n + 1, `a sentence of ${count} characters; keep them to about 20 (at most ${SENTENCE_CHARS})`);
+      chars += count;
+      for (const t of tokens) if (t.id) used.add(t.id);
+      if (!para) paras.push(para = []);
+      para.push({ id: 'r' + createHash('sha1').update(text).digest('hex').slice(0, 8), text, en, tokens });
+    }
+    const count = paras.flat().length;
+    need(count >= 4, n, `only ${count} sentences; a story has 8–20`);
+    need(chars >= STORY_CHARS[0] && chars <= STORY_CHARS[1], n, `${chars} characters; a story has 150–300 (${STORY_CHARS[0]}–${STORY_CHARS[1]} allowed)`);
+    // the lesson after which every word in it has been taught
+    const at = [...used].map(w => lessonOf.get(w));
+    const after = at.some(x => !x) ? null : at.reduce((a, b) => (b.i > a.i ? b : a)).id;
+    stories.push({ id, title, zh: zhTitle, level, unit: unit === '-' ? null : unit, by: cm[1], licence: cm[2], chars, after, words: [...used].sort(), paras });
+  }
+  // in the order they open along the path, then by level and title
+  const order = new Map(path.units.flatMap(u => u.lessons).map((l, i) => [l.id, i]));
+  stories.sort((a, b) => a.level - b.level || (order.get(a.after) ?? 1e9) - (order.get(b.after) ?? 1e9) || a.title.localeCompare(b.title));
+  return { stories, json: JSON.stringify(stories) + '\n' };
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const { words, json } = build();
   const { sentences, json: sjson } = buildSentences(words);
   const { list: wotd, json: wjson } = buildWordOfDay(words);
   const { path, json: pjson } = buildPath(words);
+  const { stories, json: stjson } = buildStories(words, path);
   const read = f => { try { return readFileSync(f, 'utf8').replace(/\r\n/g, '\n'); } catch { return ''; } };
   if (process.argv.includes('--check')) {
-    if (read(OUT) !== json || read(SENTENCES_OUT) !== sjson || read(WOTD_OUT) !== wjson || read(PATH_OUT) !== pjson) {
+    if (read(OUT) !== json || read(SENTENCES_OUT) !== sjson || read(WOTD_OUT) !== wjson || read(PATH_OUT) !== pjson || read(STORIES_OUT) !== stjson) {
       console.error('Generated content is out of date. Run: npm run build:content');
       process.exit(1);
     }
@@ -318,6 +435,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     writeFileSync(SENTENCES_OUT, sjson);
     writeFileSync(WOTD_OUT, wjson);
     writeFileSync(PATH_OUT, pjson);
+    writeFileSync(STORIES_OUT, stjson);
+    console.log(`Wrote ${stories.length} stories (${stories.reduce((k, s) => k + s.chars, 0)} characters).`);
     const lessons = path.units.flatMap(u => u.lessons);
     console.log(`Wrote the path: ${path.units.length} units, ${lessons.length} lessons, ${lessons.reduce((n, l) => n + l.words.length, 0)} words taught.`);
     console.log(`Wrote ${wotd.length} words of the day (above HSK ${Math.max(...LEVELS)}).`);

@@ -1,0 +1,20 @@
+story my-family | My family | 我的家 | 1 | family
+by Claude (Anthropic) for Squish, awaiting native review | CC0
+
+我叫{小文=Xiǎo Wén}，今年十岁。 | My name is Xiaowen, and I'm ten this year.
+我家有五个人。 | There are five people in my family.
+爸爸，妈妈，哥哥，妹妹和我。 | Dad, Mum, my big brother, my little sister and me.
+爸爸妈妈都是老师。 | Mum and Dad are both teachers.
+
+我哥哥今年十六岁。 | My brother is sixteen this year.
+他有女朋友，她叫{丽丽=Lìli}。 | He has a girlfriend called Lili.
+我妹妹很小，她四岁。 | My little sister is very small; she's four.
+
+我们家有一只狗，没有猫。 | We have a dog, but no cat.
+狗的名字叫{大黑=Dà Hēi}。 | The dog is called Dahei.
+{大黑=Dà Hēi}是我的好朋友。 | Dahei is my good friend.
+它也是哥哥和妹妹的好朋友。 | It's my brother's and sister's good friend too.
+妹妹很爱{大黑=Dà Hēi}，{大黑=Dà Hēi}也很爱她。 | My sister loves Dahei, and Dahei loves her too.
+我们都是{大黑=Dà Hēi}的家人。 | We're all Dahei's family.
+
+你家有狗吗？ | Do you have a dog?

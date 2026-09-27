@@ -1,0 +1,23 @@
+story what-weather | What weather is this? | 这是什么天气？ | 1 | weather
+by Claude (Anthropic) for Squish, awaiting native review | CC0
+
+今天是星期六。 | Today is Saturday.
+早上七点，天气很冷。 | At seven in the morning, it's very cold.
+我穿很多衣服。 | I put on lots of clothes.
+
+中午十二点，天气很热。 | At twelve noon, it's very hot.
+我的衣服太多了！ | I'm wearing far too many clothes!
+我喝很多水。 | I drink lots of water.
+
+下午三点半，下雨了。 | At half past three in the afternoon, it starts to rain.
+雨很大，我没有车，也没有出租车。 | The rain is heavy, and I've no car and no taxi.
+我的衣服都是雨水了。 | My clothes are soaked through.
+
+晚上，天真冷，下雪了！ | In the evening it's really cold, and it snows!
+这是什么天气？ | What weather is this?
+一天有冷，有热，有雨，还有雪。 | In one day there's cold, heat, rain, and snow as well.
+
+明天天气怎么样？ | What will the weather be like tomorrow?
+明天我穿什么衣服？ | What should I wear tomorrow?
+我想了想。 | I think it over.
+明天是星期天，我在家，哪儿也不去！ | Tomorrow is Sunday. I'm staying home and going nowhere!

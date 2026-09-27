@@ -1,0 +1,21 @@
+story hungry-cat | The cat who wants everything | 什么都想吃的猫 | 1 | food
+by Claude (Anthropic) for Squish, awaiting native review | CC0
+
+我家有一只猫，它叫{咪咪=Mīmi}。 | We have a cat called Mimi.
+{咪咪=Mīmi}很小，也很爱吃。 | Mimi is small, and she loves to eat.
+
+我们吃早饭，它也要吃早饭。 | When we have breakfast, she wants breakfast too.
+我吃面包，它也想吃面包。 | I eat bread, and she wants bread too.
+妈妈喝茶，它也想喝茶。 | Mum drinks tea, and she wants tea too.
+爸爸吃苹果，它也要吃苹果。 | Dad eats an apple, and she wants an apple too.
+猫吃苹果吗？ | Do cats eat apples?
+{咪咪=Mīmi}不吃，它不爱水果。 | Mimi doesn't; she doesn't like fruit.
+
+晚饭，我们吃米饭和鸡蛋。 | For dinner we have rice and eggs.
+{咪咪=Mīmi}不 要米饭，也不 要菜。 | Mimi doesn't want rice, or vegetables.
+它想要什么？ | What does she want?
+它要哥哥的鸡蛋！ | She wants my brother's egg!
+哥哥很爱{咪咪=Mīmi}。 | My brother loves Mimi.
+他的鸡蛋是{咪咪=Mīmi}的了。 | His egg is Mimi's now.
+哥哥没有鸡蛋，他喝牛奶。 | My brother has no egg, so he drinks milk.
+{咪咪=Mīmi}也想喝牛奶！ | And Mimi wants milk too!

@@ -25,7 +25,7 @@ Rules:
 1. Use ONLY words from the word list below. Check every word. Numbers are written in characters (十八, not 18).
 2. Names that are not in the list are written {characters=pinyin}, like {王丽=Wáng Lì}. Use two or three names at most.
 3. 150–300 Chinese characters in total, 8–20 sentences, in short paragraphs.
-4. Short sentences (about 20 characters at most), each ending in 。 or ？ or ！. Use only 。？！， as punctuation.
+4. Short sentences (about 20 characters at most), each ending in 。 or ？ or ！. Use only 。？！，： as punctuation (： before what someone says).
 5. Plain, natural Chinese a native speaker would write for a learner: no idioms, no literary style, no slang. An everyday situation with a small turn or a gentle joke at the end.
 6. Give a natural English translation for every sentence.${unit ? `
 7. The story belongs to the unit "${unit.title}" (${unit.topic}). Use these words often: ${unitWords.map(w => w.h).join(' ')}` : ''}

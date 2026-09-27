@@ -25,6 +25,11 @@ describe('contextPinyin', () => {
     expect(py('我有一个孩子。')).toBe('wǒ yǒu yí gè háizi');
     expect(py('他有一只猫。')).toBe('tā yǒu yì zhī māo');
   });
+  it('keeps 一 as yī when counting: ordinals, dates and digits', () => {
+    expect(py('这是我的第一个饺子。')).toBe('zhè shì wǒ de dì yī gè jiǎozi');
+    expect(py('今天是一月一日。')).toBe('jīntiān shì yī yuè yī rì');
+    expect(py('今年是二零一一年。')).toBe('jīnnián shì èr líng yī yī nián');
+  });
 });
 
 describe('readingProblem', () => {

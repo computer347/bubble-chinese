@@ -88,3 +88,10 @@ body.style-ink .tab-title{ font-family:var(--brush); font-weight:400; }
 body.style-ink .tab-zh{ font-family:var(--brush); font-weight:400; font-size:22px; }
 body.style-ink .tabbar, body.style-ink .tab-drop, body.style-ink .you-stat, body.style-ink #tab-you .words button{ border-radius:8px; }
 body.style-ink .tab-drop{ border-radius:6px; }
+
+/* the stories in the ink style: jade orbs, brush titles, square corners */
+body.style-ink .m-read{ --c1:#7FA37A; --c2:#2F4F2C; }
+body.style-ink .scard, body.style-ink .reader-page{ border-radius:6px; }
+body.style-ink .scard-zh, body.style-ink .r-title, body.style-ink .rpop-h{ font-family:var(--brush); font-weight:400; }
+body.style-ink .r-en{ font-family:var(--font); font-style:italic; }
+body.style-ink .reader-bar, body.style-ink .rpop{ border-radius:8px; }

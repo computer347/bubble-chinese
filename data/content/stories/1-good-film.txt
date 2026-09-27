@@ -1,0 +1,19 @@
+story good-film | A very good film | 非常好看的电影 | 1 | free
+by Claude (Anthropic) for Squish, awaiting native review | CC0
+
+星期六晚上，我没有事。 | On Saturday evening, I've nothing on.
+我的朋友{小月=Xiǎo Yuè}打电话问我：你想看电影吗？ | My friend Xiaoyue phones and asks me: "Do you want to see a film?"
+我说：好，我们去吧！ | I say: "OK, let's go!"
+
+晚上八点，我们到电影院。 | At eight in the evening, we get to the cinema.
+电影院的人非常多。 | The cinema is packed.
+这是一个中国电影，{小月=Xiǎo Yuè}很喜欢。 | It's a Chinese film, and Xiaoyue loves it.
+
+昨天晚上我睡觉很晚。 | I went to bed very late last night.
+电影院里很热。 | It's warm inside the cinema.
+我看了十分钟，睡了。 | I watch for ten minutes, and fall asleep.
+
+十点半，{小月=Xiǎo Yuè}叫我：起床了！ | At half past ten, Xiaoyue gives me a nudge: "Wake up!"
+{小月=Xiǎo Yuè}问：你觉得电影怎么样？ | Xiaoyue asks: "What did you think of the film?"
+我说：非常好看！ | I say: "Really good!"
+我们明天再来看一下，好吗？ | "Shall we come and watch it again tomorrow?"

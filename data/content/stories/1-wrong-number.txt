@@ -1,0 +1,20 @@
+story wrong-number | Hello? | 喂？ | 1 | work
+by Claude (Anthropic) for Squish, awaiting native review | CC0
+
+{王先生=Wáng xiānsheng}是医生。 | Mr Wang is a doctor.
+他的工作很忙。 | His work keeps him very busy.
+早上七点上班，晚上八点下班。 | He starts at seven in the morning and finishes at eight in the evening.
+
+今天下午，他有一个电话。 | This afternoon, he gets a phone call.
+喂，你好！ | "Hello?"
+喂，请问，您是{王先生=Wáng xiānsheng}吗？ | "Hello, excuse me, are you Mr Wang?"
+是，我是。您是谁？ | "Yes, speaking. Who is this?"
+我是{李女士=Lǐ nǚshì}，我有一个问题。 | "I'm Ms Li. I have a question."
+什么问题？ | "What's the question?"
+我的猫不吃饭，也不喝水。 | "My cat won't eat, and won't drink water."
+它怎么了？ | "What's wrong with it?"
+
+{王先生=Wáng xiānsheng}说：对不起，我不是猫的医生。 | Mr Wang says: "Sorry, I'm not a cat doctor."
+{李女士=Lǐ nǚshì}说：没关系，您知道猫的医生在哪儿吗？ | "That's all right," says Ms Li. "Do you know where there's a cat doctor?"
+{王先生=Wáng xiānsheng}想了想。 | Mr Wang thinks for a moment.
+我知道！我女儿是猫的医生。 | "I do! My daughter is a cat doctor."

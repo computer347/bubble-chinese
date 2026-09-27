@@ -55,7 +55,9 @@
   <section class="tab" id="tab-read" data-tab="read" hidden aria-labelledby="readTitle">
     <h2 class="tab-title" id="readTitle">Read</h2>
     <ul class="strip" id="wotdStrip"></ul>
-    <p class="tab-sub">Stories at your level are on their way: tap a word for its meaning, hold a sentence for its translation.</p>
+    <h3 class="tab-h">Stories</h3>
+    <p class="tab-sub" id="readIntro"></p>
+    <ol class="stories" id="storyList"></ol>
   </section>
 
   <section class="tab" id="tab-you" data-tab="you" hidden aria-labelledby="youTitle">
@@ -132,6 +134,16 @@
     <div class="lfoot"><button type="button" class="next" id="lNext">Next</button></div>
   </div>
 </section>
+
+<section class="reader" id="reader" hidden aria-label="Story">
+  <div class="reader-bar">
+    <label class="pyslider"><span class="pyslider-l" lang="zh-Hans">拼音</span><span class="sr">Pinyin strength</span>
+      <input type="range" id="pyOpacity" min="0" max="1" step="0.05" value="1"></label>
+    <button type="button" class="rplay" id="rPlay">▶ Play all</button>
+  </div>
+  <article class="reader-page" id="rPage"></article>
+</section>
+<div class="rpop" id="rPop" hidden role="status"></div>
 
 <form class="dictation" id="dictation" hidden autocomplete="off">
   <label for="dictIn" class="sr">Type the pinyin you hear, with tone numbers or tone marks</label>

@@ -23,7 +23,8 @@ or ask the model to replace the words it names.
   HSK 1 because it is a word there; 电灯 is not). Numbers written as characters (十八, not 18).
 - **Names** that are not HSK words are written `{characters=pinyin}`, like `{王丽=Wáng Lì}`.
   Keep to two or three names a story.
-- **Short sentences** (at most about 20 characters), ending in 。？！ Only 。？！， as punctuation.
+- **Short sentences** (at most about 20 characters), ending in 。？！ Only 。？！，： as punctuation
+  (： before what someone says).
 - **Plain, natural Chinese** a native speaker would write for a learner: no idioms (成语), no
   literary style, no slang. Everyday situations with a small turn or a gentle joke at the end.
 - **An English line for every sentence**: a natural translation, not word for word.
@@ -47,6 +48,8 @@ by Qwen 3, reviewed by <name> | CC0
 - Then one sentence per line, `Chinese | English`. A blank line starts a new paragraph.
 - The Chinese needs no spaces between words: the build splits it into syllabus words, and reports
   anything it cannot.
+- The build prefers the fewest, longest words. Where that reads wrongly, a space forces a split:
+  `它不 要米饭` gives 不 要 (doesn't want), where `不要` alone would be the word "don't".
 
 ## Stories from StoryWeaver
 

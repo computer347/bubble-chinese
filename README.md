@@ -2,7 +2,7 @@
 
 Pop soft, jiggly bubbles to learn Chinese.
 
-The app has four tabs under a floating tab bar. Path holds the fortune of the day, a Today bubble and the path of lessons; Practice has a tile for each mode; Read has the word of the day (stories are coming); You has your stats, your words and every setting. Today is one session for the day: reviews that are due come first, reading or listening, whichever has waited longest; then new words, up to a daily limit (10 by default); then it is done.
+The app has four tabs under a floating tab bar. Path holds the fortune of the day, a Today bubble and the path of lessons; Practice has a tile for each mode; Read has the word of the day and graded stories (tap a word for its meaning, hold a sentence for its translation, pinyin as faint as you like; each story opens once the path has taught its words); You has your stats, your words and every setting. Today is one session for the day: reviews that are due come first, reading or listening, whichever has waited longest; then new words, up to a daily limit (10 by default); then it is done.
 
 The Path is a course alongside that: units follow the HSK topics, and each lesson teaches ten words with a culture note, a dialogue and sentences to build, ending in a checkpoint bubble. Every word popped in a lesson joins Today's reviews, and Today introduces new words in path order. Each finished lesson has a Write side lesson: watch a character's stroke order in a practice grid, then trace it (stroke data from Make Me a Hanzi, Arphic Public License, in `public/strokes/`).
 

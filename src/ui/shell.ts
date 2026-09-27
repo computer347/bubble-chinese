@@ -8,6 +8,7 @@ import type { Progress } from '../game/progress';
 import { dailyIndex, streakDays, practisedToday } from '../game/daily';
 import type { ModeId, ModeInfo } from '../modes';
 import { PathView } from './pathview';
+import { StoryList } from './storylist';
 import type { Unit } from '../content/path';
 import { $ } from './dom';
 
@@ -15,7 +16,7 @@ export type Tab = 'path' | 'practice' | 'read' | 'you';
 export const TABS: readonly Tab[] = ['path', 'practice', 'read', 'you'];
 
 /** What a tile or path stop starts: a mode, with what it should open. */
-export type StartArg = { kind: 'lesson' | 'write'; index: number } | { kind: 'note'; unit: Unit };
+export type StartArg = { kind: 'lesson' | 'write'; index: number } | { kind: 'note'; unit: Unit } | { kind: 'story'; id: string };
 
 export interface ShellDeps {
   progress: Progress;
@@ -49,7 +50,7 @@ export const fortuneOfDay = (now = new Date()): string => FORTUNES[dailyIndex(no
 /**
  * The app's shell: four tabs under a floating tab bar.
  * Path: the fortune of the day, Today's bubble, and the path of lessons.
- * Practice: a tile for each mode. Read: the word of the day (stories to come).
+ * Practice: a tile for each mode. Read: the word of the day and the graded stories.
  * You: stats, your words and every setting (drawn by their own components).
  */
 export class Shell {
@@ -58,6 +59,7 @@ export class Shell {
   private readonly bar = $('tabbar');
   private readonly cards = $('modeCards');
   private readonly pathView: PathView;
+  private readonly stories: StoryList;
   /** The orb a task was entered from, so returning shrinks back into it. */
   private from: HTMLElement | null = null;
 
@@ -70,7 +72,13 @@ export class Shell {
       onNote: (u, el) => d.onEnter('path', el, { kind: 'note', unit: u }),
       onWrite: (i, el) => d.onEnter('path', el, { kind: 'write', index: i })
     });
-    this.cards.replaceChildren(...d.modes.filter(m => !m.hero && m.id !== 'path').map(m => {
+    this.stories = new StoryList({
+      done: () => d.progress.data.path.done,
+      read: () => d.progress.data.read,
+      maxLevel: () => d.progress.data.settings.maxLevel,
+      onStory: (id, el) => d.onEnter('read', el, { kind: 'story', id })
+    });
+    this.cards.replaceChildren(...d.modes.filter(m => !m.hero && !m.ownTab).map(m => {
       const li = document.createElement('li'), b = document.createElement('button');
       b.type = 'button'; b.className = 'card'; b.dataset.mode = m.id;
       const orb = Object.assign(document.createElement('span'), { className: `mode m-${m.id} mini` });
@@ -146,7 +154,10 @@ export class Shell {
         }
       }
     }
-    if (this.tab === 'read') $('wotdStrip').replaceChildren(wordTile(wordOfDay(now), `Word of the day · HSK ${wordOfDay(now).level}`, 'wotd', this.d.voice));
+    if (this.tab === 'read') {
+      $('wotdStrip').replaceChildren(wordTile(wordOfDay(now), `Word of the day · HSK ${wordOfDay(now).level}`, 'wotd', this.d.voice));
+      this.stories.render();
+    }
     if (this.tab === 'you') this.renderStrip(words, now);
   }
 
@@ -176,7 +187,7 @@ export class Shell {
       zoomBack(back, this.d.reduceMotion);
       gsap.fromTo(back, { scale: 1.3 }, { scale: 1, duration: this.d.reduceMotion ? 0.05 : 0.8, delay: 0.25, ease: 'elastic.out(1,.4)', clearProps: 'transform' });
     } else {
-      const orbs = this.el.querySelectorAll(`#tab-${tab} .hero-orb, #tab-${tab} .card .mode, #tab-${tab} .stop .mode`);
+      const orbs = this.el.querySelectorAll(`#tab-${tab} .hero-orb, #tab-${tab} .card .mode, #tab-${tab} .stop .mode, #tab-${tab} .scard .mode`);
       gsap.fromTo(orbs, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: this.d.reduceMotion ? 0.1 : 0.9, stagger: 0.04, ease: 'elastic.out(1,.45)', clearProps: 'transform' });
     }
     $('title').textContent = 'Squish: pop bubbles to learn Chinese';

@@ -1,0 +1,21 @@
+story not-well | Not feeling well | 我生病了 | 1 | health
+by Claude (Anthropic) for Squish, awaiting native review | CC0
+
+早上七点，妈妈叫我起床。 | At seven in the morning, Mum calls me to get up.
+我不想起床，也不想去学校。 | I don't want to get up, or go to school.
+妈妈，我生病了。 | "Mum, I'm ill."
+你怎么了？ | "What's wrong?"
+我有点儿冷，也有点儿热。 | "I'm a bit cold, and a bit hot too."
+我不想吃早饭。 | "I don't want any breakfast."
+
+妈妈问：你想去医院看病吗？ | Mum asks: "Do you want to go and see a doctor?"
+不要！我想在家休息。 | "No! I want to rest at home."
+好，你再睡一下。 | "All right, sleep a little longer."
+
+我睡了两个小时。 | I sleep for two hours.
+十点，我起床了。 | At ten, I get up.
+我很想吃面条儿，妈妈的面条儿很好吃。 | I really want noodles; Mum's noodles are delicious.
+妈妈问：你的病怎么样了？ | Mum asks: "How are you feeling now?"
+我没事了！ | "I'm fine now!"
+妈妈说：好，下午两点，我们去学校。 | "Good," says Mum. "At two this afternoon, we're off to school."
+我说：妈妈，我还有点儿热！ | I say: "Mum, I'm still a bit hot!"

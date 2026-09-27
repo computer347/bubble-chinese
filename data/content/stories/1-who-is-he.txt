@@ -1,0 +1,21 @@
+story who-is-he | Who is he? | 他是谁？ | 1 | me
+by Claude (Anthropic) for Squish, awaiting native review | CC0
+
+你好！我叫{王丽=Wáng Lì}。 | Hello! My name is Wang Li.
+我是中国人，今年十八岁。 | I'm Chinese, and I'm eighteen this year.
+我是学生。 | I'm a student.
+这是我的朋友{小月=Xiǎo Yuè}。 | This is my friend Xiaoyue.
+她也是学生，我们是同学。 | She's a student too; we're classmates.
+我们的老师是中国人。 | Our teacher is Chinese.
+
+那是谁？ | Who's that?
+他不是中国人，也不是我们的同学。 | He isn't Chinese, and he isn't one of our classmates.
+{小月=Xiǎo Yuè}不认识他，我也不认识他。 | Xiaoyue doesn't know him, and neither do I.
+他是学生吗？他是哪国人？ | Is he a student? Where is he from?
+他今年几岁？他叫什么名字？ | How old is he? What's his name?
+
+你们好！我叫{大卫=Dàwèi}。 | "Hello, everyone! My name is David."
+我是你们的老师。 | "I'm your teacher."
+老师好！ | "Hello, teacher!"
+我们很高兴认识您。 | "We're very glad to meet you."
+我也很高兴认识你们！ | "I'm very glad to meet you too!"

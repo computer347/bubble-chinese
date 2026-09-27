@@ -47,7 +47,8 @@ export function contextPinyin(tokens, vocab) {
     const beforePunct = PUNCT.has(tokens[i + 1] ?? '。');
     if (w.h === '不') return nextTone === 4 && !beforePunct ? 'bú' : 'bù';
     if (w.h === '一') {
-      if (beforePunct || !next) return 'yī';
+      // counting keeps yī: 第一 (first), 十一, 一月; so does the end of a phrase
+      if (beforePunct || !next || /^[第零一二三四五六七八九十]$/.test(tokens[i - 1] ?? '') || /^[月号日]$/.test(tokens[i + 1] ?? '')) return 'yī';
       return nextTone === 4 ? 'yí' : nextTone >= 1 && nextTone <= 3 ? 'yì' : 'yī';
     }
     return w.p;

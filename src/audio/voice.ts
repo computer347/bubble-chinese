@@ -170,10 +170,15 @@ export class Voice {
 
   /** Plays a whole sentence; onWord(i) fires as each word starts, and onWord(null) at the end. */
   async saySentence(s: Sentence, slow = false, onWord?: (i: number | null) => void): Promise<void> {
-    if (!this.enabled) return;
+    if (!this.enabled) { if (onWord) window.setTimeout(() => onWord(null), 0); return; }
     this.stop();
+    // without a recording the device's voice reads it; the end is a guess from its length
+    const fallback = () => {
+      this.speech.speak(s.text, slow);
+      if (onWord) this.timers.push(window.setTimeout(() => onWord(null), 400 + [...s.text].length * (slow ? 420 : 260)));
+    };
     const c = this.sentenceClip(s, slow), ctx = c && this.audio();
-    if (!c || !ctx) { this.speech.speak(s.text, slow); return; }
+    if (!c || !ctx) { fallback(); return; }
     try {
       const buf = await this.buffer(c.file);
       const src = ctx.createBufferSource();
@@ -184,7 +189,7 @@ export class Voice {
         this.timers.push(window.setTimeout(() => onWord(null), buf.duration * 1000));
       }
     } catch {
-      this.speech.speak(s.text, slow);
+      fallback();
     }
   }
 

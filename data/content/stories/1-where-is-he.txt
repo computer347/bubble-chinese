@@ -1,0 +1,24 @@
+story where-is-he | Where is he? | 他在哪儿？ | 1 | travel
+by Claude (Anthropic) for Squish, awaiting native review | CC0
+
+明天我去{北京=Běijīng}。 | Tomorrow I'm going to Beijing.
+我的中国朋友{小马=Xiǎo Mǎ}在{北京=Běijīng}。 | My Chinese friend Xiao Ma is in Beijing.
+我怎么去？ | How should I go?
+坐飞机太贵了。 | Flying is too expensive.
+火车很便宜，我坐火车去。 | The train is cheap, so I'll take the train.
+我很想他。 | I really miss him.
+
+到{北京=Běijīng}了！ | I've arrived in Beijing!
+这儿的人很多。 | There are lots of people here.
+{小马=Xiǎo Mǎ}在哪儿？ | Where's Xiao Ma?
+他不在这儿，也不在那儿。 | He isn't here, and he isn't there.
+请问，您是{小马=Xiǎo Mǎ}吗？ | Excuse me, are you Xiao Ma?
+不是，对不起。 | No, sorry.
+
+我的朋友来了！ | Here comes my friend!
+他是开车来的。 | He came by car.
+他的车在那儿。 | His car is over there.
+{小马=Xiǎo Mǎ}的车很小。 | Xiao Ma's car is tiny.
+我的东西很多，太多了。 | I've got lots of things, far too many.
+我们怎么回家？ | How do we get home?
+我们可以坐出租车回家。 | We can take a taxi home.

@@ -4,6 +4,7 @@ import { WORDS } from '../../src/content/words';
 import { SENTENCES, examplesFor, sentenceWords } from '../../src/content/sentences';
 import sentenceManifest from '../../src/content/generated/sentence-audio.json';
 import path from '../../src/content/generated/path.json';
+import stories from '../../src/content/generated/stories.json';
 // @ts-expect-error plain ESM script without types
 import { buildSentences, build, ROLES } from '../../scripts/build-content.mjs';
 // @ts-expect-error plain ESM script without types
@@ -93,7 +94,11 @@ describe('word timings from subtitle files', () => {
   });
 });
 
-const DIALOGUE = new Map(path.units.flatMap(u => u.lessons.flatMap(l => l.dialogue)).map(d => [d.id, d]));
+// path dialogue lines and story lines are recorded like sentences, with the same checks
+const DIALOGUE = new Map<string, { text: string }>([
+  ...path.units.flatMap(u => u.lessons.flatMap(l => l.dialogue)).map(d => [d.id, d] as const),
+  ...stories.flatMap(st => st.paras.flat()).map(l => [l.id, l] as const)
+]);
 
 describe('sentence audio manifest', () => {
   it('every clip exists, matches its sentence text, and has one timing per word', () => {
@@ -101,7 +106,7 @@ describe('sentence audio manifest', () => {
     for (const [id, e] of Object.entries(m)) {
       const line = DIALOGUE.get(id);
       if (line) {
-        // a path dialogue line: made for its current text, and its clips exist
+        // a path dialogue or story line: made for its current text, and its clips exist
         expect(e.text).toBe(line.text);
         for (const c of [e.normal, e.slow]) if (c) expect(existsSync(`public/audio/${c.file}`), c.file).toBe(true);
         continue;
