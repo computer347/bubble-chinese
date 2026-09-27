@@ -48,7 +48,9 @@ subject = blue circle, time = amber hexagon, place = teal pill, verb = red trian
 Scaffolding fades from shape and colour, to shape only, to neither. Progression: SV → SVO → S+T+VO → S+T+P+V+O → adverbs → 不/没 → 吗/呢 → measure words → 了/过 → 把/被.
 
 - [x] Sentence schema: role-tagged chunks, other valid orders, level from its words; 55 HSK 1–2 sentences to start
-- [ ] More sentences: about a third of HSK 1 words have an example so far
+- [x] 467 real example sentences from Tatoeba (CC BY 2.0 FR), every word in HSK 1–2, filtered for readings, names and misleading compounds; 453 of 485 quiz words have an example, never one where the word is part of a larger word
+- [ ] Read through the Tatoeba sentences once and list any to drop in `data/content/tatoeba-exclude.tsv`
+- [ ] Role tags for Tatoeba sentences, so Plug can use them
 
 **Verify:** every valid order is accepted; fit-logic unit tests; 20-sentence playtest per level; solvable by shape alone and by keyboard.
 

@@ -11,3 +11,4 @@ test-results
 audio-samples
 data/audio-missing.tsv
 data/subtitles-debug
+.cache

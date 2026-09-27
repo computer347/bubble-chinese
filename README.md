@@ -52,6 +52,7 @@ docs/PLAN.md   the phased roadmap with verification for each phase
 ## Where things come from
 
 - **Vocabulary** follows the 2025 HSK syllabus (新版HSK考试大纲), in force since July 2026: 300 words at level 1, 500 cumulative at level 2, 1,000 at level 3. Levels 1–2 are in the app so far. See `data/README.md` for sources, licences and how to add a level.
+- **Example sentences** are real sentences by native speakers from Tatoeba (CC BY 2.0 FR, credited on each slip), kept only if every word is in the HSK 1–2 list, plus a small role-tagged set written for Plug mode. See `data/README.md`.
 - **Glosses** (the short English meanings) are written for this project, so they fit an answer chip and never make two answers correct.
 - **Memory** uses FSRS (via ts-fsrs). Each finished bubble is one review: a clean pop is Good, one miss is Hard, two misses or "I forgot" is Again.
 

@@ -233,3 +233,5 @@ body.at-home .q, body.at-home .tr, body.at-home .ans{ display:none; }
 .ex-zh .r-S{ border-bottom-color:#3b6fe0; } .ex-zh .r-T{ border-bottom-color:#e0a012; } .ex-zh .r-P{ border-bottom-color:#16a39a; }
 .ex-zh .r-V{ border-bottom-color:#e0413b; } .ex-zh .r-O{ border-bottom-color:#2f9e4f; } .ex-zh .r-A{ border-bottom-color:#8e4ec6; } .ex-zh .r-X{ border-bottom-color:#9a9a9a; }
 .ex-en{ margin:6px 0 10px; font-size:14px; }
+.ex-src{ margin:-6px 0 10px; font-size:11px; opacity:.7; }
+.ex-src a{ color:inherit; }

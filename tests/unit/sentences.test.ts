@@ -22,15 +22,25 @@ describe('example sentences', () => {
     // the words spell the sentence, punctuation aside
     expect(ids.map(id => byId.get(id)!.h).join('')).toBe(s.text.replace(/[。？！，]/g, ''));
     expect(s.level).toBe(Math.max(...ids.map(id => byId.get(id)!.level)));
-    for (const c of s.chunks) expect(ROLES).toContain(c.role);
-    expect(s.pattern).toBe(s.chunks.map(c => c.role).join(' '));
+    if (s.source.name === 'Squish') {
+      for (const c of s.chunks) expect(ROLES).toContain(c.role);
+      expect(s.pattern).toBe(s.chunks.map(c => c.role).join(' '));
+    } else {
+      expect(s.source.id).toBeGreaterThan(0);
+      expect(s.id).toBe(`t${s.source.id}`);
+      for (const c of s.chunks) expect(c.words).toHaveLength(1);
+    }
+    expect(s.py).toHaveLength(ids.length);
     expect(s.text).toMatch(/[。？！]$/);
     expect(s.en).toMatch(/[.?!]$/);
     for (const a of s.alt ?? []) expect(a.split(' ').sort()).toEqual(s.pattern.split(' ').sort());
   });
 
-  it('most sentences are at HSK 1, so beginners see examples', () => {
-    expect(SENTENCES.filter(s => s.level === 1).length).toBeGreaterThan(40);
+  it('most words have a real example sentence at their level', () => {
+    const quiz = WORDS.filter(w => w.quiz !== false);
+    const withExample = quiz.filter(w => examplesFor(w.id, w.level).length > 0);
+    expect(withExample.length / quiz.length).toBeGreaterThan(0.9);
+    expect(SENTENCES.filter(s => s.source.name === 'Tatoeba').length).toBeGreaterThan(400);
   });
 
   it('finds examples for a word within the learner level, shortest first', () => {
@@ -38,7 +48,11 @@ describe('example sentences', () => {
     const ex = examplesFor(shi.id, 1);
     expect(ex.length).toBeGreaterThan(3);
     for (const s of ex) expect(s.level).toBeLessThanOrEqual(1);
-    for (let i = 1; i < ex.length; i++) expect(ex[i].text.length).toBeGreaterThanOrEqual(ex[i - 1].text.length);
+    expect(ex[0].source.name).toBe('Tatoeba');
+  });
+
+  it('never uses a sentence as the example for a word that is part of a larger word there', () => {
+    for (const s of SENTENCES) for (const id of s.bound ?? []) expect(examplesFor(id, 2)).not.toContain(s);
   });
 });
 

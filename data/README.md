@@ -14,6 +14,17 @@ Never edit the generated file by hand; CI fails if it is out of date (`npm run c
 
 ## Example sentences
 
+Two sources, merged by `npm run build:content`:
+
+- **`content/sentences-tatoeba.tsv`**: real sentences by native speakers from [Tatoeba](https://tatoeba.org), with English translations, licensed [CC BY 2.0 FR](https://creativecommons.org/licenses/by/2.0/fr/). The app credits each one (sentence number and author, linked to its Tatoeba page). `node scripts/import-tatoeba.mjs` selects them:
+  - every word must be in the HSK 1–2 list of the 2025 syllabus (the sentence is split into the fewest syllabus words);
+  - 4–12 characters, ending in 。？！, with a short English translation;
+  - sentences where a character is probably read differently from its syllabus entry are skipped (还 huán, 只 zhǐ, 得 děi, 地 dì, 着 zháo, 过, 长 zhǎng …);
+  - a second check against the full CC-CEDICT dictionary skips names (日本), compounds read differently from their parts (家长), and compounds whose meaning isn't the sum of their parts (十分 "very");
+  - about two good sentences per word are kept, preferring ones at or below the word's level.
+  To drop a sentence after reading it, add its Tatoeba number to `content/tatoeba-exclude.tsv` and re-run the importer. It downloads the Tatoeba exports and CC-CEDICT once into `.cache/` (ignored by git).
+- **`content/sentences.tsv`**: sentences written for this project, tagged with grammatical roles for Plug mode (below). Tatoeba sentences have no roles yet.
+
 `content/sentences.tsv` holds hand-written sentences, one per line: the sentence split into role-tagged chunks, a tab, the English, and optionally other valid chunk orders.
 
 ```

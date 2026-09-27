@@ -1,0 +1,2 @@
+# Tatoeba sentences rejected after review. One sentence id per line, a tab, and the reason.
+# scripts/import-tatoeba.mjs skips these; add a line and re-run it to drop a sentence.

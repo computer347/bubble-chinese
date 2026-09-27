@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { gsap } from 'gsap';
 import { QUIZ_WORDS, WORDS, LEVELS, type Word } from '../content/words';
-import { examplesFor, ROLE_NAMES, type Sentence } from '../content/sentences';
+import { examplesFor, ROLE_NAMES, tatoebaUrl, type Sentence } from '../content/sentences';
 import { FORTUNES } from '../content/fortunes';
 import { PALETTES, PHYS, type Physics } from '../content/palettes';
 import { SoftBody, DETAILS } from '../engine/softbody';
@@ -559,16 +559,23 @@ export function startGame(opts: GameOptions): GameHandle {
         const word = wordsById.get(id)!, index = i++;
         const b = document.createElement('button');
         b.type = 'button';
-        b.className = `tok r-${c.role}${id === w.id ? ' me' : ''}`;
+        b.className = `tok${c.role ? ` r-${c.role}` : ''}${id === w.id ? ' me' : ''}`;
         b.dataset.i = String(index);
-        b.setAttribute('aria-label', `${word.h}, ${word.p}, ${word.e} (${ROLE_NAMES[c.role]})`);
-        b.append(Object.assign(document.createElement('span'), { className: 'py', textContent: word.p }), Object.assign(document.createElement('span'), { className: 'hz', textContent: word.h }));
+        const py = s.py[index] ?? word.p;
+        b.setAttribute('aria-label', `${word.h}, ${py}, ${word.e}${c.role ? ` (${ROLE_NAMES[c.role]})` : ''}`);
+        b.append(Object.assign(document.createElement('span'), { className: 'py', textContent: py }), Object.assign(document.createElement('span'), { className: 'hz', textContent: word.h }));
         b.addEventListener('click', () => { void voice.sayWordIn(s, index, word, slowVoice); });
         zh.append(b);
       }
     });
     for (const p of s.punct.filter(x => x.at >= s.chunks.length)) zh.append(Object.assign(document.createElement('span'), { className: 'pu', textContent: p.p }));
     $('exEn').textContent = s.en;
+    const src = $('exSrc');
+    src.replaceChildren();
+    if (s.source.name === 'Tatoeba') {
+      const a = Object.assign(document.createElement('a'), { href: tatoebaUrl(s.source.id), textContent: `Tatoeba #${s.source.id}`, target: '_blank', rel: 'noopener' });
+      src.append('Sentence from ', a, s.source.author ? ` by ${s.source.author}` : '', ', CC BY 2.0 FR');
+    }
   }
   const highlight = (i: number | null) => $('exZh').querySelectorAll<HTMLElement>('.tok').forEach(t => t.classList.toggle('on', t.dataset.i === String(i)));
   $('exPlay').addEventListener('click', () => { if (example) void voice.saySentence(example, false, highlight); });

@@ -5,12 +5,14 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { createHash } from 'node:crypto';
+import { segment, contextPinyin, readingProblem } from './segment.mjs';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(root, 'src/content/generated/hsk.json');
 const SENTENCES_OUT = join(root, 'src/content/generated/sentences.json');
 const SENTENCE_FILE = 'data/content/sentences.tsv';
+const TATOEBA_FILE = 'data/content/sentences-tatoeba.tsv';
 export const ROLES = ['S', 'T', 'P', 'A', 'V', 'O', 'X'];
 const PUNCT = new Set(['。', '？', '！', '，']);
 /** Levels that have hand-written glosses and are shipped in the app. */
@@ -125,7 +127,31 @@ export function buildSentences(words) {
     }
     const level = Math.max(...chunks.flatMap(c => c.words.map(id => words.find(w => w.id === id).level)));
     const id = 's' + createHash('sha1').update(text).digest('hex').slice(0, 8);
-    out.push({ id, text, en: en.trim(), level, pattern, chunks, punct, ...(alt.length ? { alt } : {}) });
+    const py = contextPinyin(chunks.flatMap(c => c.words.map(wid => words.find(w => w.id === wid).h)), byHanzi);
+    out.push({ id, text, en: en.trim(), level, pattern, chunks, punct, py, source: { name: 'Squish' }, ...(alt.length ? { alt } : {}) });
+  }
+
+  // Sentences from Tatoeba: real sentences by native speakers, split into syllabus words.
+  // They have no roles yet (one word per chunk, role null); Plug mode uses the tagged ones above.
+  for (const line of tsv(TATOEBA_FILE).slice(1)) {
+    const [tid, author, zh, enId, en, boundText = ''] = line.split('\t');
+    if (!en) throw new Error(`${TATOEBA_FILE}: malformed line "${line}"`);
+    const toks = segment(zh, byHanzi);
+    if (!toks) throw new Error(`${TATOEBA_FILE}: #${tid} ${zh} no longer splits into HSK words`);
+    const problem = readingProblem(toks);
+    if (problem) throw new Error(`${TATOEBA_FILE}: #${tid} ${zh}: ${problem}`);
+    const key = zh.replace(/[。？！，]/g, '');
+    if ([...seen].some(t => t.replace(/[。？！，]/g, '') === key)) continue;      // already one of ours
+    seen.add(zh);
+    const chunks = [], punct = [];
+    for (const t of toks) {
+      if (PUNCT.has(t)) punct.push({ at: chunks.length, p: t });
+      else chunks.push({ role: null, words: [byHanzi.get(t).id] });
+    }
+    const level = Math.max(...chunks.map(c => words.find(w => w.id === c.words[0]).level));
+    const py = contextPinyin(toks.filter(t => !PUNCT.has(t)), byHanzi);
+    const bound = boundText && boundText !== '-' ? boundText.split(',').map(h => byHanzi.get(h).id) : [];
+    out.push({ id: `t${tid}`, text: zh, en, level, pattern: '', chunks, punct, py, ...(bound.length ? { bound } : {}), source: { name: 'Tatoeba', id: Number(tid), author, enId: Number(enId) } });
   }
   const json = '[\n' + out.map(x => '  ' + JSON.stringify(x)).join(',\n') + '\n]\n';
   return { sentences: out, json };

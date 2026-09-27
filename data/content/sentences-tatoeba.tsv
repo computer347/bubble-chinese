@@ -1,0 +1,471 @@
+# Example sentences from Tatoeba (https://tatoeba.org), licensed CC BY 2.0 FR. Selected by scripts/import-tatoeba.mjs.
+# Every word is in the HSK 1–2 list (2025 syllabus); sentences where a character would be read differently from its syllabus entry are left out.
+# Columns: Tatoeba sentence id, author, Mandarin, English sentence id, English, and words that are part of a larger word here (not used as examples for them; - for none).
+id	author	zh	en_id	en	bound
+332135	Aerhus	今天是几月几号？	332138	What is the date today?	几,号
+332881	fucongcong	我的房间号是多少？	4662375	What's my room number?	-
+333994	fucongcong	他白天睡觉，晚上工作。	301559	He sleeps by day and works by night.	-
+334172	fucongcong	我能问个问题吗？	1594	May I ask a question?	-
+334425	fucongcong	请问鸡蛋在哪里？	1565	Where are the eggs, please?	-
+334779	fucongcong	我们有两个女儿。	249592	We have two daughters.	-
+334887	fucongcong	您想再来点茶吗？	3408994	Do you want some more tea?	-
+335515	fucongcong	那儿是什么天气？	50753	How's the weather there?	-
+336041	fucongcong	他在哪家公司工作？	335983	Where does he work?	-
+336175	domi	我明年想学中文。	409536	I want to learn Chinese next year.	-
+336618	fucongcong	去年下了很多雪。	569759	It snowed a lot last year.	-
+336719	fucongcong	你觉得怎么样？	3123311	How do you like it?	-
+346120	fucongcong	我妹妹唱歌很好听。	250960	My sister sings songs very well.	唱,歌
+346457	fucongcong	出租车到了。	6088852	The cab's here.	到,了
+347570	zhouj1955	没关系！我来做！	502329	Don't worry. I'll do it.	-
+348014	zhouj1955	他在读大学。	387501	He is in college.	在,读
+349554	nickyeow	我不知道她病了。	708099	I didn't know she was ill.	-
+380861	ver	我是一个大学生。	10657353	I'm at university.	一,个
+397209	GlossaMatik	她是我的女朋友。	312168	She is my girlfriend.	-
+397544	fucongcong	我明天能见你吗？	323097	May I see you tomorrow?	-
+398978	kellenparker	是十月三日。	398977	It's October the third.	十,月
+405492	GlossaMatik	我一个人去那边。	405489	I'm going there alone.	一,个,人
+407248	fucongcong	他病了一星期。	293693	He has been sick for a week.	-
+409409	GlossaMatik	明天是星期天。	4001837	Tomorrow's Sunday.	-
+410476	GlossaMatik	您几点下课？	1892016	What time does your class end?	几,点
+413263	GlossaMatik	昨天的天气很热。	244519	It was hot yesterday.	-
+414025	fucongcong	我听见有人叫我。	251973	I heard my name called.	有,人
+422951	GlossaMatik	你们有什么菜？	422947	What kind of food do you have?	-
+432313	GlossaMatik	他没有女朋友。	284658	He has no girlfriend.	-
+437290	fucongcong	我现在正在学习。	257625	I am studying now.	-
+452577	peipei	我想去饭店吃晚饭。	452580	I wanna have dinner in a restaurant.	-
+471395	fucongcong	这是你的家人吗？	2661923	Is this your family?	-
+483688	adjusting	他是不是医生？	293616	Is he a doctor?	是,不
+487908	biglion	我有些东西要给你。	71185	I have something to give you.	-
+493521	biglion	我们家有五口人。	65500	We are a family of five.	-
+502869	fucongcong	我弟弟在看电视。	614051	My brother is watching TV.	-
+545888	sysko	晚上好，你好吗？	413820	Good evening, how are you?	晚上,好
+666406	CLARET	对不起，我不会去。	50766	Sorry I won't be there.	不,会
+667350	albuseer	我喜欢看电影。	521655	I like movies.	-
+710294	fucongcong	我家没有电脑。	708138	I don't have a computer at home.	-
+710691	Ayalche	谢谢您，先生。	710692	Thank you, sir.	-
+745159	Vortarulo	你有没有手机？	10131877	Have you got a mobile?	有,没有
+760585	ednorog	不。它们太小了。	456515	No. They are too small.	-
+760707	ednorog	他问了我的妈妈。	749761	He asked my mother.	-
+760902	ednorog	今年是哪一年？	682508	What year is it?	-
+780260	Martha	我昨天生病了。	257804	I was ill yesterday.	-
+787242	fucongcong	她有点儿面包。	456691	She has a little bread.	-
+793263	Martha	它真的很便宜。	1308551	It is really cheap.	真,的
+793986	fucongcong	你们在听我说吗？	1037420	Are you all listening to me?	-
+794188	fucongcong	很高兴再见到您。	2441	I'm glad to see you back.	-
+794189	fucongcong	很高兴再见到你。	2441	I'm glad to see you back.	-
+795619	fucongcong	他回店里去了。	794178	He went back to the store.	-
+798389	Martha	我在星期日不工作。	281841	Sunday is not a workday for me.	-
+804969	U2FS	这个很便宜，对吗？	645084	That's cheap, isn't it?	-
+813546	fucongcong	这钱你和我分了吧。	59617	Let's divide this money between you and me.	-
+813581	fucongcong	你六点起床吗？	237649	Do you get up at six?	-
+819806	fucongcong	我听见她唱歌了。	308210	I heard her singing.	唱,歌
+835391	Martha	昨天上午下大雨。	244453	It rained hard yesterday morning.	大,雨
+844445	Martha	明天是我的休息日。	33476	Tomorrow is my day off.	-
+845162	fucongcong	今天天气怎么样？	687484	What's the weather like today?	-
+857223	U2FS	我明年想学汉语。	409536	I want to learn Chinese next year.	-
+859469	Martha	我要看病。	28045	I'd like to see a doctor.	-
+867141	U2FS	那个是我哥哥的。	867112	That belongs to my brother.	-
+877489	Shishir	你喜欢开车吗？	877483	Do you like to drive?	-
+1021009	joro	给我五天时间。	72493	Give me five days.	-
+1068400	sysko	这边什么也没有。	31585	There's nothing there.	-
+1120765	cntrational	我要去饭店。	1120766	I'm going to the restaurant.	-
+1178260	treskro3	今天是星期日。	63119	Today is Sunday.	-
+1182328	Vortarulo	是十月三号。	398977	It's October the third.	十,月
+1185674	dericteng	我见了一个朋友。	1213443	I saw a friend.	一,个
+1185681	dericteng	我边吃饭边看书。	1213439	I eat and read at the same time.	吃,饭,看,书
+1216091	Takuya	那个店的菜太贵。	1230543	That restaurant's too expensive.	-
+1264867	yifen238	他给了我一些钱。	297476	He gave me some money.	-
+1275246	GlossaMatik	她们吃这些东西。	1275242	They eat these things.	-
+1275248	GlossaMatik	它们吃这些东西。	1275242	They eat these things.	-
+1300671	shanghainese	你在那边玩吧。	1300573	Play there.	-
+1302376	Vortarulo	你们有没有米饭？	54336	Do you have rice?	有,没有
+1323692	vicch	我们晚饭吃什么？	1539914	What's for supper?	-
+1368241	Vortarulo	他会不会写这个字？	57223	Can he write this character?	会,不
+1399602	sirpoot	那飞机真大！	2485294	That airplane is huge!	-
+1415796	sadhen	我明天不在这儿。	1412469	I won't be here tomorrow.	不,在
+1428131	sadhen	你喜欢这本书吗？	1098272	Do you like this book?	-
+1468432	sadhen	那个时候，我在家。	46975	I was at home then.	在,家
+1470393	bfsutian	我坐火车回家了。	262273	I returned home by train.	回,家
+1510613	trieuho	我去上汉语课。	8732678	I am going to have a Chinese lesson.	我,去
+1510775	trieuho	晚上你还有课吗？	9414931	Do you have lessons at night?	还,有
+1516221	gonnastop	我还没有吃早饭。	255656	I haven't eaten breakfast yet.	-
+1516243	gonnastop	我看见你做饭了。	591201	I saw you cooking.	-
+1788049	sadhen	他们吃很多米饭。	307117	They eat a lot of rice.	-
+1819106	sysko	我的姐姐有工作。	322330	My sister has a job.	-
+1920797	fercheung	今天我四岁了。	1905091	Today I am four years old.	-
+1943925	LanguageExpert	我不是你的妈妈。	1943924	I'm not your mother.	不,是
+2041218	Venki	现在是七点四十五分。	2762784	It's 7:45.	四,十,五
+2050950	fercheung	我早上不喂狗。	898528	I don't feed my dog in the morning.	-
+2078356	User5120	你家有几口人？	2250675	How many people are in your family?	-
+2113917	sysko	我没有手机了。	2113918	I don't have a cellphone anymore.	-
+2117476	joulin	这是他的飞机。	2166225	This is his plane.	-
+2147732	egg0073	我不可以喝牛奶。	1084522	I can't drink milk.	不,可以
+2200417	johannjunge	医生在给病人看病。	5896513	The doctor was giving a patient a checkup.	病,人
+2202364	GlossaMatik	您的孩子是男是女？	2202363	Is your child a boy or a girl?	-
+2217675	aruhito	猫在桌子上睡觉。	282032	The cat slept on the table.	-
+2299585	sysko	我下午去卖车。	2300031	I'm going to go sell my car this afternoon.	-
+2302301	sysko	你几点下课？	2304092	What time do you get out of class?	几,点
+2302302	sysko	你几点下班？	2304090	When are you getting off work?	几,点
+2302765	sysko	你明天几点上课？	2304082	What time does class start for you tomorrow?	几,点
+2304957	fercheung	我正在喂孩子。	6873249	I'm feeding my baby.	-
+2309573	xuan	晚上我们去吃饺子，好吗？	2311280	We're going out for dumplings in the evening, all right?	-
+2318426	User5120	她有十个孩子。	310059	She has ten children.	-
+2337135	anndiana	这一点儿也不好。	1682678	This is not good at all.	不,好
+2338699	Kiwi	我在医院住了一个星期。	7156560	I stayed in hospital for a week.	一,个
+2363175	User5120	这个真好吃。	555291	This is really delicious.	-
+2393852	fenfang557	他找到了新工作。	13827982	He found a new job.	找,到,了
+2779141	Kiwi	昨天我去电影院。	2600846	I went to the cinema yesterday.	我,去
+2827154	GlossaMatik	猫在椅子上睡觉。	2827060	The cat sleeps on the chair.	-
+2889791	Popolon	我的弟弟是老师。	1056859	My brother is a teacher.	-
+3283115	yangmaster	五千元是很多钱。	1454609	5000 yuan is a lot of money.	-
+3378019	GlossaMatik	我的妹妹是老师。	3378020	My sister is a teacher.	-
+3378097	GlossaMatik	我去上大学。	3378098	I go to university.	我,去
+3378156	GlossaMatik	对不起，我来晚了。	277376	I'm sorry I'm late.	-
+3478455	schlagermanx	她朋友很少。	451212	She has few friends.	-
+3521456	GlossaMatik	我们在学习中文。	555191	We're learning Chinese.	-
+3537655	trieuho	这件衣服真漂亮。	3537656	This piece of clothing is really pretty.	-
+3580024	CLARET	哪个是你的杯子？	1554393	Which cup is yours?	-
+3580026	CLARET	哪个杯子是你的？	1554393	Which cup is yours?	-
+3581045	coffe94	我生病了，不是吗？	3581028	I'm ill, aren't I?	不,是,吗
+3667681	tmzg	她喜欢雨和雪。	7845707	She likes rain and snow.	-
+3671511	shirleyleee	你是在找工作吗？	1959341	Are you looking for work?	-
+3707606	sorpaas	没有了，谢谢。	456529	Nothing more, thanks.	-
+3890918	trieuho	我的学校里有一百个人。	3890920	There are one hundred people in my school.	个,人
+4147188	sissima	去了超市。	1165461	I went to the supermarket.	-
+4437208	Vortarulo	她们在说什么？	2646763	What are they saying?	-
+4563024	ecl1	你可以坐出租车。	4563337	You can take a taxi.	-
+4673808	McMeao	我不喜欢吃鸡蛋。	593243	I don't like eggs.	-
+4761852	DrWinters	我们今天吃了很多饭。	4761212	Today we have a lot of food.	-
+4831137	feichaishu	我有四个孩子。	4831019	I had four children.	-
+4874075	musclegirlxyp	他们说了些什么？	1553325	What did they say?	-
+4887572	musclegirlxyp	你知道这是谁的字吗？	2871677	Do you know whose handwriting this is?	-
+5091610	mirrorvan	我真的不会唱。	2280314	I really don't sing.	真,的,不,会
+5097672	mirrorvan	我想吃点好吃的。	4091863	I want to eat something tasty.	-
+5297688	xjjAstrus	今年是二零一一年。	5327634	This year is 2011.	一
+5359883	nickyeow	我是你的男朋友。	2248321	I'm your boyfriend.	-
+5575448	grindeldore	你九点上班。	5575451	You start working at nine.	-
+5581060	grindeldore	我吃好饭了。	5675722	I've finished eating.	-
+5613717	verdastelo9604	再给我五分钟。	3822409	Give me five more minutes.	-
+5617262	verdastelo9604	你明天想去那里？	3921780	Where do you want to go tomorrow?	-
+5624928	verdastelo9604	我有些事。	2360402	I have things to take care of.	-
+5670771	verdastelo9604	猫在喝你的牛奶。	2638471	The cat is drinking your milk.	-
+5842644	verdastelo9604	我会给点你好东西。	5320769	I'll get you something nice.	-
+5911765	verdastelo9604	穿你想穿的。	2852093	Wear whatever you want to wear.	-
+5978356	verdastelo9604	你明天在这里吗？	1926411	Will you be here tomorrow?	-
+6055135	verdakoro	他有没有儿子？	6055934	Does he have a son?	有,没有
+6055432	verdakoro	你没有电话吗？	7816289	Don't you have a phone number?	-
+6057687	xjjAstrus	他很少吃水果。	7841346	He seldom eats fruits.	-
+6092453	xjjAstrus	今天上午下雨。	7834036	It will rain this morning.	-
+6094841	verdastelo9604	你买了太多面包。	6001634	You bought too much bread.	-
+6585424	verdastelo9604	那些事都是真的。	3307525	All those things are true.	真,的
+6608385	RainShelter	对，我没关系。	6608034	Yes, I'm fine.	-
+6884328	maggiesq	我唱歌很好听。	501171	I can sing well.	唱,歌
+7704623	leafjensen	我去哪里都开车。	2245728	I drive everywhere.	我,去
+7767749	jiangche	你午饭吃的什么？	2643465	What did you have for lunch?	吃,的
+7772582	jiangche	她想在医院工作。	1648480	She wants to work at the hospital.	-
+7773124	jiangche	我不喜欢上学。	6263096	I don't like going to school.	-
+7773125	jiangche	我也在这儿上学。	2329587	I go to school here, too.	-
+7774357	jiangche	这歌叫什么名字？	433608	What's the name of this tune?	-
+7774362	jiangche	您到这边来！	5295840	Come here!	-
+7774577	jiangche	我们去看电影吧！	872968	Let’s go to the movies!	-
+7817196	User83002	我买一点儿苹果。	8249317	I bought some apples.	-
+8584875	tianblr	我认识她的姐姐。	3350182	I know her sister.	-
+8698961	crescat	请再给我一些水。	270772	I'd like some more water.	-
+8806670	crescat	我有八个哥哥。	2775712	I have eight brothers.	-
+8853885	iiujik	那是她的男朋友。	1357090	That's her boyfriend.	那,是
+8857345	iiujik	你吃早饭了吗？	1543186	Did you eat breakfast?	-
+8924835	crescat	你去年住在哪儿？	69492	Where did you live last year?	-
+8936387	crescat	我会在七八点回家。	72367	I'll be back by seven or eight o'clock.	回,家
+8976061	crescat	桌子上有什么？	20561	What is on the desk?	-
+9401129	BobbyLee	她说她是新学生。	7394385	She said that she was a new student.	-
+9475931	BobbyLee	学校九点上课。	266225	School begins at 9.	-
+9958387	GlossaMatik	这件衣服很好看的。	12090934	This shirt looks great.	-
+9961343	GlossaMatik	你还在找工作吗？	6102546	Aren't you looking for work?	-
+9962104	GlossaMatik	你昨天几点睡的？	244818	When did you go to bed last night?	几,点
+9968805	GlossaMatik	我们现在在做饭。	3128104	We're cooking now.	-
+10029668	GlossaMatik	我儿子十岁了。	935930	My son is ten years old.	-
+10042062	slo_oth	这个女人很漂亮。	2634355	The woman is very beautiful.	女,人
+10052320	GlossaMatik	这个几块？	2418	How much is it?	-
+10054241	slo_oth	我星期天不工作。	6128570	I don't work Sundays.	-
+10284565	DaoSeng	我昨天喝了茶。	3157604	I drank tea yesterday.	-
+10484367	BobbyLee	大家都给我回家！	10483878	Everybody, go home!	回,家
+10602058	DaoSeng	我坐火车回了家。	262273	I returned home by train.	-
+10740689	megamanenm	有一个小问题。	5088063	There's a small problem.	一,个
+10752754	GlossaMatik	我儿子在雨里玩。	274433	My son is playing in the rain.	-
+10961150	xjjAstrus	他的女儿怎么了？	11277825	What happened to his daughter?	怎么,了
+10961182	xjjAstrus	今天中午你在家吗？	13731442	Will you be at home at midday today?	在,家
+10966717	xjjAstrus	六点四十五了。	12113439	It's 6.45.	四,十,五
+10966742	xjjAstrus	明天下午我在我爸爸的书店。	13805339	I'll be at my dad's bookstore tomorrow afternoon.	-
+10966746	xjjAstrus	明天中午他们不在学校。	13980332	They won't be in school tomorrow at noon.	不,在
+10966749	xjjAstrus	哪些人想去？	13980384	Who is going?	-
+10966776	xjjAstrus	那些是你的朋友。	13980373	Those are your friends.	-
+10966785	xjjAstrus	你的电话是多少？	466624	What's your phone number?	-
+10966804	xjjAstrus	你会写多少汉字？	7772319	How many Chinese characters can you write?	-
+10966839	xjjAstrus	你明年去中国吗？	12137258	Will you go to China next year?	-
+10966854	xjjAstrus	你认识钱先生吗？	11092298	Do you know Mr Qian?	-
+10981515	Elaineeeeee	你没事吧？	2281516	Are you okay?	-
+11088077	MrJuice	今天你喝水了吗？	11088080	Did you drink water today?	-
+11254299	asuliu	她坐在椅子上看电视。	1396774	She was sitting in a chair, watching TV.	-
+11698268	Jokubas	那是公司的钱。	12136697	That's company money.	那,是
+11837677	Lemmih	你爱吃什么水果？	10367534	What kind of fruit do you like?	-
+11837695	Lemmih	他是我的同学。	297810	He is my classmate.	-
+12216158	megamanenm	我听说她去了商店。	12215922	I heard that she went to the store.	听,说
+12686383	soueihin	我到家后给你打电话。	24209	I'll give you a call when I get home.	到,家
+13138444	JackyJiaqiSun	我是小学生。	10657350	I'm a pupil.	-
+13504539	LeviHighway	超市真大！	13593670	The supermarket is really big!	-
+13543159	LeviHighway	你吃了多少水果？	9337211	How much fruit did you eat?	-
+13881309	jan_OkulaJu	我们不在中国。	7776977	We're not in China.	不,在
+13922461	jan_OkulaJu	我一小时后给你打电话。	2545493	I'll call you in an hour.	-
+13938564	jan_OkulaJu	我今天能早点下班吗？	6972077	Would it be OK if I left work early today?	早,点
+13953734	jan_OkulaJu	来听歌吧！	13953736	Let's listen to music!	-
+332431	fucongcong	她可能出什么事了。	34622	Something might have happened to her.	什么,事
+332778	fucongcong	他能游得很快。	292130	He can swim very fast.	得,很
+333143	fucongcong	你的笔比我的好。	17355	Your pen is better than mine.	-
+333189	fucongcong	不要往我房间里看。	251795	Don't look into my room.	-
+333238	fucongcong	我们正要进房间。	249338	We were just about to enter the room.	正,要
+334042	fucongcong	他开始找工作了。	1739113	He began to look for work.	-
+334262	fucongcong	爷爷买给我的！	73932	Grandpa bought it for me!	-
+334889	fucongcong	我坐在他旁边。	250343	I sat by his side.	-
+335099	fucongcong	这个词是什么意思？	48085	What does this word mean?	-
+335128	fucongcong	天快要下雨了。	2248988	It'll rain soon.	-
+340315	sysko	我很喜欢跳舞。	2245963	I love dancing.	-
+340499	aaroned	床下有一只猫。	33972	There is a cat under the bed.	-
+341839	sysko	踢球是我的最喜欢的运动。	34330	Football is my favorite game.	-
+343894	sysko	我家离车站很近。	250537	My house is near the station.	-
+343957	fucongcong	她坐在我旁边。	314287	She sat next to me.	-
+345739	fucongcong	你们怎么读这个词？	387499	How do you say this word?	-
+345794	fucongcong	和我们一起来吧。	433696	Come with us.	-
+346667	fucongcong	洗手间在哪里？	2136	Where is the bathroom?	-
+347087	fucongcong	坐下来休息一会儿。	243627	Sit down and rest for a while.	-
+348007	zhouj1955	我很累所以早睡了。	261403	I was very tired, so I went to bed early.	-
+352061	fucongcong	他休息了一会儿。	290114	He rested for a while.	-
+358179	rmgao	他进了自己房间。	298836	He entered his room.	-
+366884	fucongcong	他一小时前走了。	73151	He left an hour ago.	-
+374673	sysko	那么我来送你。	379610	So I'll come see you off.	-
+375286	fucongcong	让她中午过来。	308906	Tell her to come at noon.	-
+380261	kellenparker	外国人很有意思。	1471	Foreign people intrigue me.	外国,人
+381926	ver	这只鸟不能飞。	1276135	This bird can't fly.	不,能
+381945	ver	他为什么不回来？	381944	Why doesn't he come back?	-
+382414	ver	我想去外国。	21938	I want to go abroad.	-
+388380	nickyeow	不好意思，我要走了。	39354	I am afraid I must be going now.	-
+389521	nickyeow	我想快要下雨了。	26904	I think it's going to rain.	-
+394187	GlossaMatik	我想要出国。	21938	I want to go abroad.	想,要
+397356	sysko	门口有个人。	1848733	Somebody's at the door.	个,人
+398006	aeriph	下面写上我们班同学的名字。	398040	Underneath we wrote the names of the students in our class.	-
+400323	GlossaMatik	有的人是好的，有的人是坏的。	400320	Some people are good, some people are bad.	-
+407251	fucongcong	她从车里出来了。	314809	She got out of the car.	-
+408275	GlossaMatik	我妻子正在做饭。	408273	My wife is cooking right now.	-
+408504	fucongcong	他正在洗他的车。	7386831	He's washing his car.	-
+410862	fucongcong	我昨天踢了足球。	252254	I played soccer yesterday.	-
+419950	sysko	你怎么这么慢！	2117546	How come you're so slow?!	-
+419968	sysko	我真是不好意思！	458061	I'm really sorry!	真,是
+420438	sysko	有的，先生你有几位？	2227912	Yes, there are. How many of you are there, Sir?	-
+420472	sysko	还有两站下去。	7789269	There are still two stops left.	还,有
+437958	fucongcong	你每天都跑步吗？	68918	Do you run every day?	每,天
+457644	GlossaMatik	门票多少钱？	2264254	How much is the admission?	-
+461601	fucongcong	我不是这个意思。	41556	I didn't mean it.	不,是
+461680	fucongcong	我的车出了点事。	251054	Something has happened to my car.	-
+461688	fucongcong	我喜欢他们每一个。	461899	I like each of them.	一,个
+465918	fucongcong	教室里没有人。	13576000	There is no one in the classroom.	-
+466158	fucongcong	孩子们早上去学校。	462648	The children go to school in the morning.	孩子,们
+469482	fucongcong	我们这里有几包。	7780694	We have a few packages in here.	-
+471319	fucongcong	你看上去非常累。	16475	You look very tired.	看,上去
+471351	fucongcong	为什么你想到外国读书？	16456	Why do you want to study abroad?	想,到
+481172	fucongcong	你的手表比我的贵。	17106	Your watch is more expensive than mine.	-
+482367	adjusting	奶茶在哪里？	32223	Where is the milk tea?	-
+486991	GlossaMatik	那个包是我的。	68476	That bag is mine.	-
+490107	fucongcong	我家离火车站很近。	250537	My house is near the station.	火车,站
+499648	peipei	你要去哪个高中读书？	6146453	Which high school are you going to study in?	-
+504639	GlossaMatik	我还要等五分钟。	31688	I'll wait another five minutes.	-
+512489	fucongcong	不要边走边看书。	320505	Do not read while walking.	看,书
+514814	GlossaMatik	他住在苹果里面。	514792	He lives inside an apple.	-
+528707	GlossaMatik	但咖啡不好。	403138	But the coffee's not good.	不,好
+609847	CLARET	我经常想去那里。	39924	I often feel like just going over there.	-
+614913	fucongcong	你经常出国吗？	407577	Do you often travel abroad?	-
+628538	U2FS	跟我一起来唱吧。	563197	Come sing with me.	-
+686926	sysko	这间房间是谁的？	55514	Whose room is this?	-
+688808	sysko	明天就开学了。	21509	School begins tomorrow.	-
+693732	ver	这次我不会回去。	7808537	This time I will not come back.	不,会
+693750	ver	进来吧，外面很冷。	7772877	Come in, it's cold outside.	-
+709066	sysko	我希望会看见她。	261170	I hope that I'll see her.	-
+711641	sysko	我现在不想出去。	257468	I don't feel like going out right now.	不,想
+731725	fucongcong	不要打开你的书。	453893	Don't open your book.	-
+745218	U2FS	他很喜欢旅游。	391907	He loves taking trips.	-
+758028	U2FS	公交车来了。	54201	Here comes the bus.	-
+759378	vgigregg	我觉得有点儿不舒服。	759379	I feel sick.	不,舒服
+760810	ednorog	酒店离机场远不远？	33358	Is the hotel close to the airport?	-
+767731	eastasiastudent	我从早考到晚。	767732	I have exams from dawn till dusk.	-
+775592	eastasiastudent	这样也很可能是最好玩儿的。	775594	Doing it this way was probably the most fun, too.	-
+784193	fucongcong	我在吃午饭前洗手。	726457	I wash my hands before eating lunch.	洗,手
+792798	fucongcong	因为它在那儿。	36437	Because it is there.	在,那儿
+793308	Martha	昨天是我的生日。	244539	Yesterday was my birthday.	-
+794232	fucongcong	我现在在机场。	257501	I'm at the airport now.	-
+797368	GlossaMatik	我上网了。	436415	I am online.	-
+799205	fucongcong	他有时会来看我。	291997	He sometimes comes to see me.	-
+808225	fucongcong	不要坐在上面。	46244	Don't sit on it.	-
+812409	GlossaMatik	男不坏，女不爱。	812410	Nice guys finish last.	-
+812718	Shishir	我不喜欢绿茶。	253292	I don't care for green tea.	-
+816566	fucongcong	零在一前面。	682520	Zero comes before one.	-
+817296	fucongcong	我买了两条裤子。	1422128	I bought two pairs of pants.	-
+820899	GlossaMatik	我和她在中学是一个班的。	820897	She and I were in the same class in middle school.	一,个
+824573	Martha	我正跟她一起走。	410763	I'm walking with her.	-
+827198	eastasiastudent	你的姓名是什么？	827200	What's your full name?	-
+834566	Martha	我希望我可以去。	322242	I wish I could go.	-
+843480	fucongcong	他们从不做运动。	7843024	They never do exercise.	从,不
+844711	eastasiastudent	我是在网上卖的衣服。	844712	It was online that I sold the clothes.	-
+864280	kooler	这是你哪里拿的？	41861	Where did you get this?	-
+868472	ColinG	小朋友多是外国人。	13120033	Most of the kids are foreigners.	外国,人
+875343	Martha	我不懂他的意思。	38379	I can't figure out what he means.	-
+895788	Martha	你穿那件白色的衣服很好看。	13587238	You look great in that white outfit.	-
+948090	Pincenoire	我狗是白色的。	250777	My dogs are white.	-
+1020090	joro	你有今天的票吗？	280033	Do you have today's tickets?	-
+1041662	joro	过来帮我们。	325000	Come and help us.	-
+1216071	Takuya	你的手表在哪儿？	1230587	Where's your watch?	-
+1216089	Takuya	我爷爷每天吃药。	1230545	My grandfather takes medicine every day.	每,天,吃,药
+1323993	vicch	五千元是一大笔钱。	1454609	5000 yuan is a lot of money.	大,笔
+1328091	Vortarulo	因为我说汉语。	1328093	Because I speak Chinese.	-
+1361961	sadhen	我很快乐。	255245	I'm very happy.	-
+1372532	sadhen	那样的事天天都有。	3129318	That happens every day.	天
+1395036	mtdot	他家离这间商店不远。	285674	His house isn't far from this store.	-
+1413689	lingxy	今天天气不错！	1413691	The weather is fine today!	-
+1441829	egg0073	我介绍一下。	5496592	Let me introduce it.	-
+1450414	asosan	他站在了门口。	302277	He was standing at the door.	-
+1471147	bfsutian	请问他们笑什么？	7795615	What are they laughing at?	-
+1480125	egg0073	今天是我的生日。	985108	Today is my birthday.	-
+1490473	sadhen	让我走自己的路。	249908	Let me go my own way.	-
+1517740	gonnastop	他游泳游得很快。	453413	He is able to swim quickly.	得,很
+1605957	trieuho	他们一起旅游。	1605960	They traveled together.	-
+1659801	vicch	我们班有三十名学生。	1663409	There are 30 students in our class.	三,十
+1746061	sadhen	她不喜欢跑步。	10540234	She doesn't like running.	-
+1753100	sadhen	您能开一下门吗？	8910562	Could you open the door, please?	-
+1944807	bigfatpanda	她从家里跑了出来。	1570754	She's running from home.	家,里
+2007057	sadhen	你几点会到车站？	16252	What time will you get to the station?	几,点
+2031435	ydcok	我是一名大学生。	10657353	I'm at university.	-
+2185225	sadhen	你的爱好是什么？	594511	What's your hobby?	-
+2300112	sysko	你们出门了吗？	2301438	Did you guys go out?	-
+2300116	sysko	你出门了吗？	2301435	Did you go out?	-
+2317119	User5120	我有很多事情要做。	1626170	I have lots of things to do.	-
+2333774	anndiana	你什么时候回来？	24604	When will you be back?	什么,时候
+2357831	iMaple	他的身体很好。	2357834	He is in good health.	-
+2559657	sysko	晚上要出去玩吗？	2559653	Wanna hang out tonight?	-
+2675124	Tximist	我眼睛疼。	417801	My eyes hurt.	-
+2680418	User5120	她还是个小孩儿。	885221	She is still a girl.	-
+2738689	hunzerf	我要回去工作了。	2360506	I have to go back to work.	-
+2778803	GlossaMatik	学生们在教室里。	2778801	The students are in the classroom.	-
+2778820	GlossaMatik	这是一条绿色的鱼。	2778819	This is a green fish.	-
+2779529	GlossaMatik	这条鱼是什么颜色？	13543041	What color is this fish?	-
+2782917	GlossaMatik	你喝绿茶吗？	1768241	Do you drink green tea?	-
+2889820	Popolon	一个月开两次会。	22437	The meeting is held twice a month.	一,个
+2889920	Popolon	过去，她想帮他们。	316478	She wanted to help them.	-
+2889923	Popolon	过去，她想帮她们。	316478	She wanted to help them.	-
+2918350	j0rd4nkzf	这家饭馆开门了吗？	2918354	Is this restaurant open?	开,门
+3076586	tommyfang95	她有绿色的眼睛。	1463505	She has green eyes.	-
+3106584	airiek	我不懂这个工作。	59126	This work is beyond me.	-
+3148915	GlossaMatik	他的书是红色的。	3144639	His book is red.	-
+3365899	go_oo	但是咖啡不好喝。	7787219	But the coffee isn't tasty.	不,好,喝
+3378162	GlossaMatik	它没有教她说话。	3378163	It did not teach her to speak.	-
+3378268	GlossaMatik	他在上网。	3378269	He is on the Internet.	-
+3378280	GlossaMatik	他们教我们说话。	3378281	They teach us to speak.	-
+3467921	nemesis	告诉他我在路上。	3467785	Tell him I'm on my way.	-
+3467922	nemesis	告诉她我在路上。	3467784	Tell her I'm on my way.	-
+3658530	hefeiming	那是我的爱好。	3658521	That's my hobby.	那,是
+3669422	trieuho	你的手真冷。	3669423	Your hands are so cold.	-
+3699589	katshi94	我汉字写得很慢。	3699593	I write Chinese characters very slowly.	得,很
+3783095	Debbie_Linder	那个男孩儿跑得太快了。	2469082	That boy runs too fast.	-
+3783463	Debbie_Linder	那边的两位女士是谁？	3780431	Who are the two women over there?	-
+4189345	egg0073	我想，但我不能。	4360429	I want to, but I can't.	不,能
+4757681	ryanwoo	我爸爸走路。	557422	My father walks.	-
+4815106	McMeao	我不知道他的姓。	4813082	I don't know his last name.	-
+4844988	pig8322	你身体不舒服吗？	3658435	Are you not feeling well?	不,舒服
+4859536	musclegirlxyp	这个椅子坐着真舒服。	4872182	This chair is really comfortable to sit on.	-
+4879268	musclegirlxyp	你在笑什么呢？	6796168	What're you laughing at?	-
+4885113	musclegirlxyp	这从谁那儿拿的？	2821460	Who did you get this from?	-
+4900904	musclegirlxyp	我们打车去吧！	13687836	Let's catch a taxi!	-
+5091444	mirrorvan	你有很多笔吗？	69772	Do you have a lot of pens?	-
+5096414	mirrorvan	那样是错的。	2250989	That was wrong.	-
+5096416	mirrorvan	已经没事了。	2247991	I'm fine now.	-
+5096722	mirrorvan	我去下洗手间。	2544760	I'm going to the restroom.	我,去
+5556118	verdastelo9604	我想去商场。	1936463	I'd like to go to the mall.	-
+5574496	verdastelo9604	我在公交车上睡觉了。	4077314	I slept on the bus.	-
+5576776	verdastelo9604	别在吃饭时读书。	1432084	Do not read during the meal.	吃,饭
+5595206	verdastelo9604	你丈夫叫什么？	2543901	What's your husband's name?	-
+5691275	verdastelo9604	我要花很长时间。	2499284	It'll take a long time.	-
+5715119	verdastelo9604	你不能到外面去。	5715086	You can't go outside.	不,能
+5767605	verdastelo9604	进来，门开着。	3725464	Come in, it's open.	-
+5768184	mao	我很爱飞。	12624899	I love flying.	-
+5845596	verdastelo9604	别让他们忘了我。	2275253	Don't let them forget me.	-
+5945141	verdastelo9604	你们这帮人真没意思。	2821361	You people are no fun at all.	-
+6059525	verdastelo9604	我每周吃肉三次。	1492179	I eat meat three times a week.	每,周,三,次
+6075166	mendel	我会读完这本书。	6074934	I'll finish reading this book.	-
+6452018	Lemmih	他们正在准备考试。	6452020	They were girding for the exam.	-
+6452037	Lemmih	我正准备打电话给你。	2543187	I was just about to call you.	-
+7677086	eiocha	小朋友都是外国人。	868166	Children are all foreigners.	外国,人
+7768196	jiangche	这不是我的妻子。	1879781	That's not my wife.	这,不,是
+7769300	jiangche	我不在床上睡觉。	2431669	I don't sleep in a bed.	不,在
+7772132	jiangche	我个子高。	2764439	I'm tall.	-
+7779226	jiangche	从那儿下来！	51042	Get down from there.	-
+8577718	GlossaMatik	但是您有孩子。	5836291	But you have kids.	-
+8686694	crescat	这药会让你舒服些。	56564	This medicine will give you some relief.	-
+8690283	crescat	我们在三楼。	7722416	We're on the third floor.	-
+8692954	crescat	这周我非常忙。	242108	I'm very busy this week.	-
+8696275	crescat	我们住在三楼。	2649822	We live on the third floor.	-
+8696329	crescat	你明天会踢足球。	6168884	You are going to play football tomorrow.	-
+8780264	crescat	她个子很高。	8190292	She is tall.	-
+8860204	crescat	我就在你后面。	3919474	I was right behind you.	-
+8895540	crescat	你的姓怎么读？	3695384	How is your surname pronounced?	-
+8914625	fresky	这些裤子多少钱？	890356	How much for those trousers?	-
+8918151	iiujik	那是黑色的吗？	6358691	Is it black?	那,是
+8924814	crescat	是儿子还是女儿？	4573417	Is it a son or a daughter?	-
+8930165	iiujik	我奶奶也告诉了我这样。	3820739	My grandmother told me so.	-
+8932487	iiujik	这个早上这么热。	242180	It's pretty hot this morning.	-
+8935141	iiujik	我奶奶每个早上起床很早。	8935031	My grandmother gets up early every morning.	每,个
+9332496	megamanenm	那看起来不错。	1897756	That looks good.	看,起来
+9415046	BobbyLee	他自己进去。	7382560	He went in by himself.	-
+9415214	BobbyLee	我们有时会做。	9055719	Every now and then we do that.	-
+9415366	BobbyLee	这不是我们的错。	7197450	It isn't our fault.	这,不,是
+9453409	BobbyLee	我们的钱花完了。	64634	Our money ran out.	完,了
+9467019	BobbyLee	你为什么那么忙？	2647268	Why are you so busy?	-
+9583405	jin1	你还记得我们吗？	434614	Do you remember us?	-
+9779602	BobbyLee	虽然时间好早，天气已经热了。	9777100	Although it was still early, it was already hot outside.	-
+9955413	Akh2403	我最喜欢红色。	460021	My favorite color is red.	-
+9958369	GlossaMatik	我不打篮球。	6270806	I don't play basketball.	-
+9960212	GlossaMatik	你喝完咖啡了吗？	3737766	Have you finished your coffee?	-
+9961391	GlossaMatik	你的车什么颜色？	3377175	What color is your car?	-
+9963074	GlossaMatik	所以，哪里有问题？	7684883	So where's the problem?	-
+9982223	BobbyLee	他不打篮球。	9024093	He doesn't play basketball.	-
+9991996	GlossaMatik	他们已经开学了。	12882943	School has already started for them.	-
+10052375	GlossaMatik	我是位女士。	11170525	I'm a lady.	-
+10058527	slo_oth	你已经买了票吗？	9401392	Have you already bought the tickets?	-
+10062417	slo_oth	我非常喜欢跳舞。	10062021	I really like to dance.	-
+10260765	GlossaMatik	那只鸟是什么？	67082	What's that bird?	-
+10457792	GlossaMatik	这可以在网上读。	13981589	This can be read online.	-
+10484361	BobbyLee	那时是白天。	9116537	It was daytime.	那,时
+10537127	GlossaMatik	他一周洗一次车。	7391778	He washes his car once a week.	一,周,次
+10537183	howie	我小时候的时候还没有电脑。	4496805	We didn't have computers when I was growing up.	-
+10699405	GlossaMatik	这些是我吃的药。	10696192	These are the medicines I use.	吃,的
+10961066	xjjAstrus	杯子里面有水。	11252828	There is water in the glass.	有,水
+10966765	xjjAstrus	那个饭馆在火车站前面。	13827611	That restaurant is in front of the train station.	火车,站
+10983092	Elaineeeeee	他等了很长时间。	8717511	He was waiting a long time.	-
+11236332	klzlueylx	我真的不记得了。	2271936	I really don't remember.	真,的
+11321735	untruth0423	哪些是最好的？	1078276	Which are the best ones?	最,好
+11509736	megamanenm	我告诉她我会帮忙。	3905625	I told her I'd help.	-
+11515785	megamanenm	哪只狗是黑色的？	5316882	Which dog is black?	-
+11672641	arliang	她没有让我们帮忙。	7383838	She wouldn't let us help her.	-
+11680815	n3	你今天晚上去电影院吗？	3155333	Will you go to the cinema tonight?	-
+11837138	Lemmih	请你站在我后面。	11837141	Please stand behind me.	-
+11837314	Lemmih	请你介绍一下你的家人。	11837315	Please introduce your family.	-
+12278115	FishlandicFishy	我的眼睛疼。	12278114	My eye hurts.	-
+12360521	megamanenm	您的书很有意思。	12360510	Your book is interesting.	-
+12686310	soueihin	我丈夫也是老师。	8341253	My husband is a teacher, too.	-
+12686901	soueihin	今天我们住酒店吧。	12484097	Let's stay at a hotel tonight.	-
+13109467	maina	从你来时的路回家。	2985525	Take the same road home that you came on.	回,家
+13158370	DaoSeng	她走路上班。	4623242	She walks to work.	-
+13513791	LeviHighway	我本人不吃肉。	12078462	I don't eat meat myself.	本,人
+13667864	LeviHighway	我考得很好。	5119610	I did well on the test.	得,很
+13678191	frpzzd	我吃不下去了。	31231	I can't eat any more.	-
+13825977	LeviHighway	我可以送他回家。	3909210	I can take him home.	回,家
+13869024	LeviHighway	大家在往哪跑？	13339336	Where's everyone running to?	-
+13893352	jan_OkulaJu	已经开始下雨了。	4013599	It's already started to rain.	-
+13914730	jan_OkulaJu	我看见她进去了。	3910607	I saw her go inside.	-
+13931535	jan_OkulaJu	我小时候很会游泳。	894703	I swam very well when I was a child.	-
+13947146	jan_OkulaJu	有些事情不能忘。	8345766	Some things shouldn't be forgotten.	不,能
