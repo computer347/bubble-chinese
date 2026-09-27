@@ -26,6 +26,10 @@ export class Voice {
   private buffers = new Map<string, Promise<AudioBuffer>>();
   private source: AudioBufferSourceNode | null = null;
   private timers: number[] = [];
+  private decoded = new Map<string, AudioBuffer>();
+  /** How long the last play() took to start sounding, in ms, or null if it fell back to an audio element or speech. */
+  lastLatency: number | null = null;
+  private playToken = 0;
 
   constructor(
     private readonly speech: Speech,
@@ -86,6 +90,42 @@ export class Voice {
     for (const slow of [false, true]) { const c = this.clip(word, slow); if (c) this.element(c.file); }
   }
 
+  /** Fetches and decodes a word's clips ahead of time, so play() can start them at once. */
+  prime(word: Word): void {
+    if (!this.audio()) return;
+    for (const slow of [false, true]) {
+      const c = this.clip(word, slow);
+      if (c && !this.decoded.has(c.file)) this.buffer(c.file).then(b => this.decoded.set(c.file, b)).catch(() => {});
+    }
+  }
+
+  /** Whether a word's normal-speed clip is decoded and ready to start at once. */
+  primed(word: Word): boolean { const c = this.clip(word, false); return !!c && this.decoded.has(c.file); }
+
+  /**
+   * Plays a word as a prompt through Web Audio. A primed clip starts at once; one still decoding is
+   * waited for (up to 1.5 s) rather than played another way. lastLatency records how long it took
+   * to start sounding; it is null when the word fell back to say().
+   */
+  play(word: Word, slow = false): void {
+    if (!this.enabled) return;
+    const t0 = performance.now(), token = ++this.playToken;
+    const c = this.clip(word, slow), ctx = c && this.audio();
+    if (!c || !ctx) { this.lastLatency = null; this.say(word, slow); return; }
+    const start = (buf: AudioBuffer): void => {
+      if (token !== this.playToken) return;       // something else started meanwhile
+      this.stop();
+      const src = ctx.createBufferSource();
+      src.buffer = buf; src.connect(ctx.destination); src.start();
+      this.source = src;
+      this.lastLatency = performance.now() - t0 + (ctx.baseLatency + (ctx.outputLatency || 0)) * 1000;
+    };
+    const ready = this.decoded.get(c.file);
+    if (ready) { start(ready); return; }
+    const late = new Promise<never>((_, reject) => setTimeout(() => reject(new Error('slow')), 1500));
+    Promise.race([this.buffer(c.file), late]).then(start, () => { if (token === this.playToken) { this.lastLatency = null; this.say(word, slow); } });
+  }
+
   say(word: Word, slow = false): void {
     if (!this.enabled) return;
     const c = this.clip(word, slow);
@@ -143,6 +183,7 @@ export class Voice {
   }
 
   stop(): void {
+    this.playToken++;
     this.playing?.pause();
     this.playing = null;
     try { this.source?.stop(); } catch { /* already stopped */ }

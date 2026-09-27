@@ -172,6 +172,14 @@ button{ font-family:inherit; }
   .learnrow{ gap:12px; flex-wrap:wrap; }
 }
 
+/* dictation: a typed answer in place of the chips */
+.dictation{ position:fixed; z-index:3; left:50%; bottom:calc(var(--sb) + var(--pad)); transform:translateX(-50%); display:flex; gap:8px; align-items:center; }
+.dictation[hidden]{ display:none; }
+.dictation input{ width:min(62vw, 300px); font:560 20px/1.2 var(--font); color:var(--ui); background:transparent; border:1.5px solid var(--line); border-radius:999px; padding:11px 18px; outline:none; }
+.dictation input::placeholder{ color:var(--ui-dim); }
+.dictation input:focus{ border-color:var(--ui); }
+@media (max-width:720px){ .dictation{ bottom:calc(var(--sb) + 74px); } .dictation input{ font-size:17px; } }
+
 /* home screen */
 .home{ position:fixed; inset:0; z-index:4; overflow-y:auto; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:calc(var(--st) + 90px) 20px calc(var(--sb) + 90px); text-align:center; }
 .home[hidden]{ display:none; }

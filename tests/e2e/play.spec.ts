@@ -1,6 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 
 type Snap = {
+  mode: string | null; voice: { latency: number | null; primed: boolean };
   state: string; word: string | null; layers: number; totalLayers: number;
   correctEdge: string; score: number; streak: number; detail: number; asleep: boolean; wrong: number; queue: string[];
   pool: number; due: number; maxLevel: number;
@@ -19,18 +20,18 @@ async function waitFor(page: Page, pred: (s: Snap) => boolean, label: string): P
   return s;
 }
 
-async function start(page: Page): Promise<Snap> {
+async function start(page: Page, mode = 'words'): Promise<Snap> {
   await openHome(page);
-  await page.click('[data-mode="words"]');
+  await page.click(`[data-mode="${mode}"]`);
   return waitFor(page, s => s.state === 'live', 'first bubble to be live');
 }
 
-async function openHome(page: Page): Promise<Snap> {
+async function openHome(page: Page, query = ''): Promise<Snap> {
   const errors: string[] = [];
   page.on('pageerror', e => errors.push(String(e)));
   page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
   (page as unknown as { __errors: string[] }).__errors = errors;
-  await page.goto('/?e2e');
+  await page.goto(`/?e2e${query}`);
   await page.waitForFunction(() => !!window.__squish);
   return waitFor(page, s => s.state === 'home', 'the home screen');
 }
@@ -159,6 +160,7 @@ test('the home screen: modes, HSK level, and back again', async ({ page }) => {
   expect(s.pool).toBeGreaterThan(280);           // quiz words in HSK 1 (grammar particles excluded)
   await expect(page.locator('#homeStats')).toContainText('new words to meet up to HSK 1');
   await expect(page.locator('.m-plug')).toBeDisabled();
+  await expect(page.locator('.m-listen')).toBeEnabled();
   await page.click('[data-level="2"]');
   const s2 = await snap(page);
   expect(s2.maxLevel).toBe(2);
@@ -169,5 +171,80 @@ test('the home screen: modes, HSK level, and back again', async ({ page }) => {
   await page.click('#homeBtn');
   await waitFor(page, x => x.state === 'home', 'back home');
   await expect(page.locator('#home')).toBeVisible();
+  expect(errorsOf(page)).toEqual([]);
+});
+
+test('Listen: the word is heard, and its tones, meaning and characters pop by ear', async ({ page }) => {
+  const s0 = await start(page, 'listen');
+  expect(s0.mode).toBe('listen');
+  expect(s0.queue).toEqual(['3', '4', '5']);
+  await expect(page.locator('#ask')).toHaveText('Which tones did you hear?');
+  // the prompt is the sound: the characters are not shown anywhere before the core pops
+  await expect(page.locator('#title')).not.toContainText(s0.word!);
+  await waitFor(page, s => s.voice.latency !== null, 'the word to play');
+  for (let i = 0; i < 3; i++) {
+    const before = await snap(page);
+    await answer(page);
+    await waitFor(page, s => s.layers === before.layers - 1, `layer ${i + 1} to pop`);
+  }
+  await waitFor(page, s => s.state === 'note', 'the fortune slip');
+  await expect(page.locator('#zhBig')).toHaveText(s0.word!);
+  // the next word was chosen while the slip was up, so its clip is decoded before its bubble arrives
+  // and starts within 150 ms
+  await page.click('#next');
+  const next = await waitFor(page, s => s.state !== 'note' && s.word !== s0.word, 'the next word');
+  expect(next.voice.primed).toBe(true);
+  const played = await waitFor(page, s => s.voice.latency !== null, 'the next word to play');
+  expect(played.voice.latency!).toBeLessThan(150);
+  await waitFor(page, s => s.state === 'live' && s.layers === 3, 'the next bubble');
+  // the tone layer counted for the tone statistics
+  await page.click('#wordsBtn');
+  await expect(page.locator('#drawerSub')).toContainText('Tones heard right');
+  expect(errorsOf(page)).toEqual([]);
+});
+
+test('Listen: a wrong answer replays the word slowly; home and back to Words', async ({ page }) => {
+  await start(page, 'listen');
+  await waitFor(page, s => s.voice.latency !== null, 'the word to play');
+  await answer(page, false);
+  await waitFor(page, s => s.wrong === 1, 'the miss to register');
+  await page.click('#homeBtn');
+  await waitFor(page, s => s.state === 'home' && s.mode === null, 'back home');
+  await page.click('[data-mode="words"]');
+  const s = await waitFor(page, x => x.state === 'live', 'a Words bubble');
+  expect(s.mode).toBe('words');
+  expect(s.queue).toEqual(['0', '1', '2']);
+  expect(errorsOf(page)).toEqual([]);
+});
+
+test('Listen dictation: type the pinyin you hear, with tone numbers', async ({ page }) => {
+  await openHome(page, '&dictation');
+  await page.click('[data-mode="listen"]');
+  const s0 = await waitFor(page, s => s.state === 'live', 'a Listen bubble');
+  expect(s0.queue).toEqual(['3', '4', '6']);
+  for (let i = 0; i < 2; i++) {
+    const before = await snap(page);
+    await answer(page);
+    await waitFor(page, s => s.layers === before.layers - 1, `layer ${i + 1} to pop`);
+  }
+  await waitFor(page, s => s.state === 'live' && s.queue[0] === '6', 'the dictation layer');
+  await expect(page.locator('#dictation')).toBeVisible();
+  await expect(page.locator('.ans[data-edge="top"]')).toHaveClass(/off/);
+  // a wrong answer first
+  await page.fill('#dictIn', 'xx9');
+  await page.press('#dictIn', 'Enter');
+  await waitFor(page, s => s.wrong === 1, 'the typed miss');
+  await expect(page.locator('#ask')).toHaveText('Not quite. Listen again.');
+  // "I forgot" shows the answer; typing it pops the layer, and the retest comes back as dictation too
+  await page.click('#forgot');
+  await waitFor(page, s => s.queue.join() === '6r,6t', 'the retest');
+  const answerText = await page.locator('#dictIn').getAttribute('placeholder');
+  await page.fill('#dictIn', answerText!);
+  await page.press('#dictIn', 'Enter');
+  await waitFor(page, s => s.queue.join() === '6t' && s.state === 'live', 'the retest layer');
+  await page.fill('#dictIn', answerText!);
+  await page.press('#dictIn', 'Enter');
+  await waitFor(page, s => s.state === 'note', 'the fortune slip');
+  await expect(page.locator('#dictation')).toBeHidden();
   expect(errorsOf(page)).toEqual([]);
 });

@@ -1,85 +1,153 @@
 # Roadmap
 
-Each phase ends with a preview deploy, green CI, and the checks listed under "Verify".
+Phases are built in order. Each one is either a dependency of a later phase (**Gives**) or a separate module that plugs into what exists (**Needs** only earlier phases, nothing later needs it). Content and human checks run alongside in their own tracks and never block code.
 
-## Phase 0: Foundation
+Each phase ends with green CI, a preview deploy, and the checks under "Verify".
 
-- [x] Repo with Vite, TypeScript (strict), current three.js and GSAP
-- [x] Split into modules: engine, render, audio, game, content, ui
-- [x] Progress in IndexedDB, with migration from the single-file version's localStorage
-- [x] CI: type-check, unit tests, build, Playwright, deploy to GitHub Pages
-- [x] `?fps` meter for on-device performance checks
+```
+0 Foundation ─ 1 Content, audio, memory ─ 2 Mode framework ─┬─ 3 Listen ─────────┐
+                                                            ├─ 4 Learn           │
+                                                            ├─ 5 Many bodies ─ 6 Plug
+                                                            │        └──────── 7 Review and arcade
+                                                            ├─ 8 Speak
+                                                            └─ 9 Ship
+Content track: HSK 3 glosses · role tags for Tatoeba sentences (→ 6) · read-throughs
+Human checks:  frame rate on real devices · listening review · gloss review
+```
+
+## Phase 0: Foundation ✔
+
+Vite, strict TypeScript, three.js, GSAP; modules for engine, render, audio, game, content, ui; progress in IndexedDB with migration from the single-file version; CI with type-check, unit tests, build, Playwright and GitHub Pages; `?fps` meter.
+Verified: feature parity with the single-file version, unit tests for content, questions, scheduler, progress and physics, end-to-end play.
+
+## Phase 1: Content, audio and memory ✔
+
+- 2025 HSK syllabus, levels 1–2 (498 words) with hand-written glosses, part of speech and measure words; `scripts/build-content.mjs`, checked in CI
+- FSRS (ts-fsrs), one card per word; progress v2 with migration; home screen with level choice; words panel with mastery and due times
+- MiniMax voice clips for every word and example sentence at two speeds, with pinned readings and word timestamps; browser speech fallback
+- 467 Tatoeba sentences and 55 role-tagged hand-written sentences; example sentence on the fortune slip
+
+Verified: levels against an independent extraction, unambiguous quiz options, FSRS intervals, scheduler order, generator against a mock server, pronunciation rules, manifest integrity.
+Open items moved to the tracks below.
+
+## Phase 2: Mode framework ✔
+
+Today `src/game/game.ts` is one closure holding the stage, the bubble, the quiz, the slip, the drawer and the home screen, and memory is one card per word. Every later mode needs these apart, and needs its reviews kept apart from the Words reviews.
+
+**Gives:** every later phase.
+
+- [x] Memory by skill: a card per (skill, item), so Words, tones, listening, speaking, writing and sentences each have their own schedule; the scheduler works on any item with an id and a level
+- [x] Progress v3: cards per skill, plus a compact review log (item, skill, grade, time) for per-tone accuracy (3), the streak calendar (7) and return rates (9); v2 migrates automatically into the `words` skill
+- [x] `src/stage/`: renderer, camera and sizing, palettes, backdrop, frame loop, screen shake, performance guard
+- [x] `src/bubble/`: the layered soft body, dragging and pulling to an edge, popping a film and the core. It knows nothing about words: it reports "pulled to this edge" and is told to pop or refuse
+- [x] `src/ui/`: answer chips, HUD, fortune slip with example sentence, words drawer, home screen
+- [x] `src/modes/`: a mode interface, with Words as the first mode; the home screen builds its mode bubbles from a registry
 
 **Verify**
-- [x] Feature parity with the single-file version (layers, forgot, drag-to-pop, slip, words panel, slow voice)
-- [x] Unit tests: content validation, question generation, tone distractors, forgot queue, scheduler, progress, physics stability at every detail level
-- [x] End-to-end tests: render, full bubble to fortune slip, wrong answer, forgot, drag-to-pop, words panel
-- [ ] Performance budget on real devices with `?fps`: 60 fps on a mid-range laptop, 45 fps or more on a mid-range Android phone
+- [x] Every existing end-to-end test passes unchanged; no visible difference in play
+- [x] Unit tests: v2 → v3 migration keeps every card and the best streak; two skills schedule independently; the review log round-trips through storage
+- [x] `game.ts` only wires modules together
 
-## Phase 1: Content, audio and memory engine
+## Phase 3: Listen ✔
 
-- [x] Word bank follows the 2025 HSK syllabus (in force July 2026); levels 1–2 (498 words) with hand-written glosses, part of speech and measure words
-- [x] Content pipeline: `scripts/build-content.mjs` builds the app's word list from the syllabus and the glosses; CI fails if it is stale
-- [x] FSRS spaced repetition (ts-fsrs): one card per word, each bubble is a review; due words first, then new words from the lowest level
-- [x] Progress v2 with automatic migration from v1 (IndexedDB) and the single-file game (localStorage)
-- [x] Home screen: each mode is a bubble you pop to enter; HSK level choice; due and new counts
-- [x] Words panel shows mastery from FSRS stability and when each word is next due
-- [ ] Glosses for HSK 3 (500 words), then the level is switched on
-- [x] Voice clip pipeline: `scripts/generate-audio.mjs` renders every word at normal and slow speed with MiniMax, pinning the syllabus reading; the app plays clips and falls back to browser speech
-- [ ] Run the generator with your MiniMax key, pick a voice, commit the clips
-- [x] Sentence audio: one natural take per sentence at two speeds, with MiniMax word timestamps; tapping a word plays it cut from the sentence
-- [x] Example sentence on the fortune slip, with pinyin, role colours and word highlighting as it plays
+The first new mode, and the cheapest: it reuses the single bubble and its four edges, with a sound as the prompt.
+
+**Needs:** 2. **Gives:** audio prompts (used by 4 and 8), typed answers, the `tone` and `listen` skills.
+
+- [x] Audio as a prompt: the word plays as each layer comes up, tapping the bubble plays it again, a wrong answer replays it slowly
+- [x] The next word is chosen while the slip is up and its clip decoded ahead, so it starts at once
+- [x] Tone layer: hear the word, pick the pinyin with the right tones; one-syllable words offer all four tones. Built from the existing word clips, so no syllable recordings are needed. The third-tone change (nǐhǎo said níhǎo) is never offered as a wrong answer
+- [x] Listen and pick: the meaning layer, never offering a word that sounds the same (tā: he, she, it)
+- [x] Minimal pairs: the characters layer offers words that differ only in tone, then by one syllable
+- [x] Pinyin dictation: once a word's listening has graduated, its core asks you to type the pinyin (tone numbers or marks); `?dictation` turns it on for every word
+- [x] Per-tone accuracy from the review log, shown in the words panel; new Listen words with your weakest tone come first
+- [x] Listen draws words you have met in Words first
 
 **Verify**
-- [x] Every word's level matches an independent extraction of the syllabus; all 300 level-1 words present
-- [x] Every quiz question at HSK 1 and 1–2 has four distinct, unambiguous options (no shared glosses, look-alike lengths, within level)
-- [x] FSRS: clean pops push reviews further out; a lapse brings a word back within a day; cards survive storage round trips
-- [x] Scheduler: HSK 1 before HSK 2, due reviews before new words, no back-to-back repeats
-- [x] End-to-end: home screen, level switch, back home, and the Words flow with review timing on the slip
-- [ ] Human review of the glosses by a second Chinese speaker
-- [x] Generator tested against a mock MiniMax server: retries on rate limits, skips unchanged clips, stops on a bad key
-- [x] Unit tests: pronunciation rules (tone changes, ü and erhua), request hashing, manifest integrity (every clip exists, made for the current pinyin)
-- [ ] Listen through `data/audio-review.md` (words with multi-reading characters)
+- [x] Every HSK 1–2 word's Listen bubble can be answered by ear alone: four distinct options per layer, no homophones, no sandhi traps (unit tests)
+- [x] Every HSK 1–2 word typed with tone numbers is accepted by dictation
+- [x] Audio starts within 150 ms of being asked for, once primed (end-to-end, measured on the second bubble)
+- [x] Wrong answers replay slowly; tone and listen items schedule separately from Words
 
-## Phase 2: Plug (sentence mode)
+## Phase 4: Learn
+
+**Needs:** 2 (and 3's audio prompts). Separate module; its only effect on other modes is the "met" gate below.
+
+- [ ] First meeting: a calm introduction of each new word (sound, meaning, example) before any mode quizzes it; the scheduler only draws words you have met
+- [ ] Stroke data pipeline from Make Me a Hanzi (check the licence of the stroke and decomposition files before importing)
+- [ ] Stroke-order tracing on the bubble, the `write` skill
+- [ ] Radical split: the parts of a character and what they hint at
+
+**Verify:** tracing judged correctly across every HSK 1 character; new words enter review at the right intervals.
+
+## Phase 5: Many bodies
+
+Engine work only, no new mode. The bubble is one sphere today; Plug needs several shaped bodies on screen that touch, and the arcade needs many bubbles at once.
+
+**Needs:** 2. **Gives:** 6, and the arcade half of 7.
+
+- [ ] Several soft bodies at once, each with its own centre, sharing one loop and one detail level
+- [ ] Rest shapes besides the sphere: circle, hexagon, pill, triangle, square, diamond, droplet
+- [ ] Contact between bodies, and sockets (a shaped hollow a body can settle into)
+- [ ] Performance guard across all bodies
+
+**Verify:** every shape stays stable at every detail level (unit tests, like the sphere's); eight bodies hold the frame-rate budget.
+
+## Phase 6: Plug (sentence mode)
 
 Word pieces are soft bodies moulded to their grammatical role and plug into matching sockets:
 subject = blue circle, time = amber hexagon, place = teal pill, verb = red triangle, object = green square, adverb = purple diamond, particle = grey droplet.
 Scaffolding fades from shape and colour, to shape only, to neither. Progression: SV → SVO → S+T+VO → S+T+P+V+O → adverbs → 不/没 → 吗/呢 → measure words → 了/过 → 把/被.
 
+**Needs:** 5, role-tagged sentences (content track). **Gives:** the `sentence` skill.
+
 - [x] Sentence schema: role-tagged chunks, other valid orders, level from its words; 55 HSK 1–2 sentences to start
-- [x] 467 real example sentences from Tatoeba (CC BY 2.0 FR), every word in HSK 1–2, filtered for readings, names and misleading compounds; 453 of 485 quiz words have an example, never one where the word is part of a larger word
-- [ ] Read through the Tatoeba sentences once and list any to drop in `data/content/tatoeba-exclude.tsv`
-- [ ] Role tags for Tatoeba sentences, so Plug can use them
+- [x] 467 real example sentences from Tatoeba, every word in HSK 1–2
+- [ ] Fit logic: which piece fits which socket, every valid order accepted
+- [ ] The Plug mode on the framework, with scaffolding levels
+- [ ] Progression through the grammar points above, scheduled by the `sentence` skill
 
 **Verify:** every valid order is accepted; fit-logic unit tests; 20-sentence playtest per level; solvable by shape alone and by keyboard.
 
-## Phase 3: Listening
+## Phase 7: Review and arcade
 
-Tone mode (four edges = four tones), listen and pick, minimal pairs, pinyin dictation.
+**Needs:** 2 for the boss bubble, the fortune jar and the streak calendar; 5 for rising bubbles and pairs.
 
-**Verify:** audio starts within 150 ms; wrong answers replay slowly; per-tone accuracy feeds the scheduler.
+- [ ] Boss bubble: one layer per due item, across skills
+- [ ] Fortune jar: the slips you have collected
+- [ ] Streak calendar from the review log
+- [ ] Rising bubbles and pairs (arcade)
 
-## Phase 4: Learning mode
+**Verify:** the boss bubble matches the scheduler's due list; arcade speed is fair on low-end devices.
 
-Calm first meeting with new words; stroke-order tracing on the bubble (Make Me a Hanzi data, check the licence); radical split.
+## Phase 8: Speak
 
-**Verify:** tracing judged correctly across HSK 1; new words enter review at the right intervals.
+**Needs:** 2 and 3's audio prompts. Separate module.
 
-## Phase 5: Speaking
-
-Say it to pop it (browser speech recognition), with a fallback where recognition is unavailable.
+- [ ] Say it to pop it (browser speech recognition), the `speak` skill
+- [ ] A fallback where recognition is unavailable; speaking never blocks progress
 
 **Verify:** accuracy on a fixed set of recordings; never blocks progress.
 
-## Phase 6: Review and arcade
+## Phase 9: Ship
 
-Boss bubble (one layer per due word), rising bubbles, pairs, fortune jar, streak calendar.
+**Needs:** 2 (a stable progress format). Separate module.
 
-**Verify:** boss bubble matches the scheduler's due list; arcade speed fair on low-end devices.
-
-## Phase 7: Ship
-
-Installable offline app, optional accounts and sync, store builds via Capacitor.
+- [ ] Installable offline app, with the voice clips cached
+- [ ] Optional accounts and sync
+- [ ] Store builds via Capacitor
 
 **Verify:** accessibility audit, airplane-mode play, ten-person beta, 7-day return rate.
+
+## Content track
+
+- [ ] Glosses for HSK 3 (500 words) and their voice clips, then the level is switched on
+- [ ] Role tags for Tatoeba sentences, so Plug can use them (needed by 6)
+- [ ] Read through the Tatoeba sentences once and list any to drop in `data/content/tatoeba-exclude.tsv`
+
+## Human checks
+
+- [ ] Frame rate on real devices with `?fps`: 60 fps on a mid-range laptop, 45 fps or more on a mid-range Android phone
+- [ ] Listen through `data/audio-review.md` (words with multi-reading characters)
+- [ ] Review of the glosses by a second Chinese speaker
+- [ ] Play Listen on a phone with sound: the voice starts promptly and is not drowned by the inflating sound

@@ -1,13 +1,21 @@
 import { type Word, overlaps } from '../content/words';
 import { type Rng, defaultRng, shuffle } from './random';
 
-/** 0: characters → meaning, 1: characters → pinyin, 2: meaning → characters. */
-export type QuestionType = 0 | 1 | 2;
+/**
+ * Words: 0 characters → meaning, 1 characters → pinyin, 2 meaning → characters.
+ * Listen (the prompt is the spoken word): 3 → pinyin with the right tones, 4 → meaning, 5 → characters,
+ * 6 → type the pinyin (dictation).
+ */
+export type QuestionType = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 export interface Question {
   type: QuestionType;
   /** What is written big behind the bubble. */
   prompt: string;
+  /** The word is heard, not read: the mode plays it when the layer comes up. */
+  audio?: boolean;
+  /** Answered by typing instead of pulling to a chip; `choices` is empty. */
+  typed?: boolean;
   /** Whether the prompt is Chinese (picks the font). */
   zh: boolean;
   ask: string;
@@ -95,9 +103,15 @@ export function makeQuestions(w: Word, bank: readonly Word[], rng: Rng = default
  * and a fresh copy of it is asked again just before the core.
  */
 export function applyForgot(queue: Question[], w: Word, bank: readonly Word[], rng: Rng = defaultRng): Question[] {
+  const q = queue[0];
+  return q ? forgetLayer(queue, makeQuestions(w, bank, rng)[q.type]) : queue;
+}
+
+/** The same as applyForgot, for any kind of bubble: `fresh` is a newly made copy of the current question. */
+export function forgetLayer(queue: Question[], fresh: Question): Question[] {
   const [q, ...rest] = queue;
   if (!q) return queue;
-  const retest: Question = { ...makeQuestions(w, bank, rng)[q.type], retest: true };
+  const retest: Question = { ...fresh, retest: true };
   const revealed: Question = { ...q, revealed: true };
   return rest.length
     ? [revealed, ...rest.slice(0, -1), retest, rest[rest.length - 1]]

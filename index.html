@@ -39,12 +39,7 @@
 <section class="home" id="home" hidden aria-labelledby="homeTitle">
   <h2 class="home-title" id="homeTitle">Pop a bubble to start</h2>
   <p class="home-stats" id="homeStats"></p>
-  <div class="modes">
-    <button type="button" class="mode m-words" data-mode="words"><span class="mode-name">Words</span><span class="mode-desc">HSK vocabulary, three layers a bubble</span></button>
-    <button type="button" class="mode m-plug" disabled aria-disabled="true"><span class="mode-name">Plug</span><span class="mode-desc">Build sentences</span><span class="soon">Soon</span></button>
-    <button type="button" class="mode m-listen" disabled aria-disabled="true"><span class="mode-name">Listen</span><span class="mode-desc">Tones and listening</span><span class="soon">Soon</span></button>
-    <button type="button" class="mode m-learn" disabled aria-disabled="true"><span class="mode-name">Learn</span><span class="mode-desc">Meet new words, trace strokes</span><span class="soon">Soon</span></button>
-  </div>
+  <div class="modes"><!-- built from src/modes/index.ts --></div>
   <div class="levels" role="radiogroup" aria-label="Words up to HSK level">
     <span class="levels-label">Words up to</span>
     <button type="button" role="radio" data-level="1" aria-checked="true">HSK 1</button>
@@ -55,6 +50,12 @@
 </section>
 
 <div class="corner br"><button type="button" class="pill solid" id="wordsBtn">Your words</button></div>
+
+<form class="dictation" id="dictation" hidden autocomplete="off">
+  <label for="dictIn" class="sr">Type the pinyin you hear, with tone numbers or tone marks</label>
+  <input id="dictIn" type="text" lang="zh-Latn-pinyin" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go">
+  <button type="submit" class="pill solid">Pop</button>
+</form>
 
 <button type="button" class="ans" data-edge="top"></button>
 <button type="button" class="ans" data-edge="right"></button>
