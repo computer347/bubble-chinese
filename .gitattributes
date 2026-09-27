@@ -2,3 +2,5 @@
 * text=auto eol=lf
 *.mp3 binary
 *.png binary
+# stroke data and its licence are redistributed unaltered (Arphic Public License): no line-ending changes
+public/strokes/** -text

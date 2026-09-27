@@ -5,6 +5,8 @@ import { shuffle } from '../game/random';
 import { LessonCard, type CardResult } from '../ui/lessoncard';
 import { PathView } from '../ui/pathview';
 import { DrillMode, CheckpointMode } from './drills';
+import { StrokeBox, hanziOf } from '../ui/strokes';
+import { Rating } from '../game/memory';
 import type { LayeredMode } from './layered';
 import type { Mode, ModeContext } from './mode';
 
@@ -40,7 +42,8 @@ export class PathMode implements Mode {
       reduceMotion: ctx.stage.reduceMotion,
       done: () => ctx.progress.data.path.done,
       onLesson: i => void this.lesson(i),
-      onNote: u => void this.noteOnly(u)
+      onNote: u => void this.noteOnly(u),
+      onWrite: i => void this.write(i)
     });
   }
 
@@ -163,8 +166,60 @@ export class PathMode implements Mode {
     progress.completeLesson(lesson.id);
     sound.chime(8);
     const next = LESSONS[index + 1];
-    if (!await this.showCard({ step: 'Lesson complete', progress: 1, next: 'Back to the path', body: doneBody(lesson, words, next?.lesson) })) return;
+    const writeBtn = el('button', 'pill-ink', 'Write the characters');
+    writeBtn.type = 'button';
+    writeBtn.addEventListener('click', () => void this.write(index));
+    if (!await this.showCard({ step: 'Lesson complete', progress: 1, next: 'Back to the path', body: [...doneBody(lesson, words, next?.lesson), writeBtn] })) return;
     if (live()) this.map();
+  }
+
+  /**
+   * The side lesson: each new character of a lesson, its stroke order played in a practice grid,
+   * then traced. Each character is a review in the `write` skill, graded by the mistakes made.
+   */
+  private async write(index: number): Promise<void> {
+    ++this.run;
+    const { lesson } = LESSONS[index];
+    const words = lesson.words.map(id => byId.get(id)!);
+    const chars = hanziOf(words.map(w => w.h).join(''));
+    const css = getComputedStyle(document.documentElement);
+    const colors = { stroke: css.getPropertyValue('--print-red').trim() || '#B8262B', outline: 'rgba(35,64,127,.16)', drawing: css.getPropertyValue('--print-blue').trim() || '#23407F', highlight: '#E8B04A' };
+    const size = Math.min(260, window.innerWidth - 90);
+    this.view.hide();
+    this.ctx.hud.modeLabel({ en: 'Write', zh: '写', py: 'xiě' });
+    this.status = { screen: 'card', step: '', lesson: lesson.id };
+    let clean = 0;
+    for (let i = 0; i < chars.length; i++) {
+      const ch = chars[i], w = words.find(x => x.h.includes(ch))!;
+      const box = new StrokeBox(ch, size, colors);
+      const status = el('p', 'wstatus', 'Watch the strokes…');
+      const again = el('button', 'hear', 'Watch again');
+      again.type = 'button';
+      const btns = el('div', 'hearbtns'); btns.append(again);
+      const context = el('p', 'wword');
+      context.append(zhEl('span', 'h', w.h), el('span', 'p', w.p), el('span', 'e', w.e));
+      const trace = () => box.trace({
+        onStroke: (n, total) => { status.textContent = `Stroke ${n} of ${total}`; },
+        onMistake: m => { status.textContent = m === 1 ? 'Not quite; try that stroke again.' : `${m} tries so far; a hint shows after two.`; },
+        onComplete: m => {
+          status.textContent = m ? `Done, with ${m} ${m === 1 ? 'slip' : 'slips'}.` : 'Clean!';
+          if (!m) clean++;
+          this.ctx.progress.review('write', ch, m === 0 ? Rating.Good : m <= 3 ? Rating.Hard : Rating.Again);
+          this.ctx.sound.chime(m ? 0 : 4);
+          this.card.enable('Next');
+        }
+      });
+      again.addEventListener('click', () => { status.textContent = 'Watch the strokes…'; void box.watch().then(() => { status.textContent = 'Now trace it.'; trace(); }); });
+      const ok = await this.showCard({ step: `Write · ${i + 1} of ${chars.length}`, progress: i / chars.length, next: 'Skip', body: [el('h3', 'lh', `Write ${ch}`), context, box.el, status, btns] },
+        () => void box.watch().then(() => { status.textContent = 'Now trace it.'; trace(); }));
+      box.destroy();
+      if (!ok) return;
+    }
+    if (!await this.showCard({ step: 'Write', progress: 1, next: 'Back to the path', body: [
+      el('h3', 'lh', 'Characters practised'),
+      el('p', 'lp', `${chars.length} characters, ${clean} traced without a slip. Practise them again any time with Write on the path.`)
+    ] })) return;
+    this.map();
   }
 }
 

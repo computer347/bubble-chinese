@@ -1,4 +1,10 @@
 import { test, expect, type Page } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+
+const path = JSON.parse(readFileSync('src/content/generated/path.json', 'utf8')) as { units: { lessons: unknown[] }[] };
+
+const LESSON_COUNT = path.units.reduce((n, u) => n + u.lessons.length, 0);
+const UNITS_TO_COME = path.units.filter(u => !u.lessons.length).length;
 
 type Snap = { state: string; layers: number; correctEdge: string; path: { screen: string; step: string; lesson: string | null } | null };
 const snap = (page: Page) => page.evaluate(() => window.__squish!.snapshot() as unknown as Snap);
@@ -46,8 +52,8 @@ test('the path: lesson 1 from its culture note to done, and its words join the r
   await until(page, s => s.path?.screen === 'map', 'the path map');
   await expect(page.locator('.stop.open')).toHaveCount(1);
   await expect(page.locator('.stop.open [data-lesson="hello-1"]')).toHaveCount(1);
-  await expect(page.locator('.stop.locked')).toHaveCount(4);
-  await expect(page.locator('.punit-later')).toHaveCount(13);
+  await expect(page.locator('.stop.locked')).toHaveCount(LESSON_COUNT - 1);
+  await expect(page.locator('.punit-later')).toHaveCount(UNITS_TO_COME);
   await shot(page, '1-map');
 
   await page.click('[data-lesson="hello-1"]');
@@ -114,10 +120,38 @@ test('the path: lesson 1 from its culture note to done, and its words join the r
   await until(page, s => s.path?.screen === 'map', 'back on the map');
   await expect(page.locator('.stop.done [data-lesson="hello-1"]')).toHaveCount(1);
   await expect(page.locator('.stop.open [data-lesson="hello-2"]')).toHaveCount(1);
+
+  // the Write side lesson: trace the first character along its own stroke centre-lines
+  await page.click('[data-write="hello-1"]');
+  await expect(page.locator('#lStep')).toHaveText(/^Write · 1 of \d+$/);
+  await expect(page.locator('#lNext')).toHaveText('Skip');
+  await expect(page.locator('.wstatus')).toHaveText('Now trace it.', { timeout: 30_000 });
+  await shot(page, '10-write');
+  const strokes = await page.evaluate(async () => {
+    const ch = document.querySelector('.lbody h3')!.textContent!.replace('Write ', '');
+    const r = await fetch(`strokes/u${ch.codePointAt(0)!.toString(16)}.json`);
+    return (await r.json()).medians as number[][][];
+  });
+  const box = (await page.locator('.strokebox .strokes svg').boundingBox())!;
+  // Hanzi Writer's layout: the data's box (0,-124)-(1024,900) scaled into the padded square, y up
+  const size = box.width, pad = Math.round(size * 0.06), scale = (size - 2 * pad) / 1024;
+  const at = ([x, y]: number[]) => ({ x: box.x + pad + x * scale, y: box.y + size - (pad + 124 * scale) - y * scale });
+  for (const median of strokes) {
+    const pts = median.map(at);
+    await page.mouse.move(pts[0].x, pts[0].y);
+    await page.mouse.down();
+    for (const pt of pts.slice(1)) await page.mouse.move(pt.x, pt.y, { steps: 3 });
+    await page.mouse.up();
+    await page.waitForTimeout(250);
+  }
+  await expect(page.locator('.wstatus')).toHaveText(/Clean!|Done, with/);
+  await expect(page.locator('#lNext')).toHaveText('Next');
+  await page.click('#lQuit');
+  await until(page, s => s.path?.screen === 'map', 'back on the map');
   await page.click('#homeBtn');
   await until(page, s => s.state === 'home', 'home');
   await expect(page.locator('#wordStrip .wcard:not(.wotd)')).toHaveCount(8);
-  await expect(page.locator('[data-mode="path"] .card-meta')).toHaveText('1 of 5 lessons');
+  await expect(page.locator('[data-mode="path"] .card-meta')).toHaveText(`1 of ${LESSON_COUNT} lessons`);
   expect(errors).toEqual([]);
 });
 

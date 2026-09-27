@@ -10,6 +10,8 @@ export interface PathViewDeps {
   onLesson(index: number): void;
   /** A unit's culture note was asked for. */
   onNote(unit: Unit): void;
+  /** The side lesson: writing a finished lesson's characters. */
+  onWrite(index: number): void;
 }
 
 /**
@@ -64,6 +66,13 @@ export class PathView {
         b.append(orb, Object.assign(document.createElement('span'), { className: 'stop-title', textContent: l.title }));
         b.addEventListener('click', () => this.d.onLesson(index));
         li.append(b);
+        if (state === 'done') {
+          const w = Object.assign(document.createElement('button'), { type: 'button', className: 'stop-write', textContent: 'Write' });
+          w.dataset.write = l.id;
+          w.setAttribute('aria-label', `Write the characters of lesson ${index + 1}`);
+          w.addEventListener('click', () => this.d.onWrite(index));
+          li.append(w);
+        }
         trail.append(li);
       }
       box.append(trail);

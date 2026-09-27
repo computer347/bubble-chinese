@@ -219,7 +219,7 @@ export function startGame(opts: GameOptions): GameHandle {
       voice: { latency: voice.lastLatency, primed: !!words.word && voice.primed(words.word) },
       ball: bubble.screenCircle(),
       path: current instanceof PathMode ? current.snapshot() : null,
-      lastFit
+      lastFit: lastFit && { ...lastFit, now: bubble.fitState() }
     }; }
   };
 }

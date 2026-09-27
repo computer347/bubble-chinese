@@ -39,7 +39,7 @@ async function rects(page: Page, sel: string): Promise<Array<Rect & { name: stri
 /** The game's last fit, for failure messages: where it sent the bubble, how long ago, and the answers it avoided. */
 const lastFit = (page: Page) => page.evaluate(() => {
   const f = (window.__squish!.snapshot() as unknown as { lastFit: { y: number; r: number; at: number; obstacles: Rect[] } | null }).lastFit;
-  return f ? JSON.stringify({ y: f.y | 0, r: f.r | 0, ago: (performance.now() - f.at) | 0, answers: f.obstacles.slice(0, 4).map(q => [q.l | 0, q.t | 0, q.r | 0, q.b | 0]) }) : 'none';
+  return f ? JSON.stringify({ y: f.y | 0, r: f.r | 0, ago: (performance.now() - f.at) | 0, answers: f.obstacles.slice(0, 4).map(q => [q.l | 0, q.t | 0, q.r | 0, q.b | 0]), now: (f as unknown as { now: unknown }).now }) : 'none';
 });
 /** Distance from a vertical line (the tassel) to a rectangle. */
 const lineDist = (x: number, y0: number, y1: number, q: Rect) => Math.hypot(Math.max(q.l - x, 0, x - q.r), Math.max(q.t - y1, 0, y0 - q.b));

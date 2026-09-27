@@ -408,3 +408,16 @@ body.at-home .q, body.at-home .ans{ display:none; }
 .ldone .h{ font-family:var(--zh); font-size:20px; color:var(--print-red); }
 .ldone .p{ font-size:13px; }
 .ldone .e{ font-size:12px; opacity:.75; }
+
+/* ---------- writing: stroke order in a practice grid ---------- */
+.strokebox{ position:relative; align-self:center; background:#fff; border-radius:8px; box-shadow:inset 0 0 0 1px rgba(184,38,43,.35); touch-action:none; }
+.strokebox .grid{ position:absolute; inset:0; width:100%; height:100%; fill:none; stroke:rgba(184,38,43,.28); stroke-width:.6; stroke-dasharray:2 2; }
+.strokebox .grid rect{ stroke-dasharray:none; stroke-width:.8; }
+.strokebox .strokes{ position:relative; }
+.wword{ margin:0; display:flex; align-items:baseline; justify-content:center; gap:8px; }
+.wword .h{ font-family:var(--zh); font-size:24px; color:var(--print-red); }
+.wword .p{ font-size:15px; font-weight:600; }
+.wword .e{ font-size:14px; opacity:.75; }
+.wstatus{ margin:0; text-align:center; font-size:15px; font-weight:600; min-height:1.4em; }
+.stop-write{ margin-top:2px; font:600 12px/1 var(--font); color:var(--ui); background:transparent; border:1px dashed var(--line); border-radius:999px; padding:5px 10px; cursor:pointer; }
+.pill-ink{ align-self:flex-start; font:600 14px/1 var(--font); color:var(--print-blue); background:transparent; border:1.5px solid rgba(35,64,127,.35); border-radius:999px; padding:10px 14px; cursor:pointer; }

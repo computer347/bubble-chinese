@@ -80,13 +80,13 @@ A course alongside the general model, in the spirit of HelloChinese: units follo
 - [x] Course file `data/content/path-hsk1.txt`: units → lessons → new words, a short dialogue, sentences to build; the build fails if a lesson uses a word not yet taught, teaches one twice, or never uses a word it teaches
 - [x] Lessons of 10 new words (the build allows 8–12): a dialogue that reuses earlier words, four sentences to build. For scale: HSK Standard Course 1 has ~10 new words a lesson, Integrated Chinese ~25–30 a (1–2 week) lesson, Duolingo 1–2 a few-minute lesson
 - [x] A culture note per unit
-- [x] All 15 HSK 1 units on the path (titles and topics); units 1–2 drafted (5 lessons, 50 words)
+- [x] All 15 HSK 1 units on the path (titles and topics); units 1–5 drafted (11 lessons, 111 words)
 - [x] The path screen: units and lessons, locked, open and done, in both styles; units still to be written are listed
 - [x] The lesson player: the unit's culture note (first lesson) → meet each word (sound, meaning, where it comes up) → pop (a bubble per word, each a review) → in context (the dialogue, tap a word, ▶ a line; two questions) → build (put four sentences in order) → checkpoint (one bubble, a layer for each of six words) → done. Grammar particles are met and used, not drilled
-- [ ] A "write" side lesson on each lesson: stroke order for its new characters (needs 4b)
+- [x] A "write" side lesson on each finished lesson (and from the lesson-complete card): stroke order for its new characters
 - [x] Today takes its new words in path order (the next lesson's first), then the rest of the level
 - [ ] Dialogue audio with the MiniMax generator
-- [ ] Units 3–15 for HSK 1, then HSK 2
+- [ ] Units 6–15 for HSK 1 (14 lessons, 189 words left), then HSK 2
 
 **Verify:** every lesson only uses taught words (build check); a lesson can be finished by keyboard; words finished in a lesson show up in Today's reviews; the path's order survives a reload.
 
@@ -94,14 +94,16 @@ A course alongside the general model, in the spirit of HelloChinese: units follo
 
 **Needs:** 2. Separate module; the path's side lessons use it. (Its "first meeting" moved to the path.)
 
-Likely route: Hanzi Writer (MIT) animates stroke order and checks tracing; its stroke data (hanzi-writer-data) comes from Make Me a Hanzi, whose stroke data is, as far as known, under the Arphic Public License. Copy only the characters the app teaches into `public/strokes/`, with the licence, as the voice clips are.
+Hanzi Writer (MIT) animates stroke order and checks tracing, loading stroke data from the app's own `public/strokes/` rather than a CDN.
 
-- [ ] Confirm the licences of Hanzi Writer and its stroke data before importing anything
-- [ ] Stroke data pipeline from Make Me a Hanzi (check the licence of the stroke and decomposition files before importing)
-- [ ] Stroke-order tracing on the bubble, the `write` skill
-- [ ] Radical split: the parts of a character and what they hint at
+- [x] Licences confirmed: Hanzi Writer is MIT; hanzi-writer-data is under the Arphic Public License (redistribute unaltered with ARPHICPL.TXT; the app's own code is not affected, §2 "mere aggregation")
+- [x] Stroke data pipeline: `npm run strokes` copies the 371 characters of HSK 1–2 verbatim into `public/strokes/` with the licence and a notice; CI checks they match; git keeps them byte for byte
+- [x] Watch the stroke order in a practice grid (米字格), then trace it; each character a review in the `write` skill, graded by mistakes
+- [ ] Writing reviews in Today (the `write` skill is recorded but not yet scheduled)
+- [ ] Tracing on the bubble itself, not only in the lesson card
+- [ ] Radical split: the parts of a character and what they hint at (Make Me a Hanzi's decomposition data is under a different licence, LGPL; check before using it)
 
-**Verify:** tracing judged correctly across every HSK 1 character; new words enter review at the right intervals.
+**Verify:** tracing judged correctly across every HSK 1 character (checked in the end-to-end test for the first character of lesson 1 so far); new words enter review at the right intervals.
 
 ## Phase 5: Many bodies
 

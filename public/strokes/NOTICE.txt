@@ -1,0 +1,8 @@
+Stroke-order data for the 371 characters Squish teaches, copied unchanged from
+hanzi-writer-data 2.0.1 (https://github.com/chanind/hanzi-writer-data), which takes it from
+Make Me a Hanzi (https://github.com/skishore/makemeahanzi), derived from Arphic Technology's
+"AR PL KaitiM GB" and "AR PL UKai" fonts.
+
+The files are redistributed under the Arphic Public License; see ARPHICPL.TXT in this folder.
+Each file is named by its character's code point (u4f60.json is 你). The complete data set is
+freely available from the hanzi-writer-data repository above.

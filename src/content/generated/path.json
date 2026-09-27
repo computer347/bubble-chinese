@@ -2090,24 +2090,2655 @@
    "title": "Numbers and dates",
    "zh": "数字",
    "topic": "Basic information: event information (事件信息)",
-   "notes": [],
-   "lessons": []
+   "notes": [
+    "Before a measure word, \"two\" is 两 liǎng, not 二 èr: 两个人, two people. 二 is for counting and for numbers like 十二.",
+    "Dates run from big to small: year, month, day. Years are read digit by digit (二零二六年), and in speech the day of the month is 号."
+   ],
+   "lessons": [
+    {
+     "id": "numbers-1",
+     "title": "Counting",
+     "words": [
+      "一|yī",
+      "二|èr",
+      "三|sān",
+      "四|sì",
+      "五|wǔ",
+      "六|liù",
+      "七|qī",
+      "九|jiǔ",
+      "两|liǎng",
+      "个|gè"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "How many of you are there?",
+       "text": "你们几个人？",
+       "tokens": [
+        {
+         "id": "你们|nǐmen",
+         "py": "nǐmen"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "id": "个|gè",
+         "py": "gè"
+        },
+        {
+         "id": "人|rén",
+         "py": "rén"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "One, two, three, four. There are four of us.",
+       "text": "一，二，三，四。我们四个人。",
+       "tokens": [
+        {
+         "id": "一|yī",
+         "py": "yī"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "二|èr",
+         "py": "èr"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "三|sān",
+         "py": "sān"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "四|sì",
+         "py": "sì"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "我们|wǒmen",
+         "py": "wǒmen"
+        },
+        {
+         "id": "四|sì",
+         "py": "sì"
+        },
+        {
+         "id": "个|gè",
+         "py": "gè"
+        },
+        {
+         "id": "人|rén",
+         "py": "rén"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "And them?",
+       "text": "他们呢？",
+       "tokens": [
+        {
+         "id": "他们|tāmen",
+         "py": "tāmen"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "There are two of them.",
+       "text": "他们两个人。",
+       "tokens": [
+        {
+         "id": "他们|tāmen",
+         "py": "tāmen"
+        },
+        {
+         "id": "两|liǎng",
+         "py": "liǎng"
+        },
+        {
+         "id": "个|gè",
+         "py": "gè"
+        },
+        {
+         "id": "人|rén",
+         "py": "rén"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "How old is Xiaoming?",
+       "text": "小明几岁？",
+       "tokens": [
+        {
+         "name": "小明",
+         "py": "Xiǎomíng"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "id": "岁|suì",
+         "py": "suì"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "He's seven. His friend is nine.",
+       "text": "他七岁。他的朋友九岁。",
+       "tokens": [
+        {
+         "id": "他|tā",
+         "py": "tā"
+        },
+        {
+         "id": "七|qī",
+         "py": "qī"
+        },
+        {
+         "id": "岁|suì",
+         "py": "suì"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "他|tā",
+         "py": "tā"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "朋友|péngyou",
+         "py": "péngyou"
+        },
+        {
+         "id": "九|jiǔ",
+         "py": "jiǔ"
+        },
+        {
+         "id": "岁|suì",
+         "py": "suì"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "What number is that?",
+       "text": "那是几？",
+       "tokens": [
+        {
+         "id": "那|nà",
+         "py": "nà"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "That's six, not nine!",
+       "text": "那是六，不是九！",
+       "tokens": [
+        {
+         "id": "那|nà",
+         "py": "nà"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "六|liù",
+         "py": "liù"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "不|bù",
+         "py": "bú"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "九|jiǔ",
+         "py": "jiǔ"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Five, six, seven, eight.",
+       "text": "五，六，七，八。",
+       "tokens": [
+        {
+         "id": "五|wǔ",
+         "py": "wǔ"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "六|liù",
+         "py": "liù"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "七|qī",
+         "py": "qī"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "八|bā",
+         "py": "bā"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "我们四个人。",
+       "en": "There are four of us.",
+       "pattern": "S V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我们|wǒmen"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "四|sì",
+          "个|gè",
+          "人|rén"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 2,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒmen",
+        "sì",
+        "gè",
+        "rén"
+       ]
+      },
+      {
+       "text": "你们几个人？",
+       "en": "How many of you are there?",
+       "pattern": "S V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "你们|nǐmen"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "几|jǐ",
+          "个|gè",
+          "人|rén"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 2,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "nǐmen",
+        "jǐ",
+        "gè",
+        "rén"
+       ]
+      },
+      {
+       "text": "他七岁。",
+       "en": "He's seven.",
+       "pattern": "S V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "他|tā"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "七|qī",
+          "岁|suì"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 2,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "tā",
+        "qī",
+        "suì"
+       ]
+      },
+      {
+       "text": "那是六。",
+       "en": "That's six.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "那|nà"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "是|shì"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "六|liù"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "nà",
+        "shì",
+        "liù"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "numbers-2",
+     "title": "Dates",
+     "words": [
+      "今天|jīntiān",
+      "明天|míngtiān",
+      "昨天|zuótiān",
+      "月|yuè",
+      "号|hào",
+      "星期|xīngqī",
+      "星期天|xīngqītiān",
+      "年|nián",
+      "零|líng",
+      "去年|qùnián",
+      "明年|míngnián"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "What's the date today?",
+       "text": "今天几月几号？",
+       "tokens": [
+        {
+         "id": "今天|jīntiān",
+         "py": "jīntiān"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "id": "月|yuè",
+         "py": "yuè"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "id": "号|hào",
+         "py": "hào"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Today is the 27th of September.",
+       "text": "今天九月二十七号。",
+       "tokens": [
+        {
+         "id": "今天|jīntiān",
+         "py": "jīntiān"
+        },
+        {
+         "id": "九|jiǔ",
+         "py": "jiǔ"
+        },
+        {
+         "id": "月|yuè",
+         "py": "yuè"
+        },
+        {
+         "id": "二|èr",
+         "py": "èr"
+        },
+        {
+         "id": "十|shí",
+         "py": "shí"
+        },
+        {
+         "id": "七|qī",
+         "py": "qī"
+        },
+        {
+         "id": "号|hào",
+         "py": "hào"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "What day is it today?",
+       "text": "今天星期几？",
+       "tokens": [
+        {
+         "id": "今天|jīntiān",
+         "py": "jīntiān"
+        },
+        {
+         "id": "星期|xīngqī",
+         "py": "xīngqī"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Today is Saturday, tomorrow is Sunday.",
+       "text": "今天星期六，明天星期天。",
+       "tokens": [
+        {
+         "id": "今天|jīntiān",
+         "py": "jīntiān"
+        },
+        {
+         "id": "星期|xīngqī",
+         "py": "xīngqī"
+        },
+        {
+         "id": "六|liù",
+         "py": "liù"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "明天|míngtiān",
+         "py": "míngtiān"
+        },
+        {
+         "id": "星期天|xīngqītiān",
+         "py": "xīngqītiān"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Yesterday was Friday.",
+       "text": "昨天是星期五。",
+       "tokens": [
+        {
+         "id": "昨天|zuótiān",
+         "py": "zuótiān"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "星期|xīngqī",
+         "py": "xīngqī"
+        },
+        {
+         "id": "五|wǔ",
+         "py": "wǔ"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "This year is 2026.",
+       "text": "今年是二零二六年。",
+       "tokens": [
+        {
+         "id": "今年|jīnnián",
+         "py": "jīnnián"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "二|èr",
+         "py": "èr"
+        },
+        {
+         "id": "零|líng",
+         "py": "líng"
+        },
+        {
+         "id": "二|èr",
+         "py": "èr"
+        },
+        {
+         "id": "六|liù",
+         "py": "liù"
+        },
+        {
+         "id": "年|nián",
+         "py": "nián"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Last year was 2025, next year is 2027.",
+       "text": "去年是二零二五年，明年是二零二七年。",
+       "tokens": [
+        {
+         "id": "去年|qùnián",
+         "py": "qùnián"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "二|èr",
+         "py": "èr"
+        },
+        {
+         "id": "零|líng",
+         "py": "líng"
+        },
+        {
+         "id": "二|èr",
+         "py": "èr"
+        },
+        {
+         "id": "五|wǔ",
+         "py": "wǔ"
+        },
+        {
+         "id": "年|nián",
+         "py": "nián"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "明年|míngnián",
+         "py": "míngnián"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "二|èr",
+         "py": "èr"
+        },
+        {
+         "id": "零|líng",
+         "py": "líng"
+        },
+        {
+         "id": "二|èr",
+         "py": "èr"
+        },
+        {
+         "id": "七|qī",
+         "py": "qī"
+        },
+        {
+         "id": "年|nián",
+         "py": "nián"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "今天星期六。",
+       "en": "Today is Saturday.",
+       "pattern": "S V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "今天|jīntiān"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "星期|xīngqī",
+          "六|liù"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 2,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "jīntiān",
+        "xīngqī",
+        "liù"
+       ]
+      },
+      {
+       "text": "明天是星期天。",
+       "en": "Tomorrow is Sunday.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "明天|míngtiān"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "是|shì"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "星期天|xīngqītiān"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "míngtiān",
+        "shì",
+        "xīngqītiān"
+       ]
+      },
+      {
+       "text": "今天几月几号？",
+       "en": "What's the date today?",
+       "pattern": "S V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "今天|jīntiān"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "几|jǐ",
+          "月|yuè",
+          "几|jǐ",
+          "号|hào"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 2,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "jīntiān",
+        "jǐ",
+        "yuè",
+        "jǐ",
+        "hào"
+       ]
+      },
+      {
+       "text": "今年是二零二六年。",
+       "en": "This year is 2026.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "今年|jīnnián"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "是|shì"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "二|èr",
+          "零|líng",
+          "二|èr",
+          "六|liù",
+          "年|nián"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "jīnnián",
+        "shì",
+        "èr",
+        "líng",
+        "èr",
+        "liù",
+        "nián"
+       ]
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "family",
    "title": "Family",
    "zh": "家人",
    "topic": "Basic information: personal information, family and friends (个人信息)",
-   "notes": [],
-   "lessons": []
+   "notes": [
+    "Chinese names older and younger siblings differently: 哥哥 and 姐姐 are older brother and sister, 弟弟 and 妹妹 younger ones.",
+    "个 is the everyday measure word, but animals take 只: 一只猫, a cat."
+   ],
+   "lessons": [
+    {
+     "id": "family-1",
+     "title": "My family",
+     "words": [
+      "家|jiā",
+      "有|yǒu",
+      "爸爸|bàba",
+      "妈妈|māma",
+      "哥哥|gēge",
+      "姐姐|jiějie",
+      "弟弟|dìdi",
+      "妹妹|mèimei",
+      "和|hé",
+      "没有|méiyǒu"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "How many people are in your family?",
+       "text": "你家有几个人？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "家|jiā",
+         "py": "jiā"
+        },
+        {
+         "id": "有|yǒu",
+         "py": "yǒu"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "id": "个|gè",
+         "py": "gè"
+        },
+        {
+         "id": "人|rén",
+         "py": "rén"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "There are five of us.",
+       "text": "我家有五个人。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "家|jiā",
+         "py": "jiā"
+        },
+        {
+         "id": "有|yǒu",
+         "py": "yǒu"
+        },
+        {
+         "id": "五|wǔ",
+         "py": "wǔ"
+        },
+        {
+         "id": "个|gè",
+         "py": "gè"
+        },
+        {
+         "id": "人|rén",
+         "py": "rén"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Dad, Mum, my older brother, my younger sister and me.",
+       "text": "爸爸，妈妈，哥哥，妹妹和我。",
+       "tokens": [
+        {
+         "id": "爸爸|bàba",
+         "py": "bàba"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "妈妈|māma",
+         "py": "māma"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "哥哥|gēge",
+         "py": "gēge"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "妹妹|mèimei",
+         "py": "mèimei"
+        },
+        {
+         "id": "和|hé",
+         "py": "hé"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Do you have an older sister?",
+       "text": "你有姐姐吗？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "有|yǒu",
+         "py": "yǒu"
+        },
+        {
+         "id": "姐姐|jiějie",
+         "py": "jiějie"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I don't have an older sister. And you?",
+       "text": "我没有姐姐。你呢？",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "没有|méiyǒu",
+         "py": "méiyǒu"
+        },
+        {
+         "id": "姐姐|jiějie",
+         "py": "jiějie"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I have a younger brother, and no older brother.",
+       "text": "我有一个弟弟，没有哥哥。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "有|yǒu",
+         "py": "yǒu"
+        },
+        {
+         "id": "一|yī",
+         "py": "yí"
+        },
+        {
+         "id": "个|gè",
+         "py": "gè"
+        },
+        {
+         "id": "弟弟|dìdi",
+         "py": "dìdi"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "没有|méiyǒu",
+         "py": "méiyǒu"
+        },
+        {
+         "id": "哥哥|gēge",
+         "py": "gēge"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "How old is your younger brother?",
+       "text": "你的弟弟几岁？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "弟弟|dìdi",
+         "py": "dìdi"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "id": "岁|suì",
+         "py": "suì"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "He's nine.",
+       "text": "他九岁。",
+       "tokens": [
+        {
+         "id": "他|tā",
+         "py": "tā"
+        },
+        {
+         "id": "九|jiǔ",
+         "py": "jiǔ"
+        },
+        {
+         "id": "岁|suì",
+         "py": "suì"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "我家有五个人。",
+       "en": "There are five people in my family.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ",
+          "家|jiā"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "有|yǒu"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "五|wǔ",
+          "个|gè",
+          "人|rén"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "jiā",
+        "yǒu",
+        "wǔ",
+        "gè",
+        "rén"
+       ]
+      },
+      {
+       "text": "我没有姐姐。",
+       "en": "I don't have an older sister.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "没有|méiyǒu"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "姐姐|jiějie"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "méiyǒu",
+        "jiějie"
+       ]
+      },
+      {
+       "text": "你有弟弟吗？",
+       "en": "Do you have a younger brother?",
+       "pattern": "S V O X",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "你|nǐ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "有|yǒu"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "弟弟|dìdi"
+         ]
+        },
+        {
+         "role": "X",
+         "words": [
+          "吗|ma"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "nǐ",
+        "yǒu",
+        "dìdi",
+        "ma"
+       ]
+      },
+      {
+       "text": "我有一个妹妹。",
+       "en": "I have a younger sister.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "有|yǒu"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "一|yī",
+          "个|gè",
+          "妹妹|mèimei"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "yǒu",
+        "yí",
+        "gè",
+        "mèimei"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "family-2",
+     "title": "Sons, daughters and pets",
+     "words": [
+      "家人|jiārén",
+      "儿子|érzi",
+      "女儿|nǚ’ér",
+      "男朋友|nánpéngyou",
+      "女朋友|nǚpéngyou",
+      "爱|ài",
+      "猫|māo",
+      "只|zhī",
+      "狗|gǒu",
+      "它|tā"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "Is this your family?",
+       "text": "这是你的家人吗？",
+       "tokens": [
+        {
+         "id": "这|zhè",
+         "py": "zhè"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "家人|jiārén",
+         "py": "jiārén"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Yes. This is my son, and that's my daughter.",
+       "text": "是。这是我的儿子，那是我的女儿。",
+       "tokens": [
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "这|zhè",
+         "py": "zhè"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "儿子|érzi",
+         "py": "érzi"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "那|nà",
+         "py": "nà"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "女儿|nǚ’ér",
+         "py": "nǚ’ér"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Does your son have a girlfriend?",
+       "text": "你的儿子有女朋友吗？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "儿子|érzi",
+         "py": "érzi"
+        },
+        {
+         "id": "有|yǒu",
+         "py": "yǒu"
+        },
+        {
+         "id": "女朋友|nǚpéngyou",
+         "py": "nǚpéngyou"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "He does, he loves her very much.",
+       "text": "有，他很爱她。",
+       "tokens": [
+        {
+         "id": "有|yǒu",
+         "py": "yǒu"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "他|tā",
+         "py": "tā"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "爱|ài",
+         "py": "ài"
+        },
+        {
+         "id": "她|tā",
+         "py": "tā"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "And your daughter? Does she have a boyfriend?",
+       "text": "你的女儿呢？她有男朋友吗？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "女儿|nǚ’ér",
+         "py": "nǚ’ér"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        },
+        {
+         "id": "她|tā",
+         "py": "tā"
+        },
+        {
+         "id": "有|yǒu",
+         "py": "yǒu"
+        },
+        {
+         "id": "男朋友|nánpéngyou",
+         "py": "nánpéngyou"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "She's eight! She loves our cat.",
+       "text": "她八岁！她爱我们家的猫。",
+       "tokens": [
+        {
+         "id": "她|tā",
+         "py": "tā"
+        },
+        {
+         "id": "八|bā",
+         "py": "bā"
+        },
+        {
+         "id": "岁|suì",
+         "py": "suì"
+        },
+        {
+         "p": "！"
+        },
+        {
+         "id": "她|tā",
+         "py": "tā"
+        },
+        {
+         "id": "爱|ài",
+         "py": "ài"
+        },
+        {
+         "id": "我们|wǒmen",
+         "py": "wǒmen"
+        },
+        {
+         "id": "家|jiā",
+         "py": "jiā"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "猫|māo",
+         "py": "māo"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "We have a dog. It's called Dahei.",
+       "text": "我家有一只狗，它叫大黑。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "家|jiā",
+         "py": "jiā"
+        },
+        {
+         "id": "有|yǒu",
+         "py": "yǒu"
+        },
+        {
+         "id": "一|yī",
+         "py": "yì"
+        },
+        {
+         "id": "只|zhī",
+         "py": "zhī"
+        },
+        {
+         "id": "狗|gǒu",
+         "py": "gǒu"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "它|tā",
+         "py": "tā"
+        },
+        {
+         "id": "叫|jiào",
+         "py": "jiào"
+        },
+        {
+         "name": "大黑",
+         "py": "Dà Hēi"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "这是我的儿子。",
+       "en": "This is my son.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "这|zhè"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "是|shì"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "我|wǒ",
+          "的|de",
+          "儿子|érzi"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "zhè",
+        "shì",
+        "wǒ",
+        "de",
+        "érzi"
+       ]
+      },
+      {
+       "text": "他很爱她。",
+       "en": "He loves her very much.",
+       "pattern": "S A V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "他|tā"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "很|hěn"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "爱|ài"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "她|tā"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "tā",
+        "hěn",
+        "ài",
+        "tā"
+       ]
+      },
+      {
+       "text": "我家有一只狗。",
+       "en": "We have a dog.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ",
+          "家|jiā"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "有|yǒu"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "一|yī",
+          "只|zhī",
+          "狗|gǒu"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "jiā",
+        "yǒu",
+        "yì",
+        "zhī",
+        "gǒu"
+       ]
+      },
+      {
+       "text": "她爱我们家的猫。",
+       "en": "She loves our cat.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "她|tā"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "爱|ài"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "我们|wǒmen",
+          "家|jiā",
+          "的|de",
+          "猫|māo"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "tā",
+        "ài",
+        "wǒmen",
+        "jiā",
+        "de",
+        "māo"
+       ]
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "food",
    "title": "Eating",
    "zh": "吃饭",
    "topic": "Daily life: food and drink (饮食)",
-   "notes": [],
-   "lessons": []
+   "notes": [
+    "Rice (米饭) is the everyday staple in the south of China; noodles (面条儿) and steamed buns (包子) more so in the north.",
+    "The 儿 at the end of 面条儿 is erhua, typical of Beijing speech; many speakers simply say 面条."
+   ],
+   "lessons": [
+    {
+     "id": "food-1",
+     "title": "What would you like?",
+     "words": [
+      "吃|chī",
+      "喝|hē",
+      "想|xiǎng",
+      "要|yào",
+      "饭|fàn",
+      "米饭|mǐfàn",
+      "面条儿|miàntiáor",
+      "茶|chá",
+      "水|shuǐ",
+      "牛奶|niúnǎi"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "What would you like to eat?",
+       "text": "你想吃什么？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "想|xiǎng",
+         "py": "xiǎng"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "id": "什么|shénme",
+         "py": "shénme"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I'd like rice. And you?",
+       "text": "我想吃米饭。你呢？",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "想|xiǎng",
+         "py": "xiǎng"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "id": "米饭|mǐfàn",
+         "py": "mǐfàn"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I'll have noodles.",
+       "text": "我要面条儿。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "要|yào",
+         "py": "yào"
+        },
+        {
+         "id": "面条儿|miàntiáor",
+         "py": "miàntiáor"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "What would you like to drink? Tea?",
+       "text": "你想喝什么？茶吗？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "想|xiǎng",
+         "py": "xiǎng"
+        },
+        {
+         "id": "喝|hē",
+         "py": "hē"
+        },
+        {
+         "id": "什么|shénme",
+         "py": "shénme"
+        },
+        {
+         "p": "？"
+        },
+        {
+         "id": "茶|chá",
+         "py": "chá"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "No, I don't drink tea. I'll have water.",
+       "text": "不，我不喝茶。我要水。",
+       "tokens": [
+        {
+         "id": "不|bù",
+         "py": "bù"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "不|bù",
+         "py": "bù"
+        },
+        {
+         "id": "喝|hē",
+         "py": "hē"
+        },
+        {
+         "id": "茶|chá",
+         "py": "chá"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "要|yào",
+         "py": "yào"
+        },
+        {
+         "id": "水|shuǐ",
+         "py": "shuǐ"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I'll have milk. I'm really hungry!",
+       "text": "我喝牛奶。我很想吃饭！",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "喝|hē",
+         "py": "hē"
+        },
+        {
+         "id": "牛奶|niúnǎi",
+         "py": "niúnǎi"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "想|xiǎng",
+         "py": "xiǎng"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "id": "饭|fàn",
+         "py": "fàn"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "我想吃米饭。",
+       "en": "I'd like to eat rice.",
+       "pattern": "S A V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "想|xiǎng"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "吃|chī"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "米饭|mǐfàn"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "xiǎng",
+        "chī",
+        "mǐfàn"
+       ]
+      },
+      {
+       "text": "你想喝什么？",
+       "en": "What would you like to drink?",
+       "pattern": "S A V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "你|nǐ"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "想|xiǎng"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "喝|hē"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "什么|shénme"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "nǐ",
+        "xiǎng",
+        "hē",
+        "shénme"
+       ]
+      },
+      {
+       "text": "我不喝茶。",
+       "en": "I don't drink tea.",
+       "pattern": "S A V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "不|bù"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "喝|hē"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "茶|chá"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "bù",
+        "hē",
+        "chá"
+       ]
+      },
+      {
+       "text": "我要面条儿。",
+       "en": "I'll have noodles.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "要|yào"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "面条儿|miàntiáor"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "yào",
+        "miàntiáor"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "food-2",
+     "title": "Meals",
+     "words": [
+      "早饭|zǎofàn",
+      "午饭|wǔfàn",
+      "晚饭|wǎnfàn",
+      "包子|bāozi",
+      "鸡蛋|jīdàn",
+      "面包|miànbāo",
+      "好吃|hǎochī",
+      "菜|cài",
+      "水果|shuǐguǒ",
+      "苹果|píngguǒ"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "What do you have for breakfast?",
+       "text": "你早饭吃什么？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "早饭|zǎofàn",
+         "py": "zǎofàn"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "id": "什么|shénme",
+         "py": "shénme"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I have eggs and bread, and drink milk.",
+       "text": "我吃鸡蛋和面包，喝牛奶。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "id": "鸡蛋|jīdàn",
+         "py": "jīdàn"
+        },
+        {
+         "id": "和|hé",
+         "py": "hé"
+        },
+        {
+         "id": "面包|miànbāo",
+         "py": "miànbāo"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "喝|hē",
+         "py": "hē"
+        },
+        {
+         "id": "牛奶|niúnǎi",
+         "py": "niúnǎi"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I have steamed buns. They're delicious!",
+       "text": "我早饭吃包子。包子很好吃！",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "早饭|zǎofàn",
+         "py": "zǎofàn"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "id": "包子|bāozi",
+         "py": "bāozi"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "包子|bāozi",
+         "py": "bāozi"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "好吃|hǎochī",
+         "py": "hǎochī"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "And for lunch?",
+       "text": "你午饭吃什么？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "午饭|wǔfàn",
+         "py": "wǔfàn"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "id": "什么|shénme",
+         "py": "shénme"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Rice and vegetables. For dinner I have noodles.",
+       "text": "米饭和菜。晚饭我吃面条儿。",
+       "tokens": [
+        {
+         "id": "米饭|mǐfàn",
+         "py": "mǐfàn"
+        },
+        {
+         "id": "和|hé",
+         "py": "hé"
+        },
+        {
+         "id": "菜|cài",
+         "py": "cài"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "晚饭|wǎnfàn",
+         "py": "wǎnfàn"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "id": "面条儿|miàntiáor",
+         "py": "miàntiáor"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Do you eat fruit?",
+       "text": "你吃水果吗？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "id": "水果|shuǐguǒ",
+         "py": "shuǐguǒ"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Yes, I love apples.",
+       "text": "吃，我很爱吃苹果。",
+       "tokens": [
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "爱|ài",
+         "py": "ài"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "id": "苹果|píngguǒ",
+         "py": "píngguǒ"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "我早饭吃包子。",
+       "en": "I have steamed buns for breakfast.",
+       "pattern": "S T V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "T",
+         "words": [
+          "早饭|zǎofàn"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "吃|chī"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "包子|bāozi"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "zǎofàn",
+        "chī",
+        "bāozi"
+       ]
+      },
+      {
+       "text": "包子很好吃。",
+       "en": "Steamed buns are delicious.",
+       "pattern": "S A V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "包子|bāozi"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "很|hěn"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "好吃|hǎochī"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "bāozi",
+        "hěn",
+        "hǎochī"
+       ]
+      },
+      {
+       "text": "你吃水果吗？",
+       "en": "Do you eat fruit?",
+       "pattern": "S V O X",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "你|nǐ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "吃|chī"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "水果|shuǐguǒ"
+         ]
+        },
+        {
+         "role": "X",
+         "words": [
+          "吗|ma"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "nǐ",
+        "chī",
+        "shuǐguǒ",
+        "ma"
+       ]
+      },
+      {
+       "text": "我晚饭吃面条儿。",
+       "en": "I have noodles for dinner.",
+       "pattern": "S T V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "T",
+         "words": [
+          "晚饭|wǎnfàn"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "吃|chī"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "面条儿|miàntiáor"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "wǎnfàn",
+        "chī",
+        "miàntiáor"
+       ]
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "shopping",

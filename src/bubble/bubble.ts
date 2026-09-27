@@ -452,6 +452,11 @@ export class Bubble {
     this.wake();
   }
 
+  /** The fit now and where it is heading (scale, and resting height in world units), for the tests. */
+  fitState(): { s: number; y: number; toS: number; toY: number; tweening: boolean } {
+    return { s: this.fit.s, y: this.fit.y, toS: this.fitTarget.s, toY: this.fitTarget.y, tweening: gsap.isTweening(this.fit) };
+  }
+
   /** The designed radius and resting height on screen, in CSS pixels. */
   designed(): { r: number; y: number } {
     const k = window.innerHeight / this.stage.visH;

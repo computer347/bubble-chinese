@@ -15,7 +15,7 @@
 # Lessons teach 10 new words (the build allows 8–12): a dialogue that reuses earlier words, and
 # four sentences to build. Each unit has a short culture note.
 #
-# Status: units 1–2 drafted, for review by a Chinese speaker. The topic outline is taken from a
+# Status: units 1–5 drafted, for review by a Chinese speaker. The topic outline is taken from a
 # secondary source and is to be checked against the official 2025 syllabus.
 
 unit hello | Hello | 你好 | Daily life: interaction, polite behaviour (交往)
@@ -103,8 +103,102 @@ build 这/S 是/V 我+的+孩子/O 。 | This is my child.
 build 我/S 今年/T 十+八+岁/V 。 | I'm eighteen this year.
 
 unit numbers | Numbers and dates | 数字 | Basic information: event information (事件信息)
+note Before a measure word, "two" is 两 liǎng, not 二 èr: 两个人, two people. 二 is for counting and for numbers like 十二.
+note Dates run from big to small: year, month, day. Years are read digit by digit (二零二六年), and in speech the day of the month is 号.
+
+lesson numbers-1 | Counting
+new 一 二 三 四 五 六 七 九 两 个
+say A | 你们 几 个 人 ？ | How many of you are there?
+say B | 一 ， 二 ， 三 ， 四 。 我们 四 个 人 。 | One, two, three, four. There are four of us.
+say A | 他们 呢 ？ | And them?
+say B | 他们 两 个 人 。 | There are two of them.
+say A | {小明=Xiǎomíng} 几 岁 ？ | How old is Xiaoming?
+say B | 他 七 岁 。 他 的 朋友 九 岁 。 | He's seven. His friend is nine.
+say A | 那 是 几 ？ | What number is that?
+say B | 那 是 六 ， 不 是 九 ！ | That's six, not nine!
+say A | 五 ， 六 ， 七 ， 八 。 | Five, six, seven, eight.
+build 我们/S 四+个+人/V 。 | There are four of us.
+build 你们/S 几+个+人/V ？ | How many of you are there?
+build 他/S 七+岁/V 。 | He's seven.
+build 那/S 是/V 六/O 。 | That's six.
+
+lesson numbers-2 | Dates
+new 今天 明天 昨天 月 号 星期 星期天 年 零 去年 明年
+say A | 今天 几 月 几 号 ？ | What's the date today?
+say B | 今天 九 月 二 十 七 号 。 | Today is the 27th of September.
+say A | 今天 星期 几 ？ | What day is it today?
+say B | 今天 星期 六 ， 明天 星期天 。 | Today is Saturday, tomorrow is Sunday.
+say A | 昨天 是 星期 五 。 | Yesterday was Friday.
+say B | 今年 是 二 零 二 六 年 。 | This year is 2026.
+say A | 去年 是 二 零 二 五 年 ， 明年 是 二 零 二 七 年 。 | Last year was 2025, next year is 2027.
+build 今天/S 星期+六/V 。 | Today is Saturday.
+build 明天/S 是/V 星期天/O 。 | Tomorrow is Sunday.
+build 今天/S 几+月+几+号/V ？ | What's the date today?
+build 今年/S 是/V 二+零+二+六+年/O 。 | This year is 2026.
+
 unit family | Family | 家人 | Basic information: personal information, family and friends (个人信息)
+note Chinese names older and younger siblings differently: 哥哥 and 姐姐 are older brother and sister, 弟弟 and 妹妹 younger ones.
+note 个 is the everyday measure word, but animals take 只: 一只猫, a cat.
+
+lesson family-1 | My family
+new 家 有 爸爸 妈妈 哥哥 姐姐 弟弟 妹妹 和 没有
+say A | 你 家 有 几 个 人 ？ | How many people are in your family?
+say B | 我 家 有 五 个 人 。 | There are five of us.
+say B | 爸爸 ， 妈妈 ， 哥哥 ， 妹妹 和 我 。 | Dad, Mum, my older brother, my younger sister and me.
+say A | 你 有 姐姐 吗 ？ | Do you have an older sister?
+say B | 我 没有 姐姐 。 你 呢 ？ | I don't have an older sister. And you?
+say A | 我 有 一 个 弟弟 ， 没有 哥哥 。 | I have a younger brother, and no older brother.
+say B | 你 的 弟弟 几 岁 ？ | How old is your younger brother?
+say A | 他 九 岁 。 | He's nine.
+build 我+家/S 有/V 五+个+人/O 。 | There are five people in my family.
+build 我/S 没有/V 姐姐/O 。 | I don't have an older sister.
+build 你/S 有/V 弟弟/O 吗/X ？ | Do you have a younger brother?
+build 我/S 有/V 一+个+妹妹/O 。 | I have a younger sister.
+
+lesson family-2 | Sons, daughters and pets
+new 家人 儿子 女儿 男朋友 女朋友 爱 猫 只 狗 它
+say A | 这 是 你 的 家人 吗 ？ | Is this your family?
+say B | 是 。 这 是 我 的 儿子 ， 那 是 我 的 女儿 。 | Yes. This is my son, and that's my daughter.
+say A | 你 的 儿子 有 女朋友 吗 ？ | Does your son have a girlfriend?
+say B | 有 ， 他 很 爱 她 。 | He does, he loves her very much.
+say A | 你 的 女儿 呢 ？ 她 有 男朋友 吗 ？ | And your daughter? Does she have a boyfriend?
+say B | 她 八 岁 ！ 她 爱 我们 家 的 猫 。 | She's eight! She loves our cat.
+say A | 我 家 有 一 只 狗 ， 它 叫 {大黑=Dà Hēi} 。 | We have a dog. It's called Dahei.
+build 这/S 是/V 我+的+儿子/O 。 | This is my son.
+build 他/S 很/A 爱/V 她/O 。 | He loves her very much.
+build 我+家/S 有/V 一+只+狗/O 。 | We have a dog.
+build 她/S 爱/V 我们+家+的+猫/O 。 | She loves our cat.
+
 unit food | Eating | 吃饭 | Daily life: food and drink (饮食)
+note Rice (米饭) is the everyday staple in the south of China; noodles (面条儿) and steamed buns (包子) more so in the north.
+note The 儿 at the end of 面条儿 is erhua, typical of Beijing speech; many speakers simply say 面条.
+
+lesson food-1 | What would you like?
+new 吃 喝 想 要 饭 米饭 面条儿 茶 水 牛奶
+say A | 你 想 吃 什么 ？ | What would you like to eat?
+say B | 我 想 吃 米饭 。 你 呢 ？ | I'd like rice. And you?
+say A | 我 要 面条儿 。 | I'll have noodles.
+say B | 你 想 喝 什么 ？ 茶 吗 ？ | What would you like to drink? Tea?
+say A | 不 ， 我 不 喝 茶 。 我 要 水 。 | No, I don't drink tea. I'll have water.
+say B | 我 喝 牛奶 。 我 很 想 吃 饭 ！ | I'll have milk. I'm really hungry!
+build 我/S 想/A 吃/V 米饭/O 。 | I'd like to eat rice.
+build 你/S 想/A 喝/V 什么/O ？ | What would you like to drink?
+build 我/S 不/A 喝/V 茶/O 。 | I don't drink tea.
+build 我/S 要/V 面条儿/O 。 | I'll have noodles.
+
+lesson food-2 | Meals
+new 早饭 午饭 晚饭 包子 鸡蛋 面包 好吃 菜 水果 苹果
+say A | 你 早饭 吃 什么 ？ | What do you have for breakfast?
+say B | 我 吃 鸡蛋 和 面包 ， 喝 牛奶 。 | I have eggs and bread, and drink milk.
+say A | 我 早饭 吃 包子 。 包子 很 好吃 ！ | I have steamed buns. They're delicious!
+say B | 你 午饭 吃 什么 ？ | And for lunch?
+say A | 米饭 和 菜 。 晚饭 我 吃 面条儿 。 | Rice and vegetables. For dinner I have noodles.
+say B | 你 吃 水果 吗 ？ | Do you eat fruit?
+say A | 吃 ， 我 很 爱 吃 苹果 。 | Yes, I love apples.
+build 我/S 早饭/T 吃/V 包子/O 。 | I have steamed buns for breakfast.
+build 包子/S 很/A 好吃/V 。 | Steamed buns are delicious.
+build 你/S 吃/V 水果/O 吗/X ？ | Do you eat fruit?
+build 我/S 晚饭/T 吃/V 面条儿/O 。 | I have noodles for dinner.
 unit shopping | Shopping | 买东西 | Daily life: shopping (购物)
 unit travel | Getting around | 去哪儿 | Daily life: transport (交通出行)
 unit weather | Weather | 天气 | Basic information: environment, weather (环境信息)
