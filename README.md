@@ -6,6 +6,8 @@ Pick a mode on the home screen by popping its bubble. In Words, a bubble sits pi
 
 In Listen, the word is heard instead of read: pick its tones, then its meaning, then its characters from words that sound alike. Tap the bubble to hear it again; a wrong answer replays it slowly. Once you hear a word reliably, its core asks you to type the pinyin instead.
 
+Layers come in a random order. "Ask about" on the home screen picks which ones a bubble has: meaning, pinyin, characters, or any mix.
+
 ## Run it
 
 ```bash

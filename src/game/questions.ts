@@ -117,3 +117,32 @@ export function forgetLayer(queue: Question[], fresh: Question): Question[] {
     ? [revealed, ...rest.slice(0, -1), retest, rest[rest.length - 1]]
     : [revealed, retest];
 }
+
+/** What a layer asks about. Listen's tone layer is a pinyin question; its dictation core a characters one. */
+export type AskKind = 'meaning' | 'pinyin' | 'characters';
+export const ASK_KINDS: readonly AskKind[] = ['meaning', 'pinyin', 'characters'];
+export const kindOf = (t: QuestionType): AskKind => (t === 0 || t === 4 ? 'meaning' : t === 1 || t === 3 ? 'pinyin' : 'characters');
+
+/**
+ * The layers of one bubble: only the kinds the learner chose (all of them if none is chosen),
+ * in a random order.
+ */
+export function arrange(questions: readonly Question[], ask: readonly AskKind[], rng: Rng = defaultRng): Question[] {
+  const chosen = questions.filter(q => ask.includes(kindOf(q.type)));
+  return shuffle(chosen.length ? chosen : questions.slice(), rng);
+}
+
+/**
+ * Shuffles the four options onto the edges (top, right, bottom, left), keeping the answer off
+ * the edge index `avoid`, so the right answer never sits in the same place twice running.
+ */
+export function placeOptions(choices: readonly string[], answer: string, avoid: number | null, rng: Rng = defaultRng): string[] {
+  const out = shuffle(choices.slice(), rng);
+  const at = out.indexOf(answer);
+  if (avoid !== null && at === avoid && out.length > 1) {
+    let j = Math.floor(rng() * (out.length - 1));
+    if (j >= at) j++;
+    [out[at], out[j]] = [out[j], out[at]];
+  }
+  return out;
+}

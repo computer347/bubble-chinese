@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import { LEVELS } from '../content/words';
 import type { Progress } from '../game/progress';
+import type { AskKind } from '../game/questions';
 import type { ModeId, ModeInfo } from '../modes';
 import type { Word } from '../content/words';
 import { $ } from './dom';
@@ -19,6 +20,7 @@ export interface HomeDeps {
 export class Home {
   private readonly el = $('home');
   private readonly levelBtns: HTMLButtonElement[];
+  private readonly askBtns: HTMLButtonElement[];
 
   constructor(private readonly d: HomeDeps) {
     const box = this.el.querySelector('.modes')!;
@@ -39,6 +41,13 @@ export class Home {
     }));
     this.levelBtns = [...this.el.querySelectorAll<HTMLButtonElement>('[data-level]')];
     this.levelBtns.forEach(b => b.addEventListener('click', () => { d.progress.setMaxLevel(Number(b.dataset.level)); this.render(); d.onLevel(); }));
+    // toggles; the last one left on can't be turned off, since a bubble must ask something
+    this.askBtns = [...this.el.querySelectorAll<HTMLButtonElement>('[data-ask]')];
+    this.askBtns.forEach(b => b.addEventListener('click', () => {
+      const kind = b.dataset.ask as AskKind, ask = d.progress.data.settings.ask;
+      d.progress.setAsk(ask.includes(kind) ? ask.filter(k => k !== kind) : [...ask, kind]);
+      this.render();
+    }));
   }
 
   get shown(): boolean { return !this.el.hidden; }
@@ -50,6 +59,12 @@ export class Home {
       const lv = Number(b.dataset.level);
       b.hidden = !LEVELS.includes(lv);
       b.setAttribute('aria-checked', String(lv === max));
+    });
+    const ask = progress.data.settings.ask;
+    this.askBtns.forEach(b => {
+      const on = ask.includes(b.dataset.ask as AskKind);
+      b.setAttribute('aria-pressed', String(on));
+      b.disabled = on && ask.length === 1;
     });
     const p = this.d.pool(), due = progress.dueCount('words', p), fresh = progress.newCount('words', p);
     $('homeStats').textContent = due

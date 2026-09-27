@@ -36,12 +36,21 @@ describe('Scheduler', () => {
     for (let i = 0; i < picks.length; i++) expect(picks.slice(Math.max(0, i - 6), i)).not.toContain(picks[i]);
   });
 
-  it('reviews ahead once every word has been met and nothing is due', () => {
+  it('reviews ahead once every word has been met and nothing is due: one of the three due soonest', () => {
     const s = new Scheduler(0, mulberry32(3));
     const cards: Record<string, Card> = {};
     const small = pool.slice(0, 5);
     small.forEach((w, i) => { cards[w.id] = { ...newCard(now), due: new Date(now.getTime() + (i + 1) * 3_600_000) }; });
-    expect(s.next(small, cards, now).id).toBe(small[0].id);
+    const picks = new Set(Array.from({ length: 40 }, () => s.next(small, cards, now).id));
+    expect([...picks].sort()).toEqual(small.slice(0, 3).map(w => w.id).sort());
+  });
+
+  it('varies the order of due reviews', () => {
+    const cards: Record<string, Card> = {};
+    const due = pool.slice(0, 10);
+    due.forEach((w, i) => { cards[w.id] = { ...newCard(now), due: new Date(now.getTime() - (i + 1) * 3_600_000) }; });
+    const firsts = new Set([1, 2, 3, 4, 5, 6, 7, 8].map(seed => new Scheduler(6, mulberry32(seed)).next(due, cards, now).id));
+    expect(firsts.size).toBeGreaterThan(2);
   });
 });
 

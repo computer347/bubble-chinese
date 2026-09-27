@@ -51,7 +51,9 @@ test('renders the bubble, the prompt and four answers', async ({ page }) => {
   expect(s.layers).toBe(3);
   expect(s.word).toBeTruthy();
   for (const e of ['top', 'right', 'bottom', 'left']) await expect(page.locator(`.ans[data-edge="${e}"]`)).not.toBeEmpty();
-  await expect(page.locator('#ask')).toHaveText('What does it mean?');
+  // the layers come in a random order
+  expect([...s.queue].sort()).toEqual(['0', '1', '2']);
+  await expect(page.locator('#ask')).toHaveText(/^(What does it mean\?|How is it said\?|Which characters?\?)$/);
   // the WebGL canvas actually drew something other than the flat page colour
   const varied = await page.evaluate(() => {
     const src = document.getElementById('stage') as HTMLCanvasElement;
@@ -106,10 +108,11 @@ test('a wrong answer snaps back, keeps the layer and resets the streak', async (
 });
 
 test('"I forgot" reveals the answer and adds a layer that is retested before the core', async ({ page }) => {
-  await start(page);
+  const s0 = await start(page);
+  const [a, b, c] = s0.queue;
   await page.click('#forgot');
   const s = await waitFor(page, x => x.layers === 4, 'an extra layer');
-  expect(s.queue).toEqual(['0r', '1', '0t', '2']);
+  expect(s.queue).toEqual([`${a}r`, b, `${a}t`, c]);
   await expect(page.locator(`.ans[data-edge="${s.correctEdge}"]`)).toHaveClass(/reveal/);
   await expect(page.locator('#forgot')).toBeDisabled();
   await expect(page.locator('#layerTxt')).toHaveText('Layer 1 of 4');
@@ -177,8 +180,7 @@ test('the home screen: modes, HSK level, and back again', async ({ page }) => {
 test('Listen: the word is heard, and its tones, meaning and characters pop by ear', async ({ page }) => {
   const s0 = await start(page, 'listen');
   expect(s0.mode).toBe('listen');
-  expect(s0.queue).toEqual(['3', '4', '5']);
-  await expect(page.locator('#ask')).toHaveText('Which tones did you hear?');
+  expect([...s0.queue].sort()).toEqual(['3', '4', '5']);
   // the prompt is the sound: the characters are not shown anywhere before the core pops
   await expect(page.locator('#title')).not.toContainText(s0.word!);
   await waitFor(page, s => s.voice.latency !== null, 'the word to play');
@@ -213,7 +215,7 @@ test('Listen: a wrong answer replays the word slowly; home and back to Words', a
   await page.click('[data-mode="words"]');
   const s = await waitFor(page, x => x.state === 'live', 'a Words bubble');
   expect(s.mode).toBe('words');
-  expect(s.queue).toEqual(['0', '1', '2']);
+  expect([...s.queue].sort()).toEqual(['0', '1', '2']);
   expect(errorsOf(page)).toEqual([]);
 });
 
@@ -221,13 +223,13 @@ test('Listen dictation: type the pinyin you hear, with tone numbers', async ({ p
   await openHome(page, '&dictation');
   await page.click('[data-mode="listen"]');
   const s0 = await waitFor(page, s => s.state === 'live', 'a Listen bubble');
-  expect(s0.queue).toEqual(['3', '4', '6']);
-  for (let i = 0; i < 2; i++) {
+  expect([...s0.queue].sort()).toEqual(['3', '4', '6']);
+  // pop the chip layers that come before dictation, whatever the order
+  while ((await snap(page)).queue[0] !== '6') {
     const before = await snap(page);
     await answer(page);
-    await waitFor(page, s => s.layers === before.layers - 1, `layer ${i + 1} to pop`);
+    await waitFor(page, s => s.layers === before.layers - 1 && s.state === 'live', 'a chip layer to pop');
   }
-  await waitFor(page, s => s.state === 'live' && s.queue[0] === '6', 'the dictation layer');
   await expect(page.locator('#dictation')).toBeVisible();
   await expect(page.locator('.ans[data-edge="top"]')).toHaveClass(/off/);
   // a wrong answer first
@@ -237,14 +239,32 @@ test('Listen dictation: type the pinyin you hear, with tone numbers', async ({ p
   await expect(page.locator('#ask')).toHaveText('Not quite. Listen again.');
   // "I forgot" shows the answer; typing it pops the layer, and the retest comes back as dictation too
   await page.click('#forgot');
-  await waitFor(page, s => s.queue.join() === '6r,6t', 'the retest');
+  await waitFor(page, s => s.queue[0] === '6r' && s.queue.includes('6t'), 'the retest');
   const answerText = await page.locator('#dictIn').getAttribute('placeholder');
-  await page.fill('#dictIn', answerText!);
-  await page.press('#dictIn', 'Enter');
-  await waitFor(page, s => s.queue.join() === '6t' && s.state === 'live', 'the retest layer');
-  await page.fill('#dictIn', answerText!);
-  await page.press('#dictIn', 'Enter');
+  // type the answer whenever dictation is up, pull to the right chip otherwise, until the core pops
+  for (let guard = 0; guard < 6 && (await snap(page)).state !== 'note'; guard++) {
+    const now = await waitFor(page, s => s.state === 'live' || s.state === 'popping' || s.state === 'note', 'a layer');
+    if (now.state !== 'live') break;
+    if (now.queue[0].startsWith('6')) { await page.fill('#dictIn', answerText!); await page.press('#dictIn', 'Enter'); }
+    else await answer(page);
+    await waitFor(page, s => s.layers === now.layers - 1, 'the layer to pop');
+  }
   await waitFor(page, s => s.state === 'note', 'the fortune slip');
   await expect(page.locator('#dictation')).toBeHidden();
+  expect(errorsOf(page)).toEqual([]);
+});
+
+test('Ask about: characters only makes one-layer bubbles, and one kind always stays on', async ({ page }) => {
+  await openHome(page);
+  await page.click('[data-ask="meaning"]');
+  await page.click('[data-ask="pinyin"]');
+  await expect(page.locator('[data-ask="characters"]')).toBeDisabled();
+  await expect(page.locator('[data-ask="meaning"]')).toHaveAttribute('aria-pressed', 'false');
+  await page.click('[data-mode="words"]');
+  const s = await waitFor(page, x => x.state === 'live', 'a bubble');
+  expect(s.queue).toEqual(['2']);
+  expect(s.layers).toBe(1);
+  await answer(page);
+  await waitFor(page, x => x.state === 'note', 'the fortune slip');
   expect(errorsOf(page)).toEqual([]);
 });

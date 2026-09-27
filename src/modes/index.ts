@@ -14,7 +14,7 @@ export interface ModeInfo {
 
 /** The home screen shows one bubble per mode, in this order. */
 export const MODES: readonly ModeInfo[] = [
-  { id: 'words', name: 'Words', desc: 'HSK vocabulary, three layers a bubble', make: ctx => new WordsMode(ctx) },
+  { id: 'words', name: 'Words', desc: 'Read a word: its meaning, pinyin, characters', make: ctx => new WordsMode(ctx) },
   { id: 'plug', name: 'Plug', desc: 'Build sentences' },
   { id: 'listen', name: 'Listen', desc: 'Hear a word: its tones, meaning, characters', make: ctx => new ListenMode(ctx) },
   { id: 'learn', name: 'Learn', desc: 'Meet new words, trace strokes' }

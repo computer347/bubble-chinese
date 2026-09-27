@@ -1,11 +1,10 @@
 import type { Word } from '../content/words';
-import { MAX_LAYERS, type Edge } from '../bubble/bubble';
-import { forgetLayer, type Question } from '../game/questions';
+import { MAX_LAYERS, EDGES, type Edge } from '../bubble/bubble';
+import { forgetLayer, arrange, placeOptions, type Question } from '../game/questions';
 import { checkDictation } from '../game/pinyin';
 import { Scheduler } from '../game/scheduler';
 import { gradeBubble, dueLabel } from '../game/memory';
 import type { Skill } from '../game/progress';
-import { shuffle } from '../game/random';
 import { $ } from '../ui/dom';
 import type { Mode, ModeContext } from './mode';
 
@@ -20,6 +19,8 @@ export abstract class LayeredMode implements Mode {
   correctEdge: Edge = 'top';
   /** Wrong answers on the current layer. */
   wrongThisLayer = 0;
+  /** Where the last right answer was, so the next one goes elsewhere. */
+  private lastEdge: number | null = null;
   protected abstract readonly skill: Skill;
   protected readonly scheduler = new Scheduler();
   private cleanRun = true;
@@ -91,7 +92,10 @@ export abstract class LayeredMode implements Mode {
   private setQuestion(fresh: boolean): void {
     const { chips, hud, stage, dictation } = this.ctx;
     const q = this.questions[0];
-    if (!q.typed) this.correctEdge = chips.set(shuffle(q.choices.slice()), q.answer, q.chipZh);
+    if (!q.typed) {
+      this.correctEdge = chips.set(placeOptions(q.choices, q.answer, this.lastEdge), q.answer, q.chipZh);
+      this.lastEdge = EDGES.indexOf(this.correctEdge);
+    }
     hud.ask(q.retest ? `Once more: ${q.ask.charAt(0).toLowerCase()}${q.ask.slice(1)}` : q.ask);
     this.renderPips();
     if (fresh) stage.backdrop.setWord(q.prompt, q.zh); else stage.backdrop.kick();
@@ -104,7 +108,7 @@ export abstract class LayeredMode implements Mode {
     const { bubble, voice, hud, pool } = this.ctx;
     const word = this.word = this.upcoming ?? this.pick();
     this.upcoming = null;
-    this.questions = this.makeQuestions(word, pool());
+    this.questions = arrange(this.makeQuestions(word, pool()), this.ctx.progress.data.settings.ask);
     voice.preload(word);
     this.cleanRun = true; this.bubblePts = 0; this.bubbleWrong = 0; this.forgotUsed = false;
     bubble.spawn(this.questions.length - 1);

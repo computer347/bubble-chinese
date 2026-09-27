@@ -62,6 +62,8 @@ The first new mode, and the cheapest: it reuses the single bubble and its four e
 - [x] Pinyin dictation: once a word's listening has graduated, its core asks you to type the pinyin (tone numbers or marks); `?dictation` turns it on for every word
 - [x] Per-tone accuracy from the review log, shown in the words panel; new Listen words with your weakest tone come first
 - [x] Listen draws words you have met in Words first
+- [x] Nothing comes in a set order: layers are shuffled in every bubble, the right answer never sits on the same edge twice running, and due words are drawn at random from the most overdue
+- [x] "Ask about" on the home screen: any mix of meaning, pinyin and characters, for Words and Listen
 
 **Verify**
 - [x] Every HSK 1–2 word's Listen bubble can be answered by ear alone: four distinct options per layer, no homophones, no sandhi traps (unit tests)

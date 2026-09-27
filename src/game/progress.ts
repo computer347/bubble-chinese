@@ -1,5 +1,6 @@
 import type { Word } from '../content/words';
 import { newCard, review, reviveCard, State, type Card, type Grade } from './memory';
+import { ASK_KINDS, type AskKind } from './questions';
 
 /**
  * What a card measures. Each skill has its own schedule, so a word you read well but can't
@@ -15,6 +16,8 @@ export interface Item { readonly id: string }
 export interface Settings {
   /** Highest HSK level to draw new words from. */
   maxLevel: number;
+  /** What bubbles ask about; at least one. */
+  ask: AskKind[];
 }
 
 /** Everything we keep about the learner, on this device. Version 3: FSRS cards per skill. */
@@ -36,7 +39,7 @@ export interface ReviewEntry {
 }
 
 const emptyCards = (): ProgressData['cards'] => Object.fromEntries(SKILLS.map(s => [s, {}])) as ProgressData['cards'];
-export const emptyProgress = (): ProgressData => ({ version: 3, cards: emptyCards(), best: 0, settings: { maxLevel: 1 } });
+export const emptyProgress = (): ProgressData => ({ version: 3, cards: emptyCards(), best: 0, settings: { maxLevel: 1, ask: [...ASK_KINDS] } });
 
 /** The version-1 shape from the single-file game and Phase 0 (mastery 0–3 keyed by characters). */
 interface ProgressV1 { m?: Record<string, number>; seen?: Record<string, number>; miss?: Record<string, number>; best?: number }
@@ -203,6 +206,14 @@ export class Progress {
   }
 
   setMaxLevel(level: number): void { this.data.settings.maxLevel = level; this.persist(); }
+
+  /** Chooses what bubbles ask about. An empty choice is ignored: there must be something to ask. */
+  setAsk(ask: readonly AskKind[]): void {
+    const kinds = ASK_KINDS.filter(k => ask.includes(k));
+    if (!kinds.length) return;
+    this.data.settings.ask = kinds;
+    this.persist();
+  }
 
   /** Items whose memory has graduated to long-term review. */
   learnedCount(skill: Skill, pool: readonly Item[]): number {

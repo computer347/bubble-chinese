@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { QUIZ_WORDS, WORDS, overlaps } from '../../src/content/words';
-import { makeQuestions, retone, applyForgot, TONES } from '../../src/game/questions';
+import { makeQuestions, retone, applyForgot, arrange, placeOptions, kindOf, TONES } from '../../src/game/questions';
 import { mulberry32 } from '../../src/game/random';
 
 const baseOf = (c: string) => Object.entries(TONES).find(([, m]) => m.includes(c))?.[0];
@@ -64,5 +64,36 @@ describe('applyForgot', () => {
   it('on the core, the retest becomes the new core', () => {
     const out = applyForgot(makeQuestions(w, QUIZ_WORDS, rng).slice(2), w, QUIZ_WORDS, rng);
     expect(out.map(q => [q.type, !!q.revealed, !!q.retest])).toEqual([[2, true, false], [2, false, true]]);
+  });
+});
+
+describe('arrange', () => {
+  const qs = makeQuestions(QUIZ_WORDS[5], QUIZ_WORDS, mulberry32(1));
+  it('keeps only the chosen kinds', () => {
+    expect(arrange(qs, ['characters'], mulberry32(1)).map(q => q.type)).toEqual([2]);
+    expect(arrange(qs, ['meaning', 'pinyin'], mulberry32(1)).map(q => kindOf(q.type)).sort()).toEqual(['meaning', 'pinyin']);
+    expect(arrange(qs, [], mulberry32(1))).toHaveLength(3);
+  });
+  it('shuffles the layer order', () => {
+    const rng = mulberry32(2);
+    const orders = new Set(Array.from({ length: 60 }, () => arrange(qs, ['meaning', 'pinyin', 'characters'], rng).map(q => q.type).join('')));
+    expect(orders.size).toBe(6);
+  });
+});
+
+describe('placeOptions', () => {
+  it('shuffles, and never puts the answer back on the edge it was just on', () => {
+    const rng = mulberry32(3);
+    const seen = new Set<number>();
+    let last: number | null = null;
+    for (let i = 0; i < 400; i++) {
+      const out = placeOptions(['a', 'b', 'c', 'd'], 'a', last, rng);
+      expect(out.slice().sort()).toEqual(['a', 'b', 'c', 'd']);
+      const at = out.indexOf('a');
+      expect(at).not.toBe(last);
+      seen.add(at);
+      last = at;
+    }
+    expect(seen.size).toBe(4);
   });
 });

@@ -127,3 +127,19 @@ describe('Progress', () => {
     expect(q.log).toHaveLength(1);
   });
 });
+
+describe('what bubbles ask about', () => {
+  it('defaults to everything, keeps a choice, and never lets it go empty', async () => {
+    const store = new MemoryStore();
+    const p = new Progress(store, WORDS);
+    await p.init(null, now);
+    expect(p.data.settings.ask).toEqual(['meaning', 'pinyin', 'characters']);
+    p.setAsk(['characters', 'pinyin']);
+    expect(p.data.settings.ask).toEqual(['pinyin', 'characters']);
+    p.setAsk([]);
+    expect(p.data.settings.ask).toEqual(['pinyin', 'characters']);
+    const q = new Progress(store, WORDS);
+    await q.init(null, now);
+    expect(q.data.settings.ask).toEqual(['pinyin', 'characters']);
+  });
+});
