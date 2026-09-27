@@ -80,13 +80,13 @@ A course alongside the general model, in the spirit of HelloChinese: units follo
 - [x] Course file `data/content/path-hsk1.txt`: units → lessons → new words, a short dialogue, sentences to build; the build fails if a lesson uses a word not yet taught, teaches one twice, or never uses a word it teaches
 - [x] Lessons of 10 new words (the build allows 8–12): a dialogue that reuses earlier words, four sentences to build. For scale: HSK Standard Course 1 has ~10 new words a lesson, Integrated Chinese ~25–30 a (1–2 week) lesson, Duolingo 1–2 a few-minute lesson
 - [x] A culture note per unit
-- [x] All 15 HSK 1 units on the path (titles and topics); units 1–5 drafted (11 lessons, 111 words)
+- [x] HSK 1 path complete in draft: 15 units, 30 lessons, all 300 words, each unit with a culture note
 - [x] The path screen: units and lessons, locked, open and done, in both styles; units still to be written are listed
 - [x] The lesson player: the unit's culture note (first lesson) → meet each word (sound, meaning, where it comes up) → pop (a bubble per word, each a review) → in context (the dialogue, tap a word, ▶ a line; two questions) → build (put four sentences in order) → checkpoint (one bubble, a layer for each of six words) → done. Grammar particles are met and used, not drilled
 - [x] A "write" side lesson on each finished lesson (and from the lesson-complete card): stroke order for its new characters
 - [x] Today takes its new words in path order (the next lesson's first), then the rest of the level
 - [ ] Dialogue audio with the MiniMax generator
-- [ ] Units 6–15 for HSK 1 (14 lessons, 189 words left), then HSK 2
+- [ ] The HSK 2 path (200 more words)
 
 **Verify:** every lesson only uses taught words (build check); a lesson can be finished by keyboard; words finished in a lesson show up in Today's reviews; the path's order survives a reload.
 

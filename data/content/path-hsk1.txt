@@ -15,7 +15,7 @@
 # Lessons teach 10 new words (the build allows 8–12): a dialogue that reuses earlier words, and
 # four sentences to build. Each unit has a short culture note.
 #
-# Status: units 1–8 drafted, for review by a Chinese speaker. The topic outline is taken from a
+# Status: all 15 units drafted, for review by a Chinese speaker. The topic outline is taken from a
 # secondary source and is to be checked against the official 2025 syllabus.
 
 unit hello | Hello | 你好 | Daily life: interaction, polite behaviour (交往)
@@ -301,9 +301,225 @@ build 我/S 早上+七+点/T 吃/V 早饭/O 。 | I have breakfast at seven.
 build 你/S 上午/T 在/V 家/O 吗/X ？ | Are you at home in the morning?
 build 你/S 真/A 早/V ！ | You're early!
 unit school | School | 学校 | Education: study and campus life (学习情况, 校园生活)
+note 汉语 and 中文 both mean Chinese. 汉语 is the usual word for the language you study; 中文 is common for written Chinese, as in 中文书, a Chinese book.
+note Lessons begin with 上课 and end with 下课. Starting and finishing work are 上班 and 下班: 上 for going to, 下 for leaving.
+
+lesson school-1 | Studying Chinese
+new 学习 学校 汉语 学 汉字 上课 下课 书 中文 课
+say A | 你 在 哪儿 学习 ？ | Where do you study?
+say B | 我 在 {北京=Běijīng} 的 一 个 学校 学习 汉语 。 | I study Chinese at a school in Beijing.
+say A | 你 喜欢 学 汉字 吗 ？ | Do you like learning characters?
+say B | 很 喜欢 ！ 汉字 很 漂亮 。 | Very much! Characters are beautiful.
+say A | 你 几 点 上课 ？ | What time do your classes start?
+say B | 八 点 上课 ， 十 二 点 下课 。 | They start at eight and finish at twelve.
+say A | 这 是 你 的 书 吗 ？ | Is this your book?
+say B | 是 ， 这 是 我 的 中文 书 。 今天 下午 没有 课 。 | Yes, it's my Chinese book. I have no classes this afternoon.
+build 我/S 学习/V 汉语/O 。 | I study Chinese.
+build 我/S 喜欢/A 学/V 汉字/O 。 | I like learning characters.
+build 我们/S 八+点/T 上课/V 。 | Our classes start at eight.
+build 这/S 是/V 我+的+中文+书/O 。 | This is my Chinese book.
+
+lesson school-2 | From primary school to university
+new 们 大学生 大学 中学生 中学 小学生 上学 小学 写 字
+say A | 同学 们 好 ！ | Hello, everyone!
+say B | 老师 好 ！ | Hello, teacher!
+say A | 你们 都 是 大学生 吗 ？ | Are you all university students?
+say B | 是 ， 我们 是 大学生 。 我们 的 大学 很 大 。 我 妹妹 是 中学生 。 | Yes, we're university students. Our university is big. My younger sister is at secondary school.
+say C | 我 弟弟 是 小学生 。 他 七 岁 ， 今年 上学 。 | My younger brother is at primary school. He's seven and started school this year.
+say A | 他 的 小学 在 哪儿 ？ | Where's his primary school?
+say C | 他 的 小学 在 那儿 ， 我 的 中学 也 在 那儿 。 | His primary school is over there, and my secondary school was there too.
+say A | {小明=Xiǎomíng} ， 你 写 什么 ？ | Xiaoming, what are you writing?
+say D | 我 写 汉字 。 这个 字 好看 吗 ？ | Characters. Does this one look right?
+say A | 很 好看 ！ | It looks great!
+build 我/S 是/V 大学生/O 。 | I'm a university student.
+build 我+的+弟弟/S 是/V 小学生/O 。 | My younger brother is at primary school.
+build 他/S 今年/T 上学/V 。 | He started school this year.
+build 我/S 写/V 汉字/O 。 | I'm writing characters.
+
 unit work | Work | 工作 | Work: work and occupations (工作情况, 职业)
+note 先生 and 女士 are polite titles after a family name: 王先生, Mr Wang; 李女士, Ms Li.
+note Answering the phone, people say 喂, "hello?", often with a rising tone.
+
+lesson work-1 | What do you do?
+new 做 工作 医生 公司 忙 上班 下班 先生 女士 事
+say A | 你 做 什么 工作 ？ | What do you do?
+say B | 我 是 医生 。 你 呢 ？ | I'm a doctor. And you?
+say A | 我 在 一 个 公司 工作 。 | I work at a company.
+say B | 你 忙 吗 ？ | Are you busy?
+say A | 很 忙 。 我 八 点 上班 ， 晚上 七 点 下班 。 | Very. I start at eight and finish at seven in the evening.
+say B | {王=Wáng} 先生 和 {李=Lǐ} 女士 也 在 你们 公司 吗 ？ | Are Mr Wang and Ms Li at your company too?
+say A | 是 。 他们 今天 有 事 ， 不 上班 。 | Yes. They have something on today, so they're not at work.
+build 你/S 做/V 什么+工作/O ？ | What do you do?
+build 我/S 在+一+个+公司/P 工作/V 。 | I work at a company.
+build 我/S 八+点/T 上班/V 。 | I start work at eight.
+build 他们/S 今天/T 有/V 事/O 。 | They have something on today.
+
+lesson work-2 | On the phone
+new 喂 说话 说 问 问题 电话 知道 打电话 对 手机
+say A | 喂 ？ 你好 ！ | Hello?
+say B | 喂 ， 我 是 {大卫=Dàwèi} 。 你 现在 可以 说话 吗 ？ | Hi, it's David. Can you talk now?
+say A | 可以 。 什么 事 ？ | Sure. What's up?
+say B | 我 想 问 你 一 个 问题 。 | I'd like to ask you something.
+say A | 你 说 。 | Go ahead.
+say B | {李=Lǐ} 老师 的 电话 是 多少 ？ | What's Teacher Li's phone number?
+say A | 我 不 知道 。 你 打电话 问 {小明=Xiǎomíng} ， 他 知道 。 | I don't know. Call Xiaoming and ask; he knows.
+say B | 对 ！ 他 的 手机 我 知道 。 谢谢 ！ | Right! I've got his mobile number. Thanks!
+build 你/S 现在/T 可以/A 说话/V 吗/X ？ | Can you talk now?
+build 我/S 想/A 问/V 一+个+问题/O 。 | I'd like to ask a question.
+build 我/S 不/A 知道/V 。 | I don't know.
+build 你/S 打电话/V 问/V 他/O 。 | Call and ask him.
+
 unit health | Feeling ill | 看病 | Daily life: health (医疗健康)
+note 没事 means "it's nothing": 我没事, I'm fine. It is one of the most common reassurances in Chinese.
+note When someone is ill, the usual advice is to drink plenty of water and rest: 多喝水, 多休息.
+
+lesson health-1 | At the doctor's
+new 生病 医院 看病 病 没事 休息 不要 睡觉 一点儿 睡
+say A | 你 怎么 了 ？ | What's wrong?
+say B | 我 生病 了 。 | I'm ill.
+say A | 你 要 去 医院 看病 。 | You should go to the hospital and see a doctor.
+say C | 没事 ， 不 是 大 病 。 | It's nothing, not a serious illness.
+say C | 你 要 多 休息 ， 多 喝 水 。 | You need to rest and drink plenty of water.
+say B | 我 可以 上班 吗 ？ | Can I go to work?
+say C | 不要 上班 ， 你 要 睡觉 。 | Don't go to work; you need to sleep.
+say B | 我 吃 一点儿 东西 ， 可以 吗 ？ | Can I eat a little?
+say C | 可以 。 早 一点儿 睡 。 | Yes. And go to bed a bit early.
+build 我/S 生病/V 了/X 。 | I'm ill.
+build 你/S 要/A 休息/V 。 | You need to rest.
+build 不要/A 上班/V 。 | Don't go to work.
+build 我/S 想/A 睡觉/V 。 | I want to sleep.
+
+lesson health-2 | A long day
+new 起床 晚 小时 时候 时间 白天 见 一下 分钟 再
+say A | 你 几 点 起床 ？ | What time do you get up?
+say B | 七 点 。 你 呢 ？ | Seven. And you?
+say A | 我 起床 很 晚 ， 九 点 ！ | I get up late, at nine!
+say A | 我 一 天 睡 八 个 小时 。 | I sleep eight hours a day.
+say B | 你 什么 时候 有 时间 ？ | When do you have time?
+say A | 白天 没有 时间 ， 晚上 有 。 | Not in the daytime; in the evening I do.
+say B | 好 ， 我们 晚上 见 。 | OK, see you this evening.
+say A | 我 休息 一下 ， 十 分钟 。 | I'm going to rest for a bit, ten minutes.
+say B | 好 ， 明天 再 说 。 | OK, let's talk tomorrow.
+build 你/S 几+点/T 起床/V ？ | What time do you get up?
+build 我们/S 晚上/T 见/V 。 | See you this evening.
+build 我/S 休息/V 一下/O 。 | I'll rest for a bit.
+build 你/S 什么+时候/T 有/V 时间/O ？ | When do you have time?
+
 unit free | Free time | 周末 | Daily life: leisure (休闲)
+note 会 and 能 both mean "can". 会 is for skills you have learned (我会唱歌, I can sing); 能 is for being able to, or being allowed to.
+note 吧 at the end of a sentence turns it into a suggestion: 我们去书店吧!, let's go to the bookshop!
+
+lesson free-1 | At the weekend
+new 电影院 看 电影 电视 听 歌 唱 好听 玩 好玩儿
+say A | 星期天 你 做 什么 ？ | What are you doing on Sunday?
+say B | 我 去 电影院 看 电影 。 | I'm going to the cinema to see a film.
+say A | 我 在 家 看 电视 ， 听 歌 。 | I'll be at home watching TV and listening to music.
+say B | 你 喜欢 唱 歌 吗 ？ | Do you like singing?
+say A | 很 喜欢 。 我 妹妹 唱 歌 很 好听 。 | Very much. My younger sister sings beautifully.
+say B | 你们 去 哪儿 玩 ？ | Where do you go to have fun?
+say A | 我们 去 {小明=Xiǎomíng} 家 玩 ， 很 好玩儿 ！ | We go round to Xiaoming's; it's great fun!
+build 我/S 看/V 电影/O 。 | I'm watching a film.
+build 我/S 喜欢/A 唱/V 歌/O 。 | I like singing.
+build 她/S 在+家/P 听/V 歌/O 。 | She listens to music at home.
+build 这/S 很/A 好玩儿/V 。 | This is fun.
+
+lesson free-2 | What can you do?
+new 会 读 能 觉得 非常 星期日 书店 吧 读书 电脑
+say A | 你 会 说 汉语 吗 ？ | Can you speak Chinese?
+say B | 会 一点儿 。 我 也 能 读 汉字 。 | A little. I can read characters too.
+say A | 你 觉得 汉语 怎么样 ？ | What do you think of Chinese?
+say B | 我 觉得 汉语 非常 好玩儿 ！ | I think Chinese is great fun!
+say A | 星期日 我们 去 书店 吧 ！ | Let's go to the bookshop on Sunday!
+say B | 好 ！ 我 喜欢 读书 。 你 能 去 吗 ？ | Great! I love reading. Can you come?
+say A | 能 ！ 我 不 想 在 家 玩 电脑 。 | Yes! I don't want to stay home on the computer.
+build 你/S 会/A 说/V 汉语/O 吗/X ？ | Can you speak Chinese?
+build 我/S 能/A 读/V 汉字/O 。 | I can read characters.
+build 我们/S 去/V 书店/O 吧/X ！ | Let's go to the bookshop!
+build 你/S 觉得/V 怎么样/O ？ | What do you think?
+
 unit things | Things around me | 东西 | Basic information: objects (物品信息)
+note Measure words sort nouns: 本 for books (三本书), 件 for clothes, and 个 for most other things.
+note 这些 and 那些, "these" and "those", make a plural without changing the noun: 这些书, these books.
+
+lesson things-1 | In my room
+new 房间 桌子 椅子 哪些 这些 那些 本 哪个 杯子 些
+say A | 这 是 你 的 房间 吗 ？ | Is this your room?
+say B | 是 。 这 是 我 的 桌子 和 椅子 。 | Yes. This is my desk and chair.
+say A | 哪些 书 是 你 的 ？ | Which books are yours?
+say B | 这些 是 我 的 ， 那些 是 我 妹妹 的 。 | These are mine; those are my younger sister's.
+say A | 你 有 几 本 汉语 书 ？ | How many Chinese books do you have?
+say B | 五 本 。 | Five.
+say A | 哪个 杯子 是 你 的 ？ | Which cup is yours?
+say B | 这个 是 我 的 。 我们 去 买 些 杯子 吧 ！ | This one's mine. Let's go and buy some cups!
+build 这/S 是/V 我+的+房间/O 。 | This is my room.
+build 我/S 有/V 五+本+书/O 。 | I have five books.
+build 哪个+杯子/S 是/V 你+的/O ？ | Which cup is yours?
+build 这些/S 是/V 我+的/O 。 | These are mine.
+
+lesson things-2 | Some and many
+new 找 新 给 千 百 一些 一半 有的 少 有些
+say A | 你 找 什么 ？ | What are you looking for?
+say B | 我 找 我 的 新 手机 。 | My new phone.
+say A | 在 这儿 ！ 给 你 。 | Here it is! There you go.
+say B | 谢谢 ！ 这个 手机 两 千 块 。 | Thanks! This phone cost two thousand yuan.
+say A | 太 贵 了 ！ 我 的 手机 八 百 块 。 | That's so expensive! Mine was eight hundred.
+say B | 我 有 一些 钱 ， 我 给 妈妈 一半 。 | I have some money, and I give half to my mum.
+say A | 有的 同学 钱 很 少 。 | Some classmates have very little money.
+say B | 有些 东西 很 便宜 ， 有些 很 贵 。 | Some things are cheap, and some are expensive.
+build 你/S 找/V 什么/O ？ | What are you looking for?
+build 我+的+手机/S 八+百+块/V 。 | My phone was eight hundred yuan.
+build 这/S 是/V 我+的+新+手机/O 。 | This is my new phone.
+build 我/S 给/V 妈妈/O 一半/O 。 | I give half to my mum.
+
 unit places | Here and there | 这儿 | Basic information: places and directions (事件信息, 环境信息)
+note 里 after a noun means "inside": 家里, at home; 书店里, in the bookshop. 上 and 下 work the same way for on and under: 桌子上, on the table.
+note 住在 says where you live: 我住在北京.
+
+lesson places-1 | In, on and under
+new 上 下 外边 里 外 那里 这边 那边 边 这里
+say A | 我 的 书 在 哪儿 ？ | Where's my book?
+say B | 在 桌子 上 。 | On the table.
+say A | 我 的 猫 呢 ？ | And my cat?
+say B | 在 椅子 下 。 | Under the chair.
+say A | 你 在 哪里 ？ 我 在 外边 。 | Where are you? I'm outside.
+say B | 我 在 家 里 。 外边 冷 吗 ？ | I'm at home. Is it cold out?
+say A | 很 冷 ！ 这里 有 很 多 外 国 人 。 | Very! There are lots of foreigners here.
+say B | 那里 呢 ？ 超市 在 这边 吗 ？ | What about there? Is the supermarket on this side?
+say A | 不 在 这边 ， 在 那边 ， 书店 边 上 。 | Not this side; it's on that side, next to the bookshop.
+build 书/S 在/V 桌子+上/P 。 | The book is on the table.
+build 猫/S 在/V 椅子+下/P 。 | The cat is under the chair.
+build 我/S 在/V 家+里/P 。 | I'm at home.
+build 超市/S 在/V 那边/P 。 | The supermarket is over there.
+
+lesson places-2 | Where do you live?
+new 住 后 口 前 看见 正在 开 听见 她们 它们
+say A | 你 住 在 哪儿 ？ | Where do you live?
+say B | 我 住 在 学校 后 边 。 | Behind the school.
+say A | 你 家 有 几 口 人 ？ | How many people are in your family?
+say B | 四 口 人 。 我 家 前 边 有 一 个 超市 。 | Four. There's a supermarket in front of our home.
+say A | 你 看见 {小明=Xiǎomíng} 了 吗 ？ | Have you seen Xiaoming?
+say B | 看见 了 ， 他 正在 开 电脑 。 | Yes, he's switching on his computer.
+say A | 你 听见 了 吗 ？ 她们 在 唱 歌 。 | Can you hear that? They're singing.
+say B | 听见 了 ！ 我们 的 猫 呢 ？ | I can! Where are our cats?
+say A | 它们 在 外边 玩 。 | They're playing outside.
+build 我/S 住/V 在+学校+后+边/P 。 | I live behind the school.
+build 你+家/S 有/V 几+口+人/O ？ | How many people are in your family?
+build 他/S 正在/A 开/V 电脑/O 。 | He's switching on his computer.
+build 它们/S 在+外边/P 玩/V 。 | They're playing outside.
+
 unit culture | Chinese food | 中国菜 | Culture: food culture (饮食文化)
+note Dumplings (饺子) are a family favourite across northern China, eaten above all at Spring Festival; families often make them together.
+note 饭店 can mean a restaurant or a hotel; in everyday talk it usually means a restaurant.
+
+lesson culture-1 | Dumplings
+new 做饭 饺子 饭店 店 男 女 第 日
+say A | 你 会 做饭 吗 ？ | Can you cook?
+say B | 会 ！ 我 很 喜欢 做 饺子 。 | Yes! I love making dumplings.
+say A | 我 不 会 做饭 。 我们 去 饭店 吃 饺子 吧 ！ | I can't cook. Let's go to a restaurant for dumplings!
+say B | 好 ！ 这个 店 的 饺子 非常 好吃 ， 我 的 男 同学 和 女 同学 都 喜欢 。 | Great! The dumplings here are really good; my classmates all love them.
+say A | 这 是 我 第 一 个 饺子 ！ 真 好吃 ！ | This is my first dumpling ever! It's so good!
+say B | 我们 星期 日 再 来 吧 。 | Let's come back on Sunday.
+build 你/S 会/A 做饭/V 吗/X ？ | Can you cook?
+build 我们/S 去+饭店/P 吃/V 饺子/O 吧/X ！ | Let's go to a restaurant for dumplings!
+build 这个+店+的+饺子/S 非常/A 好吃/V 。 | The dumplings here are really good.
+build 这/S 是/V 我+的+第+一+个+饺子/O 。 | This is my first dumpling.
