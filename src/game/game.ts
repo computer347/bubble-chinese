@@ -17,6 +17,8 @@ import type { Mode, ModeContext } from '../modes/mode';
 import { LayeredMode } from '../modes/layered';
 import type { Progress } from './progress';
 import { $, fmt } from '../ui/dom';
+import { fitBubble, type Rect } from '../ui/fit';
+import { THEMES, type StyleId } from '../theme/themes';
 
 export type GameState = 'home' | 'note' | Exclude<BubbleState, 'hidden'>;
 
@@ -45,6 +47,10 @@ export interface GameHandle {
     pool: number; due: number; maxLevel: number;
     /** The last spoken prompt: how long it took to start (ms; null if it fell back), and whether the current word's clip is decoded. */
     voice: { latency: number | null; primed: boolean };
+    /** The bubble's outer layer on screen, in CSS pixels. */
+    ball: { x: number; y: number; r: number };
+    /** The last fit: where the bubble was sent, when, and what it avoided. */
+    lastFit: { y: number; r: number; at: number; obstacles: Array<{ l: number; t: number; r: number; b: number }> } | null;
   };
 }
 
@@ -81,7 +87,33 @@ export function startGame(opts: GameOptions): GameHandle {
   const session = { score: 0, streak: 0 };
   const updateHud = () => hud.stats({ ...session, learned: progress.learnedCount('words', pool()), total: pool().length });
 
-  const ctx: ModeContext = { stage, bubble, chips, hud, slip, dictation, sound, speech, voice, progress, session, pool, updateHud };
+  /* ---------- fit the bubble into the space the answers and panels leave ---------- */
+  const shown = (el: Element): Rect | null => {
+    if (!el.getClientRects().length || (el as HTMLElement).hidden) return null;
+    const r = el.getBoundingClientRect();
+    return { l: r.left, t: r.top, r: r.right, b: r.bottom };
+  };
+  let lastFit: { y: number; r: number; at: number; obstacles: Rect[] } | null = null;
+  function fit(instant = false): void {
+    const W = window.innerWidth, H = window.innerHeight, d = bubble.designed();
+    const answers = dictation.shown ? [shown($('dictation'))] : chips.layoutRects();
+    const panels = [...document.querySelectorAll('.corner, #modeLabel')].map(shown);
+    const obstacles = [...answers, ...panels].filter((q): q is Rect => !!q);
+    const f = fitBubble({ W, H, x: W / 2, obstacles, maxR: d.r, prefY: d.y, tail: THEMES[progress.data.settings.style].tail });
+    lastFit = { ...f, at: performance.now(), obstacles };
+    bubble.place(f.y, f.r, instant);
+  }
+  stage.onResize(() => { if (playing) fit(true); });
+  // re-fit whenever an answer or panel changes size after it was measured: a font arriving late
+  // (Chinese characters load on demand), text wrapping, a longer question
+  let refit = 0;
+  const watch = new ResizeObserver(() => {
+    if (!playing || refit) return;
+    refit = requestAnimationFrame(() => { refit = 0; if (bubble.state !== 'popping' && bubble.state !== 'hidden') fit(); });
+  });
+  document.querySelectorAll('.ans, .corner, #modeLabel, #dictation').forEach(el => watch.observe(el));
+
+  const ctx: ModeContext = { stage, bubble, chips, hud, slip, dictation, sound, speech, voice, progress, session, pool, updateHud, fit };
   const modes = new Map<ModeId, Mode>(MODES.filter(m => m.make).map(m => [m.id, m.make!(ctx)]));
   let current: Mode | null = null;
   let currentId: ModeId | null = null;
@@ -89,7 +121,20 @@ export function startGame(opts: GameOptions): GameHandle {
   let playing = false;
 
   /* ---------- home screen: each mode is a bubble you pop to enter ---------- */
-  const home = new Home({ progress, reduceMotion, modes: MODES, pool, onEnter: id => enter(id), onLevel: updateHud });
+  const home = new Home({ progress, reduceMotion, modes: MODES, pool, onEnter: id => enter(id), onLevel: updateHud, onStyle: style => applyStyle(style) });
+
+  /* ---------- style: soap bubbles, or ink and lanterns ---------- */
+  function applyStyle(style: StyleId, instant = false): void {
+    const theme = THEMES[style];
+    document.body.classList.toggle('style-ink', style === 'ink');
+    stage.palettes = theme.palettes;
+    stage.backdrop.setStyle(theme.wallFonts, theme.paper);
+    stage.commitPalette(0, instant);
+    bubble.setTheme(theme);
+    // the page's fonts changed, so the answers' sizes did too
+    chips.measure();
+    if (playing) fit();
+  }
   function showHome(): void {
     if (bubble.state === 'popping') return;
     current?.stop();
@@ -139,7 +184,7 @@ export function startGame(opts: GameOptions): GameHandle {
   /* ---------- boot ---------- */
   bubble.setDetail(1);
   stage.resize();
-  stage.commitPalette(0, true);
+  applyStyle(progress.data.settings.style, true);
   showHome();
   if (!reduceMotion) gsap.from('.corner', { opacity: 0, y: 10, duration: 0.8, delay: 0.6, stagger: 0.08, ease: 'power2.out' });
   stage.run(dt => bubble.update(dt));
@@ -157,7 +202,9 @@ export function startGame(opts: GameOptions): GameHandle {
       score: session.score, streak: session.streak, detail: DETAILS[bubble.detailIndex].level, asleep: bubble.asleep, wrong: words.wrongThisLayer,
       queue: words.queue(),
       pool: pool().length, due: progress.dueCount('words', pool()), maxLevel: progress.data.settings.maxLevel,
-      voice: { latency: voice.lastLatency, primed: !!words.word && voice.primed(words.word) }
+      voice: { latency: voice.lastLatency, primed: !!words.word && voice.primed(words.word) },
+      ball: bubble.screenCircle(),
+      lastFit
     }; }
   };
 }

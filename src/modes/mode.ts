@@ -31,6 +31,8 @@ export interface ModeContext {
   pool(): readonly Word[];
   /** Redraws score, streak and the learned count. */
   updateHud(): void;
+  /** Sizes and places the bubble in the space the answers and panels leave free. */
+  fit(instant?: boolean): void;
 }
 
 /** A way to play, entered by popping its bubble on the home screen. */

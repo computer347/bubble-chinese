@@ -84,7 +84,7 @@ describe('Voice', () => {
 });
 
 describe('Voice with sentences', () => {
-  it('falls back to speaking the sentence text, and single-word clips, without recordings', async () => {
+  it('falls back to speaking the sentence text without a recording', async () => {
     const calls: string[] = [];
     const speech = { speak: (t: string) => calls.push(t), cancel: () => {} } as unknown as Speech;
     const { SENTENCES } = await import('../../src/content/sentences');
@@ -92,8 +92,6 @@ describe('Voice with sentences', () => {
     const v = new Voice(speech, {}, '/', {});
     await v.saySentence(s);
     expect(calls.pop()).toBe(s.text);
-    await v.sayWordIn(s, 0, WORDS.find(w => w.h === '我')!);
-    expect(calls.pop()).toBe('我');
   });
 });
 

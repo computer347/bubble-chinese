@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import { EDGES, type Edge } from '../bubble/bubble';
+import type { Rect } from './fit';
 
 interface Chip { el: HTMLButtonElement; hot: number }
 
@@ -68,6 +69,19 @@ export class Chips {
     thr.bottom = clampN(2 * b.offsetTop / H - 1);
     thr.left = clampN(1 - 2 * (l.offsetLeft + l.offsetWidth) / W);
     thr.right = clampN(2 * r.offsetLeft / W - 1);
+  }
+
+  /**
+   * Where the chips sit once settled, from layout rather than the current transform (which
+   * scales them while they slide in). Top and bottom are centred across, left and right down.
+   */
+  layoutRects(): Rect[] {
+    return EDGES.map(e => {
+      const el = this.el(e), w = el.offsetWidth, h = el.offsetHeight;
+      const l = el.offsetLeft - (e === 'top' || e === 'bottom' ? w / 2 : 0);
+      const t = el.offsetTop - (e === 'left' || e === 'right' ? h / 2 : 0);
+      return { l, t, r: l + w, b: t + h };
+    });
   }
 
   in(): void {

@@ -1,6 +1,7 @@
 import type { Word } from '../content/words';
 import { newCard, review, reviveCard, State, type Card, type Grade } from './memory';
 import { ASK_KINDS, type AskKind } from './questions';
+import type { StyleId } from '../theme/themes';
 
 /**
  * What a card measures. Each skill has its own schedule, so a word you read well but can't
@@ -18,6 +19,8 @@ export interface Settings {
   maxLevel: number;
   /** What bubbles ask about; at least one. */
   ask: AskKind[];
+  /** The look: soap bubbles, or ink and lanterns. */
+  style: StyleId;
 }
 
 /** Everything we keep about the learner, on this device. Version 3: FSRS cards per skill. */
@@ -39,7 +42,7 @@ export interface ReviewEntry {
 }
 
 const emptyCards = (): ProgressData['cards'] => Object.fromEntries(SKILLS.map(s => [s, {}])) as ProgressData['cards'];
-export const emptyProgress = (): ProgressData => ({ version: 3, cards: emptyCards(), best: 0, settings: { maxLevel: 1, ask: [...ASK_KINDS] } });
+export const emptyProgress = (): ProgressData => ({ version: 3, cards: emptyCards(), best: 0, settings: { maxLevel: 1, ask: [...ASK_KINDS], style: 'bubble' } });
 
 /** The version-1 shape from the single-file game and Phase 0 (mastery 0–3 keyed by characters). */
 interface ProgressV1 { m?: Record<string, number>; seen?: Record<string, number>; miss?: Record<string, number>; best?: number }
@@ -206,6 +209,8 @@ export class Progress {
   }
 
   setMaxLevel(level: number): void { this.data.settings.maxLevel = level; this.persist(); }
+
+  setStyle(style: StyleId): void { this.data.settings.style = style; this.persist(); }
 
   /** Chooses what bubbles ask about. An empty choice is ignored: there must be something to ask. */
   setAsk(ask: readonly AskKind[]): void {

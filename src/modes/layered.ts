@@ -90,7 +90,7 @@ export abstract class LayeredMode implements Mode {
   }
 
   private setQuestion(fresh: boolean): void {
-    const { chips, hud, stage, dictation } = this.ctx;
+    const { chips, hud, stage, dictation, bubble } = this.ctx;
     const q = this.questions[0];
     if (!q.typed) {
       this.correctEdge = chips.set(placeOptions(q.choices, q.answer, this.lastEdge), q.answer, q.chipZh);
@@ -100,6 +100,7 @@ export abstract class LayeredMode implements Mode {
     this.renderPips();
     if (fresh) stage.backdrop.setWord(q.prompt, q.zh); else stage.backdrop.kick();
     if (q.typed) dictation.show(); else { dictation.hide(); chips.in(); }
+    this.ctx.fit(fresh && bubble.state === 'hidden');
     this.wrongThisLayer = 0;
     this.onLayer(q, fresh);
   }
@@ -208,6 +209,7 @@ export abstract class LayeredMode implements Mode {
       chips.el(this.correctEdge).classList.add('hint', 'reveal');
       hud.ask(q.chipZh ? `It’s ${q.answer}. Pull it there.` : `It’s “${q.answer}”. Pull it there.`);
     }
+    this.ctx.fit();
     this.onForgot(q);
     this.renderPips();
   }

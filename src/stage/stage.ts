@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { gsap } from 'gsap';
-import { PALETTES } from '../content/palettes';
+import { PALETTES, type Palette } from '../content/palettes';
 import { Environment } from '../render/environment';
 import { Backdrop, type BallView } from '../render/backdrop';
 import { rand } from '../game/random';
@@ -42,6 +42,8 @@ export class Stage {
   /** Visible width and height at z = 0, the camera distance, and the bubble's resting height. */
   visW = 1; visH = 1; camZ = 8; homeY = 0;
   palIdx = 0;
+  /** The current style's palettes. */
+  palettes: readonly Palette[] = PALETTES;
   perf: PerfHooks | null = null;
   /** True while the scene is at rest (the bubble asleep or hidden). With the backdrop unchanged too, it is drawn every other frame. */
   idle: (() => boolean) | null = null;
@@ -91,7 +93,7 @@ export class Stage {
   /** Recolours the backdrop, the page and the lighting. */
   commitPalette(i: number, instant: boolean): void {
     this.palIdx = i;
-    const p = PALETTES[i];
+    const p = this.palettes[i];
     this.backdrop.setColors(p.bg, p.ui, p.shadow);
     gsap.to(document.documentElement, { '--bg': p.bg, '--ui': p.ui, '--ui-dim': p.dim, '--line': p.line, duration: instant ? 0 : 0.45, ease: 'power2.out' });
     this.renderer.setClearColor(p.bg);
@@ -101,7 +103,7 @@ export class Stage {
   /** A palette other than the current one. */
   otherPalette(): number {
     let i: number;
-    do { i = Math.floor(Math.random() * PALETTES.length); } while (i === this.palIdx);
+    do { i = Math.floor(Math.random() * this.palettes.length); } while (i === this.palIdx);
     return i;
   }
 

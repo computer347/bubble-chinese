@@ -8,6 +8,8 @@ import type { BallView } from '../render/backdrop';
 import { R, type Stage } from '../stage/stage';
 import { rand } from '../game/random';
 import { smooth } from '../ui/dom';
+import type { Theme } from '../theme/themes';
+import { lanternCore, paperFilm, LanternFittings } from '../theme/lantern';
 
 export type Edge = 'top' | 'right' | 'bottom' | 'left';
 export const EDGES: readonly Edge[] = ['top', 'right', 'bottom', 'left'];
@@ -66,7 +68,13 @@ export class Bubble {
   private readonly geo = new THREE.BufferGeometry();
   private posAttr!: THREE.BufferAttribute;
   private nrmAttr!: THREE.BufferAttribute;
-  private readonly coreMat = coreMaterial(PALETTES[0].mat);
+  private coreMat = coreMaterial(PALETTES[0].mat);
+  /** The two looks' materials: [films, core] for bubbles and for lanterns, the lanterns' made on first use. */
+  private readonly looks: { bubble: [THREE.Material[], THREE.MeshPhysicalMaterial]; ink?: [THREE.Material[], THREE.MeshPhysicalMaterial] };
+  /** Drawn this much shorter than wide; a lantern is squat. */
+  private squash = 1;
+  private shards: readonly string[] = ['#ffffff', '#ffd6f5', '#c9f3ff', '#fff4c2'];
+  private readonly fittings = new LanternFittings();
   private baseEmissive = PALETTES[0].mat.emissive;
   private readonly body = new THREE.Group();
   private readonly films: Layer[];
@@ -74,6 +82,11 @@ export class Bubble {
   private readonly allLayers: Layer[];
   private stack: Layer[] = [];
   private readonly bs = { s: 1 };
+  /** Fitted to the screen: a scale on top of the designed size, and the resting height (NaN: the stage's). */
+  private readonly fit = { s: 1, y: NaN };
+  /** Where the fit is heading, so a repeated request for the same spot doesn't restart the glide. */
+  private fitTarget = { s: 1, y: NaN };
+  private get homeY(): number { return Number.isNaN(this.fit.y) ? this.stage.homeY : this.fit.y; }
 
   // centre of the body and the surface simulation
   private readonly P: Physics = { ...PHYS.jelly };
@@ -127,6 +140,8 @@ export class Bubble {
     this.films = Array.from({ length: MAX_LAYERS - 1 }, (_, j) => makeLayer(filmMaterial(0.34 + (j % 2) * 0.07), true));
     this.core = makeLayer(this.coreMat, false);
     this.allLayers = [...this.films, this.core];
+    this.looks = { bubble: [this.films.map(f => f.mat), this.coreMat] };
+    this.body.add(this.fittings.group);
     this.body.visible = false;
     this.setWobble(0.55);
     this.bindInput();
@@ -176,13 +191,13 @@ export class Bubble {
   }
 
   wake(): void { this.sleepFrames = 0; this.asleep = false; }
-  private outerScale(): number { return (this.stack[0] ? this.stack[0].sc.v : 1) * this.bs.s; }
+  private outerScale(): number { return (this.stack[0] ? this.stack[0].sc.v : 1) * this.bs.s * this.fit.s; }
 
   private step(dt: number): number {
     const { C, Vc, Pw, thrust, soft, stage } = this;
     this.simTime += dt;
     let ax: number, ay: number, az: number;
-    const hy = stage.homeY + (stage.reduceMotion ? 0 : Math.sin(this.simTime * 1.15) * 0.05);
+    const hy = this.homeY + (stage.reduceMotion ? 0 : Math.sin(this.simTime * 1.15) * 0.05);
     const R_ = soft.rest;
     if (this.state === 'popping') {
       ax = thrust.x - Vc.x * 1.25; ay = thrust.y - Vc.y * 1.25; az = -C.z * 8 - Vc.z * 3;
@@ -190,7 +205,7 @@ export class Bubble {
       // pinned to the middle: a strong spring home, and only a slight lean toward the hand
       const g = this.grabVi * 3, s = this.outerScale();
       ax = 170 * (0 - C.x) + 14 * (Pw.x - C.x - R_[g] * s) - 18 * Vc.x;
-      ay = 170 * (hy - C.y) + 14 * (Pw.y - C.y - R_[g + 1] * s) - 18 * Vc.y;
+      ay = 170 * (hy - C.y) + 14 * (Pw.y - C.y - R_[g + 1] * s * this.squash) - 18 * Vc.y;
       az = 170 * (0 - C.z) - 18 * Vc.z;
     } else {
       const kC = this.state === 'intro' ? 60 : 150, cC = this.state === 'intro' ? 9 : 11;
@@ -201,7 +216,7 @@ export class Bubble {
     let grab = null;
     if (this._dragging) {
       const g = this.grabVi * 3, s = this.outerScale(), t = this.grabTarget;
-      t.x = (Pw.x - C.x) / s - R_[g]; t.y = (Pw.y - C.y) / s - R_[g + 1]; t.z = (Pw.z - C.z) / s - R_[g + 2];
+      t.x = (Pw.x - C.x) / s - R_[g]; t.y = (Pw.y - C.y) / (s * this.squash) - R_[g + 1]; t.z = (Pw.z - C.z) / s - R_[g + 2];
       grab = { vertex: this.grabVi, target: t, strength: 1600 };
     }
     const P = this.P;
@@ -218,15 +233,16 @@ export class Bubble {
   private placeBody(): void {
     const { body, bs } = this;
     body.position.copy(this.C);
-    body.scale.setScalar(bs.s);
-    for (const L of this.allLayers) if (L.mesh.visible) L.mesh.scale.setScalar(L.sc.v);
+    body.scale.setScalar(bs.s * this.fit.s);
+    for (const L of this.allLayers) if (L.mesh.visible) L.mesh.scale.set(L.sc.v, L.sc.v * this.squash, L.sc.v);
+    if (this.fittings.group.visible) this.fittings.place(R * (this.stack[0] ?? this.core).sc.v, this.squash);
     body.updateMatrixWorld(true);
   }
 
   private walls(): void {
     if (this.state !== 'popping' || !this.body.visible) return;
     const { C, Vc, stage } = this;
-    const rr = R * this.core.sc.v * this.bs.s * 0.9, mx = stage.visW / 2 - rr, my = stage.visH / 2 - rr;
+    const rr = R * this.core.sc.v * this.bs.s * this.fit.s * 0.9, mx = stage.visW / 2 - rr, my = stage.visH / 2 - rr;
     if (C.x > mx && Vc.x > 0) { C.x = mx; Vc.x *= -0.62; }
     if (C.x < -mx && Vc.x < 0) { C.x = -mx; Vc.x *= -0.62; }
     if (C.y > my && Vc.y > 0) { C.y = my; Vc.y *= -0.62; }
@@ -235,7 +251,7 @@ export class Bubble {
 
   private vertexWorld(v: number, layer: Layer, out: THREE.Vector3): THREE.Vector3 {
     const s = layer.sc.v, p = this.soft.positions;
-    return out.set(p[v * 3] * s, p[v * 3 + 1] * s, p[v * 3 + 2] * s).applyMatrix4(this.body.matrixWorld);
+    return out.set(p[v * 3] * s, p[v * 3 + 1] * s * this.squash, p[v * 3 + 2] * s).applyMatrix4(this.body.matrixWorld);
   }
 
   /* ---------- pulling to an edge ---------- */
@@ -303,7 +319,7 @@ export class Bubble {
     this.body.updateMatrixWorld(true);
     const outer = this.stack[0];
     const p = this.stage.toCanvas(this.vertexWorld(vi, outer, this._v));
-    this.stage.backdrop.burst(p.x, p.y, this.view.r, ['#ffffff', '#ffd6f5', '#c9f3ff', '#fff4c2'], 10, false);
+    this.stage.backdrop.burst(p.x, p.y, this.view.r, [...this.shards], 10, false);
     this.sound.pop(true);
     this.stack.shift();
     gsap.killTweensOf(outer.sc);
@@ -342,11 +358,11 @@ export class Bubble {
     this.impulse(vi, 50 * this.rm, 0.012);
     const palIdx = stage.palIdx;
     this.pendingPal = stage.otherPalette();
-    stage.backdrop.floodColor = PALETTES[this.pendingPal].bg;
+    stage.backdrop.floodColor = stage.palettes[this.pendingPal].bg;
     this.coreMat.emissiveIntensity = this.baseEmissive;
     this.body.updateMatrixWorld(true);
     const p = stage.toCanvas(this.vertexWorld(vi, this.core, this._v));
-    stage.backdrop.burst(p.x, p.y, this.view.r, [PALETTES[palIdx].mat.color], 9, true);
+    stage.backdrop.burst(p.x, p.y, this.view.r, [stage.palettes[palIdx].mat.color], 9, true);
     stage.backdrop.blast(p.x, p.y);
     stage.shake(1);
     this.sound.pop(false); this.sound.deflate(this.POP_DUR);
@@ -394,7 +410,7 @@ export class Bubble {
   /** Inflates a new bubble with `films` soap films around the core, in the stage's current palette. */
   spawn(films = 2): void {
     const { stage } = this;
-    const pal = PALETTES[stage.palIdx];
+    const pal = stage.palettes[stage.palIdx];
     applyCore(this.coreMat, pal.mat);
     this.baseEmissive = pal.mat.emissive;
     Object.assign(this.P, PHYS[pal.kind]);
@@ -409,10 +425,53 @@ export class Bubble {
     this.totalLayers = this.stack.length;
     this.relayout(false);
     this.body.quaternion.identity(); this.body.visible = true;
-    this.C.set(0, stage.homeY - stage.visH * 0.25, 0); this.Vc.set(0, 3.5, 0);
+    this.C.set(0, this.homeY - stage.visH * 0.25, 0); this.Vc.set(0, 3.5, 0);
     this.bs.s = 0.02; this.state = 'intro';
     gsap.to(this.bs, { s: 1, duration: stage.reduceMotion ? 0.3 : 1.2, ease: 'elastic.out(1,.42)', onComplete: () => { this.state = 'live'; } });
     this.sound.inflate();
+    this.wake();
+  }
+
+  /** Switches between soap bubbles and paper lanterns: materials, shape, fittings and pop scraps. */
+  setTheme(theme: Theme): void {
+    const ink = theme.id === 'ink';
+    if (ink && !this.looks.ink) this.looks.ink = [this.films.map((_, j) => paperFilm(0.34 + (j % 2) * 0.07)), lanternCore()];
+    const [films, core] = ink ? this.looks.ink! : this.looks.bubble;
+    this.films.forEach((L, j) => {
+      const fade = this.fade(L).value;
+      L.mat = films[j]; L.mesh.material = films[j];
+      this.fade(L).value = fade;
+    });
+    this.coreMat = core; this.core.mat = core; this.core.mesh.material = core;
+    const pal = this.stage.palettes[this.stage.palIdx];
+    applyCore(core, pal.mat);
+    this.baseEmissive = pal.mat.emissive;
+    this.squash = theme.squash;
+    this.shards = theme.shards;
+    this.fittings.group.visible = ink;
+    this.wake();
+  }
+
+  /** The designed radius and resting height on screen, in CSS pixels. */
+  designed(): { r: number; y: number } {
+    const k = window.innerHeight / this.stage.visH;
+    return { r: R * k, y: (this.stage.visH / 2 - this.stage.homeY) * k };
+  }
+
+  /**
+   * Fits the bubble to the screen: resting centre at height y and outer radius r (CSS pixels),
+   * never larger than designed. Glides there unless `instant`.
+   */
+  place(y: number, r: number, instant = false): void {
+    const k = this.stage.visH / window.innerHeight;
+    const to = { s: Math.min(1, (r * k) / R), y: this.stage.visH / 2 - y * k };
+    const same = Math.abs(to.s - this.fitTarget.s) < 0.005 && Math.abs(to.y - this.fitTarget.y) < 0.005;
+    if (same && !instant) return;
+    this.fitTarget = to;
+    gsap.killTweensOf(this.fit);
+    if (instant || Number.isNaN(this.fit.y)) Object.assign(this.fit, to);
+    // fast at first, so even a glide that is soon redirected gets most of the way
+    else gsap.to(this.fit, { ...to, duration: this.stage.reduceMotion ? 0.1 : 0.45, ease: 'power3.out' });
     this.wake();
   }
 
@@ -524,13 +583,19 @@ export class Bubble {
       if (this.sleepFrames > 45) { this.asleep = true; this.acc = 0; }
     } else {
       this.simTime += dt;
-      this.C.y = stage.homeY + (stage.reduceMotion ? 0 : Math.sin(this.simTime * 1.15) * 0.05);
+      this.C.y = this.homeY + (stage.reduceMotion ? 0 : Math.sin(this.simTime * 1.15) * 0.05);
       if (this.state !== 'live' || this._dragging) this.wake();
     }
     this.walls();
     this.placeBody();
     this.checkEdge(dt);
     return this.project();
+  }
+
+  /** The outer layer's circle on screen, in CSS pixels. */
+  screenCircle(): { x: number; y: number; r: number } {
+    const k = 1 / this.stage.backdrop.cdpr;
+    return { x: this.view.x * k, y: this.view.y * k, r: this.view.r * k };
   }
 
   private project(): BallView {
@@ -540,7 +605,7 @@ export class Bubble {
     const ppu = stage.pixelsPerUnit(C.z);
     view.x = (this._p.x * 0.5 + 0.5) * stage.backdrop.cw;
     view.y = (1 - (this._p.y * 0.5 + 0.5)) * stage.backdrop.ch;
-    view.r = R * (this.stack[0] ? this.stack[0].sc.v : this.core.sc.v) * this.bs.s * ppu;
+    view.r = R * (this.stack[0] ? this.stack[0].sc.v : this.core.sc.v) * this.bs.s * this.fit.s * ppu;
     view.vx = Vc.x * ppu; view.vy = -Vc.y * ppu;
     view.visible = this.body.visible;
     view.pushing = this.body.visible && this.state !== 'popping';

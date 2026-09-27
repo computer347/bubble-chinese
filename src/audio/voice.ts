@@ -25,8 +25,8 @@ function touch<K, V>(m: Map<K, V>, k: K): V | undefined {
 
 /**
  * Plays words and sentences: recorded MiniMax clips when they exist, otherwise the browser's
- * speech synthesis. Sentences play through Web Audio, so a single word can be cut out of the
- * naturally spoken sentence with its in-context tones.
+ * speech synthesis. Sentences play through Web Audio, with word timings to highlight each word
+ * as it is spoken.
  */
 export class Voice {
   enabled = true;
@@ -185,31 +185,6 @@ export class Voice {
       }
     } catch {
       this.speech.speak(s.text, slow);
-    }
-  }
-
-  /**
-   * Plays one word of a sentence. With word timings it is cut from the sentence recording, so it
-   * keeps the tones it has in context; otherwise the single-word clip plays.
-   */
-  async sayWordIn(s: Sentence, index: number, word: Word, slow = false): Promise<void> {
-    if (!this.enabled) return;
-    this.stop();
-    const c = this.sentenceClip(s, slow), t = c?.words?.[index], ctx = t && this.audio();
-    if (!c || !t || !ctx) { this.say(word, slow); return; }
-    try {
-      const buf = await this.buffer(c.file);
-      const start = Math.max(0, t[0] / 1000 - 0.03), dur = Math.min(buf.duration - start, (t[1] - t[0]) / 1000 + 0.09);
-      const src = ctx.createBufferSource(), g = ctx.createGain();
-      src.buffer = buf; src.connect(g).connect(ctx.destination);
-      // short fades so the cut edges don't click
-      const now = ctx.currentTime;
-      g.gain.setValueAtTime(0, now); g.gain.linearRampToValueAtTime(1, now + 0.015);
-      g.gain.setValueAtTime(1, now + dur - 0.03); g.gain.linearRampToValueAtTime(0, now + dur);
-      src.start(now, start, dur);
-      this.source = src;
-    } catch {
-      this.say(word, slow);
     }
   }
 

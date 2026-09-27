@@ -162,6 +162,8 @@ body.labelled .ans[data-edge="top"]{ top:calc(var(--st) + var(--pad) + 32px); }
 .empty{ font-size:15px; line-height:1.5; margin-top:18px; }
 
 @media (max-width:720px){
+  .home{ padding-top:calc(var(--st) + 64px); padding-bottom:calc(var(--sb) + 78px); gap:14px; }
+  .home-note{ display:none; }
   .tl{ max-width:52vw; }
   .tip{ display:none; }
   .ask{ font-size:15px; }
@@ -189,8 +191,11 @@ body.labelled .ans[data-edge="top"]{ top:calc(var(--st) + var(--pad) + 32px); }
 @media (max-width:720px){ .dictation{ bottom:calc(var(--sb) + 74px); } .dictation input{ font-size:17px; } }
 
 /* home screen */
-.home{ position:fixed; inset:0; z-index:4; overflow-y:auto; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:calc(var(--st) + 90px) 20px calc(var(--sb) + 90px); text-align:center; }
+.home{ position:fixed; inset:0; z-index:4; overflow-y:auto; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:18px; padding:calc(var(--st) + 90px) 20px calc(var(--sb) + 90px); text-align:center; }
 .home[hidden]{ display:none; }
+/* centred when it fits; when taller than the screen it starts at the top and scrolls, instead of spilling off both ends */
+.home > :first-child{ margin-top:auto; }
+.home > :last-child{ margin-bottom:auto; }
 .home-title{ margin:0; font-family:var(--serif); font-weight:400; font-size:clamp(34px,5vw,60px); line-height:1.05; letter-spacing:-.01em; }
 .home-stats{ margin:0; max-width:46ch; font-size:16px; line-height:1.45; color:var(--ui-dim); }
 .modes{ display:flex; flex-wrap:wrap; justify-content:center; gap:clamp(12px,2.4vw,28px); margin:10px 0 6px; }

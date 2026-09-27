@@ -1,8 +1,6 @@
 import * as THREE from 'three';
 import { rand } from '../game/random';
 
-const FONT_LATIN = '"Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif';
-const FONT_ZH = '"Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
 
 interface Letter {
   ch: string; rx: number; ry: number; ox: number; oy: number; vx: number; vy: number;
@@ -40,6 +38,11 @@ export class Backdrop {
   floodColor = '#000';
   private dirty = true;
   private lastSig = '';
+  /** Fonts for the prompt, and whether the wall is paper (grain and aged edges). */
+  private fonts = { latin: '"Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif', zh: '"Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif' };
+  private paper: CanvasPattern | null = null;
+  /** Brush fonts come in one weight; the letters' weight swell is then left out. */
+  private oneWeight = false;
   private readonly shadowCanvas = document.createElement('canvas');
   private readonly shadowTex: THREE.CanvasTexture;
   private readonly shadow: THREE.Mesh;
@@ -94,13 +97,22 @@ export class Backdrop {
     this.layout();
   }
 
-  private font(weight: number): string { return `${weight} ${this.fontSize}px ${this.zh ? FONT_ZH : FONT_LATIN}`; }
+  private font(weight: number): string { return `${this.oneWeight ? 400 : weight} ${this.fontSize}px ${this.zh ? this.fonts.zh : this.fonts.latin}`; }
+
+  /** Switches the wall's look: the prompt's fonts, and plain colour or paper. */
+  setStyle(fonts: { latin: string; zh: string }, paper: boolean): void {
+    this.fonts = fonts;
+    this.oneWeight = paper;
+    this.paper = paper ? this.g.createPattern(paperGrain(), 'repeat') : null;
+    this.layout();
+    this.dirty = true;
+  }
 
   layout(): void {
     const live = this.letters.filter(L => !L.dying);
     if (!live.length) return;
     const word = live.map(L => L.ch).join('');
-    const fam = this.zh ? FONT_ZH : FONT_LATIN;
+    const fam = this.zh ? this.fonts.zh : this.fonts.latin;
     const g = this.g;
     g.font = `640 100px ${fam}`;
     const w100 = g.measureText(word).width || 1;
@@ -132,7 +144,7 @@ export class Backdrop {
       rot: rm ? 0 : (Math.random() - 0.5) * 0.8, vr: 0, w: 420, alpha: 1, dying: false, delay: rm ? 0 : 0.12 + i * 0.05
     })));
     this.layout();
-    if (zh && document.fonts?.load) document.fonts.load('600 100px "Noto Sans SC"', word).then(() => this.layout()).catch(() => {});
+    if (zh && document.fonts?.load) document.fonts.load(`400 100px ${this.fonts.zh}`, word).then(() => this.layout()).catch(() => {});
   }
 
   /** A little hop for the letters when the question changes but the prompt stays. */
@@ -260,6 +272,13 @@ export class Backdrop {
   private draw(): void {
     const g = this.g, { cw, ch } = this, col = this.colors;
     g.globalAlpha = 1; g.fillStyle = col.bg; g.fillRect(0, 0, cw, ch);
+    if (this.paper) {
+      g.fillStyle = this.paper; g.fillRect(0, 0, cw, ch);
+      // aged edges
+      const v = g.createRadialGradient(cw / 2, ch / 2, Math.min(cw, ch) * 0.35, cw / 2, ch / 2, Math.hypot(cw, ch) * 0.6);
+      v.addColorStop(0, 'rgba(90,55,15,0)'); v.addColorStop(1, 'rgba(90,55,15,.22)');
+      g.fillStyle = v; g.fillRect(0, 0, cw, ch);
+    }
     if (this.splats.length || this.flood) {
       g.fillStyle = this.floodColor;
       for (const s of this.splats) {
@@ -303,4 +322,25 @@ export class Backdrop {
       g.globalAlpha = 1;
     }
   }
+}
+
+/** A tile of paper grain: short fibres and specks, light and dark, that reads on pale and dark walls alike. */
+function paperGrain(): HTMLCanvasElement {
+  const c = document.createElement('canvas');
+  c.width = c.height = 256;
+  const g = c.getContext('2d')!;
+  let seed = 7;
+  const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+  g.lineCap = 'round';
+  for (let i = 0; i < 900; i++) {
+    const x = rnd() * 256, y = rnd() * 256, a = rnd() * Math.PI, len = 3 + rnd() * 14;
+    g.strokeStyle = rnd() < 0.5 ? `rgba(70,45,10,${0.03 + rnd() * 0.06})` : `rgba(255,250,235,${0.04 + rnd() * 0.08})`;
+    g.lineWidth = 0.5 + rnd();
+    g.beginPath(); g.moveTo(x, y); g.lineTo(x + Math.cos(a) * len, y + Math.sin(a) * len); g.stroke();
+  }
+  for (let i = 0; i < 260; i++) {
+    g.fillStyle = `rgba(60,35,5,${0.04 + rnd() * 0.1})`;
+    g.beginPath(); g.arc(rnd() * 256, rnd() * 256, 0.4 + rnd() * 1.1, 0, Math.PI * 2); g.fill();
+  }
+  return c;
 }

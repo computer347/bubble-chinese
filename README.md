@@ -6,6 +6,8 @@ Pick a mode on the home screen by popping its bubble. In Words, a bubble sits pi
 
 In Listen, the word is heard instead of read: pick its tones, then its meaning, then its characters from words that sound alike. Tap the bubble to hear it again; a wrong answer replays it slowly. Once you hear a word reliably, its core asks you to type the pinyin instead.
 
+Two looks, chosen on the home screen: soap bubbles, or ink and lanterns (paper, brush calligraphy, paper lanterns). The bubble sizes itself to the space the answers leave on any screen.
+
 Layers come in a random order. "Ask about" on the home screen picks which ones a bubble has: meaning, pinyin, characters, or any mix.
 
 ## Run it
@@ -50,7 +52,8 @@ src/
   modes/       one file per way to play, and the registry the home screen is built from
   audio/       synthesised sound effects, voice clips, browser speech fallback
   game/        quizzes, scheduler, FSRS memory per skill, progress storage, and game.ts which wires it all
-  ui/          answer chips, HUD, fortune slip, words drawer, home screen
+  ui/          answer chips, HUD, fortune slip, words drawer, home screen, fitting the bubble to the screen
+  theme/       the two looks: palettes, lantern materials, ink CSS
 tests/
   unit/        Vitest
   e2e/         Playwright
@@ -78,7 +81,7 @@ npm run audio -- --voice "Chinese (Mandarin)_News_Anchor"
 npm run audio:status -- --voice "Chinese (Mandarin)_News_Anchor"   # what's still missing, no API calls
 ```
 
-Sentences are recorded the same way, spoken naturally in one take. MiniMax also returns word-level timestamps, so tapping a word in an example sentence plays that word cut from the recording, with the tones it has in context (falling back to the single-word clip if timings are missing). In sentences, only words with multi-reading characters are pinned; 一 and 不 are left to the voice because their tone depends on the next syllable.
+Sentences are recorded the same way, spoken naturally in one take. MiniMax also returns word-level timestamps, which highlight each word as the sentence plays. Tapping a word in a sentence plays that word's own clip. In sentences, only words with multi-reading characters are pinned; 一 and 不 are left to the voice because their tone depends on the next syllable.
 
 The script only renders clips that are missing or whose request changed (new word, new reading, other voice or speed), saves progress as it goes, and writes `data/audio-review.md`: a checklist of words containing characters with more than one reading, to listen to once. Commit `public/audio/`, `src/content/generated/audio.json` and the review list. Mainland China accounts: also set `MINIMAX_API_HOST=https://api.minimaxi.com`.
 - **Progress** is stored on the device in IndexedDB. Older progress (earlier versions of this app, or the original single-file version in localStorage) is migrated automatically.

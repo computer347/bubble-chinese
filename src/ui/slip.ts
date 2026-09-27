@@ -20,7 +20,7 @@ export interface SlipDeps {
 
 /**
  * The fortune slip that follows a popped core: a fortune, the word to learn with its sound,
- * and an example sentence where tapping a word plays it cut from the spoken sentence.
+ * and an example sentence where tapping a word plays that word's own clip.
  */
 export class Slip {
   open = false;
@@ -86,7 +86,7 @@ export class Slip {
     this.noteEl.hidden = true;
   }
 
-  /* ---------- example sentence: tap a word to hear it cut from the spoken sentence ---------- */
+  /* ---------- example sentence: tap a word to hear it on its own ---------- */
   private renderExample(w: Word, maxLevel: number): void {
     const box = $('example'), zh = $('exZh');
     const list = examplesFor(w.id, maxLevel);
@@ -107,7 +107,7 @@ export class Slip {
         const py = s.py[index] ?? word.p;
         b.setAttribute('aria-label', `${word.h}, ${py}, ${word.e}${c.role ? ` (${ROLE_NAMES[c.role]})` : ''}`);
         b.append(Object.assign(document.createElement('span'), { className: 'py', textContent: py }), Object.assign(document.createElement('span'), { className: 'hz', textContent: word.h }));
-        b.addEventListener('click', () => { void this.d.voice.sayWordIn(s, index, word, this.d.slow()); });
+        b.addEventListener('click', () => this.d.voice.say(word, this.d.slow()));
         zh.append(b);
       }
     });

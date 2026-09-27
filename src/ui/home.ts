@@ -2,6 +2,7 @@ import { gsap } from 'gsap';
 import { LEVELS } from '../content/words';
 import type { Progress } from '../game/progress';
 import type { AskKind } from '../game/questions';
+import { THEMES, type StyleId } from '../theme/themes';
 import type { ModeId, ModeInfo } from '../modes';
 import type { Word } from '../content/words';
 import { $ } from './dom';
@@ -14,6 +15,8 @@ export interface HomeDeps {
   onEnter(mode: ModeId): void;
   /** The level choice changed. */
   onLevel(): void;
+  /** The style was changed. */
+  onStyle(style: StyleId): void;
 }
 
 /** The home screen: one bubble per mode (pop it to enter), the HSK level choice, and what is due. */
@@ -21,6 +24,7 @@ export class Home {
   private readonly el = $('home');
   private readonly levelBtns: HTMLButtonElement[];
   private readonly askBtns: HTMLButtonElement[];
+  private readonly styleBtns: HTMLButtonElement[];
 
   constructor(private readonly d: HomeDeps) {
     const box = this.el.querySelector('.modes')!;
@@ -42,6 +46,14 @@ export class Home {
     this.levelBtns = [...this.el.querySelectorAll<HTMLButtonElement>('[data-level]')];
     this.levelBtns.forEach(b => b.addEventListener('click', () => { d.progress.setMaxLevel(Number(b.dataset.level)); this.render(); d.onLevel(); }));
     // toggles; the last one left on can't be turned off, since a bubble must ask something
+    this.styleBtns = [...this.el.querySelectorAll<HTMLButtonElement>('[data-style]')];
+    this.styleBtns.forEach(b => b.addEventListener('click', () => {
+      const style = b.dataset.style as StyleId;
+      if (style === d.progress.data.settings.style) return;
+      d.progress.setStyle(style);
+      d.onStyle(style);
+      this.render();
+    }));
     this.askBtns = [...this.el.querySelectorAll<HTMLButtonElement>('[data-ask]')];
     this.askBtns.forEach(b => b.addEventListener('click', () => {
       const kind = b.dataset.ask as AskKind, ask = d.progress.data.settings.ask;
@@ -60,6 +72,9 @@ export class Home {
       b.hidden = !LEVELS.includes(lv);
       b.setAttribute('aria-checked', String(lv === max));
     });
+    const style = progress.data.settings.style;
+    this.styleBtns.forEach(b => b.setAttribute('aria-checked', String(b.dataset.style === style)));
+    $('homeTitle').textContent = THEMES[style].homeTitle;
     const ask = progress.data.settings.ask;
     this.askBtns.forEach(b => {
       const on = ask.includes(b.dataset.ask as AskKind);

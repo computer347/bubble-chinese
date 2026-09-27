@@ -141,6 +141,14 @@ Scaffolding fades from shape and colour, to shape only, to neither. Progression:
 
 **Verify:** accessibility audit, airplane-mode play, ten-person beta, 7-day return rate.
 
+## Design track
+
+Separate modules that change how things look and fit, not how they play.
+
+- [x] Layout from measurement, not device detection: after the answers are placed, the bubble is sized and placed in the space they and the panels leave, and re-fitted when anything changes size (late fonts, wrapping, rotation). Checked on seven screen sizes in `tests/e2e/layout.spec.ts`
+- [x] Style choice on the home screen: soap bubbles, or ink and lanterns (paper wall with grain, brush calligraphy, paper-tag answers with a red seal, a ribbed silk lantern in paper shades with gold caps and a tassel, lanterns on the home screen)
+- [ ] More styles only if asked; each is a palette set, materials, fonts and CSS in `src/theme/`
+
 ## Content track
 
 - [ ] Glosses for HSK 3 (500 words) and their voice clips, then the level is switched on
