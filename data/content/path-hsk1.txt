@@ -15,7 +15,7 @@
 # Lessons teach 10 new words (the build allows 8–12): a dialogue that reuses earlier words, and
 # four sentences to build. Each unit has a short culture note.
 #
-# Status: units 1–5 drafted, for review by a Chinese speaker. The topic outline is taken from a
+# Status: units 1–8 drafted, for review by a Chinese speaker. The topic outline is taken from a
 # secondary source and is to be checked against the official 2025 syllabus.
 
 unit hello | Hello | 你好 | Daily life: interaction, polite behaviour (交往)
@@ -200,8 +200,106 @@ build 包子/S 很/A 好吃/V 。 | Steamed buns are delicious.
 build 你/S 吃/V 水果/O 吗/X ？ | Do you eat fruit?
 build 我/S 晚饭/T 吃/V 面条儿/O 。 | I have noodles for dinner.
 unit shopping | Shopping | 买东西 | Daily life: shopping (购物)
+note Prices are in 元 yuán on labels, but in speech people say 块 kuài: 五块 is five yuan.
+note 太…了 means "too…": 太贵了, too expensive. The 了 marks it as a reaction to how things are.
+
+lesson shopping-1 | How much?
+new 买 卖 钱 多少 块 元 贵 便宜 太 了 还
+say A | 你好 ！ 苹果 多少 钱 ？ | Hello! How much are the apples?
+say B | 苹果 五 块 。 | The apples are five yuan.
+say A | 太 贵 了 ！ | That's too expensive!
+say B | 不 贵 ， 很 便宜 ！ 你 买 几 个 ？ | It's not expensive, it's cheap! How many would you like?
+say A | 我 买 两 个 。 你 还 卖 什么 ？ | I'll take two. What else do you sell?
+say B | 我 还 卖 牛奶 和 面包 。 | I also sell milk and bread.
+say A | 牛奶 多少 钱 ？ | How much is the milk?
+say B | 三 元 。 | Three yuan.
+build 苹果/S 多少+钱/V ？ | How much are the apples?
+build 这/S 太/A 贵/V 了/X 。 | That's too expensive.
+build 我/S 买/V 两+个/O 。 | I'll take two.
+build 我/S 还/A 卖/V 牛奶/O 。 | I also sell milk.
+
+lesson shopping-2 | Clothes and shops
+new 衣服 件 穿 喜欢 好看 漂亮 这个 那个 商店 东西 超市
+say A | 你 喜欢 这 件 衣服 吗 ？ | Do you like this top?
+say B | 很 喜欢 ！ 很 好看 。 | I love it! It's lovely.
+say A | 你 穿 这 件 很 漂亮 。 | You look pretty in this one.
+say B | 那个 呢 ？ 那个 也 很 好看 。 | What about that one? That one's nice too.
+say A | 这个 商店 的 东西 很 贵 。 | Things in this shop are expensive.
+say B | 超市 的 东西 很 便宜 。 | Things at the supermarket are cheap.
+say A | 我 也 喜欢 超市 ！ | I like the supermarket too!
+build 我/S 很/A 喜欢/V 这+件+衣服/O 。 | I really like this top.
+build 这+件+衣服/S 很/A 好看/V 。 | This top looks nice.
+build 超市+的+东西/S 很/A 便宜/V 。 | Things at the supermarket are cheap.
+build 你/S 喜欢/V 那个/O 吗/X ？ | Do you like that one?
+
 unit travel | Getting around | 去哪儿 | Daily life: transport (交通出行)
-unit weather | Weather | 天气 | Basic information: environment, weather (环境信息)
+note To ask a stranger anything, start with 请问, "may I ask": it is the polite way in.
+note 坐 means "to sit", and it is also how you take a vehicle: 坐出租车, 坐火车, 坐飞机.
+
+lesson travel-1 | Where are you going?
+new 去 回 在 哪儿 哪里 这儿 那儿 来 到
+say A | 你 去 哪儿 ？ | Where are you going?
+say B | 我 去 超市 。 你 呢 ？ | To the supermarket. And you?
+say A | 我 回 家 。 | I'm going home.
+say B | 你 家 在 哪里 ？ | Where do you live?
+say A | 我 家 在 那儿 。 | My home is over there.
+say B | {小明=Xiǎomíng} 在 这儿 吗 ？ | Is Xiaoming here?
+say A | 他 不 在 。 他 明天 来 。 | He isn't. He's coming tomorrow.
+say B | 他 明天 到 ？ | He arrives tomorrow?
+say A | 是 ， 明天 到 。 | Yes, tomorrow.
+build 你/S 去/V 哪儿/O ？ | Where are you going?
+build 我/S 回/V 家/O 。 | I'm going home.
+build 我+家/S 在/V 那儿/O 。 | My home is over there.
+build 他/S 明天/T 来/V 。 | He's coming tomorrow.
+
+lesson travel-2 | Taxi, train and plane
+new 怎么 坐 火车 飞机 开车 出租车 请问 车 请 可以
+say A | 明天 你 怎么 去 {上海=Shànghǎi} ？ | How are you getting to Shanghai tomorrow?
+say B | 我 坐 火车 去 。 你 呢 ？ | By train. And you?
+say A | 我 坐 飞机 。 | I'm flying.
+say B | 你 爸爸 开车 吗 ？ | Does your dad drive?
+say A | 他 不 开车 。 我们 坐 出租车 。 | He doesn't drive. We take taxis.
+say A | 请问 ， 这 是 出租车 吗 ？ | Excuse me, is this a taxi?
+say C | 是 ， 这 是 我 的 车 。 请 坐 ！ | Yes, this is my car. Please, have a seat!
+say A | 我们 去 超市 ， 可以 吗 ？ | We're going to the supermarket, is that all right?
+say C | 可以 ！ | Of course!
+build 我/S 坐/V 飞机/O 。 | I'm flying.
+build 你/S 怎么/A 去/V ？ | How are you getting there?
+build 他/S 不/A 开车/V 。 | He doesn't drive.
+build 我们/S 可以/A 坐/V 出租车/O 。 | We can take a taxi.
+
+unit weather | Weather and time | 天气 | Basic information: environment, weather (环境信息)
+note 有点儿 means "a bit", and usually a bit too much of something unwelcome: 有点儿冷, a bit cold.
+note Clock times: 点 is o'clock, 分 minutes and 半 half past: 九点半 is half past nine.
+
+lesson weather-1 | The weather
+new 天气 怎么样 冷 热 有点儿 天 真 下雨 雨 雪
+say A | 今天 天气 怎么样 ？ | What's the weather like today?
+say B | 有点儿 冷 。 这 几 天 真 热 ！ | A bit cold. It's been really hot these last few days!
+say A | 明天 呢 ？ 明天 下雨 吗 ？ | And tomorrow? Will it rain?
+say B | 明天 下雨 。 | It'll rain tomorrow.
+say A | 我 不 喜欢 雨 。 我 喜欢 雪 ！ | I don't like rain. I like snow!
+say B | 我 也 喜欢 雪 ， 雪 很 漂亮 。 | I like snow too, it's beautiful.
+build 今天/T 天气/S 怎么样/V ？ | What's the weather like today?
+build 今天/S 有点儿/A 冷/V 。 | It's a bit cold today.
+build 明天/T 下雨/V 。 | It'll rain tomorrow.
+build 我/S 喜欢/V 雪/O 。 | I like snow.
+
+lesson weather-2 | What time is it?
+new 现在 点 半 早上 分 早 上午 中午 下午 晚上
+say A | 现在 几 点 ？ | What time is it now?
+say B | 九 点 半 。 | Half past nine.
+say A | 你 早上 几 点 吃 早饭 ？ | What time do you have breakfast?
+say B | 七 点 。 | At seven.
+say A | 你 真 早 ！ 我 八 点 十 分 吃 。 | You're early! I eat at ten past eight.
+say B | 你 上午 在 家 吗 ？ | Are you at home in the morning?
+say A | 上午 在 家 ， 中午 和 下午 不 在 。 | In the morning, yes; at noon and in the afternoon, no.
+say B | 晚上 呢 ？ | And in the evening?
+say A | 晚上 在 家 。 | In the evening I'm at home.
+build 现在/S 九+点+半/V 。 | It's half past nine.
+build 我/S 早上+七+点/T 吃/V 早饭/O 。 | I have breakfast at seven.
+build 你/S 上午/T 在/V 家/O 吗/X ？ | Are you at home in the morning?
+build 你/S 真/A 早/V ！ | You're early!
 unit school | School | 学校 | Education: study and campus life (学习情况, 校园生活)
 unit work | Work | 工作 | Work: work and occupations (工作情况, 职业)
 unit health | Feeling ill | 看病 | Daily life: health (医疗健康)

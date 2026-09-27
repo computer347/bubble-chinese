@@ -4745,24 +4745,2521 @@
    "title": "Shopping",
    "zh": "买东西",
    "topic": "Daily life: shopping (购物)",
-   "notes": [],
-   "lessons": []
+   "notes": [
+    "Prices are in 元 yuán on labels, but in speech people say 块 kuài: 五块 is five yuan.",
+    "太…了 means \"too…\": 太贵了, too expensive. The 了 marks it as a reaction to how things are."
+   ],
+   "lessons": [
+    {
+     "id": "shopping-1",
+     "title": "How much?",
+     "words": [
+      "买|mǎi",
+      "卖|mài",
+      "钱|qián",
+      "多少|duōshao",
+      "块|kuài",
+      "元|yuán",
+      "贵|guì",
+      "便宜|piányi",
+      "太|tài",
+      "了|le",
+      "还|hái"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "Hello! How much are the apples?",
+       "text": "你好！苹果多少钱？",
+       "tokens": [
+        {
+         "id": "你好|nǐhǎo",
+         "py": "nǐhǎo"
+        },
+        {
+         "p": "！"
+        },
+        {
+         "id": "苹果|píngguǒ",
+         "py": "píngguǒ"
+        },
+        {
+         "id": "多少|duōshao",
+         "py": "duōshao"
+        },
+        {
+         "id": "钱|qián",
+         "py": "qián"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "The apples are five yuan.",
+       "text": "苹果五块。",
+       "tokens": [
+        {
+         "id": "苹果|píngguǒ",
+         "py": "píngguǒ"
+        },
+        {
+         "id": "五|wǔ",
+         "py": "wǔ"
+        },
+        {
+         "id": "块|kuài",
+         "py": "kuài"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "That's too expensive!",
+       "text": "太贵了！",
+       "tokens": [
+        {
+         "id": "太|tài",
+         "py": "tài"
+        },
+        {
+         "id": "贵|guì",
+         "py": "guì"
+        },
+        {
+         "id": "了|le",
+         "py": "le"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "It's not expensive, it's cheap! How many would you like?",
+       "text": "不贵，很便宜！你买几个？",
+       "tokens": [
+        {
+         "id": "不|bù",
+         "py": "bú"
+        },
+        {
+         "id": "贵|guì",
+         "py": "guì"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "便宜|piányi",
+         "py": "piányi"
+        },
+        {
+         "p": "！"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "买|mǎi",
+         "py": "mǎi"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "id": "个|gè",
+         "py": "gè"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I'll take two. What else do you sell?",
+       "text": "我买两个。你还卖什么？",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "买|mǎi",
+         "py": "mǎi"
+        },
+        {
+         "id": "两|liǎng",
+         "py": "liǎng"
+        },
+        {
+         "id": "个|gè",
+         "py": "gè"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "还|hái",
+         "py": "hái"
+        },
+        {
+         "id": "卖|mài",
+         "py": "mài"
+        },
+        {
+         "id": "什么|shénme",
+         "py": "shénme"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I also sell milk and bread.",
+       "text": "我还卖牛奶和面包。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "还|hái",
+         "py": "hái"
+        },
+        {
+         "id": "卖|mài",
+         "py": "mài"
+        },
+        {
+         "id": "牛奶|niúnǎi",
+         "py": "niúnǎi"
+        },
+        {
+         "id": "和|hé",
+         "py": "hé"
+        },
+        {
+         "id": "面包|miànbāo",
+         "py": "miànbāo"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "How much is the milk?",
+       "text": "牛奶多少钱？",
+       "tokens": [
+        {
+         "id": "牛奶|niúnǎi",
+         "py": "niúnǎi"
+        },
+        {
+         "id": "多少|duōshao",
+         "py": "duōshao"
+        },
+        {
+         "id": "钱|qián",
+         "py": "qián"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Three yuan.",
+       "text": "三元。",
+       "tokens": [
+        {
+         "id": "三|sān",
+         "py": "sān"
+        },
+        {
+         "id": "元|yuán",
+         "py": "yuán"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "苹果多少钱？",
+       "en": "How much are the apples?",
+       "pattern": "S V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "苹果|píngguǒ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "多少|duōshao",
+          "钱|qián"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 2,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "píngguǒ",
+        "duōshao",
+        "qián"
+       ]
+      },
+      {
+       "text": "这太贵了。",
+       "en": "That's too expensive.",
+       "pattern": "S A V X",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "这|zhè"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "太|tài"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "贵|guì"
+         ]
+        },
+        {
+         "role": "X",
+         "words": [
+          "了|le"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "zhè",
+        "tài",
+        "guì",
+        "le"
+       ]
+      },
+      {
+       "text": "我买两个。",
+       "en": "I'll take two.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "买|mǎi"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "两|liǎng",
+          "个|gè"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "mǎi",
+        "liǎng",
+        "gè"
+       ]
+      },
+      {
+       "text": "我还卖牛奶。",
+       "en": "I also sell milk.",
+       "pattern": "S A V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "还|hái"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "卖|mài"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "牛奶|niúnǎi"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "hái",
+        "mài",
+        "niúnǎi"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "shopping-2",
+     "title": "Clothes and shops",
+     "words": [
+      "衣服|yīfu",
+      "件|jiàn",
+      "穿|chuān",
+      "喜欢|xǐhuan",
+      "好看|hǎokàn",
+      "漂亮|piàoliang",
+      "这个|zhège",
+      "那个|nàge",
+      "商店|shāngdiàn",
+      "东西|dōngxi",
+      "超市|chāoshì"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "Do you like this top?",
+       "text": "你喜欢这件衣服吗？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "喜欢|xǐhuan",
+         "py": "xǐhuan"
+        },
+        {
+         "id": "这|zhè",
+         "py": "zhè"
+        },
+        {
+         "id": "件|jiàn",
+         "py": "jiàn"
+        },
+        {
+         "id": "衣服|yīfu",
+         "py": "yīfu"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I love it! It's lovely.",
+       "text": "很喜欢！很好看。",
+       "tokens": [
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "喜欢|xǐhuan",
+         "py": "xǐhuan"
+        },
+        {
+         "p": "！"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "好看|hǎokàn",
+         "py": "hǎokàn"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "You look pretty in this one.",
+       "text": "你穿这件很漂亮。",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "穿|chuān",
+         "py": "chuān"
+        },
+        {
+         "id": "这|zhè",
+         "py": "zhè"
+        },
+        {
+         "id": "件|jiàn",
+         "py": "jiàn"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "漂亮|piàoliang",
+         "py": "piàoliang"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "What about that one? That one's nice too.",
+       "text": "那个呢？那个也很好看。",
+       "tokens": [
+        {
+         "id": "那个|nàge",
+         "py": "nàge"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        },
+        {
+         "id": "那个|nàge",
+         "py": "nàge"
+        },
+        {
+         "id": "也|yě",
+         "py": "yě"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "好看|hǎokàn",
+         "py": "hǎokàn"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Things in this shop are expensive.",
+       "text": "这个商店的东西很贵。",
+       "tokens": [
+        {
+         "id": "这个|zhège",
+         "py": "zhège"
+        },
+        {
+         "id": "商店|shāngdiàn",
+         "py": "shāngdiàn"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "东西|dōngxi",
+         "py": "dōngxi"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "贵|guì",
+         "py": "guì"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Things at the supermarket are cheap.",
+       "text": "超市的东西很便宜。",
+       "tokens": [
+        {
+         "id": "超市|chāoshì",
+         "py": "chāoshì"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "东西|dōngxi",
+         "py": "dōngxi"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "便宜|piányi",
+         "py": "piányi"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I like the supermarket too!",
+       "text": "我也喜欢超市！",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "也|yě",
+         "py": "yě"
+        },
+        {
+         "id": "喜欢|xǐhuan",
+         "py": "xǐhuan"
+        },
+        {
+         "id": "超市|chāoshì",
+         "py": "chāoshì"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "我很喜欢这件衣服。",
+       "en": "I really like this top.",
+       "pattern": "S A V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "很|hěn"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "喜欢|xǐhuan"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "这|zhè",
+          "件|jiàn",
+          "衣服|yīfu"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "hěn",
+        "xǐhuan",
+        "zhè",
+        "jiàn",
+        "yīfu"
+       ]
+      },
+      {
+       "text": "这件衣服很好看。",
+       "en": "This top looks nice.",
+       "pattern": "S A V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "这|zhè",
+          "件|jiàn",
+          "衣服|yīfu"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "很|hěn"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "好看|hǎokàn"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "zhè",
+        "jiàn",
+        "yīfu",
+        "hěn",
+        "hǎokàn"
+       ]
+      },
+      {
+       "text": "超市的东西很便宜。",
+       "en": "Things at the supermarket are cheap.",
+       "pattern": "S A V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "超市|chāoshì",
+          "的|de",
+          "东西|dōngxi"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "很|hěn"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "便宜|piányi"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "chāoshì",
+        "de",
+        "dōngxi",
+        "hěn",
+        "piányi"
+       ]
+      },
+      {
+       "text": "你喜欢那个吗？",
+       "en": "Do you like that one?",
+       "pattern": "S V O X",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "你|nǐ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "喜欢|xǐhuan"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "那个|nàge"
+         ]
+        },
+        {
+         "role": "X",
+         "words": [
+          "吗|ma"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "nǐ",
+        "xǐhuan",
+        "nàge",
+        "ma"
+       ]
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "travel",
    "title": "Getting around",
    "zh": "去哪儿",
    "topic": "Daily life: transport (交通出行)",
-   "notes": [],
-   "lessons": []
+   "notes": [
+    "To ask a stranger anything, start with 请问, \"may I ask\": it is the polite way in.",
+    "坐 means \"to sit\", and it is also how you take a vehicle: 坐出租车, 坐火车, 坐飞机."
+   ],
+   "lessons": [
+    {
+     "id": "travel-1",
+     "title": "Where are you going?",
+     "words": [
+      "去|qù",
+      "回|huí",
+      "在|zài",
+      "哪儿|nǎr",
+      "哪里|nǎlǐ",
+      "这儿|zhèr",
+      "那儿|nàr",
+      "来|lái",
+      "到|dào"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "Where are you going?",
+       "text": "你去哪儿？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "去|qù",
+         "py": "qù"
+        },
+        {
+         "id": "哪儿|nǎr",
+         "py": "nǎr"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "To the supermarket. And you?",
+       "text": "我去超市。你呢？",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "去|qù",
+         "py": "qù"
+        },
+        {
+         "id": "超市|chāoshì",
+         "py": "chāoshì"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I'm going home.",
+       "text": "我回家。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "回|huí",
+         "py": "huí"
+        },
+        {
+         "id": "家|jiā",
+         "py": "jiā"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Where do you live?",
+       "text": "你家在哪里？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "家|jiā",
+         "py": "jiā"
+        },
+        {
+         "id": "在|zài",
+         "py": "zài"
+        },
+        {
+         "id": "哪里|nǎlǐ",
+         "py": "nǎlǐ"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "My home is over there.",
+       "text": "我家在那儿。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "家|jiā",
+         "py": "jiā"
+        },
+        {
+         "id": "在|zài",
+         "py": "zài"
+        },
+        {
+         "id": "那儿|nàr",
+         "py": "nàr"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Is Xiaoming here?",
+       "text": "小明在这儿吗？",
+       "tokens": [
+        {
+         "name": "小明",
+         "py": "Xiǎomíng"
+        },
+        {
+         "id": "在|zài",
+         "py": "zài"
+        },
+        {
+         "id": "这儿|zhèr",
+         "py": "zhèr"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "He isn't. He's coming tomorrow.",
+       "text": "他不在。他明天来。",
+       "tokens": [
+        {
+         "id": "他|tā",
+         "py": "tā"
+        },
+        {
+         "id": "不|bù",
+         "py": "bú"
+        },
+        {
+         "id": "在|zài",
+         "py": "zài"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "他|tā",
+         "py": "tā"
+        },
+        {
+         "id": "明天|míngtiān",
+         "py": "míngtiān"
+        },
+        {
+         "id": "来|lái",
+         "py": "lái"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "He arrives tomorrow?",
+       "text": "他明天到？",
+       "tokens": [
+        {
+         "id": "他|tā",
+         "py": "tā"
+        },
+        {
+         "id": "明天|míngtiān",
+         "py": "míngtiān"
+        },
+        {
+         "id": "到|dào",
+         "py": "dào"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Yes, tomorrow.",
+       "text": "是，明天到。",
+       "tokens": [
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "明天|míngtiān",
+         "py": "míngtiān"
+        },
+        {
+         "id": "到|dào",
+         "py": "dào"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "你去哪儿？",
+       "en": "Where are you going?",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "你|nǐ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "去|qù"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "哪儿|nǎr"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "nǐ",
+        "qù",
+        "nǎr"
+       ]
+      },
+      {
+       "text": "我回家。",
+       "en": "I'm going home.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "回|huí"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "家|jiā"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "huí",
+        "jiā"
+       ]
+      },
+      {
+       "text": "我家在那儿。",
+       "en": "My home is over there.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ",
+          "家|jiā"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "在|zài"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "那儿|nàr"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "jiā",
+        "zài",
+        "nàr"
+       ]
+      },
+      {
+       "text": "他明天来。",
+       "en": "He's coming tomorrow.",
+       "pattern": "S T V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "他|tā"
+         ]
+        },
+        {
+         "role": "T",
+         "words": [
+          "明天|míngtiān"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "来|lái"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "tā",
+        "míngtiān",
+        "lái"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "travel-2",
+     "title": "Taxi, train and plane",
+     "words": [
+      "怎么|zěnme",
+      "坐|zuò",
+      "火车|huǒchē",
+      "飞机|fēijī",
+      "开车|kāichē",
+      "出租车|chūzūchē",
+      "请问|qǐngwèn",
+      "车|chē",
+      "请|qǐng",
+      "可以|kěyǐ"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "How are you getting to Shanghai tomorrow?",
+       "text": "明天你怎么去上海？",
+       "tokens": [
+        {
+         "id": "明天|míngtiān",
+         "py": "míngtiān"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "怎么|zěnme",
+         "py": "zěnme"
+        },
+        {
+         "id": "去|qù",
+         "py": "qù"
+        },
+        {
+         "name": "上海",
+         "py": "Shànghǎi"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "By train. And you?",
+       "text": "我坐火车去。你呢？",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "坐|zuò",
+         "py": "zuò"
+        },
+        {
+         "id": "火车|huǒchē",
+         "py": "huǒchē"
+        },
+        {
+         "id": "去|qù",
+         "py": "qù"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I'm flying.",
+       "text": "我坐飞机。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "坐|zuò",
+         "py": "zuò"
+        },
+        {
+         "id": "飞机|fēijī",
+         "py": "fēijī"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Does your dad drive?",
+       "text": "你爸爸开车吗？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "爸爸|bàba",
+         "py": "bàba"
+        },
+        {
+         "id": "开车|kāichē",
+         "py": "kāichē"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "He doesn't drive. We take taxis.",
+       "text": "他不开车。我们坐出租车。",
+       "tokens": [
+        {
+         "id": "他|tā",
+         "py": "tā"
+        },
+        {
+         "id": "不|bù",
+         "py": "bù"
+        },
+        {
+         "id": "开车|kāichē",
+         "py": "kāichē"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "我们|wǒmen",
+         "py": "wǒmen"
+        },
+        {
+         "id": "坐|zuò",
+         "py": "zuò"
+        },
+        {
+         "id": "出租车|chūzūchē",
+         "py": "chūzūchē"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "Excuse me, is this a taxi?",
+       "text": "请问，这是出租车吗？",
+       "tokens": [
+        {
+         "id": "请问|qǐngwèn",
+         "py": "qǐngwèn"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "这|zhè",
+         "py": "zhè"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "出租车|chūzūchē",
+         "py": "chūzūchē"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "C",
+       "en": "Yes, this is my car. Please, have a seat!",
+       "text": "是，这是我的车。请坐！",
+       "tokens": [
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "这|zhè",
+         "py": "zhè"
+        },
+        {
+         "id": "是|shì",
+         "py": "shì"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "的|de",
+         "py": "de"
+        },
+        {
+         "id": "车|chē",
+         "py": "chē"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "请|qǐng",
+         "py": "qǐng"
+        },
+        {
+         "id": "坐|zuò",
+         "py": "zuò"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "We're going to the supermarket, is that all right?",
+       "text": "我们去超市，可以吗？",
+       "tokens": [
+        {
+         "id": "我们|wǒmen",
+         "py": "wǒmen"
+        },
+        {
+         "id": "去|qù",
+         "py": "qù"
+        },
+        {
+         "id": "超市|chāoshì",
+         "py": "chāoshì"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "可以|kěyǐ",
+         "py": "kěyǐ"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "C",
+       "en": "Of course!",
+       "text": "可以！",
+       "tokens": [
+        {
+         "id": "可以|kěyǐ",
+         "py": "kěyǐ"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "我坐飞机。",
+       "en": "I'm flying.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "坐|zuò"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "飞机|fēijī"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "zuò",
+        "fēijī"
+       ]
+      },
+      {
+       "text": "你怎么去？",
+       "en": "How are you getting there?",
+       "pattern": "S A V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "你|nǐ"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "怎么|zěnme"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "去|qù"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "nǐ",
+        "zěnme",
+        "qù"
+       ]
+      },
+      {
+       "text": "他不开车。",
+       "en": "He doesn't drive.",
+       "pattern": "S A V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "他|tā"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "不|bù"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "开车|kāichē"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "tā",
+        "bù",
+        "kāichē"
+       ]
+      },
+      {
+       "text": "我们可以坐出租车。",
+       "en": "We can take a taxi.",
+       "pattern": "S A V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我们|wǒmen"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "可以|kěyǐ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "坐|zuò"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "出租车|chūzūchē"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒmen",
+        "kěyǐ",
+        "zuò",
+        "chūzūchē"
+       ]
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "weather",
-   "title": "Weather",
+   "title": "Weather and time",
    "zh": "天气",
    "topic": "Basic information: environment, weather (环境信息)",
-   "notes": [],
-   "lessons": []
+   "notes": [
+    "有点儿 means \"a bit\", and usually a bit too much of something unwelcome: 有点儿冷, a bit cold.",
+    "Clock times: 点 is o'clock, 分 minutes and 半 half past: 九点半 is half past nine."
+   ],
+   "lessons": [
+    {
+     "id": "weather-1",
+     "title": "The weather",
+     "words": [
+      "天气|tiānqì",
+      "怎么样|zěnmeyàng",
+      "冷|lěng",
+      "热|rè",
+      "有点儿|yǒudiǎnr",
+      "天|tiān",
+      "真|zhēn",
+      "下雨|xiàyǔ",
+      "雨|yǔ",
+      "雪|xuě"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "What's the weather like today?",
+       "text": "今天天气怎么样？",
+       "tokens": [
+        {
+         "id": "今天|jīntiān",
+         "py": "jīntiān"
+        },
+        {
+         "id": "天气|tiānqì",
+         "py": "tiānqì"
+        },
+        {
+         "id": "怎么样|zěnmeyàng",
+         "py": "zěnmeyàng"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "A bit cold. It's been really hot these last few days!",
+       "text": "有点儿冷。这几天真热！",
+       "tokens": [
+        {
+         "id": "有点儿|yǒudiǎnr",
+         "py": "yǒudiǎnr"
+        },
+        {
+         "id": "冷|lěng",
+         "py": "lěng"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "这|zhè",
+         "py": "zhè"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "id": "天|tiān",
+         "py": "tiān"
+        },
+        {
+         "id": "真|zhēn",
+         "py": "zhēn"
+        },
+        {
+         "id": "热|rè",
+         "py": "rè"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "And tomorrow? Will it rain?",
+       "text": "明天呢？明天下雨吗？",
+       "tokens": [
+        {
+         "id": "明天|míngtiān",
+         "py": "míngtiān"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        },
+        {
+         "id": "明天|míngtiān",
+         "py": "míngtiān"
+        },
+        {
+         "id": "下雨|xiàyǔ",
+         "py": "xiàyǔ"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "It'll rain tomorrow.",
+       "text": "明天下雨。",
+       "tokens": [
+        {
+         "id": "明天|míngtiān",
+         "py": "míngtiān"
+        },
+        {
+         "id": "下雨|xiàyǔ",
+         "py": "xiàyǔ"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "I don't like rain. I like snow!",
+       "text": "我不喜欢雨。我喜欢雪！",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "不|bù",
+         "py": "bù"
+        },
+        {
+         "id": "喜欢|xǐhuan",
+         "py": "xǐhuan"
+        },
+        {
+         "id": "雨|yǔ",
+         "py": "yǔ"
+        },
+        {
+         "p": "。"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "喜欢|xǐhuan",
+         "py": "xǐhuan"
+        },
+        {
+         "id": "雪|xuě",
+         "py": "xuě"
+        },
+        {
+         "p": "！"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "I like snow too, it's beautiful.",
+       "text": "我也喜欢雪，雪很漂亮。",
+       "tokens": [
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "也|yě",
+         "py": "yě"
+        },
+        {
+         "id": "喜欢|xǐhuan",
+         "py": "xǐhuan"
+        },
+        {
+         "id": "雪|xuě",
+         "py": "xuě"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "雪|xuě",
+         "py": "xuě"
+        },
+        {
+         "id": "很|hěn",
+         "py": "hěn"
+        },
+        {
+         "id": "漂亮|piàoliang",
+         "py": "piàoliang"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "今天天气怎么样？",
+       "en": "What's the weather like today?",
+       "pattern": "T S V",
+       "chunks": [
+        {
+         "role": "T",
+         "words": [
+          "今天|jīntiān"
+         ]
+        },
+        {
+         "role": "S",
+         "words": [
+          "天气|tiānqì"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "怎么样|zěnmeyàng"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "jīntiān",
+        "tiānqì",
+        "zěnmeyàng"
+       ]
+      },
+      {
+       "text": "今天有点儿冷。",
+       "en": "It's a bit cold today.",
+       "pattern": "S A V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "今天|jīntiān"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "有点儿|yǒudiǎnr"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "冷|lěng"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "jīntiān",
+        "yǒudiǎnr",
+        "lěng"
+       ]
+      },
+      {
+       "text": "明天下雨。",
+       "en": "It'll rain tomorrow.",
+       "pattern": "T V",
+       "chunks": [
+        {
+         "role": "T",
+         "words": [
+          "明天|míngtiān"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "下雨|xiàyǔ"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 2,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "míngtiān",
+        "xiàyǔ"
+       ]
+      },
+      {
+       "text": "我喜欢雪。",
+       "en": "I like snow.",
+       "pattern": "S V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "喜欢|xǐhuan"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "雪|xuě"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "xǐhuan",
+        "xuě"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "weather-2",
+     "title": "What time is it?",
+     "words": [
+      "现在|xiànzài",
+      "点|diǎn",
+      "半|bàn",
+      "早上|zǎoshang",
+      "分|fēn",
+      "早|zǎo",
+      "上午|shàngwǔ",
+      "中午|zhōngwǔ",
+      "下午|xiàwǔ",
+      "晚上|wǎnshang"
+     ],
+     "dialogue": [
+      {
+       "who": "A",
+       "en": "What time is it now?",
+       "text": "现在几点？",
+       "tokens": [
+        {
+         "id": "现在|xiànzài",
+         "py": "xiànzài"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "id": "点|diǎn",
+         "py": "diǎn"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Half past nine.",
+       "text": "九点半。",
+       "tokens": [
+        {
+         "id": "九|jiǔ",
+         "py": "jiǔ"
+        },
+        {
+         "id": "点|diǎn",
+         "py": "diǎn"
+        },
+        {
+         "id": "半|bàn",
+         "py": "bàn"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "What time do you have breakfast?",
+       "text": "你早上几点吃早饭？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "早上|zǎoshang",
+         "py": "zǎoshang"
+        },
+        {
+         "id": "几|jǐ",
+         "py": "jǐ"
+        },
+        {
+         "id": "点|diǎn",
+         "py": "diǎn"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "id": "早饭|zǎofàn",
+         "py": "zǎofàn"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "At seven.",
+       "text": "七点。",
+       "tokens": [
+        {
+         "id": "七|qī",
+         "py": "qī"
+        },
+        {
+         "id": "点|diǎn",
+         "py": "diǎn"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "You're early! I eat at ten past eight.",
+       "text": "你真早！我八点十分吃。",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "真|zhēn",
+         "py": "zhēn"
+        },
+        {
+         "id": "早|zǎo",
+         "py": "zǎo"
+        },
+        {
+         "p": "！"
+        },
+        {
+         "id": "我|wǒ",
+         "py": "wǒ"
+        },
+        {
+         "id": "八|bā",
+         "py": "bā"
+        },
+        {
+         "id": "点|diǎn",
+         "py": "diǎn"
+        },
+        {
+         "id": "十|shí",
+         "py": "shí"
+        },
+        {
+         "id": "分|fēn",
+         "py": "fēn"
+        },
+        {
+         "id": "吃|chī",
+         "py": "chī"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "Are you at home in the morning?",
+       "text": "你上午在家吗？",
+       "tokens": [
+        {
+         "id": "你|nǐ",
+         "py": "nǐ"
+        },
+        {
+         "id": "上午|shàngwǔ",
+         "py": "shàngwǔ"
+        },
+        {
+         "id": "在|zài",
+         "py": "zài"
+        },
+        {
+         "id": "家|jiā",
+         "py": "jiā"
+        },
+        {
+         "id": "吗|ma",
+         "py": "ma"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "In the morning, yes; at noon and in the afternoon, no.",
+       "text": "上午在家，中午和下午不在。",
+       "tokens": [
+        {
+         "id": "上午|shàngwǔ",
+         "py": "shàngwǔ"
+        },
+        {
+         "id": "在|zài",
+         "py": "zài"
+        },
+        {
+         "id": "家|jiā",
+         "py": "jiā"
+        },
+        {
+         "p": "，"
+        },
+        {
+         "id": "中午|zhōngwǔ",
+         "py": "zhōngwǔ"
+        },
+        {
+         "id": "和|hé",
+         "py": "hé"
+        },
+        {
+         "id": "下午|xiàwǔ",
+         "py": "xiàwǔ"
+        },
+        {
+         "id": "不|bù",
+         "py": "bú"
+        },
+        {
+         "id": "在|zài",
+         "py": "zài"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      },
+      {
+       "who": "B",
+       "en": "And in the evening?",
+       "text": "晚上呢？",
+       "tokens": [
+        {
+         "id": "晚上|wǎnshang",
+         "py": "wǎnshang"
+        },
+        {
+         "id": "呢|ne",
+         "py": "ne"
+        },
+        {
+         "p": "？"
+        }
+       ]
+      },
+      {
+       "who": "A",
+       "en": "In the evening I'm at home.",
+       "text": "晚上在家。",
+       "tokens": [
+        {
+         "id": "晚上|wǎnshang",
+         "py": "wǎnshang"
+        },
+        {
+         "id": "在|zài",
+         "py": "zài"
+        },
+        {
+         "id": "家|jiā",
+         "py": "jiā"
+        },
+        {
+         "p": "。"
+        }
+       ]
+      }
+     ],
+     "builds": [
+      {
+       "text": "现在九点半。",
+       "en": "It's half past nine.",
+       "pattern": "S V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "现在|xiànzài"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "九|jiǔ",
+          "点|diǎn",
+          "半|bàn"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 2,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "xiànzài",
+        "jiǔ",
+        "diǎn",
+        "bàn"
+       ]
+      },
+      {
+       "text": "我早上七点吃早饭。",
+       "en": "I have breakfast at seven.",
+       "pattern": "S T V O",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "我|wǒ"
+         ]
+        },
+        {
+         "role": "T",
+         "words": [
+          "早上|zǎoshang",
+          "七|qī",
+          "点|diǎn"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "吃|chī"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "早饭|zǎofàn"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 4,
+         "p": "。"
+        }
+       ],
+       "py": [
+        "wǒ",
+        "zǎoshang",
+        "qī",
+        "diǎn",
+        "chī",
+        "zǎofàn"
+       ]
+      },
+      {
+       "text": "你上午在家吗？",
+       "en": "Are you at home in the morning?",
+       "pattern": "S T V O X",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "你|nǐ"
+         ]
+        },
+        {
+         "role": "T",
+         "words": [
+          "上午|shàngwǔ"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "在|zài"
+         ]
+        },
+        {
+         "role": "O",
+         "words": [
+          "家|jiā"
+         ]
+        },
+        {
+         "role": "X",
+         "words": [
+          "吗|ma"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 5,
+         "p": "？"
+        }
+       ],
+       "py": [
+        "nǐ",
+        "shàngwǔ",
+        "zài",
+        "jiā",
+        "ma"
+       ]
+      },
+      {
+       "text": "你真早！",
+       "en": "You're early!",
+       "pattern": "S A V",
+       "chunks": [
+        {
+         "role": "S",
+         "words": [
+          "你|nǐ"
+         ]
+        },
+        {
+         "role": "A",
+         "words": [
+          "真|zhēn"
+         ]
+        },
+        {
+         "role": "V",
+         "words": [
+          "早|zǎo"
+         ]
+        }
+       ],
+       "punct": [
+        {
+         "at": 3,
+         "p": "！"
+        }
+       ],
+       "py": [
+        "nǐ",
+        "zhēn",
+        "zǎo"
+       ]
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "school",
