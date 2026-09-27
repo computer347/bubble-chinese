@@ -39,6 +39,10 @@ export abstract class LayeredMode implements Mode {
   private upcoming: NextBubble | null | undefined = undefined;
   /** The skill the bubble on screen trains (a mode may mix skills). */
   protected current: Skill = 'words';
+  /** Show the fortune slip after each core; without it the next bubble follows straight away. */
+  protected slipAfter = true;
+  /** Count each finished bubble as a review of its word. */
+  protected records = true;
 
   constructor(protected readonly ctx: ModeContext) {
     ctx.hud.forgot.addEventListener('click', () => { if (this.active) this.forgot(); });
@@ -58,6 +62,8 @@ export abstract class LayeredMode implements Mode {
   protected onWrong(_q: Question): void {}
   /** A layer was answered; `firstTry` if with no wrong answers or "I forgot". */
   protected onLayerDone(_q: Question, _firstTry: boolean): void {}
+  /** A fresh copy of a question, asked again before the core after "I forgot". */
+  protected remake(q: Question, w: Word, bank: readonly Word[]): Question | undefined { return this.makeQuestions(w, bank).find(x => x.type === q.type); }
   /** "I forgot" was pressed on this layer. */
   protected onForgot(q: Question): void { if (q.type !== 0 && this.word) this.ctx.voice.say(this.word); }
   /** The bubble was tapped or poked with Space. */
@@ -200,7 +206,7 @@ export abstract class LayeredMode implements Mode {
     chips.out();
     hud.ask('Popped!');
     this.renderPips();
-    if (this.word) this.lastDue = progress.review(this.current, this.word.id, gradeBubble({ wrong: this.bubbleWrong, forgot: this.forgotUsed })).due;
+    if (this.word && this.records) this.lastDue = progress.review(this.current, this.word.id, gradeBubble({ wrong: this.bubbleWrong, forgot: this.forgotUsed })).due;
     this.upcoming = this.choose();
     this.ctx.updateHud();
   }
@@ -213,7 +219,7 @@ export abstract class LayeredMode implements Mode {
     this.ctx.sound.unlock();
     const q = this.questions[0];
     if (!bubble.addLayer()) return;
-    const fresh = this.makeQuestions(word, pool()).find(x => x.type === q.type)!;
+    const fresh = this.remake(q, word, pool()) ?? q;
     this.questions = forgetLayer(this.questions, fresh);
     session.streak = 0; this.cleanRun = false; this.wrongThisLayer = 1; this.forgotUsed = true;
     this.ctx.updateHud();
@@ -233,6 +239,7 @@ export abstract class LayeredMode implements Mode {
   private showSlip(): void {
     const { slip, progress, session } = this.ctx;
     if (!this.word) return;
+    if (!this.slipAfter) { setTimeout(() => this.spawn(), this.ctx.stage.reduceMotion ? 50 : 250); return; }
     const next = dueLabel({ due: this.lastDue }, new Date()).replace('due now', 'right away');
     const result = this.cleanRun
       ? `Clean pop, ${this.bubblePts} points. Streak ${session.streak}. Next review ${next}.`

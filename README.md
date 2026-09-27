@@ -4,6 +4,8 @@ Pop soft, jiggly bubbles to learn Chinese.
 
 The home screen shows the fortune of the day, a Today bubble, a strip of words (starting with a word of the day from the level above yours) and a carousel of modes. Today is one session for the day: reviews that are due come first, reading or listening, whichever has waited longest; then new words, up to a daily limit (10 by default); then it is done. Every setting lives in the ☰ menu, available on the home screen and in play.
 
+The Path is a course alongside that: units follow the HSK topics, and each lesson teaches ten words with a culture note, a dialogue and sentences to build, ending in a checkpoint bubble. Every word popped in a lesson joins Today's reviews, and Today introduces new words in path order.
+
 Pick a mode from the carousel by popping its bubble. In Words, a bubble sits pinned in the middle of the screen with four answers on the edges. Pull it toward the right answer and stretch it until it bursts. Each bubble has layers: two soap films (meaning, then pinyin) around a coloured core (the characters). Popping the core sends it flying, spews a new colour scheme across the page and hands you a fortune slip with the word to learn.
 
 In Listen, the word is heard instead of read: pick its tones, then its meaning, then its characters from words that sound alike. Tap the bubble to hear it again; a wrong answer replays it slowly. Once you hear a word reliably, its core asks you to type the pinyin instead.

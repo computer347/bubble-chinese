@@ -28,6 +28,8 @@ export interface Question {
   revealed?: boolean;
   /** The repeat that comes back before the core after "I forgot". */
   retest?: boolean;
+  /** The word asked about, when a bubble holds several (a lesson's checkpoint). */
+  word?: string;
 }
 
 export const TONES: Record<string, string> = { a: 'āáǎà', e: 'ēéěè', i: 'īíǐì', o: 'ōóǒò', u: 'ūúǔù', 'ü': 'ǖǘǚǜ' };

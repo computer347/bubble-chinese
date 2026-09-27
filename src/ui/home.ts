@@ -5,6 +5,7 @@ import wordOfDayList from '../content/generated/word-of-day.json';
 import type { Voice } from '../audio/voice';
 import type { Progress } from '../game/progress';
 import { dailyIndex, streakDays, practisedToday } from '../game/daily';
+import { LESSONS } from '../content/path';
 import type { ModeId, ModeInfo } from '../modes';
 import { $ } from './dom';
 
@@ -99,6 +100,7 @@ export class Home {
     for (const b of this.cards.querySelectorAll<HTMLButtonElement>('.card')) {
       const meta = b.querySelector('.card-meta')!;
       if (b.dataset.mode === 'words') meta.textContent = `${progress.learnedCount('words', words)} of ${words.length} learned`;
+      if (b.dataset.mode === 'path') meta.textContent = `${LESSONS.filter(x => progress.data.path.done[x.lesson.id]).length} of ${LESSONS.length} lessons`;
       if (b.dataset.mode === 'listen') meta.textContent = `${progress.learnedCount('listen', heard)} of ${heard.length} heard well`;
     }
     requestAnimationFrame(this.light);

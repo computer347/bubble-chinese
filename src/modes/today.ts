@@ -3,6 +3,7 @@ import { makeQuestions, type Question } from '../game/questions';
 import { newToday } from '../game/daily';
 import type { Progress, Skill } from '../game/progress';
 import { LayeredMode, type NextBubble } from './layered';
+import { PATH_ORDER } from '../content/path';
 import { Listening } from './listen';
 import type { ModeContext } from './mode';
 
@@ -53,8 +54,10 @@ export class TodayMode extends LayeredMode {
     if (skill === 'words') return { word: this.scheduler.next(words, progress.cards('words'), now), skill };
     // then new words, up to the day's limit
     if (todayLeft(this.ctx, heard, now).fresh > 0) {
+      // new words in path order: the next lesson's first, then the rest of the level
       const unseen = words.filter(w => !progress.card('words', w.id));
-      return { word: this.scheduler.next(unseen, progress.cards('words'), now), skill: 'words' };
+      const pathFirst = (w: Word) => { const i = PATH_ORDER.get(w.id); return i === undefined ? 0 : 1000 - i; };
+      return { word: this.scheduler.next(unseen, progress.cards('words'), now, pathFirst), skill: 'words' };
     }
     return null;
   }

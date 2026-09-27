@@ -32,6 +32,8 @@ export interface ProgressData {
   cards: Record<Skill, Record<string, Card>>;
   best: number;
   settings: Settings;
+  /** The path: when each lesson was finished (ms since the epoch), by lesson id. */
+  path: { done: Record<string, number> };
 }
 
 /** One finished review. Kept short: the log grows by one entry per bubble. */
@@ -44,7 +46,7 @@ export interface ReviewEntry {
 }
 
 const emptyCards = (): ProgressData['cards'] => Object.fromEntries(SKILLS.map(s => [s, {}])) as ProgressData['cards'];
-export const emptyProgress = (): ProgressData => ({ version: 3, cards: emptyCards(), best: 0, settings: { maxLevel: 1, ask: [...ASK_KINDS], style: 'bubble', newPerDay: 10 } });
+export const emptyProgress = (): ProgressData => ({ version: 3, cards: emptyCards(), best: 0, path: { done: {} }, settings: { maxLevel: 1, ask: [...ASK_KINDS], style: 'bubble', newPerDay: 10 } });
 
 /** The version-1 shape from the single-file game and Phase 0 (mastery 0–3 keyed by characters). */
 interface ProgressV1 { m?: Record<string, number>; seen?: Record<string, number>; miss?: Record<string, number>; best?: number }
@@ -166,7 +168,7 @@ export class Progress {
       if (saved && version === 3) {
         const d = saved as ProgressData;
         const base = emptyProgress();
-        this.data = { ...base, ...d, cards: { ...base.cards, ...d.cards }, settings: { ...base.settings, ...d.settings } };
+        this.data = { ...base, ...d, cards: { ...base.cards, ...d.cards }, settings: { ...base.settings, ...d.settings }, path: { ...base.path, ...d.path } };
         for (const s of SKILLS) for (const id of Object.keys(this.data.cards[s])) this.data.cards[s][id] = reviveCard(this.data.cards[s][id]);
         this.log = await this.store.loadLog();
         return;
@@ -205,6 +207,9 @@ export class Progress {
     this.store.appendLog(entry).catch(() => {});
     return c;
   }
+
+  /** Marks a path lesson finished (again, if redone: the latest time is kept). */
+  completeLesson(id: string, now = new Date()): void { this.data.path.done[id] = now.getTime(); this.persist(); }
 
   recordStreak(streak: number): void {
     if (streak > this.data.best) { this.data.best = streak; this.persist(); }

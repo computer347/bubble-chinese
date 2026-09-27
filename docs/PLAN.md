@@ -81,10 +81,10 @@ A course alongside the general model, in the spirit of HelloChinese: units follo
 - [x] Lessons of 10 new words (the build allows 8–12): a dialogue that reuses earlier words, four sentences to build. For scale: HSK Standard Course 1 has ~10 new words a lesson, Integrated Chinese ~25–30 a (1–2 week) lesson, Duolingo 1–2 a few-minute lesson
 - [x] A culture note per unit
 - [x] All 15 HSK 1 units on the path (titles and topics); units 1–2 drafted (5 lessons, 50 words)
-- [ ] The path screen: units and lessons, locked, open and done, in both styles
-- [ ] The lesson player: meet (first meeting: sound, meaning, example) → pop (bubbles on the lesson's words) → in context (the dialogue, tap to hear) → build (put a sentence in order) → checkpoint (a boss bubble, one layer per word); the unit's culture note before its first lesson
+- [x] The path screen: units and lessons, locked, open and done, in both styles; units still to be written are listed
+- [x] The lesson player: the unit's culture note (first lesson) → meet each word (sound, meaning, where it comes up) → pop (a bubble per word, each a review) → in context (the dialogue, tap a word, ▶ a line; two questions) → build (put four sentences in order) → checkpoint (one bubble, a layer for each of six words) → done. Grammar particles are met and used, not drilled
 - [ ] A "write" side lesson on each lesson: stroke order for its new characters (needs 4b)
-- [ ] Today takes its new words from the next lesson
+- [x] Today takes its new words in path order (the next lesson's first), then the rest of the level
 - [ ] Dialogue audio with the MiniMax generator
 - [ ] Units 3–15 for HSK 1, then HSK 2
 

@@ -14,6 +14,7 @@ import { Drawer } from '../ui/drawer';
 import { Home } from '../ui/home';
 import { Menu } from '../ui/menu';
 import { todayLeft, TodayMode } from '../modes/today';
+import { PathMode, type PathStatus } from '../modes/path';
 import { MODES, type ModeId } from '../modes';
 import type { Mode, ModeContext } from '../modes/mode';
 import { LayeredMode } from '../modes/layered';
@@ -51,6 +52,8 @@ export interface GameHandle {
     voice: { latency: number | null; primed: boolean };
     /** The bubble's outer layer on screen, in CSS pixels. */
     ball: { x: number; y: number; r: number };
+    /** Where the path is: map, a lesson card, a drill or the checkpoint. */
+    path: PathStatus | null;
     /** The last fit: where the bubble was sent, when, and what it avoided. */
     lastFit: { y: number; r: number; at: number; obstacles: Array<{ l: number; t: number; r: number; b: number }> } | null;
   };
@@ -204,7 +207,7 @@ export function startGame(opts: GameOptions): GameHandle {
   // the bubble is hidden while playing only between a burst core and the next bubble, while the slip is up
   const state = (): GameState => !playing ? 'home' : bubble.state === 'hidden' ? 'note' : bubble.state;
   // the layered mode being played, or Words while at home
-  const layered = () => (current instanceof LayeredMode ? current : modes.get('words') as LayeredMode);
+  const layered = () => (current instanceof LayeredMode ? current : current instanceof PathMode ? current.layered() ?? modes.get('words') as LayeredMode : modes.get('words') as LayeredMode);
   return {
     enter,
     home: showHome,
@@ -215,6 +218,7 @@ export function startGame(opts: GameOptions): GameHandle {
       pool: pool().length, due: progress.dueCount('words', pool()), maxLevel: progress.data.settings.maxLevel,
       voice: { latency: voice.lastLatency, primed: !!words.word && voice.primed(words.word) },
       ball: bubble.screenCircle(),
+      path: current instanceof PathMode ? current.snapshot() : null,
       lastFit
     }; }
   };

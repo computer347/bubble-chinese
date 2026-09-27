@@ -4,6 +4,7 @@ import { join } from 'node:path';
 // @ts-expect-error: a plain JavaScript build script
 import { build, buildPath } from '../../scripts/build-content.mjs';
 import path from '../../src/content/generated/path.json';
+import { LESSONS, lessonStates, nextLesson, taughtThrough, PATH_ORDER } from '../../src/content/path';
 
 const { words } = build();
 const dir = 'tests/unit/fixtures';
@@ -70,5 +71,24 @@ describe('the HSK 1 path', () => {
       expect(l.dialogue.length, l.id).toBeGreaterThan(1);
       for (const d of l.dialogue) expect(d.en, `${l.id} ${d.text}`).toBeTruthy();
     }
+  });
+});
+
+describe('lesson order', () => {
+  it('opens one lesson at a time, the first not yet done', () => {
+    const ids = LESSONS.map(x => x.lesson.id);
+    expect([...lessonStates({}).values()]).toEqual(['open', ...ids.slice(1).map(() => 'locked')]);
+    const s = lessonStates({ [ids[0]]: 1 });
+    expect(s.get(ids[0])).toBe('done');
+    expect(s.get(ids[1])).toBe('open');
+    expect(s.get(ids[2])).toBe('locked');
+    expect(nextLesson({ [ids[0]]: 1 })!.lesson.id).toBe(ids[1]);
+    expect(nextLesson(Object.fromEntries(ids.map(id => [id, 1])))).toBeNull();
+  });
+
+  it('knows which words each lesson may use, and where each word is taught', () => {
+    expect(taughtThrough(0)).toEqual(LESSONS[0].lesson.words);
+    expect(taughtThrough(1)).toHaveLength(LESSONS[0].lesson.words.length + LESSONS[1].lesson.words.length);
+    expect(PATH_ORDER.get(LESSONS[1].lesson.words[0])).toBe(1);
   });
 });

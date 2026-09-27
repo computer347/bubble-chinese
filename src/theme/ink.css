@@ -72,3 +72,13 @@ body.style-ink .next{ border-radius:4px; font-family:var(--font); font-size:17px
   body.style-ink .ask{ font-size:16px; }
   body.style-ink .mode-desc{ font-size:12.5px; }
 }
+
+/* the path and the lesson card in the ink style */
+body.style-ink .punit-head, body.style-ink .punit-note{ border-radius:6px; }
+body.style-ink .punit-title{ font-family:var(--brush); font-weight:400; font-size:26px; }
+body.style-ink .punit-zh, body.style-ink .stop-no{ font-family:var(--brush); font-weight:400; }
+body.style-ink .m-path{ --c1:#E0472F; --c2:#8E1510; }
+body.style-ink .m-done{ --c1:#E8B04A; --c2:#9A5B0C; }
+body.style-ink .lh{ font-family:var(--brush); }
+body.style-ink .meet-h, body.style-ink .meet-exzh{ font-family:var(--brush); font-weight:400; }
+body.style-ink .lcard{ font-family:var(--font); }
