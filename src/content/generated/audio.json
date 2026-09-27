@@ -1,1 +1,5480 @@
-{}
+{
+ "一|yī": {
+  "p": "yī",
+  "normal": {
+   "file": "b1a3962b44-n.mp3",
+   "hash": "fee4d70f0f3405c2"
+  },
+  "slow": {
+   "file": "b1a3962b44-s.mp3",
+   "hash": "133e2a5b593e0fcd"
+  }
+ },
+ "一下|yíxià": {
+  "p": "yíxià",
+  "normal": {
+   "file": "2907f3f476-n.mp3",
+   "hash": "568b84cc80a4603b"
+  },
+  "slow": {
+   "file": "2907f3f476-s.mp3",
+   "hash": "bcccf69d4b0457fd"
+  }
+ },
+ "一些|yìxiē": {
+  "p": "yìxiē",
+  "normal": {
+   "file": "0a1cf083d7-n.mp3",
+   "hash": "6f1689ae0e688f55"
+  },
+  "slow": {
+   "file": "0a1cf083d7-s.mp3",
+   "hash": "77767976a70e73e5"
+  }
+ },
+ "一会儿|yíhuìr": {
+  "p": "yíhuìr",
+  "normal": {
+   "file": "9521b4fb61-n.mp3",
+   "hash": "6bc1c43c4fc4ad26"
+  },
+  "slow": {
+   "file": "9521b4fb61-s.mp3",
+   "hash": "b4d2189217807cc2"
+  }
+ },
+ "一半|yíbàn": {
+  "p": "yíbàn",
+  "normal": {
+   "file": "73348827ae-n.mp3",
+   "hash": "828bdcbde0bdffc5"
+  },
+  "slow": {
+   "file": "73348827ae-s.mp3",
+   "hash": "be938605feecb96c"
+  }
+ },
+ "一点儿|yìdiǎnr": {
+  "p": "yìdiǎnr",
+  "normal": {
+   "file": "dd839ddc0d-n.mp3",
+   "hash": "64bdfc91dcc373be"
+  },
+  "slow": {
+   "file": "dd839ddc0d-s.mp3",
+   "hash": "3c0345542f327fd4"
+  }
+ },
+ "一起|yìqǐ": {
+  "p": "yìqǐ",
+  "normal": {
+   "file": "627deb5b59-n.mp3",
+   "hash": "8c8f893418e5ff1c"
+  },
+  "slow": {
+   "file": "627deb5b59-s.mp3",
+   "hash": "a8d0001869a6e6d9"
+  }
+ },
+ "七|qī": {
+  "p": "qī",
+  "normal": {
+   "file": "245439877a-n.mp3",
+   "hash": "27243ccf98de638e"
+  },
+  "slow": {
+   "file": "245439877a-s.mp3",
+   "hash": "98624fcd8c9c9b6c"
+  }
+ },
+ "万|wàn": {
+  "p": "wàn",
+  "normal": {
+   "file": "77f5eefbe0-n.mp3",
+   "hash": "7afc3d2402f9d201"
+  },
+  "slow": {
+   "file": "77f5eefbe0-s.mp3",
+   "hash": "cb54201be74a19c8"
+  }
+ },
+ "丈夫|zhàngfu": {
+  "p": "zhàngfu",
+  "normal": {
+   "file": "a7cef5936e-n.mp3",
+   "hash": "fce5d930db52a01b"
+  },
+  "slow": {
+   "file": "a7cef5936e-s.mp3",
+   "hash": "cd0170fc3dc04d0f"
+  }
+ },
+ "三|sān": {
+  "p": "sān",
+  "normal": {
+   "file": "fdd6d096cd-n.mp3",
+   "hash": "7cbfc5d5704fae9f"
+  },
+  "slow": {
+   "file": "fdd6d096cd-s.mp3",
+   "hash": "8e83b91ed50347cc"
+  }
+ },
+ "上|shàng": {
+  "p": "shàng",
+  "normal": {
+   "file": "6c7147c8a1-n.mp3",
+   "hash": "f01d382b31028a24"
+  },
+  "slow": {
+   "file": "6c7147c8a1-s.mp3",
+   "hash": "b0553da2d8fa6721"
+  }
+ },
+ "上午|shàngwǔ": {
+  "p": "shàngwǔ",
+  "normal": {
+   "file": "7b99e47802-n.mp3",
+   "hash": "319f44165e1fcc7b"
+  },
+  "slow": {
+   "file": "7b99e47802-s.mp3",
+   "hash": "1c8e69359d2a6de2"
+  }
+ },
+ "上去|shàngqù": {
+  "p": "shàngqù",
+  "normal": {
+   "file": "4db58fd3fd-n.mp3",
+   "hash": "017175a66d466a02"
+  },
+  "slow": {
+   "file": "4db58fd3fd-s.mp3",
+   "hash": "c7f243ce53fd624b"
+  }
+ },
+ "上学|shàngxué": {
+  "p": "shàngxué",
+  "normal": {
+   "file": "59e9bdf608-n.mp3",
+   "hash": "64648a4cc1ea407f"
+  },
+  "slow": {
+   "file": "59e9bdf608-s.mp3",
+   "hash": "9053f1ab870d9338"
+  }
+ },
+ "上来|shànglái": {
+  "p": "shànglái",
+  "normal": {
+   "file": "d0a3a8829a-n.mp3",
+   "hash": "948d45c6f476d7e9"
+  },
+  "slow": {
+   "file": "d0a3a8829a-s.mp3",
+   "hash": "073c785d0fad305d"
+  }
+ },
+ "上班|shàngbān": {
+  "p": "shàngbān",
+  "normal": {
+   "file": "746d8e5629-n.mp3",
+   "hash": "8017e009eb08f1f3"
+  },
+  "slow": {
+   "file": "746d8e5629-s.mp3",
+   "hash": "b48cf41955a3a543"
+  }
+ },
+ "上网|shàngwǎng": {
+  "p": "shàngwǎng",
+  "normal": {
+   "file": "da8884a7ca-n.mp3",
+   "hash": "5275c46b73fc9395"
+  },
+  "slow": {
+   "file": "da8884a7ca-s.mp3",
+   "hash": "1deb8dae972eb527"
+  }
+ },
+ "上课|shàngkè": {
+  "p": "shàngkè",
+  "normal": {
+   "file": "d48bb31533-n.mp3",
+   "hash": "c8db1535d2a88de9"
+  },
+  "slow": {
+   "file": "d48bb31533-s.mp3",
+   "hash": "c52203135696218f"
+  }
+ },
+ "上面|shàngmiàn": {
+  "p": "shàngmiàn",
+  "normal": {
+   "file": "f3b3e5f43d-n.mp3",
+   "hash": "fad901c9e4b74c09"
+  },
+  "slow": {
+   "file": "f3b3e5f43d-s.mp3",
+   "hash": "1a4d4b4de8740fe9"
+  }
+ },
+ "下|xià": {
+  "p": "xià",
+  "normal": {
+   "file": "523404a7d1-n.mp3",
+   "hash": "8faa869b630ef29f"
+  },
+  "slow": {
+   "file": "523404a7d1-s.mp3",
+   "hash": "34758ee785f3ad5a"
+  }
+ },
+ "下午|xiàwǔ": {
+  "p": "xiàwǔ",
+  "normal": {
+   "file": "121c02f615-n.mp3",
+   "hash": "c277845bbcfd4354"
+  },
+  "slow": {
+   "file": "121c02f615-s.mp3",
+   "hash": "e8d7e6a9f612bcd0"
+  }
+ },
+ "下去|xiàqù": {
+  "p": "xiàqù",
+  "normal": {
+   "file": "af9138a638-n.mp3",
+   "hash": "4424e420de74b25f"
+  },
+  "slow": {
+   "file": "af9138a638-s.mp3",
+   "hash": "d0ccf8c83cf133f1"
+  }
+ },
+ "下来|xiàlái": {
+  "p": "xiàlái",
+  "normal": {
+   "file": "38d8108ae5-n.mp3",
+   "hash": "ad47466317ecb79f"
+  },
+  "slow": {
+   "file": "38d8108ae5-s.mp3",
+   "hash": "f0705b3c2c232fb4"
+  }
+ },
+ "下班|xiàbān": {
+  "p": "xiàbān",
+  "normal": {
+   "file": "a69808e27b-n.mp3",
+   "hash": "5b50cd41c8948467"
+  },
+  "slow": {
+   "file": "a69808e27b-s.mp3",
+   "hash": "4d6e90ff16a38fda"
+  }
+ },
+ "下课|xiàkè": {
+  "p": "xiàkè",
+  "normal": {
+   "file": "a42c0aeb6b-n.mp3",
+   "hash": "d370b33722c52072"
+  },
+  "slow": {
+   "file": "a42c0aeb6b-s.mp3",
+   "hash": "e729c6df22dd7314"
+  }
+ },
+ "下雨|xiàyǔ": {
+  "p": "xiàyǔ",
+  "normal": {
+   "file": "956847aa69-n.mp3",
+   "hash": "d4e4c73d1b1be9c7"
+  },
+  "slow": {
+   "file": "956847aa69-s.mp3",
+   "hash": "ef304e72ff056a61"
+  }
+ },
+ "下面|xiàmiàn": {
+  "p": "xiàmiàn",
+  "normal": {
+   "file": "7ff73eed02-n.mp3",
+   "hash": "0ef4563350aaba0b"
+  },
+  "slow": {
+   "file": "7ff73eed02-s.mp3",
+   "hash": "ee1765a6943b59c6"
+  }
+ },
+ "不|bù": {
+  "p": "bù",
+  "normal": {
+   "file": "d55086b92b-n.mp3",
+   "hash": "984f1b684716a887"
+  },
+  "slow": {
+   "file": "d55086b92b-s.mp3",
+   "hash": "b4a5c7017f928d69"
+  }
+ },
+ "不好意思|bùhǎoyìsi": {
+  "p": "bùhǎoyìsi",
+  "normal": {
+   "file": "9297925a29-n.mp3",
+   "hash": "9ff2d44bc279e8ae"
+  },
+  "slow": {
+   "file": "9297925a29-s.mp3",
+   "hash": "e9fb114d9a745312"
+  }
+ },
+ "不客气|búkèqi": {
+  "p": "búkèqi",
+  "normal": {
+   "file": "293be467d6-n.mp3",
+   "hash": "243a9ad8621d43ee"
+  },
+  "slow": {
+   "file": "293be467d6-s.mp3",
+   "hash": "6d79cd66c9cc1add"
+  }
+ },
+ "不要|búyào": {
+  "p": "búyào",
+  "normal": {
+   "file": "33ce636a51-n.mp3",
+   "hash": "673ed9441cb4c229"
+  },
+  "slow": {
+   "file": "33ce636a51-s.mp3",
+   "hash": "caac74851491725b"
+  }
+ },
+ "不错|búcuò": {
+  "p": "búcuò",
+  "normal": {
+   "file": "65d5baa61b-n.mp3",
+   "hash": "e169e8c21ac2d49d"
+  },
+  "slow": {
+   "file": "65d5baa61b-s.mp3",
+   "hash": "9d4aecb6db35fc70"
+  }
+ },
+ "东西|dōngxi": {
+  "p": "dōngxi",
+  "normal": {
+   "file": "3fe2bddabd-n.mp3",
+   "hash": "2dbd9c0c83ea247e"
+  },
+  "slow": {
+   "file": "3fe2bddabd-s.mp3",
+   "hash": "4d0804c07707e8a4"
+  }
+ },
+ "两|liǎng": {
+  "p": "liǎng",
+  "normal": {
+   "file": "7609ce7245-n.mp3",
+   "hash": "d644185b9f87a51d"
+  },
+  "slow": {
+   "file": "7609ce7245-s.mp3",
+   "hash": "6ae70ee75ccd7287"
+  }
+ },
+ "个|gè": {
+  "p": "gè",
+  "normal": {
+   "file": "062b8c12e8-n.mp3",
+   "hash": "a98e03a97801d999"
+  },
+  "slow": {
+   "file": "062b8c12e8-s.mp3",
+   "hash": "2fcaad9aa50d78db"
+  }
+ },
+ "个子|gèzi": {
+  "p": "gèzi",
+  "normal": {
+   "file": "9ab51a6c61-n.mp3",
+   "hash": "46b3d8d9ab082560"
+  },
+  "slow": {
+   "file": "9ab51a6c61-s.mp3",
+   "hash": "869e4161750ea52a"
+  }
+ },
+ "中午|zhōngwǔ": {
+  "p": "zhōngwǔ",
+  "normal": {
+   "file": "ec4ba4f1ad-n.mp3",
+   "hash": "ce6ec17aaa7322c2"
+  },
+  "slow": {
+   "file": "ec4ba4f1ad-s.mp3",
+   "hash": "11eb6e82b0bbfecd"
+  }
+ },
+ "中国|Zhōngguó": {
+  "p": "Zhōngguó",
+  "normal": {
+   "file": "ea1f8797ea-n.mp3",
+   "hash": "e56aa9360f8a44a8"
+  },
+  "slow": {
+   "file": "ea1f8797ea-s.mp3",
+   "hash": "7faf83d56d7d5e48"
+  }
+ },
+ "中学|zhōngxué": {
+  "p": "zhōngxué",
+  "normal": {
+   "file": "354cd8d3e3-n.mp3",
+   "hash": "801d90eb63ba8eff"
+  },
+  "slow": {
+   "file": "354cd8d3e3-s.mp3",
+   "hash": "5d0a0d9b37987fe7"
+  }
+ },
+ "中学生|zhōngxuéshēng": {
+  "p": "zhōngxuéshēng",
+  "normal": {
+   "file": "2492389776-n.mp3",
+   "hash": "6d3ada0e984de769"
+  },
+  "slow": {
+   "file": "2492389776-s.mp3",
+   "hash": "70f2910d07439fe7"
+  }
+ },
+ "中文|Zhōngwén": {
+  "p": "Zhōngwén",
+  "normal": {
+   "file": "21c596d8c0-n.mp3",
+   "hash": "120d6b4dcec1ebeb"
+  },
+  "slow": {
+   "file": "21c596d8c0-s.mp3",
+   "hash": "a3dd74cbe45a296f"
+  }
+ },
+ "为什么|wèishénme": {
+  "p": "wèishénme",
+  "normal": {
+   "file": "04f0ca36e6-n.mp3",
+   "hash": "7042c415dd71e73c"
+  },
+  "slow": {
+   "file": "04f0ca36e6-s.mp3",
+   "hash": "0b4291399f6ec819"
+  }
+ },
+ "九|jiǔ": {
+  "p": "jiǔ",
+  "normal": {
+   "file": "95580cb766-n.mp3",
+   "hash": "2d6ba733c4f31afe"
+  },
+  "slow": {
+   "file": "95580cb766-s.mp3",
+   "hash": "064fe9eed2bd362b"
+  }
+ },
+ "也|yě": {
+  "p": "yě",
+  "normal": {
+   "file": "c3b6be9a48-n.mp3",
+   "hash": "3aeb754ab12db4bd"
+  },
+  "slow": {
+   "file": "c3b6be9a48-s.mp3",
+   "hash": "c8eca8e21d58048a"
+  }
+ },
+ "书|shū": {
+  "p": "shū",
+  "normal": {
+   "file": "0c90257d6e-n.mp3",
+   "hash": "d7ccee1652694492"
+  },
+  "slow": {
+   "file": "0c90257d6e-s.mp3",
+   "hash": "4078f7855194a343"
+  }
+ },
+ "书包|shūbāo": {
+  "p": "shūbāo",
+  "normal": {
+   "file": "3bee0785a0-n.mp3",
+   "hash": "d08caf9bfea1bd5d"
+  },
+  "slow": {
+   "file": "3bee0785a0-s.mp3",
+   "hash": "ba19150bafc3c2b0"
+  }
+ },
+ "书店|shūdiàn": {
+  "p": "shūdiàn",
+  "normal": {
+   "file": "3f489cab4f-n.mp3",
+   "hash": "60098a3abc7badb3"
+  },
+  "slow": {
+   "file": "3f489cab4f-s.mp3",
+   "hash": "2a06d8b92965935d"
+  }
+ },
+ "买|mǎi": {
+  "p": "mǎi",
+  "normal": {
+   "file": "7ca610e157-n.mp3",
+   "hash": "c27c6086b59b0f2b"
+  },
+  "slow": {
+   "file": "7ca610e157-s.mp3",
+   "hash": "083947d357446a64"
+  }
+ },
+ "了|le": {
+  "p": "le",
+  "normal": {
+   "file": "d3a11ca067-n.mp3",
+   "hash": "8f2fa96d7a0a90b3"
+  },
+  "slow": {
+   "file": "d3a11ca067-s.mp3",
+   "hash": "d60ebc7dd32168b1"
+  }
+ },
+ "事|shì": {
+  "p": "shì",
+  "normal": {
+   "file": "df551ddb70-n.mp3",
+   "hash": "75248da2780d9aca"
+  },
+  "slow": {
+   "file": "df551ddb70-s.mp3",
+   "hash": "8c6e6d9c857db550"
+  }
+ },
+ "事情|shìqing": {
+  "p": "shìqing",
+  "normal": {
+   "file": "cb6cf1c0a8-n.mp3",
+   "hash": "39cc118ee5906667"
+  },
+  "slow": {
+   "file": "cb6cf1c0a8-s.mp3",
+   "hash": "4bf5eaec71d38683"
+  }
+ },
+ "二|èr": {
+  "p": "èr",
+  "normal": {
+   "file": "6f97593951-n.mp3",
+   "hash": "a28b1f8a5fe86254"
+  },
+  "slow": {
+   "file": "6f97593951-s.mp3",
+   "hash": "31cc766effae25ed"
+  }
+ },
+ "五|wǔ": {
+  "p": "wǔ",
+  "normal": {
+   "file": "e9ced34c06-n.mp3",
+   "hash": "8df6bdaa00d6afd4"
+  },
+  "slow": {
+   "file": "e9ced34c06-s.mp3",
+   "hash": "23bd87f86623772e"
+  }
+ },
+ "些|xiē": {
+  "p": "xiē",
+  "normal": {
+   "file": "1764d11580-n.mp3",
+   "hash": "93ec11a1fa47c392"
+  },
+  "slow": {
+   "file": "1764d11580-s.mp3",
+   "hash": "6b5e26b92d061cb3"
+  }
+ },
+ "人|rén": {
+  "p": "rén",
+  "normal": {
+   "file": "7ffaafffba-n.mp3",
+   "hash": "7bece4a603f9a5ea"
+  },
+  "slow": {
+   "file": "7ffaafffba-s.mp3",
+   "hash": "3e4638faa187141f"
+  }
+ },
+ "什么|shénme": {
+  "p": "shénme",
+  "normal": {
+   "file": "da4b5b7536-n.mp3",
+   "hash": "f24b1133c5c8f206"
+  },
+  "slow": {
+   "file": "da4b5b7536-s.mp3",
+   "hash": "930c02954760baa1"
+  }
+ },
+ "今天|jīntiān": {
+  "p": "jīntiān",
+  "normal": {
+   "file": "3b3fc260e4-n.mp3",
+   "hash": "1014ca4372d020ab"
+  },
+  "slow": {
+   "file": "3b3fc260e4-s.mp3",
+   "hash": "129bffbe57eba0c0"
+  }
+ },
+ "今年|jīnnián": {
+  "p": "jīnnián",
+  "normal": {
+   "file": "3241279f89-n.mp3",
+   "hash": "532e0a8945709f90"
+  },
+  "slow": {
+   "file": "3241279f89-s.mp3",
+   "hash": "5281a346f11da609"
+  }
+ },
+ "介绍|jièshào": {
+  "p": "jièshào",
+  "normal": {
+   "file": "87bc481063-n.mp3",
+   "hash": "6bed4717ccbdb513"
+  },
+  "slow": {
+   "file": "87bc481063-s.mp3",
+   "hash": "6f46074aa3370548"
+  }
+ },
+ "从|cóng": {
+  "p": "cóng",
+  "normal": {
+   "file": "f213382337-n.mp3",
+   "hash": "8eabb78d6c2dc117"
+  },
+  "slow": {
+   "file": "f213382337-s.mp3",
+   "hash": "964c0bb628a1f744"
+  }
+ },
+ "从小|cóngxiǎo": {
+  "p": "cóngxiǎo",
+  "normal": {
+   "file": "2955c8c88e-n.mp3",
+   "hash": "e562fa00245a2103"
+  },
+  "slow": {
+   "file": "2955c8c88e-s.mp3",
+   "hash": "c30d69e8d5d095b6"
+  }
+ },
+ "他|tā": {
+  "p": "tā",
+  "normal": {
+   "file": "5ea2d9d6cd-n.mp3",
+   "hash": "586f550cf4c1be42"
+  },
+  "slow": {
+   "file": "5ea2d9d6cd-s.mp3",
+   "hash": "299e41f24c158fae"
+  }
+ },
+ "他们|tāmen": {
+  "p": "tāmen",
+  "normal": {
+   "file": "7d2d521a29-n.mp3",
+   "hash": "c4ed26df16d7b1e2"
+  },
+  "slow": {
+   "file": "7d2d521a29-s.mp3",
+   "hash": "67b0215d02acd2bb"
+  }
+ },
+ "们|men": {
+  "p": "men",
+  "normal": {
+   "file": "425c624ae9-n.mp3",
+   "hash": "17397273880c4552"
+  },
+  "slow": {
+   "file": "425c624ae9-s.mp3",
+   "hash": "feff07599f551c72"
+  }
+ },
+ "件|jiàn": {
+  "p": "jiàn",
+  "normal": {
+   "file": "80203e9d14-n.mp3",
+   "hash": "19b0b9c9d3cd71f1"
+  },
+  "slow": {
+   "file": "80203e9d14-s.mp3",
+   "hash": "5b0838b4508e026a"
+  }
+ },
+ "休息|xiūxi": {
+  "p": "xiūxi",
+  "normal": {
+   "file": "c10e9159b3-n.mp3",
+   "hash": "362de980456f259b"
+  },
+  "slow": {
+   "file": "c10e9159b3-s.mp3",
+   "hash": "1d741439fcf4eae0"
+  }
+ },
+ "会|huì": {
+  "p": "huì",
+  "normal": {
+   "file": "e39e654c6e-n.mp3",
+   "hash": "76f95c1dd74afc90"
+  },
+  "slow": {
+   "file": "e39e654c6e-s.mp3",
+   "hash": "5ed74f9aeb11af71"
+  }
+ },
+ "但|dàn": {
+  "p": "dàn",
+  "normal": {
+   "file": "5609f18c7d-n.mp3",
+   "hash": "40f9c01f8ab73a62"
+  },
+  "slow": {
+   "file": "5609f18c7d-s.mp3",
+   "hash": "74a873b1f8a483b3"
+  }
+ },
+ "但是|dànshì": {
+  "p": "dànshì",
+  "normal": {
+   "file": "687e5a1651-n.mp3",
+   "hash": "60a5d6c12df586e2"
+  },
+  "slow": {
+   "file": "687e5a1651-s.mp3",
+   "hash": "ca4ccb415fdb64bf"
+  }
+ },
+ "位|wèi": {
+  "p": "wèi",
+  "normal": {
+   "file": "39dde69923-n.mp3",
+   "hash": "8555f2f252b4c3c4"
+  },
+  "slow": {
+   "file": "39dde69923-s.mp3",
+   "hash": "b80276967e006234"
+  }
+ },
+ "住|zhù": {
+  "p": "zhù",
+  "normal": {
+   "file": "4188cdd048-n.mp3",
+   "hash": "4ace072a74ffa170"
+  },
+  "slow": {
+   "file": "4188cdd048-s.mp3",
+   "hash": "5966c137522c3697"
+  }
+ },
+ "你|nǐ": {
+  "p": "nǐ",
+  "normal": {
+   "file": "7992db525d-n.mp3",
+   "hash": "c7b57899c7b05dd5"
+  },
+  "slow": {
+   "file": "7992db525d-s.mp3",
+   "hash": "9ca4119743de6608"
+  }
+ },
+ "你们|nǐmen": {
+  "p": "nǐmen",
+  "normal": {
+   "file": "62b2aced57-n.mp3",
+   "hash": "6b7e627e1e0cc93a"
+  },
+  "slow": {
+   "file": "62b2aced57-s.mp3",
+   "hash": "a9b80e68dfad728a"
+  }
+ },
+ "你好|nǐhǎo": {
+  "p": "nǐhǎo",
+  "normal": {
+   "file": "0e301281c4-n.mp3",
+   "hash": "9fdeabb140e96eb6"
+  },
+  "slow": {
+   "file": "0e301281c4-s.mp3",
+   "hash": "c92edc26395b631c"
+  }
+ },
+ "便宜|piányi": {
+  "p": "piányi",
+  "normal": {
+   "file": "a8555e23a0-n.mp3",
+   "hash": "107e9179b8bd2d75"
+  },
+  "slow": {
+   "file": "a8555e23a0-s.mp3",
+   "hash": "37be3a4710d8130b"
+  }
+ },
+ "做|zuò": {
+  "p": "zuò",
+  "normal": {
+   "file": "28d509726e-n.mp3",
+   "hash": "accff19b63071aa9"
+  },
+  "slow": {
+   "file": "28d509726e-s.mp3",
+   "hash": "0032e09d0b08f2dc"
+  }
+ },
+ "做饭|zuòfàn": {
+  "p": "zuòfàn",
+  "normal": {
+   "file": "efc1779d9e-n.mp3",
+   "hash": "6a96ab2909b404f2"
+  },
+  "slow": {
+   "file": "efc1779d9e-s.mp3",
+   "hash": "02b86bde5d96deca"
+  }
+ },
+ "儿子|érzi": {
+  "p": "érzi",
+  "normal": {
+   "file": "54f2ef4bc9-n.mp3",
+   "hash": "98cb3323cb63807b"
+  },
+  "slow": {
+   "file": "54f2ef4bc9-s.mp3",
+   "hash": "2d0e79583fbef773"
+  }
+ },
+ "元|yuán": {
+  "p": "yuán",
+  "normal": {
+   "file": "6c834cdacc-n.mp3",
+   "hash": "98245ea59b155ca1"
+  },
+  "slow": {
+   "file": "6c834cdacc-s.mp3",
+   "hash": "7594c3db01896a00"
+  }
+ },
+ "先生|xiānsheng": {
+  "p": "xiānsheng",
+  "normal": {
+   "file": "9c6d915b84-n.mp3",
+   "hash": "4ef19114f2a0f885"
+  },
+  "slow": {
+   "file": "9c6d915b84-s.mp3",
+   "hash": "8f78d25cce65f20e"
+  }
+ },
+ "八|bā": {
+  "p": "bā",
+  "normal": {
+   "file": "41a416fe33-n.mp3",
+   "hash": "2b51d6f303f16929"
+  },
+  "slow": {
+   "file": "41a416fe33-s.mp3",
+   "hash": "a6b36a28d70325d2"
+  }
+ },
+ "公交车|gōngjiāochē": {
+  "p": "gōngjiāochē",
+  "normal": {
+   "file": "75b6ca8c12-n.mp3",
+   "hash": "e4a6d7e779e8119c"
+  },
+  "slow": {
+   "file": "75b6ca8c12-s.mp3",
+   "hash": "23211560cbd11153"
+  }
+ },
+ "公司|gōngsī": {
+  "p": "gōngsī",
+  "normal": {
+   "file": "ddb3b102de-n.mp3",
+   "hash": "70883042f08bd4b2"
+  },
+  "slow": {
+   "file": "ddb3b102de-s.mp3",
+   "hash": "d7a098f14468baae"
+  }
+ },
+ "六|liù": {
+  "p": "liù",
+  "normal": {
+   "file": "908f44dfa5-n.mp3",
+   "hash": "7e5994ee8f93448e"
+  },
+  "slow": {
+   "file": "908f44dfa5-s.mp3",
+   "hash": "bee639f7cf0b1a04"
+  }
+ },
+ "再|zài": {
+  "p": "zài",
+  "normal": {
+   "file": "9f05ee2e49-n.mp3",
+   "hash": "3e48e9ae87f9706a"
+  },
+  "slow": {
+   "file": "9f05ee2e49-s.mp3",
+   "hash": "04d55b4b1623bff3"
+  }
+ },
+ "再见|zàijiàn": {
+  "p": "zàijiàn",
+  "normal": {
+   "file": "df017c230d-n.mp3",
+   "hash": "084747b3eb396698"
+  },
+  "slow": {
+   "file": "df017c230d-s.mp3",
+   "hash": "f3dc8b31b3d25dd2"
+  }
+ },
+ "写|xiě": {
+  "p": "xiě",
+  "normal": {
+   "file": "174a364c34-n.mp3",
+   "hash": "e99535ffe1175f16"
+  },
+  "slow": {
+   "file": "174a364c34-s.mp3",
+   "hash": "fb10cb1ac13dacc7"
+  }
+ },
+ "冷|lěng": {
+  "p": "lěng",
+  "normal": {
+   "file": "2a162d4194-n.mp3",
+   "hash": "bc8570d3443a7209"
+  },
+  "slow": {
+   "file": "2a162d4194-s.mp3",
+   "hash": "51853a161f59c54a"
+  }
+ },
+ "准备|zhǔnbèi": {
+  "p": "zhǔnbèi",
+  "normal": {
+   "file": "b445eb5cc6-n.mp3",
+   "hash": "fb980edb5dd74c23"
+  },
+  "slow": {
+   "file": "b445eb5cc6-s.mp3",
+   "hash": "bb278bbea46a6bd1"
+  }
+ },
+ "几|jǐ": {
+  "p": "jǐ",
+  "normal": {
+   "file": "481852645b-n.mp3",
+   "hash": "4039e7cb91b44e6d"
+  },
+  "slow": {
+   "file": "481852645b-s.mp3",
+   "hash": "a4f2617d510ccc7e"
+  }
+ },
+ "出|chū": {
+  "p": "chū",
+  "normal": {
+   "file": "7fc0977bed-n.mp3",
+   "hash": "7760e651ca1fe441"
+  },
+  "slow": {
+   "file": "7fc0977bed-s.mp3",
+   "hash": "492b3b9e9b44cdcf"
+  }
+ },
+ "出去|chūqù": {
+  "p": "chūqù",
+  "normal": {
+   "file": "81bc03fd37-n.mp3",
+   "hash": "d07a4880cf7599c2"
+  },
+  "slow": {
+   "file": "81bc03fd37-s.mp3",
+   "hash": "ba93944ff0096d1e"
+  }
+ },
+ "出国|chūguó": {
+  "p": "chūguó",
+  "normal": {
+   "file": "ffb0fcf2a8-n.mp3",
+   "hash": "cbeaa4e365a1ef40"
+  },
+  "slow": {
+   "file": "ffb0fcf2a8-s.mp3",
+   "hash": "9d2636ba6cafa342"
+  }
+ },
+ "出来|chūlái": {
+  "p": "chūlái",
+  "normal": {
+   "file": "5cef5db874-n.mp3",
+   "hash": "f52425318d81ccef"
+  },
+  "slow": {
+   "file": "5cef5db874-s.mp3",
+   "hash": "67ae927e2bbc6d88"
+  }
+ },
+ "出租车|chūzūchē": {
+  "p": "chūzūchē",
+  "normal": {
+   "file": "45d1721a32-n.mp3",
+   "hash": "1e10d7b9a5a274f9"
+  },
+  "slow": {
+   "file": "45d1721a32-s.mp3",
+   "hash": "2d6c2756c91fd93d"
+  }
+ },
+ "出门|chūmén": {
+  "p": "chūmén",
+  "normal": {
+   "file": "cca0df0c24-n.mp3",
+   "hash": "45388e6742f2cfc0"
+  },
+  "slow": {
+   "file": "cca0df0c24-s.mp3",
+   "hash": "2ed8db132f95ff14"
+  }
+ },
+ "分|fēn": {
+  "p": "fēn",
+  "normal": {
+   "file": "5f3426059f-n.mp3",
+   "hash": "d4ebfc8ec1f1271d"
+  },
+  "slow": {
+   "file": "5f3426059f-s.mp3",
+   "hash": "64ab665629e928d4"
+  }
+ },
+ "分钟|fēnzhōng": {
+  "p": "fēnzhōng",
+  "normal": {
+   "file": "dd32ff8c59-n.mp3",
+   "hash": "279c3427953fed78"
+  },
+  "slow": {
+   "file": "dd32ff8c59-s.mp3",
+   "hash": "d54a2c10fe0e59fe"
+  }
+ },
+ "别|bié": {
+  "p": "bié",
+  "normal": {
+   "file": "5e6190bda4-n.mp3",
+   "hash": "e6a800f6ba38c382"
+  },
+  "slow": {
+   "file": "5e6190bda4-s.mp3",
+   "hash": "061b69ad756d32cd"
+  }
+ },
+ "到|dào": {
+  "p": "dào",
+  "normal": {
+   "file": "c7ebfa2840-n.mp3",
+   "hash": "79ed762864817e64"
+  },
+  "slow": {
+   "file": "c7ebfa2840-s.mp3",
+   "hash": "3333de28c3a36082"
+  }
+ },
+ "前|qián": {
+  "p": "qián",
+  "normal": {
+   "file": "3c2b479f66-n.mp3",
+   "hash": "cddbe48d1bf43a3f"
+  },
+  "slow": {
+   "file": "3c2b479f66-s.mp3",
+   "hash": "3b1b3f60e95bbea4"
+  }
+ },
+ "前面|qiánmiàn": {
+  "p": "qiánmiàn",
+  "normal": {
+   "file": "e90cf32b60-n.mp3",
+   "hash": "ad3f0ae66202866e"
+  },
+  "slow": {
+   "file": "e90cf32b60-s.mp3",
+   "hash": "e2e6a35012b38301"
+  }
+ },
+ "动|dòng": {
+  "p": "dòng",
+  "normal": {
+   "file": "d8d5fac5d3-n.mp3",
+   "hash": "daea4a0ba2ce2ae6"
+  },
+  "slow": {
+   "file": "d8d5fac5d3-s.mp3",
+   "hash": "d89ec51736559fbf"
+  }
+ },
+ "包|bāo": {
+  "p": "bāo",
+  "normal": {
+   "file": "bdf2de01b4-n.mp3",
+   "hash": "a604c5459f2c2fa9"
+  },
+  "slow": {
+   "file": "bdf2de01b4-s.mp3",
+   "hash": "e081466d9e13bf21"
+  }
+ },
+ "包子|bāozi": {
+  "p": "bāozi",
+  "normal": {
+   "file": "93d7273dc1-n.mp3",
+   "hash": "9e87d34a1a573cdc"
+  },
+  "slow": {
+   "file": "93d7273dc1-s.mp3",
+   "hash": "7e5a4a20d0747754"
+  }
+ },
+ "医生|yīshēng": {
+  "p": "yīshēng",
+  "normal": {
+   "file": "8d42054f7d-n.mp3",
+   "hash": "972da5fc8270b2fa"
+  },
+  "slow": {
+   "file": "8d42054f7d-s.mp3",
+   "hash": "dae56a5c0c42f87e"
+  }
+ },
+ "医院|yīyuàn": {
+  "p": "yīyuàn",
+  "normal": {
+   "file": "a6484f1174-n.mp3",
+   "hash": "c9848072fa5841c6"
+  },
+  "slow": {
+   "file": "a6484f1174-s.mp3",
+   "hash": "e7571567db2fd28f"
+  }
+ },
+ "十|shí": {
+  "p": "shí",
+  "normal": {
+   "file": "384be1d1c0-n.mp3",
+   "hash": "db6322464aa435b3"
+  },
+  "slow": {
+   "file": "384be1d1c0-s.mp3",
+   "hash": "4be29a3f515fd4db"
+  }
+ },
+ "千|qiān": {
+  "p": "qiān",
+  "normal": {
+   "file": "3cc392a272-n.mp3",
+   "hash": "b49ba4adcdee6217"
+  },
+  "slow": {
+   "file": "3cc392a272-s.mp3",
+   "hash": "e2a815b2090318dd"
+  }
+ },
+ "午饭|wǔfàn": {
+  "p": "wǔfàn",
+  "normal": {
+   "file": "4f97e6671f-n.mp3",
+   "hash": "457a42a51554f5e3"
+  },
+  "slow": {
+   "file": "4f97e6671f-s.mp3",
+   "hash": "a9ea23f9f691c704"
+  }
+ },
+ "半|bàn": {
+  "p": "bàn",
+  "normal": {
+   "file": "26cab3a601-n.mp3",
+   "hash": "56693efb78d5c783"
+  },
+  "slow": {
+   "file": "26cab3a601-s.mp3",
+   "hash": "d6c95f2631d9dad8"
+  }
+ },
+ "卖|mài": {
+  "p": "mài",
+  "normal": {
+   "file": "efa442b34a-n.mp3",
+   "hash": "2fb859ffea08b0cb"
+  },
+  "slow": {
+   "file": "efa442b34a-s.mp3",
+   "hash": "726bef68ab0fd1a0"
+  }
+ },
+ "去|qù": {
+  "p": "qù",
+  "normal": {
+   "file": "2570c6eaa0-n.mp3",
+   "hash": "86fcc4238490b3ec"
+  },
+  "slow": {
+   "file": "2570c6eaa0-s.mp3",
+   "hash": "f6dc9ca52cbaabd3"
+  }
+ },
+ "去年|qùnián": {
+  "p": "qùnián",
+  "normal": {
+   "file": "0152567e99-n.mp3",
+   "hash": "b390f13efd4b1fea"
+  },
+  "slow": {
+   "file": "0152567e99-s.mp3",
+   "hash": "11b3e36b0987571c"
+  }
+ },
+ "口|kǒu": {
+  "p": "kǒu",
+  "normal": {
+   "file": "d180edb584-n.mp3",
+   "hash": "81956c1d212d7c58"
+  },
+  "slow": {
+   "file": "d180edb584-s.mp3",
+   "hash": "ed993984eda7cdf2"
+  }
+ },
+ "只|zhī": {
+  "p": "zhī",
+  "normal": {
+   "file": "507f82301f-n.mp3",
+   "hash": "fdb6dd3f40dfdc63"
+  },
+  "slow": {
+   "file": "507f82301f-s.mp3",
+   "hash": "a3acb9309fba1e18"
+  }
+ },
+ "叫|jiào": {
+  "p": "jiào",
+  "normal": {
+   "file": "e319692f7d-n.mp3",
+   "hash": "4b2625aee44ab03c"
+  },
+  "slow": {
+   "file": "e319692f7d-s.mp3",
+   "hash": "3f6b8ebbde662cfc"
+  }
+ },
+ "可以|kěyǐ": {
+  "p": "kěyǐ",
+  "normal": {
+   "file": "f35d0ce063-n.mp3",
+   "hash": "dba0cc81cdd5befb"
+  },
+  "slow": {
+   "file": "f35d0ce063-s.mp3",
+   "hash": "2b1b92a35012a8f0"
+  }
+ },
+ "可能|kěnéng": {
+  "p": "kěnéng",
+  "normal": {
+   "file": "55a1dbe5c8-n.mp3",
+   "hash": "43277dc13ef14d23"
+  },
+  "slow": {
+   "file": "55a1dbe5c8-s.mp3",
+   "hash": "726e62fc379a6e80"
+  }
+ },
+ "右|yòu": {
+  "p": "yòu",
+  "normal": {
+   "file": "0322217ea9-n.mp3",
+   "hash": "e8bf110e1b1846be"
+  },
+  "slow": {
+   "file": "0322217ea9-s.mp3",
+   "hash": "836a00bb4d5a3ad3"
+  }
+ },
+ "右边|yòubian": {
+  "p": "yòubian",
+  "normal": {
+   "file": "d6caddb253-n.mp3",
+   "hash": "93d07ab88bfa8613"
+  },
+  "slow": {
+   "file": "d6caddb253-s.mp3",
+   "hash": "c37c166e8c49962e"
+  }
+ },
+ "号|hào": {
+  "p": "hào",
+  "normal": {
+   "file": "2f6cda4c4b-n.mp3",
+   "hash": "0d0a2d77379c8d70"
+  },
+  "slow": {
+   "file": "2f6cda4c4b-s.mp3",
+   "hash": "fdefe6b201e83ea5"
+  }
+ },
+ "吃|chī": {
+  "p": "chī",
+  "normal": {
+   "file": "c2ba1f2b99-n.mp3",
+   "hash": "ca537b68fe384267"
+  },
+  "slow": {
+   "file": "c2ba1f2b99-s.mp3",
+   "hash": "b999c4c5d6b7beb6"
+  }
+ },
+ "同学|tóngxué": {
+  "p": "tóngxué",
+  "normal": {
+   "file": "dfe0549936-n.mp3",
+   "hash": "dd40a5701feb5d65"
+  },
+  "slow": {
+   "file": "dfe0549936-s.mp3",
+   "hash": "36f9472abc5a89e5"
+  }
+ },
+ "名|míng": {
+  "p": "míng",
+  "normal": {
+   "file": "7131a698ec-n.mp3",
+   "hash": "b5f68049a54a263c"
+  },
+  "slow": {
+   "file": "7131a698ec-s.mp3",
+   "hash": "1a4d84a39cb74b0c"
+  }
+ },
+ "名字|míngzi": {
+  "p": "míngzi",
+  "normal": {
+   "file": "07b189e524-n.mp3",
+   "hash": "211a4ffd2febedbf"
+  },
+  "slow": {
+   "file": "07b189e524-s.mp3",
+   "hash": "f9c7f37baebdb3d9"
+  }
+ },
+ "后|hòu": {
+  "p": "hòu",
+  "normal": {
+   "file": "4a0a075395-n.mp3",
+   "hash": "c866e26df770a99d"
+  },
+  "slow": {
+   "file": "4a0a075395-s.mp3",
+   "hash": "3009cb2874a7f720"
+  }
+ },
+ "后面|hòumiàn": {
+  "p": "hòumiàn",
+  "normal": {
+   "file": "7b4e4761c8-n.mp3",
+   "hash": "d7c562c51b3f4936"
+  },
+  "slow": {
+   "file": "7b4e4761c8-s.mp3",
+   "hash": "38836000e1c07e25"
+  }
+ },
+ "吗|ma": {
+  "p": "ma",
+  "normal": {
+   "file": "5cd9a6e6ff-n.mp3",
+   "hash": "9a24fabed3354291"
+  },
+  "slow": {
+   "file": "5cd9a6e6ff-s.mp3",
+   "hash": "2bb4708ccd02f8e3"
+  }
+ },
+ "吧|ba": {
+  "p": "ba",
+  "normal": {
+   "file": "5470d010a4-n.mp3",
+   "hash": "77fcb68301bb17a0"
+  },
+  "slow": {
+   "file": "5470d010a4-s.mp3",
+   "hash": "cb767c189b675f03"
+  }
+ },
+ "听|tīng": {
+  "p": "tīng",
+  "normal": {
+   "file": "c197dcd1e0-n.mp3",
+   "hash": "9eedff7594f4971b"
+  },
+  "slow": {
+   "file": "c197dcd1e0-s.mp3",
+   "hash": "6a56ba7f042b30fa"
+  }
+ },
+ "听见|tīngjiàn": {
+  "p": "tīngjiàn",
+  "normal": {
+   "file": "c760e1469d-n.mp3",
+   "hash": "89542908e1cc34e8"
+  },
+  "slow": {
+   "file": "c760e1469d-s.mp3",
+   "hash": "1d1ebc4fc04b2ebc"
+  }
+ },
+ "告诉|gàosu": {
+  "p": "gàosu",
+  "normal": {
+   "file": "3ab936e44d-n.mp3",
+   "hash": "a65cf9d99e5b4a68"
+  },
+  "slow": {
+   "file": "3ab936e44d-s.mp3",
+   "hash": "48372d977e83435f"
+  }
+ },
+ "呢|ne": {
+  "p": "ne",
+  "normal": {
+   "file": "217acfcd2f-n.mp3",
+   "hash": "5d53226d2b6ce775"
+  },
+  "slow": {
+   "file": "217acfcd2f-s.mp3",
+   "hash": "f6d74e61a3540178"
+  }
+ },
+ "周|zhōu": {
+  "p": "zhōu",
+  "normal": {
+   "file": "2ee44db8d8-n.mp3",
+   "hash": "1398ef21e00ca722"
+  },
+  "slow": {
+   "file": "2ee44db8d8-s.mp3",
+   "hash": "86a89a8f6e641391"
+  }
+ },
+ "和|hé": {
+  "p": "hé",
+  "normal": {
+   "file": "5b874283a9-n.mp3",
+   "hash": "45b8fbc8e9ff3953"
+  },
+  "slow": {
+   "file": "5b874283a9-s.mp3",
+   "hash": "4712a1a7348690e0"
+  }
+ },
+ "咖啡|kāfēi": {
+  "p": "kāfēi",
+  "normal": {
+   "file": "a8dd88ed19-n.mp3",
+   "hash": "fb3730062673f0fe"
+  },
+  "slow": {
+   "file": "a8dd88ed19-s.mp3",
+   "hash": "4099454a22847d5b"
+  }
+ },
+ "哥哥|gēge": {
+  "p": "gēge",
+  "normal": {
+   "file": "c550a41be0-n.mp3",
+   "hash": "9005ed5831c77fb2"
+  },
+  "slow": {
+   "file": "c550a41be0-s.mp3",
+   "hash": "68480eace500ae0f"
+  }
+ },
+ "哪|nǎ": {
+  "p": "nǎ",
+  "normal": {
+   "file": "c50baf49f5-n.mp3",
+   "hash": "5e1f4e6c8621462a"
+  },
+  "slow": {
+   "file": "c50baf49f5-s.mp3",
+   "hash": "b85588f715d1a9ea"
+  }
+ },
+ "哪个|nǎge": {
+  "p": "nǎge",
+  "normal": {
+   "file": "49a2828cbd-n.mp3",
+   "hash": "948e2a1d8d66e2a6"
+  },
+  "slow": {
+   "file": "49a2828cbd-s.mp3",
+   "hash": "26fe3387ca7efd1c"
+  }
+ },
+ "哪些|nǎxiē": {
+  "p": "nǎxiē",
+  "normal": {
+   "file": "d24e8fbd25-n.mp3",
+   "hash": "a2a26aa721246d30"
+  },
+  "slow": {
+   "file": "d24e8fbd25-s.mp3",
+   "hash": "1e0f908a71bf4c05"
+  }
+ },
+ "哪儿|nǎr": {
+  "p": "nǎr",
+  "normal": {
+   "file": "f29196771c-n.mp3",
+   "hash": "f0aeb3dac6d54a07"
+  },
+  "slow": {
+   "file": "f29196771c-s.mp3",
+   "hash": "ffaaad1b2d531f97"
+  }
+ },
+ "哪里|nǎlǐ": {
+  "p": "nǎlǐ",
+  "normal": {
+   "file": "e2e48a6cac-n.mp3",
+   "hash": "ecec7b0dce4096e1"
+  },
+  "slow": {
+   "file": "e2e48a6cac-s.mp3",
+   "hash": "ede4ce557322fa8d"
+  }
+ },
+ "唱|chàng": {
+  "p": "chàng",
+  "normal": {
+   "file": "44f3286c8e-n.mp3",
+   "hash": "926522a2f26f3b94"
+  },
+  "slow": {
+   "file": "44f3286c8e-s.mp3",
+   "hash": "48a1f1ac300ea14b"
+  }
+ },
+ "商场|shāngchǎng": {
+  "p": "shāngchǎng",
+  "normal": {
+   "file": "83ba0732d0-n.mp3",
+   "hash": "82bc420dde6d6a55"
+  },
+  "slow": {
+   "file": "83ba0732d0-s.mp3",
+   "hash": "d10cf2ef1722e230"
+  }
+ },
+ "商店|shāngdiàn": {
+  "p": "shāngdiàn",
+  "normal": {
+   "file": "6d3c0f2a90-n.mp3",
+   "hash": "e2ca9641d65ef589"
+  },
+  "slow": {
+   "file": "6d3c0f2a90-s.mp3",
+   "hash": "0bee676768a887d1"
+  }
+ },
+ "啊|a": {
+  "p": "a",
+  "normal": {
+   "file": "82f985b3d5-n.mp3",
+   "hash": "10e48d6f06f5c966"
+  },
+  "slow": {
+   "file": "82f985b3d5-s.mp3",
+   "hash": "7e681e16f0d87968"
+  }
+ },
+ "喂|wèi": {
+  "p": "wèi",
+  "normal": {
+   "file": "895a7dd4e3-n.mp3",
+   "hash": "65514dc3f013122b"
+  },
+  "slow": {
+   "file": "895a7dd4e3-s.mp3",
+   "hash": "925b62379d1cb299"
+  }
+ },
+ "喜欢|xǐhuan": {
+  "p": "xǐhuan",
+  "normal": {
+   "file": "03b756dcd0-n.mp3",
+   "hash": "7f3de66bff122872"
+  },
+  "slow": {
+   "file": "03b756dcd0-s.mp3",
+   "hash": "a7ab5681a3e27250"
+  }
+ },
+ "喝|hē": {
+  "p": "hē",
+  "normal": {
+   "file": "bd8fb8c5a6-n.mp3",
+   "hash": "679a32535ac92cf5"
+  },
+  "slow": {
+   "file": "bd8fb8c5a6-s.mp3",
+   "hash": "ccd7dcbb69ba0a9a"
+  }
+ },
+ "四|sì": {
+  "p": "sì",
+  "normal": {
+   "file": "986587d2f3-n.mp3",
+   "hash": "cdfae78274f2d2a0"
+  },
+  "slow": {
+   "file": "986587d2f3-s.mp3",
+   "hash": "d22ee354759e2984"
+  }
+ },
+ "回|huí": {
+  "p": "huí",
+  "normal": {
+   "file": "148717b39c-n.mp3",
+   "hash": "98fb9fd23f7c2f88"
+  },
+  "slow": {
+   "file": "148717b39c-s.mp3",
+   "hash": "e644dc8f7e263fcd"
+  }
+ },
+ "回去|huíqù": {
+  "p": "huíqù",
+  "normal": {
+   "file": "3552baa80d-n.mp3",
+   "hash": "2dd4438c936a6456"
+  },
+  "slow": {
+   "file": "3552baa80d-s.mp3",
+   "hash": "21b92bb1d373f498"
+  }
+ },
+ "回来|huílái": {
+  "p": "huílái",
+  "normal": {
+   "file": "0a2b0542d8-n.mp3",
+   "hash": "75876cf8544a4777"
+  },
+  "slow": {
+   "file": "0a2b0542d8-s.mp3",
+   "hash": "a0edd8102dceb917"
+  }
+ },
+ "因为|yīnwèi": {
+  "p": "yīnwèi",
+  "normal": {
+   "file": "a50315d38a-n.mp3",
+   "hash": "0fb721107a531ae6"
+  },
+  "slow": {
+   "file": "a50315d38a-s.mp3",
+   "hash": "4e13ed789d175183"
+  }
+ },
+ "国|guó": {
+  "p": "guó",
+  "normal": {
+   "file": "c3eac9213d-n.mp3",
+   "hash": "dc1ef57811154bd5"
+  },
+  "slow": {
+   "file": "c3eac9213d-s.mp3",
+   "hash": "59daba3940f3efaf"
+  }
+ },
+ "在|zài": {
+  "p": "zài",
+  "normal": {
+   "file": "583bb5429f-n.mp3",
+   "hash": "3b9675e076869e36"
+  },
+  "slow": {
+   "file": "583bb5429f-s.mp3",
+   "hash": "273acf6a5ec310b6"
+  }
+ },
+ "地|de": {
+  "p": "de",
+  "normal": {
+   "file": "a147dcc53f-n.mp3",
+   "hash": "2f9d01fac768f1a6"
+  },
+  "slow": {
+   "file": "a147dcc53f-s.mp3",
+   "hash": "f7f93e9d0ac93740"
+  }
+ },
+ "地铁|dìtiě": {
+  "p": "dìtiě",
+  "normal": {
+   "file": "91ce4bedb2-n.mp3",
+   "hash": "a8e7acb1ce08a6e2"
+  },
+  "slow": {
+   "file": "91ce4bedb2-s.mp3",
+   "hash": "514f9489e61d97e6"
+  }
+ },
+ "坏|huài": {
+  "p": "huài",
+  "normal": {
+   "file": "80c26ef9cf-n.mp3",
+   "hash": "710356429daf2e14"
+  },
+  "slow": {
+   "file": "80c26ef9cf-s.mp3",
+   "hash": "9fb7945a428128cf"
+  }
+ },
+ "坐|zuò": {
+  "p": "zuò",
+  "normal": {
+   "file": "f8f5d864c7-n.mp3",
+   "hash": "5360ebf3ddd5786f"
+  },
+  "slow": {
+   "file": "f8f5d864c7-s.mp3",
+   "hash": "02a7eda13af0cf64"
+  }
+ },
+ "块|kuài": {
+  "p": "kuài",
+  "normal": {
+   "file": "54262b3d97-n.mp3",
+   "hash": "0a62ff8a78df1c30"
+  },
+  "slow": {
+   "file": "54262b3d97-s.mp3",
+   "hash": "49f56221248d8ace"
+  }
+ },
+ "外|wài": {
+  "p": "wài",
+  "normal": {
+   "file": "d292ff439c-n.mp3",
+   "hash": "2aacf1c0b12e0715"
+  },
+  "slow": {
+   "file": "d292ff439c-s.mp3",
+   "hash": "b65a60e724bfba82"
+  }
+ },
+ "外国|wàiguó": {
+  "p": "wàiguó",
+  "normal": {
+   "file": "25df611459-n.mp3",
+   "hash": "1587ddae6d1e7cdd"
+  },
+  "slow": {
+   "file": "25df611459-s.mp3",
+   "hash": "9cac41e8c796eacf"
+  }
+ },
+ "外边|wàibian": {
+  "p": "wàibian",
+  "normal": {
+   "file": "324f4ce7d3-n.mp3",
+   "hash": "8c161cbff59ae52c"
+  },
+  "slow": {
+   "file": "324f4ce7d3-s.mp3",
+   "hash": "5adc5ec43e32ce32"
+  }
+ },
+ "外面|wàimiàn": {
+  "p": "wàimiàn",
+  "normal": {
+   "file": "2f369936bd-n.mp3",
+   "hash": "82a704515f6a7191"
+  },
+  "slow": {
+   "file": "2f369936bd-s.mp3",
+   "hash": "a0c4f36473face6f"
+  }
+ },
+ "多|duō": {
+  "p": "duō",
+  "normal": {
+   "file": "12d6c3d607-n.mp3",
+   "hash": "0e0ca12cbb54d768"
+  },
+  "slow": {
+   "file": "12d6c3d607-s.mp3",
+   "hash": "418ea9df68c1cbc1"
+  }
+ },
+ "多少|duōshao": {
+  "p": "duōshao",
+  "normal": {
+   "file": "ba3412f9be-n.mp3",
+   "hash": "efeb3f126f1d7f9c"
+  },
+  "slow": {
+   "file": "ba3412f9be-s.mp3",
+   "hash": "581ee253a88faca7"
+  }
+ },
+ "大|dà": {
+  "p": "dà",
+  "normal": {
+   "file": "f2c54ce050-n.mp3",
+   "hash": "297d0b7ba8f3deab"
+  },
+  "slow": {
+   "file": "f2c54ce050-s.mp3",
+   "hash": "296f6e393fddc775"
+  }
+ },
+ "大学|dàxué": {
+  "p": "dàxué",
+  "normal": {
+   "file": "774e101ae3-n.mp3",
+   "hash": "93672f3b6ec98177"
+  },
+  "slow": {
+   "file": "774e101ae3-s.mp3",
+   "hash": "73bb07e33f27ac1e"
+  }
+ },
+ "大学生|dàxuéshēng": {
+  "p": "dàxuéshēng",
+  "normal": {
+   "file": "438fab4daa-n.mp3",
+   "hash": "5ebf5c41ac18fd53"
+  },
+  "slow": {
+   "file": "438fab4daa-s.mp3",
+   "hash": "efa6cd402128043f"
+  }
+ },
+ "大家|dàjiā": {
+  "p": "dàjiā",
+  "normal": {
+   "file": "5250291a21-n.mp3",
+   "hash": "0b09dd3c3ecc8ed3"
+  },
+  "slow": {
+   "file": "5250291a21-s.mp3",
+   "hash": "ab712c8f085c18f1"
+  }
+ },
+ "天|tiān": {
+  "p": "tiān",
+  "normal": {
+   "file": "8560ad579e-n.mp3",
+   "hash": "c6970537aab9b256"
+  },
+  "slow": {
+   "file": "8560ad579e-s.mp3",
+   "hash": "a414e4ab13335000"
+  }
+ },
+ "天气|tiānqì": {
+  "p": "tiānqì",
+  "normal": {
+   "file": "99a0b64c51-n.mp3",
+   "hash": "a548818acd834125"
+  },
+  "slow": {
+   "file": "99a0b64c51-s.mp3",
+   "hash": "188ed9188b2317e7"
+  }
+ },
+ "太|tài": {
+  "p": "tài",
+  "normal": {
+   "file": "23250f450e-n.mp3",
+   "hash": "7d64ade755f46692"
+  },
+  "slow": {
+   "file": "23250f450e-s.mp3",
+   "hash": "6c41364071e48e59"
+  }
+ },
+ "头|tóu": {
+  "p": "tóu",
+  "normal": {
+   "file": "0a254f4388-n.mp3",
+   "hash": "96191dfcec2eda51"
+  },
+  "slow": {
+   "file": "0a254f4388-s.mp3",
+   "hash": "de08aec0c513e970"
+  }
+ },
+ "女|nǚ": {
+  "p": "nǚ",
+  "normal": {
+   "file": "eb5f1a4313-n.mp3",
+   "hash": "3a44bf868fbb57c2"
+  },
+  "slow": {
+   "file": "eb5f1a4313-s.mp3",
+   "hash": "c993a06fe4fdb9e0"
+  }
+ },
+ "女儿|nǚ’ér": {
+  "p": "nǚ’ér",
+  "normal": {
+   "file": "f651f12231-n.mp3",
+   "hash": "de6d170ce2fa1dc8"
+  },
+  "slow": {
+   "file": "f651f12231-s.mp3",
+   "hash": "0e68ab9d946b5478"
+  }
+ },
+ "女士|nǚshì": {
+  "p": "nǚshì",
+  "normal": {
+   "file": "36cca04443-n.mp3",
+   "hash": "a7b27b336ad15a1b"
+  },
+  "slow": {
+   "file": "36cca04443-s.mp3",
+   "hash": "45d17ced2f037fa6"
+  }
+ },
+ "女孩儿|nǚháir": {
+  "p": "nǚháir",
+  "normal": {
+   "file": "31304a48f5-n.mp3",
+   "hash": "07702e2d7f594a05"
+  },
+  "slow": {
+   "file": "31304a48f5-s.mp3",
+   "hash": "d80c9419ca6a4b28"
+  }
+ },
+ "女朋友|nǚpéngyou": {
+  "p": "nǚpéngyou",
+  "normal": {
+   "file": "5ef3f545bd-n.mp3",
+   "hash": "2577d4b3be3a5e1b"
+  },
+  "slow": {
+   "file": "5ef3f545bd-s.mp3",
+   "hash": "be41e8decd2a99b2"
+  }
+ },
+ "奶奶|nǎinai": {
+  "p": "nǎinai",
+  "normal": {
+   "file": "150b959c51-n.mp3",
+   "hash": "76b8b72b70b045d9"
+  },
+  "slow": {
+   "file": "150b959c51-s.mp3",
+   "hash": "b2c5b6ca11e6d5aa"
+  }
+ },
+ "奶茶|nǎichá": {
+  "p": "nǎichá",
+  "normal": {
+   "file": "0e0a938898-n.mp3",
+   "hash": "71b0ef203551cc55"
+  },
+  "slow": {
+   "file": "0e0a938898-s.mp3",
+   "hash": "f033650be3e69ba9"
+  }
+ },
+ "她|tā": {
+  "p": "tā",
+  "normal": {
+   "file": "3c14293c2a-n.mp3",
+   "hash": "103a1780934f3ebc"
+  },
+  "slow": {
+   "file": "3c14293c2a-s.mp3",
+   "hash": "f108e4e7a541605b"
+  }
+ },
+ "她们|tāmen": {
+  "p": "tāmen",
+  "normal": {
+   "file": "cb6e4436d0-n.mp3",
+   "hash": "712998791a1d22aa"
+  },
+  "slow": {
+   "file": "cb6e4436d0-s.mp3",
+   "hash": "6dddfdb8c4aff0d2"
+  }
+ },
+ "好|hǎo": {
+  "p": "hǎo",
+  "normal": {
+   "file": "cb7e15c675-n.mp3",
+   "hash": "46bfbafcaab48239"
+  },
+  "slow": {
+   "file": "cb7e15c675-s.mp3",
+   "hash": "6aa88cede414404d"
+  }
+ },
+ "好吃|hǎochī": {
+  "p": "hǎochī",
+  "normal": {
+   "file": "651893cf2d-n.mp3",
+   "hash": "6db0e8c743bad62a"
+  },
+  "slow": {
+   "file": "651893cf2d-s.mp3",
+   "hash": "2ed1011e0b703586"
+  }
+ },
+ "好听|hǎotīng": {
+  "p": "hǎotīng",
+  "normal": {
+   "file": "f302b659cc-n.mp3",
+   "hash": "bf56f741353a25d6"
+  },
+  "slow": {
+   "file": "f302b659cc-s.mp3",
+   "hash": "98b44415c4ce4426"
+  }
+ },
+ "好玩儿|hǎowánr": {
+  "p": "hǎowánr",
+  "normal": {
+   "file": "167bae3c92-n.mp3",
+   "hash": "9af9c3bea764f864"
+  },
+  "slow": {
+   "file": "167bae3c92-s.mp3",
+   "hash": "2e91f8232f3a614b"
+  }
+ },
+ "好看|hǎokàn": {
+  "p": "hǎokàn",
+  "normal": {
+   "file": "e5a79a41e0-n.mp3",
+   "hash": "a1a1b1206ba89ea6"
+  },
+  "slow": {
+   "file": "e5a79a41e0-s.mp3",
+   "hash": "5e82c2c4e41afe3d"
+  }
+ },
+ "妈妈|māma": {
+  "p": "māma",
+  "normal": {
+   "file": "5e7cada10c-n.mp3",
+   "hash": "b5dc01ae5aa327bf"
+  },
+  "slow": {
+   "file": "5e7cada10c-s.mp3",
+   "hash": "e5dcf6dc52661bb0"
+  }
+ },
+ "妹妹|mèimei": {
+  "p": "mèimei",
+  "normal": {
+   "file": "51e8184b35-n.mp3",
+   "hash": "a2c2291ba3234d4e"
+  },
+  "slow": {
+   "file": "51e8184b35-s.mp3",
+   "hash": "1a24cddb0261c0b9"
+  }
+ },
+ "妻子|qīzi": {
+  "p": "qīzi",
+  "normal": {
+   "file": "c7cf4fcacd-n.mp3",
+   "hash": "4a7e75942fbbbf83"
+  },
+  "slow": {
+   "file": "c7cf4fcacd-s.mp3",
+   "hash": "c030de0216be5b7d"
+  }
+ },
+ "姐姐|jiějie": {
+  "p": "jiějie",
+  "normal": {
+   "file": "955377a9fc-n.mp3",
+   "hash": "f0f888cba1c34cd8"
+  },
+  "slow": {
+   "file": "955377a9fc-s.mp3",
+   "hash": "c6f1eb0ab7d154a9"
+  }
+ },
+ "姓|xìng": {
+  "p": "xìng",
+  "normal": {
+   "file": "e663aa02d8-n.mp3",
+   "hash": "2eb8e494a9203140"
+  },
+  "slow": {
+   "file": "e663aa02d8-s.mp3",
+   "hash": "75361d9d53301071"
+  }
+ },
+ "姓名|xìngmíng": {
+  "p": "xìngmíng",
+  "normal": {
+   "file": "180d6796fc-n.mp3",
+   "hash": "03a7e8d4c2fb7ad5"
+  },
+  "slow": {
+   "file": "180d6796fc-s.mp3",
+   "hash": "715f9bc9c5c592c4"
+  }
+ },
+ "字|zì": {
+  "p": "zì",
+  "normal": {
+   "file": "c9bd5e1b71-n.mp3",
+   "hash": "85701c72df7478b5"
+  },
+  "slow": {
+   "file": "c9bd5e1b71-s.mp3",
+   "hash": "bdb927244e391095"
+  }
+ },
+ "学|xué": {
+  "p": "xué",
+  "normal": {
+   "file": "01bd87561c-n.mp3",
+   "hash": "f63cdce4e3aed7a7"
+  },
+  "slow": {
+   "file": "01bd87561c-s.mp3",
+   "hash": "4e6371cc05be6dbe"
+  }
+ },
+ "学习|xuéxí": {
+  "p": "xuéxí",
+  "normal": {
+   "file": "b599dadb36-n.mp3",
+   "hash": "35cfdf8e25fddb2a"
+  },
+  "slow": {
+   "file": "b599dadb36-s.mp3",
+   "hash": "67a4c03946246475"
+  }
+ },
+ "学校|xuéxiào": {
+  "p": "xuéxiào",
+  "normal": {
+   "file": "7e4cee7b38-n.mp3",
+   "hash": "3bcee42bacb7eeef"
+  },
+  "slow": {
+   "file": "7e4cee7b38-s.mp3",
+   "hash": "c28996dae9a2afe7"
+  }
+ },
+ "学生|xuéshēng": {
+  "p": "xuéshēng",
+  "normal": {
+   "file": "ab3d21d595-n.mp3",
+   "hash": "533d8c530e3fe59f"
+  },
+  "slow": {
+   "file": "ab3d21d595-s.mp3",
+   "hash": "6761ce707caf3609"
+  }
+ },
+ "孩子|háizi": {
+  "p": "háizi",
+  "normal": {
+   "file": "db86184c8a-n.mp3",
+   "hash": "0567603e59d149fc"
+  },
+  "slow": {
+   "file": "db86184c8a-s.mp3",
+   "hash": "a5567085c7e80a40"
+  }
+ },
+ "它|tā": {
+  "p": "tā",
+  "normal": {
+   "file": "11dbfb364b-n.mp3",
+   "hash": "3fdb76e882042332"
+  },
+  "slow": {
+   "file": "11dbfb364b-s.mp3",
+   "hash": "6edd029586af3f06"
+  }
+ },
+ "它们|tāmen": {
+  "p": "tāmen",
+  "normal": {
+   "file": "6a7b669dc7-n.mp3",
+   "hash": "7de4fd0c0315e46a"
+  },
+  "slow": {
+   "file": "6a7b669dc7-s.mp3",
+   "hash": "495ec2f7a6b20aff"
+  }
+ },
+ "完|wán": {
+  "p": "wán",
+  "normal": {
+   "file": "095ab13746-n.mp3",
+   "hash": "64b932d9bf7a3bfb"
+  },
+  "slow": {
+   "file": "095ab13746-s.mp3",
+   "hash": "b22f2da22ec31d73"
+  }
+ },
+ "家|jiā": {
+  "p": "jiā",
+  "normal": {
+   "file": "f9c73fdb78-n.mp3",
+   "hash": "4f47b41132e61f81"
+  },
+  "slow": {
+   "file": "f9c73fdb78-s.mp3",
+   "hash": "23c3792c8f34ccc5"
+  }
+ },
+ "家人|jiārén": {
+  "p": "jiārén",
+  "normal": {
+   "file": "45a45171e4-n.mp3",
+   "hash": "275000b1cdd013a3"
+  },
+  "slow": {
+   "file": "45a45171e4-s.mp3",
+   "hash": "83aa48f8356f3627"
+  }
+ },
+ "对|duì": {
+  "p": "duì",
+  "normal": {
+   "file": "081ff41157-n.mp3",
+   "hash": "b635c03e91bfa6a0"
+  },
+  "slow": {
+   "file": "081ff41157-s.mp3",
+   "hash": "1d46289f1d6e94f4"
+  }
+ },
+ "对不起|duìbuqǐ": {
+  "p": "duìbuqǐ",
+  "normal": {
+   "file": "3c7adf75f2-n.mp3",
+   "hash": "14145a580f913e88"
+  },
+  "slow": {
+   "file": "3c7adf75f2-s.mp3",
+   "hash": "a3bb0682ed000825"
+  }
+ },
+ "小|xiǎo": {
+  "p": "xiǎo",
+  "normal": {
+   "file": "921aff760b-n.mp3",
+   "hash": "929fe841cedcff19"
+  },
+  "slow": {
+   "file": "921aff760b-s.mp3",
+   "hash": "b27c4067fe666a94"
+  }
+ },
+ "小学|xiǎoxué": {
+  "p": "xiǎoxué",
+  "normal": {
+   "file": "90598eb903-n.mp3",
+   "hash": "ab083093648740ee"
+  },
+  "slow": {
+   "file": "90598eb903-s.mp3",
+   "hash": "e14b15e673b191ff"
+  }
+ },
+ "小学生|xiǎoxuéshēng": {
+  "p": "xiǎoxuéshēng",
+  "normal": {
+   "file": "3aeca92262-n.mp3",
+   "hash": "de97e810cc42cc3e"
+  },
+  "slow": {
+   "file": "3aeca92262-s.mp3",
+   "hash": "a5d08a172fd7cbd6"
+  }
+ },
+ "小孩儿|xiǎoháir": {
+  "p": "xiǎoháir",
+  "normal": {
+   "file": "c0758b4294-n.mp3",
+   "hash": "b613a04e06d30b89"
+  },
+  "slow": {
+   "file": "c0758b4294-s.mp3",
+   "hash": "b030e61159c9c921"
+  }
+ },
+ "小时|xiǎoshí": {
+  "p": "xiǎoshí",
+  "normal": {
+   "file": "7ff2f09655-n.mp3",
+   "hash": "3f5fe462f7ee1ea2"
+  },
+  "slow": {
+   "file": "7ff2f09655-s.mp3",
+   "hash": "3f263fc9fd5820dd"
+  }
+ },
+ "小时候|xiǎoshíhou": {
+  "p": "xiǎoshíhou",
+  "normal": {
+   "file": "e2b75cff4e-n.mp3",
+   "hash": "b0d0c2b8a6843a69"
+  },
+  "slow": {
+   "file": "e2b75cff4e-s.mp3",
+   "hash": "b380196615e49dcc"
+  }
+ },
+ "小朋友|xiǎopéngyǒu": {
+  "p": "xiǎopéngyǒu",
+  "normal": {
+   "file": "421f32db8c-n.mp3",
+   "hash": "5785bebe13f22e9d"
+  },
+  "slow": {
+   "file": "421f32db8c-s.mp3",
+   "hash": "6b66a1e936774519"
+  }
+ },
+ "少|shǎo": {
+  "p": "shǎo",
+  "normal": {
+   "file": "a73d02b836-n.mp3",
+   "hash": "8a2eb74397ab8a0b"
+  },
+  "slow": {
+   "file": "a73d02b836-s.mp3",
+   "hash": "00ee7c538948decd"
+  }
+ },
+ "就|jiù": {
+  "p": "jiù",
+  "normal": {
+   "file": "181cf9d80e-n.mp3",
+   "hash": "ee1ad10c0be18ec0"
+  },
+  "slow": {
+   "file": "181cf9d80e-s.mp3",
+   "hash": "e4d389ca38157bd8"
+  }
+ },
+ "岁|suì": {
+  "p": "suì",
+  "normal": {
+   "file": "a66c70ff07-n.mp3",
+   "hash": "c7031211455829fa"
+  },
+  "slow": {
+   "file": "a66c70ff07-s.mp3",
+   "hash": "278086cf6a7e5b93"
+  }
+ },
+ "工作|gōngzuò": {
+  "p": "gōngzuò",
+  "normal": {
+   "file": "1a6d18efe3-n.mp3",
+   "hash": "49248d223b1b11f8"
+  },
+  "slow": {
+   "file": "1a6d18efe3-s.mp3",
+   "hash": "34c575837827f0e2"
+  }
+ },
+ "左|zuǒ": {
+  "p": "zuǒ",
+  "normal": {
+   "file": "f625ce3c05-n.mp3",
+   "hash": "57df6922cbc8a79b"
+  },
+  "slow": {
+   "file": "f625ce3c05-s.mp3",
+   "hash": "66be67d90573c75a"
+  }
+ },
+ "左边|zuǒbian": {
+  "p": "zuǒbian",
+  "normal": {
+   "file": "7b4e44e3e5-n.mp3",
+   "hash": "21928ce69f947ea3"
+  },
+  "slow": {
+   "file": "7b4e44e3e5-s.mp3",
+   "hash": "921a501549021f4f"
+  }
+ },
+ "已经|yǐjīng": {
+  "p": "yǐjīng",
+  "normal": {
+   "file": "1f63ae04fe-n.mp3",
+   "hash": "646c59a0d4c276cc"
+  },
+  "slow": {
+   "file": "1f63ae04fe-s.mp3",
+   "hash": "5437eab2ec71c858"
+  }
+ },
+ "希望|xīwàng": {
+  "p": "xīwàng",
+  "normal": {
+   "file": "0ff45c3b77-n.mp3",
+   "hash": "ea20c0e6bf37cdd0"
+  },
+  "slow": {
+   "file": "0ff45c3b77-s.mp3",
+   "hash": "15a7b412a3aea0a2"
+  }
+ },
+ "帮|bāng": {
+  "p": "bāng",
+  "normal": {
+   "file": "67ca1d3fd7-n.mp3",
+   "hash": "a81125825e9b3ff8"
+  },
+  "slow": {
+   "file": "67ca1d3fd7-s.mp3",
+   "hash": "c046d478a066c986"
+  }
+ },
+ "帮忙|bāngmáng": {
+  "p": "bāngmáng",
+  "normal": {
+   "file": "a46880f36b-n.mp3",
+   "hash": "374a497ec1b2f8e1"
+  },
+  "slow": {
+   "file": "a46880f36b-s.mp3",
+   "hash": "13beb81ee8fc1c4f"
+  }
+ },
+ "年|nián": {
+  "p": "nián",
+  "normal": {
+   "file": "a820d0cd0e-n.mp3",
+   "hash": "a4f7c420ba792089"
+  },
+  "slow": {
+   "file": "a820d0cd0e-s.mp3",
+   "hash": "33f7d96bc74c6eef"
+  }
+ },
+ "床|chuáng": {
+  "p": "chuáng",
+  "normal": {
+   "file": "8e26fc1d8e-n.mp3",
+   "hash": "8102433abdcb037e"
+  },
+  "slow": {
+   "file": "8e26fc1d8e-s.mp3",
+   "hash": "33725f4f0468d3a9"
+  }
+ },
+ "店|diàn": {
+  "p": "diàn",
+  "normal": {
+   "file": "4c234aa5db-n.mp3",
+   "hash": "6484d93c24155da2"
+  },
+  "slow": {
+   "file": "4c234aa5db-s.mp3",
+   "hash": "f6d052451acfcbee"
+  }
+ },
+ "开|kāi": {
+  "p": "kāi",
+  "normal": {
+   "file": "a1445acc5d-n.mp3",
+   "hash": "6c40eae763a2c3d8"
+  },
+  "slow": {
+   "file": "a1445acc5d-s.mp3",
+   "hash": "329a06462cbc6cc6"
+  }
+ },
+ "开始|kāishǐ": {
+  "p": "kāishǐ",
+  "normal": {
+   "file": "c0d1b11cdf-n.mp3",
+   "hash": "f73437f96e660bdb"
+  },
+  "slow": {
+   "file": "c0d1b11cdf-s.mp3",
+   "hash": "ffdc213bc7ffc5e9"
+  }
+ },
+ "开学|kāixué": {
+  "p": "kāixué",
+  "normal": {
+   "file": "7567c16e7a-n.mp3",
+   "hash": "32a997be73ddb430"
+  },
+  "slow": {
+   "file": "7567c16e7a-s.mp3",
+   "hash": "58e88728aa50fb76"
+  }
+ },
+ "开车|kāichē": {
+  "p": "kāichē",
+  "normal": {
+   "file": "d424c4643c-n.mp3",
+   "hash": "427796d16da1ff58"
+  },
+  "slow": {
+   "file": "d424c4643c-s.mp3",
+   "hash": "1053d53be0fd40b8"
+  }
+ },
+ "弟弟|dìdi": {
+  "p": "dìdi",
+  "normal": {
+   "file": "16181fbd3a-n.mp3",
+   "hash": "24d906b20eea1396"
+  },
+  "slow": {
+   "file": "16181fbd3a-s.mp3",
+   "hash": "11f1aebd45c20ac5"
+  }
+ },
+ "往|wǎng": {
+  "p": "wǎng",
+  "normal": {
+   "file": "77b919e684-n.mp3",
+   "hash": "ddf2e156c99a3508"
+  },
+  "slow": {
+   "file": "77b919e684-s.mp3",
+   "hash": "6adacc7ba22b1ffd"
+  }
+ },
+ "很|hěn": {
+  "p": "hěn",
+  "normal": {
+   "file": "6b6d9f62ce-n.mp3",
+   "hash": "2d0e476d8cce7092"
+  },
+  "slow": {
+   "file": "6b6d9f62ce-s.mp3",
+   "hash": "e4cbe87d2e46b900"
+  }
+ },
+ "得|de": {
+  "p": "de",
+  "normal": {
+   "file": "5cc3202e8d-n.mp3",
+   "hash": "54c99a09083a2a50"
+  },
+  "slow": {
+   "file": "5cc3202e8d-s.mp3",
+   "hash": "b1b48bb6da91bc50"
+  }
+ },
+ "忘|wàng": {
+  "p": "wàng",
+  "normal": {
+   "file": "caf23b257f-n.mp3",
+   "hash": "0d64c7ea9233bce5"
+  },
+  "slow": {
+   "file": "caf23b257f-s.mp3",
+   "hash": "8ec7a4092c3f5b60"
+  }
+ },
+ "忙|máng": {
+  "p": "máng",
+  "normal": {
+   "file": "505271e992-n.mp3",
+   "hash": "eef32db6a5b6c1ff"
+  },
+  "slow": {
+   "file": "505271e992-s.mp3",
+   "hash": "5d0bc5e1055613a1"
+  }
+ },
+ "快|kuài": {
+  "p": "kuài",
+  "normal": {
+   "file": "24304e667c-n.mp3",
+   "hash": "b2f2703e924afd2b"
+  },
+  "slow": {
+   "file": "24304e667c-s.mp3",
+   "hash": "1978858c299a749c"
+  }
+ },
+ "快乐|kuàilè": {
+  "p": "kuàilè",
+  "normal": {
+   "file": "b49a4365ee-n.mp3",
+   "hash": "a96c9211445fd18a"
+  },
+  "slow": {
+   "file": "b49a4365ee-s.mp3",
+   "hash": "692ee82f5d05ea1b"
+  }
+ },
+ "快要|kuàiyào": {
+  "p": "kuàiyào",
+  "normal": {
+   "file": "2e6081bbc4-n.mp3",
+   "hash": "cb432a50d8213c14"
+  },
+  "slow": {
+   "file": "2e6081bbc4-s.mp3",
+   "hash": "bd3ac2dae3929c4b"
+  }
+ },
+ "怎么|zěnme": {
+  "p": "zěnme",
+  "normal": {
+   "file": "f904b3f03f-n.mp3",
+   "hash": "ddd0176d42dee322"
+  },
+  "slow": {
+   "file": "f904b3f03f-s.mp3",
+   "hash": "f5cac0b35faa2562"
+  }
+ },
+ "怎么样|zěnmeyàng": {
+  "p": "zěnmeyàng",
+  "normal": {
+   "file": "be46a9ace5-n.mp3",
+   "hash": "2b22a2fdc281e7d0"
+  },
+  "slow": {
+   "file": "be46a9ace5-s.mp3",
+   "hash": "136bebc938dc4c50"
+  }
+ },
+ "您|nín": {
+  "p": "nín",
+  "normal": {
+   "file": "fc0d531eae-n.mp3",
+   "hash": "1e5f3b7b62cebb70"
+  },
+  "slow": {
+   "file": "fc0d531eae-s.mp3",
+   "hash": "c2b6fca672fff9b3"
+  }
+ },
+ "想|xiǎng": {
+  "p": "xiǎng",
+  "normal": {
+   "file": "82812d410a-n.mp3",
+   "hash": "41ca30b0b9ea247f"
+  },
+  "slow": {
+   "file": "82812d410a-s.mp3",
+   "hash": "6c960e28d6ce288d"
+  }
+ },
+ "意思|yìsi": {
+  "p": "yìsi",
+  "normal": {
+   "file": "a2268399c6-n.mp3",
+   "hash": "0ac67c163fc29905"
+  },
+  "slow": {
+   "file": "a2268399c6-s.mp3",
+   "hash": "1735fdaa1b9bbba1"
+  }
+ },
+ "慢|màn": {
+  "p": "màn",
+  "normal": {
+   "file": "0722d57ec1-n.mp3",
+   "hash": "97e50c4b788fd170"
+  },
+  "slow": {
+   "file": "0722d57ec1-s.mp3",
+   "hash": "b58bfd2f81b9a95e"
+  }
+ },
+ "懂|dǒng": {
+  "p": "dǒng",
+  "normal": {
+   "file": "8d38837483-n.mp3",
+   "hash": "65cfb897299c4969"
+  },
+  "slow": {
+   "file": "8d38837483-s.mp3",
+   "hash": "753116ceb2b1b4c5"
+  }
+ },
+ "我|wǒ": {
+  "p": "wǒ",
+  "normal": {
+   "file": "6c1ebb58d0-n.mp3",
+   "hash": "0d40a7a46e2dd57d"
+  },
+  "slow": {
+   "file": "6c1ebb58d0-s.mp3",
+   "hash": "3be36b55d14db3d0"
+  }
+ },
+ "我们|wǒmen": {
+  "p": "wǒmen",
+  "normal": {
+   "file": "ed1a07edbb-n.mp3",
+   "hash": "0384494f33fc646c"
+  },
+  "slow": {
+   "file": "ed1a07edbb-s.mp3",
+   "hash": "14a5e01d41186f12"
+  }
+ },
+ "房间|fángjiān": {
+  "p": "fángjiān",
+  "normal": {
+   "file": "e3a03577a2-n.mp3",
+   "hash": "fcc3147bcafb8c90"
+  },
+  "slow": {
+   "file": "e3a03577a2-s.mp3",
+   "hash": "a2e23fbee90b4f37"
+  }
+ },
+ "所以|suǒyǐ": {
+  "p": "suǒyǐ",
+  "normal": {
+   "file": "341087c2d1-n.mp3",
+   "hash": "73e77a40d8b8b85e"
+  },
+  "slow": {
+   "file": "341087c2d1-s.mp3",
+   "hash": "fa0a227d855cc5cc"
+  }
+ },
+ "手|shǒu": {
+  "p": "shǒu",
+  "normal": {
+   "file": "5f994108b0-n.mp3",
+   "hash": "e40ce4167b773eb9"
+  },
+  "slow": {
+   "file": "5f994108b0-s.mp3",
+   "hash": "315bcc9b320328dd"
+  }
+ },
+ "手机|shǒujī": {
+  "p": "shǒujī",
+  "normal": {
+   "file": "88a58b468c-n.mp3",
+   "hash": "430b7045faaf1bae"
+  },
+  "slow": {
+   "file": "88a58b468c-s.mp3",
+   "hash": "17c6132a39a131f4"
+  }
+ },
+ "手表|shǒubiǎo": {
+  "p": "shǒubiǎo",
+  "normal": {
+   "file": "5e0b5e7a40-n.mp3",
+   "hash": "53fe3ce09c618791"
+  },
+  "slow": {
+   "file": "5e0b5e7a40-s.mp3",
+   "hash": "ff0df25662a18dd0"
+  }
+ },
+ "打|dǎ": {
+  "p": "dǎ",
+  "normal": {
+   "file": "9aa435a760-n.mp3",
+   "hash": "c976899061ae947f"
+  },
+  "slow": {
+   "file": "9aa435a760-s.mp3",
+   "hash": "08739381ce6bf15a"
+  }
+ },
+ "打开|dǎkāi": {
+  "p": "dǎkāi",
+  "normal": {
+   "file": "f36ce640e0-n.mp3",
+   "hash": "0492dd73f247d1af"
+  },
+  "slow": {
+   "file": "f36ce640e0-s.mp3",
+   "hash": "2f6306047ff16605"
+  }
+ },
+ "打电话|dǎdiànhuà": {
+  "p": "dǎdiànhuà",
+  "normal": {
+   "file": "b01ff8c588-n.mp3",
+   "hash": "9bbee940e81c3acd"
+  },
+  "slow": {
+   "file": "b01ff8c588-s.mp3",
+   "hash": "98af0e19293accfd"
+  }
+ },
+ "打车|dǎchē": {
+  "p": "dǎchē",
+  "normal": {
+   "file": "ca4dd7e510-n.mp3",
+   "hash": "ce42f6933e2f434e"
+  },
+  "slow": {
+   "file": "ca4dd7e510-s.mp3",
+   "hash": "c957004387186a31"
+  }
+ },
+ "找|zhǎo": {
+  "p": "zhǎo",
+  "normal": {
+   "file": "d82af9cba5-n.mp3",
+   "hash": "891f82e670d9748b"
+  },
+  "slow": {
+   "file": "d82af9cba5-s.mp3",
+   "hash": "059e95086e635e8d"
+  }
+ },
+ "拿|ná": {
+  "p": "ná",
+  "normal": {
+   "file": "9ac6cfd370-n.mp3",
+   "hash": "0903d8a4d5c2c497"
+  },
+  "slow": {
+   "file": "9ac6cfd370-s.mp3",
+   "hash": "c4ea9da5ab9821a3"
+  }
+ },
+ "教|jiāo": {
+  "p": "jiāo",
+  "normal": {
+   "file": "3ad4181196-n.mp3",
+   "hash": "f0f580e34c7bcd75"
+  },
+  "slow": {
+   "file": "3ad4181196-s.mp3",
+   "hash": "a981c044e90e9b70"
+  }
+ },
+ "教室|jiàoshì": {
+  "p": "jiàoshì",
+  "normal": {
+   "file": "d614e5c80c-n.mp3",
+   "hash": "d402ae846b3b1d70"
+  },
+  "slow": {
+   "file": "d614e5c80c-s.mp3",
+   "hash": "3a3f204468e3ebb7"
+  }
+ },
+ "新|xīn": {
+  "p": "xīn",
+  "normal": {
+   "file": "3d073324f7-n.mp3",
+   "hash": "6b256f4a8b6c6a75"
+  },
+  "slow": {
+   "file": "3d073324f7-s.mp3",
+   "hash": "e49110a8ae7501a4"
+  }
+ },
+ "旁边|pángbiān": {
+  "p": "pángbiān",
+  "normal": {
+   "file": "18862f8f3d-n.mp3",
+   "hash": "bafd1fa949f9bd43"
+  },
+  "slow": {
+   "file": "18862f8f3d-s.mp3",
+   "hash": "76d308ed78f623ea"
+  }
+ },
+ "旅游|lǚyóu": {
+  "p": "lǚyóu",
+  "normal": {
+   "file": "409d3e7cec-n.mp3",
+   "hash": "a6b36761e243bf71"
+  },
+  "slow": {
+   "file": "409d3e7cec-s.mp3",
+   "hash": "15adb420adb5331d"
+  }
+ },
+ "日|rì": {
+  "p": "rì",
+  "normal": {
+   "file": "50a1058178-n.mp3",
+   "hash": "dd6b75084a3fbae8"
+  },
+  "slow": {
+   "file": "50a1058178-s.mp3",
+   "hash": "ecae922768fb7f8e"
+  }
+ },
+ "早|zǎo": {
+  "p": "zǎo",
+  "normal": {
+   "file": "8a056ed436-n.mp3",
+   "hash": "463fc09c54ccde06"
+  },
+  "slow": {
+   "file": "8a056ed436-s.mp3",
+   "hash": "cb3a485cd34cd940"
+  }
+ },
+ "早上|zǎoshang": {
+  "p": "zǎoshang",
+  "normal": {
+   "file": "bd611e5543-n.mp3",
+   "hash": "412b6e0a15cea61e"
+  },
+  "slow": {
+   "file": "bd611e5543-s.mp3",
+   "hash": "f704d8a8fd22f800"
+  }
+ },
+ "早饭|zǎofàn": {
+  "p": "zǎofàn",
+  "normal": {
+   "file": "745c0d2edf-n.mp3",
+   "hash": "eca4f50bc3cd8af9"
+  },
+  "slow": {
+   "file": "745c0d2edf-s.mp3",
+   "hash": "0b1fcb7b6385e5f0"
+  }
+ },
+ "时|shí": {
+  "p": "shí",
+  "normal": {
+   "file": "515ab38834-n.mp3",
+   "hash": "5ffff1cf69dd0f5a"
+  },
+  "slow": {
+   "file": "515ab38834-s.mp3",
+   "hash": "43ad8e3d92d9d32b"
+  }
+ },
+ "时候|shíhou": {
+  "p": "shíhou",
+  "normal": {
+   "file": "35f5ec0018-n.mp3",
+   "hash": "721b2ea6b774d163"
+  },
+  "slow": {
+   "file": "35f5ec0018-s.mp3",
+   "hash": "95bf4ec85debdb02"
+  }
+ },
+ "时间|shíjiān": {
+  "p": "shíjiān",
+  "normal": {
+   "file": "346e150640-n.mp3",
+   "hash": "ad48f826f4f102f7"
+  },
+  "slow": {
+   "file": "346e150640-s.mp3",
+   "hash": "3b646e490725a151"
+  }
+ },
+ "明天|míngtiān": {
+  "p": "míngtiān",
+  "normal": {
+   "file": "33ab287a66-n.mp3",
+   "hash": "f67221dc08dcfb23"
+  },
+  "slow": {
+   "file": "33ab287a66-s.mp3",
+   "hash": "b4f8e7242e7478bc"
+  }
+ },
+ "明年|míngnián": {
+  "p": "míngnián",
+  "normal": {
+   "file": "9abb9ee549-n.mp3",
+   "hash": "f374d6d68b1fa46b"
+  },
+  "slow": {
+   "file": "9abb9ee549-s.mp3",
+   "hash": "56604d96b00e16c5"
+  }
+ },
+ "星期|xīngqī": {
+  "p": "xīngqī",
+  "normal": {
+   "file": "f4c62aa044-n.mp3",
+   "hash": "586f59864c400f5f"
+  },
+  "slow": {
+   "file": "f4c62aa044-s.mp3",
+   "hash": "c9a38974d1708236"
+  }
+ },
+ "星期天|xīngqītiān": {
+  "p": "xīngqītiān",
+  "normal": {
+   "file": "be9bca290f-n.mp3",
+   "hash": "42586671ebd592b8"
+  },
+  "slow": {
+   "file": "be9bca290f-s.mp3",
+   "hash": "0b2aaf4364c47e97"
+  }
+ },
+ "星期日|xīngqīrì": {
+  "p": "xīngqīrì",
+  "normal": {
+   "file": "6b0dff3a54-n.mp3",
+   "hash": "a2aa0ea693f9ad8e"
+  },
+  "slow": {
+   "file": "6b0dff3a54-s.mp3",
+   "hash": "836e1aa38e928f2f"
+  }
+ },
+ "昨天|zuótiān": {
+  "p": "zuótiān",
+  "normal": {
+   "file": "cb057f1fd3-n.mp3",
+   "hash": "0a18918baa7aad25"
+  },
+  "slow": {
+   "file": "cb057f1fd3-s.mp3",
+   "hash": "10b1f37a5782bd44"
+  }
+ },
+ "是|shì": {
+  "p": "shì",
+  "normal": {
+   "file": "5990753dc2-n.mp3",
+   "hash": "3b857fcb030525da"
+  },
+  "slow": {
+   "file": "5990753dc2-s.mp3",
+   "hash": "c28b620d7d567a0c"
+  }
+ },
+ "晚|wǎn": {
+  "p": "wǎn",
+  "normal": {
+   "file": "6856115d63-n.mp3",
+   "hash": "5ff09d407bc89db1"
+  },
+  "slow": {
+   "file": "6856115d63-s.mp3",
+   "hash": "a40386e767d23784"
+  }
+ },
+ "晚上|wǎnshang": {
+  "p": "wǎnshang",
+  "normal": {
+   "file": "d703a24cde-n.mp3",
+   "hash": "05e2884e1a741821"
+  },
+  "slow": {
+   "file": "d703a24cde-s.mp3",
+   "hash": "6f383b3fe04fb1a9"
+  }
+ },
+ "晚饭|wǎnfàn": {
+  "p": "wǎnfàn",
+  "normal": {
+   "file": "94a003db6f-n.mp3",
+   "hash": "1f200af48c27b9b3"
+  },
+  "slow": {
+   "file": "94a003db6f-s.mp3",
+   "hash": "a98a6cfe5fe0735d"
+  }
+ },
+ "晴|qíng": {
+  "p": "qíng",
+  "normal": {
+   "file": "14742ece45-n.mp3",
+   "hash": "c5d9ab109d174f00"
+  },
+  "slow": {
+   "file": "14742ece45-s.mp3",
+   "hash": "9c5e28c204517c50"
+  }
+ },
+ "最|zuì": {
+  "p": "zuì",
+  "normal": {
+   "file": "e06eb7c8af-n.mp3",
+   "hash": "5bc34a1a02a124cc"
+  },
+  "slow": {
+   "file": "e06eb7c8af-s.mp3",
+   "hash": "937e698a4c4045b3"
+  }
+ },
+ "月|yuè": {
+  "p": "yuè",
+  "normal": {
+   "file": "1fe9ba89a5-n.mp3",
+   "hash": "7d782286747c6c48"
+  },
+  "slow": {
+   "file": "1fe9ba89a5-s.mp3",
+   "hash": "68f4cedcdec2e327"
+  }
+ },
+ "有|yǒu": {
+  "p": "yǒu",
+  "normal": {
+   "file": "e770a32b03-n.mp3",
+   "hash": "edbff2e45ba8f875"
+  },
+  "slow": {
+   "file": "e770a32b03-s.mp3",
+   "hash": "32fb9e60cace22f6"
+  }
+ },
+ "有些|yǒuxiē": {
+  "p": "yǒuxiē",
+  "normal": {
+   "file": "0f9f11b157-n.mp3",
+   "hash": "5260ace95ebcd66b"
+  },
+  "slow": {
+   "file": "0f9f11b157-s.mp3",
+   "hash": "4174f5ec1848ed8f"
+  }
+ },
+ "有意思|yǒuyìsi": {
+  "p": "yǒuyìsi",
+  "normal": {
+   "file": "95078d3c81-n.mp3",
+   "hash": "55c0419b8b8da4e3"
+  },
+  "slow": {
+   "file": "95078d3c81-s.mp3",
+   "hash": "34054c8891b4bd41"
+  }
+ },
+ "有时|yǒushí": {
+  "p": "yǒushí",
+  "normal": {
+   "file": "76bdb4c2f4-n.mp3",
+   "hash": "216cf244da281208"
+  },
+  "slow": {
+   "file": "76bdb4c2f4-s.mp3",
+   "hash": "2ed27bcb3f58162f"
+  }
+ },
+ "有点儿|yǒudiǎnr": {
+  "p": "yǒudiǎnr",
+  "normal": {
+   "file": "b674017d0d-n.mp3",
+   "hash": "9aade9d0e216acee"
+  },
+  "slow": {
+   "file": "b674017d0d-s.mp3",
+   "hash": "e2b8920365751945"
+  }
+ },
+ "有的|yǒude": {
+  "p": "yǒude",
+  "normal": {
+   "file": "6673346079-n.mp3",
+   "hash": "ec30d2f34bc48e38"
+  },
+  "slow": {
+   "file": "6673346079-s.mp3",
+   "hash": "07c91d5f38104b17"
+  }
+ },
+ "朋友|péngyou": {
+  "p": "péngyou",
+  "normal": {
+   "file": "96d398a383-n.mp3",
+   "hash": "8d6bba3d91298967"
+  },
+  "slow": {
+   "file": "96d398a383-s.mp3",
+   "hash": "540dd69165ae4eff"
+  }
+ },
+ "本|běn": {
+  "p": "běn",
+  "normal": {
+   "file": "ba4a6f8641-n.mp3",
+   "hash": "75797cdc35a4c794"
+  },
+  "slow": {
+   "file": "ba4a6f8641-s.mp3",
+   "hash": "231258adc0e60a65"
+  }
+ },
+ "本子|běnzi": {
+  "p": "běnzi",
+  "normal": {
+   "file": "d52f2fe6ae-n.mp3",
+   "hash": "7cb7d023810b6494"
+  },
+  "slow": {
+   "file": "d52f2fe6ae-s.mp3",
+   "hash": "a152b2be1f5d80fc"
+  }
+ },
+ "机场|jīchǎng": {
+  "p": "jīchǎng",
+  "normal": {
+   "file": "a8eef542f6-n.mp3",
+   "hash": "3e99deef938b9633"
+  },
+  "slow": {
+   "file": "a8eef542f6-s.mp3",
+   "hash": "b2434feca2753fc0"
+  }
+ },
+ "机票|jīpiào": {
+  "p": "jīpiào",
+  "normal": {
+   "file": "1aea79c255-n.mp3",
+   "hash": "44a6af44b410fa00"
+  },
+  "slow": {
+   "file": "1aea79c255-s.mp3",
+   "hash": "1057bc05d43587c4"
+  }
+ },
+ "条|tiáo": {
+  "p": "tiáo",
+  "normal": {
+   "file": "3f7b1df1f5-n.mp3",
+   "hash": "d2dc19a09561d75f"
+  },
+  "slow": {
+   "file": "3f7b1df1f5-s.mp3",
+   "hash": "09fc395f282ca552"
+  }
+ },
+ "来|lái": {
+  "p": "lái",
+  "normal": {
+   "file": "9960664036-n.mp3",
+   "hash": "a8e9091b72a53f6b"
+  },
+  "slow": {
+   "file": "9960664036-s.mp3",
+   "hash": "a7dce105053c5e64"
+  }
+ },
+ "杯子|bēizi": {
+  "p": "bēizi",
+  "normal": {
+   "file": "c789dd56e8-n.mp3",
+   "hash": "17700df19c677fb7"
+  },
+  "slow": {
+   "file": "c789dd56e8-s.mp3",
+   "hash": "ad8e1ad04b6a48ce"
+  }
+ },
+ "桌子|zhuōzi": {
+  "p": "zhuōzi",
+  "normal": {
+   "file": "58fe949f1c-n.mp3",
+   "hash": "ef9a29d39103e61f"
+  },
+  "slow": {
+   "file": "58fe949f1c-s.mp3",
+   "hash": "812507fa5ba51194"
+  }
+ },
+ "椅子|yǐzi": {
+  "p": "yǐzi",
+  "normal": {
+   "file": "6b822a89db-n.mp3",
+   "hash": "aae58484477cadb0"
+  },
+  "slow": {
+   "file": "6b822a89db-s.mp3",
+   "hash": "9e230887490866f9"
+  }
+ },
+ "楼|lóu": {
+  "p": "lóu",
+  "normal": {
+   "file": "26df177b15-n.mp3",
+   "hash": "c47bd8475ac20e5f"
+  },
+  "slow": {
+   "file": "26df177b15-s.mp3",
+   "hash": "83c902f85b913e50"
+  }
+ },
+ "次|cì": {
+  "p": "cì",
+  "normal": {
+   "file": "39924f59b1-n.mp3",
+   "hash": "f2007370506b7862"
+  },
+  "slow": {
+   "file": "39924f59b1-s.mp3",
+   "hash": "739c600a22d048a3"
+  }
+ },
+ "歌|gē": {
+  "p": "gē",
+  "normal": {
+   "file": "ba8fefc3df-n.mp3",
+   "hash": "2103313445f48160"
+  },
+  "slow": {
+   "file": "ba8fefc3df-s.mp3",
+   "hash": "bd89d5af1e79121d"
+  }
+ },
+ "正|zhèng": {
+  "p": "zhèng",
+  "normal": {
+   "file": "cb521fc61e-n.mp3",
+   "hash": "5538c7eb3ace1431"
+  },
+  "slow": {
+   "file": "cb521fc61e-s.mp3",
+   "hash": "ea49aa7fac44b275"
+  }
+ },
+ "正在|zhèngzài": {
+  "p": "zhèngzài",
+  "normal": {
+   "file": "39b907361b-n.mp3",
+   "hash": "511533521c13c27f"
+  },
+  "slow": {
+   "file": "39b907361b-s.mp3",
+   "hash": "69b524a8edc0aea5"
+  }
+ },
+ "每|měi": {
+  "p": "měi",
+  "normal": {
+   "file": "ff27ad0fda-n.mp3",
+   "hash": "87e21a8219c06859"
+  },
+  "slow": {
+   "file": "ff27ad0fda-s.mp3",
+   "hash": "f1a6688d0c609f9e"
+  }
+ },
+ "比|bǐ": {
+  "p": "bǐ",
+  "normal": {
+   "file": "ed12fa581e-n.mp3",
+   "hash": "cfb14e886240dcaa"
+  },
+  "slow": {
+   "file": "ed12fa581e-s.mp3",
+   "hash": "93730b1db1e87a8b"
+  }
+ },
+ "水|shuǐ": {
+  "p": "shuǐ",
+  "normal": {
+   "file": "97ed854bde-n.mp3",
+   "hash": "5bdb916553e41939"
+  },
+  "slow": {
+   "file": "97ed854bde-s.mp3",
+   "hash": "b4ce207ba2078877"
+  }
+ },
+ "水果|shuǐguǒ": {
+  "p": "shuǐguǒ",
+  "normal": {
+   "file": "7b460101e9-n.mp3",
+   "hash": "47db68801cf922b1"
+  },
+  "slow": {
+   "file": "7b460101e9-s.mp3",
+   "hash": "95347bb116963d2a"
+  }
+ },
+ "汉字|Hànzì": {
+  "p": "Hànzì",
+  "normal": {
+   "file": "ecc7c658b2-n.mp3",
+   "hash": "7188a3b340ccd0dd"
+  },
+  "slow": {
+   "file": "ecc7c658b2-s.mp3",
+   "hash": "616cd0dda58057bd"
+  }
+ },
+ "汉语|Hànyǔ": {
+  "p": "Hànyǔ",
+  "normal": {
+   "file": "e78d9b1406-n.mp3",
+   "hash": "26a7dbbd70f81d09"
+  },
+  "slow": {
+   "file": "e78d9b1406-s.mp3",
+   "hash": "855aac9754dc8fe6"
+  }
+ },
+ "没事|méishì": {
+  "p": "méishì",
+  "normal": {
+   "file": "05b00df7d4-n.mp3",
+   "hash": "52c3af7a21b1d7dc"
+  },
+  "slow": {
+   "file": "05b00df7d4-s.mp3",
+   "hash": "0e15bff128552965"
+  }
+ },
+ "没关系|méiguānxi": {
+  "p": "méiguānxi",
+  "normal": {
+   "file": "6f3b4d2c10-n.mp3",
+   "hash": "b0e7a609d0254ea9"
+  },
+  "slow": {
+   "file": "6f3b4d2c10-s.mp3",
+   "hash": "f317b89969ffdff3"
+  }
+ },
+ "没意思|méiyìsi": {
+  "p": "méiyìsi",
+  "normal": {
+   "file": "e65f997ea0-n.mp3",
+   "hash": "a01aef276bdf07ea"
+  },
+  "slow": {
+   "file": "e65f997ea0-s.mp3",
+   "hash": "c4ddc2f44c6a4043"
+  }
+ },
+ "没有|méiyǒu": {
+  "p": "méiyǒu",
+  "normal": {
+   "file": "2f52c12baf-n.mp3",
+   "hash": "9c6fc696e476486b"
+  },
+  "slow": {
+   "file": "2f52c12baf-s.mp3",
+   "hash": "9de06b54fb54160a"
+  }
+ },
+ "洗|xǐ": {
+  "p": "xǐ",
+  "normal": {
+   "file": "7864038857-n.mp3",
+   "hash": "800375ae8cc2e3a5"
+  },
+  "slow": {
+   "file": "7864038857-s.mp3",
+   "hash": "181c145485e1aeae"
+  }
+ },
+ "洗手间|xǐshǒujiān": {
+  "p": "xǐshǒujiān",
+  "normal": {
+   "file": "8807a0d4c8-n.mp3",
+   "hash": "ae66e87e75ef3014"
+  },
+  "slow": {
+   "file": "8807a0d4c8-s.mp3",
+   "hash": "06c4c18a59802568"
+  }
+ },
+ "游|yóu": {
+  "p": "yóu",
+  "normal": {
+   "file": "4af17fd490-n.mp3",
+   "hash": "60918e2f08117c45"
+  },
+  "slow": {
+   "file": "4af17fd490-s.mp3",
+   "hash": "2af74a72503b08ff"
+  }
+ },
+ "游泳|yóuyǒng": {
+  "p": "yóuyǒng",
+  "normal": {
+   "file": "a870fc57fd-n.mp3",
+   "hash": "bf7c751aa88b13ea"
+  },
+  "slow": {
+   "file": "a870fc57fd-s.mp3",
+   "hash": "c075e7300f2993bc"
+  }
+ },
+ "漂亮|piàoliang": {
+  "p": "piàoliang",
+  "normal": {
+   "file": "ec83284583-n.mp3",
+   "hash": "2c3c821a71a14067"
+  },
+  "slow": {
+   "file": "ec83284583-s.mp3",
+   "hash": "017181e4b2efe962"
+  }
+ },
+ "火车|huǒchē": {
+  "p": "huǒchē",
+  "normal": {
+   "file": "0da33b39b8-n.mp3",
+   "hash": "c29b5c8bbd530d58"
+  },
+  "slow": {
+   "file": "0da33b39b8-s.mp3",
+   "hash": "4c0eef6c33112cbb"
+  }
+ },
+ "点|diǎn": {
+  "p": "diǎn",
+  "normal": {
+   "file": "cea40cfda4-n.mp3",
+   "hash": "4c25cd4147952a8a"
+  },
+  "slow": {
+   "file": "cea40cfda4-s.mp3",
+   "hash": "3600b60022e5d921"
+  }
+ },
+ "热|rè": {
+  "p": "rè",
+  "normal": {
+   "file": "14275574aa-n.mp3",
+   "hash": "d3ab6a3f2aab0efe"
+  },
+  "slow": {
+   "file": "14275574aa-s.mp3",
+   "hash": "9bbecb40c5da5c00"
+  }
+ },
+ "爱|ài": {
+  "p": "ài",
+  "normal": {
+   "file": "0ebf88709f-n.mp3",
+   "hash": "76cd87f65fc2cde4"
+  },
+  "slow": {
+   "file": "0ebf88709f-s.mp3",
+   "hash": "f6e443c77c12d9f0"
+  }
+ },
+ "爱好|àihào": {
+  "p": "àihào",
+  "normal": {
+   "file": "0cc69febc4-n.mp3",
+   "hash": "c8ff0088222d7290"
+  },
+  "slow": {
+   "file": "0cc69febc4-s.mp3",
+   "hash": "801a342b8d6d0434"
+  }
+ },
+ "爷爷|yéye": {
+  "p": "yéye",
+  "normal": {
+   "file": "ee8aa974f6-n.mp3",
+   "hash": "1456abe41b566a43"
+  },
+  "slow": {
+   "file": "ee8aa974f6-s.mp3",
+   "hash": "8c571d568ba0464e"
+  }
+ },
+ "爸爸|bàba": {
+  "p": "bàba",
+  "normal": {
+   "file": "ff17b5d4a5-n.mp3",
+   "hash": "f1d86082a4f5659d"
+  },
+  "slow": {
+   "file": "ff17b5d4a5-s.mp3",
+   "hash": "5f0934cfd0d3654c"
+  }
+ },
+ "牛奶|niúnǎi": {
+  "p": "niúnǎi",
+  "normal": {
+   "file": "00d9f9c457-n.mp3",
+   "hash": "0c24265a9be355df"
+  },
+  "slow": {
+   "file": "00d9f9c457-s.mp3",
+   "hash": "4f2b03767ccc3446"
+  }
+ },
+ "狗|gǒu": {
+  "p": "gǒu",
+  "normal": {
+   "file": "422b665343-n.mp3",
+   "hash": "a6f632e2fe1986c5"
+  },
+  "slow": {
+   "file": "422b665343-s.mp3",
+   "hash": "08e9e1076fca6b31"
+  }
+ },
+ "猫|māo": {
+  "p": "māo",
+  "normal": {
+   "file": "1f7f67259b-n.mp3",
+   "hash": "d3164ffadf478972"
+  },
+  "slow": {
+   "file": "1f7f67259b-s.mp3",
+   "hash": "00f44a73ea0b5d63"
+  }
+ },
+ "玩|wán": {
+  "p": "wán",
+  "normal": {
+   "file": "1909b09a07-n.mp3",
+   "hash": "f53351e267e53a6e"
+  },
+  "slow": {
+   "file": "1909b09a07-s.mp3",
+   "hash": "e3ba3e14aab6f892"
+  }
+ },
+ "现在|xiànzài": {
+  "p": "xiànzài",
+  "normal": {
+   "file": "7d45a0de75-n.mp3",
+   "hash": "6e3276821c8d3af0"
+  },
+  "slow": {
+   "file": "7d45a0de75-s.mp3",
+   "hash": "8bbb5c475f4a0cd0"
+  }
+ },
+ "班|bān": {
+  "p": "bān",
+  "normal": {
+   "file": "11062b3f12-n.mp3",
+   "hash": "b7e909d773d2666b"
+  },
+  "slow": {
+   "file": "11062b3f12-s.mp3",
+   "hash": "b5d1f06171b0d32c"
+  }
+ },
+ "球|qiú": {
+  "p": "qiú",
+  "normal": {
+   "file": "1d04eac1c7-n.mp3",
+   "hash": "5e21f6bc35b2c619"
+  },
+  "slow": {
+   "file": "1d04eac1c7-s.mp3",
+   "hash": "348bbbc09a41c077"
+  }
+ },
+ "生日|shēngrì": {
+  "p": "shēngrì",
+  "normal": {
+   "file": "28ab78e839-n.mp3",
+   "hash": "b78a2c8825e363a9"
+  },
+  "slow": {
+   "file": "28ab78e839-s.mp3",
+   "hash": "c78728179b4d0d5c"
+  }
+ },
+ "生病|shēngbìng": {
+  "p": "shēngbìng",
+  "normal": {
+   "file": "eecac02ef9-n.mp3",
+   "hash": "2d5b1453613c5fa0"
+  },
+  "slow": {
+   "file": "eecac02ef9-s.mp3",
+   "hash": "88101a713ac66736"
+  }
+ },
+ "电影|diànyǐng": {
+  "p": "diànyǐng",
+  "normal": {
+   "file": "fdc79094fd-n.mp3",
+   "hash": "78cd47bf7f58b22d"
+  },
+  "slow": {
+   "file": "fdc79094fd-s.mp3",
+   "hash": "5f12a2823ac89009"
+  }
+ },
+ "电影院|diànyǐngyuàn": {
+  "p": "diànyǐngyuàn",
+  "normal": {
+   "file": "6dfab89c75-n.mp3",
+   "hash": "3388cd685813f269"
+  },
+  "slow": {
+   "file": "6dfab89c75-s.mp3",
+   "hash": "1456cfc6e6812093"
+  }
+ },
+ "电脑|diànnǎo": {
+  "p": "diànnǎo",
+  "normal": {
+   "file": "481feb507a-n.mp3",
+   "hash": "23176f5c045369fc"
+  },
+  "slow": {
+   "file": "481feb507a-s.mp3",
+   "hash": "38f23e662e305602"
+  }
+ },
+ "电视|diànshì": {
+  "p": "diànshì",
+  "normal": {
+   "file": "76d57b29b4-n.mp3",
+   "hash": "f221130d4dd2baa0"
+  },
+  "slow": {
+   "file": "76d57b29b4-s.mp3",
+   "hash": "bead9ada1094e90a"
+  }
+ },
+ "电话|diànhuà": {
+  "p": "diànhuà",
+  "normal": {
+   "file": "f155bbd459-n.mp3",
+   "hash": "b6cf0ad12efc159c"
+  },
+  "slow": {
+   "file": "f155bbd459-s.mp3",
+   "hash": "46d87c6fa916507a"
+  }
+ },
+ "男|nán": {
+  "p": "nán",
+  "normal": {
+   "file": "2567d54bbf-n.mp3",
+   "hash": "d148cd1e0bd3c135"
+  },
+  "slow": {
+   "file": "2567d54bbf-s.mp3",
+   "hash": "3acee647ea695648"
+  }
+ },
+ "男孩儿|nánháir": {
+  "p": "nánháir",
+  "normal": {
+   "file": "d7fdfcf1d6-n.mp3",
+   "hash": "8cf1dc06b57ee736"
+  },
+  "slow": {
+   "file": "d7fdfcf1d6-s.mp3",
+   "hash": "22d5228ed9d677d4"
+  }
+ },
+ "男朋友|nánpéngyou": {
+  "p": "nánpéngyou",
+  "normal": {
+   "file": "53f5511146-n.mp3",
+   "hash": "91b811958cc25aae"
+  },
+  "slow": {
+   "file": "53f5511146-s.mp3",
+   "hash": "2ad867bdded5cd3d"
+  }
+ },
+ "画|huà": {
+  "p": "huà",
+  "normal": {
+   "file": "4ea080f6d3-n.mp3",
+   "hash": "5ca7e82bcb868703"
+  },
+  "slow": {
+   "file": "4ea080f6d3-s.mp3",
+   "hash": "9d7bc57eadb96403"
+  }
+ },
+ "疼|téng": {
+  "p": "téng",
+  "normal": {
+   "file": "d713c2475e-n.mp3",
+   "hash": "4f31dec157ea55a1"
+  },
+  "slow": {
+   "file": "d713c2475e-s.mp3",
+   "hash": "fc4bba3b01a81a60"
+  }
+ },
+ "病|bìng": {
+  "p": "bìng",
+  "normal": {
+   "file": "2ad02ee60c-n.mp3",
+   "hash": "69e6fa99c2a356f2"
+  },
+  "slow": {
+   "file": "2ad02ee60c-s.mp3",
+   "hash": "0f3321b28d38f15c"
+  }
+ },
+ "白天|báitiān": {
+  "p": "báitiān",
+  "normal": {
+   "file": "7a3be24aa0-n.mp3",
+   "hash": "bf44cb42abfdb58a"
+  },
+  "slow": {
+   "file": "7a3be24aa0-s.mp3",
+   "hash": "571e682fe5b30a58"
+  }
+ },
+ "白色|báisè": {
+  "p": "báisè",
+  "normal": {
+   "file": "8d68c79ca9-n.mp3",
+   "hash": "da93adcd579e57ae"
+  },
+  "slow": {
+   "file": "8d68c79ca9-s.mp3",
+   "hash": "2e5a95a6234628dd"
+  }
+ },
+ "百|bǎi": {
+  "p": "bǎi",
+  "normal": {
+   "file": "c0f1710bb3-n.mp3",
+   "hash": "ec578438d1f6ec25"
+  },
+  "slow": {
+   "file": "c0f1710bb3-s.mp3",
+   "hash": "c1a22ce61d4e1d4f"
+  }
+ },
+ "的|de": {
+  "p": "de",
+  "normal": {
+   "file": "0f17f250ae-n.mp3",
+   "hash": "81fb0998f7422407"
+  },
+  "slow": {
+   "file": "0f17f250ae-s.mp3",
+   "hash": "16d9827b410bfcdd"
+  }
+ },
+ "看|kàn": {
+  "p": "kàn",
+  "normal": {
+   "file": "aa0dc4bcdd-n.mp3",
+   "hash": "fafd34894d96ee58"
+  },
+  "slow": {
+   "file": "aa0dc4bcdd-s.mp3",
+   "hash": "a0c4b1aef84c6d2a"
+  }
+ },
+ "看病|kànbìng": {
+  "p": "kànbìng",
+  "normal": {
+   "file": "eca1af1094-n.mp3",
+   "hash": "b411f08352fb5ba3"
+  },
+  "slow": {
+   "file": "eca1af1094-s.mp3",
+   "hash": "4f294c7719f45695"
+  }
+ },
+ "看见|kànjiàn": {
+  "p": "kànjiàn",
+  "normal": {
+   "file": "6e7b34c248-n.mp3",
+   "hash": "0731858efcd81013"
+  },
+  "slow": {
+   "file": "6e7b34c248-s.mp3",
+   "hash": "1bcc6dd63687c619"
+  }
+ },
+ "真|zhēn": {
+  "p": "zhēn",
+  "normal": {
+   "file": "c9e437faf4-n.mp3",
+   "hash": "8e186f4b25ee966c"
+  },
+  "slow": {
+   "file": "c9e437faf4-s.mp3",
+   "hash": "e18f519e98a88576"
+  }
+ },
+ "眼睛|yǎnjing": {
+  "p": "yǎnjing",
+  "normal": {
+   "file": "a240cc4e82-n.mp3",
+   "hash": "4c08f7467c0f1061"
+  },
+  "slow": {
+   "file": "a240cc4e82-s.mp3",
+   "hash": "f7f53431331f930b"
+  }
+ },
+ "着|zhe": {
+  "p": "zhe",
+  "normal": {
+   "file": "7da5b855c0-n.mp3",
+   "hash": "f448c88d159e3be2"
+  },
+  "slow": {
+   "file": "7da5b855c0-s.mp3",
+   "hash": "b478eba4de1e02b8"
+  }
+ },
+ "睡|shuì": {
+  "p": "shuì",
+  "normal": {
+   "file": "bd1553342d-n.mp3",
+   "hash": "061410981b9a3677"
+  },
+  "slow": {
+   "file": "bd1553342d-s.mp3",
+   "hash": "25db0fea13742c0d"
+  }
+ },
+ "睡觉|shuìjiào": {
+  "p": "shuìjiào",
+  "normal": {
+   "file": "57122b2aea-n.mp3",
+   "hash": "a36f17ff0ce6b8c2"
+  },
+  "slow": {
+   "file": "57122b2aea-s.mp3",
+   "hash": "48d628acdd8aa3b2"
+  }
+ },
+ "知道|zhīdào": {
+  "p": "zhīdào",
+  "normal": {
+   "file": "97403d3a64-n.mp3",
+   "hash": "092db6db2296fc64"
+  },
+  "slow": {
+   "file": "97403d3a64-s.mp3",
+   "hash": "2e1a6ee8203c1add"
+  }
+ },
+ "票|piào": {
+  "p": "piào",
+  "normal": {
+   "file": "ce28ec3fae-n.mp3",
+   "hash": "c0ee159864cf3fc4"
+  },
+  "slow": {
+   "file": "ce28ec3fae-s.mp3",
+   "hash": "a2c1e57878bef1bc"
+  }
+ },
+ "离|lí": {
+  "p": "lí",
+  "normal": {
+   "file": "302cde35e2-n.mp3",
+   "hash": "b3e240e24f3fe35d"
+  },
+  "slow": {
+   "file": "302cde35e2-s.mp3",
+   "hash": "66d376d6a9789896"
+  }
+ },
+ "穿|chuān": {
+  "p": "chuān",
+  "normal": {
+   "file": "b37a968735-n.mp3",
+   "hash": "65955d20d076e4d6"
+  },
+  "slow": {
+   "file": "b37a968735-s.mp3",
+   "hash": "39f8b96bf60f0694"
+  }
+ },
+ "站|zhàn": {
+  "p": "zhàn",
+  "normal": {
+   "file": "061b1bd045-n.mp3",
+   "hash": "deb423123e04ef97"
+  },
+  "slow": {
+   "file": "061b1bd045-s.mp3",
+   "hash": "81c466f6094e02fb"
+  }
+ },
+ "笑|xiào": {
+  "p": "xiào",
+  "normal": {
+   "file": "1c297823fb-n.mp3",
+   "hash": "97c55241ec95cd3c"
+  },
+  "slow": {
+   "file": "1c297823fb-s.mp3",
+   "hash": "451f13e7900babf8"
+  }
+ },
+ "笔|bǐ": {
+  "p": "bǐ",
+  "normal": {
+   "file": "fd7b670608-n.mp3",
+   "hash": "e255cd793aa3641d"
+  },
+  "slow": {
+   "file": "fd7b670608-s.mp3",
+   "hash": "97c21d69c7e0d746"
+  }
+ },
+ "第|dì": {
+  "p": "dì",
+  "normal": {
+   "file": "21679ae6e7-n.mp3",
+   "hash": "36aa2eafda0b5ee9"
+  },
+  "slow": {
+   "file": "21679ae6e7-s.mp3",
+   "hash": "dc4172107d763494"
+  }
+ },
+ "等|děng": {
+  "p": "děng",
+  "normal": {
+   "file": "b574e75c38-n.mp3",
+   "hash": "52d196c7bd509a7d"
+  },
+  "slow": {
+   "file": "b574e75c38-s.mp3",
+   "hash": "2319d3dcf90faab8"
+  }
+ },
+ "篮球|lánqiú": {
+  "p": "lánqiú",
+  "normal": {
+   "file": "87ad6d2d3f-n.mp3",
+   "hash": "d7557ca19374544b"
+  },
+  "slow": {
+   "file": "87ad6d2d3f-s.mp3",
+   "hash": "3934bcf1978fa995"
+  }
+ },
+ "米饭|mǐfàn": {
+  "p": "mǐfàn",
+  "normal": {
+   "file": "fe62130859-n.mp3",
+   "hash": "852a9410eebd2e2a"
+  },
+  "slow": {
+   "file": "fe62130859-s.mp3",
+   "hash": "c8f7b56ab35eb175"
+  }
+ },
+ "累|lèi": {
+  "p": "lèi",
+  "normal": {
+   "file": "227c9e6a6c-n.mp3",
+   "hash": "ecb6b9ef31ee259c"
+  },
+  "slow": {
+   "file": "227c9e6a6c-s.mp3",
+   "hash": "c8da4a9fe3544b53"
+  }
+ },
+ "红色|hóngsè": {
+  "p": "hóngsè",
+  "normal": {
+   "file": "0b8314b5d1-n.mp3",
+   "hash": "6c67848aa71941b7"
+  },
+  "slow": {
+   "file": "0b8314b5d1-s.mp3",
+   "hash": "60a1fe294c19e385"
+  }
+ },
+ "红茶|hóngchá": {
+  "p": "hóngchá",
+  "normal": {
+   "file": "df2a2fdad1-n.mp3",
+   "hash": "07779633f3e33de2"
+  },
+  "slow": {
+   "file": "df2a2fdad1-s.mp3",
+   "hash": "c51145ba164bea02"
+  }
+ },
+ "经常|jīngcháng": {
+  "p": "jīngcháng",
+  "normal": {
+   "file": "9fa02d13e0-n.mp3",
+   "hash": "ff0c116386ead993"
+  },
+  "slow": {
+   "file": "9fa02d13e0-s.mp3",
+   "hash": "1344d6d26f12c5cd"
+  }
+ },
+ "给|gěi": {
+  "p": "gěi",
+  "normal": {
+   "file": "ee02385f8c-n.mp3",
+   "hash": "a89567941f56e998"
+  },
+  "slow": {
+   "file": "ee02385f8c-s.mp3",
+   "hash": "e544fae4da8f9ae0"
+  }
+ },
+ "绿色|lǜsè": {
+  "p": "lǜsè",
+  "normal": {
+   "file": "ed28a69c16-n.mp3",
+   "hash": "debd24805a1a2cd5"
+  },
+  "slow": {
+   "file": "ed28a69c16-s.mp3",
+   "hash": "7fdbd1b5b8353857"
+  }
+ },
+ "绿茶|lǜchá": {
+  "p": "lǜchá",
+  "normal": {
+   "file": "338527f517-n.mp3",
+   "hash": "358f398708db0312"
+  },
+  "slow": {
+   "file": "338527f517-s.mp3",
+   "hash": "8dbfc76779106c50"
+  }
+ },
+ "网上|wǎngshang": {
+  "p": "wǎngshang",
+  "normal": {
+   "file": "48ce9c006b-n.mp3",
+   "hash": "5b6eea900fe2e18b"
+  },
+  "slow": {
+   "file": "48ce9c006b-s.mp3",
+   "hash": "f20465d190498070"
+  }
+ },
+ "老师|lǎoshī": {
+  "p": "lǎoshī",
+  "normal": {
+   "file": "c24a5f074d-n.mp3",
+   "hash": "a61126dcf6337ed4"
+  },
+  "slow": {
+   "file": "c24a5f074d-s.mp3",
+   "hash": "3dec5cddec4746f3"
+  }
+ },
+ "考|kǎo": {
+  "p": "kǎo",
+  "normal": {
+   "file": "2a1c582858-n.mp3",
+   "hash": "9e8da33a1953aa4e"
+  },
+  "slow": {
+   "file": "2a1c582858-s.mp3",
+   "hash": "2ae13bfdac83149f"
+  }
+ },
+ "考试|kǎoshì": {
+  "p": "kǎoshì",
+  "normal": {
+   "file": "b7ab0a3395-n.mp3",
+   "hash": "f442e402b04f7639"
+  },
+  "slow": {
+   "file": "b7ab0a3395-s.mp3",
+   "hash": "dabce965bf591c5e"
+  }
+ },
+ "肉|ròu": {
+  "p": "ròu",
+  "normal": {
+   "file": "2ed5ddad71-n.mp3",
+   "hash": "17b1ee46fcb018e7"
+  },
+  "slow": {
+   "file": "2ed5ddad71-s.mp3",
+   "hash": "8250508ce66c2867"
+  }
+ },
+ "能|néng": {
+  "p": "néng",
+  "normal": {
+   "file": "589d1ddda7-n.mp3",
+   "hash": "65c7b6426eeeff5d"
+  },
+  "slow": {
+   "file": "589d1ddda7-s.mp3",
+   "hash": "83309175b4a1b388"
+  }
+ },
+ "自己|zìjǐ": {
+  "p": "zìjǐ",
+  "normal": {
+   "file": "6af2fc7a6e-n.mp3",
+   "hash": "83fc53576e93b5e6"
+  },
+  "slow": {
+   "file": "6af2fc7a6e-s.mp3",
+   "hash": "2df1e8b0685cf9da"
+  }
+ },
+ "舒服|shūfu": {
+  "p": "shūfu",
+  "normal": {
+   "file": "c0842ced3f-n.mp3",
+   "hash": "95fd587c1639cc20"
+  },
+  "slow": {
+   "file": "c0842ced3f-s.mp3",
+   "hash": "3e938bde8e6591f1"
+  }
+ },
+ "花|huā": {
+  "p": "huā",
+  "normal": {
+   "file": "094abde4d0-n.mp3",
+   "hash": "7b9ac1478a5c8c3c"
+  },
+  "slow": {
+   "file": "094abde4d0-s.mp3",
+   "hash": "344dcc43b8edf1bf"
+  }
+ },
+ "苹果|píngguǒ": {
+  "p": "píngguǒ",
+  "normal": {
+   "file": "e248b708c1-n.mp3",
+   "hash": "c7b2614bdd66c98f"
+  },
+  "slow": {
+   "file": "e248b708c1-s.mp3",
+   "hash": "7fb5dbe695bb0480"
+  }
+ },
+ "茶|chá": {
+  "p": "chá",
+  "normal": {
+   "file": "40bce8c22e-n.mp3",
+   "hash": "387d39cc3997a9b4"
+  },
+  "slow": {
+   "file": "40bce8c22e-s.mp3",
+   "hash": "70acddff02b5bff5"
+  }
+ },
+ "药|yào": {
+  "p": "yào",
+  "normal": {
+   "file": "8500332fde-n.mp3",
+   "hash": "c4f55b73e8f133f2"
+  },
+  "slow": {
+   "file": "8500332fde-s.mp3",
+   "hash": "8e0c1a4ef3cd6a8c"
+  }
+ },
+ "药店|yàodiàn": {
+  "p": "yàodiàn",
+  "normal": {
+   "file": "544d1711cd-n.mp3",
+   "hash": "415e457a12eff3af"
+  },
+  "slow": {
+   "file": "544d1711cd-s.mp3",
+   "hash": "3dc6c39954e66f51"
+  }
+ },
+ "菜|cài": {
+  "p": "cài",
+  "normal": {
+   "file": "1545ab0735-n.mp3",
+   "hash": "d05d7f8227ba39c5"
+  },
+  "slow": {
+   "file": "1545ab0735-s.mp3",
+   "hash": "e0cc48eaef58f807"
+  }
+ },
+ "虽然|suīrán": {
+  "p": "suīrán",
+  "normal": {
+   "file": "7d259bb097-n.mp3",
+   "hash": "1eda167605d82eca"
+  },
+  "slow": {
+   "file": "7d259bb097-s.mp3",
+   "hash": "6f59b47cc2a7a3ee"
+  }
+ },
+ "衣服|yīfu": {
+  "p": "yīfu",
+  "normal": {
+   "file": "e0c053f99d-n.mp3",
+   "hash": "1924f24ddf63d406"
+  },
+  "slow": {
+   "file": "e0c053f99d-s.mp3",
+   "hash": "b08e8da610fc95ee"
+  }
+ },
+ "裤子|kùzi": {
+  "p": "kùzi",
+  "normal": {
+   "file": "fb2952140b-n.mp3",
+   "hash": "a26261bd1ae39de3"
+  },
+  "slow": {
+   "file": "fb2952140b-s.mp3",
+   "hash": "4a099c47f0927a6d"
+  }
+ },
+ "要|yào": {
+  "p": "yào",
+  "normal": {
+   "file": "7901d8a74f-n.mp3",
+   "hash": "76a01f646a745a44"
+  },
+  "slow": {
+   "file": "7901d8a74f-s.mp3",
+   "hash": "d162441b19c93118"
+  }
+ },
+ "见|jiàn": {
+  "p": "jiàn",
+  "normal": {
+   "file": "ac8e13a5ce-n.mp3",
+   "hash": "c0f9fc673e9e0f4f"
+  },
+  "slow": {
+   "file": "ac8e13a5ce-s.mp3",
+   "hash": "e24a5f4e0c266214"
+  }
+ },
+ "觉得|juéde": {
+  "p": "juéde",
+  "normal": {
+   "file": "5597919b86-n.mp3",
+   "hash": "9a8a92b40f9b4171"
+  },
+  "slow": {
+   "file": "5597919b86-s.mp3",
+   "hash": "2b7d416760fe6e74"
+  }
+ },
+ "认识|rènshi": {
+  "p": "rènshi",
+  "normal": {
+   "file": "f949160cb5-n.mp3",
+   "hash": "adef906ee3f8a3f2"
+  },
+  "slow": {
+   "file": "f949160cb5-s.mp3",
+   "hash": "a0858b83b30a0b0d"
+  }
+ },
+ "让|ràng": {
+  "p": "ràng",
+  "normal": {
+   "file": "9c27df0aef-n.mp3",
+   "hash": "6e7708e3f690af85"
+  },
+  "slow": {
+   "file": "9c27df0aef-s.mp3",
+   "hash": "a3003a07e32717d1"
+  }
+ },
+ "记得|jìde": {
+  "p": "jìde",
+  "normal": {
+   "file": "b451f25992-n.mp3",
+   "hash": "1a8addfa1bfd1137"
+  },
+  "slow": {
+   "file": "b451f25992-s.mp3",
+   "hash": "2c6afc2b0c1d574b"
+  }
+ },
+ "词|cí": {
+  "p": "cí",
+  "normal": {
+   "file": "f38492567e-n.mp3",
+   "hash": "f2ac011cdda82737"
+  },
+  "slow": {
+   "file": "f38492567e-s.mp3",
+   "hash": "472c16c462248ff0"
+  }
+ },
+ "说|shuō": {
+  "p": "shuō",
+  "normal": {
+   "file": "fb833884d6-n.mp3",
+   "hash": "b01707f5da0de4ec"
+  },
+  "slow": {
+   "file": "fb833884d6-s.mp3",
+   "hash": "045a226c83443991"
+  }
+ },
+ "说话|shuōhuà": {
+  "p": "shuōhuà",
+  "normal": {
+   "file": "176464dbf3-n.mp3",
+   "hash": "569fdabc42a4087d"
+  },
+  "slow": {
+   "file": "176464dbf3-s.mp3",
+   "hash": "f24b5a4fe2cef460"
+  }
+ },
+ "请|qǐng": {
+  "p": "qǐng",
+  "normal": {
+   "file": "eed52167e7-n.mp3",
+   "hash": "4062c747381232dd"
+  },
+  "slow": {
+   "file": "eed52167e7-s.mp3",
+   "hash": "ecc6ac3a8a8772c0"
+  }
+ },
+ "请问|qǐngwèn": {
+  "p": "qǐngwèn",
+  "normal": {
+   "file": "57ce5caa82-n.mp3",
+   "hash": "08c14c0107361996"
+  },
+  "slow": {
+   "file": "57ce5caa82-s.mp3",
+   "hash": "14dd6e98b35dd3f6"
+  }
+ },
+ "读|dú": {
+  "p": "dú",
+  "normal": {
+   "file": "ef51f8bde4-n.mp3",
+   "hash": "b71d18f036bbab4d"
+  },
+  "slow": {
+   "file": "ef51f8bde4-s.mp3",
+   "hash": "cef75e86793397ee"
+  }
+ },
+ "读书|dúshū": {
+  "p": "dúshū",
+  "normal": {
+   "file": "09a95e1200-n.mp3",
+   "hash": "204970ca60630fb6"
+  },
+  "slow": {
+   "file": "09a95e1200-s.mp3",
+   "hash": "9624c2fa2572c992"
+  }
+ },
+ "课|kè": {
+  "p": "kè",
+  "normal": {
+   "file": "9e0f211e88-n.mp3",
+   "hash": "28890580647b067a"
+  },
+  "slow": {
+   "file": "9e0f211e88-s.mp3",
+   "hash": "b50664e333cb8d10"
+  }
+ },
+ "谁|shéi": {
+  "p": "shéi",
+  "normal": {
+   "file": "ff3aa53fd9-n.mp3",
+   "hash": "3e718f3a39cd5bbf"
+  },
+  "slow": {
+   "file": "ff3aa53fd9-s.mp3",
+   "hash": "726636ee09899f64"
+  }
+ },
+ "谢谢|xièxie": {
+  "p": "xièxie",
+  "normal": {
+   "file": "5e87f617f0-n.mp3",
+   "hash": "77c17d5b1e77fafc"
+  },
+  "slow": {
+   "file": "5e87f617f0-s.mp3",
+   "hash": "4604b51367c82640"
+  }
+ },
+ "贵|guì": {
+  "p": "guì",
+  "normal": {
+   "file": "6d639ec86a-n.mp3",
+   "hash": "081ee1439ebb9659"
+  },
+  "slow": {
+   "file": "6d639ec86a-s.mp3",
+   "hash": "112ea7b151a3e6fa"
+  }
+ },
+ "走|zǒu": {
+  "p": "zǒu",
+  "normal": {
+   "file": "0fe16891c3-n.mp3",
+   "hash": "cced88602f0747fc"
+  },
+  "slow": {
+   "file": "0fe16891c3-s.mp3",
+   "hash": "0aae1cf578718667"
+  }
+ },
+ "走路|zǒulù": {
+  "p": "zǒulù",
+  "normal": {
+   "file": "e8abe577c1-n.mp3",
+   "hash": "8562297e268c9d06"
+  },
+  "slow": {
+   "file": "e8abe577c1-s.mp3",
+   "hash": "51ac49ce3fdeb0e4"
+  }
+ },
+ "起床|qǐchuáng": {
+  "p": "qǐchuáng",
+  "normal": {
+   "file": "bcc4bcb6da-n.mp3",
+   "hash": "403a4a07ceaea4ac"
+  },
+  "slow": {
+   "file": "bcc4bcb6da-s.mp3",
+   "hash": "56fdef0d8c29c46c"
+  }
+ },
+ "起来|qǐlái": {
+  "p": "qǐlái",
+  "normal": {
+   "file": "bd88a6eb8c-n.mp3",
+   "hash": "c9d7e505b40c18ba"
+  },
+  "slow": {
+   "file": "bd88a6eb8c-s.mp3",
+   "hash": "ee2e910943a6c938"
+  }
+ },
+ "超市|chāoshì": {
+  "p": "chāoshì",
+  "normal": {
+   "file": "93f9fc800b-n.mp3",
+   "hash": "cc33789efebad2fe"
+  },
+  "slow": {
+   "file": "93f9fc800b-s.mp3",
+   "hash": "0d7f67fae73d9389"
+  }
+ },
+ "足球|zúqiú": {
+  "p": "zúqiú",
+  "normal": {
+   "file": "d2c8227d71-n.mp3",
+   "hash": "b5a121d6931bd593"
+  },
+  "slow": {
+   "file": "d2c8227d71-s.mp3",
+   "hash": "4d5895cc073ea865"
+  }
+ },
+ "跑|pǎo": {
+  "p": "pǎo",
+  "normal": {
+   "file": "25ef2e24e3-n.mp3",
+   "hash": "eedfe925d8f1bb9b"
+  },
+  "slow": {
+   "file": "25ef2e24e3-s.mp3",
+   "hash": "fef15e4c5a02ca2f"
+  }
+ },
+ "跑步|pǎobù": {
+  "p": "pǎobù",
+  "normal": {
+   "file": "653e511b6e-n.mp3",
+   "hash": "de87a4658dc04846"
+  },
+  "slow": {
+   "file": "653e511b6e-s.mp3",
+   "hash": "54589e22803cf5ff"
+  }
+ },
+ "跟|gēn": {
+  "p": "gēn",
+  "normal": {
+   "file": "ebc6c54a75-n.mp3",
+   "hash": "f17ae759e20ca57c"
+  },
+  "slow": {
+   "file": "ebc6c54a75-s.mp3",
+   "hash": "b2d8ec86e6603732"
+  }
+ },
+ "路|lù": {
+  "p": "lù",
+  "normal": {
+   "file": "087189d391-n.mp3",
+   "hash": "e9248b7668c23030"
+  },
+  "slow": {
+   "file": "087189d391-s.mp3",
+   "hash": "ded205481a24ee5d"
+  }
+ },
+ "路上|lùshang": {
+  "p": "lùshang",
+  "normal": {
+   "file": "75c1878671-n.mp3",
+   "hash": "92db5e546b744934"
+  },
+  "slow": {
+   "file": "75c1878671-s.mp3",
+   "hash": "6384ae869f7c3c18"
+  }
+ },
+ "跳舞|tiàowǔ": {
+  "p": "tiàowǔ",
+  "normal": {
+   "file": "f663c9509b-n.mp3",
+   "hash": "f20b09950809854b"
+  },
+  "slow": {
+   "file": "f663c9509b-s.mp3",
+   "hash": "81c7c22aa23c5e3d"
+  }
+ },
+ "踢|tī": {
+  "p": "tī",
+  "normal": {
+   "file": "348e837cac-n.mp3",
+   "hash": "107718f6aeab022c"
+  },
+  "slow": {
+   "file": "348e837cac-s.mp3",
+   "hash": "eb1afcf5fd40a2ac"
+  }
+ },
+ "身体|shēntǐ": {
+  "p": "shēntǐ",
+  "normal": {
+   "file": "1fef4ce9b6-n.mp3",
+   "hash": "51a296da705762fc"
+  },
+  "slow": {
+   "file": "1fef4ce9b6-s.mp3",
+   "hash": "0b83e966c3c8d38d"
+  }
+ },
+ "车|chē": {
+  "p": "chē",
+  "normal": {
+   "file": "e6bd868400-n.mp3",
+   "hash": "2385e2385d718b95"
+  },
+  "slow": {
+   "file": "e6bd868400-s.mp3",
+   "hash": "c2270b9f5a0e3ad3"
+  }
+ },
+ "车站|chēzhàn": {
+  "p": "chēzhàn",
+  "normal": {
+   "file": "26dd34e88c-n.mp3",
+   "hash": "f48c749edd46e17a"
+  },
+  "slow": {
+   "file": "26dd34e88c-s.mp3",
+   "hash": "b829792b5bf6ef08"
+  }
+ },
+ "边|biān": {
+  "p": "biān",
+  "normal": {
+   "file": "9b75f57c35-n.mp3",
+   "hash": "124f5bb5482f05ee"
+  },
+  "slow": {
+   "file": "9b75f57c35-s.mp3",
+   "hash": "2754517aa9322577"
+  }
+ },
+ "过|guo": {
+  "p": "guo",
+  "normal": {
+   "file": "e38031daf2-n.mp3",
+   "hash": "8fe0e49391387b4b"
+  },
+  "slow": {
+   "file": "e38031daf2-s.mp3",
+   "hash": "0a8f1388059426ae"
+  }
+ },
+ "过|guò": {
+  "p": "guò",
+  "normal": {
+   "file": "219d9560a1-n.mp3",
+   "hash": "f40ac38ce0a9b54c"
+  },
+  "slow": {
+   "file": "219d9560a1-s.mp3",
+   "hash": "a8bb2223d38219c6"
+  }
+ },
+ "过去|guòqù": {
+  "p": "guòqù",
+  "normal": {
+   "file": "bad2ae8b72-n.mp3",
+   "hash": "b0587e2683c66923"
+  },
+  "slow": {
+   "file": "bad2ae8b72-s.mp3",
+   "hash": "189b2f93dede18c8"
+  }
+ },
+ "过年|guònián": {
+  "p": "guònián",
+  "normal": {
+   "file": "dc2b354505-n.mp3",
+   "hash": "612abd1e2a7c79fa"
+  },
+  "slow": {
+   "file": "dc2b354505-s.mp3",
+   "hash": "3da00087498fd1b9"
+  }
+ },
+ "过来|guòlái": {
+  "p": "guòlái",
+  "normal": {
+   "file": "c3329057fa-n.mp3",
+   "hash": "9ee4a36fc49c79d3"
+  },
+  "slow": {
+   "file": "c3329057fa-s.mp3",
+   "hash": "3089a64ea600d7e8"
+  }
+ },
+ "运动|yùndòng": {
+  "p": "yùndòng",
+  "normal": {
+   "file": "9544591f5f-n.mp3",
+   "hash": "7ed77103608fd45c"
+  },
+  "slow": {
+   "file": "9544591f5f-s.mp3",
+   "hash": "f1a7a7cb9533bd75"
+  }
+ },
+ "近|jìn": {
+  "p": "jìn",
+  "normal": {
+   "file": "f429fe4a5e-n.mp3",
+   "hash": "60dc22e7537edfdf"
+  },
+  "slow": {
+   "file": "f429fe4a5e-s.mp3",
+   "hash": "8b0c3ab2ef812df3"
+  }
+ },
+ "还|hái": {
+  "p": "hái",
+  "normal": {
+   "file": "ac890560ea-n.mp3",
+   "hash": "23d77043acbd9880"
+  },
+  "slow": {
+   "file": "ac890560ea-s.mp3",
+   "hash": "26f8c9050cf2c49a"
+  }
+ },
+ "还是|háishi": {
+  "p": "háishi",
+  "normal": {
+   "file": "ab3ffe90f8-n.mp3",
+   "hash": "9c699621a9a29d52"
+  },
+  "slow": {
+   "file": "ab3ffe90f8-s.mp3",
+   "hash": "2b643012c09a0197"
+  }
+ },
+ "这|zhè": {
+  "p": "zhè",
+  "normal": {
+   "file": "1b7eb18f03-n.mp3",
+   "hash": "87fb6233b244d30f"
+  },
+  "slow": {
+   "file": "1b7eb18f03-s.mp3",
+   "hash": "acb9586e7172bcbc"
+  }
+ },
+ "这个|zhège": {
+  "p": "zhège",
+  "normal": {
+   "file": "84e82f2716-n.mp3",
+   "hash": "70830b668cdb8946"
+  },
+  "slow": {
+   "file": "84e82f2716-s.mp3",
+   "hash": "cfab2f4d3bd5243e"
+  }
+ },
+ "这么|zhème": {
+  "p": "zhème",
+  "normal": {
+   "file": "29c6b52e1f-n.mp3",
+   "hash": "7b7df7ab02b85252"
+  },
+  "slow": {
+   "file": "29c6b52e1f-s.mp3",
+   "hash": "c0ea92cc354c15e9"
+  }
+ },
+ "这些|zhèxiē": {
+  "p": "zhèxiē",
+  "normal": {
+   "file": "451938b4f5-n.mp3",
+   "hash": "d8b6d0e81b41017c"
+  },
+  "slow": {
+   "file": "451938b4f5-s.mp3",
+   "hash": "39dd4e318b95377a"
+  }
+ },
+ "这儿|zhèr": {
+  "p": "zhèr",
+  "normal": {
+   "file": "08c5337e38-n.mp3",
+   "hash": "98d9a006a88209b6"
+  },
+  "slow": {
+   "file": "08c5337e38-s.mp3",
+   "hash": "3decfbe187097f41"
+  }
+ },
+ "这样|zhèyàng": {
+  "p": "zhèyàng",
+  "normal": {
+   "file": "ffa179e2f0-n.mp3",
+   "hash": "46ac90f133e19fe8"
+  },
+  "slow": {
+   "file": "ffa179e2f0-s.mp3",
+   "hash": "bcab6e42025798f8"
+  }
+ },
+ "这边|zhèbiān": {
+  "p": "zhèbiān",
+  "normal": {
+   "file": "00c8a49835-n.mp3",
+   "hash": "da0c4d89dd341702"
+  },
+  "slow": {
+   "file": "00c8a49835-s.mp3",
+   "hash": "289442e0c82e3cfe"
+  }
+ },
+ "这里|zhèlǐ": {
+  "p": "zhèlǐ",
+  "normal": {
+   "file": "1dd5fcae06-n.mp3",
+   "hash": "a7d5957cf8abffa1"
+  },
+  "slow": {
+   "file": "1dd5fcae06-s.mp3",
+   "hash": "636d75859893b24e"
+  }
+ },
+ "进|jìn": {
+  "p": "jìn",
+  "normal": {
+   "file": "d979815dc8-n.mp3",
+   "hash": "8f6ab81c00a6ad13"
+  },
+  "slow": {
+   "file": "d979815dc8-s.mp3",
+   "hash": "f6705c556ab02078"
+  }
+ },
+ "进去|jìnqù": {
+  "p": "jìnqù",
+  "normal": {
+   "file": "f0840cb9fc-n.mp3",
+   "hash": "aad7d906f955d7a1"
+  },
+  "slow": {
+   "file": "f0840cb9fc-s.mp3",
+   "hash": "3e57bc3f49de9458"
+  }
+ },
+ "进来|jìnlái": {
+  "p": "jìnlái",
+  "normal": {
+   "file": "5c4c89040a-n.mp3",
+   "hash": "4129c5471bfd099c"
+  },
+  "slow": {
+   "file": "5c4c89040a-s.mp3",
+   "hash": "64a9705b4e0138ba"
+  }
+ },
+ "远|yuǎn": {
+  "p": "yuǎn",
+  "normal": {
+   "file": "2d6ef9e443-n.mp3",
+   "hash": "77ac727b4c8875ea"
+  },
+  "slow": {
+   "file": "2d6ef9e443-s.mp3",
+   "hash": "45392ea1afe2f09e"
+  }
+ },
+ "送|sòng": {
+  "p": "sòng",
+  "normal": {
+   "file": "f20d089e10-n.mp3",
+   "hash": "8e28f7f34c791757"
+  },
+  "slow": {
+   "file": "f20d089e10-s.mp3",
+   "hash": "f6e854578eb1e119"
+  }
+ },
+ "那|nà": {
+  "p": "nà",
+  "normal": {
+   "file": "a203b3a953-n.mp3",
+   "hash": "c35cc5884600fd66"
+  },
+  "slow": {
+   "file": "a203b3a953-s.mp3",
+   "hash": "6dc1e9f7b9fae39b"
+  }
+ },
+ "那个|nàge": {
+  "p": "nàge",
+  "normal": {
+   "file": "30617a85c7-n.mp3",
+   "hash": "246c9b00d92db0a5"
+  },
+  "slow": {
+   "file": "30617a85c7-s.mp3",
+   "hash": "1234a24decd0647e"
+  }
+ },
+ "那么|nàme": {
+  "p": "nàme",
+  "normal": {
+   "file": "af03b145a3-n.mp3",
+   "hash": "6ef162e76aa2336f"
+  },
+  "slow": {
+   "file": "af03b145a3-s.mp3",
+   "hash": "0a47ed8e264e978b"
+  }
+ },
+ "那些|nàxiē": {
+  "p": "nàxiē",
+  "normal": {
+   "file": "3b91d27b0d-n.mp3",
+   "hash": "6e3d59ab265bb18c"
+  },
+  "slow": {
+   "file": "3b91d27b0d-s.mp3",
+   "hash": "b5ddb0d433b044ea"
+  }
+ },
+ "那儿|nàr": {
+  "p": "nàr",
+  "normal": {
+   "file": "f95b8979ba-n.mp3",
+   "hash": "e8ebbd68b8244eb4"
+  },
+  "slow": {
+   "file": "f95b8979ba-s.mp3",
+   "hash": "9225f4922a6f2832"
+  }
+ },
+ "那样|nàyàng": {
+  "p": "nàyàng",
+  "normal": {
+   "file": "75df97fbf0-n.mp3",
+   "hash": "448a206867be9cd9"
+  },
+  "slow": {
+   "file": "75df97fbf0-s.mp3",
+   "hash": "de4e3a0ec58d51dd"
+  }
+ },
+ "那边|nàbiān": {
+  "p": "nàbiān",
+  "normal": {
+   "file": "a907a196e7-n.mp3",
+   "hash": "f95e6d3d35f40645"
+  },
+  "slow": {
+   "file": "a907a196e7-s.mp3",
+   "hash": "c1323db98981b2c4"
+  }
+ },
+ "那里|nàlǐ": {
+  "p": "nàlǐ",
+  "normal": {
+   "file": "e343c6d32e-n.mp3",
+   "hash": "22ea65b78649374e"
+  },
+  "slow": {
+   "file": "e343c6d32e-s.mp3",
+   "hash": "694a3691ee921ce8"
+  }
+ },
+ "都|dōu": {
+  "p": "dōu",
+  "normal": {
+   "file": "19ed6ff79d-n.mp3",
+   "hash": "9d98ae37128c9996"
+  },
+  "slow": {
+   "file": "19ed6ff79d-s.mp3",
+   "hash": "3a047fbb01797018"
+  }
+ },
+ "酒店|jiǔdiàn": {
+  "p": "jiǔdiàn",
+  "normal": {
+   "file": "a1a18ba443-n.mp3",
+   "hash": "6398a38f48eb2cda"
+  },
+  "slow": {
+   "file": "a1a18ba443-s.mp3",
+   "hash": "4d3ddb67c34e2c40"
+  }
+ },
+ "里|lǐ": {
+  "p": "lǐ",
+  "normal": {
+   "file": "bb3128e30b-n.mp3",
+   "hash": "56146828e8f8bc18"
+  },
+  "slow": {
+   "file": "bb3128e30b-s.mp3",
+   "hash": "4dff491b36c7e88e"
+  }
+ },
+ "里面|lǐmiàn": {
+  "p": "lǐmiàn",
+  "normal": {
+   "file": "5508acaf81-n.mp3",
+   "hash": "1e694d76ab940806"
+  },
+  "slow": {
+   "file": "5508acaf81-s.mp3",
+   "hash": "994c5d3e2796ac43"
+  }
+ },
+ "钱|qián": {
+  "p": "qián",
+  "normal": {
+   "file": "6543b31b4c-n.mp3",
+   "hash": "2869e547de325c7c"
+  },
+  "slow": {
+   "file": "6543b31b4c-s.mp3",
+   "hash": "cbe05b37d20ae6e7"
+  }
+ },
+ "错|cuò": {
+  "p": "cuò",
+  "normal": {
+   "file": "9578a9e68c-n.mp3",
+   "hash": "364ef1002f09d95f"
+  },
+  "slow": {
+   "file": "9578a9e68c-s.mp3",
+   "hash": "29a71a71d5ded610"
+  }
+ },
+ "长|cháng": {
+  "p": "cháng",
+  "normal": {
+   "file": "d7d9065863-n.mp3",
+   "hash": "9da3f96f3fb5177f"
+  },
+  "slow": {
+   "file": "d7d9065863-s.mp3",
+   "hash": "1af02f771fafafe0"
+  }
+ },
+ "门|mén": {
+  "p": "mén",
+  "normal": {
+   "file": "26e675ce12-n.mp3",
+   "hash": "addb65a39452834a"
+  },
+  "slow": {
+   "file": "26e675ce12-s.mp3",
+   "hash": "040b8b90bb3627dc"
+  }
+ },
+ "门口|ménkǒu": {
+  "p": "ménkǒu",
+  "normal": {
+   "file": "4bdb5f5d80-n.mp3",
+   "hash": "b8aa86edefc35118"
+  },
+  "slow": {
+   "file": "4bdb5f5d80-s.mp3",
+   "hash": "6eb3cde1ccb8efb3"
+  }
+ },
+ "门票|ménpiào": {
+  "p": "ménpiào",
+  "normal": {
+   "file": "07fea7eb61-n.mp3",
+   "hash": "eefc26c1b0e719f7"
+  },
+  "slow": {
+   "file": "07fea7eb61-s.mp3",
+   "hash": "f571baea08cd924d"
+  }
+ },
+ "问|wèn": {
+  "p": "wèn",
+  "normal": {
+   "file": "49284907a7-n.mp3",
+   "hash": "dc1229d2c6dd30e2"
+  },
+  "slow": {
+   "file": "49284907a7-s.mp3",
+   "hash": "af9a03eb60edc68b"
+  }
+ },
+ "问题|wèntí": {
+  "p": "wèntí",
+  "normal": {
+   "file": "0c96fe6283-n.mp3",
+   "hash": "b9c92e6739437255"
+  },
+  "slow": {
+   "file": "0c96fe6283-s.mp3",
+   "hash": "15f8d2e67ae0ad3b"
+  }
+ },
+ "间|jiān": {
+  "p": "jiān",
+  "normal": {
+   "file": "f66175beb4-n.mp3",
+   "hash": "582c76273bc53768"
+  },
+  "slow": {
+   "file": "f66175beb4-s.mp3",
+   "hash": "111e720ff7b06abd"
+  }
+ },
+ "阴|yīn": {
+  "p": "yīn",
+  "normal": {
+   "file": "27d8bb22ae-n.mp3",
+   "hash": "3c07c1e453c6aeec"
+  },
+  "slow": {
+   "file": "27d8bb22ae-s.mp3",
+   "hash": "2201b9dfdad393c6"
+  }
+ },
+ "雨|yǔ": {
+  "p": "yǔ",
+  "normal": {
+   "file": "71fda2cd6b-n.mp3",
+   "hash": "f56589d42c362bed"
+  },
+  "slow": {
+   "file": "71fda2cd6b-s.mp3",
+   "hash": "7377eb3e63cc0475"
+  }
+ },
+ "雪|xuě": {
+  "p": "xuě",
+  "normal": {
+   "file": "e37a255c5f-n.mp3",
+   "hash": "9d032a86fba00229"
+  },
+  "slow": {
+   "file": "e37a255c5f-s.mp3",
+   "hash": "2188133c5c47ce1f"
+  }
+ },
+ "零|líng": {
+  "p": "líng",
+  "normal": {
+   "file": "0e74644fd9-n.mp3",
+   "hash": "080fad18928b3831"
+  },
+  "slow": {
+   "file": "0e74644fd9-s.mp3",
+   "hash": "922d31c711beba0d"
+  }
+ },
+ "非常|fēicháng": {
+  "p": "fēicháng",
+  "normal": {
+   "file": "568e56ff0b-n.mp3",
+   "hash": "b5c86bfe2363cfb2"
+  },
+  "slow": {
+   "file": "568e56ff0b-s.mp3",
+   "hash": "92fd7b5b7d4a881d"
+  }
+ },
+ "面|miàn": {
+  "p": "miàn",
+  "normal": {
+   "file": "34653e643f-n.mp3",
+   "hash": "9e7ee423bb1b1362"
+  },
+  "slow": {
+   "file": "34653e643f-s.mp3",
+   "hash": "c47a7c52376a2ec1"
+  }
+ },
+ "面包|miànbāo": {
+  "p": "miànbāo",
+  "normal": {
+   "file": "f37612c224-n.mp3",
+   "hash": "baa77519fa16c15f"
+  },
+  "slow": {
+   "file": "f37612c224-s.mp3",
+   "hash": "d25e92ab07119133"
+  }
+ },
+ "面条儿|miàntiáor": {
+  "p": "miàntiáor",
+  "normal": {
+   "file": "d609e7154c-n.mp3",
+   "hash": "fbe8f8747ea27308"
+  },
+  "slow": {
+   "file": "d609e7154c-s.mp3",
+   "hash": "0dc022d5dc51eb4c"
+  }
+ },
+ "题|tí": {
+  "p": "tí",
+  "normal": {
+   "file": "5436dfc6b8-n.mp3",
+   "hash": "a014499da30f5751"
+  },
+  "slow": {
+   "file": "5436dfc6b8-s.mp3",
+   "hash": "5ceff65584108ada"
+  }
+ },
+ "颜色|yánsè": {
+  "p": "yánsè",
+  "normal": {
+   "file": "381264126b-n.mp3",
+   "hash": "e65dcd9aec50d908"
+  },
+  "slow": {
+   "file": "381264126b-s.mp3",
+   "hash": "25d339231ac69e76"
+  }
+ },
+ "飞|fēi": {
+  "p": "fēi",
+  "normal": {
+   "file": "573576be60-n.mp3",
+   "hash": "351720ec4a30f8a1"
+  },
+  "slow": {
+   "file": "573576be60-s.mp3",
+   "hash": "8d26050e44fc34d8"
+  }
+ },
+ "飞机|fēijī": {
+  "p": "fēijī",
+  "normal": {
+   "file": "622207f6b0-n.mp3",
+   "hash": "d19cc4791e856fe7"
+  },
+  "slow": {
+   "file": "622207f6b0-s.mp3",
+   "hash": "f7c64241ea80a827"
+  }
+ },
+ "饭|fàn": {
+  "p": "fàn",
+  "normal": {
+   "file": "a478fc545f-n.mp3",
+   "hash": "6f0fae6a00692fd3"
+  },
+  "slow": {
+   "file": "a478fc545f-s.mp3",
+   "hash": "bca0bdfe69d22fc8"
+  }
+ },
+ "饭店|fàndiàn": {
+  "p": "fàndiàn",
+  "normal": {
+   "file": "29f28809af-n.mp3",
+   "hash": "044f19479bb04ba8"
+  },
+  "slow": {
+   "file": "29f28809af-s.mp3",
+   "hash": "ba8722f87ea8ffd9"
+  }
+ },
+ "饭馆|fànguǎn": {
+  "p": "fànguǎn",
+  "normal": {
+   "file": "2c7fe5a586-n.mp3",
+   "hash": "a4d310e4f519a16e"
+  },
+  "slow": {
+   "file": "2c7fe5a586-s.mp3",
+   "hash": "bbed30dcbb6161da"
+  }
+ },
+ "饺子|jiǎozi": {
+  "p": "jiǎozi",
+  "normal": {
+   "file": "449f2e3af2-n.mp3",
+   "hash": "46bd4bfc646d4416"
+  },
+  "slow": {
+   "file": "449f2e3af2-s.mp3",
+   "hash": "c2198ede0b037b30"
+  }
+ },
+ "高|gāo": {
+  "p": "gāo",
+  "normal": {
+   "file": "bdb1ae5f85-n.mp3",
+   "hash": "d581732b11827f00"
+  },
+  "slow": {
+   "file": "bdb1ae5f85-s.mp3",
+   "hash": "c53994957e87fbed"
+  }
+ },
+ "高中|gāozhōng": {
+  "p": "gāozhōng",
+  "normal": {
+   "file": "20c1cf9766-n.mp3",
+   "hash": "8f70c892388fc42a"
+  },
+  "slow": {
+   "file": "20c1cf9766-s.mp3",
+   "hash": "c0b04b088afb324e"
+  }
+ },
+ "高兴|gāoxìng": {
+  "p": "gāoxìng",
+  "normal": {
+   "file": "3a69867489-n.mp3",
+   "hash": "0e05f537d8b5721b"
+  },
+  "slow": {
+   "file": "3a69867489-s.mp3",
+   "hash": "c2e4d0229e7ba902"
+  }
+ },
+ "鱼|yú": {
+  "p": "yú",
+  "normal": {
+   "file": "cf5da1197f-n.mp3",
+   "hash": "075e949cf44aa592"
+  },
+  "slow": {
+   "file": "cf5da1197f-s.mp3",
+   "hash": "6bd8d0a10f5f3ce5"
+  }
+ },
+ "鸟|niǎo": {
+  "p": "niǎo",
+  "normal": {
+   "file": "2437afb044-n.mp3",
+   "hash": "c7191da8866cbffa"
+  },
+  "slow": {
+   "file": "2437afb044-s.mp3",
+   "hash": "37759617250dedc6"
+  }
+ },
+ "鸡蛋|jīdàn": {
+  "p": "jīdàn",
+  "normal": {
+   "file": "28fe66094d-n.mp3",
+   "hash": "18658460437b08ce"
+  },
+  "slow": {
+   "file": "28fe66094d-s.mp3",
+   "hash": "44433c0a9988656c"
+  }
+ },
+ "黑色|hēisè": {
+  "p": "hēisè",
+  "normal": {
+   "file": "8926736cd8-n.mp3",
+   "hash": "42bb3ce9a41324bd"
+  },
+  "slow": {
+   "file": "8926736cd8-s.mp3",
+   "hash": "7a4ba27e27663ce7"
+  }
+ }
+}
