@@ -5,6 +5,7 @@ import { Sound } from '../audio/sound';
 import { Speech } from '../audio/speech';
 import { Voice } from '../audio/voice';
 import { Stage } from '../stage/stage';
+import { Ambient } from '../render/ambient';
 import { Bubble, type BubbleState, type Edge } from '../bubble/bubble';
 import { Chips } from '../ui/chips';
 import { Hud } from '../ui/hud';
@@ -82,6 +83,10 @@ export function startGame(opts: GameOptions): GameHandle {
     }
   });
   stage.onResize(() => chips.measure());
+  // the world behind the tabs: soft bubbles or lantern glows drifting under the glass
+  const ambient = new Ambient(reduceMotion);
+  stage.scene.add(ambient.group);
+  stage.onResize(() => ambient.resize(stage.visW, stage.visH));
   stage.idle = () => bubble.asleep || bubble.state === 'hidden';
   stage.perf = {
     busy: () => bubble.state === 'popping' || bubble.dragging,
@@ -152,6 +157,7 @@ export function startGame(opts: GameOptions): GameHandle {
     stage.backdrop.setStyle(theme.wallFonts, theme.paper);
     stage.commitPalette(0, instant);
     bubble.setTheme(theme);
+    ambient.setStyle(style === 'ink');
     // the page's fonts changed, so the answers' sizes did too
     chips.measure();
     if (playing) fit();
@@ -164,6 +170,7 @@ export function startGame(opts: GameOptions): GameHandle {
     chips.out();
     stage.backdrop.setWord('', false);
     home.show();
+    ambient.show(true);
     updateHud();
   }
   /** Leaves the shell for a mode; `from` is the tapped button, whose orb zooms into the task. */
@@ -181,6 +188,7 @@ export function startGame(opts: GameOptions): GameHandle {
     current = mode; currentId = id;
     mode.prepare?.();
     const target = from ?? document.querySelector<HTMLElement>(`[data-mode="${id}"]`);
+    ambient.show(false);
     home.leave(target, () => { playing = true; mode.start(arg); });
   }
   $('homeBtn').addEventListener('click', () => showHome());
@@ -218,7 +226,8 @@ export function startGame(opts: GameOptions): GameHandle {
   showHome();
   hud.modeLabel(null);
   if (!reduceMotion) gsap.from('.topbar', { opacity: 0, y: -10, duration: 0.8, delay: 0.3, ease: 'power2.out' });
-  stage.run(dt => bubble.update(dt));
+  let clock = 0;
+  stage.run(dt => { clock += dt; ambient.update(dt, clock); return bubble.update(dt); });
   document.fonts?.ready.then(() => { stage.backdrop.layout(); chips.measure(); }).catch(() => {});
 
   // the bubble is hidden while playing only between a burst core and the next bubble, while the slip is up

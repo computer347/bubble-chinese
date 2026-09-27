@@ -6,6 +6,7 @@ import { Scheduler } from '../game/scheduler';
 import { gradeBubble, dueLabel } from '../game/memory';
 import type { Skill } from '../game/progress';
 import { $ } from '../ui/dom';
+import { gsap } from 'gsap';
 import type { Mode, ModeContext } from './mode';
 
 /**
@@ -13,6 +14,17 @@ import type { Mode, ModeContext } from './mode';
  * on the edges. Pull the bubble to the right answer to pop a layer; the core ends in a fortune slip.
  * Subclasses say which skill it trains, how the layers are asked, and what happens around them.
  */
+/** A glass chip with a bubble's result, rising from where its core popped and fading away. */
+function resultChip(text: string, at: { x: number; y: number } | null, reduceMotion: boolean): void {
+  const chip = Object.assign(document.createElement('div'), { className: 'popchip', textContent: text });
+  chip.setAttribute('aria-hidden', 'true');
+  chip.style.left = `${at?.x ?? innerWidth / 2}px`;
+  chip.style.top = `${at?.y ?? innerHeight / 2}px`;
+  document.body.append(chip);
+  gsap.fromTo(chip, { xPercent: -50, yPercent: -50, scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: reduceMotion ? 0.05 : 0.35, ease: 'back.out(2)' });
+  gsap.to(chip, { y: -70, opacity: 0, duration: reduceMotion ? 0.3 : 0.9, delay: reduceMotion ? 0.3 : 0.55, ease: 'power2.in', onComplete: () => chip.remove() });
+}
+
 /** One bubble to play: a word, and the skill it trains. */
 export interface NextBubble { word: Word; skill: Skill }
 
@@ -22,6 +34,8 @@ export abstract class LayeredMode implements Mode {
   correctEdge: Edge = 'top';
   /** Wrong answers on the current layer. */
   wrongThisLayer = 0;
+  /** Where the core popped on screen, so the slip (or the result chip) comes out of that point. */
+  private popAt: { x: number; y: number } | null = null;
   /** Where the last right answer was, so the next one goes elsewhere. */
   private lastEdge: number | null = null;
   protected abstract readonly skill: Skill;
@@ -202,6 +216,8 @@ export abstract class LayeredMode implements Mode {
 
   private popCore(vi: number): void {
     const { bubble, chips, hud, progress } = this.ctx;
+    const c = bubble.screenCircle();
+    this.popAt = { x: c.x, y: c.y };
     bubble.popCore(vi);
     chips.out();
     hud.ask('Popped!');
@@ -239,12 +255,17 @@ export abstract class LayeredMode implements Mode {
   private showSlip(): void {
     const { slip, progress, session } = this.ctx;
     if (!this.word) return;
-    if (!this.slipAfter) { setTimeout(() => this.spawn(), this.ctx.stage.reduceMotion ? 50 : 250); return; }
+    if (!this.slipAfter) {
+      // no slip inside a lesson: a small result chip rises from where the core popped instead
+      resultChip(this.cleanRun ? `Clean · +${this.bubblePts}` : `+${this.bubblePts}`, this.popAt, this.ctx.stage.reduceMotion);
+      setTimeout(() => this.spawn(), this.ctx.stage.reduceMotion ? 50 : 250);
+      return;
+    }
     const next = dueLabel({ due: this.lastDue }, new Date()).replace('due now', 'right away');
     const result = this.cleanRun
       ? `Clean pop, ${this.bubblePts} points. Streak ${session.streak}. Next review ${next}.`
       : `${this.bubblePts} points. This word comes back ${next}.`;
-    slip.show(this.word, result, progress.data.settings.maxLevel, () => this.spawn());
+    slip.show(this.word, result, progress.data.settings.maxLevel, () => this.spawn(), this.popAt ?? undefined);
   }
 
   /** For the end-to-end tests: the layer queue as type, revealed, retest. */

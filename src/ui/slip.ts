@@ -39,10 +39,37 @@ export class Slip {
     $('hearSlow').addEventListener('click', () => { if (this.word) d.voice.say(this.word, true); });
     $('exPlay').addEventListener('click', () => { if (this.example) void d.voice.saySentence(this.example, false, i => this.highlight(i)); });
     $('exSlow').addEventListener('click', () => { if (this.example) void d.voice.saySentence(this.example, true, i => this.highlight(i)); });
+    this.swipeAway();
   }
 
-  /** Shows the slip for a word. `next` runs shortly after it is closed. */
-  show(word: Word, result: string, maxLevel: number, next: () => void): void {
+  /** A flick upward sends the slip off, like tapping the button: it follows the finger, and springs back if let go early. */
+  private swipeAway(): void {
+    let startY = 0, dy = 0, dragging = false;
+    this.slipEl.addEventListener('pointerdown', e => {
+      if (!this.open || (e.target as HTMLElement).closest('button, a')) return;
+      dragging = true; startY = e.clientY; dy = 0;
+      this.slipEl.setPointerCapture(e.pointerId);
+    });
+    this.slipEl.addEventListener('pointermove', e => {
+      if (!dragging) return;
+      dy = Math.min(0, e.clientY - startY);
+      gsap.set(this.slipEl, { y: dy, rotation: dy / 40 });
+    });
+    const end = () => {
+      if (!dragging) return;
+      dragging = false;
+      if (dy < -90) this.close();
+      else gsap.to(this.slipEl, { y: 0, rotation: 0, duration: 0.5, ease: 'elastic.out(1,.5)' });
+    };
+    this.slipEl.addEventListener('pointerup', end);
+    this.slipEl.addEventListener('pointercancel', end);
+  }
+
+  /**
+   * Shows the slip for a word, unfolding from `from` (where the core popped, in page pixels) when
+   * given. `next` runs shortly after it is closed.
+   */
+  show(word: Word, result: string, maxLevel: number, next: () => void, from?: { x: number; y: number }): void {
     const { voice, speech, sound, reduceMotion } = this.d;
     this.word = word;
     this.next = next;
@@ -57,7 +84,12 @@ export class Slip {
     this.renderExample(word, maxLevel);
     this.noteEl.hidden = false;
     gsap.killTweensOf([this.slipEl, this.nextBtn]);
-    gsap.fromTo(this.slipEl, { scaleX: 0.04, scaleY: 0.5, rotation: -10, y: 40, opacity: 0 }, { scaleX: 1, scaleY: 1, rotation: rand(-2, 2), y: 0, opacity: 1, duration: reduceMotion ? 0.2 : 1.15, ease: 'elastic.out(1,.5)' });
+    // unfold from the popped core: scale up out of that point, sharpening as it comes
+    const r = this.slipEl.getBoundingClientRect();
+    const origin = from ? `${from.x - r.left}px ${from.y - r.top}px` : '50% 60%';
+    gsap.fromTo(this.slipEl,
+      { scale: 0.06, rotation: -8, y: 0, opacity: 0, filter: 'blur(10px)', transformOrigin: origin },
+      { scale: 1, rotation: rand(-2, 2), opacity: 1, filter: 'blur(0px)', duration: reduceMotion ? 0.2 : 1.05, ease: 'elastic.out(1,.55)', clearProps: 'filter' });
     gsap.fromTo(this.nextBtn, { opacity: 0, y: 14 }, { opacity: 1, y: 0, delay: reduceMotion ? 0 : 0.5, duration: 0.45, ease: 'power2.out' });
     sound.paper();
     setTimeout(() => voice.say(word), 650);
@@ -71,8 +103,8 @@ export class Slip {
     this.d.voice.stop();
     this.highlight(null);
     this.d.sound.paper();
-    gsap.to(this.slipEl, { y: -50, rotation: rand(-16, 16), scale: 0.9, opacity: 0, duration: 0.42, ease: 'power2.in' });
-    gsap.to(this.nextBtn, { opacity: 0, duration: 0.25, onComplete: () => { this.noteEl.hidden = true; gsap.set(this.slipEl, { scale: 1 }); } });
+    gsap.to(this.slipEl, { y: '-=120', rotation: rand(-16, 16), scale: 0.9, opacity: 0, duration: 0.42, ease: 'power2.in' });
+    gsap.to(this.nextBtn, { opacity: 0, duration: 0.25, onComplete: () => { this.noteEl.hidden = true; gsap.set(this.slipEl, { scale: 1, y: 0 }); } });
     const next = this.next;
     this.next = null;
     if (next) setTimeout(next, 250);

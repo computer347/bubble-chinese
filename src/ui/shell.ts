@@ -58,6 +58,8 @@ export class Shell {
   private readonly bar = $('tabbar');
   private readonly cards = $('modeCards');
   private readonly pathView: PathView;
+  /** The orb a task was entered from, so returning shrinks back into it. */
+  private from: HTMLElement | null = null;
 
   constructor(private readonly d: ShellDeps) {
     $('todayBtn').addEventListener('click', e => d.onEnter('today', e.currentTarget as HTMLElement));
@@ -167,8 +169,16 @@ export class Shell {
     this.bar.hidden = false;
     gsap.fromTo(this.bar, { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: this.d.reduceMotion ? 0.05 : 0.5, ease: 'back.out(1.6)' });
     this.open(tab, true);
-    const orbs = this.el.querySelectorAll(`#tab-${tab} .hero-orb, #tab-${tab} .card .mode, #tab-${tab} .stop .mode`);
-    gsap.fromTo(orbs, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: this.d.reduceMotion ? 0.1 : 0.9, stagger: 0.04, ease: 'elastic.out(1,.45)', clearProps: 'transform' });
+    const back = this.from && this.from.isConnected && this.from.getClientRects().length ? this.from : null;
+    this.from = null;
+    if (back) {
+      // back from a task: the screen shrinks into the orb it came out of, which gives a little bounce
+      zoomBack(back, this.d.reduceMotion);
+      gsap.fromTo(back, { scale: 1.3 }, { scale: 1, duration: this.d.reduceMotion ? 0.05 : 0.8, delay: 0.25, ease: 'elastic.out(1,.4)', clearProps: 'transform' });
+    } else {
+      const orbs = this.el.querySelectorAll(`#tab-${tab} .hero-orb, #tab-${tab} .card .mode, #tab-${tab} .stop .mode`);
+      gsap.fromTo(orbs, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: this.d.reduceMotion ? 0.1 : 0.9, stagger: 0.04, ease: 'elastic.out(1,.45)', clearProps: 'transform' });
+    }
     $('title').textContent = 'Squish: pop bubbles to learn Chinese';
   }
 
@@ -178,6 +188,7 @@ export class Shell {
    */
   leave(from: HTMLElement | null, then: () => void): void {
     const orb = from?.querySelector<HTMLElement>('.mode') ?? from;
+    this.from = orb;
     const fill = zoomFill(orb, this.d.reduceMotion);
     gsap.to(this.bar, { y: 90, opacity: 0, duration: 0.25, ease: 'power2.in', onComplete: () => { this.bar.hidden = true; } });
     if (orb) gsap.to(orb, { scale: 1.5, duration: 0.35, ease: 'power2.in' });
@@ -207,6 +218,20 @@ function zoomFill(from: HTMLElement | null, reduceMotion: boolean): () => void {
   document.body.append(disc);
   gsap.fromTo(disc, { clipPath: `circle(${r.width / 2}px at ${cx}px ${cy}px)` }, { clipPath: `circle(${reach}px at ${cx}px ${cy}px)`, duration: 0.42, ease: 'power3.in' });
   return () => gsap.to(disc, { opacity: 0, duration: 0.45, delay: 0.05, ease: 'power2.out', onComplete: () => disc.remove() });
+}
+
+/** The way back: a disc of the orb's colour covers the screen, then shrinks into the orb and is gone. */
+function zoomBack(to: HTMLElement, reduceMotion: boolean): void {
+  if (reduceMotion) return;
+  const r = to.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+  const cs = getComputedStyle(to);
+  const colour = cs.getPropertyValue('--c2').trim() || 'rgba(255,255,255,.4)';
+  const reach = Math.hypot(Math.max(cx, innerWidth - cx), Math.max(cy, innerHeight - cy));
+  const disc = Object.assign(document.createElement('div'), { className: 'zoomfill' });
+  disc.style.background = `radial-gradient(circle at ${cx}px ${cy}px, ${colour} 0, color-mix(in srgb, ${colour} 70%, var(--bg)) 70%)`;
+  document.body.append(disc);
+  gsap.fromTo(disc, { clipPath: `circle(${reach}px at ${cx}px ${cy}px)` }, { clipPath: `circle(${r.width / 2}px at ${cx}px ${cy}px)`, duration: 0.45, ease: 'power3.inOut' });
+  gsap.to(disc, { opacity: 0, duration: 0.25, delay: 0.38, onComplete: () => disc.remove() });
 }
 
 function wordTile(w: Word, tag: string, cls: string, voice: Voice): HTMLLIElement {

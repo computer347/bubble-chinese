@@ -187,6 +187,7 @@ body:not(.at-home) .home-only{ display:none; }
   .ans[data-edge="bottom"]{ bottom:calc(var(--sb) + 22px); }
   .ans[data-edge="left"], .ans[data-edge="right"]{ max-width:30vw; }
   .learnrow{ gap:12px; flex-wrap:wrap; }
+  .learnrow .hearbtns{ flex-basis:100%; }
 }
 
 /* dictation: a typed answer in place of the chips */
@@ -497,4 +498,28 @@ body.at-home .back{ visibility:hidden; }
   .tabbtn{ min-width:64px; }
   .tab{ padding:0 16px; }
   .you-stat b{ font-size:22px; }
+}
+
+/* ---------- R2: micro-motion ---------- */
+/* a press squishes a little and springs back, the same jelly as the bubbles */
+.card, .hero, .stop-btn, .wcard, .pill, .levels button, .tabbtn, .lopt, .btile, .next, .forgot, .hear, .punit-note, .stop-write, .menu-words{
+  transition:transform .45s cubic-bezier(.34,1.56,.64,1), border-color .2s, background-color .2s, color .2s;
+}
+.card:active:not(:disabled), .hero:active:not(:disabled), .stop-btn:active:not(:disabled), .wcard:active, .pill:active, .levels button:active, .tabbtn:active,
+.lopt:active, .btile:active, .next:active, .forgot:active:not(:disabled), .hear:active, .punit-note:active, .stop-write:active{
+  transform:scale(.95); transition-duration:.08s;
+}
+/* a lesson result rising from the popped core */
+.popchip{
+  position:fixed; z-index:6; pointer-events:none; padding:8px 14px; border-radius:999px;
+  font:700 15px/1 var(--font); color:var(--ui); white-space:nowrap;
+  background:color-mix(in srgb, var(--bg) 55%, transparent);
+  -webkit-backdrop-filter:blur(14px) saturate(160%); backdrop-filter:blur(14px) saturate(160%);
+  box-shadow:inset 0 1px 0 color-mix(in srgb, #fff 45%, transparent), inset 0 0 0 1px color-mix(in srgb, var(--ui) 18%, transparent), 0 10px 24px -12px rgba(0,0,0,.5);
+}
+/* the slip can be flicked up and away */
+.slip{ touch-action:pan-x; cursor:grab; }
+.slip button, .slip a{ cursor:pointer; }
+@media (prefers-reduced-motion: reduce){
+  .card, .hero, .stop-btn, .wcard, .pill, .levels button, .tabbtn, .lopt, .btile, .next, .forgot, .hear{ transition:none; }
 }
