@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { gsap } from 'gsap';
-import { QUIZ_WORDS, LEVELS, type Word } from '../content/words';
+import { QUIZ_WORDS, WORDS, LEVELS, type Word } from '../content/words';
+import { examplesFor, ROLE_NAMES, type Sentence } from '../content/sentences';
 import { FORTUNES } from '../content/fortunes';
 import { PALETTES, PHYS, type Physics } from '../content/palettes';
 import { SoftBody, DETAILS } from '../engine/softbody';
@@ -530,6 +531,7 @@ export function startGame(opts: GameOptions): GameHandle {
     $('zhEn').textContent = word.e;
     $('lucky').textContent = luckyNumbers();
     $('novoice').hidden = voice.hasClip(word) || (speech.available && speech.hasChineseVoice());
+    renderExample(word);
     noteEl.hidden = false;
     gsap.killTweensOf([slipEl, nextBtn]);
     gsap.fromTo(slipEl, { scaleX: 0.04, scaleY: 0.5, rotation: -10, y: 40, opacity: 0 }, { scaleX: 1, scaleY: 1, rotation: rand(-2, 2), y: 0, opacity: 1, duration: reduceMotion ? 0.2 : 1.15, ease: 'elastic.out(1,.5)' });
@@ -539,9 +541,44 @@ export function startGame(opts: GameOptions): GameHandle {
     setTimeout(() => voice.say(w), 650);
     setTimeout(() => nextBtn.focus({ preventScroll: true }), 80);
   }
+  /* ---------- example sentence: tap a word to hear it cut from the spoken sentence ---------- */
+  const wordsById = new Map(WORDS.map(w => [w.id, w]));
+  let example: Sentence | null = null;
+  function renderExample(w: Word): void {
+    const box = $('example'), zh = $('exZh');
+    const list = examplesFor(w.id, progress.data.settings.maxLevel);
+    example = list[Math.floor(Math.random() * Math.min(3, list.length))] ?? null;
+    box.hidden = !example;
+    if (!example) return;
+    const s = example;
+    zh.replaceChildren();
+    let i = 0;
+    s.chunks.forEach((c, ci) => {
+      for (const p of s.punct.filter(x => x.at === ci)) zh.append(Object.assign(document.createElement('span'), { className: 'pu', textContent: p.p }));
+      for (const id of c.words) {
+        const word = wordsById.get(id)!, index = i++;
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = `tok r-${c.role}${id === w.id ? ' me' : ''}`;
+        b.dataset.i = String(index);
+        b.setAttribute('aria-label', `${word.h}, ${word.p}, ${word.e} (${ROLE_NAMES[c.role]})`);
+        b.append(Object.assign(document.createElement('span'), { className: 'py', textContent: word.p }), Object.assign(document.createElement('span'), { className: 'hz', textContent: word.h }));
+        b.addEventListener('click', () => { void voice.sayWordIn(s, index, word, slowVoice); });
+        zh.append(b);
+      }
+    });
+    for (const p of s.punct.filter(x => x.at >= s.chunks.length)) zh.append(Object.assign(document.createElement('span'), { className: 'pu', textContent: p.p }));
+    $('exEn').textContent = s.en;
+  }
+  const highlight = (i: number | null) => $('exZh').querySelectorAll<HTMLElement>('.tok').forEach(t => t.classList.toggle('on', t.dataset.i === String(i)));
+  $('exPlay').addEventListener('click', () => { if (example) void voice.saySentence(example, false, highlight); });
+  $('exSlow').addEventListener('click', () => { if (example) void voice.saySentence(example, true, highlight); });
+
   function closeNote(): void {
     if (!noteOpen) return;
     noteOpen = false;
+    voice.stop();
+    highlight(null);
     sound.paper();
     gsap.to(slipEl, { y: -50, rotation: rand(-16, 16), scale: 0.9, opacity: 0, duration: 0.42, ease: 'power2.in' });
     gsap.to(nextBtn, { opacity: 0, duration: 0.25, onComplete: () => { noteEl.hidden = true; gsap.set(slipEl, { scale: 1 }); } });

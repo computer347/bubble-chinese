@@ -1,0 +1,61 @@
+# Example sentences, hand-written for this project.
+# Columns: chunks, English, and optionally other valid chunk orders (for Plug mode).
+# Chunks are separated by spaces; each chunk is words joined by + and tagged with its role:
+#   S subject   T time   P place   A adverb or helping verb   V verb or predicate   O object   X particle
+# Punctuation (。？！，) stands alone without a role. Every word must be in the HSK word list.
+# A sentence's level is the highest level of its words.
+我/S 是/V 学生/O 。	I am a student.
+你/S 叫/V 什么+名字/O ？	What is your name?
+我/S 很/A 高兴/V 。	I am very glad.
+他/S 是/V 我+的+朋友/O 。	He is my friend.
+我/S 今天/T 很/A 忙/V 。	I am very busy today.	T S A V
+我/S 明天/T 去/V 学校/O 。	I'm going to school tomorrow.	T S V O
+妈妈/S 在+家/P 做饭/V 。	Mum is cooking at home.
+你/S 喝/V 茶/O 吗/X ？	Do you drink tea?
+我/S 喜欢/V 猫/O 。	I like cats.
+这/S 是/V 我+的+手机/O 。	This is my phone.
+我们/S 晚上/T 看/V 电影/O 。	We're watching a film this evening.	T S V O
+爸爸/S 在+公司/P 工作/V 。	Dad works at a company.
+他/S 有/V 两+个+孩子/O 。	He has two children.
+你+家/S 有/V 几+个+人/O ？	How many people are in your family?
+我/S 想/A 买/V 一+本+书/O 。	I want to buy a book.
+今天/T 天气/S 很/A 好/V 。	The weather is good today.	S T A V
+我/S 会/A 说/V 汉语/O 。	I can speak Chinese.
+请/A 喝/V 水/O 。	Please have some water.
+你/S 去/V 哪儿/O ？	Where are you going?
+我/S 在+医院/P 看病/V 。	I'm seeing a doctor at the hospital.
+她/S 是/V 老师/O 吗/X ？	Is she a teacher?
+这个+苹果/S 多少+钱/V ？	How much is this apple?
+我/S 昨天/T 没有/A 去/V 学校/O 。	I didn't go to school yesterday.	T S A V O
+他们/S 都/A 是/V 大学生/O 。	They are all university students.
+你/S 几+点/T 起床/V ？	What time do you get up?
+我/S 早上+七+点/T 起床/V 。	I get up at seven in the morning.	T S V
+我/S 喜欢/V 吃+饺子/O 。	I like eating dumplings.
+外边/P 下雨/V 了/X 。	It's raining outside.
+我/S 有点儿/A 冷/V 。	I'm a bit cold.
+你/S 认识/V 他/O 吗/X ？	Do you know him?
+我+的+猫/S 在+桌子+上/P 睡觉/V 。	My cat is sleeping on the table.
+我们/S 一起/A 去/V 吧/X 。	Let's go together.
+他/S 每+天/T 跑步/V 。	He goes running every day.	T S V
+我/S 从小/T 喜欢/V 足球/O 。	I've liked football since I was little.
+洗手间/S 在/V 哪儿/O ？	Where is the toilet?
+我/S 已经/A 吃/V 了/X 。	I've already eaten.
+这+件+衣服/S 很/A 漂亮/V 。	This piece of clothing is very pretty.
+我/S 坐/V 地铁/O 去/V 公司/O 。	I take the subway to the office.
+你/S 可以/A 帮/V 我/O 吗/X ？	Can you help me?
+我/S 不/A 懂/V 。	I don't understand.
+明天/S 是/V 我+的+生日/O 。	Tomorrow is my birthday.
+他/S 在/A 看/V 电视/O 。	He is watching TV.
+我/S 喝/V 了/X 咖啡/O 。	I drank coffee.
+你+身体/S 怎么样/V ？	How is your health?
+我/S 不/A 喜欢/V 下雨/O 。	I don't like it when it rains.
+谢谢/V 你/O ！	Thank you!
+我+妈妈/S 是/V 医生/O 。	My mum is a doctor.
+我/S 下午/T 在+家/P 休息/V 。	I'm resting at home this afternoon.	T S P V
+他/S 住/V 在+中国/P 。	He lives in China.
+我/S 爱/V 我+的+家人/O 。	I love my family.
+这/S 是/V 谁+的+书/O ？	Whose book is this?
+我们/S 坐/V 出租车/O 去/V 吧/X 。	Let's take a taxi.
+她/S 在+商店/P 买/V 水果/O 。	She is buying fruit at the shop.
+我/S 每+天/T 都/A 学习/V 汉语/O 。	I study Chinese every day.	T S A V O
+你/S 想/A 喝/V 什么/O ？	What would you like to drink?

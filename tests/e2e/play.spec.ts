@@ -80,6 +80,12 @@ test('three right answers pop every layer and deliver a fortune slip', async ({ 
   expect(s.streak).toBe(3);
   expect(s.score).toBeGreaterThan(0);
   await expect(page.locator('#result')).toContainText('Next review in');
+  // an example sentence, when this word has one: tapping works without errors (no audio files in CI)
+  if (await page.locator('#example').isVisible()) {
+    await expect(page.locator('#exZh .tok.me')).toHaveCount(1);
+    await page.locator('#exZh .tok').first().click();
+    await page.click('#exPlay');
+  }
   await page.click('#next');
   const next = await waitFor(page, x => x.state === 'live' && x.layers === 3, 'the next bubble');
   expect(next.word).not.toBe(s0.word);

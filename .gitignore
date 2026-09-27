@@ -10,3 +10,4 @@ test-results
 .env
 audio-samples
 data/audio-missing.tsv
+data/subtitles-debug

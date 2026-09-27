@@ -4,10 +4,15 @@
 //   node scripts/build-content.mjs --check  fail if the committed file is out of date (used in CI)
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(root, 'src/content/generated/hsk.json');
+const SENTENCES_OUT = join(root, 'src/content/generated/sentences.json');
+const SENTENCE_FILE = 'data/content/sentences.tsv';
+export const ROLES = ['S', 'T', 'P', 'A', 'V', 'O', 'X'];
+const PUNCT = new Set(['。', '？', '！', '，']);
 /** Levels that have hand-written glosses and are shipped in the app. */
 const LEVELS = [1, 2];
 const GLOSS_FILES = ['data/content/glosses-hsk1-2.tsv'];
@@ -82,20 +87,65 @@ export function build() {
   return { words, json };
 }
 
+/**
+ * Builds the example sentences. Each chunk is a group of words with one grammatical role
+ * (the pieces of Plug mode); each word is linked to the word list, so a sentence's level is
+ * the highest level of its words.
+ */
+export function buildSentences(words) {
+  const byHanzi = new Map();
+  for (const w of words) if (!byHanzi.has(w.h) || w.quiz !== false) byHanzi.set(w.h, w);
+  const out = [], seen = new Set();
+  for (const line of tsv(SENTENCE_FILE)) {
+    const [chunkText, en, altText] = line.split('\t');
+    if (!en) throw new Error(`${SENTENCE_FILE}: no English for "${chunkText}"`);
+    const chunks = [], punct = [];
+    let text = '';
+    for (const tok of chunkText.trim().split(/\s+/)) {
+      if (PUNCT.has(tok)) { text += tok; punct.push({ at: chunks.length, p: tok }); continue; }
+      const m = tok.match(/^(.+)\/([A-Z])$/);
+      if (!m) throw new Error(`${SENTENCE_FILE}: chunk "${tok}" needs a role, e.g. 学生/O ("${chunkText}")`);
+      const [, body, role] = m;
+      if (!ROLES.includes(role)) throw new Error(`${SENTENCE_FILE}: unknown role ${role} in "${chunkText}"`);
+      const ws = body.split('+').map(h => {
+        const w = byHanzi.get(h);
+        if (!w) throw new Error(`${SENTENCE_FILE}: "${h}" is not in the HSK word list ("${chunkText}")`);
+        return w.id;
+      });
+      text += body.replace(/\+/g, '');
+      chunks.push({ role, words: ws });
+    }
+    if (seen.has(text)) throw new Error(`${SENTENCE_FILE}: duplicate sentence ${text}`);
+    seen.add(text);
+    const pattern = chunks.map(c => c.role).join(' ');
+    const alt = altText ? altText.split('|').map(a => a.trim()).filter(Boolean) : [];
+    for (const a of alt) {
+      if (a.split(' ').sort().join(' ') !== pattern.split(' ').sort().join(' ')) throw new Error(`${SENTENCE_FILE}: order "${a}" does not use the same roles as ${pattern} ("${text}")`);
+      if (new Set(pattern.split(' ')).size !== chunks.length) throw new Error(`${SENTENCE_FILE}: other orders need each role once ("${text}")`);
+    }
+    const level = Math.max(...chunks.flatMap(c => c.words.map(id => words.find(w => w.id === id).level)));
+    const id = 's' + createHash('sha1').update(text).digest('hex').slice(0, 8);
+    out.push({ id, text, en: en.trim(), level, pattern, chunks, punct, ...(alt.length ? { alt } : {}) });
+  }
+  const json = '[\n' + out.map(x => '  ' + JSON.stringify(x)).join(',\n') + '\n]\n';
+  return { sentences: out, json };
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const { words, json } = build();
+  const { sentences, json: sjson } = buildSentences(words);
+  const read = f => { try { return readFileSync(f, 'utf8').replace(/\r\n/g, '\n'); } catch { return ''; } };
   if (process.argv.includes('--check')) {
-    let current = '';
-    try { current = readFileSync(OUT, 'utf8').replace(/\r\n/g, '\n'); } catch { /* missing */ }
-    if (current !== json) {
-      console.error('src/content/generated/hsk.json is out of date. Run: npm run build:content');
+    if (read(OUT) !== json || read(SENTENCES_OUT) !== sjson) {
+      console.error('Generated content is out of date. Run: npm run build:content');
       process.exit(1);
     }
-    console.log(`hsk.json is up to date (${words.length} words).`);
+    console.log(`Generated content is up to date (${words.length} words, ${sentences.length} sentences).`);
   } else {
     mkdirSync(dirname(OUT), { recursive: true });
     writeFileSync(OUT, json);
+    writeFileSync(SENTENCES_OUT, sjson);
     const per = LEVELS.map(l => `HSK ${l}: ${words.filter(w => w.level === l).length}`).join(', ');
-    console.log(`Wrote ${words.length} words (${per}) to src/content/generated/hsk.json`);
+    console.log(`Wrote ${words.length} words (${per}) and ${sentences.length} sentences to src/content/generated/`);
   }
 }

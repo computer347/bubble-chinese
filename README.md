@@ -66,7 +66,10 @@ You need a MiniMax pay-as-you-go API key (platform.minimax.io, Account Managemen
 $env:MINIMAX_API_KEY = "your key"
 npm run audio:sample      # renders 8 words in 6 voices; open audio-samples/index.html and pick one
 npm run audio -- --voice "Chinese (Mandarin)_News_Anchor"
+npm run audio:status -- --voice "Chinese (Mandarin)_News_Anchor"   # what's still missing, no API calls
 ```
+
+Sentences are recorded the same way, spoken naturally in one take. MiniMax also returns word-level timestamps, so tapping a word in an example sentence plays that word cut from the recording, with the tones it has in context (falling back to the single-word clip if timings are missing). In sentences, only words with multi-reading characters are pinned; 一 and 不 are left to the voice because their tone depends on the next syllable.
 
 The script only renders clips that are missing or whose request changed (new word, new reading, other voice or speed), saves progress as it goes, and writes `data/audio-review.md`: a checklist of words containing characters with more than one reading, to listen to once. Commit `public/audio/`, `src/content/generated/audio.json` and the review list. Mainland China accounts: also set `MINIMAX_API_HOST=https://api.minimaxi.com`.
 - **Progress** is stored on the device in IndexedDB. Progress from the original single-file version (localStorage) is migrated automatically.

@@ -27,7 +27,8 @@ Each phase ends with a preview deploy, green CI, and the checks listed under "Ve
 - [ ] Glosses for HSK 3 (500 words), then the level is switched on
 - [x] Voice clip pipeline: `scripts/generate-audio.mjs` renders every word at normal and slow speed with MiniMax, pinning the syllabus reading; the app plays clips and falls back to browser speech
 - [ ] Run the generator with your MiniMax key, pick a voice, commit the clips
-- [ ] Sentence schema with role tags and all valid word orders (moved to the start of Phase 2, where Plug uses it)
+- [x] Sentence audio: one natural take per sentence at two speeds, with MiniMax word timestamps; tapping a word plays it cut from the sentence
+- [x] Example sentence on the fortune slip, with pinyin, role colours and word highlighting as it plays
 
 **Verify**
 - [x] Every word's level matches an independent extraction of the syllabus; all 300 level-1 words present
@@ -46,7 +47,8 @@ Word pieces are soft bodies moulded to their grammatical role and plug into matc
 subject = blue circle, time = amber hexagon, place = teal pill, verb = red triangle, object = green square, adverb = purple diamond, particle = grey droplet.
 Scaffolding fades from shape and colour, to shape only, to neither. Progression: SV → SVO → S+T+VO → S+T+P+V+O → adverbs → 不/没 → 吗/呢 → measure words → 了/过 → 把/被.
 
-- Sentence schema first: role tag per word, every valid word order, HSK level check (every word in a sentence at or below its level)
+- [x] Sentence schema: role-tagged chunks, other valid orders, level from its words; 55 HSK 1–2 sentences to start
+- [ ] More sentences: about a third of HSK 1 words have an example so far
 
 **Verify:** every valid order is accepted; fit-logic unit tests; 20-sentence playtest per level; solvable by shape alone and by keyboard.
 

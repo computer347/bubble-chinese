@@ -12,6 +12,19 @@ Never edit the generated file by hand; CI fails if it is out of date (`npm run c
 | `vendor/hsk2025-levels-crosscheck.tsv` | An independent extraction of the same syllabus by [harukicoder/hsk30](https://github.com/harukicoder/hsk30), whose per-level counts reproduce the syllabus totals (300 / 500 / 1,000). Used only in tests to cross-check every level. | MIT |
 | `content/glosses-hsk1-2.tsv` | Short English glosses, written for this project. | Same as this repository |
 
+## Example sentences
+
+`content/sentences.tsv` holds hand-written sentences, one per line: the sentence split into role-tagged chunks, a tab, the English, and optionally other valid chunk orders.
+
+```
+我/S 明天/T 去/V 学校/O 。	I'm going to school tomorrow.	T S V O
+我+的+猫/S 在+桌子+上/P 睡觉/V 。	My cat is sleeping on the table.
+```
+
+- Roles: S subject, T time, P place, A adverb or helping verb, V verb or predicate, O object, X particle. These are the pieces and colours of Plug mode.
+- Words inside a chunk are joined with `+`; every word must be in the HSK word list, and a sentence's level is the highest level of its words.
+- The build fails on unknown words or roles, duplicates, or other orders that don't use the same roles.
+
 ## How words are built
 
 - Sense numbers are dropped (`点1`, `点2` → `点`), and a word listed at two levels keeps the lower one.
