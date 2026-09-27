@@ -29,9 +29,10 @@ export class Voice {
 
   constructor(
     private readonly speech: Speech,
-    private readonly clips: AudioManifest = manifest as AudioManifest,
+    private readonly clips: AudioManifest = manifest as unknown as AudioManifest,
     private readonly base = import.meta.env.BASE_URL,
-    private readonly sentenceClips: SentenceManifest = sentenceManifest as SentenceManifest
+    // JSON imports type [0, 120] as number[]; the manifest's shape is checked by tests/unit/sentences.test.ts
+    private readonly sentenceClips: SentenceManifest = sentenceManifest as unknown as SentenceManifest
   ) {}
 
   private clip(word: Word, slow: boolean): Clip | undefined {
