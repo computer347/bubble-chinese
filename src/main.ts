@@ -1,4 +1,5 @@
 import './styles.css';
+import './theme/glass.css';
 import './theme/ink.css';
 import { startGame, type GameHandle } from './game/game';
 import { Progress, IndexedDbStore, MemoryStore } from './game/progress';

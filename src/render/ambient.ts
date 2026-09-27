@@ -25,6 +25,27 @@ function bubbleTexture(): THREE.CanvasTexture {
   return t;
 }
 
+/** A wide, soft wash of colour: full at the heart, gone at the edge (tinted per field). */
+function fieldTexture(): THREE.CanvasTexture {
+  const c = document.createElement('canvas');
+  c.width = c.height = 128;
+  const g = c.getContext('2d')!;
+  const wash = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  wash.addColorStop(0, 'rgba(255,255,255,1)');
+  wash.addColorStop(0.45, 'rgba(255,255,255,0.55)');
+  wash.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = wash; g.fillRect(0, 0, 128, 128);
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  return t;
+}
+
+/** The colour fields: soap-film tints for the bubble style, faint lamplight and cinnabar for ink. */
+const FIELDS: Record<'bubble' | 'ink', { color: string; alpha: number }[]> = {
+  bubble: [{ color: '#FF6FC4', alpha: 0.42 }, { color: '#4FD8FF', alpha: 0.4 }, { color: '#9C7BFF', alpha: 0.45 }, { color: '#FFB27A', alpha: 0.3 }],
+  ink: [{ color: '#F0B35A', alpha: 0.16 }, { color: '#C8412F', alpha: 0.08 }, { color: '#E9C98A', alpha: 0.14 }, { color: '#B5562E', alpha: 0.06 }]
+};
+
 /** A lantern's glow seen through paper: warm at the heart, fading to nothing. */
 function glowTexture(): THREE.CanvasTexture {
   const c = document.createElement('canvas');
@@ -50,6 +71,8 @@ function glowTexture(): THREE.CanvasTexture {
 export class Ambient {
   readonly group = new THREE.Group();
   private readonly motes: Mote[] = [];
+  /** A few large washes of colour that wander slowly, so the glass has light to bend. */
+  private readonly fields: { s: THREE.Sprite; phase: number; alpha: number }[] = [];
   private readonly bubbleMat: THREE.SpriteMaterial;
   private readonly glowMat: THREE.SpriteMaterial;
   private ink = false;
@@ -68,7 +91,22 @@ export class Ambient {
       this.group.add(s);
       this.motes.push({ s, x: 0, y: 0, z: 0, size: 1, speed: 0, sway: 0, phase: 0, alpha: 0 });
     }
+    const wash = fieldTexture();
+    for (let i = 0; i < FIELDS.bubble.length; i++) {
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: wash, transparent: true, depthWrite: false, toneMapped: false }));
+      s.renderOrder = -2;
+      this.group.add(s);
+      this.fields.push({ s, phase: i * 1.7 + 0.4, alpha: 0 });
+    }
+    this.tintFields();
     this.group.visible = false;
+  }
+
+  private tintFields(): void {
+    FIELDS[this.ink ? 'ink' : 'bubble'].forEach((f, i) => {
+      (this.fields[i].s.material as THREE.SpriteMaterial).color.set(f.color);
+      this.fields[i].alpha = f.alpha;
+    });
   }
 
   /** Bubbles, or lantern glows. */
@@ -79,6 +117,7 @@ export class Ambient {
       (m.s.material as THREE.SpriteMaterial).dispose();
       m.s.material = mat;
     }
+    this.tintFields();
     this.scatter(true);
   }
 
@@ -111,6 +150,14 @@ export class Ambient {
       m.s.position.set(m.x + Math.sin(t * 0.4 + m.phase) * m.sway * drift, m.y, m.z);
       m.s.scale.setScalar(m.size);
       (m.s.material as THREE.SpriteMaterial).opacity = m.alpha * this.level;
+    }
+    // the fields drift on slow loops across the screen, never quite repeating
+    const w = this.w / 1.35, h = this.h / 1.35, size = Math.max(w, h) * 0.85;
+    const slow = this.reduceMotion ? 0 : t;
+    for (const f of this.fields) {
+      f.s.position.set(Math.sin(slow * 0.043 + f.phase) * w * 0.38, Math.cos(slow * 0.031 + f.phase * 1.3) * h * 0.36, -3.1);
+      f.s.scale.setScalar(size * (0.9 + 0.15 * Math.sin(slow * 0.07 + f.phase)));
+      (f.s.material as THREE.SpriteMaterial).opacity = f.alpha * this.level;
     }
     return true;
   }

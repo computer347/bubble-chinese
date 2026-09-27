@@ -1,0 +1,52 @@
+/* ---------- R4: glass ----------
+   One material for the panels of the bubble style: a blurred, brightened pane lit from above, with a
+   bright top edge, a faint inner glow and a soft shadow. The colour fields drifting behind (render/
+   ambient.ts) give it light to bend. The ink style keeps its paper (theme/ink.css).
+   Budget: one glass layer over the scene, plus the tab bar; a single blur each. */
+
+:root{
+  --glass-fill:linear-gradient(160deg, rgba(255,255,255,.2), rgba(255,255,255,.06) 48%, rgba(255,255,255,.1));
+  --glass-edge:rgba(255,255,255,.26);
+  --glass-shadow:
+    inset 0 1px 0 rgba(255,255,255,.55),
+    inset 0 -1px 0 rgba(255,255,255,.1),
+    inset 0 0 28px rgba(255,255,255,.07),
+    0 22px 44px -26px rgba(6,8,70,.75);
+}
+
+body:not(.style-ink) :is(.card, .scard, .punit-head, .you-stat, #tab-you .words button, .wcard:not(.wotd)){
+  background:var(--glass-fill);
+  border-color:var(--glass-edge);
+  -webkit-backdrop-filter:blur(18px) saturate(180%);
+  backdrop-filter:blur(18px) saturate(180%);
+  box-shadow:var(--glass-shadow);
+}
+body:not(.style-ink) :is(.card, .scard):hover:not(:disabled){ background:linear-gradient(160deg, rgba(255,255,255,.26), rgba(255,255,255,.1) 48%, rgba(255,255,255,.14)); }
+/* a disabled tile is frosted, not lit */
+body:not(.style-ink) .card:disabled{ background:rgba(255,255,255,.05); box-shadow:inset 0 1px 0 rgba(255,255,255,.2); }
+
+/* the tab bar and the reader's bar: the same glass, clearer */
+body:not(.style-ink) :is(.tabbar, .reader-bar){
+  background:linear-gradient(160deg, rgba(255,255,255,.22), rgba(255,255,255,.08));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6), inset 0 0 0 1px rgba(255,255,255,.18), 0 18px 40px -18px rgba(6,8,70,.7);
+}
+
+/* each tab carries its character large and faint behind it, like a page's running head */
+.tab{ position:relative; }
+.tab::before{
+  position:absolute; z-index:-1; top:-18px; right:-6px; pointer-events:none;
+  font-family:var(--zh); font-weight:700; font-size:clamp(170px,40vw,300px); line-height:1;
+  color:#fff; opacity:.07;
+}
+#tab-path::before{ content:"路"; }
+#tab-practice::before{ content:"练"; }
+#tab-read::before{ content:"读"; }
+#tab-you::before{ content:"我"; }
+body.style-ink .tab::before{ font-family:var(--brush); font-weight:400; color:var(--ui); opacity:.06; }
+
+/* where glass is not supported, a solid tint instead of a see-through pane */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  body:not(.style-ink) :is(.card, .scard, .punit-head, .you-stat, #tab-you .words button, .wcard:not(.wotd), .tabbar, .reader-bar){
+    background:color-mix(in srgb, var(--bg) 82%, #fff);
+  }
+}
