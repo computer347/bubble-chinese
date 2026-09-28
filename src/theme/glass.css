@@ -50,3 +50,18 @@ body.style-ink .tab::before{ font-family:var(--brush); font-weight:400; color:va
     background:color-mix(in srgb, var(--bg) 82%, #fff);
   }
 }
+
+/* the title bar: a frosted strip, so what scrolls under it blurs away instead of running into the title */
+.topbar{
+  background:linear-gradient(180deg, color-mix(in srgb, var(--bg) 62%, transparent), color-mix(in srgb, var(--bg) 42%, transparent));
+  -webkit-backdrop-filter:blur(20px) saturate(170%);
+  backdrop-filter:blur(20px) saturate(170%);
+  box-shadow:inset 0 -1px 0 color-mix(in srgb, var(--ui) 14%, transparent), 0 10px 24px -18px rgba(0,0,0,.45);
+}
+body:not(.style-ink) .topbar{
+  background:linear-gradient(180deg, color-mix(in srgb, var(--bg) 55%, rgba(255,255,255,.1)), color-mix(in srgb, var(--bg) 35%, rgba(255,255,255,.06)));
+  box-shadow:inset 0 -1px 0 rgba(255,255,255,.18), 0 10px 24px -18px rgba(6,8,70,.6);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .topbar{ background:color-mix(in srgb, var(--bg) 94%, transparent); }
+}

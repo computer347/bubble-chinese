@@ -7,7 +7,8 @@ export interface Schedulable extends Item { readonly level: number }
 
 /**
  * Chooses the next item for one skill, given that skill's cards:
- * 1. an item that is due for review (one of the five most overdue, at random),
+ * 1. an item that is due for review, any of them at random (so a session never opens on the same
+ *    few words: once due, their order does not matter to the memory model),
  * 2. otherwise a new item from the lowest level with items left (the ones `prefer` scores highest first),
  * 3. otherwise one of the three items due soonest (reviewing ahead).
  * The last few items never come back to back.
@@ -19,12 +20,10 @@ export class Scheduler {
   next<T extends Schedulable>(pool: readonly T[], cards: Readonly<Record<string, Card>>, now = new Date(), prefer?: (item: T) => number): T {
     const fresh = pool.filter(w => !this.recent.includes(w.id));
     const candidates = fresh.length ? fresh : pool;
-    const due = candidates
-      .filter(w => cards[w.id] && cards[w.id].due <= now)
-      .sort((a, b) => cards[a.id].due.getTime() - cards[b.id].due.getTime());
+    const due = candidates.filter(w => cards[w.id] && cards[w.id].due <= now);
     let pick: T | undefined;
     if (due.length) {
-      pick = due[Math.floor(this.rng() * Math.min(5, due.length))];
+      pick = due[Math.floor(this.rng() * due.length)];
     } else {
       const unseen = candidates.filter(w => !cards[w.id]);
       if (unseen.length) {

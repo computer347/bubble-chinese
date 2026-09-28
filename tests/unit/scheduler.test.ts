@@ -18,7 +18,7 @@ describe('Scheduler', () => {
     }
   });
 
-  it('puts due reviews ahead of new words, most overdue first', () => {
+  it('puts due reviews ahead of new words', () => {
     const s = new Scheduler(6, mulberry32(2));
     const cards: Record<string, Card> = {};
     const [a, b, c] = pool;
@@ -27,6 +27,16 @@ describe('Scheduler', () => {
     cards[c.id] = { ...newCard(now), due: new Date(now.getTime() + 86_400_000) };
     const first = [s.next(pool, cards, now), s.next(pool, cards, now)].map(w => w.id);
     expect(first.sort()).toEqual([a.id, b.id].sort());
+  });
+
+  it('opens on any due word, not always the most overdue', () => {
+    const cards: Record<string, Card> = {};
+    const due = pool.slice(0, 20);
+    due.forEach((w, i) => { cards[w.id] = { ...newCard(now), due: new Date(now.getTime() - (i + 1) * 3_600_000) }; });
+    // a fresh scheduler each time, as when a task is opened
+    const firsts = new Set(Array.from({ length: 60 }, (_, k) => new Scheduler(6, mulberry32(k + 1)).next(pool, cards, now).id));
+    expect(firsts.size).toBeGreaterThan(10);
+    for (const id of firsts) expect(due.map(w => w.id)).toContain(id);
   });
 
   it('never repeats a word within the recent window', () => {

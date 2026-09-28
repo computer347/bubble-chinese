@@ -187,7 +187,7 @@ export function startGame(opts: GameOptions): GameHandle {
     }
     const mode = modes.get(id);
     if (!home.shown || current || !mode) return;
-    sound.unlock();
+    sound.unlock(); voice.unlock();
     sound.pop(false);
     current = mode; currentId = id;
     mode.prepare?.();
@@ -198,8 +198,8 @@ export function startGame(opts: GameOptions): GameHandle {
   $('homeBtn').addEventListener('click', () => showHome());
 
   /* ---------- controls ---------- */
-  document.addEventListener('pointerdown', () => sound.unlock(), { capture: true });
-  document.addEventListener('keydown', () => sound.unlock(), { capture: true });
+  document.addEventListener('pointerdown', () => { sound.unlock(); voice.unlock(); }, { capture: true });
+  document.addEventListener('keydown', () => { sound.unlock(); voice.unlock(); }, { capture: true });
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
     if (slip.open) slip.close(); else if (playing) showHome();

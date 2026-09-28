@@ -33,6 +33,8 @@ export class Voice {
   private cache = new Map<string, HTMLAudioElement>();
   private playing: HTMLAudioElement | null = null;
   private ctx: AudioContext | null = null;
+  /** Whether the audio has been woken by a gesture (see unlock). */
+  private unlocked = false;
   private buffers = new Map<string, Promise<AudioBuffer>>();
   private source: AudioBufferSourceNode | null = null;
   private timers: number[] = [];
@@ -100,6 +102,23 @@ export class Voice {
     }
     if (this.ctx.state === 'suspended') void this.ctx.resume();
     return this.ctx;
+  }
+
+  /**
+   * Wakes the voice's audio inside a tap or key press. iOS Safari only lets an AudioContext start
+   * during a user gesture: one created later (when a mode picks its first word, after the zoom) stays
+   * suspended, and the first word is silent. A one-sample silent buffer completes the unlock.
+   */
+  unlock(): void {
+    const ctx = this.audio();
+    if (!ctx || this.unlocked) return;
+    try {
+      const src = ctx.createBufferSource();
+      src.buffer = ctx.createBuffer(1, 1, ctx.sampleRate);
+      src.connect(ctx.destination);
+      src.start();
+      this.unlocked = ctx.state === 'running';
+    } catch { /* try again on the next gesture */ }
   }
 
   private buffer(file: string): Promise<AudioBuffer> {
