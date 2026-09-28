@@ -21,6 +21,7 @@ export class Settings {
   private readonly askBtns = [...this.el.querySelectorAll<HTMLButtonElement>('[data-ask]')];
   private readonly newBtns = [...this.el.querySelectorAll<HTMLButtonElement>('[data-new]')];
   private readonly styleBtns = [...this.el.querySelectorAll<HTMLButtonElement>('[data-style]')];
+  private readonly lookBtns = [...this.el.querySelectorAll<HTMLButtonElement>('[data-look]')];
 
   constructor(private readonly d: SettingsDeps) {
     const { progress } = d;
@@ -39,6 +40,14 @@ export class Settings {
       this.render();
       d.onStyle(style);
     }));
+    // light, dark, or auto (following the device)
+    this.lookBtns.forEach(b => b.addEventListener('click', () => {
+      const look = b.dataset.look === 'auto' ? null : b.dataset.look as 'light' | 'dark';
+      if (look === progress.data.settings.appearance) return;
+      progress.setAppearance(look);
+      this.render();
+      d.onStyle(progress.data.settings.style);
+    }));
     this.render();
   }
 
@@ -48,5 +57,6 @@ export class Settings {
     this.askBtns.forEach(b => { const on = s.ask.includes(b.dataset.ask as AskKind); b.setAttribute('aria-pressed', String(on)); b.disabled = on && s.ask.length === 1; });
     this.newBtns.forEach(b => b.setAttribute('aria-checked', String(Number(b.dataset.new) === s.newPerDay)));
     this.styleBtns.forEach(b => b.setAttribute('aria-checked', String(b.dataset.style === s.style)));
+    this.lookBtns.forEach(b => b.setAttribute('aria-checked', String(b.dataset.look === (s.appearance ?? 'auto'))));
   }
 }

@@ -10,7 +10,7 @@ Pick a mode from the carousel by popping its bubble. In Words, a bubble sits pin
 
 In Listen, the word is heard instead of read: pick its tones, then its meaning, then its characters from words that sound alike. Tap the bubble to hear it again; a wrong answer replays it slowly. Once you hear a word reliably, its core asks you to type the pinyin instead.
 
-Two looks, chosen on the home screen: soap bubbles, or ink and lanterns (paper, brush calligraphy, paper lanterns). The bubble sizes itself to the space the answers leave on any screen.
+Two looks, chosen in You: soap bubbles, or ink and lanterns (paper, brush calligraphy, paper lanterns), each light (dark text on a pale ground) or dark (light text on a deep ground), following the device until you choose. The bubble sizes itself to the space the answers leave on any screen.
 
 Layers come in a random order. "Ask about" on the home screen picks which ones a bubble has: meaning, pinyin, characters, or any mix.
 

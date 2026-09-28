@@ -101,3 +101,6 @@ body.style-ink .sheet-panel{ border-radius:10px 10px 0 0; background:color-mix(i
 body.style-ink .sheet-title{ font-family:var(--brush); }
 body.style-ink .wgroup, body.style-ink .wpick, body.style-ink .setchip{ border-radius:6px; }
 body.style-ink .wpick-h{ font-family:var(--brush); font-weight:400; }
+
+/* the ink style at night: a dark lacquered sheet with pale ink */
+body.style-ink.look-dark{ --paper:#29211A; --print-blue:#F0E2C4; --print-red:#FF8A6A; }

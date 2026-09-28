@@ -27,15 +27,37 @@ export const PHYS: Record<MaterialKind, Physics> = {
   mochi: { k:110, c:4.2, kc:50000,  inertia:.3,  hover:.75 },
   clay:  { k:170, c:3.4, kc:80000,  inertia:.24, hover:.9 }
 };
-export const PALETTES: readonly Palette[] = [
-  { bg:'#2B37E0', ui:'#E6E8FF', dim:'rgba(230,232,255,.74)', line:'rgba(230,232,255,.34)', shadow:'rgba(8,10,80,.45)',  kind:'jelly',  mat:MATS.jelly('#FF86BC', '#FF3D8F') },
-  { bg:'#FF6B2C', ui:'#2A0E02', dim:'rgba(42,14,2,.74)',     line:'rgba(42,14,2,.32)',     shadow:'rgba(120,30,0,.42)', kind:'chrome', mat:MATS.chrome() },
-  { bg:'#B5C77A', ui:'#27300F', dim:'rgba(39,48,15,.76)',    line:'rgba(39,48,15,.32)',    shadow:'rgba(58,76,18,.4)',  kind:'mochi',  mat:MATS.mochi() },
-  { bg:'#FF9EC7', ui:'#3A0A22', dim:'rgba(58,10,34,.76)',    line:'rgba(58,10,34,.32)',    shadow:'rgba(140,20,70,.35)',kind:'jelly',  mat:MATS.jelly('#4A5CFF', '#2B3BFF') },
-  { bg:'#16786F', ui:'#E3FFF9', dim:'rgba(227,255,249,.76)', line:'rgba(227,255,249,.32)', shadow:'rgba(0,30,26,.5)',   kind:'jelly',  mat:MATS.jelly('#FFB22E', '#FF7A00') },
-  { bg:'#3B1646', ui:'#F6E6FF', dim:'rgba(246,230,255,.74)', line:'rgba(246,230,255,.3)',  shadow:'rgba(10,0,14,.55)',  kind:'jelly',  mat:MATS.jelly('#C8F25A', '#7BD400') },
-  { bg:'#FFD84D', ui:'#3A2A00', dim:'rgba(58,42,0,.76)',     line:'rgba(58,42,0,.32)',     shadow:'rgba(120,80,0,.35)', kind:'jelly',  mat:MATS.jelly('#E8342B', '#FF2A1A') },
-  { bg:'#14213D', ui:'#EAF0FF', dim:'rgba(234,240,255,.74)', line:'rgba(234,240,255,.3)',  shadow:'rgba(0,0,10,.55)',   kind:'jelly',  mat:MATS.jelly('#FF6F59', '#FF3B22') },
-  { bg:'#8EC5FF', ui:'#0B2545', dim:'rgba(11,37,69,.76)',    line:'rgba(11,37,69,.32)',    shadow:'rgba(20,60,120,.35)',kind:'mochi',  mat:MATS.mochi() },
-  { bg:'#D9D9DB', ui:'#1E2B52', dim:'rgba(30,43,82,.74)',    line:'rgba(30,43,82,.3)',     shadow:'rgba(40,44,62,.36)', kind:'clay',   mat:MATS.clay() }
-];
+/** Light or dark: a pale ground with dark text, or a deep ground with light text. */
+export type Mode = 'light' | 'dark';
+
+/** A ground and its text: the text at full strength, dimmed, and as a hairline. */
+const ink = (bg: string, ui: string, shadow: string, kind: MaterialKind, mat: CoreMaterial): Palette => {
+  const [r, g, b] = [1, 3, 5].map(i => parseInt(ui.slice(i, i + 2), 16));
+  return { bg, ui, dim: `rgba(${r},${g},${b},.74)`, line: `rgba(${r},${g},${b},.3)`, shadow, kind, mat };
+};
+
+/**
+ * The bubble style's grounds. Each pop moves to another of the same mode, so the colours change but
+ * the text always stands clear of its ground.
+ */
+export const BUBBLE_PALETTES: Record<Mode, readonly Palette[]> = {
+  dark: [
+    ink('#151A4E', '#EEF0FF', 'rgba(0,0,20,.55)', 'jelly', MATS.jelly('#FF86BC', '#FF3D8F')),
+    ink('#0B3A3A', '#E3FFF9', 'rgba(0,20,18,.55)', 'jelly', MATS.jelly('#FFB22E', '#FF7A00')),
+    ink('#2A1038', '#F6E6FF', 'rgba(10,0,14,.6)', 'jelly', MATS.jelly('#C8F25A', '#7BD400')),
+    ink('#0F1830', '#EAF0FF', 'rgba(0,0,10,.6)', 'jelly', MATS.jelly('#FF6F59', '#FF3B22')),
+    ink('#12301E', '#E6FFEC', 'rgba(0,14,6,.55)', 'chrome', MATS.chrome()),
+    ink('#3A0F1E', '#FFE6EE', 'rgba(20,0,6,.6)', 'jelly', MATS.jelly('#5FE1FF', '#1FB8FF'))
+  ],
+  light: [
+    ink('#E9EBFF', '#161A4A', 'rgba(40,50,140,.28)', 'jelly', MATS.jelly('#FF5FA8', '#FF2E88')),
+    ink('#FFE6D6', '#3A1606', 'rgba(140,60,20,.28)', 'chrome', MATS.chrome()),
+    ink('#E2F3DF', '#17301A', 'rgba(40,90,40,.26)', 'jelly', MATS.jelly('#FF8A3D', '#FF5A00')),
+    ink('#FFE2EF', '#3A0A22', 'rgba(140,20,70,.26)', 'jelly', MATS.jelly('#4A5CFF', '#2B3BFF')),
+    ink('#DDF0FF', '#0B2545', 'rgba(20,60,120,.28)', 'clay', MATS.clay()),
+    ink('#FFF3C4', '#3A2A00', 'rgba(120,80,0,.26)', 'jelly', MATS.jelly('#E8342B', '#FF2A1A'))
+  ]
+};
+
+/** The first bubble's palette, before a style and mode are applied. */
+export const PALETTES: readonly Palette[] = BUBBLE_PALETTES.dark;

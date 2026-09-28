@@ -30,8 +30,9 @@ export class Listening {
   }
 
   /** The next word to hear; among new ones, those with your weakest tone first. Its clip starts decoding now. */
-  pick(scheduler: Scheduler, from: readonly Word[] = this.pool()): Word {
+  pick(scheduler: Scheduler, from: readonly Word[] = this.pool(), opening = false): Word {
     const { progress, voice } = this.ctx;
+    if (opening) { const w = scheduler.any(from); voice.prime(w); return w; }
     const weak = weakestTone(toneAccuracy(progress.log, byId));
     const w = scheduler.next(from, progress.cards('listen'), new Date(), weak ? x => (markedTones(x.p).includes(weak) ? 1 : 0) : undefined);
     voice.prime(w);
@@ -67,7 +68,7 @@ export class ListenMode extends LayeredMode {
   private readonly listening = new Listening(this.ctx, () => this.word);
 
   protected makeQuestions(w: Word, bank: readonly Word[]) { return this.listening.questions(w, bank); }
-  protected pick(): Word { return this.listening.pick(this.scheduler); }
+  protected pick(): Word { return this.listening.pick(this.scheduler, undefined, this.opening); }
   protected onLayer(): void { this.listening.onLayer(); }
   protected onWrong(): void { this.listening.replay(true); }
   protected onPoke(): void { this.listening.replay(false); }

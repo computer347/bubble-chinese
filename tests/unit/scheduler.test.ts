@@ -39,6 +39,14 @@ describe('Scheduler', () => {
     for (const id of firsts) expect(due.map(w => w.id)).toContain(id);
   });
 
+  it('opens free practice on any word, even when one review is due', () => {
+    const cards: Record<string, Card> = {};
+    cards[pool[0].id] = { ...newCard(now), due: new Date(now.getTime() - 86_400_000) };
+    const firsts = Array.from({ length: 50 }, (_, k) => new Scheduler(6, mulberry32(k + 7)).any(pool).id);
+    expect(new Set(firsts).size).toBeGreaterThan(20);
+    expect(firsts.filter(id => id === pool[0].id).length).toBeLessThan(5);
+  });
+
   it('never repeats a word within the recent window', () => {
     const s = new Scheduler(6, mulberry32(5));
     const cards: Record<string, Card> = {};

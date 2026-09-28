@@ -31,12 +31,29 @@ body:not(.style-ink) :is(.tabbar, .reader-bar){
   box-shadow:inset 0 1px 0 rgba(255,255,255,.6), inset 0 0 0 1px rgba(255,255,255,.18), 0 18px 40px -18px rgba(6,8,70,.7);
 }
 
+/* on a pale ground the glass is milkier, edged and shadowed in the text's colour, so it still reads as a pane */
+body.look-light:not(.style-ink) :is(.card, .scard, .punit-head, .you-stat, #tab-you .words button, .wcard:not(.wotd)){
+  background:linear-gradient(160deg, rgba(255,255,255,.72), rgba(255,255,255,.42) 48%, rgba(255,255,255,.56));
+  border-color:color-mix(in srgb, var(--ui) 14%, transparent);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 18px 36px -24px color-mix(in srgb, var(--ui) 45%, transparent);
+}
+body.look-light:not(.style-ink) :is(.card, .scard):hover:not(:disabled){ background:linear-gradient(160deg, rgba(255,255,255,.85), rgba(255,255,255,.55)); }
+body.look-light:not(.style-ink) .card:disabled{ background:rgba(255,255,255,.3); box-shadow:none; }
+body.look-light:not(.style-ink) :is(.tabbar, .reader-bar){
+  background:linear-gradient(160deg, rgba(255,255,255,.7), rgba(255,255,255,.45));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95), inset 0 0 0 1px color-mix(in srgb, var(--ui) 12%, transparent), 0 16px 34px -18px color-mix(in srgb, var(--ui) 45%, transparent);
+}
+body.look-light:not(.style-ink) .topbar{
+  background:linear-gradient(180deg, color-mix(in srgb, var(--bg) 70%, rgba(255,255,255,.3)), color-mix(in srgb, var(--bg) 45%, transparent));
+  box-shadow:inset 0 -1px 0 color-mix(in srgb, var(--ui) 12%, transparent), 0 10px 24px -18px color-mix(in srgb, var(--ui) 35%, transparent);
+}
+
 /* each tab carries its character large and faint behind it, like a page's running head */
 .tab{ position:relative; }
 .tab::before{
   position:absolute; z-index:-1; top:-18px; right:-6px; pointer-events:none;
   font-family:var(--zh); font-weight:700; font-size:clamp(170px,40vw,300px); line-height:1;
-  color:#fff; opacity:.07;
+  color:var(--ui); opacity:.06;
 }
 #tab-path::before{ content:"路"; }
 #tab-practice::before{ content:"练"; }

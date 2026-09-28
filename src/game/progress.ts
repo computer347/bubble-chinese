@@ -27,6 +27,8 @@ export interface Settings {
   pinyin: number;
   /** The words Words and Listen practise (ids), or null for every word of the chosen levels. */
   practice: string[] | null;
+  /** Light or dark, or null to follow the device. */
+  appearance: 'light' | 'dark' | null;
 }
 
 /** Everything we keep about the learner, on this device. Version 3: FSRS cards per skill. */
@@ -52,7 +54,7 @@ export interface ReviewEntry {
 }
 
 const emptyCards = (): ProgressData['cards'] => Object.fromEntries(SKILLS.map(s => [s, {}])) as ProgressData['cards'];
-export const emptyProgress = (): ProgressData => ({ version: 3, cards: emptyCards(), best: 0, path: { done: {} }, read: {}, settings: { maxLevel: 1, ask: [...ASK_KINDS], style: 'bubble', newPerDay: 10, pinyin: 1, practice: null } });
+export const emptyProgress = (): ProgressData => ({ version: 3, cards: emptyCards(), best: 0, path: { done: {} }, read: {}, settings: { maxLevel: 1, ask: [...ASK_KINDS], style: 'bubble', newPerDay: 10, pinyin: 1, practice: null, appearance: null } });
 
 /** The version-1 shape from the single-file game and Phase 0 (mastery 0–3 keyed by characters). */
 interface ProgressV1 { m?: Record<string, number>; seen?: Record<string, number>; miss?: Record<string, number>; best?: number }
@@ -230,6 +232,8 @@ export class Progress {
   }
 
   setMaxLevel(level: number): void { this.data.settings.maxLevel = level; this.persist(); }
+
+  setAppearance(a: 'light' | 'dark' | null): void { this.data.settings.appearance = a; this.persist(); }
 
   setStyle(style: StyleId): void { this.data.settings.style = style; this.persist(); }
 

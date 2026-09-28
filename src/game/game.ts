@@ -156,15 +156,22 @@ export function startGame(opts: GameOptions): GameHandle {
     onStyle: style => applyStyle(style)
   });
 
-  /* ---------- style: soap bubbles, or ink and lanterns ---------- */
+  /* ---------- style: soap bubbles, or ink and lanterns; light or dark ---------- */
+  const systemDark = window.matchMedia?.('(prefers-color-scheme: dark)');
+  const lookMode = (): 'light' | 'dark' => progress.data.settings.appearance ?? (systemDark?.matches ? 'dark' : 'light');
+  // following the device: its switch changes the look too
+  systemDark?.addEventListener?.('change', () => { if (!progress.data.settings.appearance) applyStyle(progress.data.settings.style); });
   function applyStyle(style: StyleId, instant = false): void {
-    const theme = THEMES[style];
+    const theme = THEMES[style], mode = lookMode();
     document.body.classList.toggle('style-ink', style === 'ink');
-    stage.palettes = theme.palettes;
+    document.body.classList.toggle('look-dark', mode === 'dark');
+    document.body.classList.toggle('look-light', mode === 'light');
+    document.documentElement.style.colorScheme = mode;
+    stage.palettes = theme.palettes[mode];
     stage.backdrop.setStyle(theme.wallFonts, theme.paper);
     stage.commitPalette(0, instant);
     bubble.setTheme(theme);
-    ambient.setStyle(style === 'ink');
+    ambient.setStyle(style === 'ink', mode === 'dark');
     // the page's fonts changed, so the answers' sizes did too
     chips.measure();
     if (playing) fit();

@@ -17,6 +17,23 @@ export class Scheduler {
   private recent: string[] = [];
   constructor(private readonly recentSize = 6, private readonly rng: Rng = defaultRng) {}
 
+  /** Any item of the pool at random (not one of the last few): how a free practice session opens. */
+  any<T extends Schedulable>(pool: readonly T[]): T { return this.take(pool); }
+
+  /** A random item not recently seen, remembered as seen. */
+  private take<T extends Schedulable>(pool: readonly T[]): T {
+    const fresh = pool.filter(w => !this.recent.includes(w.id));
+    const from = fresh.length ? fresh : pool;
+    const pick = from[Math.floor(this.rng() * from.length)];
+    this.remember(pick.id);
+    return pick;
+  }
+
+  private remember(id: string): void {
+    this.recent.push(id);
+    if (this.recent.length > this.recentSize) this.recent.shift();
+  }
+
   next<T extends Schedulable>(pool: readonly T[], cards: Readonly<Record<string, Card>>, now = new Date(), prefer?: (item: T) => number): T {
     const fresh = pool.filter(w => !this.recent.includes(w.id));
     const candidates = fresh.length ? fresh : pool;
@@ -36,8 +53,7 @@ export class Scheduler {
         pick = soonest[Math.floor(this.rng() * Math.min(3, soonest.length))];
       }
     }
-    this.recent.push(pick.id);
-    if (this.recent.length > this.recentSize) this.recent.shift();
+    this.remember(pick.id);
     return pick;
   }
 }

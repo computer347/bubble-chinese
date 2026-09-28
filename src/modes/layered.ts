@@ -65,7 +65,12 @@ export abstract class LayeredMode implements Mode {
   /** The layers for a word, outermost first. */
   protected abstract makeQuestions(w: Word, bank: readonly Word[]): Question[];
   /** The next word to play. */
-  protected pick(): Word { return this.scheduler.next(this.ctx.practicePool(), this.ctx.progress.cards(this.skill)); }
+  protected pick(): Word {
+    const pool = this.ctx.practicePool();
+    return this.opening ? this.scheduler.any(pool) : this.scheduler.next(pool, this.ctx.progress.cards(this.skill));
+  }
+  /** True while the first bubble of a session is chosen: free practice opens on any word at random. */
+  protected opening = false;
   /** The next bubble: a word and the skill it trains, or null when the session is over. */
   protected choose(): NextBubble | null { return { word: this.pick(), skill: this.skill }; }
   /** Nothing left to play: back to the home screen. */
@@ -90,7 +95,10 @@ export abstract class LayeredMode implements Mode {
   private get active(): boolean { return this.ctx.bubble.handler?.reach === this.reach; }
   private readonly reach = (edge: Edge, vi: number) => this.judge(edge, vi);
 
-  prepare(): void { this.upcoming = this.choose(); }
+  prepare(): void {
+    this.opening = true;
+    try { this.upcoming = this.choose(); } finally { this.opening = false; }
+  }
 
   start(): void {
     this.ctx.bubble.handler = { reach: this.reach, popped: () => this.showSlip(), poked: () => this.onPoke() };
