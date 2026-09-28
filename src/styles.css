@@ -19,6 +19,7 @@
 }
 /* the dark mode's paper: a dark sheet with light ink (the ink style's is in theme/ink.css) */
 body.look-dark{ --paper:#1E2030; --print-blue:#DCE3FF; --print-red:#FF8C7C; }
+body.look-dark .strokebox{ background:color-mix(in srgb, var(--paper) 80%, #000); }
 *,*::before,*::after{ box-sizing:inherit; }
 html{ height:100%; scroll-padding-top:env(safe-area-inset-top,0px); }
 body{ height:100%; margin:0; overflow:hidden; background:var(--bg); color:var(--ui); font-family:var(--font); -webkit-font-smoothing:antialiased; }
@@ -411,7 +412,7 @@ body.at-home .q, body.at-home .ans{ display:none; }
 .ldone .e{ font-size:12px; opacity:.75; }
 
 /* ---------- writing: stroke order in a practice grid ---------- */
-.strokebox{ position:relative; align-self:center; background:#fff; border-radius:8px; box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--print-red) 35%, transparent); touch-action:none; }
+.strokebox{ position:relative; align-self:center; background:color-mix(in srgb, var(--paper) 88%, #fff 12%); border-radius:8px; box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--print-red) 35%, transparent); touch-action:none; }
 .strokebox .grid{ position:absolute; inset:0; width:100%; height:100%; fill:none; stroke:color-mix(in srgb, var(--print-red) 28%, transparent); stroke-width:.6; stroke-dasharray:2 2; }
 .strokebox .grid rect{ stroke-dasharray:none; stroke-width:.8; }
 .strokebox .strokes{ position:relative; }
@@ -481,8 +482,18 @@ body.at-home .back{ visibility:hidden; }
 #tab-you .words .h{ color:var(--ui); }
 #tab-you .words .lv i{ border-color:var(--ui); }
 #tab-you .words .lv i.on{ background:var(--ui); }
-#tab-you .menu-sec{ border-top:1px solid var(--line); padding-top:14px; display:flex; flex-direction:column; gap:12px; }
-#tab-you .menu-sec h3{ margin:0; font-size:12px; font-weight:650; letter-spacing:.09em; text-transform:uppercase; color:var(--ui-dim); }
+/* the You tab's groups: each folds away, its header saying what it is set to */
+.ygroup{ border:1px solid var(--line); border-radius:20px; background:color-mix(in srgb, var(--ui) 6%, transparent); }
+.ygroup > summary{ display:flex; align-items:center; gap:12px; padding:16px 18px; cursor:pointer; list-style:none; border-radius:20px; }
+.ygroup > summary::-webkit-details-marker{ display:none; }
+.ygroup > summary:focus-visible{ outline:2px solid var(--ui); outline-offset:2px; }
+.yg-t{ font-size:17px; font-weight:700; }
+.yg-v{ margin-left:auto; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:14px; color:var(--ui-dim); text-align:right; }
+.yg-c{ flex:none; width:8px; height:8px; margin:0 4px 4px 0; border-right:2px solid var(--ui-dim); border-bottom:2px solid var(--ui-dim); transform:rotate(45deg); transition:transform .25s; }
+.ygroup:not(:has(.yg-v)) .yg-c{ margin-left:auto; }
+.ygroup[open] .yg-c{ transform:rotate(225deg); margin-bottom:-4px; }
+.yg-body{ display:flex; flex-direction:column; gap:12px; padding:2px 18px 18px; }
+@media (prefers-reduced-motion: reduce){ .yg-c{ transition:none; } }
 #tab-you .levels{ justify-content:flex-start; }
 #tab-you .levels-label{ width:100%; margin:0; text-align:left; }
 #tab-you .slider input{ flex:1; width:auto; }
@@ -658,3 +669,87 @@ body.at-home .back{ visibility:hidden; }
 .wpick[aria-pressed="true"]{ background:var(--ui); border-color:var(--ui); color:var(--bg); }
 .wpick[aria-pressed="true"] .wpick-p{ color:color-mix(in srgb, var(--bg) 75%, transparent); }
 @media (prefers-reduced-motion: reduce){ .setchip, .wgroup-caret{ transition:none; } }
+
+/* Today's writing reviews: a chip under the Today bubble when characters are due */
+.duechip{
+  display:inline-flex; align-items:center; gap:10px; margin-top:12px; padding:5px 16px 5px 5px; cursor:pointer;
+  border:1px solid var(--line); border-radius:999px; color:var(--ui); font:650 14px/1 var(--font);
+  background:color-mix(in srgb, var(--ui) 9%, transparent);
+  transition:transform .45s cubic-bezier(.34,1.56,.64,1);
+}
+.duechip:active{ transform:scale(.95); transition-duration:.08s; }
+.duechip .mode.mini{ --size:34px; }
+.duechip .orb-glyph{ font-size:17px; }
+.duechip[hidden]{ display:none; }
+
+/* the end of a Write round: each character, clean ones in red */
+.wdone{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:4px 0 0; font-size:34px; }
+.wd-clean{ color:var(--print-red); }
+.wd-slip{ opacity:.45; }
+.wword .wme{ color:var(--print-red); }
+.wword .wgap{ display:inline-block; min-width:1em; border-bottom:2px solid var(--print-red); color:transparent; }
+
+/* ---------- Plug: pieces shaped by their part of the sentence ---------- */
+.plug{ position:fixed; inset:0; z-index:4; overflow-y:auto; background:var(--bg); display:grid; place-items:start center; padding:calc(var(--st) + var(--bar) + 8px) 14px calc(var(--sb) + 20px); }
+.plug[hidden]{ display:none; }
+.plug-card{ width:min(720px, 100%); display:flex; flex-direction:column; gap:14px; }
+.plug-stage{ align-self:center; margin:0; padding:6px 14px; border-radius:999px; font-size:12.5px; font-weight:650; letter-spacing:.02em; color:var(--ui-dim); background:color-mix(in srgb, var(--ui) 9%, transparent); text-align:center; }
+.plug-en{ margin:4px 0 0; text-align:center; font-family:var(--serif); font-size:clamp(26px,5.4vw,36px); line-height:1.15; color:var(--ui); text-wrap:balance; }
+.plug-tools{ display:flex; justify-content:center; gap:8px; }
+.plug-tools .hear{ color:var(--ui); border-color:var(--line); }
+.plug-tools .hear:disabled{ opacity:.4; }
+.plug-result{ min-height:1.4em; margin:0; text-align:center; font-size:15px; color:var(--ui-dim); }
+.plug.solved .plug-result{ font-size:clamp(24px,5vw,30px); color:var(--ui); }
+.plug-sockets, .plug-tray{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; }
+.plug-sockets{ min-height:88px; padding:14px 8px; border-radius:22px; background:color-mix(in srgb, var(--ui) 6%, transparent); border:1px solid var(--line); }
+.plug-tray{ min-height:80px; padding:6px 0; }
+.plug-foot{ display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:48px; }
+.plug-foot .next{ margin-left:auto; background:var(--ui); color:var(--bg); }
+.plug-legend{ display:flex; flex-wrap:wrap; gap:6px 12px; margin:0; font-size:12.5px; color:var(--ui-dim); }
+.legend{ display:inline-flex; align-items:center; gap:6px; }
+.legend .shape{ position:relative; display:inline-block; width:22px; height:14px; }
+
+/* the shapes: one per role, stretched to fit their words */
+.shape{ position:absolute; inset:0; background:var(--rc); }
+[data-role="S"]{ --rc:#3D7BFF; } [data-role="S"] .shape{ border-radius:50%; }
+[data-role="T"]{ --rc:#F0A020; } [data-role="T"] .shape{ clip-path:polygon(0 50%, 14% 0, 86% 0, 100% 50%, 86% 100%, 14% 100%); }
+[data-role="P"]{ --rc:#16B3A3; } [data-role="P"] .shape{ border-radius:999px; }
+[data-role="V"]{ --rc:#EE4449; } [data-role="V"] .shape{ clip-path:polygon(0 0, 84% 0, 100% 50%, 84% 100%, 0 100%); }
+[data-role="O"]{ --rc:#2FAE72; } [data-role="O"] .shape{ border-radius:6px; }
+[data-role="A"]{ --rc:#9357F5; } [data-role="A"] .shape{ clip-path:polygon(12% 0, 100% 0, 88% 100%, 0 100%); }
+[data-role="X"]{ --rc:#7F8A9E; } [data-role="X"] .shape{ border-radius:50% 50% 50% 12%; }
+
+.piece{
+  position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px;
+  min-width:72px; min-height:64px; padding:10px 22px; border:0; background:none; cursor:grab; color:#fff;
+  touch-action:none; -webkit-user-select:none; user-select:none; font-family:var(--font);
+}
+/* the jelly breathes in its shape, so the piece itself holds still under a finger */
+.piece .shape{ animation:jelly 3.2s ease-in-out infinite; animation-delay:inherit; }
+.piece .shape{ box-shadow:inset 0 -6px 12px rgba(0,0,0,.18), inset 0 6px 10px rgba(255,255,255,.3); }
+.piece[data-role="V"]{ padding-right:30px; }
+.piece-zh{ position:relative; font-size:24px; font-weight:650; line-height:1.15; text-shadow:0 1px 2px rgba(0,0,0,.28); }
+.piece-py{ position:relative; font-size:12px; font-weight:600; opacity:.92; }
+.piece.dragging{ z-index:5; cursor:grabbing; filter:drop-shadow(0 12px 16px rgba(0,0,0,.35)); }
+.piece.lit .shape{ filter:brightness(1.25) saturate(1.2); }
+.piece:focus-visible{ outline:2px solid var(--ui); outline-offset:4px; }
+@keyframes jelly{ 0%,100%{ transform:scale(1,1); } 30%{ transform:scale(1.025,.975); } 60%{ transform:scale(.985,1.015); } }
+
+/* a socket: its role's shape as a faint outline, filled by a piece */
+.socket{ position:relative; display:flex; align-items:center; justify-content:center; min-width:72px; min-height:64px; }
+.socket > .shape{ opacity:.22; }
+.socket > .shape::after{ content:""; position:absolute; inset:3px; background:var(--bg); border-radius:inherit; clip-path:inherit; opacity:.75; }
+.socket:has(.piece) > .shape{ opacity:0; }
+
+/* shape only: every piece the same neutral colour */
+.plug[data-scaffold="shape"] [data-role]{ --rc:color-mix(in srgb, var(--ui) 55%, var(--bg)); }
+.plug[data-scaffold="shape"] .piece{ color:var(--bg); }
+.plug[data-scaffold="shape"] .piece-zh{ text-shadow:none; }
+/* no help: plain slots and plain pieces, and the pinyin hidden until it is solved */
+.plug[data-scaffold="none"] [data-role]{ --rc:color-mix(in srgb, var(--ui) 55%, var(--bg)); }
+.plug[data-scaffold="none"] .shape{ border-radius:16px !important; clip-path:none !important; }
+.plug[data-scaffold="none"] .piece{ color:var(--bg); padding-right:22px; }
+.plug[data-scaffold="none"] .piece-zh{ text-shadow:none; }
+.plug[data-scaffold="none"]:not(.solved) .piece-py{ visibility:hidden; }
+@media (prefers-reduced-motion: reduce){ .piece .shape{ animation:none; } }
+@media (max-width:720px){ .piece-zh{ font-size:21px; } .piece{ min-height:58px; padding:8px 18px; } .socket{ min-height:58px; min-width:64px; } }

@@ -48,6 +48,8 @@ export class Settings {
       this.render();
       d.onStyle(progress.data.settings.style);
     }));
+    // the sound buttons are wired by the game; their group's header follows them
+    for (const id of ['sound', 'slowToggle']) document.getElementById(id)?.addEventListener('click', () => setTimeout(() => this.render(), 0));
     this.render();
   }
 
@@ -58,5 +60,12 @@ export class Settings {
     this.newBtns.forEach(b => b.setAttribute('aria-checked', String(Number(b.dataset.new) === s.newPerDay)));
     this.styleBtns.forEach(b => b.setAttribute('aria-checked', String(b.dataset.style === s.style)));
     this.lookBtns.forEach(b => b.setAttribute('aria-checked', String(b.dataset.look === (s.appearance ?? 'auto'))));
+    // what each folded group is set to, in its header
+    const put = (id: string, text: string) => { const e = document.getElementById(id); if (e) e.textContent = text; };
+    put('gStudyV', `HSK ${s.maxLevel === 1 ? '1' : `1–${s.maxLevel}`} · ${s.newPerDay} new a day`);
+    put('gLookV', `${s.style === 'ink' ? 'Ink & lanterns' : 'Bubbles'} · ${s.appearance === 'light' ? 'Light' : s.appearance === 'dark' ? 'Dark' : 'Auto'}`);
+    const on = document.getElementById('sound')?.getAttribute('aria-pressed') !== 'false';
+    const slow = document.getElementById('slowToggle')?.getAttribute('aria-pressed') === 'true';
+    put('gSoundV', on ? (slow ? 'On · slow voice' : 'On') : 'Off');
   }
 }

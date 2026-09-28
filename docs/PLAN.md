@@ -99,7 +99,8 @@ Hanzi Writer (MIT) animates stroke order and checks tracing, loading stroke data
 - [x] Licences confirmed: Hanzi Writer is MIT; hanzi-writer-data is under the Arphic Public License (redistribute unaltered with ARPHICPL.TXT; the app's own code is not affected, §2 "mere aggregation")
 - [x] Stroke data pipeline: `npm run strokes` copies the 371 characters of HSK 1–2 verbatim into `public/strokes/` with the licence and a notice; CI checks they match; git keeps them byte for byte
 - [x] Watch the stroke order in a practice grid (米字格), then trace it; each character a review in the `write` skill, graded by mistakes
-- [ ] Writing reviews in Today (the `write` skill is recorded but not yet scheduled)
+- [x] The Write mode: rounds of 8 from the characters of the words you know (in your word set), scheduled in the `write` skill; a new character is watched then traced, a learning one traced, a known one written from memory with only its word to go on ("Show me" counts as a miss)
+- [x] Writing reviews in Today: the Path tab shows "写 N characters to write" under Today when any are due, opening a round of just those
 - [ ] Tracing on the bubble itself, not only in the lesson card
 - [ ] Radical split: the parts of a character and what they hint at (Make Me a Hanzi's decomposition data is under a different licence, LGPL; check before using it)
 
@@ -139,13 +140,14 @@ Word pieces are soft bodies moulded to their grammatical role and plug into matc
 subject = blue circle, time = amber hexagon, place = teal pill, verb = red triangle, object = green square, adverb = purple diamond, particle = grey droplet.
 Scaffolding fades from shape and colour, to shape only, to neither. Progression: SV → SVO → S+T+VO → S+T+P+V+O → adverbs → 不/没 → 吗/呢 → measure words → 了/过 → 把/被.
 
-**Needs:** 5, role-tagged sentences (content track). **Gives:** the `sentence` skill.
+**Needs:** role-tagged sentences (content track); 5 for 3D pieces. **Gives:** the `sentence` skill.
 
 - [x] Sentence schema: role-tagged chunks, other valid orders, level from its words; 55 HSK 1–2 sentences to start
 - [x] 467 real example sentences from Tatoeba, every word in HSK 1–2
-- [ ] Fit logic: which piece fits which socket, every valid order accepted
-- [ ] The Plug mode on the framework, with scaffolding levels
-- [ ] Progression through the grammar points above, scheduled by the `sentence` skill
+- [x] Fit logic: which piece fits which socket, every valid order accepted (`src/game/plug.ts`, unit-tested)
+- [x] The Plug mode, with 2D jelly pieces for now (decided: shapes drawn in CSS, wobbling, flying into their sockets; tap, drag or keyboard); 175 role-tagged sentences (the tagged examples and the path's sentences to build, now recorded too); scaffolding per sentence: shape and colour when new, shape while learning, plain slots once known; a hint places the next piece
+- [x] Progression through the grammar points above, scheduled by the `sentence` skill: a stage opens once 3 of the one before are solved
+- [ ] 3D soft-body pieces once Phase 5 lands (the mode stays; only the pieces change)
 
 **Verify:** every valid order is accepted; fit-logic unit tests; 20-sentence playtest per level; solvable by shape alone and by keyboard.
 

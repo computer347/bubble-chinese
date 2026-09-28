@@ -2,13 +2,14 @@ import { gsap } from 'gsap';
 import type { Word } from '../content/words';
 import { FORTUNES } from '../content/fortunes';
 import wordOfDayList from '../content/generated/word-of-day.json';
-import { LESSONS } from '../content/path';
 import type { Voice } from '../audio/voice';
 import type { Progress } from '../game/progress';
 import { dailyIndex, streakDays, practisedToday } from '../game/daily';
 import type { ModeId, ModeInfo } from '../modes';
 import { PathView } from './pathview';
 import { StoryList } from './storylist';
+import { writableChars } from '../modes/write';
+import { PLUG_ITEMS, STAGES, USED_STAGES, openStage } from '../game/plug';
 import { WordSetSheet } from './wordset';
 import type { Unit } from '../content/path';
 import { $ } from './dom';
@@ -17,7 +18,7 @@ export type Tab = 'path' | 'practice' | 'read' | 'you';
 export const TABS: readonly Tab[] = ['path', 'practice', 'read', 'you'];
 
 /** What a tile or path stop starts: a mode, with what it should open. */
-export type StartArg = { kind: 'lesson' | 'write'; index: number } | { kind: 'note'; unit: Unit } | { kind: 'story'; id: string };
+export type StartArg = { kind: 'lesson' | 'write'; index: number } | { kind: 'note'; unit: Unit } | { kind: 'story'; id: string } | { kind: 'due' };
 
 export interface ShellDeps {
   progress: Progress;
@@ -69,6 +70,7 @@ export class Shell {
 
   constructor(private readonly d: ShellDeps) {
     $('todayBtn').addEventListener('click', e => d.onEnter('today', e.currentTarget as HTMLElement));
+    $('writeDue').addEventListener('click', e => d.onEnter('write', (e.currentTarget as HTMLElement).querySelector<HTMLElement>('.mode'), { kind: 'due' }));
     this.pathView = new PathView({
       reduceMotion: d.reduceMotion,
       done: () => d.progress.data.path.done,
@@ -139,6 +141,11 @@ export class Shell {
       $('fortuneDay').textContent = fortuneOfDay(now);
       const { due, fresh } = this.d.today();
       const done = !due && !fresh;
+      // characters due to write: Today's writing reviews, one tap away
+      const toWrite = progress.dueCount('write', writableChars(this.d.pool(), progress.cards('words')));
+      const wd = $('writeDue') as HTMLButtonElement;
+      wd.hidden = toWrite === 0;
+      $('writeDueN').textContent = `${toWrite} ${toWrite === 1 ? 'character' : 'characters'} to write`;
       $('homeStats').textContent = done
         ? 'All done for today. Come back tomorrow, or take the next lesson below.'
         : `${due} ${due === 1 ? 'review' : 'reviews'} due · ${fresh} new ${fresh === 1 ? 'word' : 'words'}`;
@@ -155,10 +162,16 @@ export class Shell {
         const meta = b.querySelector('.card-meta')!;
         if (b.dataset.mode === 'words') meta.textContent = `${progress.learnedCount('words', set)} of ${set.length} learned`;
         if (b.dataset.mode === 'listen') meta.textContent = `${progress.learnedCount('listen', heard)} of ${heard.length} heard well`;
+        if (b.dataset.mode === 'plug') {
+          const items = PLUG_ITEMS.filter(x => x.level <= progress.data.settings.maxLevel);
+          const st = openStage(items, progress.cards('sentence'));
+          meta.textContent = `${STAGES[st].name} · stage ${USED_STAGES.indexOf(st) + 1} of ${USED_STAGES.length}`;
+        }
         if (b.dataset.mode === 'write') {
-          const done = LESSONS.filter(x => progress.data.path.done[x.lesson.id]).length;
-          b.disabled = done === 0;
-          meta.textContent = done ? `Characters from ${done} ${done === 1 ? 'lesson' : 'lessons'}` : 'Finish a lesson first';
+          const chars = writableChars(set, progress.cards('words'));
+          const due = progress.dueCount('write', chars);
+          b.disabled = chars.length === 0;
+          meta.textContent = chars.length ? `${chars.length} characters${due ? ` · ${due} due` : ''}` : 'Meet some words first';
         }
       }
     }

@@ -8,7 +8,7 @@ export type Token = { id: string; py: string } | { name: string; py: string } | 
 export interface DialogueLine { id: string; who: string; en: string; text: string; tokens: Token[] }
 
 /** A sentence to put in order: its chunks are the tiles. */
-export interface BuildSentence { text: string; en: string; pattern: string; chunks: Chunk[]; punct: { at: number; p: string }[]; py: string[] }
+export interface BuildSentence { id: string; text: string; en: string; pattern: string; chunks: Chunk[]; punct: { at: number; p: string }[]; py: string[] }
 
 export interface Lesson { id: string; title: string; words: string[]; dialogue: DialogueLine[]; builds: BuildSentence[] }
 

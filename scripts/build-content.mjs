@@ -286,7 +286,8 @@ export function buildPath(words, file = PATH_FILE, level = 1, sizes = LESSON_WOR
       const s = parseChunks(chunkText, byHanzi, `${file}:${n}`);
       for (const c of s.chunks) for (const id of c.words) { known(byId.get(id).h, n); lesson.used.add(id); }
       const py = contextPinyin(s.chunks.flatMap(c => c.words.map(id => byId.get(id).h)), byHanzi);
-      lesson.builds.push({ text: s.text, en, pattern: s.pattern, chunks: s.chunks, punct: s.punct, py });
+      // an id from the text names its recording, and its reviews in Plug
+      lesson.builds.push({ id: 'b' + createHash('sha1').update(s.text).digest('hex').slice(0, 8), text: s.text, en, pattern: s.pattern, chunks: s.chunks, punct: s.punct, py });
     } else {
       need(false, n, `unknown line "${kind}" (expected unit, note, lesson, new, say or build)`);
     }

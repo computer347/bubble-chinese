@@ -173,10 +173,12 @@ test('the home screen: modes, HSK level, and back again', async ({ page }) => {
   await tab(page, 'read');
   await expect(page.locator('.wcard.wotd')).toContainText('Word of the day');
   await tab(page, 'practice');
-  await expect(page.locator('[data-mode="plug"]')).toBeDisabled();
+  await expect(page.locator('[data-mode="plug"]')).toBeEnabled();
+  await expect(page.locator('[data-mode="write"]')).toBeDisabled();            // nothing met yet to write
   await expect(page.locator('[data-mode="listen"]')).toBeEnabled();
   // the settings live in the You tab
   await tab(page, 'you');
+  await page.evaluate(() => document.querySelectorAll<HTMLDetailsElement>('#tab-you details').forEach(d => { d.open = true; }));
   await page.click('[data-level="2"]');
   await tab(page, 'practice');
   const s2 = await snap(page);
@@ -278,6 +280,7 @@ test('Listen dictation: type the pinyin you hear, with tone numbers', async ({ p
 test('Ask about: characters only makes one-layer bubbles, and one kind always stays on', async ({ page }) => {
   await openHome(page);
   await tab(page, 'you');
+  await page.evaluate(() => document.querySelectorAll<HTMLDetailsElement>('#tab-you details').forEach(d => { d.open = true; }));
   await page.click('[data-ask="meaning"]');
   await page.click('[data-ask="pinyin"]');
   await expect(page.locator('[data-ask="characters"]')).toBeDisabled();
@@ -296,6 +299,7 @@ test('Today: new words up to the daily limit, then done and back home', async ({
   await openHome(page);
   // one layer a bubble and five new words a day keep this quick
   await tab(page, 'you');
+  await page.evaluate(() => document.querySelectorAll<HTMLDetailsElement>('#tab-you details').forEach(d => { d.open = true; }));
   await page.click('[data-ask="meaning"]');
   await page.click('[data-ask="pinyin"]');
   await page.click('[data-new="5"]');

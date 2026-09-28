@@ -40,6 +40,7 @@
       <h2 class="home-title" id="homeTitle">Today</h2>
       <p class="home-stats" id="homeStats"></p>
       <button type="button" class="hero" data-mode="today" id="todayBtn"><span class="mode m-today hero-orb"><span class="mode-name" id="todayName">Start</span></span></button>
+      <button type="button" class="duechip" id="writeDue" hidden><span class="mode mini m-write" aria-hidden="true"><span class="orb-glyph" lang="zh-Hans">写</span></span><span id="writeDueN"></span></button>
     </div>
     <h2 class="tab-title">The path</h2>
     <p class="path-intro" id="pathIntro"></p>
@@ -70,13 +71,20 @@
       <div class="you-stat"><b id="learned">0</b><span>of <span id="total">0</span> learned</span></div>
       <div class="you-stat"><b id="youBest">0</b><span>best streak</span></div>
     </div>
-    <h3 class="shelf-title">Your words</h3>
     <ul class="strip" id="wordStrip"></ul>
-    <p class="you-sub" id="drawerSub"></p>
-    <ul class="words" id="wordsList"></ul>
 
-    <section class="menu-sec" aria-labelledby="mStudy">
-      <h3 id="mStudy">Study</h3>
+    <!-- each group folds away, showing what it is set to -->
+    <details class="ygroup" id="gWords">
+      <summary><span class="yg-t">Your words</span><span class="yg-v" id="gWordsV"></span><i class="yg-c" aria-hidden="true"></i></summary>
+      <div class="yg-body">
+        <p class="you-sub" id="drawerSub"></p>
+        <ul class="words" id="wordsList"></ul>
+      </div>
+    </details>
+
+    <details class="ygroup menu-sec" id="gStudy">
+      <summary><span class="yg-t" id="mStudy">Study</span><span class="yg-v" id="gStudyV"></span><i class="yg-c" aria-hidden="true"></i></summary>
+      <div class="yg-body">
       <div class="levels" role="radiogroup" aria-label="Words up to HSK level">
         <span class="levels-label">Words up to</span>
         <button type="button" role="radio" data-level="1" aria-checked="true">HSK 1</button>
@@ -96,9 +104,11 @@
         <button type="button" role="radio" data-new="15" aria-checked="false">15</button>
         <button type="button" role="radio" data-new="20" aria-checked="false">20</button>
       </div>
-    </section>
-    <section class="menu-sec" aria-labelledby="mLook">
-      <h3 id="mLook">Look</h3>
+      </div>
+    </details>
+    <details class="ygroup menu-sec" id="gLook">
+      <summary><span class="yg-t" id="mLook">Look</span><span class="yg-v" id="gLookV"></span><i class="yg-c" aria-hidden="true"></i></summary>
+      <div class="yg-body">
       <div class="levels styles" role="radiogroup" aria-label="Style">
         <span class="levels-label">Style</span>
         <button type="button" role="radio" data-style="bubble" aria-checked="true">Bubbles</button>
@@ -112,15 +122,23 @@
       </div>
       <label class="slider"><span>Wobble</span><input id="wobble" type="range" min="0" max="100" value="55"></label>
       <label class="slider"><span>Detail</span><input id="detail" type="range" min="0" max="2" step="1" value="1" aria-valuetext="2,562 points"><output id="detailOut">2,562</output></label>
-    </section>
-    <section class="menu-sec" aria-labelledby="mSound">
-      <h3 id="mSound">Sound</h3>
+      </div>
+    </details>
+    <details class="ygroup menu-sec" id="gSound">
+      <summary><span class="yg-t" id="mSound">Sound</span><span class="yg-v" id="gSoundV"></span><i class="yg-c" aria-hidden="true"></i></summary>
+      <div class="yg-body">
       <div class="levels">
         <button type="button" class="pill" id="sound" aria-pressed="true">Sound on</button>
         <button type="button" class="pill" id="slowToggle" aria-pressed="false">Slow voice</button>
       </div>
-    </section>
-    <p class="home-note">Levels follow the 2025 HSK syllabus, in force since July 2026. Word of the day comes from the level above yours, with meanings from CC-CEDICT. Stroke order drawn with Hanzi Writer (MIT); stroke data from Make Me a Hanzi, derived from Arphic fonts, under the Arphic Public License.</p>
+      </div>
+    </details>
+    <details class="ygroup" id="gAbout">
+      <summary><span class="yg-t">About and credits</span><i class="yg-c" aria-hidden="true"></i></summary>
+      <div class="yg-body">
+    <p class="home-note">Levels follow the 2025 HSK syllabus, in force since July 2026. Word of the day comes from the level above yours, with meanings from CC-CEDICT. Stroke order drawn with Hanzi Writer (MIT); stroke data from Make Me a Hanzi, derived from Arphic fonts, under the Arphic Public License. Stories written for Squish, awaiting a native speaker's review (CC0). Example sentences from Tatoeba (CC BY 2.0 FR); voice by MiniMax.</p>
+      </div>
+    </details>
   </section>
 </main>
 
@@ -153,6 +171,21 @@
   <article class="reader-page" id="rPage"></article>
 </section>
 <div class="rpop" id="rPop" hidden role="status"></div>
+
+<section class="plug" id="plug" hidden aria-labelledby="plugEn">
+  <div class="plug-card">
+    <p class="plug-stage" id="plugStage"></p>
+    <p class="plug-en" id="plugEn"></p>
+    <div class="plug-tools">
+      <button type="button" class="hear" id="plugHear">▶ Hear it</button>
+      <button type="button" class="hear" id="plugHint">Hint</button>
+    </div>
+    <ol class="plug-sockets" id="plugSockets" aria-label="The sentence, in order"></ol>
+    <p class="plug-result" id="plugResult" aria-live="polite" lang="zh-Hans"></p>
+    <div class="plug-tray" id="plugTray" aria-label="Pieces to place"></div>
+    <div class="plug-foot"><p class="plug-legend" id="plugLegend"></p><button type="button" class="next" id="plugNext" hidden>Next</button></div>
+  </div>
+</section>
 
 <section class="sheet" id="setSheet" hidden role="dialog" aria-modal="true" aria-labelledby="setTitle">
   <div class="sheet-panel" id="setPanel">

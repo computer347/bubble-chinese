@@ -4,6 +4,8 @@ import { ListenMode } from './listen';
 import { TodayMode } from './today';
 import { PathMode } from './path';
 import { ReadMode } from './read';
+import { WriteMode } from './write';
+import { PlugMode } from './plug';
 
 export type ModeId = 'today' | 'path' | 'words' | 'listen' | 'write' | 'plug' | 'learn' | 'read';
 
@@ -27,7 +29,7 @@ export const MODES: readonly ModeInfo[] = [
   { id: 'path', name: 'Path', desc: 'Lessons by topic: new words in context', make: ctx => new PathMode(ctx), ownTab: true },
   { id: 'words', name: 'Words', desc: 'Read a word: its meaning, pinyin, characters', make: ctx => new WordsMode(ctx), glyph: '字' },
   { id: 'listen', name: 'Listen', desc: 'Hear a word: its tones, meaning, characters', make: ctx => new ListenMode(ctx), glyph: '听' },
-  { id: 'write', name: 'Write', desc: 'Stroke order for the characters you have met', glyph: '写' },
+  { id: 'write', name: 'Write', desc: 'The characters of the words you know, stroke by stroke', make: ctx => new WriteMode(ctx), glyph: '写' },
   { id: 'read', name: 'Read', desc: 'Graded stories: tap a word, hold a sentence', make: ctx => new ReadMode(ctx), ownTab: true, glyph: '读' },
-  { id: 'plug', name: 'Plug', desc: 'Build sentences from pieces', glyph: '句' }
+  { id: 'plug', name: 'Plug', desc: 'Build sentences from pieces shaped by their part', make: ctx => new PlugMode(ctx), glyph: '句' }
 ];

@@ -4,7 +4,7 @@ import { PATH, LESSONS, taughtThrough, type Lesson, type Unit, type Token, type 
 import { shuffle } from '../game/random';
 import { LessonCard, type CardResult } from '../ui/lessoncard';
 import { DrillMode, CheckpointMode } from './drills';
-import { StrokeBox, hanziOf } from '../ui/strokes';
+import { StrokeBox, hanziOf, strokeColors } from '../ui/strokes';
 import { Rating } from '../game/memory';
 import type { LayeredMode } from './layered';
 import type { Sentence } from '../content/sentences';
@@ -178,8 +178,7 @@ export class PathMode implements Mode {
     const { lesson } = LESSONS[index];
     const words = lesson.words.map(id => byId.get(id)!);
     const chars = hanziOf(words.map(w => w.h).join(''));
-    const css = getComputedStyle(document.documentElement);
-    const colors = { stroke: css.getPropertyValue('--print-red').trim() || '#B8262B', outline: 'rgba(35,64,127,.16)', drawing: css.getPropertyValue('--print-blue').trim() || '#23407F', highlight: '#E8B04A' };
+    const colors = strokeColors();
     const size = Math.min(260, window.innerWidth - 90);
     this.ctx.hud.modeLabel({ en: 'Write', zh: '写', py: 'xiě' });
     this.status = { screen: 'card', step: '', lesson: lesson.id };

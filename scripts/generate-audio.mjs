@@ -32,7 +32,9 @@ const STORY_FILE = join(root, 'src/content/generated/stories.json');
 const STORY_LINES = existsSync(STORY_FILE) ? [...new Map(JSON.parse(readFileSync(STORY_FILE, 'utf8')).flatMap(st => st.paras.flat()).map(l => [l.id, {
   id: l.id, text: l.text, chunks: [{ role: null, words: l.tokens.filter(t => t.id).map(t => t.id) }]
 }])).values()] : [];
-const SPOKEN = [...SENTENCES, ...DIALOGUE, ...STORY_LINES];
+// the path's sentences to build (and Plug's), the same way
+const BUILDS = [...new Map(PATH.units.flatMap(u => u.lessons.flatMap(l => l.builds)).map(b => [b.id, b])).values()];
+const SPOKEN = [...SENTENCES, ...DIALOGUE, ...STORY_LINES, ...BUILDS];
 const WORDS_BY_ID = new Map(WORDS.map(w => [w.id, w]));
 const AUDIO_DIR = join(root, 'public/audio');
 

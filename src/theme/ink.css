@@ -104,3 +104,14 @@ body.style-ink .wpick-h{ font-family:var(--brush); font-weight:400; }
 
 /* the ink style at night: a dark lacquered sheet with pale ink */
 body.style-ink.look-dark{ --paper:#29211A; --print-blue:#F0E2C4; --print-red:#FF8A6A; }
+body.style-ink .duechip{ border-radius:6px; }
+body.style-ink .wdone{ font-family:var(--brush); }
+
+/* Plug in the ink style: seal-stamped pieces in mineral pigments */
+body.style-ink .plug-en{ font-family:var(--brush); }
+body.style-ink .piece-zh{ font-family:var(--brush); font-weight:400; font-size:26px; }
+body.style-ink [data-role="S"]{ --rc:#2F5E9E; } body.style-ink [data-role="T"]{ --rc:#C08A2A; }
+body.style-ink [data-role="P"]{ --rc:#2E7D6E; } body.style-ink [data-role="V"]{ --rc:#B8262B; }
+body.style-ink [data-role="O"]{ --rc:#4E7D3A; } body.style-ink [data-role="A"]{ --rc:#6E4A8E; }
+body.style-ink [data-role="X"]{ --rc:#6B6259; }
+body.style-ink .plug-sockets, body.style-ink .plug-stage{ border-radius:6px; }

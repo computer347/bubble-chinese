@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import { QUIZ_WORDS } from '../content/words';
+import { Rating } from './memory';
 import { setWords } from '../content/wordsets';
 import { DETAILS } from '../engine/softbody';
 import { Sound } from '../audio/sound';
@@ -19,6 +20,8 @@ import { LESSONS } from '../content/path';
 import { todayLeft, TodayMode } from '../modes/today';
 import { PathMode, type PathStatus } from '../modes/path';
 import { ReadMode, type ReadStatus } from '../modes/read';
+import { WriteMode, type WriteStatus } from '../modes/write';
+import { PlugMode, type PlugStatus } from '../modes/plug';
 import { MODES, type ModeId } from '../modes';
 import type { Mode, ModeContext } from '../modes/mode';
 import { LayeredMode } from '../modes/layered';
@@ -45,6 +48,8 @@ export interface GameHandle {
   home(): void;
   /** Marks the first n path lessons finished, as if played (for tests of what they open). */
   finishLessons(n: number): void;
+  /** Meets the first n quizzed words of the path in Words, as if popped once (for tests of what they open). */
+  meetWords(n: number): void;
   snapshot(): {
     mode: ModeId | null;
     /** The shell's open tab. */
@@ -63,6 +68,8 @@ export interface GameHandle {
     /** Where the path is: map, a lesson card, a drill or the checkpoint. */
     path: PathStatus | null;
     read: ReadStatus | null;
+    write: WriteStatus | null;
+    plug: PlugStatus | null;
     /** The last fit: where the bubble was sent, when, and what it avoided. */
     lastFit: { y: number; r: number; at: number; obstacles: Array<{ l: number; t: number; r: number; b: number }> } | null;
   };
@@ -189,12 +196,6 @@ export function startGame(opts: GameOptions): GameHandle {
   }
   /** Leaves the shell for a mode; `from` is the tapped button, whose orb zooms into the task. */
   function enter(id: ModeId, arg?: StartArg, from?: HTMLElement | null): void {
-    // the Write tile opens stroke practice for the latest finished lesson
-    if (id === 'write') {
-      const done = LESSONS.filter(x => progress.data.path.done[x.lesson.id]);
-      if (!done.length) return;
-      id = 'path'; arg = { kind: 'write', index: done[done.length - 1].index };
-    }
     const mode = modes.get(id);
     if (!home.shown || current || !mode) return;
     sound.unlock(); voice.unlock();
@@ -251,6 +252,11 @@ export function startGame(opts: GameOptions): GameHandle {
   return {
     enter,
     home: showHome,
+    meetWords: n => {
+      const ids = LESSONS.flatMap(x => x.lesson.words).filter(id => QUIZ_WORDS.some(w => w.id === id)).slice(0, n);
+      for (const id of ids) progress.review('words', id, Rating.Good);
+      if (!playing) home.render();
+    },
     finishLessons: n => { for (const x of LESSONS.slice(0, n)) progress.completeLesson(x.lesson.id); if (!playing) home.render(); },
     snapshot: () => { const words = layered(); return {
       mode: currentId, tab: home.tab, state: state(), word: words.word?.h ?? null, layers: bubble.layers, totalLayers: bubble.totalLayers, correctEdge: words.correctEdge,
@@ -261,6 +267,8 @@ export function startGame(opts: GameOptions): GameHandle {
       ball: bubble.screenCircle(),
       path: current instanceof PathMode ? current.snapshot() : null,
       read: current instanceof ReadMode ? current.snapshot() : null,
+      write: current instanceof WriteMode ? current.snapshot() : null,
+      plug: current instanceof PlugMode ? current.snapshot() : null,
       lastFit: lastFit && { ...lastFit, now: bubble.fitState() }
     }; }
   };

@@ -6,6 +6,20 @@ export const strokeFile = (ch: string): string => `u${ch.codePointAt(0)!.toStrin
 /** The Chinese characters of a string, in order, without repeats. */
 export const hanziOf = (s: string): string[] => [...new Set([...s].filter(c => /\p{Script=Han}/u.test(c)))];
 
+/**
+ * Stroke colours from the paper's inks, so the practice grid reads in light and dark alike: strokes in
+ * red, your drawing in the text colour, the outline a faint wash of it.
+ */
+export function strokeColors(): { stroke: string; outline: string; drawing: string; highlight: string } {
+  const css = getComputedStyle(document.body);
+  const red = css.getPropertyValue('--print-red').trim() || '#B8262B';
+  const ink = css.getPropertyValue('--print-blue').trim() || '#23407F';
+  // Hanzi Writer takes rgba() but not 8-digit hex, so the faint outline is spelt out
+  const m = ink.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
+  const outline = m ? `rgba(${m.slice(1).map(h => parseInt(h, 16)).join(',')},.18)` : 'rgba(35,64,127,.18)';
+  return { stroke: red, outline, drawing: ink, highlight: '#E8B04A' };
+}
+
 export interface StrokeCallbacks {
   /** A stroke drawn right; `left` strokes remain. */
   onStroke?(done: number, total: number): void;
@@ -17,13 +31,13 @@ export interface StrokeCallbacks {
 /**
  * One character to watch and trace, in a practice grid (米字格). The stroke data is loaded from
  * the app's own public/strokes/, not a CDN. Watch plays the stroke order; trace starts the quiz,
- * which hints a stroke after two misses on it.
+ * which hints a stroke after a few misses on it. Without the outline, it is writing from memory.
  */
 export class StrokeBox {
   readonly el: HTMLElement;
   private writer: ReturnType<typeof HanziWriter.create> | null = null;
 
-  constructor(ch: string, size: number, colors: { stroke: string; outline: string; drawing: string; highlight: string }) {
+  constructor(ch: string, size: number, colors: { stroke: string; outline: string; drawing: string; highlight: string }, opts: { outline?: boolean } = {}) {
     this.el = Object.assign(document.createElement('div'), { className: 'strokebox' });
     this.el.style.width = this.el.style.height = `${size}px`;
     // the practice grid: a border, a cross and the diagonals
@@ -33,7 +47,7 @@ export class StrokeBox {
     const base = import.meta.env.BASE_URL;
     this.writer = HanziWriter.create(target, ch, {
       width: size, height: size, padding: Math.round(size * 0.06),
-      showCharacter: false, showOutline: true,
+      showCharacter: false, showOutline: opts.outline ?? true,
       strokeColor: colors.stroke, outlineColor: colors.outline, drawingColor: colors.drawing, highlightColor: colors.highlight,
       drawingWidth: Math.max(6, Math.round(size / 28)),
       strokeAnimationSpeed: 1.2, delayBetweenStrokes: 180,
@@ -51,15 +65,19 @@ export class StrokeBox {
     });
   }
 
-  trace(cb: StrokeCallbacks): void {
+  /** Starts tracing; a stroke is hinted after `hintAfter` misses on it. */
+  trace(cb: StrokeCallbacks, hintAfter = 2): void {
     let mistakes = 0;
     this.writer?.quiz({
-      showHintAfterMisses: 2,
+      showHintAfterMisses: hintAfter,
       onCorrectStroke: (d: { strokeNum: number; strokesRemaining: number }) => cb.onStroke?.(d.strokeNum + 1, d.strokeNum + 1 + d.strokesRemaining),
       onMistake: () => cb.onMistake?.(++mistakes),
       onComplete: (d: { totalMistakes: number }) => cb.onComplete(d.totalMistakes)
     });
   }
+
+  /** Shows the whole character (after writing from memory, to compare). */
+  reveal(): void { this.writer?.showCharacter({ duration: 400 }); }
 
   destroy(): void { this.writer?.cancelQuiz(); this.writer = null; this.el.remove(); }
 }

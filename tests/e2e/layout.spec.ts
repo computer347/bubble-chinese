@@ -91,7 +91,7 @@ for (const [name, W, H, style] of RUNS) {
     await page.goto('/?e2e');
     await page.waitForFunction(() => !!window.__squish);
     const ink = style === 'ink';
-    if (ink) { await page.click('.tabbtn[data-tab="you"]'); await page.click('[data-style="ink"]'); }
+    if (ink) { await page.click('.tabbtn[data-tab="you"]'); await page.evaluate(() => document.querySelectorAll<HTMLDetailsElement>('#tab-you details').forEach(d => { d.open = true; })); await page.click('[data-style="ink"]'); }
     const tail = ink ? 1.45 : 1;
     const problems: string[] = [];
     for (const mode of ['words', 'listen']) {

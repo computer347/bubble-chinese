@@ -44,6 +44,7 @@ test('the path: lesson 1 from its culture note to done, and its words join the r
   await until(page, s => s.state === 'home', 'home');
   // one layer a bubble keeps the drills short
   await page.click('.tabbtn[data-tab="you"]');
+  await page.evaluate(() => document.querySelectorAll<HTMLDetailsElement>('#tab-you details').forEach(d => { d.open = true; }));
   await page.click('[data-ask="meaning"]');
   await page.click('[data-ask="pinyin"]');
   await page.click('.tabbtn[data-tab="path"]');

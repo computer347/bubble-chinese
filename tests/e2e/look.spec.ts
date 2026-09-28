@@ -19,6 +19,7 @@ test('light and dark: pale ground with dark text, or deep ground with light text
   await page.goto('/?e2e');
   await page.waitForFunction(() => window.__squish?.snapshot().state === 'home');
   await page.click('.tabbtn[data-tab="you"]');
+  await page.evaluate(() => document.querySelectorAll<HTMLDetailsElement>('#tab-you details').forEach(d => { d.open = true; }));
   for (const style of ['bubble', 'ink']) {
     await page.click(`[data-style="${style}"]`);
     for (const look of ['dark', 'light']) {

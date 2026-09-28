@@ -45,6 +45,7 @@ export class Drawer {
     const met = words.filter(w => cards[w.id])
       .sort((x, y) => (cards[y.id].last_review?.getTime() ?? 0) - (cards[x.id].last_review?.getTime() ?? 0));
     $('drawerSub').textContent = `${progress.learnedCount('words', words)} learned, ${met.length} met, ${progress.dueCount('words', words)} due. ${words.length} words up to HSK ${progress.data.settings.maxLevel}.${toneLine(toneAccuracy(progress.log, byId))}`;
+    $('gWordsV').textContent = met.length ? `${progress.learnedCount('words', words)} learned · ${progress.dueCount('words', words)} due` : 'None yet';
     const list = $('wordsList');
     list.replaceChildren();
     if (!met.length) {

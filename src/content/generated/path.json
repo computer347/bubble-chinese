@@ -178,6 +178,7 @@
      ],
      "builds": [
       {
+       "id": "bd181c28d",
        "text": "我很好。",
        "en": "I'm fine.",
        "pattern": "S A V",
@@ -214,6 +215,7 @@
        ]
       },
       {
+       "id": "b6006a3cf",
        "text": "我也很好。",
        "en": "I'm fine too.",
        "pattern": "S A A V",
@@ -257,6 +259,7 @@
        ]
       },
       {
+       "id": "b45ae2151",
        "text": "你好吗？",
        "en": "How are you?",
        "pattern": "S V X",
@@ -293,6 +296,7 @@
        ]
       },
       {
+       "id": "b46de8bb1",
        "text": "你呢？",
        "en": "And you?",
        "pattern": "S X",
@@ -553,6 +557,7 @@
      ],
      "builds": [
       {
+       "id": "bdc78c050",
        "text": "我是学生。",
        "en": "I'm a student.",
        "pattern": "S V O",
@@ -589,6 +594,7 @@
        ]
       },
       {
+       "id": "ba3b1ed30",
        "text": "我不是老师。",
        "en": "I'm not a teacher.",
        "pattern": "S A V O",
@@ -632,6 +638,7 @@
        ]
       },
       {
+       "id": "b8308b881",
        "text": "大家都是学生。",
        "en": "Everyone is a student.",
        "pattern": "S A V O",
@@ -675,6 +682,7 @@
        ]
       },
       {
+       "id": "b20506bb1",
        "text": "你是老师吗？",
        "en": "Are you a teacher?",
        "pattern": "S V O X",
@@ -1052,6 +1060,7 @@
      ],
      "builds": [
       {
+       "id": "bbe97f872",
        "text": "你叫什么名字？",
        "en": "What's your name?",
        "pattern": "S V O",
@@ -1090,6 +1099,7 @@
        ]
       },
       {
+       "id": "b98f4de14",
        "text": "这是我们老师。",
        "en": "This is our teacher.",
        "pattern": "S V O",
@@ -1128,6 +1138,7 @@
        ]
       },
       {
+       "id": "b97f702bf",
        "text": "他不是老师。",
        "en": "He isn't a teacher.",
        "pattern": "S A V O",
@@ -1171,6 +1182,7 @@
        ]
       },
       {
+       "id": "b00cdae5f",
        "text": "他们都是学生。",
        "en": "They're all students.",
        "pattern": "S A V O",
@@ -1530,6 +1542,7 @@
      ],
      "builds": [
       {
+       "id": "b97d2d338",
        "text": "你是哪国人？",
        "en": "Where are you from?",
        "pattern": "S V O",
@@ -1570,6 +1583,7 @@
        ]
       },
       {
+       "id": "b6e38d936",
        "text": "我是中国人。",
        "en": "I'm Chinese.",
        "pattern": "S V O",
@@ -1608,6 +1622,7 @@
        ]
       },
       {
+       "id": "b7d95ed9e",
        "text": "那是谁？",
        "en": "Who's that?",
        "pattern": "S V O",
@@ -1644,6 +1659,7 @@
        ]
       },
       {
+       "id": "b811cf4a2",
        "text": "他是我的朋友。",
        "en": "He's my friend.",
        "pattern": "S V O",
@@ -1975,6 +1991,7 @@
      ],
      "builds": [
       {
+       "id": "b3a39f1e4",
        "text": "你几岁？",
        "en": "How old are you? (to a child)",
        "pattern": "S V",
@@ -2006,6 +2023,7 @@
        ]
       },
       {
+       "id": "b7876d244",
        "text": "他很小。",
        "en": "He's little.",
        "pattern": "S A V",
@@ -2042,6 +2060,7 @@
        ]
       },
       {
+       "id": "b1237e4cb",
        "text": "这是我的孩子。",
        "en": "This is my child.",
        "pattern": "S V O",
@@ -2082,6 +2101,7 @@
        ]
       },
       {
+       "id": "b9f3ca3b0",
        "text": "我今年十八岁。",
        "en": "I'm eighteen this year.",
        "pattern": "S T V",
@@ -2448,6 +2468,7 @@
      ],
      "builds": [
       {
+       "id": "b59dc91a3",
        "text": "我们四个人。",
        "en": "There are four of us.",
        "pattern": "S V",
@@ -2481,6 +2502,7 @@
        ]
       },
       {
+       "id": "bbf4bcabc",
        "text": "你们几个人？",
        "en": "How many of you are there?",
        "pattern": "S V",
@@ -2514,6 +2536,7 @@
        ]
       },
       {
+       "id": "b7eed4bdc",
        "text": "他七岁。",
        "en": "He's seven.",
        "pattern": "S V",
@@ -2545,6 +2568,7 @@
        ]
       },
       {
+       "id": "b6520679a",
        "text": "那是六。",
        "en": "That's six.",
        "pattern": "S V O",
@@ -2865,6 +2889,7 @@
      ],
      "builds": [
       {
+       "id": "b6bc43d4e",
        "text": "今天星期六。",
        "en": "Today is Saturday.",
        "pattern": "S V",
@@ -2896,6 +2921,7 @@
        ]
       },
       {
+       "id": "be7240336",
        "text": "明天是星期天。",
        "en": "Tomorrow is Sunday.",
        "pattern": "S V O",
@@ -2932,6 +2958,7 @@
        ]
       },
       {
+       "id": "bc361d0fa",
        "text": "今天几月几号？",
        "en": "What's the date today?",
        "pattern": "S V",
@@ -2967,6 +2994,7 @@
        ]
       },
       {
+       "id": "bb7b84a70",
        "text": "今年是二零二六年。",
        "en": "This year is 2026.",
        "pattern": "S V O",
@@ -3314,6 +3342,7 @@
      ],
      "builds": [
       {
+       "id": "b9106fa67",
        "text": "我家有五个人。",
        "en": "There are five people in my family.",
        "pattern": "S V O",
@@ -3356,6 +3385,7 @@
        ]
       },
       {
+       "id": "bb02c6011",
        "text": "我没有姐姐。",
        "en": "I don't have an older sister.",
        "pattern": "S V O",
@@ -3392,6 +3422,7 @@
        ]
       },
       {
+       "id": "b24f732ef",
        "text": "你有弟弟吗？",
        "en": "Do you have a younger brother?",
        "pattern": "S V O X",
@@ -3435,6 +3466,7 @@
        ]
       },
       {
+       "id": "bcdff36f9",
        "text": "我有一个妹妹。",
        "en": "I have a younger sister.",
        "pattern": "S V O",
@@ -3806,6 +3838,7 @@
      ],
      "builds": [
       {
+       "id": "b9be2a041",
        "text": "这是我的儿子。",
        "en": "This is my son.",
        "pattern": "S V O",
@@ -3846,6 +3879,7 @@
        ]
       },
       {
+       "id": "baed18e95",
        "text": "他很爱她。",
        "en": "He loves her very much.",
        "pattern": "S A V O",
@@ -3889,6 +3923,7 @@
        ]
       },
       {
+       "id": "b55be5c31",
        "text": "我家有一只狗。",
        "en": "We have a dog.",
        "pattern": "S V O",
@@ -3931,6 +3966,7 @@
        ]
       },
       {
+       "id": "b008df2e6",
        "text": "她爱我们家的猫。",
        "en": "She loves our cat.",
        "pattern": "S V O",
@@ -4226,6 +4262,7 @@
      ],
      "builds": [
       {
+       "id": "b55410cae",
        "text": "我想吃米饭。",
        "en": "I'd like to eat rice.",
        "pattern": "S A V O",
@@ -4269,6 +4306,7 @@
        ]
       },
       {
+       "id": "b70f2dcd8",
        "text": "你想喝什么？",
        "en": "What would you like to drink?",
        "pattern": "S A V O",
@@ -4312,6 +4350,7 @@
        ]
       },
       {
+       "id": "bde5ccdac",
        "text": "我不喝茶。",
        "en": "I don't drink tea.",
        "pattern": "S A V O",
@@ -4355,6 +4394,7 @@
        ]
       },
       {
+       "id": "b4c8cdec8",
        "text": "我要面条儿。",
        "en": "I'll have noodles.",
        "pattern": "S V O",
@@ -4656,6 +4696,7 @@
      ],
      "builds": [
       {
+       "id": "b3f19c0c6",
        "text": "我早饭吃包子。",
        "en": "I have steamed buns for breakfast.",
        "pattern": "S T V O",
@@ -4699,6 +4740,7 @@
        ]
       },
       {
+       "id": "b600fc2c8",
        "text": "包子很好吃。",
        "en": "Steamed buns are delicious.",
        "pattern": "S A V",
@@ -4735,6 +4777,7 @@
        ]
       },
       {
+       "id": "b75d59642",
        "text": "你吃水果吗？",
        "en": "Do you eat fruit?",
        "pattern": "S V O X",
@@ -4778,6 +4821,7 @@
        ]
       },
       {
+       "id": "b41c5eb62",
        "text": "我晚饭吃面条儿。",
        "en": "I have noodles for dinner.",
        "pattern": "S T V O",
@@ -5102,6 +5146,7 @@
      ],
      "builds": [
       {
+       "id": "b5e866e5f",
        "text": "苹果多少钱？",
        "en": "How much are the apples?",
        "pattern": "S V",
@@ -5133,6 +5178,7 @@
        ]
       },
       {
+       "id": "b172a9253",
        "text": "这太贵了。",
        "en": "That's too expensive.",
        "pattern": "S A V X",
@@ -5176,6 +5222,7 @@
        ]
       },
       {
+       "id": "b8cc96292",
        "text": "我买两个。",
        "en": "I'll take two.",
        "pattern": "S V O",
@@ -5214,6 +5261,7 @@
        ]
       },
       {
+       "id": "bd3788ebc",
        "text": "我还卖牛奶。",
        "en": "I also sell milk.",
        "pattern": "S A V O",
@@ -5509,6 +5557,7 @@
      ],
      "builds": [
       {
+       "id": "b222b39a7",
        "text": "我很喜欢这件衣服。",
        "en": "I really like this top.",
        "pattern": "S A V O",
@@ -5556,6 +5605,7 @@
        ]
       },
       {
+       "id": "bb8b7efb0",
        "text": "这件衣服很好看。",
        "en": "This top looks nice.",
        "pattern": "S A V",
@@ -5596,6 +5646,7 @@
        ]
       },
       {
+       "id": "bbc8dab30",
        "text": "超市的东西很便宜。",
        "en": "Things at the supermarket are cheap.",
        "pattern": "S A V",
@@ -5636,6 +5687,7 @@
        ]
       },
       {
+       "id": "b16f553ce",
        "text": "你喜欢那个吗？",
        "en": "Do you like that one?",
        "pattern": "S V O X",
@@ -5958,6 +6010,7 @@
      ],
      "builds": [
       {
+       "id": "b10bdeb61",
        "text": "你去哪儿？",
        "en": "Where are you going?",
        "pattern": "S V O",
@@ -5994,6 +6047,7 @@
        ]
       },
       {
+       "id": "b010552b3",
        "text": "我回家。",
        "en": "I'm going home.",
        "pattern": "S V O",
@@ -6030,6 +6084,7 @@
        ]
       },
       {
+       "id": "b438921ab",
        "text": "我家在那儿。",
        "en": "My home is over there.",
        "pattern": "S V O",
@@ -6068,6 +6123,7 @@
        ]
       },
       {
+       "id": "be6de6dc0",
        "text": "他明天来。",
        "en": "He's coming tomorrow.",
        "pattern": "S T V",
@@ -6413,6 +6469,7 @@
      ],
      "builds": [
       {
+       "id": "bd8525017",
        "text": "我坐飞机。",
        "en": "I'm flying.",
        "pattern": "S V O",
@@ -6449,6 +6506,7 @@
        ]
       },
       {
+       "id": "b2b73dc7e",
        "text": "你怎么去？",
        "en": "How are you getting there?",
        "pattern": "S A V",
@@ -6485,6 +6543,7 @@
        ]
       },
       {
+       "id": "b7afc7378",
        "text": "他不开车。",
        "en": "He doesn't drive.",
        "pattern": "S A V",
@@ -6521,6 +6580,7 @@
        ]
       },
       {
+       "id": "be333dae4",
        "text": "我们可以坐出租车。",
        "en": "We can take a taxi.",
        "pattern": "S A V O",
@@ -6798,6 +6858,7 @@
      ],
      "builds": [
       {
+       "id": "b3214b65a",
        "text": "今天天气怎么样？",
        "en": "What's the weather like today?",
        "pattern": "T S V",
@@ -6834,6 +6895,7 @@
        ]
       },
       {
+       "id": "b7364a531",
        "text": "今天有点儿冷。",
        "en": "It's a bit cold today.",
        "pattern": "S A V",
@@ -6870,6 +6932,7 @@
        ]
       },
       {
+       "id": "b86b79fab",
        "text": "明天下雨。",
        "en": "It'll rain tomorrow.",
        "pattern": "T V",
@@ -6899,6 +6962,7 @@
        ]
       },
       {
+       "id": "b06fdbf0a",
        "text": "我喜欢雪。",
        "en": "I like snow.",
        "pattern": "S V O",
@@ -7224,6 +7288,7 @@
      ],
      "builds": [
       {
+       "id": "bbadd38ed",
        "text": "现在九点半。",
        "en": "It's half past nine.",
        "pattern": "S V",
@@ -7257,6 +7322,7 @@
        ]
       },
       {
+       "id": "b08059373",
        "text": "我早上七点吃早饭。",
        "en": "I have breakfast at seven.",
        "pattern": "S T V O",
@@ -7304,6 +7370,7 @@
        ]
       },
       {
+       "id": "b419e8540",
        "text": "你上午在家吗？",
        "en": "Are you at home in the morning?",
        "pattern": "S T V O X",
@@ -7354,6 +7421,7 @@
        ]
       },
       {
+       "id": "b1beabfe3",
        "text": "你真早！",
        "en": "You're early!",
        "pattern": "S A V",
@@ -7726,6 +7794,7 @@
      ],
      "builds": [
       {
+       "id": "bb6ba2441",
        "text": "我学习汉语。",
        "en": "I study Chinese.",
        "pattern": "S V O",
@@ -7762,6 +7831,7 @@
        ]
       },
       {
+       "id": "b47b578d4",
        "text": "我喜欢学汉字。",
        "en": "I like learning characters.",
        "pattern": "S A V O",
@@ -7805,6 +7875,7 @@
        ]
       },
       {
+       "id": "bda35c6bf",
        "text": "我们八点上课。",
        "en": "Our classes start at eight.",
        "pattern": "S T V",
@@ -7843,6 +7914,7 @@
        ]
       },
       {
+       "id": "b90e02c8e",
        "text": "这是我的中文书。",
        "en": "This is my Chinese book.",
        "pattern": "S V O",
@@ -8283,6 +8355,7 @@
      ],
      "builds": [
       {
+       "id": "b1896c2da",
        "text": "我是大学生。",
        "en": "I'm a university student.",
        "pattern": "S V O",
@@ -8319,6 +8392,7 @@
        ]
       },
       {
+       "id": "bd30763a3",
        "text": "我的弟弟是小学生。",
        "en": "My younger brother is at primary school.",
        "pattern": "S V O",
@@ -8359,6 +8433,7 @@
        ]
       },
       {
+       "id": "b4ff1fd49",
        "text": "他今年上学。",
        "en": "He started school this year.",
        "pattern": "S T V",
@@ -8395,6 +8470,7 @@
        ]
       },
       {
+       "id": "b5765f785",
        "text": "我写汉字。",
        "en": "I'm writing characters.",
        "pattern": "S V O",
@@ -8735,6 +8811,7 @@
      ],
      "builds": [
       {
+       "id": "bcd28c06a",
        "text": "你做什么工作？",
        "en": "What do you do?",
        "pattern": "S V O",
@@ -8773,6 +8850,7 @@
        ]
       },
       {
+       "id": "b5880738f",
        "text": "我在一个公司工作。",
        "en": "I work at a company.",
        "pattern": "S P V",
@@ -8815,6 +8893,7 @@
        ]
       },
       {
+       "id": "b8ea4c6bb",
        "text": "我八点上班。",
        "en": "I start work at eight.",
        "pattern": "S T V",
@@ -8853,6 +8932,7 @@
        ]
       },
       {
+       "id": "b41013588",
        "text": "他们今天有事。",
        "en": "They have something on today.",
        "pattern": "S T V O",
@@ -9208,6 +9288,7 @@
      ],
      "builds": [
       {
+       "id": "bfa24f01e",
        "text": "你现在可以说话吗？",
        "en": "Can you talk now?",
        "pattern": "S T A V X",
@@ -9258,6 +9339,7 @@
        ]
       },
       {
+       "id": "b628efd11",
        "text": "我想问一个问题。",
        "en": "I'd like to ask a question.",
        "pattern": "S A V O",
@@ -9305,6 +9387,7 @@
        ]
       },
       {
+       "id": "b550e7c69",
        "text": "我不知道。",
        "en": "I don't know.",
        "pattern": "S A V",
@@ -9341,6 +9424,7 @@
        ]
       },
       {
+       "id": "bafbf9c06",
        "text": "你打电话问他。",
        "en": "Call and ask him.",
        "pattern": "S V V O",
@@ -9698,6 +9782,7 @@
      ],
      "builds": [
       {
+       "id": "b9835ec97",
        "text": "我生病了。",
        "en": "I'm ill.",
        "pattern": "S V X",
@@ -9734,6 +9819,7 @@
        ]
       },
       {
+       "id": "b83867cb7",
        "text": "你要休息。",
        "en": "You need to rest.",
        "pattern": "S A V",
@@ -9770,6 +9856,7 @@
        ]
       },
       {
+       "id": "bcab6634f",
        "text": "不要上班。",
        "en": "Don't go to work.",
        "pattern": "A V",
@@ -9799,6 +9886,7 @@
        ]
       },
       {
+       "id": "bb1c91382",
        "text": "我想睡觉。",
        "en": "I want to sleep.",
        "pattern": "S A V",
@@ -10148,6 +10236,7 @@
      ],
      "builds": [
       {
+       "id": "b08e42a03",
        "text": "你几点起床？",
        "en": "What time do you get up?",
        "pattern": "S T V",
@@ -10186,6 +10275,7 @@
        ]
       },
       {
+       "id": "b87c17bea",
        "text": "我们晚上见。",
        "en": "See you this evening.",
        "pattern": "S T V",
@@ -10222,6 +10312,7 @@
        ]
       },
       {
+       "id": "b8350c181",
        "text": "我休息一下。",
        "en": "I'll rest for a bit.",
        "pattern": "S V O",
@@ -10258,6 +10349,7 @@
        ]
       },
       {
+       "id": "be405533e",
        "text": "你什么时候有时间？",
        "en": "When do you have time?",
        "pattern": "S T V O",
@@ -10581,6 +10673,7 @@
      ],
      "builds": [
       {
+       "id": "b3ea76d52",
        "text": "我看电影。",
        "en": "I'm watching a film.",
        "pattern": "S V O",
@@ -10617,6 +10710,7 @@
        ]
       },
       {
+       "id": "b56da8d17",
        "text": "我喜欢唱歌。",
        "en": "I like singing.",
        "pattern": "S A V O",
@@ -10660,6 +10754,7 @@
        ]
       },
       {
+       "id": "b0d288adc",
        "text": "她在家听歌。",
        "en": "She listens to music at home.",
        "pattern": "S P V O",
@@ -10705,6 +10800,7 @@
        ]
       },
       {
+       "id": "b59306db2",
        "text": "这很好玩儿。",
        "en": "This is fun.",
        "pattern": "S A V",
@@ -11018,6 +11114,7 @@
      ],
      "builds": [
       {
+       "id": "bb194278a",
        "text": "你会说汉语吗？",
        "en": "Can you speak Chinese?",
        "pattern": "S A V O X",
@@ -11068,6 +11165,7 @@
        ]
       },
       {
+       "id": "be8e4e059",
        "text": "我能读汉字。",
        "en": "I can read characters.",
        "pattern": "S A V O",
@@ -11111,6 +11209,7 @@
        ]
       },
       {
+       "id": "b6aed6d04",
        "text": "我们去书店吧！",
        "en": "Let's go to the bookshop!",
        "pattern": "S V O X",
@@ -11154,6 +11253,7 @@
        ]
       },
       {
+       "id": "b19f11583",
        "text": "你觉得怎么样？",
        "en": "What do you think?",
        "pattern": "S V O",
@@ -11523,6 +11623,7 @@
      ],
      "builds": [
       {
+       "id": "be8595482",
        "text": "这是我的房间。",
        "en": "This is my room.",
        "pattern": "S V O",
@@ -11563,6 +11664,7 @@
        ]
       },
       {
+       "id": "b2a5bdfbc",
        "text": "我有五本书。",
        "en": "I have five books.",
        "pattern": "S V O",
@@ -11603,6 +11705,7 @@
        ]
       },
       {
+       "id": "be4479400",
        "text": "哪个杯子是你的？",
        "en": "Which cup is yours?",
        "pattern": "S V O",
@@ -11643,6 +11746,7 @@
        ]
       },
       {
+       "id": "b1065c04b",
        "text": "这些是我的。",
        "en": "These are mine.",
        "pattern": "S V O",
@@ -11996,6 +12100,7 @@
      ],
      "builds": [
       {
+       "id": "b7a233f2e",
        "text": "你找什么？",
        "en": "What are you looking for?",
        "pattern": "S V O",
@@ -12032,6 +12137,7 @@
        ]
       },
       {
+       "id": "b3c8517e0",
        "text": "我的手机八百块。",
        "en": "My phone was eight hundred yuan.",
        "pattern": "S V",
@@ -12069,6 +12175,7 @@
        ]
       },
       {
+       "id": "bce977e73",
        "text": "这是我的新手机。",
        "en": "This is my new phone.",
        "pattern": "S V O",
@@ -12111,6 +12218,7 @@
        ]
       },
       {
+       "id": "bcde7806f",
        "text": "我给妈妈一半。",
        "en": "I give half to my mum.",
        "pattern": "S V O O",
@@ -12507,6 +12615,7 @@
      ],
      "builds": [
       {
+       "id": "b8db73dc1",
        "text": "书在桌子上。",
        "en": "The book is on the table.",
        "pattern": "S V P",
@@ -12545,6 +12654,7 @@
        ]
       },
       {
+       "id": "b0edd1849",
        "text": "猫在椅子下。",
        "en": "The cat is under the chair.",
        "pattern": "S V P",
@@ -12583,6 +12693,7 @@
        ]
       },
       {
+       "id": "b7e44eac5",
        "text": "我在家里。",
        "en": "I'm at home.",
        "pattern": "S V P",
@@ -12621,6 +12732,7 @@
        ]
       },
       {
+       "id": "b30c611d0",
        "text": "超市在那边。",
        "en": "The supermarket is over there.",
        "pattern": "S V P",
@@ -13012,6 +13124,7 @@
      ],
      "builds": [
       {
+       "id": "bbcf6a7af",
        "text": "我住在学校后边。",
        "en": "I live behind the school.",
        "pattern": "S V P",
@@ -13054,6 +13167,7 @@
        ]
       },
       {
+       "id": "b203ca767",
        "text": "你家有几口人？",
        "en": "How many people are in your family?",
        "pattern": "S V O",
@@ -13096,6 +13210,7 @@
        ]
       },
       {
+       "id": "b59f43cc9",
        "text": "他正在开电脑。",
        "en": "He's switching on his computer.",
        "pattern": "S A V O",
@@ -13139,6 +13254,7 @@
        ]
       },
       {
+       "id": "b7695a7c9",
        "text": "它们在外边玩。",
        "en": "They're playing outside.",
        "pattern": "S P V",
@@ -13492,6 +13608,7 @@
      ],
      "builds": [
       {
+       "id": "bb960bc76",
        "text": "你会做饭吗？",
        "en": "Can you cook?",
        "pattern": "S A V X",
@@ -13535,6 +13652,7 @@
        ]
       },
       {
+       "id": "b7fdd63c3",
        "text": "我们去饭店吃饺子吧！",
        "en": "Let's go to a restaurant for dumplings!",
        "pattern": "S P V O X",
@@ -13587,6 +13705,7 @@
        ]
       },
       {
+       "id": "b62462b4e",
        "text": "这个店的饺子非常好吃。",
        "en": "The dumplings here are really good.",
        "pattern": "S A V",
@@ -13629,6 +13748,7 @@
        ]
       },
       {
+       "id": "b3676e504",
        "text": "这是我的第一个饺子。",
        "en": "This is my first dumpling.",
        "pattern": "S V O",
