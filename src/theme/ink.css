@@ -1,6 +1,7 @@
 /* Ink & lanterns: the traditional style. Everything here applies under body.style-ink. */
 body.style-ink{
-  --font:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  /* a book face made for reading at small sizes (Cormorant stays for the large word on the wall) */
+  --font:"Source Serif 4", "Iowan Old Style", Georgia, serif;
   --zh:"Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
   --brush:"Ma Shan Zheng", "STKaiti", "KaiTi", serif;
   --seal:#B8262B;
@@ -115,3 +116,11 @@ body.style-ink [data-role="P"]{ --rc:#2E7D6E; } body.style-ink [data-role="V"]{ 
 body.style-ink [data-role="O"]{ --rc:#4E7D3A; } body.style-ink [data-role="A"]{ --rc:#6E4A8E; }
 body.style-ink [data-role="X"]{ --rc:#6B6259; }
 body.style-ink .plug-sockets, body.style-ink .plug-stage{ border-radius:6px; }
+
+/* readability: lining figures ("HSK 1", not "HSK I"), a touch of air between letters and lines,
+   and brush headings tracked out so their strokes don't run together */
+body.style-ink{ font-variant-numeric:lining-nums; letter-spacing:.005em; }
+body.style-ink :is(.tab-sub, .card-desc, .punit-topic, .home-note, .you-sub, .lp, .sheet-sub, .scard-meta, .r-meta, .path-intro, #pathIntro){ line-height:1.5; }
+body.style-ink :is(.card-desc, .scard-meta, .punit-topic, .you-stat span, .levels-label, .wgroup-count){ font-size:max(1em, 13.5px); }
+body.style-ink :is(.brand, .home-title, .tab-title, .card-name, .yg-t, .punit-title, .lh, .sheet-title, .mode-name, .r-title, .plug-en, .fortune, .fortune-day){ letter-spacing:.03em; }
+body.style-ink :is(.scard-zh, .punit-zh, .r-title, .rpop-h, .wcard .h, .piece-zh, .wpick-h, .meet-h, .zhbig){ letter-spacing:.06em; }
