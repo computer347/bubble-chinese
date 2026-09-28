@@ -95,3 +95,9 @@ body.style-ink .scard, body.style-ink .reader-page{ border-radius:6px; }
 body.style-ink .scard-zh, body.style-ink .r-title, body.style-ink .rpop-h{ font-family:var(--brush); font-weight:400; }
 body.style-ink .r-en{ font-family:var(--font); font-style:italic; }
 body.style-ink .reader-bar, body.style-ink .rpop{ border-radius:8px; }
+
+/* the word set in the ink style: paper, square corners, a brush title */
+body.style-ink .sheet-panel{ border-radius:10px 10px 0 0; background:color-mix(in srgb, var(--bg) 92%, transparent); }
+body.style-ink .sheet-title{ font-family:var(--brush); }
+body.style-ink .wgroup, body.style-ink .wpick, body.style-ink .setchip{ border-radius:6px; }
+body.style-ink .wpick-h{ font-family:var(--brush); font-weight:400; }

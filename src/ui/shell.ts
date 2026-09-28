@@ -9,6 +9,7 @@ import { dailyIndex, streakDays, practisedToday } from '../game/daily';
 import type { ModeId, ModeInfo } from '../modes';
 import { PathView } from './pathview';
 import { StoryList } from './storylist';
+import { WordSetSheet } from './wordset';
 import type { Unit } from '../content/path';
 import { $ } from './dom';
 
@@ -24,6 +25,8 @@ export interface ShellDeps {
   reduceMotion: boolean;
   modes: readonly ModeInfo[];
   pool(): readonly Word[];
+  /** The words free practice draws from (the chosen word set, or the whole pool). */
+  practicePool(): readonly Word[];
   /** What Today still holds: reviews due now, and new words still allowed today. */
   today(): { due: number; fresh: number };
   /** Starts a mode from the element that was tapped (its orb zooms into the task). */
@@ -60,6 +63,7 @@ export class Shell {
   private readonly cards = $('modeCards');
   private readonly pathView: PathView;
   private readonly stories: StoryList;
+  private readonly wordSet: WordSetSheet;
   /** The orb a task was entered from, so returning shrinks back into it. */
   private from: HTMLElement | null = null;
 
@@ -72,6 +76,7 @@ export class Shell {
       onNote: (u, el) => d.onEnter('path', el, { kind: 'note', unit: u }),
       onWrite: (i, el) => d.onEnter('path', el, { kind: 'write', index: i })
     });
+    this.wordSet = new WordSetSheet({ progress: d.progress, reduceMotion: d.reduceMotion, pool: d.pool, onChange: () => this.render() });
     this.stories = new StoryList({
       done: () => d.progress.data.path.done,
       read: () => d.progress.data.read,
@@ -142,10 +147,13 @@ export class Shell {
       this.pathView.render();
     }
     if (this.tab === 'practice') {
-      const heard = words.filter(w => this.d.voice.hasClip(w));
+      $('setLabel').textContent = this.wordSet.label();
+      // the tiles count the chosen set
+      const set = this.d.practicePool();
+      const heard = set.filter(w => this.d.voice.hasClip(w));
       for (const b of this.cards.querySelectorAll<HTMLButtonElement>('.card')) {
         const meta = b.querySelector('.card-meta')!;
-        if (b.dataset.mode === 'words') meta.textContent = `${progress.learnedCount('words', words)} of ${words.length} learned`;
+        if (b.dataset.mode === 'words') meta.textContent = `${progress.learnedCount('words', set)} of ${set.length} learned`;
         if (b.dataset.mode === 'listen') meta.textContent = `${progress.learnedCount('listen', heard)} of ${heard.length} heard well`;
         if (b.dataset.mode === 'write') {
           const done = LESSONS.filter(x => progress.data.path.done[x.lesson.id]).length;

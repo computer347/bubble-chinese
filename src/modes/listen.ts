@@ -20,9 +20,9 @@ const alwaysDictate = typeof location !== 'undefined' && new URLSearchParams(loc
 export class Listening {
   constructor(private readonly ctx: ModeContext, private readonly word: () => Word | null) {}
 
-  /** Words that can be heard, with those met in Words first, so you hear what you can already read. */
+  /** Words of the practice set that can be heard, with those met in Words first, so you hear what you can already read. */
   pool(): Word[] {
-    const { pool, progress, voice } = this.ctx;
+    const { practicePool: pool, progress, voice } = this.ctx;
     const heard = pool().filter(w => voice.hasClip(w));
     const read = progress.cards('words');
     const met = heard.filter(w => read[w.id]);

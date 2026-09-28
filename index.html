@@ -49,6 +49,9 @@
   <section class="tab" id="tab-practice" data-tab="practice" hidden aria-labelledby="practiceTitle">
     <h2 class="tab-title" id="practiceTitle">Practice</h2>
     <p class="tab-sub">Free play. Pick what to train; every bubble counts toward your reviews.</p>
+    <button type="button" class="setchip" id="setChip" aria-haspopup="dialog">
+      <span class="setchip-k">Words from</span><b class="setchip-v" id="setLabel">All of HSK 1</b><span class="setchip-c" aria-hidden="true">▾</span>
+    </button>
     <ul class="tiles" id="modeCards"><!-- built from src/modes/index.ts --></ul>
   </section>
 
@@ -144,6 +147,20 @@
   <article class="reader-page" id="rPage"></article>
 </section>
 <div class="rpop" id="rPop" hidden role="status"></div>
+
+<section class="sheet" id="setSheet" hidden role="dialog" aria-modal="true" aria-labelledby="setTitle">
+  <div class="sheet-panel" id="setPanel">
+    <header class="sheet-head">
+      <div><h2 class="sheet-title" id="setTitle">Word set</h2><p class="sheet-sum" id="setSum" aria-live="polite"></p></div>
+      <button type="button" class="sheet-x" id="setClose" aria-label="Close without changing">✕</button>
+    </header>
+    <div class="sheet-body" id="setBody"></div>
+    <footer class="sheet-foot">
+      <button type="button" class="sheet-clear" id="setAll">Clear</button>
+      <button type="button" class="next sheet-apply" id="setApply">Use all words</button>
+    </footer>
+  </div>
+</section>
 
 <form class="dictation" id="dictation" hidden autocomplete="off">
   <label for="dictIn" class="sr">Type the pinyin you hear, with tone numbers or tone marks</label>

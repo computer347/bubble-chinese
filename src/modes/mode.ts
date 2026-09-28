@@ -29,6 +29,8 @@ export interface ModeContext {
   session: Session;
   /** Quiz words up to the chosen HSK level. */
   pool(): readonly Word[];
+  /** The words free practice (Words, Listen) draws from: the chosen word set, or the whole pool. */
+  practicePool(): readonly Word[];
   /** Redraws score, streak and the learned count. */
   updateHud(): void;
   /** Sizes and places the bubble in the space the answers and panels leave free. */

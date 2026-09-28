@@ -65,7 +65,7 @@ export abstract class LayeredMode implements Mode {
   /** The layers for a word, outermost first. */
   protected abstract makeQuestions(w: Word, bank: readonly Word[]): Question[];
   /** The next word to play. */
-  protected pick(): Word { return this.scheduler.next(this.ctx.pool(), this.ctx.progress.cards(this.skill)); }
+  protected pick(): Word { return this.scheduler.next(this.ctx.practicePool(), this.ctx.progress.cards(this.skill)); }
   /** The next bubble: a word and the skill it trains, or null when the session is over. */
   protected choose(): NextBubble | null { return { word: this.pick(), skill: this.skill }; }
   /** Nothing left to play: back to the home screen. */

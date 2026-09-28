@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import { QUIZ_WORDS } from '../content/words';
+import { setWords } from '../content/wordsets';
 import { DETAILS } from '../engine/softbody';
 import { Sound } from '../audio/sound';
 import { Speech } from '../audio/speech';
@@ -74,6 +75,8 @@ export function startGame(opts: GameOptions): GameHandle {
   const speech = new Speech();
   const voice = new Voice(speech);
   const pool = () => QUIZ_WORDS.filter(w => w.level <= progress.data.settings.maxLevel);
+  // the chosen word set, when there is one with enough words to make bubbles of
+  const practicePool = () => { const ids = progress.data.settings.practice; const set = ids ? setWords(ids) : []; return set.length ? set : pool(); };
 
   const stage = new Stage({ canvas, reduceMotion, e2e: opts.e2e });
   const chips = new Chips(reduceMotion, edge => bubble.autoPull(edge));
@@ -132,7 +135,7 @@ export function startGame(opts: GameOptions): GameHandle {
   });
   document.querySelectorAll('.ans, .corner, .topbar, #dictation').forEach(el => watch.observe(el));
 
-  const ctx: ModeContext = { stage, bubble, chips, hud, slip, dictation, sound, speech, voice, progress, session, pool, updateHud, fit, home: () => showHome() };
+  const ctx: ModeContext = { stage, bubble, chips, hud, slip, dictation, sound, speech, voice, progress, session, pool, updateHud, fit, home: () => showHome(), practicePool };
   const modes = new Map<ModeId, Mode>(MODES.filter(m => m.make).map(m => [m.id, m.make!(ctx)]));
   let current: Mode | null = null;
   let currentId: ModeId | null = null;
@@ -142,7 +145,7 @@ export function startGame(opts: GameOptions): GameHandle {
   /* ---------- the shell: four tabs, and the settings in You ---------- */
   const today = modes.get('today') as TodayMode;
   const home = new Shell({
-    progress, voice, reduceMotion, modes: MODES, pool,
+    progress, voice, reduceMotion, modes: MODES, pool, practicePool,
     today: () => todayLeft(ctx, today.heardPool()),
     onEnter: (id, from, arg) => enter(id, arg, from),
     onTab: tab => { if (tab === 'you') { updateHud(); drawer.render(); } }

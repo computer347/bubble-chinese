@@ -37,6 +37,21 @@ describe('Progress', () => {
     expect(q.data.settings.maxLevel).toBe(2);
   });
 
+  it('keeps the word set, stories read and the pinyin strength; an empty set means all words', async () => {
+    const store = new MemoryStore();
+    const p = new Progress(store, WORDS);
+    await p.init(null, now);
+    expect(p.data.settings.practice).toBeNull();
+    p.setPractice([id('猫'), id('狗')]); p.completeStory('my-family', now); p.setPinyin(0.4);
+    const q = new Progress(store, WORDS);
+    await q.init(null, now);
+    expect(q.data.settings.practice).toEqual([id('猫'), id('狗')]);
+    expect(q.data.read['my-family']).toBe(now.getTime());
+    expect(q.data.settings.pinyin).toBe(0.4);
+    q.setPractice([]);
+    expect(q.data.settings.practice).toBeNull();
+  });
+
   it('migrates version-1 progress: met words become cards due now', () => {
     const d = migrateV1({ m: { 猫: 2 }, seen: { 猫: 1, 绿色: 1 }, miss: {}, best: 7 }, WORDS, now);
     expect(d.version).toBe(3);
